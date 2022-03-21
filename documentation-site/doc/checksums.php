@@ -3,7 +3,7 @@
 return (function() {
 	$ret = [];
 	$files = [
-		"libnapc.a",
+		"libnapc-x86_64.a",
 		"libnapc-aarch64.a",
 		"napc.h",
 		"libnapc-arduino.zip"

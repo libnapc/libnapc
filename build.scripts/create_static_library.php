@@ -94,5 +94,5 @@ function create_static_lib($cc, $output_name) {
 	exec_or_die("rm -rf tmp");
 }
 
-create_static_lib("gcc", "libnapc.a");
+create_static_lib("x86_64-linux-gnu-gcc", "libnapc-x86_64.a");
 create_static_lib("aarch64-linux-gnu-gcc", "libnapc-aarch64.a");

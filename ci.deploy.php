@@ -17,7 +17,7 @@ $post = [
 foreach ([
 	"doc.tar.gz",
 	"libnapc-arduino.zip",
-	"libnapc.a",
+	"libnapc-x86_64.a",
 	"libnapc-aarch64.a",
 	"napc.h"
 ] as $file) {

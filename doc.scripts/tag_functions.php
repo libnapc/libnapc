@@ -2,7 +2,14 @@
 
 chdir(__DIR__."/..");
 
-exec("nm ".escapeshellarg("dist/libnapc.a"), $nm_output);
+$arch = trim(exec("uname -m"));
+
+exec("nm ".escapeshellarg("dist/libnapc-$arch.a"), $nm_output, $exit_code);
+
+if ($exit_code !== 0) {
+	fwrite(STDERR, "nm returned non-zero exit code\n");
+	exit(1);
+}
 
 $nm_output = implode("\n", $nm_output);
 
