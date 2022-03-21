@@ -13,6 +13,11 @@ return function() {
 		return trim(exec("git rev-parse HEAD"));
 	}
 
-	// todo: get version from git
-	return "1.2.0-beta";
+	$version = trim(exec("git describe --tags"));
+
+	if (substr($version, 0, 1) !== "v") {
+		return "error";
+	}
+
+	return substr($version, 1);
 };
