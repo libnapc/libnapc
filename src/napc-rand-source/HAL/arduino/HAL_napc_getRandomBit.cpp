@@ -3,7 +3,6 @@
 
 	extern "C" {
 		#include <napc-rand-source/_private/_napc-rand-source.h>
-		#include <napc-rand-source/HAL/arduino/_vars.h>
 
 		static unsigned long _timestamp[7]; // @static
 		static nap_u32 _state[7]; // @static
