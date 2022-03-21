@@ -29,3 +29,15 @@
 
 		&.hal svg path
 			fill: #5ed84b
+
+@supports not (backdrop-filter: blur(1px))
+	#napcdoc-layout-content-header
+		background: #080a0b
+
+	body.git-branch-nightly
+		#napcdoc-layout-content-header
+			background: #0e0f21
+
+	body.git-branch-dev
+		#napcdoc-layout-content-header
+			background: #001505

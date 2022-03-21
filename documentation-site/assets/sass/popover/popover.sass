@@ -42,3 +42,15 @@ div.popover
 body.git-branch-nightly
 	div.popover
 		border-color: #474979
+
+@supports not (backdrop-filter: blur(1px))
+	div.popover
+		background: #080a0b
+
+	body.git-branch-nightly
+		div.popover
+			background: #0e0f21
+
+	body.git-branch-dev
+		div.popover
+			background: #001505
