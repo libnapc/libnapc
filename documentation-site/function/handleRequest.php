@@ -3,7 +3,9 @@
 return function($request) {
 	$keys = [];
 
-	$keys["git_branch"] = trim(exec("git rev-parse --abbrev-ref HEAD")) ?? "";
+	if (is_file(__DIR__."/../../_git.php")) {
+		$keys["_git"] = (require __DIR__."/../../_git.php")();
+	}
 
 	if ($request["module"]) {
 		if (!$request["definition"]) {

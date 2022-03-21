@@ -7,17 +7,11 @@
  */
 
 return function() {
-	$git_branch = trim(exec("git rev-parse --abbrev-ref HEAD"));
+	$git = (require __DIR__."/_git.php")();
 
-	if (in_array($git_branch, ["nightly", "dev"])) {
-		return trim(exec("git rev-parse HEAD"));
+	if (in_array($git["branch"], ["nightly", "dev"])) {
+		return substr($git["HEAD"], -8, 8);
 	}
 
-	$version = trim(exec("git describe --tags"));
-
-	if (substr($version, 0, 1) !== "v") {
-		return "error";
-	}
-
-	return substr($version, 1);
+	return $git["release_version"];
 };

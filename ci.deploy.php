@@ -6,13 +6,12 @@ chdir(__DIR__);
 
 $url = getenv("NAPCDOC_DEPLOY_URL");
 
-$git_branch = trim(exec("git rev-parse --abbrev-ref HEAD"));
-$git_commit = trim(exec("git rev-parse HEAD"));
+$git = (require __DIR__."/_git.php")();
 
 $post = [
 	"NAPCDOC_DEPLOY_KEY" => getenv("NAPCDOC_DEPLOY_KEY"),
-	"NAPCDOC_GIT_BRANCH" => $git_branch,
-	"NAPCDOC_GIT_COMMIT" => $git_commit
+	"NAPCDOC_GIT_BRANCH" => $git["branch"],
+	"NAPCDOC_GIT_HEAD"   => $git["HEAD"]
 ];
 
 foreach ([
