@@ -56,9 +56,6 @@
 	 * @description
 	 * Starts the timer `timer`.
 	 * @param timer Pointer to `napc__Timer` variable.
-	 * @notes
-	 * This function will return `true` only once per started timer.
-	 * Subsequent calls on the same timer will return `false`.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
 	 * napc__Timer timer = napc_Timer_create(1000);
@@ -73,6 +70,9 @@
 	 * @version 1.0.0
 	 * @param timer Pointer to `napc__Timer` variable.
 	 * @return Returns `true` if timer expired, `false` otherwise.
+	 * @notes
+	 * This function will return `true` only once per started timer.
+	 * Subsequent calls on the same timer will return `false`.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	bool napc_Timer_expired(napc__Timer *timer) NAPC_FN_WARNUNUSED_RET();
