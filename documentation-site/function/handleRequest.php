@@ -27,7 +27,7 @@ return function($request) {
 			$keys["navigation"]["header"]["menu"]["Navigation"][] = [
 				"link" => "../".$request["module"].".html",
 				"icon" => "module_icon/".$request["module"],
-				"label" => "Go back to ".$request["module"]
+				"label" => "Go back to ".$request["module"]." module"
 			];
 		}
 
@@ -54,6 +54,11 @@ return function($request) {
 			$icon = "cog";
 
 			require __DIR__."/../doc/content/install.php";
+		} else if ($requested_file === "downloads.html") {
+			$keys["title"] = "Downloads";
+			$icon = "download";
+
+			require __DIR__."/../doc/content/downloads.php";
 		} else if ($requested_file === "style.css") {
 			header("Content-Type: text/css;charset=UTF-8");
 			ob_end_clean();
@@ -81,6 +86,10 @@ return function($request) {
 						"link" => "./install.html",
 						"icon" => "cog",
 						"label" => "Installation Guide"
+					], [
+						"link" => "./downloads.html",
+						"icon" => "download",
+						"label" => "Downloads"
 					]]
 				]
 			]

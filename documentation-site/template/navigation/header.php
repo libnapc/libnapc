@@ -2,9 +2,9 @@
 
 return function($keys) {
 	foreach ($keys["navigation"]["header"]["menu"] as $section => $links) {
-		echo napcdoc::createHTMLElement("a", [
+		/*echo napcdoc::createHTMLElement("a", [
 			"class" => "section"
-		], $section);
+		], $section);*/
 
 		foreach ($links as $link) {
 			$icon = napcdoc::createSVGElement($link["icon"], 16, 16);

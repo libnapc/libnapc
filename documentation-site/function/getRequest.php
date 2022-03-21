@@ -5,7 +5,15 @@ return function() {
 	$parts = explode("/", $request);
 	$parts = array_filter($parts, "strlen");
 
-	if (sizeof($parts) === 1 && in_array($parts[0], ["index.html", "install.html", "style.css", "script.js"])) {
+	$static_routes = [
+		"index.html",
+		"install.html",
+		"downloads.html",
+		"style.css",
+		"script.js"
+	];
+
+	if (sizeof($parts) === 1 && in_array($parts[0], $static_routes)) {
 		return [
 			"module" => NULL,
 			"definition" => NULL
