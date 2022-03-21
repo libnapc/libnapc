@@ -2,10 +2,10 @@
 
 static bool _previous_link_status = false; // @static
 
-bool napc_app_loop(napc_uptime uptime) NAPC_FN_WEAK();
+bool napc_app_loop(napc_time uptime) NAPC_FN_WEAK();
 bool napc_loop(napc_time uptime) NAPC_FN_WEAK();
 
-bool napc_app_loop(napc_uptime uptime) {
+bool napc_app_loop(napc_time uptime) {
 	napc_printf("napc_app_loop() is not defined.\n");
 
 	return false;
