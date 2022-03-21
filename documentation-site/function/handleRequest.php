@@ -3,6 +3,8 @@
 return function($request) {
 	$keys = [];
 
+	$keys["git_branch"] = trim(exec("git rev-parse --abbrev-ref HEAD")) ?? "";
+
 	if ($request["module"]) {
 		if (!$request["definition"]) {
 			$keys["title"] = $request["module"];
