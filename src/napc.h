@@ -47,6 +47,8 @@
 	#include <hw.module/fs/fs.h>
 	#include <hw.module/env/env.h>
 
+	#include <module/app/app.h>
+
 	extern void napc_main(const char *platform);
 
 	#if defined(__cplusplus)
