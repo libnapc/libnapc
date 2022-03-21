@@ -6,7 +6,7 @@ return (function() {
 		"libnapc.a",
 		"libnapc-aarch64.a",
 		"napc.h",
-		"arduino.zip"
+		"libnapc-arduino.zip"
 	];
 
 	foreach ($files as $file) {
