@@ -30,7 +30,7 @@ return function($module_name, $selected_definition) {
 			echo '</pre>';
 		}
 	} else {
-		echo "<i>This module does not have an introductory text yet.<i>";
+		echo "<i>This module does not have an introductory text yet.</i>";
 	}
 
 	return $module_script.ob_get_clean();
