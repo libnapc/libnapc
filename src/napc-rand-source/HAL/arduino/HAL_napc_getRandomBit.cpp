@@ -5,12 +5,12 @@
 		#include <napc-rand-source/_private/_napc-rand-source.h>
 
 		static unsigned long _timestamp[7]; // @static
-		static nap_u32 _state[7]; // @static
+		static napc_u32 _state[7]; // @static
 		static bool _first_bit[7]; // @static
 		static int _pin_mapping[7] = {A0, A1, A2, A3, A4, A5, A6}; // @static
 
 		bool PVHAL_arduino_napc_initRandom(void) {
-			for (nap_size i = 0; i < NAPC_ARRAY_ELEMENTS(_pin_mapping); ++i) {
+			for (napc_size i = 0; i < NAPC_ARRAY_ELEMENTS(_pin_mapping); ++i) {
 				_timestamp[i] = 0;
 				_state[i] = 0;
 				_first_bit[i] = false;
