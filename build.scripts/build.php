@@ -22,7 +22,7 @@ file_put_contents(
 	"dist/tmp_files/library.properties",
 	str_replace(
 		"%LIBNAPC_VERSION_STRING%",
-		$git["release_version"],
+		$git["arduino_version"],
 		file_get_contents("library.properties")
 	)
 );

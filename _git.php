@@ -21,9 +21,17 @@ return function() {
 		$release_version = $git_branch."-".substr($git_head, 0, 7);
 	}
 
+	$arduino_version = $release_version;
+
+	if ($git_branch !== "main") {
+		$arduino_version = "0.0.1";
+	}
+
 	return [
 		"branch"          => $git_branch,
 		"HEAD"            => $git_head,
-		"release_version" => $release_version
+		"release_version" => $release_version,
+		// arduino IDE only accepts semvers
+		"arduino_version" => $arduino_version
 	];
 };
