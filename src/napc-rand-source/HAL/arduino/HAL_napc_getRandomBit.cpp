@@ -3,6 +3,7 @@
 
 	extern "C" {
 		#include <napc-rand-source/_private/_napc-rand-source.h>
+		#include <napc-panic/napc-panic.h> // NAPC_PANIC()
 
 		static unsigned long _timestamp[7]; // @static
 		static napc_u32 _state[7]; // @static
@@ -20,7 +21,7 @@
 		}
 
 		static bool _readBitFromPin(int source) {
-			if (source > 7) {
+			if (source > 7 || 0 > source) {
 				NAPC_PANIC("Invalid source identifier.");
 			}
 
