@@ -13,8 +13,8 @@ return function() {
 		return trim(exec("git rev-parse HEAD"));
 	}
 
-	$version = trim(exec("git describe --tags 2>&1", $out));
-	var_dump($version, $out);
+	$version = trim(exec("git describe --tags"));
+
 	if (substr($version, 0, 1) !== "v") {
 		return "error";
 	}
