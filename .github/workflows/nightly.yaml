@@ -1,0 +1,40 @@
+name: Build, Test and Deploy
+
+on:
+  push:
+    branches: [ nightly ]
+  pull_request:
+    branches: [ nightly ]
+
+env:
+  NAPCDOC_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+  NAPCDOC_DEPLOY_URL: ${{ secrets.DEPLOY_URL }}
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Dependencies
+      run: sudo apt-get update && sudo apt install gcc make gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu
+
+    - name: Build source
+      run: ./build.scripts/build.php
+
+    - name: Unit tests
+      run: ./ci.run-tests.sh
+
+    - name: Create documentation file
+      run: ./doc.scripts/create.php
+
+    - name: Start local server
+      run: cd documentation-site/ && php -S 0.0.0.0:9999 index.php &
+
+    - name: Create documentation
+      run: cd documentation-site/ && php create.php --optimized && ls -la ../dist
+
+    - name: Deploy
+      run: ./ci.deploy.php
