@@ -1,0 +1,63 @@
+@use "../utils.sass"
+
+@media only screen and (max-width: 1000px)
+
+	#napcdoc-layout-navigation
+		display: none !important
+
+	#napcdoc-layout-logo
+		display: none !important
+
+	#napcdoc-layout-global-search
+		display: none !important
+
+	#napcdoc-layout-global-search-results
+		display: none !important
+
+	#napcdoc-layout-navigation-header
+		display: none !important
+
+	#napcdoc-layout-content-header
+		padding-left: 15px !important
+
+		div.napcdoc-svg-image.second-icon
+			left: calc(15px + 14px)
+
+	#napcdoc-layout-content
+		width: 100%
+		left: 0px
+		padding-right: 0
+
+		// dimmed has no effect on mobile
+		&.dimmed
+			opacity: 1 !important
+			filter: none !important
+
+	#napcdoc-content
+		border-radius: 0
+		border-left: none
+		border-right: none
+		margin-bottom: 20px !important // for div.page-info
+
+		pre.code
+			font-size: 12px
+			line-height: 18px
+
+		div.page-info
+			flex-direction: column
+			align-items: flex-start
+			bottom: -40px !important
+
+			div.created-at
+				margin-left: 0 !important
+
+	#napcdoc-layout-mobile-navigation
+		@include utils.backdropFilter(none !important)
+
+	#napcdoc-layout-mobile-navigation-toggle
+		div.open-menu
+			display: flex !important
+
+	body.mobile-navigation-open
+		#napcdoc-content
+			filter: blur(4px)

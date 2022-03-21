@@ -1,0 +1,122 @@
+@use "../colors.sass"
+@use "../utils.sass"
+
+#napcdoc-content
+	padding: 30px
+	border: 1px solid rgba(255, 255, 255, .1)
+	background: rgba(255, 255, 255, .03)
+	border-radius: 4px
+	margin-top: 100px
+	position: relative
+
+	div.page-info
+		width: 100%
+		position: absolute
+		bottom: -25px
+		left: 0
+		padding: 0 8px
+		color: rgba(255, 255, 255, .3)
+		font-size: 12px
+		display: flex
+		align-items: center
+
+		div.created-at
+			margin-left: auto
+
+	hr
+		width: 100%
+		margin: 12px 0px
+		border: none
+		background: #8786873d
+		height: 2px
+
+	ul
+		margin-left: 20px
+		line-height: 23px
+
+	p
+		margin: 7px 0px
+
+		&:first-of-type
+			margin-top: 0
+
+	h2
+		margin: 12px 0px
+
+		&.definition-section
+			color: rgba(255, 255, 255, .38)
+			font-size: 14px
+			text-transform: uppercase
+			font-weight: 400
+
+			&:first-child
+				margin-top: 0 !important
+
+	div.napcdoc-svg-image[data-definition-type-icon="fn"]
+		svg path
+			fill: colors.$napcdoc_fn_primary_color
+
+	div.napcdoc-svg-image[data-definition-type-icon="type"]
+		svg path
+			fill: colors.$napcdoc_type_primary_color
+
+	div.napcdoc-svg-image[data-definition-type-icon="macro"]
+		svg path
+			fill: colors.$napcdoc_macro_primary_color
+
+	div.warning-box, div.hal-box
+		margin: 16px 0px
+		padding: 15px
+		background: utils.setRGBA(#ffb14a, .13) // utils.setRGBA(#F5FF7A, .07) // utils.setRGBA(#f02929, .04)
+		border-left: 4px solid #ffb14a // #F5FF7A // #f02929
+		color: #ffb14a // #F5FF7A //#f02929
+		border-radius: 4px
+		display: flex
+		align-items: center
+
+		span.bt-pill, a.bt-pill
+			&::after
+				border: 1px solid #ffb14a !important
+				background: transparent !important
+
+			color: white // #F5FF7A //#f02929
+
+
+		div.napcdoc-svg-image
+			margin-right: 10px
+
+		svg path
+			fill: #ffb14a // #F5FF7A // #f02929
+
+	div.hal-box
+		border-left-color: #5ed84b
+		color: #5ed84b
+
+		background: utils.setRGBA(#5ed84b, .13)
+
+		svg path
+			fill: #5ed84b
+
+	div.module-section
+		padding-top: 8px
+
+		&:first-of-type
+			padding-top: 0px
+
+		pre.code
+			margin: 0 !important
+
+	div.module-section-title
+		height: 30px
+		display: flex
+		align-items: center
+		margin-bottom: 4px
+
+		h1
+			color: rgba(255, 255, 255, .38)
+			font-size: 14px
+			text-transform: uppercase
+			font-weight: 400
+			flex-shrink: 0
+			flex-grow: 0
+			margin-right: 10px

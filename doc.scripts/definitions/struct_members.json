@@ -1,0 +1,37 @@
+{
+	"napc__Buffer": {
+		"size": "napc_size",
+		"data": "void *"
+	},
+	"napc__DNSAnswer": {
+		"ttl": "napc_u32",
+		"rd_length": "napc_u16",
+		"rd_data": ["napc_u8", 16]
+	},
+	"napc__DNSHeader": {
+		"opcode": "napc__DNSOPCode",
+		"authoritative_answer": "bool",
+		"truncated": "bool",
+		"request_identifier": "napc_u16",
+		"response_code": "napc_u16",
+		"question_count": "napc_u16",
+		"answer_count": "napc_u16"
+	},
+	"napc__DNSQuery": {
+		"name": ["char", 254],
+		"qtype": "napc__DNSQType"
+	},
+	"napc__DNSRequest": {
+		"header": "napc__DNSHeader",
+		"query": "napc__DNSQuery"
+	},
+	"napc__DNSResponse": {
+		"header": "napc__DNSHeader",
+		"num_answers": "napc_size",
+		"answers": ["napc__DNSAnswer", 4]
+	},
+	"napc__IPv4Participant": {
+		"addr": ["char", "64"],
+		"port": "napc_u16"
+	}
+}

@@ -1,0 +1,8 @@
+.DS_Store
+dist/
+documentation-site/dist.tmp/
+documentation-site/dist/
+documentation-site/sass.cache/*
+!documentation-site/sass.cache/.gitkeep
+test.c
+readme

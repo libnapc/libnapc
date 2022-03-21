@@ -1,0 +1,61 @@
+/** backtick format */
+/* bt = backtick */
+@use "../utils.sass"
+@use "../colors.sass"
+
+span.bt-pill, a.bt-pill
+	color: red
+	padding: 0px 8px // 3px 8px
+	font-size: 12px
+	display: inline-block
+	font-family: "PT Mono", ui-monospace
+	background: none
+	text-decoration: none
+	position: relative
+
+	&::after
+		display: block
+		content: " "
+		position: absolute
+		width: 100%
+		height: calc(100% + 9px)
+		padding: 0px
+		box-sizing: border-box
+		top: -4px
+		border-radius: 40px
+		left: 0
+		background: rgba(255, 0, 0, .3)
+
+span.bt-pill.bool-true
+	color: #22f322
+	&::after
+		//border: 1px solid utils.setRGBA(#22f322, .5) // rgba(34, 243, 34, .3)
+		background: utils.setRGBA(#22f322, .1)
+
+span.bt-pill.bool-false
+	color: #f02929
+	&::after
+		//border: 1px solid utils.setRGBA(#f02929, .5) // rgba(34, 243, 34, .3)
+		background: utils.setRGBA(#f02929, .1)
+
+a.bt-pill.type
+	color: colors.$napcdoc_type_primary_color
+	&::after
+		background: utils.setRGBA(colors.$napcdoc_type_primary_color, .1)
+		border: 1px solid utils.setRGBA(colors.$napcdoc_type_primary_color, .5)
+	font-weight: bold
+	-webkit-font-smoothing: antialiased
+
+a.bt-pill.fn
+	color: colors.$napcdoc_fn_primary_color
+	&::after
+		background: utils.setRGBA(colors.$napcdoc_fn_primary_color, .1)
+		border: 1px solid utils.setRGBA(colors.$napcdoc_fn_primary_color, .5)
+	font-weight: bold
+	-webkit-font-smoothing: antialiased
+
+span.bt-pill.text
+	&::after
+		background: rgba(255, 255, 255, .04)
+		border: 1px solid rgba(255, 255, 255, .18)
+	color: white

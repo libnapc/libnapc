@@ -1,0 +1,44 @@
+#napcdoc-layout-navigation-header
+	display: flex
+	flex-direction: column
+	padding-bottom: 15px
+
+	/* same as .section in navigation.sass */
+	a
+		display: flex
+		align-items: center
+		flex-shrink: 0
+		flex-grow: 0
+		height: 30px
+		padding-left: 60px
+		color: white
+		text-decoration: none
+		text-shadow: 0px 2px 3px rgba(0, 0, 0, .44)
+
+		&.section
+			padding-left: 30px
+			color: rgba(255, 255, 255, .3)
+			text-transform: uppercase
+
+		div.napcdoc-svg-image
+			margin-right: 5px
+
+		svg path
+			fill: white
+
+	div.search
+		margin-top: auto
+		flex-shrink: 0
+		flex-grow: 0
+		display: flex
+		flex-direction: column
+
+		input
+			width: 90%
+			margin: 0 auto
+			border-radius: 40px
+			border: 1px solid rgba(255, 255, 255, .1)
+			background: rgba(255, 255, 255, .03)
+			padding: 4px 9px
+			color: white
+

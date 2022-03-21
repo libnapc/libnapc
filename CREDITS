@@ -1,0 +1,15 @@
+SHA256 / HMAC-SHA256
+	file: src/module/hmac/_private/h5p9sl/*
+
+	https://github.com/h5p9sl/hmac_sha256
+
+AES-256
+	file: src/module/aes/_private/_tinyaes.h
+	file: src/module/aes/_private/_tinyaes.c
+
+	https://github.com/kokke/tiny-AES-c
+
+dn_expand
+	file: src/module/dns/_private/_dn_expand.c
+
+	https://elixir.bootlin.com/musl/v1.2.2/source/src/network/dn_expand.c

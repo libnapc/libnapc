@@ -1,0 +1,27 @@
+#napcdoc-layout-mobile-navigation-toggle
+	height: 100px
+	width: 100px
+	display: flex
+	align-items: center
+	justify-content: flex-end
+	position: fixed
+	top: 0
+	right: 15px
+	z-index: 5
+
+	svg path
+		fill: rgba(255, 255, 255, .7)
+
+	div.open-menu
+		display: none !important
+
+	div.close-menu
+		display: none !important
+
+body.mobile-navigation-open
+	#napcdoc-layout-mobile-navigation-toggle
+		div.close-menu
+			display: flex !important
+
+		div.open-menu
+			display: none !important
