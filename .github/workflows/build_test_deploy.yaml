@@ -2,9 +2,9 @@ name: Build, Test and Deploy
 
 on:
   push:
-    branches: [ main, dev ]
+    branches: [ main, nightly ]
   pull_request:
-    branches: [ main, dev ]
+    branches: [ main, nightly ]
 
 env:
   NAPCDOC_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
