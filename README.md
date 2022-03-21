@@ -1,3 +1,5 @@
+![logo of libnapc](https://libnapc.nap.software/static/libnapc-github.png)
+
 # libnapc
 
 Thank you very much for checking out the documentation of [libnapc](https://libnapc.nap.software/)! 🎉
