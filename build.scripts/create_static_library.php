@@ -43,11 +43,15 @@ function create_static_lib($cc, $output_name) {
 	exec_or_die("rm -rf tmp");
 	exec_or_die("mkdir tmp");
 
-	$output = shell_exec("find src -name '*.c' && find __tests__/_processed  __tests__/__tests__.c -name '*.c'");
+	$output = shell_exec(
+		"find src -name '*.c' && find __tests__/_processed  __tests__/__tests__.c -name '*.c'"
+	);
 
 	$lines = explode("\n", $output);
 	$object_files = [];
 	$procs = [];
+
+	array_push($lines, "dist/tmp_files/napc_version.c");
 
 	foreach ($lines as $line) {
 		$line = trim($line);

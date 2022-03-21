@@ -15,6 +15,8 @@
 	 * @example
 	 * napc_printf("Using libnapc version: %s\n", napc_version());
 	 */
+	// this function will be automatically
+	// defined by build.scripts/build.php
 	const char *napc_version(void);
 
 	#include <napc-serial/napc-serial.h>

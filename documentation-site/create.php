@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__."/../php.lib/exec_or_die.php";
 
-if (sizeof($argv) !== 3) {
-	fwrite(STDERR, "Version and output type missing\n");
+if (sizeof($argv) !== 2) {
+	fwrite(STDERR, "Output type is missing\n");
 	exit(1);
 }
 
@@ -11,32 +11,21 @@ if (sizeof($argv) !== 3) {
  */
 
 define("SERVER_ROOT_URL", "http://localhost:9999/");
-define("VERSION_FILE_PATH", __DIR__."/doc/dynamic/version.php");
 
 chdir(__DIR__);
 
 exec_or_die("rm -rf dist.tmp");
+// todo: do not delete .gitkeep file
 exec_or_die("rm -rf sass.cache");
 exec_or_die("mkdir sass.cache");
 exec_or_die("mkdir dist.tmp");
-exec_or_die("rm -rf doc/dynamic");
-exec_or_die("mkdir doc/dynamic");
 
-$version = $argv[1];
-$output_type = strtolower($argv[2]);
+$output_type = strtolower($argv[1]);
 
 if (!in_array($output_type, ["--optimized", "--flat"])) {
 	fwrite(STDERR, "invalid output type\n");
 	exit(2);
 }
-
-if ($version === "git") {
-	$version = trim(exec("git rev-parse HEAD"));
-}
-
-file_put_contents(VERSION_FILE_PATH, $version);
-
-clearstatcache();
 
 function download($path) {
 	global $output_type;
@@ -83,6 +72,5 @@ if ($output_type === "--optimized") {
 download("downloads.html");
 
 exec_or_die("rm -rf dist");
-exec_or_die("rm -rf doc/dynamic");
 exec_or_die("mv dist.tmp dist");
 exec_or_die("cd dist && tar -czvf ../../dist/doc.tar.gz .");

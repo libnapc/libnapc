@@ -34,7 +34,7 @@ jobs:
       run: cd documentation-site/ && php -S 0.0.0.0:9999 index.php &
 
     - name: Create documentation
-      run: cd documentation-site/ && php create.php git --optimized && ls -la ../dist
+      run: cd documentation-site/ && php create.php --optimized && ls -la ../dist
 
     - name: Deploy
       run: ./ci.deploy.php
