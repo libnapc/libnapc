@@ -41,11 +41,17 @@ return function($keys) {
 
 	<div id="napcdoc-layout-logo">
 		<?php
+			$logo_src = "image/logo-min.png";
+
+			if (in_array($keys["git_branch"] ?? "", ["nightly", "dev"])) {
+				$logo_src = "image/logo-nightly-min.png";
+			}
+
 			echo napcdoc::createHTMLElement("a", [
 				"class" => "logo-wrapper",
 				"href" => napcdoc::documentation_fixLink("index.html")
 			], napcdoc::createHTMLElement("img", [
-				"src" => napcdoc::imageToBase64URI("image/logo-min.png"),
+				"src" => napcdoc::imageToBase64URI($logo_src),
 				"alt" => "NAPC Software Documentation Logo",
 				"height" => 50
 			]));
