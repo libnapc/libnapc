@@ -12,6 +12,8 @@
 	 * @description
 	 * Returns the version of libnapc implementation.
 	 * @changelog 1.2.0 20.03.2022 initial version
+	 * @example
+	 * napc_printf("Using libnapc version: %s\n", napc_version());
 	 */
 	const char *napc_version(void);
 
