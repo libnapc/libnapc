@@ -6,7 +6,7 @@ bool napc_app_loop(napc_time uptime) NAPC_FN_WEAK();
 bool napc_loop(napc_time uptime) NAPC_FN_WEAK();
 
 bool napc_app_loop(napc_time uptime) {
-	napc_printf("napc_app_loop() is not defined.\n");
+	napc_printf("warning: napc_app_loop() is not defined.\n");
 
 	return false;
 }
