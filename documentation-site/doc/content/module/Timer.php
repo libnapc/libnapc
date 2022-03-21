@@ -8,7 +8,7 @@
 napc__Timer my_timer;
 int counter = 0;
 
-void napc_setup(const char *p) {
+void napc_app_setup(const char *platform) {
 	// initialize timer (this does NOT start the timer)
 	napc_Timer_init(&my_timer, 1000);
 
@@ -16,7 +16,7 @@ void napc_setup(const char *p) {
 	napc_Timer_start(&my_timer);
 }
 
-bool napc_loop(napc_time uptime) {
+bool napc_app_loop(napc_time uptime) {
 	if (napc_Timer_expired(&my_timer)) {
 		++counter;
 

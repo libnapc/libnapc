@@ -11,9 +11,9 @@
 
 napc_u8 random_bytes[16];
 
-void napc_setup(const char *p) {}
+void napc_app_setup(const char *platform) {}
 
-bool napc_loop(napc_time uptime) {
+bool napc_app_loop(napc_time uptime) {
 	// request of 16 random bytes
 	if (napc_random_getRandomBytes(16, random_bytes)) {
 		// do something with random_bytes

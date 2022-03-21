@@ -23,33 +23,33 @@ It provides HAL (Hardware Abstraction Layer) so that applications written in it 
 
 Every napc application using libnapc defines at least these two functions:
 
-`napc_setup()`
-`napc_loop()`
+`napc_app_setup()`
+`napc_app_loop()`
 
-## Purpose of napc_setup
+## Purpose of napc_app_setup
 Inspired by Arduino's `setup()` function libnapc uses the same methodology.
 
-You can use `napc_setup()` to perform initialisation that only needs to be done once in the program's lifecycle.
+You can use `napc_app_setup()` to perform initialisation that only needs to be done once in the program's lifecycle.
 
-`napc_setup()` also provides the current platform as a string:
+`napc_app_setup()` also provides the current platform as a string:
 
 `"arduino"` for Arduino.
 `"linux"` for Linux.
 
-## The napc_loop function
-The `napc_loop` function gets called indefinitely until it returns false indicating the program should exit.
+## The napc_app_loop function
+The `napc_app_loop` function gets called indefinitely until it returns false indicating the program should exit.
 
 ## The most basic program possible
 
 ```c
 #include <napc.h>
 
-void napc_setup(const char *platform) {
+void napc_app_setup(const char *platform) {
 	// do one time initialization here
 	// like setting network adapter settings (napc_eth_)
 }
 
-bool napc_loop(napc_time uptime) {
+bool napc_app_loop(napc_time uptime) {
 	/* program logic */
 
 	return true;
