@@ -41,10 +41,10 @@ return function($keys) {
 
 	<div id="napcdoc-layout-logo">
 		<?php
-			$logo_src = "image/logo-min.png";
+			$logo_src = "image/libnapc-logo-min.png";
 
 			if (in_array($keys["_git"]["branch"] ?? "", ["nightly", "dev"])) {
-				$logo_src = "image/logo-nightly-min.png";
+				$logo_src = "image/libnapc-logo-nightly-min.png";
 			}
 
 			echo napcdoc::createHTMLElement("a", [
