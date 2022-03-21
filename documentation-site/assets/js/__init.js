@@ -1,7 +1,9 @@
 function replaceDefinitions(code) {
 	let definition_names = Object.keys(window.napcdoc.definitions)
 
-	definition_names = definition_names.sort((a,b) => b.length - a.length)
+	definition_names = definition_names.sort((a,b) => b.length - a.length).filter(definition_name => {
+		return "general_info" in window.napcdoc.definitions[definition_name]
+	})
 
 	let regex = new RegExp(definition_names.join("|"), "g")
 
