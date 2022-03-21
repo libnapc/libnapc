@@ -80,6 +80,8 @@ if ($output_type === "--optimized") {
 	download("script.js");
 }
 
+download("downloads.html");
+
 exec_or_die("rm -rf dist");
 exec_or_die("rm -rf doc/dynamic");
 exec_or_die("mv dist.tmp dist");
