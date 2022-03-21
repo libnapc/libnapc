@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Returns the version string that will be embeded
+ * Returns the version string that will be embedded
  * in library.properties, napc_version() and
  * the documentation site
  */
