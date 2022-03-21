@@ -2,13 +2,16 @@
 
 static bool _previous_link_status = false; // @static
 
-bool napc_app_loop(napc_uptime uptime) NAPC_FN_WEAK() {
+bool napc_app_loop(napc_uptime uptime) NAPC_FN_WEAK();
+bool napc_loop(napc_time uptime) NAPC_FN_WEAK();
+
+bool napc_app_loop(napc_uptime uptime) {
 	napc_printf("napc_app_loop() is not defined.\n");
 
 	return false;
 }
 
-bool napc_loop(napc_time uptime) NAPC_FN_WEAK() {
+bool napc_loop(napc_time uptime) {
 	bool link_status = napc_eth_getLinkStatus();
 
 	napc_random_collectBytes();
