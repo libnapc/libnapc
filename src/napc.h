@@ -7,10 +7,10 @@
 
 	/*!
 	 * @name napc_version
-	 * @brief Get version of libnapc.
+	 * @brief Get the version of libnapc.
 	 * @version 1.2.0
 	 * @description
-	 * Returns the version of libnapc implementation.
+	 * Returns the version of the current libnapc implementation.
 	 * @changelog 1.2.0 20.03.2022 initial version
 	 * @example
 	 * napc_printf("Using libnapc version: %s\n", napc_version());
@@ -18,6 +18,20 @@
 	// this function will be automatically
 	// defined by build.scripts/build.php
 	const char *napc_version(void);
+
+	/*!
+	 * @name napc_getFullVersion
+	 * @brief Get the full version of libnapc.
+	 * @version 1.3.0
+	 * @description
+	 * Returns the full version of the current libnapc implementation.
+	 * @changelog 1.3.0 21.03.2022 initial version
+	 * @example
+	 * napc_printf("Using libnapc version: %s\n", napc_getFullVersion());
+	 */
+	// this function will be automatically
+	// defined by build.scripts/build.php
+	const char *napc_getFullVersion(void);
 
 	#include <napc-serial/napc-serial.h>
 	#include <napc-time/napc-time.h>
