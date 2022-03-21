@@ -17,6 +17,8 @@ return function() {
 		if (substr($tmp, 0, 1) === "v") {
 			$release_version = substr($tmp, 1);
 		}
+	} else {
+		$release_version = $git_branch."-".substr($git_head, 0, 7);
 	}
 
 	return [
