@@ -9,6 +9,7 @@ cp -r src arduino.tmp/src
 
 # remove source files
 find arduino.tmp -name '*.c' -delete
+find arduino.tmp -name '*.cpp' -delete
 
 # copy processed source files
 cp -r dist/processed_src/*.c arduino.tmp/src/
