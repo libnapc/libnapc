@@ -10,6 +10,16 @@ void napc_main(const char *platform) {
 	napc_printf("(c) by nap.software (platform=%s)\n", platform);
 	napc_printf("Using libnapc version %s\n", napc_version());
 
+	#if defined(LIBNAPC_GIT_BRANCH)
+		if (!napc_streqli(LIBNAPC_GIT_BRANCH, "main")) {
+			napc_printf("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+			napc_printf(
+				"! warning: not using a stable software release of libnapc !\n"
+			);
+			napc_printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\n");
+		}
+	#endif
+
 	napc_setup(platform);
 
 	bool is_linux = napc_streqli(platform, "linux");
