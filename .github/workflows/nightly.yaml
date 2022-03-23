@@ -36,8 +36,8 @@ jobs:
     - name: Start local server
       run: cd documentation-site/ && php -S 0.0.0.0:9999 index.php &
 
-    - name: Create documentation
-      run: cd documentation-site/ && php create.php --optimized && ls -la ../dist
+    - name: Export documentation
+      run: ./documentation-site/export.php --optimized
 
     - name: Deploy
       run: ./ci.deploy.php

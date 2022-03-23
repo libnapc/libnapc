@@ -1,5 +1,6 @@
+#!/usr/bin/env php
 <?php
-require_once __DIR__."/../php.lib/exec_or_die.php";
+require_once __DIR__."/../x-php-utils/load.php";
 
 if (sizeof($argv) !== 2) {
 	fwrite(STDERR, "Output type is missing\n");
@@ -14,11 +15,11 @@ define("SERVER_ROOT_URL", "http://localhost:9999/");
 
 chdir(__DIR__);
 
-exec_or_die("rm -rf dist.tmp");
+XPHPUtils::shell_assertSystemCall("rm -rf dist.tmp");
 // todo: do not delete .gitkeep file
-exec_or_die("rm -rf sass.cache");
-exec_or_die("mkdir sass.cache");
-exec_or_die("mkdir dist.tmp");
+XPHPUtils::shell_assertSystemCall("rm -rf sass.cache");
+XPHPUtils::shell_assertSystemCall("mkdir sass.cache");
+XPHPUtils::shell_assertSystemCall("mkdir dist.tmp");
 
 $output_type = strtolower($argv[1]);
 
@@ -71,6 +72,6 @@ if ($output_type === "--optimized") {
 
 download("downloads.html");
 
-exec_or_die("rm -rf dist");
-exec_or_die("mv dist.tmp dist");
-exec_or_die("cd dist && tar -czvf ../../dist/doc.tar.gz .");
+XPHPUtils::shell_assertSystemCall("rm -rf dist");
+XPHPUtils::shell_assertSystemCall("mv dist.tmp dist");
+XPHPUtils::shell_assertSystemCall("cd dist && tar -czvf ../../dist/doc.tar.gz .");

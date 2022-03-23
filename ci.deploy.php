@@ -1,16 +1,16 @@
 #!/usr/bin/env php
 <?php
 
+require_once __DIR__."/x-php-utils/load.php";
+
 chdir(__DIR__);
 
 $url = getenv("NAPCDOC_DEPLOY_URL");
 
-$git = (require __DIR__."/_git.php")();
-
 $post = [
 	"NAPCDOC_DEPLOY_KEY" => getenv("NAPCDOC_DEPLOY_KEY"),
-	"NAPCDOC_GIT_BRANCH" => $git["branch"],
-	"NAPCDOC_GIT_HEAD"   => $git["HEAD"]
+	"NAPCDOC_GIT_BRANCH" => XPHPUtils::git_getCurrentBranch(),
+	"NAPCDOC_GIT_HEAD"   => XPHPUtils::git_getHEADHash()
 ];
 
 foreach ([
