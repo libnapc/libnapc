@@ -7,7 +7,8 @@ return function($keys) {
 		echo "</style>";
 	} else {
 		$style = napcdoc::documentation_fixLink("style.css");
+		$git_head = napcdoc::documentation_get()["build_constants"]["GIT_HEAD_HASH"];
 
-		echo '<link rel="stylesheet" href="'.$style.'" type="text/css">';
+		echo '<link rel="stylesheet" href="'.$style.'?v='.$git_head.'" type="text/css">';
 	}
 };
