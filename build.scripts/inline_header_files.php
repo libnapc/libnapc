@@ -47,4 +47,17 @@ function process_file($file, $context, $indent_level = 0) {
 	return $ret;
 }
 
+$git = (require __DIR__."/../_git.php")();
+
+echo "/** \n";
+echo "* libnapc\n";
+echo "* (c) by nap.software\n";
+echo "* \n";
+echo "* Reference at https://libnapc.nap-software/\n";
+echo "* \n";
+echo "* Version    : ".$git["release_version"]."\n";
+echo "* Git branch : ".$git["branch"]."\n";
+echo "* Git head   : ".$git["HEAD"]." \n";
+echo "*/\n";
+
 echo process_file($start_file, $context);
