@@ -1,6 +1,5 @@
 #!/usr/bin/env php
 <?php
-require_once __DIR__."/php.lib/exec_or_die.php";
 
 chdir(__DIR__);
 

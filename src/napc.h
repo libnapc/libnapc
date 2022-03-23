@@ -1,3 +1,14 @@
+/** 
+* libnapc
+* (c) by nap.software
+* 
+* Reference at https://libnapc.nap-software/
+* 
+* Version    : %BC_RELEASE_VERSION%
+* Git branch : %BC_GIT_BRANCH%
+* Git head   : %BC_GIT_HEAD_HASH%
+* Build date : %BC_BUILD_DATE%
+*/
 #if !defined(NAPC_h)
 	#define NAPC_h
 

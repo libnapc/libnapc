@@ -1,43 +1,74 @@
 #!/usr/bin/env php
 <?php
-require_once __DIR__."/../php.lib/exec_or_die.php";
+
+require_once __DIR__."/../x-php-utils/load.php";
+
+define("BUILD_DATE", gmdate("d.m.Y H:i:s"));
+
+function build($config) {
+	$cloneSourceTree = require __DIR__."/0.cloneSourceTree.php";
+
+	$cloneSourceTree(function($contents) use ($config) {
+		foreach ($config["build_constants"] as $key => $value) {
+			$contents = str_replace(
+				"%BC_$key%", $value, $contents
+			);
+		}
+
+		return $contents;
+	});
+
+	$createBootFile = require __DIR__."/1.createBootFile.php";
+	$createBootFile();
+
+	if ($config["include_tests"]) {
+		$processTestFiles = require __DIR__."/2.processTestFiles.php";
+		$processTestFiles();
+
+		$createTestingFiles = require __DIR__."/3.createTestingFiles.php";
+		$createTestingFiles();
+	}
+
+	$createNAPCHeaderFile = require __DIR__."/4.createNAPCHeaderFile.php";
+	$createNAPCHeaderFile();
+
+	$createStaticLibraries = require __DIR__."/5.createStaticLibraries.php";
+	$createStaticLibraries();
+
+	$packageArduinoLibrary = require __DIR__."/6.packageArduinoLibrary.php";
+	$packageArduinoLibrary();
+
+	mkdir("dist.tmp", 0777, true);
+
+	foreach (scandir("build/lib") as $output_file_name) {
+		if (substr($output_file_name, 0, 1) === ".") continue;
+
+		copy("build/lib/$output_file_name", "dist.tmp/$output_file_name");
+	}
+
+	copy("build/napc.h", "dist.tmp/napc.h");
+
+	XPHPUtils::shell_assertSystemCall("rm -rf dist");
+	rename("dist.tmp", "dist");
+}
 
 chdir(__DIR__."/../");
 
-$include_tests = "yes";
+$arduino_friendly_version = XPHPUtils::libnapc_getReleaseVersion();
 
-if (sizeof($argv) > 1) {
-	if ($argv[1] === "--no-tests") {
-		$include_tests = "no";
-	}
+if (XPHPUtils::git_getCurrentBranch() !== "main") {
+	$arduino_friendly_version = "0.0.1";
 }
 
-fwrite(STDERR, "Will include tests: $include_tests\n");
+XPHPUtils::shell_assertSystemCall("rm -rf build");
 
-exec_or_die("rm -rf dist");
-exec_or_die("mkdir dist");
-exec_or_die("mkdir dist/tmp_files");
-
-$git = (require __DIR__."/../_git.php")();
-
-file_put_contents(
-	"dist/tmp_files/library.properties",
-	str_replace(
-		[
-			"%LIBNAPC_VERSION_ARDUINO%",
-			"%LIBNAPC_VERSION_STRING%"
-		],
-		[
-			$git["arduino_version"],
-			$git["release_version"]
-		],
-		file_get_contents("library.properties")
-	)
-);
-
-exec_or_die("php build.scripts/create_boot_file.php");
-exec_or_die("php build.scripts/create_test_files.php");
-exec_or_die("php build.scripts/_process_source_files.php");
-exec_or_die("php build.scripts/inline_header_files.php src/napc.h > dist/napc.h");
-exec_or_die("php build.scripts/create_static_library.php");
-exec_or_die("./build.scripts/_build.sh $include_tests");
+build([
+	"build_constants" => [
+		"GIT_BRANCH" => XPHPUtils::git_getCurrentBranch(),
+		"GIT_HEAD_HASH" => XPHPUtils::git_getHEADHash(),
+		"RELEASE_VERSION" => XPHPUtils::libnapc_getReleaseVersion(),
+		"ARDUINO_FRIENDLY_VERSION" => $arduino_friendly_version,
+		"BUILD_DATE" => BUILD_DATE
+	],
+	"include_tests" => !(isset($argv[1]) && $argv[1] == "--no-tests")
+]);

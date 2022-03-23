@@ -1,5 +1,7 @@
 .DS_Store
 dist/
+dist.tmp/
+build/
 documentation-site/dist.tmp/
 documentation-site/dist/
 documentation-site/sass.cache/*
