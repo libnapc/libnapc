@@ -1,11 +1,45 @@
 #!/usr/bin/env php
 <?php
 
+$build_flags = [
+	"tests" => true,
+	"documentation" => true,
+	"arduino-zip" => true
+];
+array_shift($argv);
+
+foreach ($argv as $arg) {
+	switch ($arg) {
+		case "--tests":
+			$build_flags["tests"] = true;
+		break;
+
+		case "--no-documentation":
+			$build_flags["documentation"] = false;
+		break;
+
+		case "--no-arduino-zip":
+			$build_flags["arduino-zip"] = false;
+		break;
+
+		default:
+			fwrite(STDERR, "Unknown build flag '$arg'\n");
+			exit(2);
+	}
+}
+
+
 require_once __DIR__."/../x-php-utils/load.php";
 
 define("BUILD_DATE", gmdate("d.m.Y H:i:s"));
 
 function build($config) {
+	fwrite(STDERR, "Using build flags: \n");
+
+	foreach ($config["build_flags"] as $flag => $value) {
+		fwrite(STDERR, "    $flag: ".($value ? "yes" : "no")."\n");
+	}
+
 	$cloneSourceTree = require __DIR__."/0.cloneSourceTree.php";
 
 	$cloneSourceTree(function($contents) use ($config) {
@@ -21,7 +55,7 @@ function build($config) {
 	$createBootFile = require __DIR__."/1.createBootFile.php";
 	$createBootFile();
 
-	if ($config["include_tests"]) {
+	if ($config["build_flags"]["tests"]) {
 		$processTestFiles = require __DIR__."/2.processTestFiles.php";
 		$processTestFiles();
 
@@ -35,8 +69,10 @@ function build($config) {
 	$createStaticLibraries = require __DIR__."/5.createStaticLibraries.php";
 	$createStaticLibraries();
 
-	$packageArduinoLibrary = require __DIR__."/6.packageArduinoLibrary.php";
-	$packageArduinoLibrary();
+	if ($config["build_flags"]["arduino-zip"]) {
+		$packageArduinoLibrary = require __DIR__."/6.packageArduinoLibrary.php";
+		$packageArduinoLibrary();
+	}
 
 	mkdir("dist.tmp", 0777, true);
 
@@ -48,8 +84,42 @@ function build($config) {
 
 	copy("build/napc.h", "dist.tmp/napc.h");
 
+	/**
+	 * Documentation
+	 */
+	if ($config["build_flags"]["documentation"]) {
+		$doc_extractCSymbols = require __DIR__."/10.doc_extractCSymbols.php";
+		$doc_extractCSymbols();
+
+		$doc_tagHALFunctions = require __DIR__."/11.doc_tagHALFunctions.php";
+		$doc_tagHALFunctions();
+
+		$doc_parseDocBlocks = require __DIR__."/12.doc_parseDocBlocks.php";
+		$doc_parseDocBlocks();
+
+		$doc_mapSymbolsToModules = require __DIR__."/13.doc_mapSymbolsToModules.php";
+		$doc_mapSymbolsToModules();
+
+		$doc_mapAll = require __DIR__."/14.doc_mapAll.php";
+		$doc_mapAll();
+
+		$doc_normalize = require __DIR__."/15.doc_normalize.php";
+		$doc_normalize($config["build_constants"]);
+
+		copy("build/doc/napc.json", "dist.tmp/napc.json");
+	}
+
+	/**
+	 * Finish up
+	 */
 	XPHPUtils::shell_assertSystemCall("rm -rf dist");
 	rename("dist.tmp", "dist");
+
+	fwrite(STDERR, "All done, used build flags: \n");
+
+	foreach ($config["build_flags"] as $flag => $value) {
+		fwrite(STDERR, "    $flag: ".($value ? "yes" : "no")."\n");
+	}
 }
 
 chdir(__DIR__."/../");
@@ -60,15 +130,15 @@ if (XPHPUtils::git_getCurrentBranch() !== "main") {
 	$arduino_friendly_version = "0.0.1";
 }
 
-XPHPUtils::shell_assertSystemCall("rm -rf build");
+XPHPUtils::shell_assertSystemCall("rm -rf build dist.tmp");
 
 build([
+	"build_flags" => $build_flags,
 	"build_constants" => [
 		"GIT_BRANCH" => XPHPUtils::git_getCurrentBranch(),
 		"GIT_HEAD_HASH" => XPHPUtils::git_getHEADHash(),
 		"RELEASE_VERSION" => XPHPUtils::libnapc_getReleaseVersion(),
 		"ARDUINO_FRIENDLY_VERSION" => $arduino_friendly_version,
 		"BUILD_DATE" => BUILD_DATE
-	],
-	"include_tests" => !(isset($argv[1]) && $argv[1] == "--no-tests")
+	]
 ]);

@@ -1,4 +1,5 @@
 {
+	"_comment": "Maps a C type to its kind",
 	"napc_u8": "uint8_t",
 	"napc_i8": "int8_t",
 	"napc_u16": "uint16_t",

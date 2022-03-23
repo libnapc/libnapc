@@ -1,7 +1,7 @@
 <?php
 
 return function($keys) {
-	$get_version = require __DIR__."/../../doc/version.php";
+	$build_constants = napcdoc::documentation_get()["build_constants"];
 ?>
 	<div id="napcdoc-content">
 		<?php echo $keys["content"] ?? "No content available"; ?>
@@ -10,7 +10,7 @@ return function($keys) {
 
 		<div class="page-info">
 			<div class="version">
-				Version of documentation: <?php echo $get_version(); ?>
+				Version: <?php echo $build_constants["RELEASE_VERSION"]; ?>
 			</div>
 			<div class="created-at">
 				Documentation generated at <?php echo gmdate("d.m.Y H:i:s"); ?> (UTC)

@@ -3,9 +3,7 @@
 return function($request) {
 	$keys = [];
 
-	if (is_file(__DIR__."/../../_git.php")) {
-		$keys["_git"] = (require __DIR__."/../../_git.php")();
-	}
+	$keys["_build_constants"] = napcdoc::documentation_get()["build_constants"];
 
 	if ($request["module"]) {
 		if (!$request["definition"]) {

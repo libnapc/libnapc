@@ -19,7 +19,7 @@ return function($keys) {
 	<meta property="og:image" content="https://libnapc.nap.software/static/banner.png">
 </head>
 <!-- body { display: block; } will be set after HTML loaded -->
-<body class="theme-dark git-branch-<?php echo $keys["_git"]["branch"] ?? ""; ?>" style="display: none;">
+<body class="theme-dark git-branch-<?php echo $keys["_build_constants"]["GIT_BRANCH"]; ?>" style="display: none;">
 
 	<div id="napcdoc-layout-background"></div>
 
@@ -43,7 +43,7 @@ return function($keys) {
 		<?php
 			$logo_src = "image/libnapc-logo-min.png";
 
-			if (in_array($keys["_git"]["branch"] ?? "", ["nightly", "dev"])) {
+			if (in_array($keys["_build_constants"]["GIT_BRANCH"], ["nightly", "dev"])) {
 				$logo_src = "image/libnapc-logo-nightly-min.png";
 			}
 

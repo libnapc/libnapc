@@ -1,9 +1,3 @@
-<?php
-
-$checksums = require __DIR__."/../checksums.php";
-
-?>
-
 <style>
 div.flex-table.releases div.flex-table-row-cell.checksum {
 	color: rgba(255, 255, 255, .3);
@@ -23,13 +17,15 @@ div.flex-table.releases div.flex-table-row-cell.checksum {
 	</div>
 
 	<?php
-		foreach ($checksums as $file => $checksum) {
+		$release_files = napcdoc::documentation_get()["release_files"];
+
+		foreach ($release_files as $file) {
 			echo '<div class="flex-table-row">';
 			echo '	<div class="flex-table-row-cell">';
-			echo '		<a href="/download/'.$file.'">'.$file.'</a>';
+			echo '		<a href="/download/'.$file["name"].'">'.$file["name"].'</a>';
 			echo ' </div>';
 			echo '	<div class="flex-table-row-cell checksum">';
-			echo '		'.$checksum;
+			echo '		'.$file["checksum"];
 			echo '	</div>';
 			echo '</div>';
 		}

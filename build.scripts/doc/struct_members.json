@@ -1,4 +1,5 @@
 {
+	"_comment": "Struct members are not extracted automatically yet.",
 	"napc__Buffer": {
 		"size": "napc_size",
 		"data": "void *"

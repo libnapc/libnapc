@@ -21,7 +21,7 @@ jobs:
          sudo apt install gcc-x86-64-linux-gnu
 
     - name: Build source
-      run: ./build.scripts/build.php
+      run: ./build.scripts/build.php --no-documentation --no-arduino-zip
 
     - name: Unit tests
       run: ./ci.run-tests.sh
