@@ -12,6 +12,8 @@ if (sizeof($argv) > 1) {
 	}
 }
 
+fwrite(STDERR, "Will include tests: $include_tests\n");
+
 exec_or_die("rm -rf dist");
 exec_or_die("mkdir dist");
 exec_or_die("mkdir dist/tmp_files");
