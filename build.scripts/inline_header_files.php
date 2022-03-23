@@ -60,4 +60,11 @@ echo "* Git branch : ".$git["branch"]."\n";
 echo "* Git head   : ".$git["HEAD"]." \n";
 echo "*/\n";
 
+echo "/*\n";
+foreach (file(__DIR__."/../LICENSE") as $line) {
+	echo "* $line";
+}
+
+echo "*/\n";
+
 echo process_file($start_file, $context);
