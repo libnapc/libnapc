@@ -1,5 +1,7 @@
 ![logo of libnapc](https://libnapc.nap.software/static/libnapc-github.png)
 
+[![Build and Test (dev)](https://github.com/nap-software/libnapc/actions/workflows/dev.yaml/badge.svg?branch=dev)](https://github.com/nap-software/libnapc/actions/workflows/dev.yaml)
+
 # libnapc
 
 Thank you very much for checking out the documentation of [libnapc](https://libnapc.nap.software/)! 🎉
