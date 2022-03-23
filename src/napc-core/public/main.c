@@ -1,6 +1,6 @@
 #include <napc-core/_private/_napc-core.h>
 
-const char *napc_version(void);
+const char *napc_getFullVersion(void);
 
 napc_time PV_napc_uptime = 0; // @global
 
