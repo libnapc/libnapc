@@ -44,7 +44,7 @@ return function($keys) {
 			$logo_src = "image/libnapc-logo-min.png";
 
 			if (in_array($keys["_build_constants"]["GIT_BRANCH"], ["nightly", "dev"])) {
-				$logo_src = "image/libnapc-logo-nightly-min.png";
+				$logo_src = "image/libnapc-logo-".$keys["_build_constants"]["GIT_BRANCH"]."-min.png";
 			}
 
 			echo napcdoc::createHTMLElement("a", [
