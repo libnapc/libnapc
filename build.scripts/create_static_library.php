@@ -20,9 +20,6 @@ class Program {
 
 		$this->_cmd = $real_command;
 
-		//fwrite(STDERR, "Executing '$real_command'\n");
-
-		// todo: catch output
 		$this->_proc = proc_open(
 			$real_command, [
 				STDIN, ["pipe", "w"], ["pipe", "w"]
