@@ -6,6 +6,14 @@ mkdir arduino.tmp
 mkdir -p dist
 
 cp -r src arduino.tmp/src
+
+# remove source files
+find arduino.tmp -name '*.c' -delete
+
+# copy processed source files
+cp -r dist/processed_src/*.c arduino.tmp/src/
+cp -r dist/processed_src/*.cpp arduino.tmp/src/
+
 cp dist/tmp_files/library.properties arduino.tmp
 
 if [ "$1" = "yes" ]; then

@@ -7,7 +7,7 @@ chdir(__DIR__."/../");
 exec_or_die("rm -rf dist/processed_src");
 exec_or_die("mkdir -p dist/processed_src");
 
-$output = shell_exec("find src -name '*.c'");
+$output = shell_exec("find src -name '*.c' && find src -name '*.cpp'");
 $lines = explode("\n", $output);
 $files = [];
 
