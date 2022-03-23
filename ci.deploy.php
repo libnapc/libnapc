@@ -5,12 +5,13 @@ require_once __DIR__."/x-php-utils/load.php";
 
 chdir(__DIR__);
 
-$url = getenv("NAPCDOC_DEPLOY_URL");
+$url = getenv("LIBNAPC_DEPLOY_URL");
 
 $post = [
-	"NAPCDOC_DEPLOY_KEY" => getenv("NAPCDOC_DEPLOY_KEY"),
-	"NAPCDOC_GIT_BRANCH" => XPHPUtils::git_getCurrentBranch(),
-	"NAPCDOC_GIT_HEAD"   => XPHPUtils::git_getHEADHash()
+	"LIBNAPC_DEPLOY_KEY"      => getenv("LIBNAPC_DEPLOY_KEY"),
+	"LIBNAPC_GIT_BRANCH"      => XPHPUtils::git_getCurrentBranch(),
+	"LIBNAPC_GIT_HEAD"        => XPHPUtils::git_getHEADHash(),
+	"LIBNAPC_RELEASE_VERSION" => XPHPUtils::libnapc_getReleaseVersion()
 ];
 
 foreach ([

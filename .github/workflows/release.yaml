@@ -7,9 +7,9 @@ on:
       - '*'           # Push events to every tag not containing /
 
 env:
-  NAPCDOC_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-  NAPCDOC_DEPLOY_URL: ${{ secrets.DEPLOY_URL }}
-  NAPCDOC_GIT_BRANCH: main # because git is in detached HEAD state in this workflow
+  LIBNAPC_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+  LIBNAPC_DEPLOY_URL: ${{ secrets.DEPLOY_URL }}
+  LIBNAPC_GIT_BRANCH: main # because git is in detached HEAD state in this workflow
 
 jobs:
   build:
