@@ -37,6 +37,15 @@ return function() {
 	copy("LICENSE", "build/arduino_files/LICENSE");
 	copy("README.md", "build/arduino_files/README.md");
 
+	foreach (scandir("arduino_examples") as $example) {
+		mkdir("build/arduino_files/examples/$example", 0777, true);
+
+		copy(
+			"arduino_examples/$example/$example.ino",
+			"build/arduino_files/examples/$example/$example.ino",
+		);
+	}
+
 	XPHPUtils::shell_assertSystemCall(
 		"cd build/arduino_files/ && zip -r ../lib/libnapc-arduino.zip ."
 	);
