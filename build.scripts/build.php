@@ -35,6 +35,19 @@ file_put_contents(
 	)
 );
 
+$git_branch = $git["branch"];
+$git_head = $git["HEAD"];
+$release_version = $git["release_version"];
+
+file_put_contents(
+	"dist/tmp_files/arduino_git_defines.h",
+	"#if !defined(LIBNAPC_GIT_BRANCH)\n".
+	"#define LIBNAPC_GIT_BRANCH \"$git_branch\"\n".
+	"#define LIBNAPC_GIT_HEAD \"$git_head\"\n".
+	"#define LIBNAPC_RELEASE_VERSION \"$release_version\"\n".
+	"#endif\n"
+);
+
 file_put_contents(
 	"dist/tmp_files/napc_version.c",
 	"const char *napc_version() { return \"".$git["release_version"]."\"; }".

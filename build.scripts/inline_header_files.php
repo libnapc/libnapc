@@ -37,7 +37,7 @@ function process_file($file, $context, $indent_level = 0) {
 
 				$included_headers[$real_include_path] = 1;
 			} else {
-				$ret .= $indentation.trim($line);
+				$ret .= $indentation.trim($line)."\n";
 			}
 		} else {
 			$ret .= $indentation.$line;

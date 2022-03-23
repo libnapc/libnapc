@@ -1,6 +1,14 @@
 #if !defined(NAPC_h)
 	#define NAPC_h
 
+	/**
+	 * Arduino specific include:
+	 * Defines git branch/head and version
+	 */
+	#if defined(ARDUINO)
+		#include <arduino_git_defines.h>
+	#endif
+
 	#if defined(__cplusplus)
 		extern "C" {
 	#endif
