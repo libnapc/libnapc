@@ -43,13 +43,22 @@ function build($config) {
 	$cloneSourceTree = require __DIR__."/0.cloneSourceTree.php";
 
 	$cloneSourceTree(function($contents) use ($config) {
+		// add license header file
+		$license_header = "/*\n";
+
+		foreach (file("LICENSE") as $line) {
+			$license_header .= "* $line";
+		}
+
+		$license_header .= "*/\n";
+
 		foreach ($config["build_constants"] as $key => $value) {
 			$contents = str_replace(
 				"%BC_$key%", $value, $contents
 			);
 		}
 
-		return $contents;
+		return $license_header.$contents;
 	});
 
 	$createBootFile = require __DIR__."/1.createBootFile.php";
