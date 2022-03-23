@@ -7,7 +7,8 @@ return function($keys) {
 		echo '</script>';
 	} else {
 		$script = napcdoc::documentation_fixLink("script.js");
+		$git_head = napcdoc::documentation_get()["build_constants"]["GIT_HEAD_HASH"];
 
-		echo '<script src="'.$script.'" type="text/javascript"></script>';
+		echo '<script src="'.$script.'?v='.$git_head.'" type="text/javascript"></script>';
 	}
 };
