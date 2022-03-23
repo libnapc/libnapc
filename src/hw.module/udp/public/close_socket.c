@@ -5,5 +5,5 @@ void napc_UDP_closeSocket(napc__UDPSocket udp_socket) {
 
 	HAL_napc_UDP_closeSocket(element);
 
-	napc_Pool_release(&PV_napc_udp_sockets_pool, udp_socket);
+	napc_Pool_releaseElement(&PV_napc_udp_sockets_pool, udp_socket);
 }

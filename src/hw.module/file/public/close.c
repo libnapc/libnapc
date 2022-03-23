@@ -5,5 +5,5 @@ void napc_File_close(napc__File file) {
 
 	HAL_napc_File_close(element);
 
-	napc_Pool_release(&PV_napc_fs_handles_pool, file);
+	napc_Pool_releaseElement(&PV_napc_fs_handles_pool, file);
 }

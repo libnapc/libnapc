@@ -1,7 +1,15 @@
 <?php
 
 return function() {
-	$file_contents = XPHPUtils::libnapc_inlineHeaderIncludes(
+	$file_contents = "/*\n";
+
+	foreach (file("LICENSE") as $line) {
+		$file_contents .= "* $line";
+	}
+
+	$file_contents .= "*/\n";
+
+	$file_contents .= XPHPUtils::libnapc_inlineHeaderIncludes(
 		"build/napc.h", "build/"
 	);
 
