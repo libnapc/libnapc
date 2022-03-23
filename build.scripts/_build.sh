@@ -7,8 +7,6 @@ mkdir -p dist
 
 cp -r src arduino.tmp/src
 cp dist/tmp_files/library.properties arduino.tmp
-cp dist/tmp_files/napc_version.c arduino.tmp/src
-cp dist/tmp_files/arduino_git_defines.h arduino.tmp/src/arduino_git_defines.h
 
 if [ "$1" = "yes" ]; then
 	mkdir arduino.tmp/src/__tests__

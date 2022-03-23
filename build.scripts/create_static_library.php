@@ -64,20 +64,12 @@ function create_static_lib($cc, $output_name) {
 	exec_or_die("mkdir tmp");
 
 	$output = shell_exec(
-		"find src -name '*.c' && find __tests__/_processed  __tests__/__tests__.c -name '*.c'"
+		"find dist/processed_src -name '*.c' && find __tests__/_processed  __tests__/__tests__.c -name '*.c'"
 	);
 
 	$lines = explode("\n", $output);
 	$object_files = [];
 	$procs = [];
-
-	$git = (require (__DIR__."/../_git.php"))();
-
-	$git_branch = $git["branch"];
-	$git_head = $git["HEAD"];
-	$release_version = $git["release_version"];
-
-	array_push($lines, "dist/tmp_files/napc_version.c");
 
 	foreach ($lines as $line) {
 		$line = trim($line);
@@ -89,9 +81,6 @@ function create_static_lib($cc, $output_name) {
 
 		$proc = new Program($cc, [
 			"-Wall", "-Wextra", "-Wpedantic", "-I./src/",
-			"-DLIBNAPC_GIT_BRANCH=\"$git_branch\"",
-			"-DLIBNAPC_GIT_HEAD=\"$git_head\"",
-			"-DLIBNAPC_RELEASE_VERSION=\"$release_version\"",
 			$file_path, "-c", "-o", $object_file
 		]);
 

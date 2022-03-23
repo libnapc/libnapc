@@ -1,14 +1,6 @@
 #if !defined(NAPC_h)
 	#define NAPC_h
 
-	/**
-	 * Arduino specific include:
-	 * Defines git branch/head and version
-	 */
-	#if defined(ARDUINO)
-		#include <arduino_git_defines.h>
-	#endif
-
 	#if defined(__cplusplus)
 		extern "C" {
 	#endif
@@ -23,8 +15,6 @@
 	 * @example
 	 * napc_printf("Using libnapc version: %s\n", napc_version());
 	 */
-	// this function will be automatically
-	// defined by build.scripts/build.php
 	const char *napc_version(void);
 
 	/*!
@@ -37,8 +27,6 @@
 	 * @example
 	 * napc_printf("Using libnapc version: %s\n", napc_getFullVersion());
 	 */
-	// this function will be automatically
-	// defined by build.scripts/build.php
 	const char *napc_getFullVersion(void);
 
 	#include <napc-serial/napc-serial.h>
