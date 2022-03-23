@@ -21,8 +21,14 @@ $git = (require __DIR__."/../_git.php")();
 file_put_contents(
 	"dist/tmp_files/library.properties",
 	str_replace(
-		"%LIBNAPC_VERSION_STRING%",
-		$git["arduino_version"],
+		[
+			"%LIBNAPC_VERSION_ARDUINO%",
+			"%LIBNAPC_VERSION_STRING%"
+		],
+		[
+			$git["arduino_version"],
+			$git["release_version"]
+		],
 		file_get_contents("library.properties")
 	)
 );
