@@ -1,9 +1,21 @@
 <?php
 
 return function() {
-	$source_files = XPHPUtils::fs_scandirRecursive("build");
+	$entries = XPHPUtils::fs_scandirRecursive("build");
 
-	$source_files = array_filter($source_files, function($entry) {
+	$directories = array_filter($entries, function($entry) {
+		return $entry["type"] === "dir";
+	});
+
+	foreach ($directories as $directory) {
+		$directory = $directory["rel_path"];
+
+		if (is_dir("build/arduino_files/src/$directory")) continue;
+
+		mkdir("build/arduino_files/src/$directory", 0777, true);
+	}
+
+	$source_files = array_filter($entries, function($entry) {
 		if ($entry["type"] !== "file") return false;
 
 		if (substr($entry["basename"], -2, 2) === ".c") return true;
@@ -16,7 +28,7 @@ return function() {
 	mkdir("build/arduino_files/src", 0777, true);
 
 	foreach ($source_files as $source_file) {
-		$dest_path = "build/arduino_files/src/".str_replace("/", "_", $source_file["rel_path"]);
+		$dest_path = "build/arduino_files/src/".$source_file["rel_path"];
 
 		copy($source_file["abs_path"], $dest_path);
 	}

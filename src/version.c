@@ -1,8 +1,8 @@
 const char *napc_version(void) {
-	return "%LIBNAPC_RELEASE_VERSION%";
+	return "%BC_RELEASE_VERSION%";
 }
 
 
 const char *napc_getFullVersion(void) {
-	return "%LIBNAPC_GIT_HEAD%";
+	return "%BC_BUILD_DATE% %BC_GIT_HEAD_HASH%";
 }
