@@ -12,6 +12,8 @@ void napc_main(const char *platform) {
 
 	napc_setup(platform);
 
+	bool is_linux = napc_streqli(platform, "linux");
+
 	while (true) {
 		napc_time delta = napc_getTimeSinceBoot() - reference;
 
@@ -23,6 +25,11 @@ void napc_main(const char *platform) {
 			PV_napc_uptime += n_seconds;
 
 			reference = napc_getTimeSinceBoot();
+		}
+
+		// prevent high cpu usage on linux systems
+		if (is_linux) {
+			napc_delay(5);
 		}
 	}
 }
