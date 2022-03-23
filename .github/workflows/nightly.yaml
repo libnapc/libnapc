@@ -30,9 +30,6 @@ jobs:
     - name: Unit tests
       run: ./ci.run-tests.sh
 
-    - name: Create documentation file
-      run: ./doc.scripts/create.php
-
     - name: Start local server
       run: cd documentation-site/ && php -S 0.0.0.0:9999 index.php &
 

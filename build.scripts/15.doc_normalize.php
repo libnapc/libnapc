@@ -319,10 +319,10 @@ return function($build_constants) {
 	$mapped_napc["release_files"] = [];
 
 	$release_files = [
-		"libnapc-aarch64.a"   => "dist/libnapc-aarch64.a",
-		"libnapc-x86_64.a"    => "dist/libnapc-x86_64.a",
-		"napc.h"              => "dist/napc.h",
-		"libnapc-arduino.zip" => "dist/libnapc-arduino.zip"
+		"libnapc-aarch64.a"   => "build/lib/libnapc-aarch64.a",
+		"libnapc-x86_64.a"    => "build/lib/libnapc-x86_64.a",
+		"napc.h"              => "build/napc.h",
+		"libnapc-arduino.zip" => "build/lib/libnapc-arduino.zip"
 	];
 
 	foreach ($release_files as $file_name => $path) {
