@@ -34,7 +34,8 @@ return function() {
 	}
 
 	copy("build/library.properties", "build/arduino_files/library.properties");
-	copy("LICENSE", "build/arduino_files/src/LICENSE");
+	copy("LICENSE", "build/arduino_files/LICENSE");
+	copy("README.md", "build/arduino_files/README.md");
 
 	XPHPUtils::shell_assertSystemCall(
 		"cd build/arduino_files/ && zip -r ../lib/libnapc-arduino.zip ."
