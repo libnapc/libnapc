@@ -20,11 +20,11 @@ TEST_CASE("should work correctly") {
 
 	napc_Pool_init(&pool, NULL, my_array, 5, sizeof(struct napc_pool_test_struct));
 
-	NAPC_ASSERT(napc_Pool_allocate(&pool) == 0);
-	NAPC_ASSERT(napc_Pool_allocate(&pool) == 1);
-	NAPC_ASSERT(napc_Pool_allocate(&pool) == 2);
-	NAPC_ASSERT(napc_Pool_allocate(&pool) == 3);
-	NAPC_ASSERT(napc_Pool_allocate(&pool) == 4);
+	NAPC_ASSERT(napc_Pool_claimElement(&pool) == 0);
+	NAPC_ASSERT(napc_Pool_claimElement(&pool) == 1);
+	NAPC_ASSERT(napc_Pool_claimElement(&pool) == 2);
+	NAPC_ASSERT(napc_Pool_claimElement(&pool) == 3);
+	NAPC_ASSERT(napc_Pool_claimElement(&pool) == 4);
 
 	NAPC_ASSERT(napc_Pool_getAddress(&pool, 0) == addr_element0);
 	NAPC_ASSERT(napc_Pool_getAddress(&pool, 1) == addr_element1);
@@ -33,9 +33,9 @@ TEST_CASE("should work correctly") {
 	NAPC_ASSERT(napc_Pool_getAddress(&pool, 4) == addr_element4);
 
 	// element 3 should be available after this call
-	napc_Pool_release(&pool, 3);
+	napc_Pool_releaseElement(&pool, 3);
 
-	NAPC_ASSERT(napc_Pool_allocate(&pool) == 3);
+	NAPC_ASSERT(napc_Pool_claimElement(&pool) == 3);
 
 	unsigned char *tmp = napc_Pool_getAddress(&pool, 3);
 

@@ -20,7 +20,7 @@ return function() {
 			$object_file = "build/object_files/$compiler/".str_replace("/", "_", $source_file["rel_path"]).".o";
 
 			$proc = XPHPUtils::shell_Programm($compiler, [
-				"-Wall", "-Wextra", "-Wpedantic", "-I./src/",
+				"-Wall", "-Wextra", "-Wpedantic", "-Werror", "-I./src/",
 				$source_file["abs_path"], "-c", "-o", $object_file
 			]);
 
