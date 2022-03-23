@@ -26,7 +26,7 @@ return function($preprocess) {
 		$dest_path = "build/".$entry["rel_path"];
 
 		if (is_callable($preprocess)) {
-			$file_contents = $preprocess($file_contents);
+			$file_contents = $preprocess($file_contents, $entry["basename"]);
 		}
 
 		file_put_contents($dest_path.".tmp", $file_contents);

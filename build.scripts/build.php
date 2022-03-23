@@ -48,15 +48,24 @@ function build($config) {
 
 	$cloneSourceTree = require __DIR__."/0.cloneSourceTree.php";
 
-	$cloneSourceTree(function($contents) use ($config) {
-		// add license header file
-		$license_header = "/*\n";
+	$cloneSourceTree(function($contents, $filename) use ($config) {
+		$license_header = "";
 
-		foreach (file("LICENSE") as $line) {
-			$license_header .= "* $line";
+		if (
+			substr($filename, -2, 2) === ".c" ||
+			substr($filename, -2, 2) === ".h" ||
+			substr($filename, -4, 4) === ".cpp" ||
+			substr($filename, -4, 4) === ".hpp"
+		) {
+			// add license header file
+			$license_header = "/*\n";
+
+			foreach (file("LICENSE") as $line) {
+				$license_header .= "* $line";
+			}
+
+			$license_header .= "*/\n";
 		}
-
-		$license_header .= "*/\n";
 
 		foreach ($config["build_constants"] as $key => $value) {
 			$contents = str_replace(
