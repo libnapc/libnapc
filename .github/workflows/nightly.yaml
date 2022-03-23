@@ -7,8 +7,8 @@ on:
     branches: [ nightly ]
 
 env:
-  NAPCDOC_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-  NAPCDOC_DEPLOY_URL: ${{ secrets.DEPLOY_URL }}
+  LIBNAPC_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+  LIBNAPC_DEPLOY_URL: ${{ secrets.DEPLOY_URL }}
 
 jobs:
   build:
