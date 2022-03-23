@@ -40,6 +40,12 @@ function build($config) {
 		fwrite(STDERR, "    $flag: ".($value ? "yes" : "no")."\n");
 	}
 
+	fwrite(STDERR, "Using build constants: \n");
+
+	foreach ($config["build_constants"] as $key => $value) {
+		fwrite(STDERR, "    $key: $value\n");
+	}
+
 	$cloneSourceTree = require __DIR__."/0.cloneSourceTree.php";
 
 	$cloneSourceTree(function($contents) use ($config) {
