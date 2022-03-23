@@ -6,6 +6,10 @@ class Program {
 	private $_proc;
 	private $_was_running = true;
 	private $_exit_code = -1;
+	private $_pipes = [];
+	private $_stdout = "";
+	private $_stderr = "";
+	private $_cmd = "";
 
 	public function __construct($command, $args = []) {
 		$real_command = $command." ";
@@ -14,14 +18,20 @@ class Program {
 			$real_command .= escapeshellarg($arg)." ";
 		}
 
+		$this->_cmd = $real_command;
+
 		//fwrite(STDERR, "Executing '$real_command'\n");
 
 		// todo: catch output
 		$this->_proc = proc_open(
 			$real_command, [
-				STDIN, STDOUT, STDOUT
-			], $pipes
+				STDIN, ["pipe", "w"], ["pipe", "w"]
+			], $this->_pipes
 		);
+	}
+
+	public function getCommand() {
+		return $this->_cmd;
 	}
 
 	public function getExitCode() {
@@ -29,11 +39,24 @@ class Program {
 
 		if ($status["running"] !== $this->_was_running) {
 			$this->_exit_code = $status["exitcode"];
+
+			$this->_stdout = stream_get_contents($this->_pipes[1]);
+			$this->_stderr = stream_get_contents($this->_pipes[2]);
+
+			fclose($this->_pipes[1]);
+			fclose($this->_pipes[2]);
 		}
 
 		$this->_was_running = $status["running"];
 
 		return $status["running"] ? -1 : $this->_exit_code;
+	}
+
+	public function getOutput() {
+		return [
+			"stdout" => $this->_stdout,
+			"stderr" => $this->_stderr
+		];
 	}
 }
 
@@ -78,8 +101,27 @@ function create_static_lib($cc, $output_name) {
 
 		foreach ($procs as $proc) {
 			if ($proc->getExitCode() !== -1) {
-				if ($proc->getExitCode() !== 0) {
-					fwrite(STDERR, "Compilation failed\n");
+				$exit_code = $proc->getExitCode();
+
+				fwrite(STDERR, $proc->getCommand()."\n");
+
+				if ($exit_code !== 0) {
+					fwrite(STDERR, "\033[0;31m");
+				} else {
+					fwrite(STDERR, "\033[1;30m");
+				}
+
+				foreach ($proc->getOutput() as $stream => $output) {
+					$lines = explode("\n", $output);
+
+					foreach ($lines as $line) {
+						fwrite(STDERR, "$stream: $line\n");
+					}
+				}
+
+				fwrite(STDERR, "\033[0;0m");
+
+				if ($exit_code !== 0) {
 					exit(1);
 				}
 
