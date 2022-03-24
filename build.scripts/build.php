@@ -150,11 +150,14 @@ chdir(__DIR__."/../");
 
 $arduino_friendly_version = XPHPUtils::libnapc_getReleaseVersion();
 $arduino_friendly_name = "libnapc";
+$arduino_friendly_url = "https://libnapc.nap.software/";
+
 $git_branch = XPHPUtils::git_getCurrentBranch();
 
 if ($git_branch !== "main") {
 	$arduino_friendly_version = "0.0.1";
 	$arduino_friendly_name = "libnapc-$git_branch";
+	$arduino_friendly_url = "https://nightly.libnapc.nap.software/";
 }
 
 XPHPUtils::shell_assertSystemCall("rm -rf build dist.tmp");
@@ -167,6 +170,7 @@ build([
 		"RELEASE_VERSION" => XPHPUtils::libnapc_getReleaseVersion(),
 		"ARDUINO_FRIENDLY_NAME" => $arduino_friendly_name,
 		"ARDUINO_FRIENDLY_VERSION" => $arduino_friendly_version,
+		"ARDUINO_FRIENDLY_URL" => $arduino_friendly_url,
 		"BUILD_DATE" => BUILD_DATE
 	]
 ]);
