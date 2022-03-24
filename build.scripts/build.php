@@ -10,8 +10,8 @@ array_shift($argv);
 
 foreach ($argv as $arg) {
 	switch ($arg) {
-		case "--tests":
-			$build_flags["tests"] = true;
+		case "--no-tests":
+			$build_flags["tests"] = false;
 		break;
 
 		case "--no-documentation":
