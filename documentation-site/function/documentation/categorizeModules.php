@@ -28,6 +28,7 @@ return function($modules) {
 		],
 		"Crypto" => [
 			"random",
+			"sha",
 			"aes",
 			"hmac"
 		]
