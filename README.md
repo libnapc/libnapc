@@ -1,4 +1,4 @@
-![logo of libnapc](https://libnapc.nap.software/static/libnapc-github.png)
+![logo of libnapc](https://libnapc.nap.software/static/libnapc-nightly-github.png)
 
 [![Build, Test and Deploy (nightly)](https://github.com/nap-software/libnapc/actions/workflows/nightly.yaml/badge.svg?branch=nightly)](https://github.com/nap-software/libnapc/actions/workflows/nightly.yaml)
 
