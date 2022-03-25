@@ -1,7 +1,7 @@
-#include <module/timer/_private/_timer.h>
+#include <module/os-timer/_private/_os-timer.h>
 
-bool napc_Timer_expired(napc__Timer *timer) {
-	NAPC_MAGIC_ASSERT(napc__Timer, timer);
+bool napc_OSTimer_expired(napc__OSTimer *timer) {
+	NAPC_MAGIC_ASSERT(napc__OSTimer, timer);
 	if (timer->expired) return false;
 
 	timer->expired = (napc_getTimeSinceBoot() - timer->started_at) >= timer->duration;

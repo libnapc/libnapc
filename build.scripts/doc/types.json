@@ -10,7 +10,7 @@
 	"napc_ssize": "napc_i32",
 	"napc_time": "napc_u32",
 	"napc__Pool": "opaque",
-	"napc__Timer": "opaque",
+	"napc__OSTimer": "opaque",
 	"napc__Reader": "opaque",
 	"napc__Writer": "opaque",
 	"napc__IPv4Participant": "struct",

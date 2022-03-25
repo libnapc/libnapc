@@ -5,7 +5,7 @@ return function($modules) {
 		"General" => [
 			"Core",
 			"env",
-			"Timer",
+			"OSTimer",
 			"parser",
 			"misc"
 		],
