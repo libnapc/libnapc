@@ -30,13 +30,18 @@
 	 * // we simply calculate the SHA256 hash of the key
 	 * // which is guaranteed to be a 32 byte hex formatted string.
 	 * if (napc_sha_calculate(key, napc_strlen(key), key_hashed, sizeof(key_hashed))) {
+	 *     // set all bytes in message to zero
+	 *     // napc_aes_encrypt() always needs the input buffer's size to be 
+	 *     // a multiple of 16. This way unused bytes are always zero.
 	 *     napc_mzero(message, sizeof(message));
 	 * 
+	 *     // copy a message
 	 *     napc_strncpy(message, "Hello, World!", sizeof(message));
 	 * 
+	 *     // do the encryption
 	 *     if (napc_aes_encrypt(iv, key_hashed, message, sizeof(message))) {
 	 *         // message is now encrypted
-	 *         napc_printf("Message encrypted\n");
+	 *         napc_printf("Message encrypted!\n");
 	 * 
 	 *         napc_printf("Key: %s\n", key_hashed);
 	 * 
