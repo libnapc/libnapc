@@ -6,6 +6,23 @@
 	#include <string.h> // memcmp(), memcpy() etc.
 
 	/*!
+	 * @name napc_misc_printHexArray
+	 * @brief Print an array of integers
+	 * @version 1.5.0
+	 * @rationale
+	 * It's cumbersome to write a loop for printing out hex arrays.
+	 * @param bytes Bytes array.
+	 * @param n_bytes Size of bytes array.
+	 * @changelog 1.5.0 25.03.2022 initial version
+	 * @example
+	 * napc_u8 array[4] = {0xde, 0xad, 0xbe, 0xef};
+	 * 
+	 * // prints deadbeef
+	 * napc_misc_printHexArray(array, sizeof(array));
+	 */
+	void napc_misc_printHexArray(const void *bytes, napc_size n_bytes);
+
+	/*!
 	 * @name napc_misc_shiftArrayRight
 	 * @brief Shift elements in an array.
 	 * @version 1.0.0
