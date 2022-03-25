@@ -1,23 +1,24 @@
 <p>
-	With the Timer module it's possible to easily delay code execution.
+	With the OSTimer (short for single shot timer) module it's possible to easily delay code execution.
 </p>
 
 <pre class="code hljs">
 #include &lt;napc.h&gt;
 
-napc__Timer my_timer;
+napc__OSTimer my_timer;
 int counter = 0;
 
 void napc_app_setup(const char *platform) {
 	// initialize timer (this does NOT start the timer)
-	napc_Timer_init(&my_timer, 1000);
+	napc_OSTimer_init(&my_timer, 1000);
 
-	// start the timer
-	napc_Timer_start(&my_timer);
+	// start the single shot timer
+	napc_OSTimer_start(&my_timer);
 }
 
 bool napc_app_loop(napc_time uptime) {
-	if (napc_Timer_expired(&my_timer)) {
+	// OSTimer only returns `true` once per expiration.
+	if (napc_OSTimer_expired(&my_timer)) {
 		++counter;
 
 		if (counter >= 4) {
@@ -28,7 +29,7 @@ bool napc_app_loop(napc_time uptime) {
 
 		napc_printf("1 Second is over. Restarting timer now.\n");
 
-		napc_Timer_restart(&my_timer);
+		napc_OSTimer_restart(&my_timer);
 	}
 
 	return true;

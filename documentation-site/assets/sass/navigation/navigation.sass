@@ -15,6 +15,18 @@
 	flex-direction: column
 	padding-bottom: 50px
 
+	div.section-delimiter
+		height: 1px
+		width: calc(100% - 60px)
+		background: rgba(255, 255, 255, .1)
+		flex-grow: 0
+		flex-shrink: 0
+		margin-bottom: 5px
+		margin-left: 30px
+
+	a.section-hidden + div.section-delimiter
+		display: none
+
 	a
 		height: 50px
 		display: flex
@@ -41,7 +53,7 @@
 		&.section
 			height: 30px
 			padding-left: 30px
-			color: rgba(255, 255, 255, .3)
+			color: rgba(255, 255, 255, 1)
 			text-transform: uppercase
 
 		&.section-hidden, &.search-hidden
