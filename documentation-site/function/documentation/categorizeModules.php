@@ -6,6 +6,7 @@ return function($modules) {
 			"Core",
 			"env",
 			"OSTimer",
+			"Timer",
 			"parser",
 			"misc"
 		],

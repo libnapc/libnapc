@@ -34,6 +34,7 @@
 	 * _init() function.
 	 */
 	#define NAPC_MAGIC_napc__OSTimer                         NAPC_U32_LITERAL(0x831f4521)
+	#define NAPC_MAGIC_napc__Timer                           NAPC_U32_LITERAL(0x2f1fa628)
 	#define NAPC_MAGIC_napc__Pool                            NAPC_U32_LITERAL(0xd3d0df2a)
 
 	#define NAPC_MAGIC_napc__Buffer                          NAPC_U32_LITERAL(0x7beccbe2)
