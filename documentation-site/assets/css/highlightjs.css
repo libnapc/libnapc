@@ -71,6 +71,7 @@ body.theme-dark .hljs-symbol {
   color: #ffa657;
 }
 body.theme-dark .hljs-comment,
+body.theme-dark .hljs-comment .c-function,
 body.theme-dark .hljs-code,
 body.theme-dark .hljs-formula {
 /* prettylights-syntax-comment */
