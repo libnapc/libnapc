@@ -8,6 +8,8 @@ return function($keys) {
 			"label" => $section
 		]);
 
+		echo '<div class="section-delimiter"></div>';
+
 		foreach ($entries as $entry) {
 			echo napcdoc::renderFile("navigation/entry", $entry);
 		}
