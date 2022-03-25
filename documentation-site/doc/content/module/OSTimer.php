@@ -1,5 +1,5 @@
 <p>
-	With the OSTimer module it's possible to easily delay code execution.
+	With the OSTimer (short for single shot timer) module it's possible to easily delay code execution.
 </p>
 
 <pre class="code hljs">
