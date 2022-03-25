@@ -17,9 +17,14 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
 	 * char message[32];
-	 * napc_u8 iv[16] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
+	 * napc_u8 iv[16];
 	 * const char *key = "secret";
 	 * char key_hashed[65];
+	 * 
+	 * // initialize IV with random bytes
+	 * // note that napc_random_getRandomBytesSync() is used here for simplicity
+	 * // it is better to use napc_random_getRandomBytes().
+	 * napc_random_getRandomBytesSync(sizeof(iv), iv);
 	 * 
 	 * if (napc_sha_calculate(key, napc_strlen(key), key_hashed, sizeof(key_hashed))) {
 	 *     napc_mzero(message, sizeof(message));
@@ -28,6 +33,17 @@
 	 * 
 	 *     if (napc_aes_encrypt(iv, key_hashed, message, sizeof(message))) {
 	 *         // message is now encrypted
+	 *         napc_printf("Message encrypted\n");
+	 * 
+	 *         napc_printf("Key: %s\n", key_hashed);
+	 * 
+	 *         napc_printf("IV: ");
+	 *         napc_misc_printHexArray(iv, sizeof(iv));
+	 *         napc_printf("\n");
+	 * 
+	 *         napc_printf("Ciphertext: ");
+	 *         napc_misc_printHexArray(message, sizeof(message));
+	 *         napc_printf("\n");
 	 *     }
 	 * }
 	 */
