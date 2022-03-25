@@ -4,6 +4,7 @@
 	#include <module/random/random.h>
 
 	#include <napc-rand-source/napc-rand-source.h> // napc_getRandomByte()
+	#include <napc-delay/napc-delay.h> // napc_delayUs()
 
 	#define PV_NAPC_RAND_POOL_SIZE 1024u
 

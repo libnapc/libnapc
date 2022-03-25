@@ -46,4 +46,24 @@
 	 * }
 	 */
 	bool napc_random_getRandomBytes(napc_size n_bytes, napc_u8 *out) NAPC_FN_WARNUNUSED_RET();
+
+	/*!
+	 * @name napc_random_getRandomBytesSync
+	 * @brief Create random bytes.
+	 * @version 1.5.0
+	 * @description
+	 * Creates `n_bytes` random bytes.
+	 * @param n_bytes Number of bytes to be generated.
+	 * @param out Array to store collected bytes.
+	 * @warning
+	 * Since this function blocks until enough random data is collected, it is better to use `napc_random_getRandomBytes`.
+	 * @changelog 1.5.0 25.03.2022 initial version
+	 * @example
+	 * napc_u8 random_bytes[32];
+	 * 
+	 * napc_random_getRandomBytesSync(random_bytes, sizeof(random_bytes));
+	 * 
+	 * // random_bytes now contains 32 random bytes
+	 */
+	void napc_random_getRandomBytesSync(napc_size n_bytes, napc_u8 *out);
 #endif

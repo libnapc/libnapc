@@ -19,12 +19,17 @@
 	 * char message[32];
 	 * napc_u8 iv[16] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
 	 * const char *key = "secret";
+	 * char key_hashed[65];
 	 * 
-	 * napc_mzero(message, sizeof(message));
+	 * if (napc_sha_calculate(key, napc_strlen(key), key_hashed, sizeof(key_hashed))) {
+	 *     napc_mzero(message, sizeof(message));
 	 * 
-	 * napc_strncpy(message, "Hello, World!", sizeof(message));
+	 *     napc_strncpy(message, "Hello, World!", sizeof(message));
 	 * 
-	 * napc_aes_encrypt(iv, key, message, sizeof(message));
+	 *     if (napc_aes_encrypt(iv, key_hashed, message, sizeof(message))) {
+	 *         // message is now encrypted
+	 *     }
+	 * }
 	 */
 	bool napc_aes_encrypt(
 		const napc_u8 *iv,
