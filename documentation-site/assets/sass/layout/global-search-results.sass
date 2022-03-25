@@ -79,6 +79,17 @@
 				span.brief
 					color: rgba(255, 255, 255, .85)
 
+		&[data-definition-type="module"]
+			&:hover, &.selected
+				background: rgba(255, 255, 255, .08)
+				color: white
+
+				div.napcdoc-svg-image svg path
+					fill: white
+
+				div.label-and-brief span.brief
+					color: white
+
 		&[data-definition-type="fn"]
 			&:hover, &.selected
 				border-color: colors.$napcdoc_fn_primary_color

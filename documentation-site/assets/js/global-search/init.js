@@ -11,47 +11,68 @@ function renderSearchResults(search_term, search_space) {
 	for (const result of results) {
 		if (!result.show) continue
 
+		const is_module_definition = "module_name" in result
 		const a_element = document.createElement("a")
 
-		const definition = window.napcdoc.definitions[result.definition]
-
-		a_element.setAttribute("data-definition-type", definition.type)
-
-		if ("deprecated" in definition.general_info && definition.general_info.deprecated) {
-			a_element.classList.add("deprecated")
-		}
-
-		a_element.href = window.napcdoc.lib.fixLink(
-			`${result.module}/${result.definition}.html#${result.definition}`
-		)
-
 		let brief = ""
+		let icon = ""
+		let module_icon = ""
+		let current_section_type = ""
 
-		if (definition.general_info.brief) {
-			brief = `<span class="brief">${definition.general_info.brief}</span>`
+		if (!is_module_definition) {
+			const definition = window.napcdoc.definitions[result.definition]
+
+			a_element.setAttribute("data-definition-type", definition.type)
+
+			if ("deprecated" in definition.general_info && definition.general_info.deprecated) {
+				a_element.classList.add("deprecated")
+			}
+
+			a_element.href = window.napcdoc.lib.fixLink(
+				`${result.module}/${result.definition}.html#${result.definition}`
+			)
+
+			if (definition.general_info.brief) {
+				brief = `<span class="brief">${definition.general_info.brief}</span>`
+			}
+
+			icon = window.napcdoc.lib.getIconOfDefinition(result.definition, 18, 18)
+			module_icon = window.napcdoc.lib.getIconOfModule(
+				window.napcdoc.lib.getModuleOfDefinition(result.definition)
+			, 12, 12)
+			current_section_type = window.napcdoc.definitions[result.definition].type
+		} else {
+			a_element.setAttribute("data-definition-type", "module")
+
+			a_element.href = window.napcdoc.lib.fixLink(
+				`${result.module_name}.html`
+			)
+
+			icon = window.napcdoc.lib.getIconOfModule(result.module_name, 18, 18)
+			module_icon = ""
+			current_section_type = "module"
 		}
 
 		let markup = `
-			${window.napcdoc.lib.getIconOfDefinition(result.definition, 18, 18)}
+			${icon}
 
 			<div class="label-and-brief">
 				<span class="label">${result.html}</span>
 				${brief}
 			</div>
 
-			${window.napcdoc.lib.getIconOfModule(
-				window.napcdoc.lib.getModuleOfDefinition(result.definition)
-			, 12, 12)}
+			${module_icon}
 		`
 
 		a_element.innerHTML = markup
-
-		const current_section_type = window.napcdoc.definitions[result.definition].type
 
 		if (last_section_type !== current_section_type) {
 			const section_delim = document.createElement("h2")
 
 			switch (current_section_type) {
+				case "module":
+					section_delim.innerText = "Modules";
+				break;
 				case "fn":
 					section_delim.innerText = "Functions";
 				break;

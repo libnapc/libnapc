@@ -9,6 +9,19 @@ function shortenFunctionName(definition_name, definition_module) {
 window.napcdoc.lib.createGlobalSearchSpace = function() {
 	let ret = []
 
+	const modules = Object.keys(window.napcdoc.modules)
+
+	for (const module_name of modules) {
+		// skip app module
+		if (module_name === "app") continue
+
+		ret.push({
+			definition: "",
+			module_name,
+			label: module_name
+		})
+	}
+
 	for (const definition_name in window.napcdoc.definitions) {
 		const definition_module = window.napcdoc.lib.getModuleOfDefinition(definition_name)
 		const definition = window.napcdoc.definitions[definition_name]
