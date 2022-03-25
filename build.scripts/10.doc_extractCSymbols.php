@@ -25,6 +25,8 @@ return function() {
 	foreach ($ast->inner as $node) {
 		if ($node->kind === "FunctionDecl") {
 			if (substr($node->name, 0, strlen("napc_")) !== "napc_") continue;
+			// ignore __runTests functions
+			if (substr($node->name, -10, 10) === "__runTests") continue;
 
 			$functions[$node->name] = [
 				"return_type" => doc_extractCSymbols_getFunctionReturnType($node->type->qualType),
