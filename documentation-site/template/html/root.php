@@ -16,10 +16,55 @@ return function($keys) {
 		}
 	?>
 
+	<?php
+		$git_branch = $keys["_build_constants"]["GIT_BRANCH"];
+		$git_branch_class = "git-branch-".$git_branch;
+
+		if ($git_branch === "dev") {
+			if (isset($_SESSION["tmp-branch"])) {
+				$git_branch_class = "git-branch-".$_SESSION["tmp-branch"];
+				$git_branch = $_SESSION["tmp-branch"];
+			}
+		}
+	?>
+
 	<meta property="og:image" content="https://libnapc.nap.software/static/banner.png">
 </head>
 <!-- body { display: block; } will be set after HTML loaded -->
-<body class="theme-dark git-branch-<?php echo $keys["_build_constants"]["GIT_BRANCH"]; ?>" style="display: none;">
+<body class="theme-dark <?php echo $git_branch_class; ?>" style="display: none;">
+
+	<?php
+		if ($keys["_build_constants"]["GIT_BRANCH"] === "dev") {
+	?>
+		<div id="napcdoc-layout-debug-change-branch">
+			<form action="/index.html" method="POST">
+				<select name="debug-git-branch">
+					<?php
+						foreach (["dev", "nightly", "main"] as $option) {
+							$attributes = [
+								"value" => $option
+							];
+
+							if (isset($_SESSION["tmp-branch"])) {
+								if ($_SESSION["tmp-branch"] === $option) {
+									$attributes["selected"] = "selected";
+								}
+							} else if ($option === "dev") {
+								$attributes["selected"] = "selected";
+							}
+
+							echo napcdoc::createHTMLElement(
+								"option", $attributes, $option
+							);
+						}
+					?>
+				</select>
+				<input type="submit" value="set" name="set-theme">
+			</form>
+		</div>
+	<?php
+		}
+	?>
 
 	<div id="napcdoc-layout-background"></div>
 
@@ -43,8 +88,8 @@ return function($keys) {
 		<?php
 			$logo_src = "image/libnapc-logo-min.png";
 
-			if (in_array($keys["_build_constants"]["GIT_BRANCH"], ["nightly", "dev"])) {
-				$logo_src = "image/libnapc-logo-".$keys["_build_constants"]["GIT_BRANCH"]."-min.png";
+			if (in_array($git_branch, ["nightly", "dev"])) {
+				$logo_src = "image/libnapc-logo-".$git_branch."-min.png";
 			}
 
 			echo napcdoc::createHTMLElement("a", [
