@@ -37,7 +37,7 @@ return function($keys) {
 		if ($keys["_build_constants"]["GIT_BRANCH"] === "dev") {
 	?>
 		<div id="napcdoc-layout-debug-change-branch">
-			<form action="/index.html" method="POST">
+			<form action="" method="POST">
 				<select name="debug-git-branch">
 					<?php
 						foreach (["dev", "nightly", "main"] as $option) {
