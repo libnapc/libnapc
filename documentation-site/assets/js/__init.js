@@ -37,7 +37,7 @@ document.querySelectorAll("pre.code.hljs").forEach(el => {
 let has_focus = false
 
 document.querySelector("#napcdoc-content").addEventListener("mouseleave", (e) => {
-	document.querySelector("#napcdoc-layout-content").classList.add("dimmed")
+	//document.querySelector("#napcdoc-layout-content").classList.add("dimmed")
 
 	has_focus = false
 })
@@ -50,7 +50,7 @@ document.querySelector("#napcdoc-content").addEventListener("mouseenter", (e) =>
 
 setTimeout(() => {
 	if (!has_focus) {
-		document.querySelector("#napcdoc-layout-content").classList.add("dimmed")
+		//document.querySelector("#napcdoc-layout-content").classList.add("dimmed")
 	}
 }, 2500)
 
