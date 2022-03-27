@@ -65,7 +65,7 @@
 		svg path
 			fill: colors.$napcdoc_macro_primary_color
 
-	div.warning-box, div.hal-box
+	div.warning-box, div.hal-box, div.info-box
 		margin: 16px 0px
 		padding: 15px
 		background: utils.setRGBA(#ffb14a, .13) // utils.setRGBA(#F5FF7A, .07) // utils.setRGBA(#f02929, .04)
@@ -97,6 +97,15 @@
 
 		svg path
 			fill: #5ed84b
+
+	div.info-box
+		border-left-color: #75baff
+		color: #75baff
+
+		background: linear-gradient(90deg, utils.setRGBA(#75baff, .13), transparent)
+
+		svg path
+			fill: #75baff
 
 	div.module-section
 		padding-top: 8px

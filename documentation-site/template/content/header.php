@@ -9,9 +9,11 @@ return function($keys) {
 		}
 	}
 
-	echo napcdoc::createSVGElement(
-		$keys["content_header"]["icon"], 26, 26, $svg_html_attributes
-	);
+	if ($keys["content_header"]["icon"] !== false) {
+		echo napcdoc::createSVGElement(
+			$keys["content_header"]["icon"], 26, 26, $svg_html_attributes
+		);
+	}
 
 	$second_icon = $keys["content_header"]["second_icon"] ?? "";
 	$second_icon_class = $keys["content_header"]["second_icon_class"] ?? "";

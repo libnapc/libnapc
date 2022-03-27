@@ -22,7 +22,7 @@
 
 	<p>It provides HAL (Hardware Abstraction Layer) so that applications written in it can be run both on Arduino and Linux.</p>
 
-	<div class="warning-box">
+	<div class="info-box">
 		<?php echo napcdoc::createSVGElement("alert", 24, 24); ?>
 		<div>
 			This library is developed on a <i>per-need</i> basis. It is <b>not</b> a complete library (yet?).

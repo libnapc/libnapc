@@ -18,7 +18,7 @@ return function($request) {
 				"menu" => [
 					"Navigation" => [[
 						"link" => napcdoc::documentation_fixLink("./index.html"),
-						"icon" => "book-open",
+						"icon" => false,
 						"label" => "Go back to reference home"
 					]]
 				]
@@ -48,7 +48,7 @@ return function($request) {
 
 		if ($requested_file === "index.html") {
 			$keys["title"] = "Reference Home";
-			$icon = "book-open";
+			$icon = false;//"book-open";
 
 			require __DIR__."/../doc/content/home.php";
 		} else if ($requested_file === "install.html") {
@@ -82,7 +82,7 @@ return function($request) {
 				"menu" => [
 					"Navigation" => [[
 						"link" => "./index.html",
-						"icon" => "book-open",
+						"icon" => false,
 						"label" => "Reference Home"
 					], [
 						"link" => "./install.html",
