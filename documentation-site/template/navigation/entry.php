@@ -33,10 +33,6 @@ return function($keys) {
 		if ($keys["active"]) {
 			$classes[] = "active";
 		}
-	} else if (isset($keys["slim"])) {
-		if ($keys["slim"]) {
-			$classes[] = "slim";
-		}
 	}
 
 	if (isset($keys["deprecated"]) && $keys["deprecated"]) {

@@ -29,11 +29,12 @@
 		display: none
 
 	a
-		height: 50px
+		//height: 50px
 		display: flex
 		flex-grow: 0
 		flex-shrink: 0
 		align-items: center
+		padding: 7px 0px
 		padding-left: 30px
 		text-decoration: none
 		color: rgba(255, 255, 255, .7)
@@ -42,14 +43,6 @@
 
 		svg path
 			fill: rgba(255, 255, 255, .3)
-
-		&[data-definition-type=type]
-			svg path
-				fill: colors.$napcdoc_type_primary_color !important
-
-		&[data-definition-type=macro]
-			svg path
-				fill: colors.$napcdoc_macro_primary_color !important
 
 		&.section
 			height: 30px
@@ -61,10 +54,6 @@
 		&.section-hidden, &.search-hidden
 			display: none !important
 
-		&.slim
-			height: 30px
-			background-size: 350px 30px
-
 		&:not(.section):not(.active):hover
 			animation-name: navigation-pulsex
 			animation-timing-function: ease
@@ -73,9 +62,20 @@
 
 		&:focus-visible, &.active, &:not(.section):not(.active):hover
 			color: white
-			background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAV4AAAAyCAMAAAAjtEO9AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAD5UExURb+/v9XV1f///////9/f30dwTP///9vb2////////8zMzL+/v////9fX16qqqtbW1tDQ0ICAgNXV1d3d3QAAANzc3M/Pz////9ra2v///+7u7tvb29zc3P///+/v7+Pj4////+3t7djY2P////Ly8tvb297e3unp6f///+vr6+rq6uTk5Obm5ufn5+Hh4dzc3NfX1/Hx8fDw8N3d3ejo6N7e3uDg4PLy8t/f3+vr6+Xl5ebm5uvr69/f3+Li4v///+jo6Orq6tnZ2ePj4/Pz8+Dg4OPj4+bm5tbW1tbW1t/f39jY2OTk5NnZ2dPT0+fn5+bm5vT09PPz89HEDWgAAABTdFJOUwgGBAUIAAMHAgEFBAYmAyUmAiQlASQlByIJDyMdChAbCA4hDRMcHxcLGQwTFBURFiASER4WFyEUIA0dHhoYGgwLGBsSFRkJCh8ZEBocFCMgHxcWg1huAgAABVZJREFUeNrtXNdW6zoUjOW4yw4hcHJDgARCKr0dOqff3v//Y652kaywzgdcr7W3ZTniSWsYzx7Ng1tluVlulKW5t+Fn2cB1b7v3rjcc/jkc/gB18f7w/eHh/f3PF/fXT7PZ0y7U43T6PJ3+NhqNPv+yXC4/LV8+3c7/+Xo7n9+cnp+e352enBwfHV2Z+3L/y9nl2dX+2c7Orwc7OzsHHw4mk4fJ6uHj6sPe3mKxN8Aaj5PxWPdNhVBaqUKpGCrFyrLIjFY7abXbSQKPVgKjmesE/uRKB0mgcQ60GToIzRXAjCPI81DlYa5yM/AHgJMDQIUqLEw0Y1WpAc2MCpEzczfNAEIDIgxzY23BFMENBTNu0dxmizSauaZfFuGAJxiAbwhziM88D0IDrikzm6dSgC0CjWVQLQBZmAtzVQQukLKK05jw7fKEwBK2XUaYUEXmwrNlNtqyW4NdNnTdMpdXOgHmAoWBu4FjLkLM0DJzkcGKmUtPhnadvUReR+Es7WaIr+Mu8paekS0UB9gl7rSVNHMNAFvqamKvRoyxNA68DV/z0MxBiL+ItbmlsCFvYQdQGMlrBrA3jRHhN4VwOgqT3kaOwigO+JbV71hT1z55DW+N8tLM+qAdexFfhDZUZg5RgYscRBfZC+AqT3kRX4QW1SFm8iKoTn9rdO3E7CX9ovcMH01cJ6gP7TWEAWRttMGKA/Y3uEgakL1AXyYvVUH6G/v6UMUeeyvmLetvBrdXEesvSa9hL2yL/v3cJ5q3rrWhzchqp75WHpi3oZUHuNg0MLxsGozyAoMJ24K1IWUC+/KAvO1aefCxddoQQWtDIQOjA9tu4jpJqNutUdcgjBATfXVoGxy2NupuoA4McV4weeGJAPu9LSXj4BocqQNBTAqc+t0tshKM2uvEi9pGI9eJ5xw0iW/AsovG13leRJXFl2RXYX8rWHtBdBWzt0BlqJz4xrU2sOaSMnCL22LZZVcWse91TOD3rXlri3ayDnGtD6S/rA9Wd2FWgDGrQ059jc0DniuKisW3gqZWfVcfsrfaa8U3Q2NGfQF7Me26iet1aQiIwNjZGFpQhxwPFkhgcg05uV6rDigQ7BpUbRwMolVlbVllCZyxNFh8tyy2WS29EXlHar9kcpq4bmGLA4T7DuPA+TNAGc/CpLxIYEvekA9ttfIWSGCQhiL2BDhNnT9DgLtdCy8atO8ZBxKHNpkaPL/jrhu4rukbcOQAM5teihxoDnN0ZgiuAvVFZ1Zw5ACwqmItcqBTMZyLcbaujCOH1MeWtdeLHLi1Yftts6I1cE3NjRHW9dECtCFx1swdK7Cwu+WEsIsc8FgRM4mZupV1DyASXnOzuUP2Rny9yMEYM1RfPAIh1M1cr4mvCxxsW9P1qQKwzYm+Cm6Vr0kDkVfFLAsc6cScNnhtrWvJW9N3yylvVrPXeUmOoJq4JvfgmV7P/CbashfbGuUOIVsHxRqBCKMrw9yB3IMV3tR2uIoEuLYNZH69g0W0jnAkea/kvZL3St4rea/kvZL3St4rea/kvZL3St4rea/kvZL3St4rea/kvZL3St4rea/kvZL3St4rea/kvZL3St4rea/kvZL3St4rea/kvZL3St4rea/kvZL3St4rea/kvZL3/p/y3rLzriw7nbKz0dvodDY6DVz3etub28PhJn8uw3ws46+Lw9nfF7PZ7Pr66Xr38XH3993R1Fyfn59Hr99eX7+9LOcv8/m/N7c3t1/Pb85P7+7+ODk5Or48Pj4yH8u4utqHMp/KgM9lTA4mD6vJYrVaLD7umRr8NBj8OOiP2+N+X+u+DrUOIdl8+7kMQPo/G+SaWmQ1IYgAAAAASUVORK5CYII=)
+			//background-image: url(data:image/png;base64,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)
+			background: linear-gradient(90deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, 0))
 			svg path
 				fill: white
+
+			&[data-definition-type=type]
+				svg path
+					fill: colors.$napcdoc_type_primary_color !important
+
+			&[data-definition-type=macro]
+				svg path
+					fill: colors.$napcdoc_macro_primary_color !important
+
+
 			div.label-and-brief
 				span.brief
 					color: rgba(255, 255, 255, .7)

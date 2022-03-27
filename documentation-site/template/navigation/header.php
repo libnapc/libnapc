@@ -7,7 +7,11 @@ return function($keys) {
 		], $section);*/
 
 		foreach ($links as $link) {
-			$icon = napcdoc::createSVGElement($link["icon"], 16, 16);
+			$icon = "";
+
+			if ($link["icon"] !== false) {
+				$icon = napcdoc::createSVGElement($link["icon"], 16, 16);
+			}
 
 			echo napcdoc::createHTMLElement("a", [
 				"href" => $link["link"]
@@ -17,9 +21,9 @@ return function($keys) {
 
 	echo "<div class=\"search\">";
 
-	echo napcdoc::createHTMLElement("a", [
+	/*echo napcdoc::createHTMLElement("a", [
 		"class" => "section"
-	], "Search");
+	], "Search");*/
 
 	echo napcdoc::createHTMLElement("input", [
 		"id" => "napcdoc-local-search-input",

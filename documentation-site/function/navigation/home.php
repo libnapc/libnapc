@@ -15,8 +15,7 @@ return function() {
 				"link" => "./$module_name.html",
 				"icon" => "module_icon/$module_name",
 				"label" => $module_name,
-				"id" => $module_name,
-				"slim" => true
+				"id" => $module_name
 			];
 		}
 	}
