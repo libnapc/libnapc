@@ -23,6 +23,6 @@ if (!isset($__keys["left-navigation"])) {
 		window.napcdoc_request_uri = "<?php echo napcdoc::http_getRequestPath(); ?>";
 	</script>
 
-	<script src="/site.js"></script>
+	<script src="<?php echo napcdoc::site_link("site.js"); ?>"></script>
 </body>
 </html>
