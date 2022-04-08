@@ -168,7 +168,7 @@ class Parsedown
                 foreach ($parts as $part)
                 {
                     /** changed mb_strlen() to strlen() by nap.sotware **/
-                    $shortage = 4 - strlen($line, 'utf-8') % 4;
+                    $shortage = 4 - strlen($line) % 4;
 
                     $line .= str_repeat(' ', $shortage);
                     $line .= $part;
