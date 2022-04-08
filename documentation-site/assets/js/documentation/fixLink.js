@@ -6,9 +6,9 @@ window.napcdoc.lib.fixLink = function(link) {
 		return piece.length > 0
 	})
 
-	if (pieces.length === 2) {
-		return `../${link}`
+	if (pieces.length === 1) {
+		return `./${link}`
 	}
 
-	return `./${link}`
+	return `./../`.repeat(pieces.length - 1) + link
 }

@@ -1,0 +1,72 @@
+@use "../colors.sass"
+
+
+#nd-right-content.no-left-side-navigation
+	div.wrapper
+		padding: 15px 30px
+
+#nd-right-content div.wrapper
+	padding: 15px 15px
+	//padding-top: 15px
+	line-height: 27px
+	font-size: 14px
+
+	ul
+		margin-left: 30px
+
+	h1
+		margin: 15px 0px
+		font-size: 27px
+
+		&:first-of-type
+			margin-top: 0
+
+	h2
+		margin: 5px 0px
+		font-size: 21px
+
+	pre.code
+		font-family: "PT Mono", ui-monospace
+		font-size: 15px
+		margin: 8px 0px
+		background: rgba(255, 255, 255, .04)
+		padding: 15px
+		padding-top: 20px // offset scrollbar height
+		border: 1px solid rgba(255, 255, 255, .18)
+		border-left-width: 4px
+		border-left-color: rgba(255, 255, 255, .23)
+		border-radius: 4px
+		tab-size: 25px
+		//white-space: pre-wrap
+		overflow-x: scroll
+		line-height: 24px
+		background: rgba(0, 0, 0, .31)
+		background: linear-gradient(45deg, rgba(0, 0, 0, 0.31), rgb(0 0 0 / 50%))
+		background: #191925
+		//background: linear-gradient(90deg, #191925 60%, transparent)
+		border: none
+		border-left: 4px solid #575782
+
+	span.c-type
+		color: colors.$type_primary_color
+		font-weight: bold
+
+		a
+			color: inherit !important
+
+	span.c-function
+		color: colors.$fn_primary_color
+		font-weight: bold
+
+		a
+			color: inherit !important
+
+	span.c-macro
+		color: colors.$macro_primary_color
+		font-weight: bold
+
+		a
+			color: inherit !important
+
+	div.markdown h2
+		margin: 20px 0px

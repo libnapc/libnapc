@@ -1,101 +1,101 @@
-const input_element = document.querySelector("#napcdoc-global-search-input")
-const results_div = document.querySelector("#napcdoc-layout-global-search-results")
+const input_element = document.querySelector("#nd-global-search-input")
+const results_div = document.querySelector("#nd-global-search-results").querySelector("div.wrapper")
+
+function createEntry(label, brief, icon) {
+	const a_element = document.createElement("a")
+	let brief_markup = ""
+
+	if (brief.length) {
+		brief_markup = `<span class="brief">${brief}</span>`
+	}
+
+	a_element.innerHTML = `
+	${icon}
+	<div class="label-and-brief">
+		<span class="label">${label}</span>
+		${brief_markup}
+	</div>
+	`
+
+	return a_element
+}
+
+function createModuleHeader(module_name) {
+	const module_header = document.createElement("a")
+	module_header.classList.add("module-header")
+
+	const module_icon = window.napcdoc.lib.getIconOfModule(
+		module_name, 18, 18
+	)
+
+	let brief = ""
+
+	if (module_name in window.napcdoc.modules_intro) {
+		let module_meta = window.napcdoc.modules_intro[module_name]
+
+		if ("@brief" in module_meta) {
+			//brief = `<span class="brief">${module_meta["@brief"]}</span>`
+		}
+	}
+
+	module_header.innerHTML = `
+	${module_icon}
+
+	<div class="label-and-brief">
+		<span class="label">${module_name}</span>
+		${brief}
+	</div>
+	`
+
+	return module_header
+}
 
 function renderSearchResults(search_term, search_space) {
 	const results = window.napcdoc.lib.search(search_space, search_term, "b")
-
 	results_div.innerHTML = ""
 
-	let last_section_type = null
+	let last_module_name = ""
 
 	for (const result of results) {
 		if (!result.show) continue
 
-		const is_module_definition = "module_name" in result
-		const a_element = document.createElement("a")
-
+		const definition_meta = window.napcdoc.definitions[result.definition]
 		let brief = ""
-		let icon = ""
-		let module_icon = ""
-		let current_section_type = ""
 
-		if (!is_module_definition) {
-			const definition = window.napcdoc.definitions[result.definition]
-
-			a_element.setAttribute("data-definition-type", definition.type)
-
-			if ("deprecated" in definition.general_info && definition.general_info.deprecated) {
-				a_element.classList.add("deprecated")
-			}
-
-			a_element.href = window.napcdoc.lib.fixLink(
-				`${result.module}/${result.definition}.html#${result.definition}`
-			)
-
-			if (definition.general_info.brief) {
-				brief = `<span class="brief">${definition.general_info.brief}</span>`
-			}
-
-			icon = window.napcdoc.lib.getIconOfDefinition(result.definition, 18, 18)
-			module_icon = window.napcdoc.lib.getIconOfModule(
-				window.napcdoc.lib.getModuleOfDefinition(result.definition)
-			, 12, 12)
-			current_section_type = window.napcdoc.definitions[result.definition].type
-		} else {
-			a_element.setAttribute("data-definition-type", "module")
-
-			a_element.href = window.napcdoc.lib.fixLink(
-				`${result.module_name}.html`
-			)
-
-			icon = window.napcdoc.lib.getIconOfModule(result.module_name, 18, 18)
-			module_icon = ""
-			current_section_type = "module"
+		if ("brief" in definition_meta.general_info) {
+			brief = definition_meta.general_info.brief
 		}
 
-		let markup = `
-			${icon}
+		let icon = window.napcdoc.lib.getIconOfDefinition(result.definition, 18, 18)
 
-			<div class="label-and-brief">
-				<span class="label">${result.html}</span>
-				${brief}
-			</div>
+		const a_element = createEntry(
+			result.html, brief, icon
+		)
 
-			${module_icon}
-		`
+		// show module name at the beginning
+		if (last_module_name !== result.module_name) {
+			results_div.appendChild(
+				createModuleHeader(result.module_name)
+			)
 
-		a_element.innerHTML = markup
-
-		if (last_section_type !== current_section_type) {
-			const section_delim = document.createElement("h2")
-
-			switch (current_section_type) {
-				case "module":
-					section_delim.innerText = "Modules";
-				break;
-				case "fn":
-					section_delim.innerText = "Functions";
-				break;
-				case "type":
-					section_delim.innerText = "Types";
-				break;
-				case "macro":
-					section_delim.innerText = "Macros";
-				break;
-			}
-
-			results_div.appendChild(section_delim)
-			results_div.appendChild(document.createElement("hr"))
-
-			last_section_type = current_section_type
+			last_module_name = result.module_name
 		}
+
+		a_element.setAttribute("data-definition-type", definition_meta.type)
+
+		a_element.href = window.napcdoc.lib.fixLink(
+			`definition/${result.module_name}/${result.definition}.html#${result.definition}`
+		)
 
 		results_div.appendChild(a_element)
 	}
 }
 
 function getCurrentSelection() {
-	const rendered_results = results_div.querySelectorAll("a")
+	const rendered_results = [...results_div.querySelectorAll("a")].filter(element => {
+		return !element.classList.contains("module-header")
+	})
+
 	let current_position = -1
 	let current = null
 
@@ -129,22 +129,23 @@ function getCurrentSelection() {
 	}
 }
 
-function searchResultsVisible() {
-	return results_div.classList.contains("visible")
-}
-
 function showSearchResults() {
-	if (searchResultsVisible()) return
+	if (results_div.parentNode.style.display === "flex") {
+		return
+	}
 
-	results_div.style.display = "flex"
-	results_div.classList.add("visible")
+	results_div.parentNode.style.display = "flex"
+	results_div.parentNode.classList.add("visible")
 	window.napcdoc.lib.blurContent()
 }
 
 function hideSearchResults() {
-	if (!searchResultsVisible()) return
+	if (results_div.parentNode.style.display !== "flex") {
+		return
+	}
 
-	results_div.classList.remove("visible")
+	results_div.parentNode.style.display = "none"
+	results_div.parentNode.classList.remove("visible")
 	window.napcdoc.lib.unblurContent()
 }
 
@@ -238,14 +239,6 @@ window.napcdoc.lib.initGlobalSearch = function() {
 		input_element.value = initial_search_term
 	}
 
-	results_div.addEventListener("transitionend", (e) => {
-		const style = window.getComputedStyle(e.currentTarget)
-
-		if (0.01 > style.opacity) {
-			e.currentTarget.style.display = "none"
-		}
-	})
-
 	document.body.addEventListener("click", e => {
 		let current_node = e.target
 		let hide = true
@@ -253,7 +246,7 @@ window.napcdoc.lib.initGlobalSearch = function() {
 		while (current_node) {
 			if (
 				current_node === input_element ||
-				current_node === results_div) {
+				current_node === results_div.parentNode) {
 				hide = false
 				break;
 			}

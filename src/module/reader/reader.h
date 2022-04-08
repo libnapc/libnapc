@@ -1,3 +1,7 @@
+/*!
+ * @name Reader:intro
+ * @brief Binary buffer reader
+ */
 #if !defined(NAPC_MODULE_READER_h)
 	#define NAPC_MODULE_READER_h
 

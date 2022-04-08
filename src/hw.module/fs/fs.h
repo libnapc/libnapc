@@ -1,3 +1,7 @@
+/*!
+ * @name fs:intro
+ * @brief Write & read files
+ */
 #if !defined(NAPC_HW_MODULE_FS_h)
 	#define NAPC_HW_MODULE_FS_h
 

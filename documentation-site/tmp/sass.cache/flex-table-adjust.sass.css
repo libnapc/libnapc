@@ -1,0 +1,41 @@
+#nd-right-content div.flex-table.fn-params,
+#nd-right-content div.flex-table.struct-members,
+#nd-right-content div.flex-table-row-cell:nth-child(1) {
+  flex-basis: 150px;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+#nd-right-content div.flex-table.enum-values div.flex-table-row-cell:nth-child(1),
+#nd-right-content div.flex-table.changelog div.flex-table-row-cell:nth-child(1) {
+  flex-basis: 300px;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+#nd-right-content div.flex-table.enum-values div.flex-table-row-cell:nth-child(2) {
+  flex-basis: 150px;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+@media only screen and (max-width: 1000px) {
+  #nd-right-content div.flex-table.fn-params div.flex-table-row,
+#nd-right-content div.flex-table.enum-values div.flex-table-row,
+#nd-right-content div.flex-table.struct-members div.flex-table-row {
+    flex-direction: column !important;
+  }
+  #nd-right-content div.flex-table.fn-params div.flex-table-row div.flex-table-row-cell,
+#nd-right-content div.flex-table.enum-values div.flex-table-row div.flex-table-row-cell,
+#nd-right-content div.flex-table.struct-members div.flex-table-row div.flex-table-row-cell {
+    flex-basis: unset !important;
+  }
+  #nd-right-content div.flex-table.fn-params div.flex-table-row div.flex-table-row-cell:nth-child(2),
+#nd-right-content div.flex-table.enum-values div.flex-table-row div.flex-table-row-cell:nth-child(2),
+#nd-right-content div.flex-table.struct-members div.flex-table-row div.flex-table-row-cell:nth-child(2) {
+    margin-top: 5px !important;
+  }
+  #nd-right-content div.flex-table.changelog div.flex-table-row {
+    flex-direction: column !important;
+  }
+  #nd-right-content div.flex-table.changelog div.flex-table-row-cell {
+    flex-basis: unset !important;
+  }
+}

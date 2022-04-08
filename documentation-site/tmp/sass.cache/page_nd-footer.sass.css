@@ -1,0 +1,12 @@
+#nd-footer {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background: #09080E;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+}

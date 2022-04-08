@@ -1,40 +1,46 @@
-document.querySelector("#napcdoc-layout-mobile-navigation").addEventListener("transitionend", (e) => {
-	const style = window.getComputedStyle(e.currentTarget)
+const mobile_nav = document.querySelector("#nd-mobile-navigation")
+const style = document.createElement("style")
 
-	if (0.01 > style.opacity) {
-		e.currentTarget.style.display = "none"
-	}
-})
+style.type = "text/css"
 
-document.querySelector("#napcdoc-layout-mobile-navigation-toggle").addEventListener("click", (e) => {
-	var is_visible = window.getComputedStyle(
-		document.querySelector(".open-menu")
-	).display !== "none"
-	var wants_open = !document.body.classList.contains("mobile-navigation-open")
+function measureAndSetup() {
+	let saved_display = mobile_nav.style.display
 
-	if (wants_open && !is_visible) return
+	mobile_nav.style.maxHeight = "none"
+	mobile_nav.style.display = "block"
 
-	if (!document.body.classList.contains("mobile-navigation-open")) {
-		document.querySelector("#napcdoc-layout-mobile-navigation").style.display = "flex"
+	const height = mobile_nav.getBoundingClientRect().height
+
+	mobile_nav.style.transition = "all .1s linear"
+	mobile_nav.style.maxHeight = "0px"
+	mobile_nav.style.display = saved_display
+
+	return height
+}
+
+style.innerHTML = `
+body.mobile-navigation-open #nd-mobile-navigation {
+	max-height: ${measureAndSetup()}px !important;
+}
+`
+document.getElementsByTagName("head")[0].appendChild(style)
+
+document.querySelector("#toggle-mobile-menu").addEventListener("click", (e) => {
+	if (document.body.classList.contains("mobile-navigation-open")) {
+		document.body.classList.remove("mobile-navigation-open")
+	} else {
+		document.body.classList.add("mobile-navigation-open")
+
+		mobile_nav.style.maxHeight = "none"
+
+		const height = mobile_nav.getBoundingClientRect().height
+
+		mobile_nav.style.transition = "all .1s linear"
+		mobile_nav.style.maxHeight = "0px"
 
 		setTimeout(() => {
-			document.querySelector("#napcdoc-layout-mobile-navigation").style.opacity = 1
-		}, 0)
-	} else {
-		document.querySelector("#napcdoc-layout-mobile-navigation").style.opacity = 0
+			mobile_nav.style.maxHeight = `${height}px`
+		})
 	}
 
-	document.body.classList.toggle("mobile-navigation-open")
-})
-
-window.addEventListener("resize", (e) => {
-	// force close mobile navigation as it interferes with desktop UI
-	if (window.outerWidth > 1000) {
-		document.body.classList.remove("mobile-navigation-open")
-		document.querySelector("#napcdoc-layout-mobile-navigation").style.opacity = 0
-	}
-	// force close global search as it interferes with mobile UI
-	else {
-		window.napcdoc.lib.hideGlobalSearchResults()
-	}
 })

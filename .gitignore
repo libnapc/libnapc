@@ -4,7 +4,7 @@ dist.tmp/
 build/
 documentation-site/dist.tmp/
 documentation-site/dist/
-documentation-site/sass.cache/*
-!documentation-site/sass.cache/.gitkeep
+documentation-site/tmp/*
+!documentation-site/tmp/.gitkeep
 test.c
 readme

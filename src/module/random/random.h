@@ -1,3 +1,7 @@
+/*!
+ * @name random:intro
+ * @brief Random number generation
+ */
 #if !defined(NAPC_MODULE_RANDOM_h)
 	#define NAPC_MODULE_RANDOM_h
 

@@ -1,0 +1,81 @@
+#nd-global-search-results div.wrapper {
+  width: 100%;
+  max-height: calc(100vh - 75px - 50px);
+  overflow-y: scroll;
+  flex-grow: 0;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+#nd-global-search-results div.wrapper::-webkit-scrollbar {
+  display: none;
+}
+#nd-global-search-results div.wrapper h2 {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+#nd-global-search-results div.wrapper a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 4px 15px;
+  border-left: 2px solid transparent;
+}
+#nd-global-search-results div.wrapper a:hover {
+  border-left-color: #191925;
+  background: linear-gradient(90deg, #191925 30%, rgba(255, 255, 255, 0) 100%);
+}
+#nd-global-search-results div.wrapper a.selected {
+  border-left-color: #29293d;
+  background: linear-gradient(90deg, #191925 30%, rgba(255, 255, 255, 0) 100%);
+}
+#nd-global-search-results div.wrapper a.selected[data-definition-type=fn] div.napcdoc-svg-image svg path, #nd-global-search-results div.wrapper a:hover[data-definition-type=fn] div.napcdoc-svg-image svg path {
+  fill: #11c5e5;
+}
+#nd-global-search-results div.wrapper a.selected[data-definition-type=type] div.napcdoc-svg-image svg path, #nd-global-search-results div.wrapper a:hover[data-definition-type=type] div.napcdoc-svg-image svg path {
+  fill: #d2a8ff;
+}
+#nd-global-search-results div.wrapper a.selected[data-definition-type=macro] div.napcdoc-svg-image svg path, #nd-global-search-results div.wrapper a:hover[data-definition-type=macro] div.napcdoc-svg-image svg path {
+  fill: #ff7a00;
+}
+#nd-global-search-results div.wrapper a.module-header {
+  padding: 8px 15px;
+  background: #191925;
+  border-left-color: #29293d;
+  font-weight: 500;
+}
+#nd-global-search-results div.wrapper a.module-header div.label-and-brief span.label {
+  font-size: 16px;
+}
+#nd-global-search-results div.wrapper a.module-header div.napcdoc-svg-image svg path {
+  fill: white;
+}
+#nd-global-search-results div.wrapper a.module-header:first-child {
+  margin: 0;
+}
+#nd-global-search-results div.wrapper a div.napcdoc-svg-image {
+  margin-right: 15px;
+}
+#nd-global-search-results div.wrapper a div.napcdoc-svg-image svg path {
+  fill: rgba(255, 255, 255, 0.2);
+}
+#nd-global-search-results div.wrapper a div.napcdoc-svg-image:last-child {
+  margin-left: auto;
+}
+#nd-global-search-results div.wrapper a div.label-and-brief {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#nd-global-search-results div.wrapper a div.label-and-brief span.label {
+  font-size: 14px;
+}
+#nd-global-search-results div.wrapper a div.label-and-brief span.brief {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 3px;
+}

@@ -1,0 +1,64 @@
+#nd-left-navigation a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 8px 30px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  border-left: 2px solid transparent;
+}
+#nd-left-navigation a.strikethrough {
+  text-decoration: line-through;
+}
+#nd-left-navigation a.active, #nd-left-navigation a:hover {
+  background: linear-gradient(90deg, #191925 30%, rgba(255, 255, 255, 0) 100%);
+}
+#nd-left-navigation a.active {
+  border-left-color: #575782;
+}
+#nd-left-navigation a.search-hidden {
+  display: none !important;
+}
+#nd-left-navigation a.active, #nd-left-navigation a:hover {
+  color: white;
+}
+#nd-left-navigation a.active div.napcdoc-svg-image svg path, #nd-left-navigation a:hover div.napcdoc-svg-image svg path {
+  fill: white;
+}
+#nd-left-navigation a.active div.label-and-brief span.label, #nd-left-navigation a:hover div.label-and-brief span.label {
+  color: white;
+}
+#nd-left-navigation a.active[data-definition-type=fn] div.napcdoc-svg-image svg path, #nd-left-navigation a:hover[data-definition-type=fn] div.napcdoc-svg-image svg path {
+  fill: #11c5e5;
+}
+#nd-left-navigation a.active[data-definition-type=type] div.napcdoc-svg-image svg path, #nd-left-navigation a:hover[data-definition-type=type] div.napcdoc-svg-image svg path {
+  fill: #d2a8ff;
+}
+#nd-left-navigation a.active[data-definition-type=macro] div.napcdoc-svg-image svg path, #nd-left-navigation a:hover[data-definition-type=macro] div.napcdoc-svg-image svg path {
+  fill: #ff7a00;
+}
+#nd-left-navigation a div.label-and-brief {
+  display: flex;
+  flex-direction: column;
+}
+#nd-left-navigation a div.label-and-brief span.label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+#nd-left-navigation a div.label-and-brief span.brief {
+  margin-top: 5px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.3);
+}
+#nd-left-navigation a div.napcdoc-svg-image {
+  margin-right: 15px;
+}
+#nd-left-navigation a div.napcdoc-svg-image svg path {
+  fill: rgba(255, 255, 255, 0.4);
+}
+#nd-left-navigation a:hover {
+  color: white;
+}
+#nd-left-navigation a:hover div.napcdoc-svg-image {
+  opacity: 1;
+}

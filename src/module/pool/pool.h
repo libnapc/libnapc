@@ -1,3 +1,7 @@
+/*!
+ * @name Pool:intro
+ * @brief Static memory allocation
+ */
 #if !defined(NAPC_MODULE_POOL_h)
 	#define NAPC_MODULE_POOL_h
 

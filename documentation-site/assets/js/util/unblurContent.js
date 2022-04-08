@@ -8,7 +8,7 @@ window.napcdoc.lib.unblurContent = function() {
 	let new_blur_counter = window.napcdoc._blur_counter - 1
 
 	if (new_blur_counter === 0) {
-		document.querySelector("#napcdoc-layout-content").classList.remove("blurred")
+		document.querySelector("#nd-right-content").classList.remove("blurred")
 	}
 
 	window.napcdoc._blur_counter = new_blur_counter

@@ -1,8 +1,0 @@
-@use "sass:color"
-
-@function setRGBA($color, $alpha)
-	@return rgba(color.red($color),color.green($color),color.blue($color),$alpha)
-
-@mixin backdropFilter($filter)
-	-webkit-backdrop-filter: $filter
-	backdrop-filter: $filter

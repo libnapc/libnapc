@@ -1,0 +1,17 @@
+@use "../vars.sass"
+
+#nd-left-navigation
+	width: vars.$navigation_left_width
+	//
+	// Left navigation always has a height of 100% minus
+	// the site's header height and footer
+	//
+	height: calc(100% - vars.$header_height - vars.$footer_height)
+
+	position: fixed
+	top: vars.$header_height // offset page header height
+	left: 0
+
+	display: flex
+	flex-direction: column
+	align-items: center

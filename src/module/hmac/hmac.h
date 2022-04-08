@@ -1,3 +1,7 @@
+/*!
+ * @name hmac:intro
+ * @brief Sign & verify messages
+ */
 #if !defined(NAPC_MODULE_HMAC_h)
 	#define NAPC_MODULE_HMAC_h
 

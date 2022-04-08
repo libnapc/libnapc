@@ -1,3 +1,7 @@
+/*!
+ * @name OSTimer:intro
+ * @brief One-Shot timer
+ */
 #if !defined(NAPC_MODULE_OSTIMER_h)
 	#define NAPC_MODULE_OSTIMER_h
 

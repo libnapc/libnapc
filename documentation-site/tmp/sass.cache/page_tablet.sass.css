@@ -1,0 +1,12 @@
+@media only screen and (max-width: 1220px) {
+  #nd-header div.menu-wrapper a {
+    font-size: 16px;
+    border-bottom-width: 4px;
+  }
+  #nd-header div.menu-wrapper a u, #nd-header div.menu-wrapper a i {
+    display: none !important;
+  }
+  #nd-header div.menu-wrapper a b {
+    display: inline !important;
+  }
+}

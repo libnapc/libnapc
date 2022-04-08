@@ -1,0 +1,69 @@
+@use "../colors.sass"
+
+#nd-left-navigation a
+	display: flex
+	align-items: center
+	text-decoration: none
+	padding: 8px 30px
+	color: rgba(255, 255, 255, .7)
+
+	font-size: 14px
+
+	border-left: 2px solid transparent
+
+	&.strikethrough
+		text-decoration: line-through
+
+	&.active, &:hover
+		background: linear-gradient(90deg, #191925 30%, rgba(255,255,255,0) 100%)
+
+	&.active
+		border-left-color: #575782
+
+	&.search-hidden
+		display: none !important
+
+	&.active, &:hover
+		color: white
+
+		div.napcdoc-svg-image
+			svg path
+				fill: white
+
+		div.label-and-brief
+			span.label
+				color: white
+
+		&[data-definition-type="fn"] div.napcdoc-svg-image svg path
+			fill: colors.$fn_primary_color
+
+		&[data-definition-type="type"] div.napcdoc-svg-image svg path
+			fill: colors.$type_primary_color
+
+		&[data-definition-type="macro"] div.napcdoc-svg-image svg path
+			fill: colors.$macro_primary_color
+
+
+	div.label-and-brief
+		display: flex
+		flex-direction: column
+
+		span.label
+			font-size: 14px
+			color: rgba(255, 255, 255, .7)
+
+		span.brief
+			margin-top: 5px
+			font-size: 12px
+			color: rgba(255, 255, 255, .3)
+
+	div.napcdoc-svg-image
+		svg path
+			fill: rgba(255, 255, 255, .4)
+		margin-right: 15px
+
+	&:hover
+		color: rgba(255, 255, 255, 1)
+
+		div.napcdoc-svg-image
+			opacity: 1

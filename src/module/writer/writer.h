@@ -1,3 +1,7 @@
+/*!
+ * @name Writer:intro
+ * @brief Binary buffer writer
+ */
 #if !defined(NAPC_MODULE_WRITER_h)
 	#define NAPC_MODULE_WRITER_h
 

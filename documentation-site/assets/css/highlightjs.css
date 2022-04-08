@@ -23,6 +23,8 @@ body.theme-dark .hljs {
   color: #c9d1d9;
   background: #0d1117;
   background: linear-gradient(45deg, rgba(0, 0, 0, 0.31), rgb(0 0 0 / 50%));
+  background: #191925;
+  background: linear-gradient(90deg, #191925, transparent);
 }
 body.theme-dark .hljs-doctag,
 body.theme-dark .hljs-keyword,

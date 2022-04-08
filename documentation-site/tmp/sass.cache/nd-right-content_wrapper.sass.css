@@ -1,0 +1,67 @@
+#nd-right-content.no-left-side-navigation div.wrapper {
+  padding: 15px 30px;
+}
+
+#nd-right-content div.wrapper {
+  padding: 15px 15px;
+  line-height: 27px;
+  font-size: 14px;
+}
+#nd-right-content div.wrapper ul {
+  margin-left: 30px;
+}
+#nd-right-content div.wrapper h1 {
+  margin: 15px 0px;
+  font-size: 27px;
+}
+#nd-right-content div.wrapper h1:first-of-type {
+  margin-top: 0;
+}
+#nd-right-content div.wrapper h2 {
+  margin: 5px 0px;
+  font-size: 21px;
+}
+#nd-right-content div.wrapper pre.code {
+  font-family: "PT Mono", ui-monospace;
+  font-size: 15px;
+  margin: 8px 0px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 15px;
+  padding-top: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-left-width: 4px;
+  border-left-color: rgba(255, 255, 255, 0.23);
+  border-radius: 4px;
+  tab-size: 25px;
+  overflow-x: scroll;
+  line-height: 24px;
+  background: rgba(0, 0, 0, 0.31);
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.31), rgba(0, 0, 0, 0.5));
+  background: #191925;
+  border: none;
+  border-left: 4px solid #575782;
+}
+#nd-right-content div.wrapper span.c-type {
+  color: #d2a8ff;
+  font-weight: bold;
+}
+#nd-right-content div.wrapper span.c-type a {
+  color: inherit !important;
+}
+#nd-right-content div.wrapper span.c-function {
+  color: #11c5e5;
+  font-weight: bold;
+}
+#nd-right-content div.wrapper span.c-function a {
+  color: inherit !important;
+}
+#nd-right-content div.wrapper span.c-macro {
+  color: #ff7a00;
+  font-weight: bold;
+}
+#nd-right-content div.wrapper span.c-macro a {
+  color: inherit !important;
+}
+#nd-right-content div.wrapper div.markdown h2 {
+  margin: 20px 0px;
+}
