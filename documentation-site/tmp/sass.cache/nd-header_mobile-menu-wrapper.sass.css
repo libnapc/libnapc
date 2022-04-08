@@ -6,6 +6,9 @@
 #nd-header div.mobile-menu-wrapper div.napcdoc-svg-image svg path {
   fill: white;
 }
+#nd-header div.mobile-menu-wrapper.empty {
+  display: none !important;
+}
 
 #nd-header div.mobile-menu-wrapper div.menu-close {
   display: none;

@@ -1,3 +1,8 @@
+<?php
+
+$has_left_navigation = sizeof($__keys["left-navigation"] ?? []) > 0;
+
+?>
 <div id="nd-header">
 	<div class="logo-wrapper">
 		<?php
@@ -93,7 +98,9 @@
 		<input id="nd-global-search-input" placeholder="Please activate JavaScript">
 	</div>
 
-	<div class="mobile-menu-wrapper" id="toggle-mobile-menu">
+	<div
+		class="mobile-menu-wrapper <?php echo (!$has_left_navigation ? "empty" : ""); ?>"
+		id="toggle-mobile-menu">
 		<div class="menu-open">
 			<?php
 				echo napcdoc::html_createSVGElement("menu", 32, 32);
@@ -113,11 +120,7 @@
 </div>
 
 <?php
-	$has_left_navigation = false;
-
-	if (isset($__keys["left-navigation"]) && sizeof($__keys["left-navigation"])) {
-		$has_left_navigation = true;
-
+	if ($has_left_navigation) {
 		echo '<div id="nd-left-navigation">';
 
 		echo '<div class="search">';
@@ -138,7 +141,7 @@
 <div id="nd-right-content" <?php echo (!$has_left_navigation ? 'class="no-left-side-navigation"' : ''); ?>>
 	<div id="nd-mobile-navigation">
 	<?php
-		if (isset($__keys["left-navigation"]) && sizeof($__keys["left-navigation"])) {
+		if ($has_left_navigation) {
 			echo '<div class="nav-wrapper">';
 
 			foreach ($__keys["left-navigation"] as $entry) {

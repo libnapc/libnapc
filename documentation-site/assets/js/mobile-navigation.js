@@ -26,6 +26,10 @@ body.mobile-navigation-open #nd-mobile-navigation {
 document.getElementsByTagName("head")[0].appendChild(style)
 
 document.querySelector("#toggle-mobile-menu").addEventListener("click", (e) => {
+	if (e.currentTarget.classList.contains("empty")) {
+		return
+	}
+
 	if (document.body.classList.contains("mobile-navigation-open")) {
 		document.body.classList.remove("mobile-navigation-open")
 	} else {
