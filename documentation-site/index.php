@@ -1,6 +1,17 @@
 <?php
 
-define("LIBNAPC_SASS_BIN", "/usr/local/bin/node-sass");
+$uname = strtolower(php_uname());
+
+// allow for node-sass because dart-sass does not
+// offer an ARM version (yet)
+if (is_file("/usr/local/bin/node-sass")) {
+	define("LIBNAPC_SASS_BIN", "/usr/local/bin/node-sass");
+} else if (strpos($uname, "linux") !== false) {
+	define("LIBNAPC_SASS_BIN", __DIR__."/bin/linux/sass/sass");
+} else {
+	define("LIBNAPC_SASS_BIN", __DIR__."/bin/macos/sass/sass");
+}
+
 define("LIBNAPC_ASSETS", __DIR__."/assets/");
 
 require_once __DIR__."/lib/load.php";
