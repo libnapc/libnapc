@@ -79,7 +79,7 @@ foreach (napcdoc::site_getDocumentation()["modules"] as $module_name => $definit
 			$box_content .= napcdoc::html_createElement("li", [], 
 				napcdoc::html_createElement("a", [
 					"href" => napcdoc::site_link(
-						"/definition/$module_name/$definition_name.html#$definition_name"
+						"definition/$module_name/$definition_name.html#$definition_name"
 					)
 				], $label)
 			);

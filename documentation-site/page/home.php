@@ -10,7 +10,7 @@ foreach (napcdoc::site_getModules() as $module_name) {
 	$__keys["left-navigation"][] = [
 		"label" => $module_name,
 		"icon" => "module_icon/$module_name",
-		"href" => napcdoc::site_link("/module/$module_name.html"),
+		"href" => napcdoc::site_link("module/$module_name.html"),
 		"name" => $module_name,
 		"brief" => $modules_intro[$module_name]["@brief"] ?? ""
 	];
