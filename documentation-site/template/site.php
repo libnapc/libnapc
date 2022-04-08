@@ -90,7 +90,7 @@
 	</div>
 
 	<div class="global-search-wrapper">
-		<input id="nd-global-search-input">
+		<input id="nd-global-search-input" placeholder="Please activate JavaScript">
 	</div>
 
 	<div class="mobile-menu-wrapper" id="toggle-mobile-menu">
@@ -121,7 +121,7 @@
 		echo '<div id="nd-left-navigation">';
 
 		echo '<div class="search">';
-		echo '<input placeholder="Please active JavaScript" id="nd-local-search-input">';
+		echo '<input placeholder="Please activate JavaScript" id="nd-local-search-input">';
 		echo '</div>';
 
 		echo '<div class="wrapper">';
