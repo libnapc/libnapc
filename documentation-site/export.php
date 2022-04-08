@@ -11,7 +11,7 @@ if (sizeof($argv) !== 2) {
  * This script creates the documentation.
  */
 
-define("SERVER_ROOT_URL", "http://localhost:9999/");
+define("SERVER_ROOT_URL", "http://localhost:9999");
 
 chdir(__DIR__);
 
