@@ -1,3 +1,7 @@
+/*!
+ * @name parser:intro
+ * @brief String parsing
+ */
 #if !defined(NAPC_MODULE_PARSER_h)
 	#define NAPC_MODULE_PARSER_h
 
