@@ -1,0 +1,43 @@
+@mixin short() 
+	flex-basis: 150px
+	flex-shrink: 0
+	flex-grow: 0
+
+@mixin long()
+	flex-basis: 300px
+	flex-shrink: 0
+	flex-grow: 0
+
+#nd-right-content
+	div.flex-table.fn-params,
+	div.flex-table.struct-members,
+		div.flex-table-row-cell:nth-child(1)
+			@include short()
+
+	div.flex-table.enum-values,
+	div.flex-table.changelog
+		div.flex-table-row-cell:nth-child(1)
+			@include long()
+
+	div.flex-table.changelog
+	div.flex-table.enum-values
+		div.flex-table-row-cell:nth-child(2)
+			@include short()
+
+	@media only screen and (max-width: 1000px)
+		div.flex-table.fn-params,
+		div.flex-table.enum-values,
+		div.flex-table.struct-members
+			div.flex-table-row
+				flex-direction: column !important
+				div.flex-table-row-cell
+					flex-basis: unset !important
+
+					&:nth-child(2)
+						margin-top: 5px !important
+
+		div.flex-table.changelog
+			div.flex-table-row
+				flex-direction: column !important
+			div.flex-table-row-cell
+				flex-basis: unset !important

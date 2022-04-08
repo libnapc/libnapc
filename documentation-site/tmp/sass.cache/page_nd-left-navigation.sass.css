@@ -1,0 +1,10 @@
+#nd-left-navigation {
+  width: 350px;
+  height: calc(100% - 75px - 50px);
+  position: fixed;
+  top: 75px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

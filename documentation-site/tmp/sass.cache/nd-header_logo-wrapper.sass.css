@@ -1,0 +1,11 @@
+#nd-header div.logo-wrapper {
+  width: 350px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-left: 15px;
+}
+#nd-header div.logo-wrapper a {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,21 @@
+@use "../colors.sass"
+@use "../vars.sass"
+
+#nd-header
+	width: 100%
+	height: vars.$header_height
+
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 100
+
+	//border-bottom: 1px solid colors.$header_border_bottom
+	//
+	// background color is needed because
+	// header overlaps with content when scrolled
+	//
+	background: colors.$secondary_background
+
+	display: flex
+	align-items: center
