@@ -67,7 +67,9 @@ if (substr($request_path, -5, 5) === ".html") {
 		$modules_intro = napcdoc::site_getDocumentation()["modules_intro"];
 
 		if (array_key_exists($module_name, $modules_intro)) {
-			$keys["content"] .= $modules_intro[$module_name]["@description"] ?? "";
+			$keys["content"] .= napcdoc::site_renderMarkdown(
+				$modules_intro[$module_name]["@description"] ?? ""
+			);
 
 			if (array_key_exists("@example", $modules_intro[$module_name])) {
 				$keys["content"] .= '<pre class="code hljs">';
