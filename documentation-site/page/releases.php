@@ -1,3 +1,3 @@
 <?php
 
-$__keys["content"] = "";//napcdoc::site_renderTemplateFile("page/releases");
+$__keys["content"] = napcdoc::site_renderTemplateFile("page/releases");

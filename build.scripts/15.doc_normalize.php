@@ -333,6 +333,6 @@ return function($build_constants) {
 	}
 
 	file_put_contents(
-		"build/doc/napc.json", json_encode($mapped_napc, JSON_PRETTY_PRINT)
+		"build/doc/napc.no_files.json", json_encode($mapped_napc, JSON_PRETTY_PRINT)
 	);
 };

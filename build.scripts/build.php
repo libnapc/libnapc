@@ -130,6 +130,9 @@ function build($config) {
 		$doc_normalize = require __DIR__."/15.doc_normalize.php";
 		$doc_normalize($config["build_constants"]);
 
+		$doc_addFiles = require __DIR__."/16.doc_addFiles.php";
+		$doc_addFiles();
+
 		copy("build/doc/napc.json", "dist.tmp/napc.json");
 	}
 
