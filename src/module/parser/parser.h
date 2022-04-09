@@ -1,6 +1,22 @@
 /*!
  * @name parser:intro
  * @brief String parsing
+ * @description
+ * This module contains all functions that parse strings.
+ * 
+ * All functions in this module follow the same rules<sup>*</sup>:
+ * 
+ * - The first parameter is always the string to be parsed.
+ * - Every function returns a boolean indicating success or failure.
+ * - It is allowed to pass `NULL` as output. This is useful for checking the format of a string:
+ * 
+ * ```c
+ * if (napc_parser_parseIPv4Address(ip_str, NULL)) {
+ * 	// ip_str is a valid IPv4Address
+ * }
+ * ```
+ * 
+ * > If a function returned `false` the contents of the parsed output is _undefined_.
  */
 #if !defined(NAPC_MODULE_PARSER_h)
 	#define NAPC_MODULE_PARSER_h
