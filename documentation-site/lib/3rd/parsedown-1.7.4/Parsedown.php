@@ -428,6 +428,9 @@ class Parsedown
                 'text' => '',
             );
 
+            // added by nap.software
+            $is_c = false;
+
             if (isset($matches[1]))
             {
                 /**
@@ -446,6 +449,9 @@ class Parsedown
 
                 $class = 'language-'.$language;
 
+                // added by nap.software
+                $is_c = $language === "c";
+
                 $Element['attributes'] = array(
                     'class' => $class,
                 );
@@ -457,7 +463,7 @@ class Parsedown
                     'name' => 'pre',
                     /** added by nap.software **/
                     'attributes' => [
-                        'class' => "hljs code"
+                        'class' => $is_c ? "hljs code" : "code"
                     ],
                     /** added by nap.software **/
                     'handler' => 'element',
