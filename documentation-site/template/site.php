@@ -10,7 +10,7 @@ $has_left_navigation = sizeof($__keys["left-navigation"] ?? []) > 0;
 			$logo = "libnapc";
 
 			if ($git_branch !== "main") {
-				$logo = "libnapc-nightly";
+				$logo = "libnapc-".$git_branch;
 			}
 
 			echo napcdoc::html_createElement("a", [
