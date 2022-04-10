@@ -1,18 +1,18 @@
 #if !defined(ARDUINO)
 	#include <hw.module/file/_private/_file.h>
 	#include <stdio.h> // FILE, fopen(), fileno()
-	#include <napc-utils/napc-utils.h> // napc_snprintf()
+	#include <napc-utils/napc-utils.h> // napc_strlen(), napc_snprintf(), napc_strncpy()
+
+	extern char PV_napc_fs_linuxRootPath[512]; // @global
 
 	bool HAL_napc_File_open(void *ptr, const char *path, const char *mode) {
-		char realpath[512];
+		char realpath[1024];
 
-		const char *FILE_ROOT_PATH = getenv("NAPC_FILE_ROOT_PATH");
-
-		if (!FILE_ROOT_PATH) {
-			FILE_ROOT_PATH = "";
+		if (napc_strlen(PV_napc_fs_linuxRootPath)) {
+			napc_snprintf(realpath, sizeof(realpath), "%s/%s", PV_napc_fs_linuxRootPath, path);
+		} else {
+			napc_strncpy(realpath, path, sizeof(realpath));
 		}
-
-		napc_snprintf(realpath, sizeof(realpath), "%s%s", FILE_ROOT_PATH, path);
 
 		FILE *fp = fopen(realpath, mode);
 

@@ -137,6 +137,12 @@ function build($config) {
 	}
 
 	/**
+	 * Tests
+	 */
+	$tests_runLinuxTests = require __DIR__."/20.tests_runLinuxTests.php";
+	$tests_runLinuxTests();
+
+	/**
 	 * Finish up
 	 */
 	XPHPUtils::shell_assertSystemCall("rm -rf dist");

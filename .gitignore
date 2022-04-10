@@ -9,3 +9,4 @@ documentation-site/tmp/*
 test.c
 readme
 /a.out
+__tests__.linux/tmp/*.out
