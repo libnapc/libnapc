@@ -8,3 +8,4 @@ documentation-site/tmp/*
 !documentation-site/tmp/.gitkeep
 test.c
 readme
+/a.out
