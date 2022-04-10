@@ -225,22 +225,49 @@
 		napc__Reader *ctx, char *line_buffer, napc_size line_buffer_size
 	);
 
-	/**
-	 * Returns the current offset
+	/*!
+	 * @name napc_Reader_getCurrentOffset
+	 * @brief Get current offset.
+	 * @version 2.0.0
+	 * @description
+	 * Returns the current offset the reader is at.
+	 * @changelog 2.0.0 10.04.2022 initial version
 	 */
 	napc_size napc_Reader_getCurrentOffset(
 		const napc__Reader *ctx
 	);
 
-	/**
-	 * Returns the current address (data + offset)
+	/*!
+	 * @name napc_Reader_getCurrentAddress
+	 * @brief Get current address.
+	 * @version 2.0.0
+	 * @description
+	 * Returns the current address the reader is at `(data + offset)`.
+	 * @changelog 2.0.0 10.04.2022 initial version
 	 */
 	const void *napc_Reader_getCurrentAddress(
 		const napc__Reader *ctx
 	);
 
-	/**
-	 * Returns the end address (data + (size - 1))
+	/*!
+	 * @name napc_Reader_getStartAddress
+	 * @brief Get the start address.
+	 * @version 2.0.0
+	 * @description
+	 * Returns the start address.
+	 * @changelog 2.0.0 10.04.2022 initial version
+	 */
+	const void *napc_Reader_getStartAddress(
+		const napc__Reader *ctx
+	);
+
+	/*!
+	 * @name napc_Reader_getEndAddress
+	 * @brief Get the last address.
+	 * @version 2.0.0
+	 * @description
+	 * Returns the end address `(data + (size - 1))`.
+	 * @changelog 2.0.0 10.04.2022 initial version
 	 */
 	const void *napc_Reader_getEndAddress(
 		const napc__Reader *ctx
