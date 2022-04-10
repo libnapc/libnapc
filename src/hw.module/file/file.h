@@ -24,6 +24,8 @@
 	 * @param path Path to the file.
 	 * @param mode Mode (`"r"` for reading, `"w"` for writing).
 	 * @return Returns a negative number if file could not be opened.
+	 * @notes
+	 * On linux the environment variable `NAPC_FILE_ROOT_PATH` is prepended to `path`.
 	 * @warning
 	 * Opening a file in write mode (`"w"`) will always clear the previous contents of the file.
 	 * @changelog 1.0.0 17.02.2022 initial version

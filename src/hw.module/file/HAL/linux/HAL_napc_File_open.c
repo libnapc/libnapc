@@ -6,13 +6,13 @@
 	bool HAL_napc_File_open(void *ptr, const char *path, const char *mode) {
 		char realpath[512];
 
-		const char *FS_ROOT_DIR = getenv("NAPC_FS_ROOT_DIR");
+		const char *FILE_ROOT_PATH = getenv("NAPC_FILE_ROOT_PATH");
 
-		if (!FS_ROOT_DIR) {
-			FS_ROOT_DIR = "";
+		if (!FILE_ROOT_PATH) {
+			FILE_ROOT_PATH = "";
 		}
 
-		napc_snprintf(realpath, sizeof(realpath), "%s%s", FS_ROOT_DIR, path);
+		napc_snprintf(realpath, sizeof(realpath), "%s%s", FILE_ROOT_PATH, path);
 
 		FILE *fp = fopen(realpath, mode);
 
