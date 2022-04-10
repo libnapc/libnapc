@@ -46,7 +46,7 @@ return function($module_name, $request_definition_name = "") {
 			"icon" => $icon,
 			"label" => $label,
 			"brief" => $definition_meta["general_info"]["brief"] ?? "",
-			"href" => napcdoc::site_link("/definition/$definition_module/$definition_name.html#$definition_name"),
+			"href" => napcdoc::site_link("definition/$definition_module/$definition_name.html#$definition_name"),
 			"active" => $definition_name === $request_definition_name,
 			"name" => $definition_name,
 			"data-attributes" => [
