@@ -4,5 +4,5 @@ const char *napc_version(void) {
 
 
 const char *napc_getFullVersion(void) {
-	return "%BC_BUILD_DATE% %BC_GIT_HEAD_HASH%";
+	return "%BC_RELEASE_VERSION% %BC_BUILD_DATE% %BC_GIT_HEAD_HASH%";
 }
