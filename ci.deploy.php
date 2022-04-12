@@ -17,8 +17,8 @@ $post = [
 foreach ([
 	"doc.tar.gz",
 	"libnapc-arduino.zip",
-	"libnapc-x86_64.a",
-	"libnapc-aarch64.a",
+	"libnapc-linux-x86_64.a",
+	"libnapc-linux-aarch64.a",
 	"napc.h"
 ] as $file) {
 	$post_key = str_replace(".", "_", $file);

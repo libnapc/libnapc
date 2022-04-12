@@ -4,8 +4,8 @@ return function() {
 	$napc = json_decode(file_get_contents("build/doc/napc.no_files.json"), true);
 
 	$files = [
-		"libnapc-aarch64.a" => "build/lib",
-		"libnapc-x86_64.a" => "build/lib",
+		"libnapc-linux-aarch64.a" => "build/lib",
+		"libnapc-linux-x86_64.a" => "build/lib",
 		"libnapc-arduino.zip" => "build/lib",
 		"napc.h" => "build"
 	];

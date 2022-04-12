@@ -9,7 +9,7 @@ class XPHPUtils_shell_Program {
 	private $_stderr = "";
 	private $_cmd = "";
 
-	public function __construct($command, $args = []) {
+	public function __construct($command, $args = [], $cwd = NULL) {
 		$real_command = $command." ";
 
 		foreach ($args as $arg) {
@@ -21,7 +21,7 @@ class XPHPUtils_shell_Program {
 		$this->_proc = proc_open(
 			$real_command, [
 				STDIN, ["pipe", "w"], ["pipe", "w"]
-			], $this->_pipes
+			], $this->_pipes, $cwd
 		);
 	}
 
@@ -55,6 +55,6 @@ class XPHPUtils_shell_Program {
 	}
 }
 
-return function($command, $args) {
-	return new XPHPUtils_shell_Program($command, $args);
+return function($command, $args, $cwd) {
+	return new XPHPUtils_shell_Program($command, $args, $cwd);
 };

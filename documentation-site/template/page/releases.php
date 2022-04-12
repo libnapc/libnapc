@@ -3,6 +3,10 @@ div.releases div.flex-table-row.header {
 	text-transform: uppercase;
 	color: rgba(255, 255, 255, .3);
 }
+
+div.releases div.flex-table-row-cell.filename {
+	flex-basis: 250px !important;
+} 
 </style>
 <h1>Releases</h1>
 
@@ -10,7 +14,7 @@ div.releases div.flex-table-row.header {
 
 	<div class="flex-table">
 		<div class="flex-table-row header">
-			<div class="flex-table-row-cell">Filename</div>
+			<div class="flex-table-row-cell filename">Filename</div>
 			<div class="flex-table-row-cell">SHA256-Checksum</div>
 			<div class="flex-table-row-cell">Size</div>
 		</div>
@@ -22,7 +26,7 @@ div.releases div.flex-table-row.header {
 		?>
 
 			<div class="flex-table-row">
-				<div class="flex-table-row-cell">
+				<div class="flex-table-row-cell filename">
 					<a href="<?php echo napcdoc::site_link("download/$filename"); ?>">
 						<?php echo $filename; ?>
 					</a>

@@ -1,10 +1,8 @@
 <?php
 
 return function() {
-	$arch = XPHPUtils::shell_assertExecCall("uname -m")[0];
-
 	$nm_output = implode("\n", XPHPUtils::shell_assertExecCall(
-		"nm", ["build/lib/libnapc-$arch.a"]
+		"nm", ["build/lib/libnapc-local.a"]
 	));
 
 	$symbols = json_decode(file_get_contents("build/doc/symbols.json"), true);
