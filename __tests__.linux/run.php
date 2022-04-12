@@ -6,11 +6,9 @@ chdir(__DIR__);
 require_once __DIR__."/../x-php-utils/load.php";
 
 function compile($test) {
-	$arch = trim(exec("uname -m"));
-
 	XPHPUtils::shell_assertSystemCall("rm -f tmp/$test.out");
 
-	$command = "gcc -Wall -Wextra -Wpedantic ".escapeshellarg("$test.c")." -I../build/ -L../build/lib -lnapc-$arch -o tmp/$test.out";
+	$command = "gcc -Wall -Wextra -Wpedantic ".escapeshellarg("$test.c")." -I../build/ -L../build/lib -lnapc-local -o tmp/$test.out";
 
 	XPHPUtils::shell_assertSystemCall($command);
 }
