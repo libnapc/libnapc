@@ -59,6 +59,7 @@
 	#include <module/misc/misc.h>
 	#include <module/reader/reader.h>
 	#include <module/writer/writer.h>
+	#include <module/nf-writer/nf-writer.h>
 	#include <module/ipv4participant/ipv4participant.h>
 	#include <module/dns/dns.h>
 	#include <module/mem/mem.h>

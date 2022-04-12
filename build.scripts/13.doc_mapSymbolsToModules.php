@@ -2,6 +2,7 @@
 
 return function() {
 	$symbols = json_decode(file_get_contents("build/doc/symbols.json"), true);
+	$types_module_map = json_decode(file_get_contents("build.scripts/doc/types_module_map.json"), true);
 
 	$functions = $symbols["functions"];
 	$types = $symbols["types"];
@@ -35,20 +36,17 @@ return function() {
 			array_shift($tmp);
 			array_shift($tmp);
 
-			$tmp = implode("_", $tmp);
+			$tmp = "napc__".implode("_", $tmp);
 			$guessed_mod = NULL;
 
-			foreach ($modules as $m => $_) {
-				if (strstr($tmp, $m)) {
-					$guessed_mod = $m;
-					break;
-				}
+			if (array_key_exists($tmp, $types_module_map)) {
+				$guessed_mod = $types_module_map[$tmp];
 			}
 
 			if ($guessed_mod) {
 				$modules[$guessed_mod][] = "t:$type";
 			} else {
-				fprintf(STDERR, "Oops! $tmp\n");
+				fprintf(STDERR, "Unmapped $tmp\n");
 			}
 		}
 	}

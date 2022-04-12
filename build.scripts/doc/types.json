@@ -14,6 +14,7 @@
 	"napc__Timer": "opaque",
 	"napc__Reader": "opaque",
 	"napc__Writer": "opaque",
+	"napc__NFWriter": "opaque",
 	"napc__IPv4Participant": "struct",
 	"napc__DNSOPCode": "enum",
 	"napc__DNSHeader": "struct",
