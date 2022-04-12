@@ -74,9 +74,9 @@
 	 * @return Returns the previous no-fail mode value.
 	 * @changelog 2.0.0 12.04.2022 initial version
 	 */
-	bool napc_Writer_setNoFailMode(
-		napc__Writer *ctx, bool mode
-	);
+	//bool napc_Writer_setNoFailMode(
+	//	napc__Writer *ctx, bool mode
+	//);
 
 	/*!
 	 * @name napc_Writer_moveCurrentOffsetByAmount

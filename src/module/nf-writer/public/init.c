@@ -6,6 +6,5 @@ void napc_NFWriter_init(
 	NAPC_MAGIC_INIT(napc__NFWriter, ctx);
 
 	ctx->_writer = napc_Writer_create(data, data_size);
-
-	napc_Writer_setNoFailMode(&ctx->_writer, true);
+	ctx->_writer.no_fail_mode = true;
 }
