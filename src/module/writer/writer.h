@@ -60,20 +60,6 @@
 	napc__Writer napc_Writer_create(void *data, napc_size data_size);
 
 	/*!
-	 * @name napc_Writer_getCurrentOffset
-	 * @brief Get internal offset.
-	 * @version 1.0.0
-	 * @description
-	 * Get buffer offset from the writer instance.
-	 * @return Returns the current buffer offset from the writer instance.
-	 * @param ctx Pointer to the napc__Writer instance.
-	 * @changelog 1.0.0 17.02.2022 initial version
-	 */
-	napc_size napc_Writer_getCurrentOffset(
-		const napc__Writer *ctx
-	);
-
-	/*!
 	 * @name napc_Writer_moveCurrentOffsetByAmount
 	 * @brief Move internal offset.
 	 * @version 1.0.0
@@ -236,4 +222,54 @@
 	bool napc_Writer_writeStringFormat(
 		napc__Writer *ctx, const char *fmt, ...
 	) NAPC_FN_PRINTFLIKE(2, 3);
+
+	/*!
+	 * @name napc_Writer_getCurrentOffset
+	 * @brief Get internal offset.
+	 * @version 1.0.0
+	 * @description
+	 * Get buffer offset from the writer instance.
+	 * @return Returns the current buffer offset from the writer instance.
+	 * @param ctx Pointer to the napc__Writer instance.
+	 * @changelog 1.0.0 17.02.2022 initial version
+	 */
+	napc_size napc_Writer_getCurrentOffset(
+		const napc__Writer *ctx
+	);
+
+	/*!
+	 * @name napc_Writer_getCurrentAddress
+	 * @brief Get current address.
+	 * @version 2.0.0
+	 * @description
+	 * Returns the current address the writer is at `(data + offset)`.
+	 * @changelog 2.0.0 12.04.2022 initial version
+	 */
+	void *napc_Writer_getCurrentAddress(
+		const napc__Writer *ctx
+	);
+
+	/*!
+	 * @name napc_Writer_getStartAddress
+	 * @brief Get the start address.
+	 * @version 2.0.0
+	 * @description
+	 * Returns the start address.
+	 * @changelog 2.0.0 12.04.2022 initial version
+	 */
+	void *napc_Writer_getStartAddress(
+		const napc__Writer *ctx
+	);
+
+	/*!
+	 * @name napc_Writer_getEndAddress
+	 * @brief Get the last address.
+	 * @version 2.0.0
+	 * @description
+	 * Returns the end address `(data + (size - 1))`.
+	 * @changelog 2.0.0 12.04.2022 initial version
+	 */
+	void *napc_Writer_getEndAddress(
+		const napc__Writer *ctx
+	);
 #endif
