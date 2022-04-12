@@ -62,7 +62,6 @@
 	#include <module/nf-writer/nf-writer.h>
 	#include <module/ipv4participant/ipv4participant.h>
 	#include <module/dns/dns.h>
-	#include <module/mem/mem.h>
 	#include <module/sha/sha.h>
 
 	#include <hw.module/eth/eth.h>
