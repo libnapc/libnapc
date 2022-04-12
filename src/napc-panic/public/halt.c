@@ -1,6 +1,6 @@
 #include <napc-panic/_private/_napc-panic.h>
 
-static char _message_buffer[512]; // @static
+static char _message_buffer[256]; // @static
 
 void napc_halt(
 	const char *file,

@@ -2,7 +2,7 @@
 #include <string.h> // memset()
 #include <stdio.h> // vsnprintf()
 
-static char _printf_buffer[512]; // @static
+static char _printf_buffer[256]; // @static
 
 void napc_printf(const char *fmt, ...) {
 	if (PV_napc_serial_muted) return;

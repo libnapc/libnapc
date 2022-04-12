@@ -1,8 +1,7 @@
 #include <napc-log/_private/_napc-log.h>
 
-static char _message_buffer[1024]; // @static
+static char _message_buffer[256]; // @static
 static char _fn[64]; // @static
-static char _message_pad[128]; // @static
 
 static void _shortenFunctionName(const char *fn, char *buf) {
 	napc_size fn_len = napc_strlen(fn);
@@ -57,15 +56,15 @@ void napc_logMessage(
 		va_end(args);
 	}
 
-	napc_snprintf(_message_pad, sizeof(_message_pad), "%105s", "");
-
 	for (napc_size i = 0; i < napc_strlen(_message_buffer); ++i) {
 		const char ch = _message_buffer[i];
 
 		napc_putc(ch);
 
 		if (ch == '\n') {
-			napc_puts(_message_pad);
+			for (napc_size i = 0; i < 105; ++i) {
+				napc_putc(' ');
+			}
 		}
 	}
 
