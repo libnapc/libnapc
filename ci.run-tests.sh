@@ -7,7 +7,7 @@ gcc \
 	-Ldist/ \
 	-Idist/ \
 	ci.run-tests.c \
-	"-lnapc-$(uname -m)" \
+	"-lnapc-local" \
 	-o \
 	ci.run-all-tests
 
