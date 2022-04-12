@@ -60,7 +60,9 @@
 	 */
 	napc__Writer napc_Writer_create(void *data, napc_size data_size);
 
-	/*!
+	/**
+	 * PRIVATE API CALL
+	 * 
 	 * @name napc_Writer_setNoFailMode
 	 * @brief Set no fail mode.
 	 * @version 2.0.0
