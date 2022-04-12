@@ -71,3 +71,29 @@ foreach ($tests as $test) {
 	}
 }
 
+compile("writer_fail_mode");
+
+function writer_fail_mode() {
+	$has_crashed = false;
+
+	exec("./tmp/writer_fail_mode.out 2>&1", $lines, $exit_code);
+
+	foreach ($lines as $line) {
+		if (strpos($line, "Write operation failed and no_fail_mode is set to true") !== false) {
+			$has_crashed = true;
+		}
+	}
+
+	if ($exit_code === 0) {
+		$has_crashed = false;
+	}
+
+	return $has_crashed;
+}
+
+if (!writer_fail_mode()) {
+	fwrite(STDERR, "Expected program to crash\n");
+	exit(1);
+} else {
+	echo "pass\n";
+}

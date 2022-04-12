@@ -21,6 +21,7 @@
 		napc_size _offset;
 		napc_size size;
 		void *data;
+		bool no_fail_mode;
 	} napc__Writer;
 
 	/*!
@@ -58,6 +59,22 @@
 	 * napc__Writer writer = napc_Writer_create(buffer, sizeof(buffer));
 	 */
 	napc__Writer napc_Writer_create(void *data, napc_size data_size);
+
+	/*!
+	 * @name napc_Writer_setNoFailMode
+	 * @brief Set no fail mode.
+	 * @version 2.0.0
+	 * @description
+	 * Sets or clears no fail mode.
+	 * In no-fail mode a failed write operation leads to program abortion.
+	 * @param ctx Pointer to the napc__Writer instance.
+	 * @param mode `true` to set no-fail mode.
+	 * @return Returns the previous no-fail mode value.
+	 * @changelog 2.0.0 12.04.2022 initial version
+	 */
+	bool napc_Writer_setNoFailMode(
+		napc__Writer *ctx, bool mode
+	);
 
 	/*!
 	 * @name napc_Writer_moveCurrentOffsetByAmount
