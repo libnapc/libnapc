@@ -28,6 +28,7 @@ bool napc_DNS_parseHeader(
 	if (!napc_Reader_readU16BE(&reader, NULL)) return false;
 
 	if (out) {
+		out->raw_flags            = flags;
 		out->opcode               = (flags & NAPC_U16_LITERAL(0x7800)) >> 11u;
 
 		out->authoritative_answer = !!(flags & NAPC_U16_LITERAL(0x0400));

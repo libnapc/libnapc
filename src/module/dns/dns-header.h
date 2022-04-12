@@ -24,7 +24,8 @@
 	/*!
 	 * @name napc__DNSHeader
 	 * @brief Representation of a DNS header.
-	 * @version 1.0.0
+	 * @version 2.0.0
+	 * @field raw_flags Contains the raw dns header flags (16 bit)
 	 * @field opcode DNS operation code. See `napc__DNSOPCode`.
 	 * @field authoritative_answer Authoritative answer flag.
 	 * @field truncated Truncated flag.
@@ -33,8 +34,11 @@
 	 * @field question_count Number of DNS queries.
 	 * @field answer_count Number of DNS answers.
 	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 12.04.2022 added `raw_flags` member
 	 */
 	typedef struct {
+		napc_u16 raw_flags;
+
 		napc__DNSOPCode opcode;
 
 		bool authoritative_answer;

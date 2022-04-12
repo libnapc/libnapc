@@ -10,6 +10,7 @@
 		"rd_data": ["napc_u8", 16]
 	},
 	"napc__DNSHeader": {
+		"raw_flags": "napc_u16",
 		"opcode": "napc__DNSOPCode",
 		"authoritative_answer": "bool",
 		"truncated": "bool",
