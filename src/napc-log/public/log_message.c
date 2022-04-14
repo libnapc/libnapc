@@ -25,6 +25,22 @@ static void _shortenFunctionName(const char *fn, char *buf) {
 	buf[max - 1] = 0;
 }
 
+static void _callLogHandlers(
+	const char *subsys,
+	int level,
+	const char *function,
+	const char *message
+) {
+	// call log handler
+	for (napc_size i = 0; i < NAPC_ARRAY_ELEMENTS(PV_napc_log_handler_array); ++i) {
+		napc_logHandlerFunction handler = PV_napc_log_handler_array[i];
+
+		if (handler) {
+			handler(subsys, level, function, message);
+		}
+	}
+}
+
 void napc_logMessage(
 	const char *subsys,
 	int level,
@@ -55,6 +71,10 @@ void napc_logMessage(
 		napc_vsnprintf(_message_buffer, sizeof(_message_buffer), fmt, args);
 		va_end(args);
 	}
+
+	_callLogHandlers(
+		subsys, level, function, _message_buffer
+	);
 
 	for (napc_size i = 0; i < napc_strlen(_message_buffer); ++i) {
 		const char ch = _message_buffer[i];
