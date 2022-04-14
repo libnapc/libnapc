@@ -1,5 +1,9 @@
 <?php
 
+ini_set("display_errors", 1);
+ini_set("display_startup_errors", 1);
+error_reporting(E_ALL);
+
 $uname = strtolower(php_uname());
 
 // allow for node-sass because dart-sass does not

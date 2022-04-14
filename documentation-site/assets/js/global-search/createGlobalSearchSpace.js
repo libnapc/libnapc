@@ -16,7 +16,7 @@ window.napcdoc.lib.createGlobalSearchSpace = function() {
 			const definition_meta = window.napcdoc.definitions[definition_name]
 
 			// ignore undocumented definitions
-			if (!("general_info" in definition_meta)) {
+			if (!definition_meta || !("general_info" in definition_meta)) {
 				console.log("skip", definition_name)
 
 				continue

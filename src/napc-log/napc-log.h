@@ -17,11 +17,6 @@
 		const char *message
 	);
 
-	/**
-	 * Public but not documented
-	 */
-	void napc_initLogHandler(void);
-
 	/*!
 	 * @name napc_addLogHandlerFunction
 	 * @brief Add log handler function
