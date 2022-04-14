@@ -4,10 +4,14 @@ return function($module_name, $request_definition_name = "") {
 	$nav = [];
 
 	$definitions = napcdoc::doc_getDefinitionsOfModule($module_name);
+	$doc_definitions = napcdoc::site_getDocumentation()["definitions"];
 
 	foreach ($definitions as $definition) {
 		$definition_name = substr($definition, 2);
-		$definition_meta = napcdoc::site_getDocumentation()["definitions"][$definition_name];
+
+		if (!array_key_exists($definition_name, $doc_definitions)) continue;
+
+		$definition_meta = $doc_definitions[$definition_name];
 
 		if (!array_key_exists("general_info", $definition_meta)) continue;
 
