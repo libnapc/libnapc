@@ -9,7 +9,7 @@
 	 * @version 1.0.0
 	 * @enum NAPC_DNS_OPCODE_QUERY Standard DNS-Query.
 	 * @enum NAPC_DNS_OPCODE_IQUERY Inverse DNS-Query.
-	 * @enum NAPC_DNS_OPCODE_STATUS Status op.
+	 * @enum NAPC_DNS_OPCODE_STATUS Status query.
 	 * @enum NAPC_DNS_OPCODE_NOTIFY
 	 * @enum NAPC_DNS_OPCODE_UPDATE
 	 */

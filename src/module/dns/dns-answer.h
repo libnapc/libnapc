@@ -3,6 +3,8 @@
 
 	#include <libnapc.h>
 
+	#define NAPC_MODULE_DNS_MAX_RD_DATA_LENGTH 16u
+
 	/*!
 	 * @name napc__DNSAnswer
 	 * @brief Representation of a DNS answer.
@@ -16,6 +18,6 @@
 		napc_u32 ttl;
 
 		napc_u16 rd_length;
-		napc_u8 rd_data[16];
+		napc_u8 rd_data[NAPC_MODULE_DNS_MAX_RD_DATA_LENGTH];
 	} napc__DNSAnswer;
 #endif
