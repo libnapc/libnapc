@@ -34,9 +34,16 @@ static void _callLogHandlers(
 	// call log handler
 	for (napc_size i = 0; i < NAPC_ARRAY_ELEMENTS(PV_napc_log_handler_array); ++i) {
 		napc_logHandlerFunction handler = PV_napc_log_handler_array[i];
+		void *handler_context = PV_napc_log_handler_context_array[i];
 
 		if (handler) {
-			handler(subsys, level, function, message);
+			handler(
+				handler_context,
+				subsys,
+				level,
+				function,
+				message
+			);
 		}
 	}
 }
