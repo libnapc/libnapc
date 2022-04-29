@@ -7,6 +7,7 @@
 
 	#include <napc-panic/napc-panic.h>
 	#include <module/parser/parser.h> // napc_parser__parseMACAddress(), napc_parser__parseIPv4Address()
+	#include <module/writer/writer.h> // napc_Writer_
 
 	extern bool PV_napc_eth_initialized; // @global
 
