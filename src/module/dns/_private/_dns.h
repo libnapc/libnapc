@@ -39,7 +39,7 @@
 	 * Used as a temporary buffer when expanding
 	 * compressed dns names.
 	 */
-	extern char PV_napc_DNS_tmp_name[256]; // @global
+	extern char PV_napc_DNS_tmp_name[NAPC_MODULE_DNS_MAX_NAME]; // @global
 
 
 #endif

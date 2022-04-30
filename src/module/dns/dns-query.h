@@ -4,7 +4,7 @@
 	#include <libnapc.h>
 	#include <module/dns/dns-qtype.h>
 
-	#define NAPC_MODULE_DNS_MAX_NAME 254u
+	#define NAPC_MODULE_DNS_MAX_NAME 64 // was 254 before
 
 	/*!
 	 * @name napc__DNSQuery
