@@ -31,11 +31,8 @@ jobs:
     - name: Run Unit Tests
       run: ./ci.run-tests.sh
 
-    - name: Start local server
-      run: cd documentation-site/ && php -S 0.0.0.0:9999 index.php &
-
     - name: Export documentation
-      run: ./documentation-site/export.php --optimized
+      run: cd documentation-site/ && ./export.sh
 
     - name: Deploy
       run: ./ci.deploy.php
