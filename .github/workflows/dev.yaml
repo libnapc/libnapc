@@ -25,14 +25,5 @@ jobs:
          sudo apt install gcc-x86-64-linux-gnu
          sudo apt install valgrind
 
-    - name: Build source
-      run: ./build.scripts/build.php
-
-    - name: Run Unit Tests
-      run: ./ci.run-tests.sh
-
-    - name: Export documentation
-      run: cd documentation-site/ && ./export.sh
-
-    - name: Deploy
-      run: ./ci.deploy.php
+    - name: Run CI-Script
+      run: ./ci.run.sh
