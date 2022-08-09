@@ -1,7 +1,0 @@
-body.no-left-side-navigation #nd-left-navigation {
-  display: none;
-}
-body.no-left-side-navigation #nd-right-content {
-  width: 100%;
-  left: 0;
-}
