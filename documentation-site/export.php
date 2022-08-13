@@ -93,6 +93,7 @@ foreach ($documents as $document) {
 }
 
 download("api.html");
+download("debug.html");
 download("releases.html");
 download("home.html");
 download("documentation/index.html");
