@@ -1,4 +1,4 @@
-![logo of libnapc](https://libnapc.nap.software/static/libnapc-nightly-github.png)
+![logo of libnapc](https://static.nap-software.com/github/libnapc/dev-branch-logo.png)
 
 [![Build and Test](https://github.com/libnapc/libnapc/actions/workflows/dev.yaml/badge.svg?event=branch_protection_rule)](https://github.com/libnapc/libnapc/actions/workflows/dev.yaml)
 
