@@ -10,3 +10,7 @@ test.c
 readme
 /a.out
 __tests__.linux/tmp/*.out
+.napci/build_files.tmp
+.napci/build_files
+.napci/upload_files.tmp
+.napci/upload_files
