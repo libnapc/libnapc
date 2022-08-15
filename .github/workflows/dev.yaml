@@ -22,4 +22,4 @@ jobs:
          sudo apt install valgrind
 
     - name: Run CI-Script
-      run: ./ci.run.sh
+      run: ./.napci/run.sh
