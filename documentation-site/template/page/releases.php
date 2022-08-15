@@ -30,7 +30,7 @@ div.releases div.flex-table-row-cell.filename {
 
 			<div class="flex-table-row">
 				<div class="flex-table-row-cell filename">
-					<a href="https://stash.nap-software.com/<?php echo hash("sha1", "$git_branch@$git_hash"); ?>/<?php echo $filename; ?>" target="_blank">
+					<a href="https://stash.nap-software.com/<?php echo hash("sha1", "libnapc:$git_branch@$git_hash"); ?>/<?php echo $filename; ?>" target="_blank">
 						<?php echo $filename; ?>
 					</a>
 				</div>
