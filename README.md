@@ -1,6 +1,6 @@
 ![logo of libnapc](https://libnapc.nap.software/static/libnapc-nightly-github.png)
 
-[![Build, Test and Deploy (nightly)](https://github.com/nap-software/libnapc/actions/workflows/nightly.yaml/badge.svg?branch=nightly)](https://github.com/nap-software/libnapc/actions/workflows/nightly.yaml)
+[![Build and Test](https://github.com/libnapc/libnapc/actions/workflows/dev.yaml/badge.svg?event=branch_protection_rule)](https://github.com/libnapc/libnapc/actions/workflows/dev.yaml)
 
 # libnapc
 
