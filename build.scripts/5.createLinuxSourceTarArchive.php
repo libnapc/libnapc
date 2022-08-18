@@ -34,7 +34,7 @@ return function() {
 	chmod("build.pkg/INSTALL.sh", 0755);
 
 	XPHPUtils::shell_assertSystemCall(
-		"cp -r build build.pkg/build && cd build.pkg && tar -czvf ../build/lib/libnapc-linux.tar.gz ."
+		"cp -r build build.pkg/build && cd build.pkg && fakeroot tar -czvf ../build/lib/libnapc-linux.tar.gz ."
 	);
 
 	XPHPUtils::shell_assertSystemCall(
