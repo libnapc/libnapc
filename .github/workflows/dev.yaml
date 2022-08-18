@@ -17,9 +17,9 @@ jobs:
     - name: Install Dependencies
       run: |
          sudo apt-get update
-         sudo apt install gcc make gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu
-         sudo apt install gcc-x86-64-linux-gnu
+         sudo apt install gcc make
          sudo apt install valgrind
+         sudo apt install fakeroot-ng
 
     - name: Run CI-Script
       run: ./.napci/run.sh
