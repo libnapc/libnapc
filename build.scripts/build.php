@@ -90,8 +90,8 @@ function build($config) {
 	$createNAPCHeaderFile = require __DIR__."/4.createNAPCHeaderFile.php";
 	$createNAPCHeaderFile();
 
-	$createStaticLibraries = require __DIR__."/5.createStaticLibraries.php";
-	$createStaticLibraries();
+	$createLinuxSourceTarArchive = require __DIR__."/5.createLinuxSourceTarArchive.php";
+	$createLinuxSourceTarArchive();
 
 	if ($config["build_flags"]["arduino-zip"]) {
 		$packageArduinoLibrary = require __DIR__."/6.packageArduinoLibrary.php";

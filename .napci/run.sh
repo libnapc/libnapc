@@ -16,8 +16,7 @@ mv .napci/build_files.tmp .napci/build_files
 cd .napci/upload_files.tmp/
 
 ln -s ../build_files/libnapc-arduino.zip .
-ln -s ../build_files/libnapc-linux-aarch64.a .
-ln -s ../build_files/libnapc-linux-x86_64.a .
+ln -s ../build_files/libnapc-linux.tar.gz .
 ln -s ../build_files/napc.h .
 
 cd ../../

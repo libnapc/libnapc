@@ -2,6 +2,7 @@
 dist/
 dist.tmp/
 build/
+build.pkg/
 documentation-site/dist.tmp/
 documentation-site/dist/
 documentation-site/tmp/*
