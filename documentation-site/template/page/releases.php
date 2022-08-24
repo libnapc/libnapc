@@ -22,14 +22,14 @@ div.releases div.flex-table-row-cell.filename {
 		<?php
 			$files = napcdoc::site_getDocumentation()["files"];
 
-			$git_hash = napcdoc::site_getDocumentation()["build_constants"]["GIT_HEAD_HASH"];
+			$release_version = napcdoc::site_getDocumentation()["build_constants"]["RELEASE_VERSION"];
 
 			foreach ($files as $filename => $meta) {
 		?>
 
 			<div class="flex-table-row">
 				<div class="flex-table-row-cell filename">
-					<a href="https://stash.nap-software.com/<?php echo hash("sha1", "libnapc@$git_hash"); ?>/<?php echo $filename; ?>" target="_blank">
+					<a href="https://libnapc.nap-software.com/v<?php echo $release_version; ?>/<?php echo $filename; ?>" target="_blank">
 						<?php echo $filename; ?>
 					</a>
 				</div>
