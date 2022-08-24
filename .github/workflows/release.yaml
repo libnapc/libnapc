@@ -34,10 +34,10 @@ jobs:
 
     - name: Prepare git repositories
       run: |
-         git clone git@github.com:libnapc/libnapc-arduino-releases-tmp.git ~/libnapc-arduino-releases-tmp
-         cd ~/libnapc-arduino-releases-tmp && git rm -rf . && git clean -fxd
-         git clone git@github.com:libnapc/libnapc-documentation-tmp.git ~/libnapc-documentation-tmp
-         cd ~/libnapc-documentation-tmp && git rm -rf . && git clean -fxd
+         git clone git@github.com:libnapc/libnapc-arduino-releases.git ~/libnapc-arduino-releases
+         cd ~/libnapc-arduino-releases && git rm -rf . && git clean -fxd
+         git clone git@github.com:libnapc/libnapc-documentation.git ~/libnapc-documentation
+         cd ~/libnapc-documentation && git rm -rf . && git clean -fxd
 
     - name: Download Release Script
       run: |
