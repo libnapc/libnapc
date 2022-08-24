@@ -29,7 +29,7 @@ div.releases div.flex-table-row-cell.filename {
 
 			<div class="flex-table-row">
 				<div class="flex-table-row-cell filename">
-					<a href="https://libnapc.nap-software.com/v<?php echo $release_version; ?>/<?php echo $filename; ?>" target="_blank">
+					<a href="https://libnapc.nap-software.com/v<?php echo $release_version; ?>/download/<?php echo $filename; ?>" target="_blank">
 						<?php echo $filename; ?>
 					</a>
 				</div>
