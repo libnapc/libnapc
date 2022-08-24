@@ -8,6 +8,8 @@ on:
 
 env:
   LIBNAPC_RELEASE_VERSION: ${{ github.ref_name }}
+  LIBNAPC_DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+  LIBNAPC_DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
 
 jobs:
   build:
@@ -24,10 +26,15 @@ jobs:
          sudo apt install valgrind
          sudo apt install fakeroot-ng
 
-    - name: Setup git
+    - name: Setup SSH keys
       run: |
          echo "${{ secrets.GIT_SSH_KEY }}" > ~/github-deploy.key
          chmod 0600 ~/github-deploy.key
+         echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/deploy.key
+         chmod 0600 ~/deploy.key
+
+    - name: Setup git
+      run: |
          git config --global user.email "github-bot@nap.software"
          git config --global user.name "NAP-Software (bot)"
          git config --global core.sshCommand 'ssh -i ~/github-deploy.key'
