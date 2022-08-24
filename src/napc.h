@@ -6,7 +6,6 @@
 * 
 * Version    : %BC_RELEASE_VERSION%
 * Git commit : %BC_GIT_HEAD_HASH%
-* Build date : %BC_BUILD_DATE%
 */
 #if !defined(NAPC_h)
 	#define NAPC_h
