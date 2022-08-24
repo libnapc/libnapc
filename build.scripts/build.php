@@ -161,20 +161,11 @@ $arduino_friendly_version = XPHPUtils::libnapc_getReleaseVersion();
 $arduino_friendly_name = "libnapc";
 $arduino_friendly_url = "https://libnapc.nap.software/";
 
-$git_branch = XPHPUtils::git_getCurrentBranch();
-
-if ($git_branch !== "main") {
-	$arduino_friendly_version = "0.0.1";
-	$arduino_friendly_name = "libnapc-$git_branch";
-	$arduino_friendly_url = "https://nightly.libnapc.nap.software/";
-}
-
 XPHPUtils::shell_assertSystemCall("rm -rf build dist.tmp");
 
 build([
 	"build_flags" => $build_flags,
 	"build_constants" => [
-		"GIT_BRANCH" => $git_branch,
 		"GIT_HEAD_HASH" => XPHPUtils::git_getHEADHash(),
 		"RELEASE_VERSION" => XPHPUtils::libnapc_getReleaseVersion(),
 		"ARDUINO_FRIENDLY_NAME" => $arduino_friendly_name,

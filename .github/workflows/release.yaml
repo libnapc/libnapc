@@ -1,0 +1,49 @@
+name: Software Release
+
+on:
+  push:
+    # Pattern matched against refs/tags
+    tags:        
+      - '*'           # Push events to every tag not containing /
+
+env:
+  LIBNAPC_RELEASE_VERSION: ${{ github.ref_name }}
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Dependencies
+      run: |
+         sudo apt-get update
+         sudo apt install gcc make
+         sudo apt install valgrind
+         sudo apt install fakeroot-ng
+
+    - name: Setup git
+      run: |
+         echo "${{ secrets.GIT_SSH_KEY }}" > ~/github-deploy.key
+         chmod 0600 ~/github-deploy.key
+         git config --global user.email "github-bot@nap.software"
+         git config --global user.name "NAP-Software (bot)"
+         git config --global core.sshCommand 'ssh -i ~/github-deploy.key'
+
+    - name: Prepare git repositories
+      run: |
+         git clone git@github.com:libnapc/libnapc-arduino-releases-tmp.git ~/libnapc-arduino-releases-tmp
+         cd ~/libnapc-arduino-releases-tmp && git rm -rf . && git clean -fxd
+         git clone git@github.com:libnapc/libnapc-documentation-tmp.git ~/libnapc-documentation-tmp
+         cd ~/libnapc-documentation-tmp && git rm -rf . && git clean -fxd
+
+    - name: Download Release Script
+      run: |
+         curl https://static.nap-software.com/github/libnapc/software-release.sh -o ./__software-release.sh
+         chmod +x ./__software-release.sh
+
+    - name: Run Release Script
+      run: |
+         ./__software-release.sh "${{ github.ref_name }}"

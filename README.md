@@ -2,7 +2,7 @@
 
 [![Build and Test](https://github.com/libnapc/libnapc/actions/workflows/dev.yaml/badge.svg?event=branch_protection_rule)](https://github.com/libnapc/libnapc/actions/workflows/dev.yaml)
 
-# libnapc
+# libnapc-testing6
 
 Thank you very much for checking out the documentation of [libnapc](https://nightly.libnapc.nap.software/)! 🎉
 

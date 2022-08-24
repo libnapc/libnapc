@@ -6,17 +6,10 @@ $has_left_navigation = sizeof($__keys["left-navigation"] ?? []) > 0;
 <div id="nd-header">
 	<div class="logo-wrapper">
 		<?php
-			$git_branch = napcdoc::site_getDocumentation()["build_constants"]["GIT_BRANCH"];
-			$logo = "libnapc";
-
-			if ($git_branch !== "main") {
-				$logo = "libnapc-".$git_branch;
-			}
-
 			echo napcdoc::html_createElement("a", [
 				"href" => napcdoc::site_link("index.html")
 			], napcdoc::html_createImageElement(
-				"$logo.png", [
+				"libnapc.png", [
 					"height" => 50
 				]
 			));
