@@ -1,4 +1,4 @@
-![logo of libnapc](https://static.nap-software.com/github/libnapc/logo.png)
+![logo of libnapc](https://static.nap-software.com/github/libnapc/logo.png?)
 
 [![Build and Test](https://github.com/libnapc/libnapc/actions/workflows/main.yaml/badge.svg)](https://github.com/libnapc/libnapc/actions/workflows/main.yaml)
 
