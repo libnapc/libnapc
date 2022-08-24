@@ -2,7 +2,7 @@
 
 [![Build and Test](https://github.com/libnapc/libnapc/actions/workflows/main.yaml/badge.svg)](https://github.com/libnapc/libnapc/actions/workflows/main.yaml)
 
-# libnapc
+# libnapc 
 
 Thank you very much for checking out the documentation of [libnapc](https://nightly.libnapc.nap.software/)! 🎉
 
