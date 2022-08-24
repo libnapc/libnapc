@@ -26,13 +26,16 @@ div.landing a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: #372f5f; /* #09080E; */
+	background-image: linear-gradient(15deg, #00A366, #0093F9);
+	background-color: #00A366;
 	font-size: 17px;
-	padding: 15px 30px;
+	padding: 7px 23px;
+	border-radius: 40px;
 	text-decoration: none;
 	margin-top: 30px;
 	z-index: 10;
 	position: relative;
+	text-shadow: 0px 2px 2px rgba(9, 8, 14, .35);
 }
 
 div.landing pre.code, div.landing pre.code2 {
