@@ -45,6 +45,44 @@ if ($request_path === "site.css") {
 	header("Content-Type: text/javascript;charset=UTF-8");
 	echo implode("\n", napcdoc::site_registerJSCode());
 	exit();
+} else if ($request_path === "metadata.xml") {
+	header("Content-Type: text/xml;charset=UTF-8");
+
+	$build_constants = napcdoc::site_getDocumentation()["build_constants"];
+
+	echo '<?xml version="1.0" encoding="UTF-8"?>'."\n";
+	echo '<metadata>'."\n";
+	echo "\t".'<build_constants>'."\n";
+
+	foreach ($build_constants as $key => $value) {
+		// skip BUILD_DATE
+		if ($key === "BUILD_DATE") continue;
+
+		echo "\t\t".'<build_constant>'."\n";
+		echo "\t\t\t".'<name>'.$key.'</name>'."\n";
+		echo "\t\t\t".'<value>'.$value.'</value>'."\n";
+		echo "\t\t".'</build_constant>'."\n";
+	}
+
+	echo "\t".'</build_constants>'."\n";
+
+	$release_files = napcdoc::site_getDocumentation()["files"];
+
+	echo "\t".'<release_files>'."\n";
+
+	foreach ($release_files as $filename => $meta) {
+		echo "\t\t".'<release_file>'."\n";
+		echo "\t\t\t<name>".$filename."</name>\n";
+		echo "\t\t\t<size>".$meta["size"]."</name>\n";
+		echo "\t\t\t<checksum>".$meta["checksum"]."</checksum>\n";
+		echo "\t\t".'</release_file>'."\n";
+	}
+
+	echo "\t".'</release_files>'."\n";
+
+	echo '</metadata>'."\n";
+
+	exit();
 }
 
 if (substr($request_path, -5, 5) === ".html") {

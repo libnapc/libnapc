@@ -101,6 +101,7 @@ download("documentation/index.html");
 download("site.css");
 download("site.js");
 
+download("metadata.xml");
 download("index.html");
 
 chdir(__DIR__);
