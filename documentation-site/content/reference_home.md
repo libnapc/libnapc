@@ -1,6 +1,6 @@
 # Reference Home
 
-Thank you very much for checking out the documentation of [libnapc](https://libnapc.nap.software/)! 🎉
+Thank you very much for checking out the documentation of [libnapc](https://libnapc.nap-software.com/)! 🎉
 
 This library came into existence to support any projects written in C by nap.software.
 
