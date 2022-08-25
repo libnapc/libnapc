@@ -24,9 +24,12 @@ div.api-reference-module-box {
 
 div.api-reference-module-box h2 {
 	font-size: 1.2rem;
-	color: #bcbcff;
+	color: #00A366;
 	margin: 6px 0px;
 	margin-top: 0 !important;
+	background: -webkit-linear-gradient(274deg, #00A366, #0093F9);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 div.api-reference-module-box ul {
