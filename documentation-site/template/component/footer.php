@@ -10,7 +10,7 @@
 
 <div class="delimiter"></div>
 
-<a class="github-wrapper" href="https://github.com/nap-software/libnapc" target="_blank">
+<a class="github-wrapper" href="https://github.com/libnapc/libnapc" target="_blank">
 	<?php
 		echo napcdoc::html_createImageElement(
 			"github.png", [
