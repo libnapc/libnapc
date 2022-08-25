@@ -73,7 +73,7 @@ if ($request_path === "site.css") {
 	foreach ($release_files as $filename => $meta) {
 		echo "\t\t".'<release_file>'."\n";
 		echo "\t\t\t<name>".$filename."</name>\n";
-		echo "\t\t\t<size>".$meta["size"]."</name>\n";
+		echo "\t\t\t<size>".$meta["size"]."</size>\n";
 		echo "\t\t\t<checksum>".$meta["checksum"]."</checksum>\n";
 		echo "\t\t".'</release_file>'."\n";
 	}
