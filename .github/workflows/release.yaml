@@ -3,8 +3,8 @@ name: Software Release
 on:
   push:
     # Pattern matched against refs/tags
-    tags:        
-      - '*'           # Push events to every tag not containing /
+    tags:
+      - '*' # Push events to every tag not containing /
 
 env:
   LIBNAPC_RELEASE_VERSION: ${{ github.ref_name }}
