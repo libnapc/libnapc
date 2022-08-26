@@ -34,11 +34,18 @@ jobs:
          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/deploy.key
          chmod 0600 ~/deploy.key
 
+    - name: Import PGP key
+      run: |
+         echo "${{ secrets.RELEASE_SIGNING_KEY }}" > ~/signing.key
+         chmod 0600 ~/signing.key
+         gpg --import ~/signing.key
+
     - name: Setup git
       run: |
          git config --global user.email "github-bot@nap.software"
          git config --global user.name "NAP-Software (bot)"
          git config --global core.sshCommand 'ssh -i ~/github-deploy.key'
+         git config --global user.signingkey 'E5C0E37C9E962DA6'
 
     - name: Prepare git repositories
       run: |
