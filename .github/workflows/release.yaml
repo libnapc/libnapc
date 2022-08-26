@@ -72,6 +72,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Setup SSH key
+      run: |
+         echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/deploy.key
+         chmod 0600 ~/deploy.key
+
     - name: Check release checksums
       run: php ci/check_release_checksums.php
 
