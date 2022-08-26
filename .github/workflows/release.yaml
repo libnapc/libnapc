@@ -10,6 +10,7 @@ env:
   LIBNAPC_RELEASE_VERSION: ${{ github.ref_name }}
   LIBNAPC_DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
   LIBNAPC_DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+  GH_TOKEN: ${{ secrets.ACCESS_TOKEN_FOR_GITHUB }}
 
 jobs:
 
@@ -66,3 +67,9 @@ jobs:
 
     - name: Check release checksums
       run: php ci/check_release_checksums.php
+
+    - name: Update default branches
+      run: |
+         gh api repos/libnapc/libnapc-linux-releases --method PATCH --field 'default_branch=${{ github.ref_name }}'
+         gh api repos/libnapc/libnapc-arduino-releases --method PATCH --field 'default_branch=${{ github.ref_name }}'
+         gh api repos/libnapc/libnapc-documentation --method PATCH --field 'default_branch=${{ github.ref_name }}'
