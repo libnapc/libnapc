@@ -7,9 +7,12 @@ $release_version = getenv("LIBNAPC_RELEASE_VERSION");
 if (!strlen($release_version)) {
 	fwrite(STDERR,"Please set environment variable 'LIBNAPC_RELEASE_VERSION' to the version you want to check.\n");
 	exit(2);
+} else if (substr($release_version, 0, 1) !== "v") {
+	fwrite(STDERR, "Invalid LIBNAPC_RELEASE_VERSION, must begin with 'v'\n");
+	exit(2);
 }
 
-$base_url = "https://libnapc.nap-software.com/v$release_version";
+$base_url = "https://libnapc.nap-software.com/$release_version";
 
 fwrite(STDERR, "Downloading 'metadata.xml'\n");
 
@@ -34,10 +37,10 @@ foreach ($metadata->release_files->release_file as $file) {
 		exit(1);
 	}
 
-	if ($local_hash !== $file->checksum) {
+	if ("$local_hash" !== "$file->checksum") {
 		fwrite(STDERR, "Checksum mismatch detected!\n");
-		fwrite(STDERR, "Expected hash (in metadata.xml) : ".$file->checksum."\n");
-		fwrite(STDERR, "Actual hash                     : $local_hash\n");
+		fwrite(STDERR, "Expected hash (in metadata.xml) : '".$file->checksum."'\n");
+		fwrite(STDERR, "Actual hash                     : '$local_hash'\n");
 		exit(1);
 	}
 }
