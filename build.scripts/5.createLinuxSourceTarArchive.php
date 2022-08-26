@@ -30,15 +30,18 @@ return function() {
 
 	mkdir("build/lib", 0777, true);
 
-	file_put_contents("build.pkg/INSTALL.sh", $cmake);
-	chmod("build.pkg/INSTALL.sh", 0755);
+	file_put_contents("build.pkg/compile.sh", $cmake);
+	chmod("build.pkg/compile.sh", 0755);
+
+	copy(__DIR__."/linux-install-script.sh", "build.pkg/install.sh");
+	chmod("build.pkg/install.sh", 0755);
 
 	XPHPUtils::shell_assertSystemCall(
 		"cp -r build build.pkg/build && cd build.pkg && fakeroot tar -czvf ../build/lib/libnapc-linux.tar.gz ."
 	);
 
 	XPHPUtils::shell_assertSystemCall(
-		"cd build.pkg && ./INSTALL.sh && mv libnapc.a ../build/lib/libnapc-local.a"
+		"cd build.pkg && ./compile.sh && mv libnapc.a ../build/lib/libnapc-local.a"
 	);
 };
 
