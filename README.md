@@ -3,7 +3,7 @@
 [![Build and Test](https://github.com/libnapc/libnapc/actions/workflows/main.yaml/badge.svg)](https://github.com/libnapc/libnapc/actions/workflows/main.yaml)
 
 # libnapc
-test
+
 Thank you very much for checking out the documentation of [libnapc](https://libnapc.nap-software.com/)! 🎉
 
 This library came into existence to support any projects written in C by nap.software.
