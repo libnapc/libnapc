@@ -5,7 +5,26 @@ div.releases div.flex-table-row.header {
 }
 
 div.releases div.flex-table-row-cell.filename {
-	flex-basis: 250px !important;
+	flex-basis: 170px !important;
+}
+
+div.releases div.flex-table-row-cell.checksum {
+	font-family: "PT Mono";
+	display: flex;
+	align-items: center;
+}
+
+span.libnapc-checksums-verified {
+	margin-left: 7px;
+	display: none;
+}
+
+span.libnapc-checksums-verified svg path {
+	fill: #00ff02;
+}
+
+div.releases div.flex-table-row-cell.filesize {
+	flex-basis: 170px !important;
 } 
 </style>
 <h1>Releases</h1>
@@ -16,7 +35,7 @@ div.releases div.flex-table-row-cell.filename {
 		<div class="flex-table-row header">
 			<div class="flex-table-row-cell filename">Filename</div>
 			<div class="flex-table-row-cell">SHA256-Checksum</div>
-			<div class="flex-table-row-cell">Size</div>
+			<div class="flex-table-row-cell filesize">Size</div>
 		</div>
 
 		<?php
@@ -33,10 +52,17 @@ div.releases div.flex-table-row-cell.filename {
 						<?php echo $filename; ?>
 					</a>
 				</div>
-				<div class="flex-table-row-cell">
+				<div class="flex-table-row-cell checksum">
 					<?php echo $meta["checksum"]; ?>
+					<span class="libnapc-checksums-verified">
+						<?php
+							echo napcdoc::html_createSVGElement(
+								"check-decagram", 16, 16
+							);
+						?>
+					</span>
 				</div>
-				<div class="flex-table-row-cell">
+				<div class="flex-table-row-cell filesize">
 					<?php echo number_format($meta["size"] / 1000, 2); ?> kB
 				</div>
 			</div>
@@ -46,3 +72,8 @@ div.releases div.flex-table-row-cell.filename {
 	</div>
 
 </div>
+
+<!--
+  This is only needed to show a "verified" icon once the checksums have been verified
+  -->
+<link rel="stylesheet" property="stylesheet" href="verified.css" type="text/css">
