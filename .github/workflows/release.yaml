@@ -75,6 +75,9 @@ jobs:
     - name: Check release checksums
       run: php ci/check_release_checksums.php
 
+    - name: Add checksums verified icon
+      run: php ci/add_checksums_verified_icon.php ~/deploy.key
+
     - name: Update default branches
       run: |
          gh api repos/libnapc/libnapc-linux-releases --method PATCH --field 'default_branch=${{ github.ref_name }}'
