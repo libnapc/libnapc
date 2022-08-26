@@ -16,3 +16,5 @@ __tests__.linux/tmp/*.out
 .napci/upload_files.tmp
 .napci/upload_files
 .napci/tmp
+!/ci/tmp/.gitkeep
+/ci/tmp/*
