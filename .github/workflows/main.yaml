@@ -21,5 +21,11 @@ jobs:
          sudo apt install valgrind
          sudo apt install fakeroot-ng
 
+    - name: Install napphp
+      run: |
+         mkdir ~/napphp
+         git clone --depth 1 --branch v0.0.1 'https://github.com/nap-software/napphp.git' ~/napphp
+         export NAPPHP_LOAD_PATH=~/napphp/src/__load.php
+
     - name: Run CI-Script
-      run: ./.napci/run.sh
+      run: env ; ./.napci/run.sh
