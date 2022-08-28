@@ -30,4 +30,4 @@ jobs:
          git clone --depth 1 --branch v0.0.1 'https://github.com/nap-software/napphp.git' ~/napphp
 
     - name: Run CI-Script
-      run: env ; cat "$NAPPHP_LOAD_PATH" ; ./.napci/run.sh
+      run: ./.napci/run.sh
