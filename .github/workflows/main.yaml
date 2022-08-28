@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ main ]
 
+env:
+  NAPPHP_LOAD_PATH: ~/napphp/src/__load.php
+
 jobs:
   build:
 
@@ -25,7 +28,6 @@ jobs:
       run: |
          mkdir ~/napphp
          git clone --depth 1 --branch v0.0.1 'https://github.com/nap-software/napphp.git' ~/napphp
-         export NAPPHP_LOAD_PATH=~/napphp/src/__load.php
 
     - name: Run CI-Script
-      run: env ; ./.napci/run.sh
+      run: env ; cat "$NAPPHP_LOAD_PATH" ; ./.napci/run.sh
