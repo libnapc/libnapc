@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 env:
-  NAPPHP_LOAD_PATH: ~/napphp/src/__load.php
+  NAPPHP_LOAD_PATH: /home/runner/napphp/src/__load.php
 
 jobs:
   build:
