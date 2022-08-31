@@ -1,21 +1,25 @@
 <?php
 
 return function() {
-	$c_source_files = XPHPUtils::fs_scandirRecursive("build");
-	$c_source_files = array_filter($c_source_files, function($entry) {
-		return $entry["type"] === "file" && substr($entry["basename"], -2, 2) === ".c";
+	$c_source_files = napphp::fs_scandirRecursive("build");
+	$c_source_files = napphp::arr_filter($c_source_files, function($entry) {
+		if ($entry["type"] !== "file") {
+			return false;
+		}
+
+		return napphp::str_endsWith($entry["basename"], ".c");
 	});
 
 	$object_file_names = [];
 	$cmake  = "#!/bin/bash -euf\n";
 
 	foreach ($c_source_files as $source_file) {
-		$object_file_name = md5($source_file["abs_path"]);
+		$object_file_name = md5($source_file["path"]);
 
-		$cmake .= "printf \"compiling ".escapeshellarg($source_file["abs_path"])." ... \"\n";
+		$cmake .= "printf \"compiling ".escapeshellarg($source_file["path"])." ... \"\n";
 		$cmake .= "gcc -Wall -Wextra -Wpedantic -Wno-gnu-zero-variadic-macro-arguments ";
 		$cmake .= "-Werror -I./build ";
-		$cmake .= escapeshellarg($source_file["abs_path"])." ";
+		$cmake .= escapeshellarg($source_file["path"])." ";
 		$cmake .= "-c -o objects/".$object_file_name.".o\n";
 		$cmake .= "printf \"ok\\n\"\n";
 
@@ -26,23 +30,34 @@ return function() {
 		$cmake .= "ar rcs libnapc.a ".escapeshellarg("objects/$object_file_name.o")."\n";
 	}
 
-	XPHPUtils::shell_assertSystemCall("rm -rf build.pkg && mkdir -p build.pkg/objects");
+	napphp::fs_mkdir("build/lib", 0777, true);
 
-	mkdir("build/lib", 0777, true);
+	$tmp_dir = napphp::tmp_createDirectory();
+	napphp::fs_mkdir("$tmp_dir/objects");
 
-	file_put_contents("build.pkg/compile.sh", $cmake);
-	chmod("build.pkg/compile.sh", 0755);
+	napphp::fs_writeFileStringAtomic("$tmp_dir/compile.sh", $cmake);
+	napphp::fs_setFileMode("$tmp_dir/compile.sh", 0755);
 
-	copy(__DIR__."/linux-install-script.sh", "build.pkg/install.sh");
-	chmod("build.pkg/install.sh", 0755);
+	napphp::fs_copyFile(__DIR__."/linux-install-script.sh", "$tmp_dir/install.sh");
+	napphp::fs_setFileMode("build.pkg/install.sh", 0755);
 
-	XPHPUtils::shell_assertSystemCall(
-		"cp -r build build.pkg/build && cd build.pkg && fakeroot tar -czvf ../build/lib/libnapc-linux.tar.gz ."
-	);
+	napphp::fs_copy("build/", "$tmp_dir/build");
 
-	XPHPUtils::shell_assertSystemCall(
-		"cd build.pkg && ./compile.sh && mv libnapc.a ../build/lib/libnapc-local.a"
-	);
+	$build_path = __DIR__."/../build/";
+
+	napphp::proc_changeWorkingDirectory($tmp_dir, function() use ($build_path) {
+		napphp::shell_execTransparently(
+			"fakeroot -- tar -czvf ".escapeshellarg("$build_path/lib/libnapc-linux.tar.gz")." ."
+		);
+
+		napphp::shell_execTransparently(
+			"./compile.sh"
+		);
+
+		napphp::fs_rename(
+			"libnapc.a", "$build_path/lib/libnapc-local.a"
+		);
+	});
 };
 
 
