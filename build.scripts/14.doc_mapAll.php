@@ -1,16 +1,16 @@
 <?php
 
 return function() {
-	$documentation = json_decode(file_get_contents("build/doc/documentation.json"));
-	$modules = json_decode(file_get_contents("build/doc/modules_symbols_map.json"));
-	$symbols = json_decode(file_get_contents("build/doc/symbols.tagged.json"));
+	$documentation = napphp::fs_readFileJSON("build/doc/documentation.json", false);
+	$modules = napphp::fs_readFileJSON("build/doc/modules_symbols_map.json", false);
+	$symbols = napphp::fs_readFileJSON("build/doc/symbols.tagged.json", false);
 	$types = [];
 
-	$types_map = json_decode(file_get_contents("build.scripts/doc/types.json"), true);
-	$struct_members = json_decode(file_get_contents("build.scripts/doc/struct_members.json"), true);
+	$types_map = napphp::fs_readFileJSON("build.scripts/doc/types.json");
+	$struct_members = napphp::fs_readFileJSON("build.scripts/doc/struct_members.json");
 
 	foreach ($symbols->types as $type) {
-		if (!array_key_exists($type, $types_map)) {
+		if (!napphp::arr_keyExists($types_map, $type)) {
 			echo "Unmapped type $type\n";
 
 			continue;
@@ -49,9 +49,9 @@ return function() {
 		"map" => $modules
 	];
 
-	file_put_contents(
-		"build/doc/napc_mapped.json", json_encode(
-			$out, JSON_PRETTY_PRINT
-		)
+	napphp::fs_writeFileJSONAtomic(
+		"build/doc/napc_mapped.json", $out, true
 	);
+
+	exit();
 };
