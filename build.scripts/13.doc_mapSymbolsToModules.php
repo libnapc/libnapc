@@ -1,8 +1,8 @@
 <?php
 
 return function() {
-	$symbols = json_decode(file_get_contents("build/doc/symbols.json"), true);
-	$types_module_map = json_decode(file_get_contents("build.scripts/doc/types_module_map.json"), true);
+	$symbols = napphp::fs_readFileJSON("build/doc/symbols.json");
+	$types_module_map = napphp::fs_readFileJSON("build.scripts/doc/types_module_map.json");
 
 	$functions = $symbols["functions"];
 	$types = $symbols["types"];
@@ -12,14 +12,14 @@ return function() {
 	];
 
 	foreach ($functions as $function => $_) {
-		$tmp = explode("_", $function);
+		$tmp = napphp::str_split($function, " ");
 
 		if (2 >= sizeof($tmp)) {
 			$modules["Core"][] = "f:".$function;
 		} else {
 			$module_name = $tmp[1];
 
-			if (!array_key_exists($module_name, $modules)) {
+			if (!napphp::arr_keyExists($modules, $module_name)) {
 				$modules[$module_name] = [];
 			}
 
@@ -39,7 +39,7 @@ return function() {
 			$tmp = "napc__".implode("_", $tmp);
 			$guessed_mod = NULL;
 
-			if (array_key_exists($tmp, $types_module_map)) {
+			if (napphp::arr_keyExists($types_module_map, $tmp)) {
 				$guessed_mod = $types_module_map[$tmp];
 			}
 
@@ -51,11 +51,11 @@ return function() {
 		}
 	}
 
-	$macros = json_decode(file_get_contents("build.scripts/doc/macros.json"), true)["macros"];
+	$macros = napphp::fs_readFileJSON("build.scripts/doc/macros.json")["macros"];
 
 	foreach ($macros as $target_module => $macro_names) {
 		foreach ($macro_names as $macro_name) {
-			if (!array_key_exists($target_module, $modules)) {
+			if (!napphp::arr_keyExists($modules, $target_module)) {
 				$modules[$target_module] = [];
 			}
 
@@ -63,8 +63,8 @@ return function() {
 		}
 	}
 
-	file_put_contents(
+	napphp::fs_writeFileJSONAtomic(
 		"build/doc/modules_symbols_map.json",
-		json_encode($modules, JSON_PRETTY_PRINT)
+		$modules, true
 	);
 };
