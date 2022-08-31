@@ -1,9 +1,7 @@
 <?php
 
 return function() {
-	$context = json_decode(
-		file_get_contents("build/__tests__/map.json"), true
-	);
+	$context = napphp::fs_readFileJSON("build/__tests__/map.json");
 
 	$file = "#include <napc.h>\n";
 	$header_file  = "#if !defined(NAPC_ALL_TESTS_FILE_h)\n";
@@ -57,6 +55,7 @@ return function() {
 
 	$header_file .= "#endif\n";
 
-	file_put_contents("build/__tests__/__tests__.c", $file);
-	file_put_contents("build/__tests__/__tests__.h", $header_file);
+	napphp::fs_writeFileStringAtomic("build/__tests__/__tests__.c", $file);
+	napphp::fs_writeFileStringAtomic("build/__tests__/__tests__.h", $header_file);
+	exit();
 };
