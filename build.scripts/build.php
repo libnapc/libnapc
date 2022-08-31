@@ -31,6 +31,8 @@ foreach ($argv as $arg) {
 $NAPPHP_LOAD_PATH = getenv("NAPPHP_LOAD_PATH");
 
 require $NAPPHP_LOAD_PATH;
+napphp::set("tmp_dir", __DIR__."/../tmp.d/");
+
 require_once __DIR__."/../x-php-utils/load.php";
 
 define("BUILD_DATE", gmdate("d.m.Y H:i:s"));
