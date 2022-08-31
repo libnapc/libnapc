@@ -34,5 +34,4 @@ return function($preprocess) {
 	}
 
 	fwrite(STDERR, "done\n");
-	exit();
 };
