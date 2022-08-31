@@ -11,22 +11,22 @@ function doc_extractCSymbols_getFunctionReturnType($qual_type) {
 }
 
 return function() {
-	mkdir("build/doc", 0777, true);
+	napphp::fs_mkdir("build/doc");
 
-	XPHPUtils::shell_assertExecCall(
+	napphp::shell_execTransparently(
 		"clang -Xclang -ast-dump=json -fsyntax-only build/napc.h > build/doc/napc_symbols.json"
 	);
 
-	$ast = json_decode(file_get_contents("build/doc/napc_symbols.json"));
+	$ast = napphp::fs_readFileJSON("build/doc/napc_symbols.json", false);
 
 	$functions = [];
 	$types = [];
 
 	foreach ($ast->inner as $node) {
 		if ($node->kind === "FunctionDecl") {
-			if (substr($node->name, 0, strlen("napc_")) !== "napc_") continue;
+			if (!napphp::str_startsWith($node->name, "napc_")) continue;
 			// ignore __runTests functions
-			if (substr($node->name, -10, 10) === "__runTests") continue;
+			if (napphp::str_startsWith($node->name, "__runTests")) continue;
 
 			$functions[$node->name] = [
 				"return_type" => doc_extractCSymbols_getFunctionReturnType($node->type->qualType),
@@ -58,11 +58,11 @@ return function() {
 		}
 	}
 
-	file_put_contents(
+	napphp::fs_writeFileJSONAtomic(
 		"build/doc/symbols.json",
-		json_encode([
+		[
 			"functions" => $functions,
 			"types" => $types
-		], JSON_PRETTY_PRINT)
+		]
 	);
 };
