@@ -2,7 +2,6 @@
 /dist/
 /dist.tmp/
 /build/
-/build.pkg/
 /tmp.d/*
 !/tmp.d/.gitkeep
 

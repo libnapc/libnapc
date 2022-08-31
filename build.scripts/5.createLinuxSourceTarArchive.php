@@ -39,7 +39,7 @@ return function() {
 	napphp::fs_setFileMode("$tmp_dir/compile.sh", 0755);
 
 	napphp::fs_copyFile(__DIR__."/linux-install-script.sh", "$tmp_dir/install.sh");
-	napphp::fs_setFileMode("build.pkg/install.sh", 0755);
+	napphp::fs_setFileMode("$tmp_dir/install.sh", 0755);
 
 	napphp::fs_copy("build/", "$tmp_dir/build");
 
