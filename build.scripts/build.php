@@ -28,9 +28,6 @@ foreach ($argv as $arg) {
 	}
 }
 
-
-require_once __DIR__."/../x-php-utils/load.php";
-
 define("BUILD_DATE", gmdate("d.m.Y H:i:s"));
 
 function build($config) {
