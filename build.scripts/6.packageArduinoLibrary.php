@@ -47,6 +47,4 @@ return function() {
 			"zip -r ../lib/libnapc-arduino.zip ."
 		);
 	});
-
-	exit();
 };
