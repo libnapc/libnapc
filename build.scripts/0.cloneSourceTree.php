@@ -1,39 +1,38 @@
 <?php
 
 return function($preprocess) {
-	$entries = XPHPUtils::fs_scandirRecursive("src");
+	$entries = napphp::fs_scandirRecursive("src");
 
-	$directories = array_filter($entries, function($entry) {
-		return $entry["type"] === "dir";
+	$directories = napphp::arr_filter($entries, function($entry) {
+		return $entry["type"] === "directory";
 	});
 
 	fwrite(STDERR, "Copying source tree ... ");
 
 	foreach ($directories as $directory) {
-		$directory = $directory["rel_path"];
+		$directory = $directory["relative_path"];
 
-		if (is_dir("build/$directory")) continue;
+		fwrite(STDERR, "Creating '$directory'\n");
 
-		mkdir("build/$directory", 0777, true);
+		napphp::fs_mkdir("build/$directory");
 	}
 
-	mkdir("build/__tests__");
+	napphp::fs_mkdir("build/__tests__");
 
 	foreach ($entries as $entry) {
 		if ($entry["type"] !== "file") continue;
 
-		$file_contents = file_get_contents($entry["abs_path"]);
-		$dest_path = "build/".$entry["rel_path"];
+		$file_contents = napphp::fs_readFileString($entry["path"]);
 
 		if (is_callable($preprocess)) {
 			$file_contents = $preprocess($file_contents, $entry["basename"]);
 		}
 
-		file_put_contents($dest_path.".tmp", $file_contents);
-		rename($dest_path.".tmp", $dest_path);
+		napphp::fs_writeFileStringAtomic("build/".$entry["relative_path"], $file_contents);
 
-		fwrite(STDERR, "Copied ".$entry["rel_path"]." \n");
+		fwrite(STDERR, "Copied '".$entry["relative_path"]."'\n");
 	}
 
 	fwrite(STDERR, "done\n");
+	exit();
 };
