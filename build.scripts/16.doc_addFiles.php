@@ -1,7 +1,7 @@
 <?php
 
 return function() {
-	$napc = json_decode(file_get_contents("build/doc/napc.no_files.json"), true);
+	$napc = napphp::fs_readFileJSON("build/doc/napc.no_files.json");
 
 	$files = [
 		"libnapc-linux.tar.gz" => "build/lib",
@@ -13,12 +13,12 @@ return function() {
 
 	foreach ($files as $file => $dir) {
 		$napc["files"][$file] = [
-			"checksum" => hash_file("sha256", "$dir/$file"),
+			"checksum" => napphp::fs_hashFile("$dir/$file", "sha256"),
 			"size" => filesize("$dir/$file")
 		];
 	}
 
-	file_put_contents(
-		"build/doc/napc.json", json_encode($napc, JSON_PRETTY_PRINT)
+	napphp::fs_writeFileJSONAtomic(
+		"build/doc/napc.json", $napc
 	);
 };
