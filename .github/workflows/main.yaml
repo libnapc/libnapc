@@ -27,7 +27,7 @@ jobs:
     - name: Install napphp
       run: |
          mkdir ~/napphp
-         git clone --depth 1 --branch v0.0.1 'https://github.com/nap-software/napphp.git' ~/napphp
+         git clone --depth 1 --branch v0.0.6 'https://github.com/nap-software/napphp.git' ~/napphp
 
     - name: Run CI-Script
       run: ./.napci/run.sh
