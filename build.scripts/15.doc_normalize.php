@@ -316,23 +316,8 @@ return function($build_constants) {
 	}
 
 	$mapped_napc["build_constants"] = $build_constants;
-	$mapped_napc["release_files"] = [];
 
-	$release_files = [
-		"libnapc-linux-aarch64.a" => "build/lib/libnapc-linux-aarch64.a",
-		"libnapc-linux-x86_64.a"  => "build/lib/libnapc-linux-x86_64.a",
-		"napc.h"                  => "build/napc.h",
-		"libnapc-arduino.zip"     => "build/lib/libnapc-arduino.zip"
-	];
-
-	foreach ($release_files as $file_name => $path) {
-		$mapped_napc["release_files"][] = [
-			"name" => $file_name,
-			"checksum" => hash_file("sha256", $path)
-		];
-	}
-
-	file_put_contents(
-		"build/doc/napc.no_files.json", json_encode($mapped_napc, JSON_PRETTY_PRINT)
+	napphp::fs_writeFileJSONAtomic(
+		"build/doc/napc.no_files.json", $mapped_napc, true
 	);
 };
