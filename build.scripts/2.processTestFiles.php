@@ -1,9 +1,9 @@
 <?php
 
 return function() {
-	$entries = XPHPUtils::fs_scandirRecursive("__tests__");
-	$test_files = array_filter($entries, function($entry) {
-		return $entry["type"] === "file";// && substr($entry["basename"], -5, 5) === ".boot";
+	$entries = napphp::fs_scandirRecursive("__tests__");
+	$test_files = napphp::arr_filter($entries, function($entry) {
+		return $entry["type"] === "file";
 	});
 
 	$context = [
@@ -12,20 +12,20 @@ return function() {
 	];
 
 	foreach ($test_files as $test_file) {
-		$module = explode("/", $test_file["rel_path"], 2)[0];
+		$module = napphp::str_split($test_file["relative_path"], "/", 2)[0];
 
-		if (!array_key_exists($module, $context["tests"])) {
+		if (!napphp::arr_keyExists($context["tests"], $module)) {
 			$context["tests"][$module] = [];
 
-			mkdir("build/__tests__/$module", 0777, true);
+			napphp::fs_mkdir("build/__tests__/$module");
 		}
 
-		$lines = file($test_file["abs_path"]);
+		$lines = file($test_file["path"]);
 
 		$new_file_contents = "#include <napc.h>\n";
 
 		foreach ($lines as $line) {
-			if (substr($line, 0, strlen("TEST_CASE(\"")) === "TEST_CASE(\"") {
+			if (napphp::str_startsWith($line, "TEST_CASE(\"")) {
 				$description = substr($line, strlen("TEST_CASE(\""));
 				$description = substr($description, 0, strpos($description, "\")"));
 
@@ -35,7 +35,7 @@ return function() {
 
 				$new_file_contents .= "void $fn_name(void) {\n";
 				$new_file_contents .= "    napc_unmute();\n";
-				$new_file_contents .= "    napc_puts(\"[".$test_file["rel_path"]."] $description ... \");\n";
+				$new_file_contents .= "    napc_puts(\"[".$test_file["relative_path"]."] $description ... \");\n";
 				$new_file_contents .= "    napc_mute();\n";
 
 				$context["tests"][$module][] = $fn_name;
@@ -45,15 +45,13 @@ return function() {
 				$new_file_contents .= $line;
 			}
 
-			$dest_path = str_replace("/", "_", $test_file["rel_path"]);
+			$dest_path = napphp::str_replace($test_file["relative_path"], "/", "_");
 
-			file_put_contents(
+			napphp::fs_writeFileStringAtomic(
 				"build/__tests__/$module/$dest_path", $new_file_contents
 			);
 		}
 	}
 
-	file_put_contents("build/__tests__/map.json", json_encode(
-		$context, JSON_PRETTY_PRINT
-	));
+	napphp::fs_writeFileJSONAtomic("build/__tests__/map.json", $context);
 };
