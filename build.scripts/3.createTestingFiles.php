@@ -57,5 +57,4 @@ return function() {
 
 	napphp::fs_writeFileStringAtomic("build/__tests__/__tests__.c", $file);
 	napphp::fs_writeFileStringAtomic("build/__tests__/__tests__.h", $header_file);
-	exit();
 };
