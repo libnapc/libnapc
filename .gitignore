@@ -3,6 +3,8 @@
 /dist.tmp/
 /build/
 /build.pkg/
+/tmp.d/*
+!/tmp.d/.gitkeep
 
 /documentation-site/dist.tmp/
 /documentation-site/dist/
