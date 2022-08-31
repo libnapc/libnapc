@@ -52,6 +52,4 @@ return function() {
 	napphp::fs_writeFileJSONAtomic(
 		"build/doc/napc_mapped.json", $out, true
 	);
-
-	exit();
 };
