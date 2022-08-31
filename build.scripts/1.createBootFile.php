@@ -1,19 +1,23 @@
 <?php
 
 return function() {
-	$entries = XPHPUtils::fs_scandirRecursive("src");
-	$boot_files = array_filter($entries, function($entry) {
-		return $entry["type"] === "file" && substr($entry["basename"], -5, 5) === ".boot";
+	$entries = napphp::fs_scandirRecursive("src");
+	$boot_files = napphp::arr_filter($entries, function($entry) {
+		if ($entry["type"] !== "file") {
+			return false;
+		}
+
+		return napphp::str_endsWith($entry["basename"], ".boot");
 	});
 
-	$boot_functions = array_map(function($entry) {
+	$boot_functions = napphp::arr_map($boot_files, function($entry) {
 		list($priority, $fn_name, $unused) = explode(".", $entry["basename"], 3);
 
 		return [
 			"priority" => (int)$priority,
 			"fn_name" => $fn_name
 		];
-	}, $boot_files);
+	});
 
 	usort($boot_functions, function($a, $b) {
 		if ($a["priority"] === $b["priority"]) return 0;
@@ -54,7 +58,7 @@ return function() {
 
 	$boot_functions_str .= "}\n";
 
-	file_put_contents(
+	napphp::fs_writeFileStringAtomic(
 		"build/boot_functions.c", $boot_functions_str
 	);
 };
