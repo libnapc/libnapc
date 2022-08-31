@@ -1,7 +1,7 @@
 <?php
 
 return function() {
-	$contents = file_get_contents("build/napc.h");
+	$contents = napphp::fs_readFileString("build/napc.h");
 	$docs = [];
 
 	for ($i = 0; $i < strlen($contents); ++$i) {
@@ -14,15 +14,15 @@ return function() {
 				$tmp .= $contents[$x];
 			}
 
-			$doc = explode("\n", $tmp);
-			$doc = array_map("trim", $doc);
-			$doc = array_filter($doc, function($line) {
-				return substr($line, 0, 1) === "*";
+			$doc = napphp::str_split($tmp, "\n");
+			$doc = napphp::arr_map($doc, "trim");
+			$doc = napphp::arr_filter($doc, function($line) {
+				return napphp::str_startsWith($line, "*");
 			});
 
-			$doc = array_map(function($line) {
+			$doc = napphp::arr_map($doc, function($line) {
 				return substr($line, 2);
-			}, $doc);
+			});
 
 			$docs[] = $doc;
 		}
@@ -35,7 +35,7 @@ return function() {
 
 		$handle_end_of_section = function() use (&$current_section, &$current_section_value, &$sections) {
 			if (strlen($current_section)) {
-				if (array_key_exists("@$current_section", $sections)) {
+				if (napphp::arr_keyExists($sections, "@$current_section")) {
 					$section_value = $sections["@$current_section"];
 
 					if (is_array($section_value)) {
@@ -56,13 +56,13 @@ return function() {
 
 		foreach ($block as $line) {
 			// begin of section
-			if (substr($line, 0, 1) === "@") {
+			if (napphp::str_startsWith($line, "@")) {
 				$handle_end_of_section();
 
 				$single_line_section = !!strpos($line, " ");
 
 				if ($single_line_section) {
-					list($section, $value) = explode(" ", $line, 2);
+					list($section, $value) = napphp::str_split($line, " ", 2);
 
 					$current_section = substr($section, 1);
 					$current_section_value = $value;
@@ -85,11 +85,9 @@ return function() {
 		return $sections;
 	};
 
-	$out = array_map($parse_doc_block, $docs);
+	$out = napphp::arr_map($docs, $parse_doc_block);
 
-	file_put_contents(
-		"build/doc/documentation.json", json_encode(
-			$out, JSON_PRETTY_PRINT
-		)
+	napphp::fs_writeFileJSONAtomic(
+		"build/doc/documentation.json", $out, true
 	);
 };
