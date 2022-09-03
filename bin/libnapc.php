@@ -91,9 +91,9 @@ try {
 /**
  *
  * libnapc
- *
+ * 
  *        process  - preprocess files, but do not compile them
- *        compile  - compile build files, but do not bundle them
- *        bundle   - bundle compiled files
+ *        compile  - compile build files, but do not link them
+ *        link     - link files, but do not bundle them
+ *        bundle   - bundle preprocessed files
  */
-
