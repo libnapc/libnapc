@@ -15,6 +15,9 @@
 !/ci/tmp/.gitkeep
 /ci/tmp/*
 
+/build_files/*
+!/build_files/.gitkeep
+
 /.napci/build_files.tmp
 /.napci/build_files
 /.napci/upload_files.tmp
