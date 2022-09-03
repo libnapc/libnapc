@@ -40,7 +40,7 @@ return function($args, &$context) {
 	});
 
 	foreach ($source_files as $source_file) {
-		fwrite(STDERR, "Preprocessing '".$source_file["relative_path"]."'\n");
+		fwrite(STDOUT, "Preprocessing '".$source_file["relative_path"]."'\n");
 
 		$source_file_content = napphp::fs_readFileString($source_file["path"]);
 		$source_file_content = libnapc_preprocess_processFile(

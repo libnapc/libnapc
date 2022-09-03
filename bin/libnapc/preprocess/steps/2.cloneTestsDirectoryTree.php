@@ -11,14 +11,14 @@ return function($args, &$context) {
 		LIBNAPC_TEST_SOURCE_FILES_DIR
 	);
 
-	fwrite(STDERR, "Cloning tests source directory tree ... \n");
+	fwrite(STDOUT, "Cloning tests source directory tree ... \n");
 
 	$directory_tree = napphp::arr_filter($context["test_source_entries"], function($entry) {
 		return $entry["type"] === "directory";
 	});
 
 	foreach ($directory_tree as $directory) {
-		fwrite(STDERR, "Creating '__tests__/".$directory["relative_path"]."'\n");
+		fwrite(STDOUT, "Creating '__tests__/".$directory["relative_path"]."'\n");
 
 		napphp::fs_mkdir("$output_dir/__tests__/".$directory["relative_path"]);
 	}

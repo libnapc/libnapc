@@ -46,7 +46,7 @@ return function($args, &$context) {
 		$fn_name = $boot_function["fn_name"];
 		$pri = $boot_function["priority"];
 
-		fwrite(STDERR, "Added $fn_name() [boot,pri=$pri]\n");
+		fwrite(STDOUT, "Added $fn_name() [boot,pri=$pri]\n");
 
 		$boot_functions_str .= "    $fn_name();\n";
 		$boot_functions_str .= "    napc_puts(\"[boot] called $fn_name (pri=$pri)\\n\");\n";
