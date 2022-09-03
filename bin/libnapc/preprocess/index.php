@@ -32,7 +32,7 @@ return function($args) {
 		"ARDUINO_LIBRARY_NAME" => "libnapc",
 		"ARDUINO_LIBRARY_VERSION" => $release_version,
 		"ARDUINO_LIBRARY_URL" => "https://libnapc.nap-software.com/",
-		"BUILD_DATE" => BUILD_DATE
+		"BUILD_DATE" => ""
 	];
 
 	libnapc_run_steps("preprocess", $args, [

@@ -42,7 +42,7 @@ return function($args, &$context) {
 	$object_files = [];
 
 	foreach ($linux_source_files as $linux_source_file) {
-		fwrite(STDERR, "Copying '".$linux_source_file["relative_path"]."'\n");
+		fwrite(STDOUT, "Copying '".$linux_source_file["relative_path"]."'\n");
 
 		if (napphp::str_endsWith($linux_source_file["basename"], ".c")) {
 			$gcc_input_file = escapeshellarg("src/".$linux_source_file["relative_path"]);

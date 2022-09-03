@@ -50,14 +50,16 @@ return function($args) {
 		);
 
 		fwrite(
-			STDERR, "Compiling $file ... "
+			STDOUT, "Compiling $file ... "
 		);
+
+		fflush(STDOUT);
 
 		napphp::shell_execTransparently(
 			"gcc $gcc_flags $gcc_input_file -c -o $gcc_output_file"
 		);
 
-		fwrite(STDERR, "ok\n");
+		fwrite(STDOUT, "ok\n");
 	}
 
 	napphp::fs_rename(

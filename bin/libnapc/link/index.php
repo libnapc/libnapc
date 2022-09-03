@@ -33,13 +33,14 @@ return function($args) {
 			$object_file["relative_path"], 80, " ", STR_PAD_RIGHT
 		);
 
-		fwrite(STDERR, "Linking $file ... ");
+		fwrite(STDOUT, "Linking $file ... ");
+		fflush(STDOUT);
 
 		napphp::shell_execTransparently(
 			"ar rcs $ar_libnapc_a ".escapeshellarg($object_file["path"])
 		);
 
-		fwrite(STDERR, "ok\n");
+		fwrite(STDOUT, "ok\n");
 	}
 
 	napphp::fs_rename(
