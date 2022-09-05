@@ -18,7 +18,7 @@
 	 * @field query DNS-Query, see `napc__DNSQuery`.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef struct {
+	typedef struct napc_DNS_DNSRequest{
 		napc__DNSHeader header;
 		napc__DNSQuery query;
 	} napc__DNSRequest;
@@ -32,7 +32,7 @@
 	 * @field answers DNS-Answers, see `napc__DNSAnswer`.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef struct {
+	typedef struct napc_DNS_DNSResponse {
 		napc__DNSHeader header;
 		// this field is different from header.answer_count
 		// header.answer_count contains the raw count of the number of

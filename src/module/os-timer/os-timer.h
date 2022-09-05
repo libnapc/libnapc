@@ -16,7 +16,7 @@
 	 * Treat this type as opaque.
 	 * @changelog 2.0.0 25.03.2022 initial version
 	 */
-	typedef struct {
+	typedef struct napc_OSTimer_OSTimer {
 		NAPC_MAGIC_MEMBER; // used to detect uninitialized timers
 
 		napc_time duration;

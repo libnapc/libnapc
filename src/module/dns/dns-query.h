@@ -14,7 +14,7 @@
 	 * @field qtype Query type, see `napc__DNSQType`.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef struct {
+	typedef struct napc_DNS_DNSQuery {
 		char name[NAPC_MODULE_DNS_MAX_NAME];
 		napc__DNSQType qtype;
 	} napc__DNSQuery;

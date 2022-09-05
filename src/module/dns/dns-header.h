@@ -13,7 +13,7 @@
 	 * @enum NAPC_DNS_OPCODE_NOTIFY
 	 * @enum NAPC_DNS_OPCODE_UPDATE
 	 */
-	typedef enum {
+	typedef enum napc_DNS_DNSOPCode {
 		NAPC_DNS_OPCODE_QUERY,
 		NAPC_DNS_OPCODE_IQUERY,
 		NAPC_DNS_OPCODE_STATUS,
@@ -36,7 +36,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @changelog 2.0.0 12.04.2022 added `raw_flags` member
 	 */
-	typedef struct {
+	typedef struct napc_DNS_DNSHeader {
 		napc_u16 raw_flags;
 
 		napc__DNSOPCode opcode;

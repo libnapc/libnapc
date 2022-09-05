@@ -14,7 +14,7 @@
 	 * @field rd_data Response data.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef struct {
+	typedef struct napc_DNS_DNSAnswer {
 		napc_u32 ttl;
 
 		napc_u16 rd_length;

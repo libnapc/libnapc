@@ -29,7 +29,7 @@
 	 * @field port Port number.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef struct {
+	typedef struct napc_IPv4Participant_IPv4Participant {
 		NAPC_MAGIC_MEMBER;
 
 		char addr[NAPC_MODULE_NET_IP_STR_MAX];

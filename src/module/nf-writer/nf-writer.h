@@ -17,7 +17,7 @@
 	 * Treat this type as opaque.
 	 * @changelog 2.0.0 12.04.2022 initial version
 	 */
-	typedef struct {
+	typedef struct napc_NFWriter_NFWriter {
 		NAPC_MAGIC_MEMBER;
 		napc__Writer _writer;
 	} napc__NFWriter;

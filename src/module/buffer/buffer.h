@@ -25,7 +25,7 @@
 	 * @field data Pointer to data.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef struct {
+	typedef struct napc_Buffer_Buffer {
 		NAPC_MAGIC_MEMBER; // used to detect uninitialized buffers
 
 		napc_size size;

@@ -18,7 +18,7 @@
 	 * Treat this type as opaque.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef struct {
+	typedef struct napc_Pool_Pool {
 		NAPC_MAGIC_MEMBER;
 
 		const char *label;

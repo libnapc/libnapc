@@ -16,7 +16,7 @@
 	 * Treat this type as opaque.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef struct {
+	typedef struct napc_Writer_Writer {
 		NAPC_MAGIC_MEMBER;
 		napc_size _offset;
 		napc_size size;
