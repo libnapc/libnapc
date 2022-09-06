@@ -12,13 +12,23 @@ return function($args) {
 	}
 
 	$temp_dir = napphp::tmp_createDirectory();
+
 	$preprocessed_entries = napphp::fs_scandirRecursive(
 		LIBNAPC_BUILD_FILES_DIR."/processed_files/"
 	);
 
+	$preprocessed_files = napphp::arr_filter($preprocessed_entries, function($entry) {
+		return $entry["type"] === "file";
+	});
+
+	$preprocessed_files_tree = napphp::arr_filter($preprocessed_entries, function($entry) {
+		return $entry["type"] === "directory";
+	});
+
 	libnapc_run_steps("bundle", $args, [
 		"output_dir" => $temp_dir,
-		"preprocessed_entries" => $preprocessed_entries
+		"preprocessed_files" => $preprocessed_files,
+		"preprocessed_files_tree" => $preprocessed_files_tree
 	]);
 
 	napphp::fs_rename(

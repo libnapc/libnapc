@@ -6,20 +6,12 @@ return function($args, &$context) {
 	napphp::fs_mkdir("$output_dir/linux/src");
 	napphp::fs_mkdir("$output_dir/linux/objects");
 
-	$linux_source_dirs = napphp::arr_filter(
-		$context["preprocessed_entries"], function($entry) {
-			return $entry["type"] == "directory";
-		}
-	);
-
-	foreach ($linux_source_dirs as $linux_source_dir) {
-		napphp::fs_mkdir("$output_dir/linux/src/".$linux_source_dir["relative_path"]);
+	foreach ($context["preprocessed_files_tree"] as $entry) {
+		napphp::fs_mkdir("$output_dir/linux/src/".$entry["relative_path"]);
 	}
 
 	$linux_source_files = napphp::arr_filter(
-		$context["preprocessed_entries"], function($entry) {
-			if ($entry["type"] !== "file") return false;
-
+		$context["preprocessed_files"], function($entry) {
 			if (napphp::str_endsWith($entry["basename"], ".h")) return true;
 			if (napphp::str_endsWith($entry["basename"], ".c")) return true;
 
