@@ -15,38 +15,37 @@ function libnapc_preprocess_getReleaseVersion() {
 	return $git_branch."-".substr($git_HEAD, 0, 7);
 }
 
-return function($args) {
-	if (napphp::fs_isDirectory(LIBNAPC_BUILD_FILES_DIR."/processed_files/")) {
-		throw new CommandError(
-			"Files already preprocessed. Use 'libnapc clean' to remove them."
+return [
+	"depends_on" => [],
+	"creates"    => "processed_files",
+
+	"run" => function($args) {
+		$temp_dir = napphp::tmp_createDirectory();
+
+		$release_version = libnapc_preprocess_getReleaseVersion();
+
+		$build_constants = [
+			"GIT_HEAD_HASH" => napphp::git_getHEADSha1Hash(),
+			"RELEASE_VERSION" => $release_version,
+			"ARDUINO_LIBRARY_NAME" => "libnapc",
+			"ARDUINO_LIBRARY_VERSION" => $release_version,
+			"ARDUINO_LIBRARY_URL" => "https://libnapc.nap-software.com/",
+			"BUILD_DATE" => ""
+		];
+
+		command_runSteps("preprocess", $args, [
+			"output_dir" => $temp_dir,
+			"build_constants" => $build_constants
+		]);
+
+		napphp::fs_writeFileJSONAtomic(
+			LIBNAPC_BUILD_FILES_DIR."/build_constants.json",
+			$build_constants,
+			true
+		);
+
+		napphp::fs_rename(
+			$temp_dir, LIBNAPC_BUILD_FILES_DIR."/processed_files/"
 		);
 	}
-
-	$temp_dir = napphp::tmp_createDirectory();
-
-	$release_version = libnapc_preprocess_getReleaseVersion();
-
-	$build_constants = [
-		"GIT_HEAD_HASH" => napphp::git_getHEADSha1Hash(),
-		"RELEASE_VERSION" => $release_version,
-		"ARDUINO_LIBRARY_NAME" => "libnapc",
-		"ARDUINO_LIBRARY_VERSION" => $release_version,
-		"ARDUINO_LIBRARY_URL" => "https://libnapc.nap-software.com/",
-		"BUILD_DATE" => ""
-	];
-
-	libnapc_run_steps("preprocess", $args, [
-		"output_dir" => $temp_dir,
-		"build_constants" => $build_constants
-	]);
-
-	napphp::fs_writeFileJSONAtomic(
-		LIBNAPC_BUILD_FILES_DIR."/build_constants.json",
-		$build_constants,
-		true
-	);
-
-	napphp::fs_rename(
-		$temp_dir, LIBNAPC_BUILD_FILES_DIR."/processed_files/"
-	);
-};
+];

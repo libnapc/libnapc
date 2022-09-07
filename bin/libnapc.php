@@ -29,7 +29,7 @@ define("LIBNAPC_SOURCE_FILES_DIR", __DIR__."/../src/");
 define("LIBNAPC_TEST_SOURCE_FILES_DIR", __DIR__."/../__tests__/");
 define("LIBNAPC_BUILD_FILES_DIR", __DIR__."/../build_files/");
 
-function libnapc_run_steps($name, $args, $initial_context = []) {
+function command_runSteps($name, $args, $initial_context = []) {
 	$steps = napphp::fs_scandirRecursive(__DIR__."/libnapc/$name/steps/");
 	$steps = napphp::arr_filter($steps, function($entry) {
 		if ($entry["type"] === "directory") return false;
@@ -59,10 +59,10 @@ function libnapc_run_steps($name, $args, $initial_context = []) {
 	}
 }
 
-$command = array_shift($argv);
-$command_fn = require __DIR__."/libnapc/$command/index.php";
+$command_name = array_shift($argv);
+$command = require __DIR__."/libnapc/$command_name/index.php";
 
-function parse_argv($args) {
+function parseArguments($args) {
 	$ret = [
 		"flags" => []
 	];
@@ -78,8 +78,48 @@ function parse_argv($args) {
 	return $ret;
 }
 
+function getCommandNameByOutputPath($output_path) {
+	$commands = napphp::fs_scandir(__DIR__."/libnapc/");
+
+	foreach ($commands as $command_name) {
+		$command = require __DIR__."/libnapc/$command_name/index.php";
+
+		if (!napphp::arr_keyExists($command, "creates")) continue;
+
+		if ($command["creates"] === $output_path) {
+			return $command_name;
+		}
+	}
+
+	return "?";
+}
+
 try {
-	$command_fn(parse_argv($argv));
+	# check dependencies
+	if (napphp::arr_keyExists($command, "depends_on")) {
+		foreach ($command["depends_on"] as $path) {
+			if (!napphp::fs_exists(LIBNAPC_BUILD_FILES_DIR."/$path")) {
+				$cmd = getCommandNameByOutputPath($path);
+
+				fwrite(STDERR, "$path is missing\n");
+				fwrite(STDERR, "Generate it by running 'libnapc $cmd'\n");
+				exit(2);
+			}
+		}
+	}
+
+	# check if already created
+	if (napphp::arr_keyExists($command, "creates")) {
+		$path = $command["creates"];
+
+		if (napphp::fs_exists(LIBNAPC_BUILD_FILES_DIR."/$path")) {
+			fwrite(STDERR, "Output of command already created. Run 'libnapc clean' to start over.\n");
+			exit(2);
+		}
+	}
+
+	$command_fn = $command["run"];
+	$command_fn(parseArguments($argv));
 } catch (CommandError $e) {
 	fwrite(STDERR, "Command failed: ".$e->getMessage()."\n");
 	exit(1);
@@ -87,13 +127,3 @@ try {
 	fwrite(STDERR, "$e\n");
 	exit(1);
 }
-
-/**
- *
- * libnapc
- * 
- *        process  - preprocess files, but do not compile them
- *        compile  - compile build files, but do not link them
- *        link     - link files, but do not bundle them
- *        bundle   - bundle preprocessed files
- */
