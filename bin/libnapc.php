@@ -29,6 +29,19 @@ define("LIBNAPC_SOURCE_FILES_DIR", __DIR__."/../src/");
 define("LIBNAPC_TEST_SOURCE_FILES_DIR", __DIR__."/../__tests__/");
 define("LIBNAPC_BUILD_FILES_DIR", __DIR__."/../build_files/");
 
+function loadCommand($command_name) {
+	// use cache to prevent loading the same command file twice
+	static $cache = [];
+
+	if (napphp::arr_keyExists($cache, $command_name)) {
+		return $cache[$command_name];
+	}
+
+	$cache[$command_name] = require __DIR__."/libnapc/$command_name/index.php";
+
+	return $cache[$command_name];
+}
+
 function command_runSteps($name, $args, $initial_context = []) {
 	$steps = napphp::fs_scandirRecursive(__DIR__."/libnapc/$name/steps/");
 	$steps = napphp::arr_filter($steps, function($entry) {
@@ -60,7 +73,7 @@ function command_runSteps($name, $args, $initial_context = []) {
 }
 
 $command_name = array_shift($argv);
-$command = require __DIR__."/libnapc/$command_name/index.php";
+$command = loadCommand($command_name);
 
 function parseArguments($args) {
 	$ret = [
@@ -82,7 +95,7 @@ function getCommandNameByOutputPath($output_path) {
 	$commands = napphp::fs_scandir(__DIR__."/libnapc/");
 
 	foreach ($commands as $command_name) {
-		$command = require __DIR__."/libnapc/$command_name/index.php";
+		$command = loadCommand($command_name);
 
 		if (!napphp::arr_keyExists($command, "creates")) continue;
 
