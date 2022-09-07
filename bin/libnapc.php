@@ -110,14 +110,22 @@ function getCommandNameByOutputPath($output_path) {
 try {
 	# check dependencies
 	if (napphp::arr_keyExists($command, "depends_on")) {
+		$missing_dependency = false;
+
 		foreach ($command["depends_on"] as $path) {
+
 			if (!napphp::fs_exists(LIBNAPC_BUILD_FILES_DIR."/$path")) {
+				$missing_dependency = true;
+
 				$cmd = getCommandNameByOutputPath($path);
 
-				fwrite(STDERR, "$path is missing\n");
-				fwrite(STDERR, "Generate it by running 'libnapc $cmd'\n");
-				exit(2);
+				fwrite(STDERR, "'build_files/$path' is missing\n");
+				fwrite(STDERR, ">>> Generate it by running 'libnapc $cmd'\n");
 			}
+		}
+
+		if ($missing_dependency) {
+			exit(2);
 		}
 	}
 
