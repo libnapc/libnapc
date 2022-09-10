@@ -8,8 +8,7 @@
 	 * @name napc__Timer
 	 * @brief Representation of a timer.
 	 * @version 2.0.0
-	 * @notes
-	 * Treat this type as opaque.
+	 * @opaque
 	 * @changelog 2.0.0 25.03.2022 initial version
 	 */
 	typedef struct napc_Timer_Timer {

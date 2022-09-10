@@ -12,8 +12,7 @@
 	 * @name napc__OSTimer
 	 * @brief Representation of a single shot timer.
 	 * @version 2.0.0
-	 * @notes
-	 * Treat this type as opaque.
+	 * @opaque
 	 * @changelog 2.0.0 25.03.2022 initial version
 	 */
 	typedef struct napc_OSTimer_OSTimer {

@@ -14,8 +14,7 @@
 	 * @name napc__Pool
 	 * @brief Represenation of a fixed memory pool.
 	 * @version 1.0.0
-	 * @notes
-	 * Treat this type as opaque.
+	 * @opaque
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	typedef struct napc_Pool_Pool {

@@ -12,8 +12,7 @@
 	 * @name napc__Reader
 	 * @brief Representation of a reader.
 	 * @version 1.0.0
-	 * @notes
-	 * Treat this type as opaque.
+	 * @opaque
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	typedef struct napc_Reader_Reader {

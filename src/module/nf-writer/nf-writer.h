@@ -13,8 +13,7 @@
 	 * @name napc__NFWriter
 	 * @brief Representation of a no-fail writer.
 	 * @version 2.0.0
-	 * @notes
-	 * Treat this type as opaque.
+	 * @opaque
 	 * @changelog 2.0.0 12.04.2022 initial version
 	 */
 	typedef struct napc_NFWriter_NFWriter {

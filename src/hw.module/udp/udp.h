@@ -56,8 +56,7 @@
 	 * @name napc__UDPSocket
 	 * @brief Representation of a UDP-Socket.
 	 * @version 1.0.0
-	 * @notes
-	 * Treat this type as opaque.
+	 * @opaque
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	typedef napc_ssize napc__UDPSocket;

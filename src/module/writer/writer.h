@@ -12,8 +12,7 @@
 	 * @name napc__Writer
 	 * @brief Representation of a writer.
 	 * @version 1.0.0
-	 * @notes
-	 * Treat this type as opaque.
+	 * @opaque
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	typedef struct napc_Writer_Writer {
