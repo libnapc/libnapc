@@ -19,13 +19,14 @@
 
 	/*!
 	 * @name napc__Buffer
+	 * @module Buffer
 	 * @brief Representation of a memory buffer.
 	 * @version 1.0.0
 	 * @field size Size of data.
 	 * @field data Pointer to data.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef struct napc_Buffer_Buffer {
+	typedef struct napc__Buffer {
 		NAPC_MAGIC_MEMBER; // used to detect uninitialized buffers
 
 		napc_size size;

@@ -5,6 +5,7 @@
 
 	/*!
 	 * @name napc__File
+	 * @module File
 	 * @brief Representation of a file.
 	 * @version 1.0.0
 	 * @description

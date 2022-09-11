@@ -12,12 +12,13 @@
 
 	/*!
 	 * @name napc__Pool
+	 * @module Pool
 	 * @brief Represenation of a fixed memory pool.
 	 * @version 1.0.0
 	 * @opaque
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef struct napc_Pool_Pool {
+	typedef struct napc__Pool {
 		NAPC_MAGIC_MEMBER;
 
 		const char *label;

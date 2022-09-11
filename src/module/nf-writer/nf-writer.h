@@ -11,12 +11,13 @@
 
 	/*!
 	 * @name napc__NFWriter
+	 * @module NFWriter
 	 * @brief Representation of a no-fail writer.
 	 * @version 2.0.0
 	 * @opaque
 	 * @changelog 2.0.0 12.04.2022 initial version
 	 */
-	typedef struct napc_NFWriter_NFWriter {
+	typedef struct napc__NFWriter {
 		NAPC_MAGIC_MEMBER;
 		napc__Writer _writer;
 	} napc__NFWriter;

@@ -21,6 +21,7 @@
 
 	/*!
 	 * @name napc__IPv4Participant
+	 * @module IPv4Participant
 	 * @brief Representation a network device.
 	 * @version 1.0.0
 	 * @description
@@ -29,7 +30,7 @@
 	 * @field port Port number.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef struct napc_IPv4Participant_IPv4Participant {
+	typedef struct napc__IPv4Participant {
 		NAPC_MAGIC_MEMBER;
 
 		char addr[NAPC_MODULE_NET_IP_STR_MAX];

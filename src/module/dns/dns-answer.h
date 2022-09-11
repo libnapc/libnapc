@@ -7,6 +7,7 @@
 
 	/*!
 	 * @name napc__DNSAnswer
+	 * @module DNS
 	 * @brief Representation of a DNS answer.
 	 * @version 1.0.0
 	 * @field ttl Time to live (in seconds).
@@ -14,7 +15,7 @@
 	 * @field rd_data Response data.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef struct napc_DNS_DNSAnswer {
+	typedef struct napc__DNSAnswer {
 		napc_u32 ttl;
 
 		napc_u16 rd_length;

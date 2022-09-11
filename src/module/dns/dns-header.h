@@ -5,6 +5,7 @@
 
 	/*!
 	 * @name napc__DNSOPCode
+	 * @module DNS
 	 * @brief Representation of a DNS operation code.
 	 * @version 1.0.0
 	 * @enum NAPC_DNS_OPCODE_QUERY Standard DNS-Query.
@@ -13,7 +14,7 @@
 	 * @enum NAPC_DNS_OPCODE_NOTIFY
 	 * @enum NAPC_DNS_OPCODE_UPDATE
 	 */
-	typedef enum napc_DNS_DNSOPCode {
+	typedef enum napc__DNSOPCode {
 		NAPC_DNS_OPCODE_QUERY,
 		NAPC_DNS_OPCODE_IQUERY,
 		NAPC_DNS_OPCODE_STATUS,
@@ -23,6 +24,7 @@
 
 	/*!
 	 * @name napc__DNSHeader
+	 * @module DNS
 	 * @brief Representation of a DNS header.
 	 * @version 2.0.0
 	 * @field raw_flags Contains the raw dns header flags (16 bit)
@@ -36,7 +38,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @changelog 2.0.0 12.04.2022 added `raw_flags` member
 	 */
-	typedef struct napc_DNS_DNSHeader {
+	typedef struct napc__DNSHeader {
 		napc_u16 raw_flags;
 
 		napc__DNSOPCode opcode;

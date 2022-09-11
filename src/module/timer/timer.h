@@ -6,12 +6,13 @@
 
 	/*!
 	 * @name napc__Timer
+	 * @module Timer
 	 * @brief Representation of a timer.
 	 * @version 2.0.0
 	 * @opaque
 	 * @changelog 2.0.0 25.03.2022 initial version
 	 */
-	typedef struct napc_Timer_Timer {
+	typedef struct napc__Timer {
 		NAPC_MAGIC_MEMBER; // used to detect uninitialized timers
 
 		napc_time duration;

@@ -54,6 +54,7 @@
 
 	/*!
 	 * @name napc__UDPSocket
+	 * @module UDP
 	 * @brief Representation of a UDP-Socket.
 	 * @version 1.0.0
 	 * @opaque

@@ -12,19 +12,21 @@
 
 	/*!
 	 * @name napc__DNSRequest
+	 * @module DNS
 	 * @brief Representation of a DNS request.
 	 * @version 1.0.0
 	 * @field header DNS-Header, see `napc__DNSHeader`.
 	 * @field query DNS-Query, see `napc__DNSQuery`.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef struct napc_DNS_DNSRequest{
+	typedef struct napc__DNSRequest{
 		napc__DNSHeader header;
 		napc__DNSQuery query;
 	} napc__DNSRequest;
 
 	/*!
 	 * @name napc__DNSResponse
+	 * @module DNS
 	 * @brief Representation of a DNS response.
 	 * @version 1.0.0
 	 * @field header DNS-Header, see `napc__DNSHeader`.
@@ -32,7 +34,7 @@
 	 * @field answers DNS-Answers, see `napc__DNSAnswer`.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef struct napc_DNS_DNSResponse {
+	typedef struct napc__DNSResponse {
 		napc__DNSHeader header;
 		// this field is different from header.answer_count
 		// header.answer_count contains the raw count of the number of

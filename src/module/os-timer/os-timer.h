@@ -10,12 +10,13 @@
 
 	/*!
 	 * @name napc__OSTimer
+	 * @module OSTimer
 	 * @brief Representation of a single shot timer.
 	 * @version 2.0.0
 	 * @opaque
 	 * @changelog 2.0.0 25.03.2022 initial version
 	 */
-	typedef struct napc_OSTimer_OSTimer {
+	typedef struct napc__OSTimer {
 		NAPC_MAGIC_MEMBER; // used to detect uninitialized timers
 
 		napc_time duration;

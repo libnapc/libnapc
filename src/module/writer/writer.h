@@ -10,12 +10,13 @@
 
 	/*!
 	 * @name napc__Writer
+	 * @module Writer
 	 * @brief Representation of a writer.
 	 * @version 1.0.0
 	 * @opaque
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef struct napc_Writer_Writer {
+	typedef struct napc__Writer {
 		NAPC_MAGIC_MEMBER;
 		napc_size _offset;
 		napc_size size;

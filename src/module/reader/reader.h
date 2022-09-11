@@ -10,12 +10,13 @@
 
 	/*!
 	 * @name napc__Reader
+	 * @module Reader
 	 * @brief Representation of a reader.
 	 * @version 1.0.0
 	 * @opaque
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef struct napc_Reader_Reader {
+	typedef struct napc__Reader {
 		NAPC_MAGIC_MEMBER;
 		napc_size _offset;
 		napc_size size;
