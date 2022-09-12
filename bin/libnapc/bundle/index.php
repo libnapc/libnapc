@@ -1,6 +1,8 @@
 <?php
 
 return [
+	"description" => "Bundle preprocessed source files for distribution (arduino, linux).",
+
 	"depends_on" => ["processed_files"],
 	"creates"    => "bundles",
 
