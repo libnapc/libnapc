@@ -33,10 +33,12 @@ return [
 			"BUILD_DATE" => ""
 		];
 
-		command_runSteps("preprocess", $args, [
+		$context = [
 			"output_dir" => $temp_dir,
 			"build_constants" => $build_constants
-		]);
+		];
+
+		command_runSteps("preprocess", $args, $context);
 
 		napphp::fs_writeFileJSONAtomic(
 			LIBNAPC_BUILD_FILES_DIR."/build_constants.json",
