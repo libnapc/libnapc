@@ -16,6 +16,15 @@ function libnapc_preprocess_getReleaseVersion() {
 }
 
 return [
+	"description" => [
+		"Preprocess source files. This does: ",
+		"",
+		"  - replace all %BC_*% values with their respective value.",
+		"  - inline all local header includes in src/napc.h.",
+		"  - generate boot_functions.c file from .boot files.",
+		"  - generate valid C source files for tests (__tests__) (this is skipped with --no-tests)."
+	],
+
 	"depends_on" => [],
 	"creates"    => "processed_files",
 
