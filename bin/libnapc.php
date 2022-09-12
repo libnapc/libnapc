@@ -113,14 +113,15 @@ try {
 		$missing_dependency = false;
 
 		foreach ($command["depends_on"] as $path) {
-
 			if (!napphp::fs_exists(LIBNAPC_BUILD_FILES_DIR."/$path")) {
 				$missing_dependency = true;
 
 				$cmd = getCommandNameByOutputPath($path);
+				$colored_cmd = napphp::terminal_colorString($cmd, "cyan");
+				$colored_path = napphp::terminal_colorString("build_files/$path", "yellow");
 
-				fwrite(STDERR, "'build_files/$path' is missing\n");
-				fwrite(STDERR, ">>> Generate it by running 'libnapc $cmd'\n");
+				fwrite(STDERR, "'$colored_path' is missing\n");
+				fwrite(STDERR, ">>> Generate it by running 'libnapc $colored_cmd'\n");
 			}
 		}
 
