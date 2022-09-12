@@ -42,7 +42,7 @@ function loadCommand($command_name) {
 	return $cache[$command_name];
 }
 
-function command_runSteps($name, $args, $initial_context = []) {
+function command_runSteps($name, $args, &$initial_context = []) {
 	$steps = napphp::fs_scandirRecursive(__DIR__."/libnapc/$name/steps/");
 	$steps = napphp::arr_filter($steps, function($entry) {
 		if ($entry["type"] === "directory") return false;
@@ -63,7 +63,7 @@ function command_runSteps($name, $args, $initial_context = []) {
 		return -1;
 	});
 
-	$context = $initial_context;
+	$context = &$initial_context;
 
 	foreach ($steps as $step) {
 		$step_fn = require __DIR__."/libnapc/$name/steps/$step";
