@@ -1,6 +1,8 @@
 <?php
 
 return [
+	"description" => "Create object files of preprocessed source file.",
+
 	"depends_on" => ["processed_files"],
 	"creates"    => "objects",
 
