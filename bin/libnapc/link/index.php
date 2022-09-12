@@ -1,6 +1,8 @@
 <?php
 
 return [
+	"description" => "Create archive file (.a) of generated object files.",
+
 	"depends_on" => ["objects"],
 	"creates"    => "libnapc.a",
 
