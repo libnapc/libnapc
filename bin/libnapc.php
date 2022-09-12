@@ -19,16 +19,6 @@ napphp::set("tmp_dir", __DIR__."/../tmp.d/");
 
 array_shift($argv); // clear $argv[0] because its always the programs name
 
-if (!sizeof($argv)) {
-	fwrite(STDERR, "Usage: libnapc [command]\n");
-	exit(2);
-}
-
-define("LIBNAPC_PROJECT_ROOT_DIR", __DIR__."/../");
-define("LIBNAPC_SOURCE_FILES_DIR", __DIR__."/../src/");
-define("LIBNAPC_TEST_SOURCE_FILES_DIR", __DIR__."/../__tests__/");
-define("LIBNAPC_BUILD_FILES_DIR", __DIR__."/../build_files/");
-
 function loadCommand($command_name) {
 	// use cache to prevent loading the same command file twice
 	static $cache = [];
@@ -41,6 +31,43 @@ function loadCommand($command_name) {
 
 	return $cache[$command_name];
 }
+
+function getAvailableCommands() {
+	$ret = [];
+	$commands = napphp::fs_scandir(__DIR__."/libnapc/");
+
+	foreach ($commands as $command_name) {
+		$command = loadCommand($command_name);
+
+		if (napphp::arr_keyExists($command, "description")) {
+			$ret[$command_name] = $command["description"];
+		} else {
+			$ret[$command_name] = "No description available.";
+		}
+	}
+
+	return $ret;
+}
+
+if (!sizeof($argv)) {
+	fwrite(STDERR, "Usage: libnapc [command]\n");
+
+	foreach (getAvailableCommands() as $command_name => $description) {
+		fprintf(
+			STDERR,
+			"\n  %-10s\n    %s\n\n",
+			napphp::terminal_colorString($command_name, "yellow"),
+			$description
+		);
+	}
+
+	exit(2);
+}
+
+define("LIBNAPC_PROJECT_ROOT_DIR", __DIR__."/../");
+define("LIBNAPC_SOURCE_FILES_DIR", __DIR__."/../src/");
+define("LIBNAPC_TEST_SOURCE_FILES_DIR", __DIR__."/../__tests__/");
+define("LIBNAPC_BUILD_FILES_DIR", __DIR__."/../build_files/");
 
 function command_runSteps($name, $args, &$initial_context = []) {
 	$steps = napphp::fs_scandirRecursive(__DIR__."/libnapc/$name/steps/");
