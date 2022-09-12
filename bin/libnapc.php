@@ -53,6 +53,10 @@ if (!sizeof($argv)) {
 	fwrite(STDERR, "Usage: libnapc [command]\n");
 
 	foreach (getAvailableCommands() as $command_name => $description) {
+		if (is_array($description)) {
+			$description = napphp::arr_join($description, "\n    ");
+		}
+
 		fprintf(
 			STDERR,
 			"\n  %-10s\n    %s\n\n",
