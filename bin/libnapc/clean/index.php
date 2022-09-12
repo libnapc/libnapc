@@ -1,7 +1,7 @@
 <?php
 
 return [
-	"description" => "Discard all generated build files",
+	"description" => "Discard all generated build files.",
 
 	"run" => function() {
 		napphp::fs_delete(LIBNAPC_BUILD_FILES_DIR."/processed_files/");
