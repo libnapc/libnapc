@@ -3,32 +3,55 @@
 
 chdir(__DIR__);
 
-require_once __DIR__."/../x-php-utils/load.php";
+// todo: check php version
+$NAPPHP_LOAD_PATH = getenv("NAPPHP_LOAD_PATH");
+
+if (!is_file($NAPPHP_LOAD_PATH)) {
+	fwrite(STDERR, "Either NAPPHP_LOAD_PATH is not set, or does not exist.\n");
+	exit(2);
+}
+
+require_once $NAPPHP_LOAD_PATH;
+
+fwrite(STDERR, "[debug] Using napphp version v".napphp::info_getVersion()."\n");
+
+napphp::set("tmp_dir", __DIR__."/../tmp.d/");
+
+
+
 
 function compile($test) {
-	XPHPUtils::shell_assertSystemCall("rm -f tmp/$test.out");
+	$output_file = napphp::tmp_createFile();
 
-	$command = "gcc -Wall -Wextra -Wpedantic ".escapeshellarg("$test.c")." -I../build/ -L../build/lib -lnapc-local -o tmp/$test.out";
+	napphp::shell_execTransparently(
+		"gcc", [
+			"-Wall", "-Wextra", "-Wpedantic",
+			"$test.c",
+			"-I../build_files/processed_files/",
+			"-L../build_files/",
+			"-lnapc",
+			"-o",
+			$output_file
+		]
+	);
 
-	XPHPUtils::shell_assertSystemCall($command);
+	return $output_file;
 }
 
-function startsWith($str, $needle) {
-	return substr($str, 0, strlen($needle)) === $needle;
-}
-
-compile("file_root_path");
+$file_root_path_bin = compile("file_root_path");
 
 function file_root_path($env = "") {
+	global $file_root_path_bin;
+
 	$used_root_path = "";
 	$contents_of_file = "";
 
-	$lines = XPHPUtils::shell_assertExecCall("$env ./tmp/file_root_path.out 2>&1");
+	$lines = napphp::proc_exec("$env ".escapeshellcmd($file_root_path_bin)." 2>&1");
 
 	foreach ($lines as $line) {
-		if (startsWith($line, "HAL_napc_initFileSystem (linux) root path = ")) {
+		if (napphp::str_startsWith($line, "HAL_napc_initFileSystem (linux) root path = ")) {
 			$used_root_path = substr($line, strlen("HAL_napc_initFileSystem (linux) root path = "));
-		} else if (startsWith($line, "contents_of_file:") && !strlen($contents_of_file)) {
+		} else if (napphp::str_startsWith($line, "contents_of_file:") && !strlen($contents_of_file)) {
 			$contents_of_file = substr($line, strlen("contents_of_file:"));
 		}
 	}
@@ -69,12 +92,14 @@ foreach ($tests as $test) {
 	}
 }
 
-compile("writer_fail_mode");
+$write_fail_mode_bin = compile("writer_fail_mode");
 
 function writer_fail_mode() {
+	global $write_fail_mode_bin;
+
 	$has_crashed = false;
 
-	exec("./tmp/writer_fail_mode.out 2>&1", $lines, $exit_code);
+	exec(escapeshellcmd($write_fail_mode_bin)." 2>&1", $lines, $exit_code);
 
 	foreach ($lines as $line) {
 		if (strpos($line, "Write operation failed and no_fail_mode is set to true") !== false) {

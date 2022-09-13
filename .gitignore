@@ -10,8 +10,6 @@
 /documentation-site/tmp/*
 !/documentation-site/tmp/.gitkeep
 
-/__tests__.linux/tmp/*.out
-
 !/ci/tmp/.gitkeep
 /ci/tmp/*
 
