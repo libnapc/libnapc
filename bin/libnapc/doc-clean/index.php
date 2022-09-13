@@ -8,6 +8,8 @@ return [
 		napphp::fs_delete(LIBNAPC_BUILD_FILES_DIR."/c-symbols.json");
 		napphp::fs_delete(LIBNAPC_BUILD_FILES_DIR."/doc-blocks.json");
 		napphp::fs_delete(LIBNAPC_BUILD_FILES_DIR."/napc-definitions.json");
+		napphp::fs_delete(LIBNAPC_BUILD_FILES_DIR."/napc-mapped.json");
 		napphp::fs_delete(LIBNAPC_BUILD_FILES_DIR."/napc.json");
+		napphp::fs_delete(LIBNAPC_BUILD_FILES_DIR."/documentation.tar.gz");
 	}
 ];
