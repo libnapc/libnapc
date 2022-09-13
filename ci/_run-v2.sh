@@ -20,6 +20,10 @@ if [ -n "$NAPCI_GIT_BRANCH" ]; then
 	./bin/libnapc.php doc-map
 	./bin/libnapc.php doc-finalize
 	./bin/libnapc.php doc-export
+
+	mkdir build_files/documentation_files
+
+	tar -xzvf build_files/documentation.tar.gz -C build_files/documentation_files
 fi
 
 set -u
