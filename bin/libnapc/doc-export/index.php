@@ -7,9 +7,10 @@ return [
 		"napc.json"
 	],
 
-	"creates"    => "documentation-files.tar.gz",
+	"creates" => "documentation.tar.gz",
 
 	"run" => function($args) {
-
+		napphp::proc_changeWorkingDirectory(LIBNAPC_PROJECT_ROOT_DIR."/documentation-site/");
+		napphp::shell_execTransparently("./export.sh");
 	}
 ];
