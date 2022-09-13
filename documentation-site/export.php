@@ -1,56 +1,44 @@
 #!/usr/bin/env php
 <?php
-require_once __DIR__."/../x-php-utils/load.php";
+// todo: check php version
+$NAPPHP_LOAD_PATH = getenv("NAPPHP_LOAD_PATH");
 
-if (sizeof($argv) !== 2) {
-	fwrite(STDERR, "Output type is missing\n");
-	exit(1);
+if (!is_file($NAPPHP_LOAD_PATH)) {
+	fwrite(STDERR, "Either NAPPHP_LOAD_PATH is not set, or does not exist.\n");
+	exit(2);
 }
+
+require_once $NAPPHP_LOAD_PATH;
+
+fwrite(STDERR, "[debug] Using napphp version v".napphp::info_getVersion()."\n");
+
+napphp::set("tmp_dir", __DIR__."/../tmp.d/");
 
 /**
  * This script creates the documentation.
  */
-
 define("SERVER_ROOT_URL", "http://localhost:9999");
 
-chdir(__DIR__);
+napphp::proc_changeWorkingDirectory(__DIR__);
 
-XPHPUtils::shell_assertSystemCall("rm -rf dist.tmp");
-XPHPUtils::shell_assertSystemCall("rm -rf tmp/sass.cache");
-XPHPUtils::shell_assertSystemCall("mkdir tmp/sass.cache");
-XPHPUtils::shell_assertSystemCall("mkdir dist.tmp");
+$output_dir = napphp::tmp_createDirectory();
+$web_tmp_dir = napphp::tmp_createDirectory();
 
-chdir("dist.tmp");
+napphp::proc_changeWorkingDirectory($output_dir);
 
-$output_type = strtolower($argv[1]);
-
-if (!in_array($output_type, ["--optimized", "--flat"])) {
-	fwrite(STDERR, "invalid output type\n");
-	exit(2);
-}
 
 function download($path) {
-	global $output_type;
+	global $web_tmp_dir;
 
 	fwrite(STDERR, "Downloading $path\n");
 
-	$output_dir = dirname($path);
+	napphp::fs_mkdir(dirname($path));
 
-	if (!is_dir($output_dir)) {
-		mkdir($output_dir, 0777, true);
-		clearstatcache();
-		fwrite(STDERR, "    created $output_dir\n");
-	}
-
-	$opts = [];
-
-	if ($output_type === "--optimized") {
-		$opts = [
-			"http" => [
-				"header" => "x-optimized-output: yes\r\n"
-			]
-		];
-	}
+	$opts = [
+		"http" => [
+			"header" => "x-napdoc-set-tmp-directory: $web_tmp_dir\r\n"
+		]
+	];
 
 	$context = stream_context_create($opts);
 
@@ -58,13 +46,14 @@ function download($path) {
 
 	if (!$contents) {
 		fwrite(STDERR, "Failed to download $path\n");
+
 		exit(1);
 	}
 
-	file_put_contents($path, $contents);
+	napphp::fs_writeFileStringAtomic($path, $contents);
 }
 
-$napc = json_decode(file_get_contents("../content/napc.json"), true);
+$napc = napphp::fs_readFileJSON(__DIR__."/content/napc.json");
 
 foreach ($napc["modules"] as $module_name => $module_definitions) {
 	if ($module_name === "app") continue;
@@ -80,14 +69,14 @@ foreach ($napc["modules"] as $module_name => $module_definitions) {
 	}
 }
 
-$documents = XPHPUtils::fs_scandirRecursive(__DIR__."/content/documents");
+$documents = napphp::fs_scandirRecursive(__DIR__."/content/documents");
 
 foreach ($documents as $document) {
 	if ($document["type"] !== "file") continue;
 
-	$filename = basename($document["rel_path"]);
+	$filename = basename($document["relative_path"]);
 
-	if (substr($filename, -3, 3) !== ".md") continue;
+	if (!napphp::str_endsWith($filename, ".md")) continue;
 
 	download("document/$filename.html");
 }
@@ -104,8 +93,12 @@ download("site.js");
 download("metadata.xml");
 download("index.html");
 
-chdir(__DIR__);
+$output_tar_file = napphp::tmp_createFile(".tar.gz");
 
-XPHPUtils::shell_assertSystemCall("rm -rf dist");
-XPHPUtils::shell_assertSystemCall("mv dist.tmp dist");
-XPHPUtils::shell_assertSystemCall("cd dist && tar -czvf ../../dist/doc.tar.gz .");
+napphp::shell_execTransparently(
+	"tar -czvf ".escapeshellarg($output_tar_file)." ."
+);
+
+napphp::fs_rename(
+	$output_tar_file, __DIR__."/../build_files/documentation.tar.gz"
+);
