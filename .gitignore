@@ -7,9 +7,6 @@
 /documentation-site/tmp/*
 !/documentation-site/tmp/.gitkeep
 
-!/ci/tmp/.gitkeep
-/ci/tmp/*
-
 /build_files/*
 !/build_files/.gitkeep
 
