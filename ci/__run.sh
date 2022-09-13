@@ -23,5 +23,3 @@ mkdir build_files/documentation_files
 
 # unpack documentation tarball
 tar -xzvf build_files/documentation.tar.gz -C build_files/documentation_files
-
-set -u
