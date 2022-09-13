@@ -1,24 +1,6 @@
 #!/bin/bash -eux
 
-./.napci/pre.sh
-./ci/run.sh
-./.napci/post.sh
+./ci/run-v2.php
 
-#
-# place files into correct directory
-#
-
-# build_files
-mv dist/* .napci/build_files.tmp
-mv .napci/build_files.tmp .napci/build_files
-
-# upload_files
-cd .napci/upload_files.tmp/
-
-ln -s ../build_files/libnapc-arduino.zip .
-ln -s ../build_files/libnapc-linux.tar.gz .
-ln -s ../build_files/napc.h .
-
-cd ../../
-
-mv .napci/upload_files.tmp .napci/upload_files
+# Link build_files to napci server instance
+ln -s ../build_files .napci/build_files
