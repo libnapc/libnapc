@@ -1,6 +1,18 @@
 <?php
 
-require_once __DIR__."/../x-php-utils/load.php";
+// todo: check php version
+$NAPPHP_LOAD_PATH = getenv("NAPPHP_LOAD_PATH");
+
+if (!is_file($NAPPHP_LOAD_PATH)) {
+	fwrite(STDERR, "Either NAPPHP_LOAD_PATH is not set, or does not exist.\n");
+	exit(2);
+}
+
+require_once $NAPPHP_LOAD_PATH;
+
+fwrite(STDERR, "[debug] Using napphp version v".napphp::info_getVersion()."\n");
+
+napphp::set("tmp_dir", __DIR__."/../tmp.d/");
 
 if (sizeof($argv) !== 2) {
 	fwrite(STDERR, "Usage: add_checksums_verified_icon.php <ssh-identity-file>\n");
@@ -44,7 +56,7 @@ function upload_to_remote_host($src_path, $dst_path) {
 
 	$scp_flags = "-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null";
 
-	XPHPUtils::shell_assertSystemCall("scp $scp_flags -i $scp_identity_file $scp_source $scp_destination");
+	napphp::shell_execTransparently("scp $scp_flags -i $scp_identity_file $scp_source $scp_destination");
 }
 
 $upload_username = assert_readenv("LIBNAPC_DEPLOY_USER");

@@ -1,6 +1,18 @@
 <?php
 
-require_once __DIR__."/../x-php-utils/load.php";
+// todo: check php version
+$NAPPHP_LOAD_PATH = getenv("NAPPHP_LOAD_PATH");
+
+if (!is_file($NAPPHP_LOAD_PATH)) {
+	fwrite(STDERR, "Either NAPPHP_LOAD_PATH is not set, or does not exist.\n");
+	exit(2);
+}
+
+require_once $NAPPHP_LOAD_PATH;
+
+fwrite(STDERR, "[debug] Using napphp version v".napphp::info_getVersion()."\n");
+
+napphp::set("tmp_dir", __DIR__."/../tmp.d/");
 
 $release_version = getenv("LIBNAPC_RELEASE_VERSION");
 
@@ -28,7 +40,7 @@ foreach ($metadata->release_files->release_file as $file) {
 	$output_file = __DIR__."/tmp/$file_name";
 	$curl_output_file = escapeshellarg($output_file);
 
-	XPHPUtils::shell_assertSystemCall("curl --silent $curl_url -o $curl_output_file");
+	napphp::shell_execTransparently("curl --silent $curl_url -o $curl_output_file");
 
 	$local_hash = hash_file("sha256", $output_file);
 
