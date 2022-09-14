@@ -1,7 +1,11 @@
 <?php
 
 return function() {
-	$path = $_SERVER["REQUEST_URI"] ?? "";
+	if (!array_key_exists("global_napcdoc_request_path", $GLOBALS)) {
+		throw new Exception("Call napcdoc::http_setRequestPath first.");
+	}
+
+	$path = $GLOBALS["global_napcdoc_request_path"];
 
 	while (strpos($path, "//") !== false) {
 		$path = str_replace("//", "/", $path);

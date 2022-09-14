@@ -7,6 +7,8 @@ return function($request_path, $http_headers) {
 		$request_path = "/index.html";
 	}
 
+	napcdoc::http_setRequestPath($request_path);
+
 	if (napphp::str_endsWith($request_path, ".html")) {
 		$request_path_without_html = substr($request_path, 0, strlen($request_path) - 5);
 
