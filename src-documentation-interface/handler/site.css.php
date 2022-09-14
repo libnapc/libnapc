@@ -28,9 +28,9 @@ return function($http_headers) {
 	if (is_file("/usr/local/bin/node-sass")) {
 		$sass_bin_path = "/usr/local/bin/node-sass";
 	} else if (napphp::str_contains(strtolower(php_uname()), "linux")) {
-		$sass_bin_path = __DIR__."/bin/linux/sass/sass";
+		$sass_bin_path = __DIR__."/../bin/linux/sass/sass";
 	} else {
-		$sass_bin_path = __DIR__."/bin/macos/sass/sass";
+		$sass_bin_path = __DIR__."/../bin/macos/sass/sass";
 	}
 
 	$sass_entries = napphp::fs_scandirRecursive(__DIR__."/../assets/sass");
