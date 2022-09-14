@@ -37,7 +37,7 @@ foreach ($metadata->release_files->release_file as $file) {
 	fwrite(STDERR, "Downloading '$file_name'\n");
 
 	$curl_url = escapeshellarg("$base_url/download/$file_name");
-	$output_file = __DIR__."/tmp/$file_name";
+	$output_file = napphp::tmp_createFile();
 	$curl_output_file = escapeshellarg($output_file);
 
 	napphp::shell_execTransparently("curl --silent $curl_url -o $curl_output_file");
@@ -58,3 +58,5 @@ foreach ($metadata->release_files->release_file as $file) {
 }
 
 fwrite(STDERR, "All checksums ok!\n");
+
+napphp::tmp_cleanup();
