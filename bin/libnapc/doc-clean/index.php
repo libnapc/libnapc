@@ -10,6 +10,7 @@ return [
 		napphp::fs_delete(LIBNAPC_BUILD_FILES_DIR."/napc-definitions.json");
 		napphp::fs_delete(LIBNAPC_BUILD_FILES_DIR."/napc-mapped.json");
 		napphp::fs_delete(LIBNAPC_BUILD_FILES_DIR."/napc.json");
+		napphp::fs_delete(LIBNAPC_BUILD_FILES_DIR."/documentation_files");
 		napphp::fs_delete(LIBNAPC_BUILD_FILES_DIR."/documentation.tar.gz");
 	}
 ];

@@ -2,11 +2,6 @@
 /tmp.d/*
 !/tmp.d/.gitkeep
 
-/documentation-site/dist.tmp/
-/documentation-site/dist/
-/documentation-site/tmp/*
-!/documentation-site/tmp/.gitkeep
-
 /build_files/*
 !/build_files/.gitkeep
 

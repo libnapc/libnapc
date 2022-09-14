@@ -7,10 +7,42 @@ return [
 		"napc.json"
 	],
 
-	"creates" => "documentation.tar.gz",
+	"creates" => "documentation_files",
 
 	"run" => function($args) {
-		napphp::proc_changeWorkingDirectory(LIBNAPC_PROJECT_ROOT_DIR."/documentation-site/");
-		napphp::shell_execTransparently("./export.sh");
+		$sass_cache_dir = napphp::tmp_createDirectory();
+		$output_tar = napphp::tmp_createFile(".tar.gz");
+		$output_dir = napphp::tmp_createDirectory();
+
+		$page_generator = require LIBNAPC_PROJECT_ROOT_DIR."/src-documentation-interface/page_generator.php";
+
+		$napc = napphp::fs_readFileJSON(LIBNAPC_BUILD_FILES_DIR."/napc.json");
+
+		$generator_fn = function($request_path) use (&$page_generator, $sass_cache_dir) {
+			return $page_generator(
+				$request_path, [
+					"x-sass-cache-dir" => $sass_cache_dir
+				]
+			);
+		};
+
+		$context = [
+			"napc" => $napc,
+			"generator_fn" => $generator_fn,
+			"output_tar" => $output_tar,
+			"output_dir" => $output_dir
+		];
+
+		command_runSteps("doc-export", $args, $context);
+
+		napphp::fs_rename(
+			$output_tar,
+			LIBNAPC_BUILD_FILES_DIR."/documentation.tar.gz"
+		);
+
+		napphp::fs_rename(
+			$output_dir,
+			LIBNAPC_BUILD_FILES_DIR."/documentation_files"
+		);
 	}
 ];
