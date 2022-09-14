@@ -78,6 +78,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Install napphp
+      run: |
+         mkdir ~/napphp
+         git clone --depth 1 --branch v0.0.7 'https://github.com/nap-software/napphp.git' ~/napphp
+
     - name: Setup SSH key
       run: |
          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/deploy.key
