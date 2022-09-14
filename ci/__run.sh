@@ -18,9 +18,3 @@
 ./bin/libnapc.php doc-map
 ./bin/libnapc.php doc-finalize
 ./bin/libnapc.php doc-export
-
-rm -rf build_files/documentation_files
-mkdir build_files/documentation_files
-
-# unpack documentation tarball
-tar -xzvf build_files/documentation.tar.gz -C build_files/documentation_files
