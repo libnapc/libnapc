@@ -54,6 +54,10 @@ return function($http_headers) {
 			if (!$result) {
 				$sass_file = $file["relative_path"];
 
+				if (defined("STDERR")) {
+					fwrite(STDERR, $output);
+				}
+
 				throw new Exception("Failed to compile SASS file '$sass_file'");
 			}
 
