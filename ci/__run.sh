@@ -5,6 +5,7 @@
 ./bin/libnapc.php compile
 ./bin/libnapc.php link
 ./bin/libnapc.php run-unit-tests
+./bin/libnapc.php run-linux-tests
 
 ./bin/libnapc.php bundle
 
