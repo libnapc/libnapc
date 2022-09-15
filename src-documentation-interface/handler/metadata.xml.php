@@ -3,7 +3,7 @@
 return function() {
 	$build_constants = napcdoc::site_getDocumentation()["build_constants"];
 
-	$xml_response .= '<?xml version="1.0" encoding="UTF-8"?>'."\n";
+	$xml_response  = '<?xml version="1.0" encoding="UTF-8"?>'."\n";
 	$xml_response .=  '<metadata>'."\n";
 	$xml_response .=  "\t".'<build_constants>'."\n";
 
