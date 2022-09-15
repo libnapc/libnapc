@@ -10,12 +10,15 @@
 		throw new Exception("Could not find '$NAPPHP_LOAD_PATH' (invalid NAPPHP_LOAD_PATH).");
 	}
 
+	if (defined("STDERR")) {
+		fwrite(STDERR, "NAPPHP_LOAD_PATH=$NAPPHP_LOAD_PATH\n");
+	}
+
 	// Only load napphp if not already loaded
 	if (!class_exists("napphp")) {
 		require_once $NAPPHP_LOAD_PATH;
 
 		if (defined("STDERR")) {
-			fwrite(STDERR, "NAPPHP_LOAD_PATH=$NAPPHP_LOAD_PATH\n");
 			fwrite(STDERR, "Loaded nap-software/napphp version v".napphp::info_getVersion()."\n");
 		}
 
@@ -23,7 +26,6 @@
 		napphp::set("tmp_dir", __DIR__."/tmp.d/");
 	} else {
 		if (defined("STDERR")) {
-			fwrite(STDERR, "NAPPHP_LOAD_PATH=$NAPPHP_LOAD_PATH\n");
 			fwrite(STDERR, "nap-software/napphp already loaded (version=".napphp::info_getVersion().")\n");
 		}
 	}
