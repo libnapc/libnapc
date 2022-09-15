@@ -31,7 +31,7 @@ jobs:
     - name: Install napphp
       run: |
          mkdir ~/napphp
-         git clone --depth 1 --branch v0.0.7 'https://github.com/nap-software/napphp.git' ~/napphp
+         git clone --depth 1 --branch v0.0.8 'https://github.com/nap-software/napphp.git' ~/napphp
 
     - name: Setup SSH keys
       run: |
@@ -81,7 +81,7 @@ jobs:
     - name: Install napphp
       run: |
          mkdir ~/napphp
-         git clone --depth 1 --branch v0.0.7 'https://github.com/nap-software/napphp.git' ~/napphp
+         git clone --depth 1 --branch v0.0.8 'https://github.com/nap-software/napphp.git' ~/napphp
 
     - name: Setup SSH key
       run: |
