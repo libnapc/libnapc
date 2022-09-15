@@ -1,24 +1,9 @@
 #!/usr/bin/env php
 <?php
 
+require_once __DIR__."/../load-napphp.php";
+
 chdir(__DIR__);
-
-// todo: check php version
-$NAPPHP_LOAD_PATH = getenv("NAPPHP_LOAD_PATH");
-
-if (!is_file($NAPPHP_LOAD_PATH)) {
-	fwrite(STDERR, "Either NAPPHP_LOAD_PATH is not set, or does not exist.\n");
-	exit(2);
-}
-
-require_once $NAPPHP_LOAD_PATH;
-
-fwrite(STDERR, "[debug] Using napphp version v".napphp::info_getVersion()."\n");
-
-napphp::set("tmp_dir", __DIR__."/../tmp.d/");
-
-
-
 
 function compile($test) {
 	$output_file = napphp::tmp_createFile();
