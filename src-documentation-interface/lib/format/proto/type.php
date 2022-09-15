@@ -98,7 +98,9 @@ return function($type_name) {
 			"typedef enum"
 		)." {\n";
 
-		foreach ($type["values"] as $value) {
+		$n_values = sizeof($type["values"]);
+
+		foreach ($type["values"] as $i => $value) {
 			$ret .= "    ".napcdoc::html_createElement("span",
 				["class" => "c-identifier"],
 				$value["name"]
@@ -111,7 +113,12 @@ return function($type_name) {
 				);
 			}
 
-			$ret .= ",\n";
+			// omit comma on last value
+			if (($i + 1) < $n_values) {
+				$ret .= ",";
+			}
+
+			$ret .= "\n";
 		}
 
 		$ret .= "} ".napcdoc::html_createElement("span", 
