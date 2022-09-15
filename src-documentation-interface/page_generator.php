@@ -81,6 +81,8 @@ return function($request_path, $http_headers) {
 	}
 	// 404
 	else {
-		return "404 - not found.";
+		$handler = require __DIR__."/handler/404.php";
+
+		return $handler();
 	}
 };
