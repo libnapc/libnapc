@@ -8,9 +8,9 @@
 <body>
 
 	<div class="body">
-		<h1>404</h1>
-		<p>The page you're looking for could not be found :(</p>
-		<a href="https://libnapc.nap-software.com">Go back to start page</a>
+		<h1>%%TITLE%%</h1>
+		<p>%%INFO_TEXT%%</p>
+		%%BUTTON%%
 	</div>
 
 <style>
@@ -35,6 +35,7 @@ div.body {
 
 p {
 	font-size: 17px;
+	margin: 6px 0px;
 }
 
 h1 {
@@ -43,6 +44,7 @@ h1 {
 	background: -webkit-linear-gradient(274deg, #00A366, #0093F9);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	%%OVERRIDE_H1_STYLE%%
 }
 
 a {

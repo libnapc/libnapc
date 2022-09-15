@@ -88,5 +88,10 @@ return function($request_path, $http_headers) {
 	// if not handled by now, display 404
 	$handler = require __DIR__."/handler/404.php";
 
-	return $handler();
+	return $handler(
+		// check if 404 was requested specificially
+		// this is to prevent confusion between the real 404 page
+		// and a page (erroneously) missing
+		$request_path
+	);
 };
