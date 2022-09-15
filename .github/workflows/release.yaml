@@ -11,6 +11,7 @@ env:
   LIBNAPC_DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
   LIBNAPC_DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
   GH_TOKEN: ${{ secrets.ACCESS_TOKEN_FOR_GITHUB }}
+  NAPPHP_VERSION: v0.0.8
   NAPPHP_LOAD_PATH: /home/runner/napphp/src/__loadAsClass.php
 
 jobs:
@@ -31,7 +32,7 @@ jobs:
     - name: Install napphp
       run: |
          mkdir ~/napphp
-         git clone --depth 1 --branch v0.0.8 'https://github.com/nap-software/napphp.git' ~/napphp
+         git clone --depth 1 --branch $NAPPHP_VERSION 'https://github.com/nap-software/napphp.git' ~/napphp
 
     - name: Setup SSH keys
       run: |
@@ -81,7 +82,7 @@ jobs:
     - name: Install napphp
       run: |
          mkdir ~/napphp
-         git clone --depth 1 --branch v0.0.8 'https://github.com/nap-software/napphp.git' ~/napphp
+         git clone --depth 1 --branch $NAPPHP_VERSION 'https://github.com/nap-software/napphp.git' ~/napphp
 
     - name: Setup SSH key
       run: |
