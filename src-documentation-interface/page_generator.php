@@ -12,7 +12,7 @@ return function($request_path, $http_headers) {
 	if (napphp::str_endsWith($request_path, ".html")) {
 		$request_path_without_html = substr($request_path, 0, strlen($request_path) - 5);
 
-		$html_template_keys = [];
+		$html_template_keys = NULL;
 
 		// handle documents
 		if (napphp::str_startsWith($request_path, "/document/")) {
@@ -43,6 +43,7 @@ return function($request_path, $http_headers) {
 
 			$html_template_keys = $handler($module_name, $definition_name);
 		}
+		// must be a page then
 		else {
 			$page_name = substr($request_path_without_html, 1);
 
@@ -54,12 +55,16 @@ return function($request_path, $http_headers) {
 				return $__keys;
 			};
 
-			$html_template_keys = $load_page($page_name);
+			if (is_file(__DIR__."/page/$page_name.php")) {
+				$html_template_keys = $load_page($page_name);
+			}
 		}
 
-		return napcdoc::site_renderTemplateFile(
-			"html", $html_template_keys
-		);
+		if ($html_template_keys) {
+			return napcdoc::site_renderTemplateFile(
+				"html", $html_template_keys
+			);
+		}
 	}
 	// site styling
 	else if ($request_path === "/site.css") {
@@ -79,10 +84,9 @@ return function($request_path, $http_headers) {
 
 		return $handler($http_headers);
 	}
-	// 404
-	else {
-		$handler = require __DIR__."/handler/404.php";
 
-		return $handler();
-	}
+	// if not handled by now, display 404
+	$handler = require __DIR__."/handler/404.php";
+
+	return $handler();
 };
