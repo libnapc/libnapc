@@ -14,7 +14,11 @@ if (strlen($__keys["general_info"]["notes"] ?? "") || $is_opaque_type) {
 		"label" => "Notes"
 	]);
 
-	echo $opaque_type_notes_text;
-	echo napcdoc::format_multiLine($__keys["general_info"]["notes"]);
+	if ($is_opaque_type) {
+		echo $opaque_type_notes_text;
+	} else {
+		echo napcdoc::format_multiLine($__keys["general_info"]["notes"]);
+	}
+
 	echo '</div>';
 }
