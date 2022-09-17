@@ -153,11 +153,13 @@ try {
 
 	# check if already created
 	if (napphp::arr_keyExists($command, "creates")) {
-		$path = $command["creates"];
+		$paths = napphp::util_arrayify($command["creates"]);
 
-		if (napphp::fs_exists(LIBNAPC_BUILD_FILES_DIR."/$path")) {
-			fwrite(STDERR, "Output of command already created. Run 'libnapc clean' to start over.\n");
-			exit(2);
+		foreach ($paths as $path) {
+			if (napphp::fs_exists(LIBNAPC_BUILD_FILES_DIR."/$path")) {
+				fwrite(STDERR, "Output of command already created. Run 'libnapc clean' to start over.\n");
+				exit(2);
+			}
 		}
 	}
 
