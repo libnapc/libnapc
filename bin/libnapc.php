@@ -118,7 +118,9 @@ function getCommandNameByOutputPath($output_path) {
 
 		if (!napphp::arr_keyExists($command, "creates")) continue;
 
-		if ($command["creates"] === $output_path) {
+		$command_creates = napphp::util_arrayify($command["creates"]);
+
+		if (in_array($output_path, $command_creates)) {
 			return $command_name;
 		}
 	}
