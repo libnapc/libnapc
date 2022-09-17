@@ -18,35 +18,13 @@ if (!strlen($release_version)) {
 	exit(2);
 }
 
-function assert_readenv($env_name) {
-	$value = getenv($env_name);
+$upload_hostname = napphp::proc_getEnvironmentVariable("LIBNAPC_DEPLOY_HOST");
+$upload_username = napphp::proc_getEnvironmentVariable("LIBNAPC_DEPLOY_USER");
 
-	if (!$value) {
-		fwrite(STDERR, "Failed to read environment variable '$env_name'\n");
-		exit(2);
-	}
-
-	return $value;
-}
-
-
-function upload_to_remote_host($src_path, $dst_path) {
-	global $ssh_identity_file;
-
-	$upload_username = assert_readenv("LIBNAPC_DEPLOY_USER");
-	$upload_hostname = assert_readenv("LIBNAPC_DEPLOY_HOST");
-
-	$scp_source        = escapeshellarg($src_path);
-	$scp_identity_file = escapeshellarg($ssh_identity_file);
-	$scp_destination   = escapeshellarg(
-		"$upload_username@$upload_hostname:$dst_path"
-	);
-
-	$scp_flags = "-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null";
-
-	napphp::shell_execTransparently("scp $scp_flags -i $scp_identity_file $scp_source $scp_destination");
-}
-
-$upload_username = assert_readenv("LIBNAPC_DEPLOY_USER");
-
-upload_to_remote_host(__DIR__."/verified.css", "/home/$upload_username/www/$release_version/verified.css");
+napphp::ssh_uploadToRemote(
+	$upload_hostname,
+	$upload_username,
+	$ssh_identity_file,
+	__DIR__."/verified.css",
+	"/home/$upload_username/www/$release_version/verified.css"
+);
