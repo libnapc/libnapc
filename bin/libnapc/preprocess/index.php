@@ -26,7 +26,7 @@ return [
 	],
 
 	"depends_on" => [],
-	"creates"    => "processed_files",
+	"creates"    => ["processed_files", "build_constants.json"],
 
 	"run" => function($args) {
 		$temp_dir = napphp::tmp_createDirectory();
