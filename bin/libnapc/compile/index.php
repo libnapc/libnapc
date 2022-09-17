@@ -20,14 +20,19 @@ return [
 		});
 
 		$gcc_include_path = LIBNAPC_BUILD_FILES_DIR."/processed_files/";
-		$gcc_flags = [
-			"-Wall",
-			"-Wextra",
-			"-Wpedantic",
-			"-Wno-gnu-zero-variadic-macro-arguments",
-			"-Werror",
-			"-I".escapeshellarg($gcc_include_path)
-		];
+
+		$compiler_flags = napphp::fs_file(LIBNAPC_PROJECT_ROOT_DIR."/compile_flags.txt");
+		$gcc_flags = napphp::arr_map($compiler_flags, function($line) {
+			return trim($line);
+		});
+		// remove -I./src
+		$gcc_flags = napphp::arr_filter($gcc_flags, function($flag) {
+			return !napphp::str_startsWith($flag, "-I");
+		});
+
+		// add -I./build_files/processed_files/
+		array_push($gcc_flags, "-I".escapeshellarg($gcc_include_path));
+
 		$gcc_flags = napphp::arr_join($gcc_flags, " ");
 
 		$object_files_dir = napphp::tmp_createDirectory();

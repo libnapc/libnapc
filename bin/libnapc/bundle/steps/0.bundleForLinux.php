@@ -21,14 +21,11 @@ return function($args, &$context) {
 
 	$compile_script = "#!/bin/bash -euf\n";
 
-	$gcc_flags = [
-		"-Wall",
-		"-Wextra",
-		"-Wpedantic",
-		"-Wno-gnu-zero-variadic-macro-arguments",
-		"-Werror",
-		"-I./src"
-	];
+	$compiler_flags = napphp::fs_file(LIBNAPC_PROJECT_ROOT_DIR."/compile_flags.txt");
+	$gcc_flags = napphp::arr_map($compiler_flags, function($line) {
+		return trim($line);
+	});
+
 	$gcc_flags = napphp::arr_join($gcc_flags, " ");
 
 	$object_files = [];

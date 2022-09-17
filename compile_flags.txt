@@ -1,4 +1,6 @@
 -Wall
 -Wpedantic
 -Wextra
+-Wno-gnu-zero-variadic-macro-arguments
+-Werror
 -I./src
