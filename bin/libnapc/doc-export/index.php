@@ -7,7 +7,7 @@ return [
 		"napc.json"
 	],
 
-	"creates" => "documentation_files",
+	"creates" => ["documentation_files", "documentation.tar.gz"],
 
 	"run" => function($args) {
 		$sass_cache_dir = napphp::tmp_createDirectory();
