@@ -1,8 +1,14 @@
 <?php
 
 return function($src, $attributes = []) {
+	$base64 = base64_encode(
+		napphp::fs_readFileString(__DIR__."/../../assets/image/$src")
+	);
+
+	$image_url = "data:image/png;base64,$base64";
+
 	$image_attributes = [
-		"src" => napcdoc::fs_base64Image(__DIR__."/../../assets/image/$src")
+		"src" => $image_url
 	];
 
 	foreach ($attributes as $_name => $_value) {

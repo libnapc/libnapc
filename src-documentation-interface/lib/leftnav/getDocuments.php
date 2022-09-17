@@ -3,17 +3,17 @@
 return function($request_document = "") {
 	$nav = [];
 
-	$entries = napcdoc::fs_scandirRecursive(__DIR__."/../../content/documents");
+	$entries = napphp::fs_scandirRecursive(__DIR__."/../../content/documents");
 	$entries = array_filter($entries, function($document) {
 		return $document["type"] === "file";
 	});
 
 	$documents = array_map(function($document) {
-		$lines = file($document["realpath"]);
+		$lines = napphp::fs_file($document["path"]);
 
 		return [
 			"title" => substr($lines[0], 2),
-			"name" => $document["path"]
+			"name" => $document["basename"]
 		];
 	}, $entries);
 
