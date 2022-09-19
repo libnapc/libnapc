@@ -12,3 +12,21 @@
 # Do not include this in the repository
 # It will automatically be generated
 /.napci/build_files
+
+################################
+# Repository Secrets Directory #
+################################
+
+/.secrets/github_access_token
+
+# Commit signing key
+/.secrets/keys/commit_signing/*
+!/.secrets/keys/commit_signing/.gitkeep
+
+# Github push key
+/.secrets/keys/github_push/*
+!/.secrets/keys/github_push/.gitkeep
+
+# Website deploy key
+/.secrets/keys/site_deploy/*
+!/.secrets/keys/site_deploy/.gitkeep
