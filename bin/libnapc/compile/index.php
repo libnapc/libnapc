@@ -31,20 +31,14 @@ return [
 		});
 
 		// add -I./build_files/processed_files/
-		array_push($gcc_flags, "-I".escapeshellarg($gcc_include_path));
-
-		$gcc_flags = napphp::arr_join($gcc_flags, " ");
+		array_push($gcc_flags, "-I$gcc_include_path");
 
 		$object_files_dir = napphp::tmp_createDirectory();
 
 		foreach ($c_source_files as $c_source_file) {
-			$gcc_input_file = escapeshellarg($c_source_file["path"]);
-
 			$object_file_name = napphp::str_replace($c_source_file["relative_path"], "/", "_");
 			$object_file_name = substr($object_file_name, 0, strlen($object_file_name) - 2);
 			$output_file = "$object_files_dir/$object_file_name.o";
-
-			$gcc_output_file = escapeshellarg($output_file);
 
 			$file = str_pad(
 				$c_source_file["relative_path"], 80, " ", STR_PAD_RIGHT
@@ -56,8 +50,19 @@ return [
 
 			fflush(STDOUT);
 
-			napphp::shell_execTransparently(
-				"gcc $gcc_flags $gcc_input_file -c -o $gcc_output_file"
+			napphp::shell_execute(
+				"gcc", [
+					"args" => [
+						...$gcc_flags,
+						// input file
+						$c_source_file["path"],
+						// create object file
+						"-c",
+						// store object file at path
+						"-o",
+						$output_file
+					]
+				]
 			);
 
 			fwrite(STDOUT, "ok\n");
