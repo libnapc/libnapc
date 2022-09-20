@@ -60,13 +60,13 @@ return function($args, &$context) {
 	napphp::fs_copyFile(__DIR__."/linux-files/install.sh", "$output_dir/linux/install.sh");
 	napphp::fs_createSymbolicLink("$output_dir/linux/napc.h", "src/napc.h");
 
-	napphp::proc_changeWorkingDirectory(
-		"$output_dir/linux", function() {
-
-			napphp::shell_execTransparently(
-				"fakeroot -- tar -czvf ../linux.tar.gz ."
-			);
-		}
+	napphp::shell_execute(
+		"fakeroot", [
+			"cwd"  => "$output_dir/linux",
+			"args" => [
+				"tar", "-czvf", "../linux.tar.gz", "."
+			]
+		]
 	);
 
 	napphp::fs_delete("$output_dir/linux");

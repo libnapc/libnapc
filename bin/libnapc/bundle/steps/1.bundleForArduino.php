@@ -33,13 +33,15 @@ return function($args, &$context) {
 	napphp::fs_copy(LIBNAPC_PROJECT_ROOT_DIR."/README.md", "$output_dir/arduino/README.md");
 	napphp::fs_copy(LIBNAPC_PROJECT_ROOT_DIR."/LICENSE", "$output_dir/arduino/LICENSE");
 
-	napphp::proc_changeWorkingDirectory(
-		"$output_dir/arduino", function() {
-
-			napphp::shell_execTransparently(
-				"zip -r ../arduino.zip ."
-			);
-		}
+	napphp::shell_execute(
+		"zip", [
+			"cwd" => "$output_dir/arduino",
+			"args" => [
+				"-r",
+				"../arduino.zip",
+				"."
+			]
+		]
 	);
 
 	napphp::fs_delete("$output_dir/arduino");
