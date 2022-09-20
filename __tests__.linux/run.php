@@ -3,88 +3,124 @@
 
 require_once __DIR__."/../load-napphp.php";
 
-chdir(__DIR__);
-
-function compile($test) {
+function compile($input_file) {
 	$output_file = napphp::tmp_createFile();
 
-	napphp::shell_execTransparently(
+	napphp::shell_execute(
 		"gcc", [
-			"-Wall", "-Wextra", "-Wpedantic",
-			"$test.c",
-			"-I../build_files/processed_files/",
-			"-L../build_files/",
-			"-lnapc",
-			"-o",
-			$output_file
+			"args" => [
+				"-Wall", "-Wextra", "-Wpedantic",
+				$input_file,
+				"-I../build_files/processed_files/",
+				"-L../build_files/",
+				"-lnapc",
+				"-o",
+				$output_file
+			]
 		]
 	);
 
 	return $output_file;
 }
 
-$file_root_path_bin = compile("file_root_path");
+(function() {
+	fwrite(STDERR, "file_root_path\n");
 
-function file_root_path($env = "") {
-	global $file_root_path_bin;
+	$file_root_path_bin = compile(__DIR__."/file_root_path.c");
 
-	$used_root_path = "";
-	$contents_of_file = "";
+	$test_invocations = [
+		[
+			"env" => [],
+			"cwd_path" => __DIR__,
+			"file_contents" => "cwd"
+		],
 
-	$lines = napphp::proc_exec("$env ".escapeshellcmd($file_root_path_bin)." 2>&1");
+		[
+			"env" => [
+				"NAPC_FILE_NO_RESOLVE_ROOT_PATH" => 1
+			],
+			"cwd_path" => ".",
+			"file_contents" => "cwd"
+		],
 
-	foreach ($lines as $line) {
-		if (napphp::str_startsWith($line, "HAL_napc_initFileSystem (linux) root path = ")) {
-			$used_root_path = substr($line, strlen("HAL_napc_initFileSystem (linux) root path = "));
-		} else if (napphp::str_startsWith($line, "contents_of_file:") && !strlen($contents_of_file)) {
-			$contents_of_file = substr($line, strlen("contents_of_file:"));
+		[
+			"env" => [
+				"NAPC_FILE_ROOT_PATH" => "mockfs/path/subpath"
+			],
+			"cwd_path" => __DIR__."/mockfs/path/subpath",
+			"file_contents" => "nested"
+		],
+
+		[
+			"env" => [
+				"NAPC_FILE_ROOT_PATH" => "mockfs/path/subpath",
+				"NAPC_FILE_NO_RESOLVE_ROOT_PATH" => 1
+			],
+			"cwd_path" => "mockfs/path/subpath",
+			"file_contents" => "nested"
+		]
+	];
+
+	foreach ($test_invocations as $test_invocation) {
+		$output_log_file = napphp::tmp_createFile(".log");
+
+		napphp::shell_execute(
+			$file_root_path_bin, [
+				"cwd" => __DIR__,
+				"env" => $test_invocation["env"],
+				"stdout" => $output_log_file,
+				"stderr" => $output_log_file
+			]
+		);
+
+		$lines = napphp::fs_file($output_log_file);
+
+		$used_root_path = $contents_of_file = "";
+
+		foreach ($lines as $line) {
+			$line = trim($line);
+
+			if (napphp::str_startsWith($line, "HAL_napc_initFileSystem (linux) root path = ")) {
+				$used_root_path = substr($line, strlen("HAL_napc_initFileSystem (linux) root path = "));
+			} else if (napphp::str_startsWith($line, "contents_of_file:") && !strlen($contents_of_file)) {
+				$contents_of_file = substr($line, strlen("contents_of_file:"));
+			}
+		}
+
+		if ($contents_of_file !== $test_invocation["file_contents"]) {
+			fwrite(STDERR, "Contents of file mismatch!\n");
+			fwrite(STDERR, "Expected: ".$test_invocation["file_contents"]."\n");
+			fwrite(STDERR, "Actual  : $contents_of_file\n");
+			exit(1);
+		}
+
+		if ($used_root_path !== "'".$test_invocation["cwd_path"]."'") {
+			fwrite(STDERR, "Root path mismatch!\n");
+			fwrite(STDERR, "Expected: ".$test_invocation["cwd_path"]."\n");
+			fwrite(STDERR, "Actual  : $used_root_path\n");
+			exit(1);
 		}
 	}
 
-	return [
-		substr($used_root_path, 1, -1), $contents_of_file
-	];
-}
+	fwrite(STDERR, "file_root_path: ok\n");
+})();
 
-$tests = [
-	// root_path = CWD
-	[
-		file_root_path(), __DIR__, "cwd"
-	],
-	[
-		file_root_path("NAPC_FILE_NO_RESOLVE_ROOT_PATH=1"), ".", "cwd"
-	],
-	// root_path = mock
-	[
-		file_root_path("NAPC_FILE_ROOT_PATH=mockfs/path/subpath"), __DIR__."/mockfs/path/subpath", "nested"
-	],
-	[
-		file_root_path("NAPC_FILE_ROOT_PATH=mockfs/path/subpath NAPC_FILE_NO_RESOLVE_ROOT_PATH=1"), "mockfs/path/subpath", "nested"
-	]
-];
+(function() {
+	fwrite(STDERR, "writer_fail_mode\n");
 
-foreach ($tests as $test) {
-	list($result, $expected_root_path, $expected_file_contents) = $test;
+	$writer_fail_mode_bin = compile(__DIR__."/writer_fail_mode.c");
+	$output_log_file = napphp::tmp_createFile(".log");
 
-	if ($result[0] !== $expected_root_path) {
-		fwrite(STDERR, "Unexpected root path: ".$result[0]."\n");
-		exit(1);
-	} else if ($result[1] !== $expected_file_contents) {
-		fwrite(STDERR, "Unexpected file_contents: ".$result[1]."\n");
-		exit(1);
-	} else {
-		echo "pass\n";
-	}
-}
+	$exit_code = napphp::shell_execute(
+		$writer_fail_mode_bin, [
+			"stdout" => $output_log_file,
+			"stderr" => $output_log_file,
+			"allow_non_zero_exit_code" => true
+		]
+	);
 
-$write_fail_mode_bin = compile("writer_fail_mode");
-
-function writer_fail_mode() {
-	global $write_fail_mode_bin;
-
+	$lines = napphp::fs_file($output_log_file);
 	$has_crashed = false;
-
-	exec(escapeshellcmd($write_fail_mode_bin)." 2>&1", $lines, $exit_code);
 
 	foreach ($lines as $line) {
 		if (strpos($line, "Write operation failed and no_fail_mode is set to true") !== false) {
@@ -96,12 +132,12 @@ function writer_fail_mode() {
 		$has_crashed = false;
 	}
 
-	return $has_crashed;
-}
+	if (!$has_crashed) {
+		fwrite(STDERR, "Expected writer_fail_mode to crash!\n");
+		exit(1);
+	}
 
-if (!writer_fail_mode()) {
-	fwrite(STDERR, "Expected program to crash\n");
-	exit(1);
-} else {
-	echo "pass\n";
-}
+	fwrite(STDERR, "writer_fail_mode: ok\n");
+})();
+
+napphp::tmp_cleanup();
