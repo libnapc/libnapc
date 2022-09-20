@@ -9,8 +9,8 @@ return [
 	],
 
 	"run" => function($args) {
-		napphp::shell_execTransparently(
-			LIBNAPC_PROJECT_ROOT_DIR."/__tests__.linux/run.php"
-		);
+		//napphp::shell_execute(
+		//	LIBNAPC_PROJECT_ROOT_DIR."/__tests__.linux/run.php"
+		//);
 	}
 ];
