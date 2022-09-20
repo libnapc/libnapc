@@ -12,7 +12,6 @@ return [
 		);
 
 		$libnapc_a = napphp::tmp_createFile().".a";
-		$ar_libnapc_a = escapeshellarg($libnapc_a);
 
 		foreach ($object_files as $object_file) {
 			if ($object_file["type"] !== "file") {
@@ -32,8 +31,14 @@ return [
 			fwrite(STDOUT, "Linking $file ... ");
 			fflush(STDOUT);
 
-			napphp::shell_execTransparently(
-				"ar rcs $ar_libnapc_a ".escapeshellarg($object_file["path"])
+			napphp::shell_execute(
+				"ar", [
+					"args" => [
+						"rcs",
+						$libnapc_a,
+						$object_file["path"]
+					]
+				]
 			);
 
 			fwrite(STDOUT, "ok\n");
