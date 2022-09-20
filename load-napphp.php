@@ -24,6 +24,8 @@
 
 		// setup tmp_dir
 		napphp::set("tmp_dir", __DIR__."/tmp.d/");
+		napphp::set("terminate_on_warning", true);
+		napphp::set("warning_print_trace", true);
 	} else {
 		if (defined("STDERR")) {
 			fwrite(STDERR, "nap-software/napphp already loaded (version=".napphp::info_getVersion().")\n");
