@@ -1,12 +1,18 @@
 <?php
 
 function libnapc_docGenAst_removeCommentsFromHeaderFile($file_path) {
-	$clang_input_file = escapeshellarg($file_path);
 	$output_file = napphp::tmp_createFile(".h");
-	$clang_output_file = escapeshellarg($output_file);
 
-	napphp::shell_execTransparently(
-		"clang -E -P $clang_input_file -o $clang_output_file"
+	napphp::shell_execute(
+		"clang", [
+			"args" => [
+				"-E",
+				"-P",
+				$file_path,
+				"-o",
+				$output_file
+			]
+		]
 	);
 
 	return $output_file;
@@ -24,10 +30,17 @@ return [
 		);
 
 		$ast_tmp_file = napphp::tmp_createFile(".json");
-		$output_file = escapeshellarg($ast_tmp_file);
 
-		napphp::shell_execTransparently(
-			"clang -Xclang -ast-dump=json -fsyntax-only $napc_h_stripped > $output_file"
+		napphp::shell_execute(
+			"clang", [
+				"args" => [
+					"-Xclang",
+					"-ast-dump=json",
+					"-fsyntax-only",
+					$napc_h_stripped
+				],
+				"stdout" => $ast_tmp_file
+			]
 		);
 
 		$original_ast = napphp::fs_readFileJSON($ast_tmp_file);
