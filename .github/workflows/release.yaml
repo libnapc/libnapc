@@ -7,10 +7,11 @@ on:
       - '*' # Push events to every tag not containing /
 
 env:
+  # Needed for 'libnapc deploy'
   LIBNAPC_RELEASE_VERSION: ${{ github.ref_name }}
-  LIBNAPC_DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
-  LIBNAPC_DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
-  GH_TOKEN: ${{ secrets.ACCESS_TOKEN_FOR_GITHUB }}
+  LIBNAPC_SSH_SITE_DEPLOY_HOST: ${{ secrets.SITE_DEPLOY_HOST }}
+  LIBNAPC_SSH_SITE_DEPLOY_USER: ${{ secrets.SITE_DEPLOY_USER }}
+
   NAPPHP_VERSION: v0.0.11
   NAPPHP_LOAD_PATH: /home/runner/napphp/src/__loadAsClass.php
 
@@ -34,43 +35,31 @@ jobs:
          mkdir ~/napphp
          git clone --depth 1 --branch $NAPPHP_VERSION 'https://github.com/nap-software/napphp.git' ~/napphp
 
-    - name: Setup SSH keys
+    - name: Setup commit signing SSH key
       run: |
-         echo "${{ secrets.GIT_SSH_KEY }}" > ~/github-deploy.key
-         chmod 0600 ~/github-deploy.key
-         echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/deploy.key
-         chmod 0600 ~/deploy.key
+         echo "${{ secrets.COMMIT_SIGNING_SSH_PRIVATE_KEY }}" > .secrets/keys/commit_signing/id_rsa
+         chmod 0600 .secrets/keys/commit_signing/id_rsa
 
-    - name: Import PGP key
+    - name: Setup github push SSH key
       run: |
-         echo "${{ secrets.RELEASE_SIGNING_KEY }}" > ~/signing.key
-         chmod 0600 ~/signing.key
-         gpg --import ~/signing.key
+         echo "${{ secrets.GH_PUSH_SSH_PRIVATE_KEY }}" > .secrets/keys/github_push/id_rsa
+         chmod 0600 .secrets/keys/github_push/id_rsa
 
-    - name: Setup git
+    - name: Setup site deploy SSH key
       run: |
-         git config --global user.email "github-bot@nap.software"
-         git config --global user.name "NAP-Software (bot)"
-         git config --global core.sshCommand 'ssh -i ~/github-deploy.key'
-         git config --global user.signingkey 'E5C0E37C9E962DA6'
+         echo "${{ secrets.SITE_DEPLOY_SSH_PRIVATE_KEY }}" > .secrets/keys/site_deploy/id_rsa
+         chmod 0600 .secrets/keys/site_deploy/id_rsa
 
-    - name: Prepare git repositories
+    - name: Setup github access token
       run: |
-         git clone git@github.com:libnapc/libnapc-arduino-releases.git ~/libnapc-arduino-releases
-         cd ~/libnapc-arduino-releases && git checkout main && git rm -rf . && git clean -fxd
-         git clone git@github.com:libnapc/libnapc-linux-releases.git ~/libnapc-linux-releases
-         cd ~/libnapc-linux-releases && git checkout main && git rm -rf . && git clean -fxd
-         git clone git@github.com:libnapc/libnapc-documentation.git ~/libnapc-documentation
-         cd ~/libnapc-documentation && git checkout main && git rm -rf . && git clean -fxd
+         echo "${{ secrets.ACCESS_TOKEN_FOR_GITHUB }}" > .secrets/github_access_token
+         chmod 0600 .secrets/github_access_token
 
-    - name: Download Release Script
-      run: |
-         curl https://static.nap-software.com/github/libnapc/software-release.sh -o ./__software-release.sh
-         chmod +x ./__software-release.sh
+    - name: Run CI-Script
+      run: ./ci/run.php
 
-    - name: Run Release Script
-      run: |
-         ./__software-release.sh "${{ github.ref_name }}"
+    - name: Run deploy script
+      run: ./bin/libnapc.php deploy --dry-run
 
   deploy_post:
     name: Post Deploy Actions
