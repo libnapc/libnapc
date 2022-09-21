@@ -8,6 +8,7 @@ function compile($input_file) {
 
 	napphp::shell_execute(
 		"gcc", [
+			"cwd" => __DIR__,
 			"args" => [
 				"-Wall", "-Wextra", "-Wpedantic",
 				$input_file,
