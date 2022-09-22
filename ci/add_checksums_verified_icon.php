@@ -18,8 +18,8 @@ if (!strlen($release_version)) {
 	exit(2);
 }
 
-$upload_hostname = napphp::proc_getEnvironmentVariable("LIBNAPC_DEPLOY_HOST");
-$upload_username = napphp::proc_getEnvironmentVariable("LIBNAPC_DEPLOY_USER");
+$upload_hostname = napphp::proc_getEnvironmentVariable("LIBNAPC_SSH_SITE_DEPLOY_HOST");
+$upload_username = napphp::proc_getEnvironmentVariable("LIBNAPC_SSH_SITE_DEPLOY_USER");
 
 napphp::ssh_uploadToRemote(
 	$upload_hostname,
