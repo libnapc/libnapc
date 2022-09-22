@@ -92,6 +92,14 @@ return function($args, &$context) {
 		$padded_c_symbol_name = str_pad($c_symbol_name, 45, " ", STR_PAD_RIGHT);
 
 		if (!napphp::arr_keyExists($associated_doc_block, "@module")) {
+			// macros always need to be associated to a module
+			// with @module
+			if ($c_symbol["kind"] === "macro") {
+				throw new CommandError(
+					"Macro '$c_symbol_name' has no module associated with it."
+				);
+			}
+
 			// napc_XXXX is always "Core" module
 			// napc_XXXX_YYYY is always "XXXX" module
 			$tmp = napphp::str_split($c_symbol_name, "_", 3);
