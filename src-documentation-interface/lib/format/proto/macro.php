@@ -14,11 +14,7 @@ return function($macro_name) {
 		$is_last_param = !array_key_exists($i + 1, $params);
 
 		if ($is_last_param) {
-			if ($macro["variadic"]) {
-				$ret .= "...";
-			} else {
-				$ret .= $param["name"];
-			}
+			$ret .= $param["name"];
 		} else {
 			$ret .= $param["name"].", ";
 		}
