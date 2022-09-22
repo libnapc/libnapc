@@ -20,7 +20,7 @@ if (!strlen($release_version)) {
 
 $upload_hostname = napphp::proc_getEnvironmentVariable("LIBNAPC_SSH_SITE_DEPLOY_HOST");
 $upload_username = napphp::proc_getEnvironmentVariable("LIBNAPC_SSH_SITE_DEPLOY_USER");
-
+/*
 napphp::ssh_uploadToRemote(
 	$upload_hostname,
 	$upload_username,
@@ -28,3 +28,4 @@ napphp::ssh_uploadToRemote(
 	__DIR__."/verified.css",
 	"/home/$upload_username/www/$release_version/verified.css"
 );
+*/
