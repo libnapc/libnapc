@@ -48,5 +48,3 @@ foreach ($metadata->release_files->release_file as $file) {
 }
 
 fwrite(STDERR, "All checksums ok!\n");
-
-napphp::tmp_cleanup();

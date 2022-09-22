@@ -140,5 +140,3 @@ function compile($input_file) {
 
 	fwrite(STDERR, "writer_fail_mode: ok\n");
 })();
-
-napphp::tmp_cleanup();

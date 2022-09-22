@@ -171,7 +171,4 @@ try {
 } catch (Exception $e) {
 	fwrite(STDERR, "$e\n");
 	exit(1);
-} finally {
-	// clean up tmp.d
-	napphp::tmp_cleanup();
 }
