@@ -23,6 +23,7 @@
 
 	/*!
 	 * @name NAPC_SIZE_PRINTF
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Format specifier for printing `napc_size` variables.

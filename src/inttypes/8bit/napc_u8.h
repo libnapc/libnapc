@@ -16,6 +16,7 @@
 
 	/*!
 	 * @name NAPC_U8_LITERAL
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Used for literal unsigned integers with 8 bits width.
@@ -30,6 +31,7 @@
 
 	/*!
 	 * @name NAPC_U8_PRINTF
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Format specifier for printing `napc_u8` variables.

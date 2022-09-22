@@ -16,6 +16,7 @@
 
 	/*!
 	 * @name NAPC_U16_LITERAL
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Used for literal unsigned integers with 16 bits width.
@@ -30,6 +31,7 @@
 
 	/*!
 	 * @name NAPC_U16_PRINTF
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Format specifier for printing `napc_u16` variables.

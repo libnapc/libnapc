@@ -16,6 +16,7 @@
 
 	/*!
 	 * @name NAPC_U32_LITERAL
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Used for literal unsigned integers with 32 bits width.
@@ -28,6 +29,7 @@
 
 	/*!
 	 * @name NAPC_U32_PRINTF
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Format specifier for printing `napc_u32` variables.

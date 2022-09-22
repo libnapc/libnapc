@@ -25,6 +25,7 @@
 
 	/*!
 	 * @name NAPC_FN_WARNUNUSED_RET
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Tell the compiler to emit a warning if the return value of a function is not used.

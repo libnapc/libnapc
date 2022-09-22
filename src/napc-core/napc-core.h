@@ -37,6 +37,7 @@
 
 	/*!
 	 * @name NAPC_ASSERT
+	 * @module Core
 	 * @brief Make an assertion.
 	 * @version 1.0.0
 	 * @description

@@ -13,6 +13,7 @@
 
 	/*!
 	 * @name NAPC_PANIC
+	 * @module Core
 	 * @brief Abort program execution.
 	 * @version 1.0.0
 	 * @description

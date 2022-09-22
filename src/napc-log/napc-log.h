@@ -46,6 +46,7 @@
 
 	/*!
 	 * @name NAPC_LEVEL_VERBOSE
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Representation of log priority `verbose`.
@@ -57,6 +58,7 @@
 
 	/*!
 	 * @name NAPC_LEVEL_TRACE
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Representation of log priority `trace`.
@@ -68,6 +70,7 @@
 
 	/*!
 	 * @name NAPC_LEVEL_DEBUG
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Representation of log priority `debug`.
@@ -79,6 +82,7 @@
 
 	/*!
 	 * @name NAPC_LEVEL_INFO
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Representation of log priority `info`.
@@ -90,6 +94,7 @@
 
 	/*!
 	 * @name NAPC_LEVEL_WARNING
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Representation of log priority `warning`.
@@ -101,6 +106,7 @@
 
 	/*!
 	 * @name NAPC_LEVEL_ERROR
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Representation of log priority `error`.
@@ -112,6 +118,7 @@
 
 	/*!
 	 * @name NAPC_LEVEL_SECURITY
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Representation of log priority `security`.
@@ -125,6 +132,7 @@
 
 	/*!
 	 * @name NAPC_LOG
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Log a message with a specific priority.
@@ -147,6 +155,7 @@
 
 	/*!
 	 * @name NAPC_LOG_VERBOSE
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Log a message with priority `VERBOSE`.
@@ -162,6 +171,7 @@
 
 	/*!
 	 * @name NAPC_LOG_TRACE
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Log a message with priority `TRACE`.
@@ -177,6 +187,7 @@
 
 	/*!
 	 * @name NAPC_LOG_DEBUG
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Log a message with priority `DEBUG`.
@@ -192,6 +203,7 @@
 
 	/*!
 	 * @name NAPC_LOG_INFO
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Log a message with priority `INFO`.
@@ -207,6 +219,7 @@
 
 	/*!
 	 * @name NAPC_LOG_WARNING
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Log a message with priority `WARNING`.
@@ -222,6 +235,7 @@
 
 	/*!
 	 * @name NAPC_LOG_ERROR
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Log a message with priority `ERROR`.
@@ -237,6 +251,7 @@
 
 	/*!
 	 * @name NAPC_LOG_SECURITY
+	 * @module Core
 	 * @version 1.0.0
 	 * @description
 	 * Log a message with priority `SECURITY`.
