@@ -32,7 +32,13 @@ return function($args, &$context) {
 			$inner_node_name = str_pad($inner_node["name"], 30, " ", STR_PAD_RIGHT);
 			$inner_node_type = libnapc_docExtract_fixClangCType($inner_node["type"]["qualType"]);
 
-			fwrite(STDOUT, "    $inner_node_name: $inner_node_type\n");
+			if (!is_array($inner_node_type)) {
+				fwrite(STDOUT, "    $inner_node_name: $inner_node_type\n");
+			} else {
+				$inner_node_name = str_pad($inner_node["name"]."[".$inner_node_type[1]."]", 30, " ", STR_PAD_RIGHT);
+
+				fwrite(STDOUT, "    $inner_node_name: ".$inner_node_type[0]."\n");
+			}
 
 			$structs[$node_name][$inner_node["name"]] = $inner_node_type;
 		}
