@@ -59,7 +59,7 @@ jobs:
       run: ./ci/run.php
 
     - name: Run deploy script
-      run: ./bin/libnapc.php deploy --dry-run
+      run: ./bin/libnapc.php deploy
 
   deploy_post:
     name: Post Deploy Actions
