@@ -20,6 +20,8 @@ return function($args, &$context) {
 			$definition_str = "f:".$definition["name"];
 		} else if ($definition["type"] === "type") {
 			$definition_str = "t:".$definition["name"];
+		} else if ($definition["type"] === "macro") {
+			$definition_str = "m:".$definition["name"];
 		}
 
 		array_push(

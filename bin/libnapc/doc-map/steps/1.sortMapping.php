@@ -10,9 +10,14 @@ return function($args, &$context) {
 			return napphp::str_startsWith($item, "t:");
 		});
 
+		$definition_list_macros = napphp::arr_filter($definition_list, function($item) {
+			return napphp::str_startsWith($item, "m:");
+		});
+
 		$definition_list = [
 			...$definition_list_functions,
-			...$definition_list_types
+			...$definition_list_types,
+			...$definition_list_macros
 		];
 	}
 
