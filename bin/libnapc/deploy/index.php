@@ -14,10 +14,21 @@ return [
 
 	"depends_on" => [
 		"bundles",
-		"documentation.tar.gz"
+		"documentation.tar.gz",
+		"build_constants.json"
 	],
 
 	"run" => function($args) {
+		$build_constants = napphp::fs_readFileJSON(LIBNAPC_BUILD_FILES_DIR."/build_constants.json");
+
+		if (!napphp::str_startsWith($build_constants["RELEASE_VERSION"], "v")) {
+			$ver = $build_constants["RELEASE_VERSION"];
+
+			throw new CommandError(
+				"Refusing to deploy invalid release version '$ver'."
+			);
+		}
+
 		$dry_run = $args["flags"]["dry-run"] ?? false;
 		$deploy_args = [];
 
