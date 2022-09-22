@@ -20,12 +20,11 @@ return [
 
 	"run" => function($args) {
 		$build_constants = napphp::fs_readFileJSON(LIBNAPC_BUILD_FILES_DIR."/build_constants.json");
+		$build_constants_release_version = $build_constants["RELEASE_VERSION"];
 
-		if (!napphp::str_startsWith($build_constants["RELEASE_VERSION"], "v")) {
-			$ver = $build_constants["RELEASE_VERSION"];
-
+		if (sizeof(napphp::str_split($build_constants_release_version, ".")) !== 3) {
 			throw new CommandError(
-				"Refusing to deploy invalid release version '$ver'."
+				"Refusing to deploy invalid release version '$build_constants_release_version'."
 			);
 		}
 
