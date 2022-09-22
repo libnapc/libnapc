@@ -24,18 +24,20 @@ foreach ($metadata->release_files->release_file as $file) {
 
 	fwrite(STDERR, "Downloading '$file_name'\n");
 
-	$curl_url = escapeshellarg("$base_url/download/$file_name");
 	$output_file = napphp::tmp_createFile();
-	$curl_output_file = escapeshellarg($output_file);
 
-	napphp::shell_execTransparently("curl --silent $curl_url -o $curl_output_file");
+	napphp::shell_execute(
+		"curl", [
+			"args" => [
+				"--silent",
+				"$base_url/download/$file_name",
+				"-o",
+				$output_file
+			]
+		]
+	);
 
-	$local_hash = hash_file("sha256", $output_file);
-
-	if (!$local_hash) {
-		fwrite(STDERR, "Failed to calculate local hash\n");
-		exit(1);
-	}
+	$local_hash = napphp::fs_hashFile($output_file, "sha256");
 
 	if ("$local_hash" !== "$file->checksum") {
 		fwrite(STDERR, "Checksum mismatch detected!\n");
