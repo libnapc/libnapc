@@ -23,7 +23,8 @@ Its split up into three parts:
 
 It provides HAL (Hardware Abstraction Layer) so that applications written in it can be run both on Arduino and Linux.
 
-> ⚠️ This library is developed on a per-need basis. It is not a complete library (yet?).
+> **Warning**
+> This library is developed on a per-need basis. It is not a complete library (yet?).
 
 Every napc application using libnapc defines at least these two functions:
 
