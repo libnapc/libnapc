@@ -82,9 +82,3 @@ jobs:
 
     - name: Add checksums verified icon
       run: php ci/add_checksums_verified_icon.php ~/deploy.key
-
-    - name: Update default branches
-      run: |
-         gh api repos/libnapc/libnapc-linux-releases --method PATCH --field 'default_branch=${{ github.ref_name }}'
-         gh api repos/libnapc/libnapc-arduino-releases --method PATCH --field 'default_branch=${{ github.ref_name }}'
-         gh api repos/libnapc/libnapc-documentation --method PATCH --field 'default_branch=${{ github.ref_name }}'
