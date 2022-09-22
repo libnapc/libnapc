@@ -8,12 +8,13 @@ return function($args, &$context) {
 		if ($kind === "enums") return "enum";
 		if ($kind === "aliases") return "alias";
 		if ($kind === "functions") return "function";
+		if ($kind === "macros") return "macro";
 
 		return "unknown";
 	};
 
 	foreach ([
-		"structs", "enums", "aliases", "functions"
+		"structs", "enums", "aliases", "functions", "macros"
 	] as $kind) {
 		$symbols_list = $context[$kind];
 
