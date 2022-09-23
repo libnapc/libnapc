@@ -1,5 +1,25 @@
 <?php
 
+function libnapc_deploy_downloadFile($url) {
+	$local_file = napphp::tmp_createFile();
+
+	fwrite(STDOUT, "Downloading '$url'\n");
+
+	napphp::shell_execute(
+		"curl", [
+			"args" => [
+				$url,
+				"-o",
+				$local_file,
+				"--fail",
+				"--silent"
+			]
+		]
+	);
+
+	return $local_file;
+}
+
 return [
 	"description" => [
 		"Deploy to github and official website.",
@@ -19,58 +39,15 @@ return [
 	],
 
 	"run" => function($args) {
-		$build_constants = napphp::fs_readFileJSON(LIBNAPC_BUILD_FILES_DIR."/build_constants.json");
-		$build_constants_release_version = $build_constants["RELEASE_VERSION"];
-
-		if (sizeof(napphp::str_split($build_constants_release_version, ".")) !== 3) {
-			throw new CommandError(
-				"Refusing to deploy invalid release version '$build_constants_release_version'."
-			);
-		}
-
 		$dry_run = $args["flags"]["dry-run"] ?? false;
-		$deploy_args = [];
 
-		if ($dry_run) {
-			array_push($deploy_args, "--dry-run");
-		}
+		$context = [
+			"dry_run" => $dry_run,
+			"build_constants" => napphp::fs_readFileJSON(
+				LIBNAPC_BUILD_FILES_DIR."/build_constants.json"
+			)
+		];
 
-		$release_archive_file = napphp::tmp_createFile(".tar.gz");
-
-		napphp::shell_execute(
-			"curl", [
-				"args" => [
-					"https://static.nap-software.com/github/libnapc/software-release.tar.gz",
-					"-o",
-					$release_archive_file
-				]
-			]
-		);
-
-		$archive_files = napphp::tmp_createDirectory();
-
-		napphp::shell_execute(
-			"tar", [
-				"args" => [
-					"-xzvf",
-					$release_archive_file,
-					"-C",
-					$archive_files
-				],
-				"stdout" => "/dev/null"
-			]
-		);
-
-		$exit_code = napphp::shell_execute(
-			"$archive_files/index.php", [
-				"cwd" => LIBNAPC_PROJECT_ROOT_DIR,
-				"args" => $deploy_args,
-				"allow_non_zero_exit_code" => true
-			]
-		);
-
-		if ($exit_code !== 0) {
-			throw new CommandError("software-release script failed with exit code '$exit_code'.");
-		}
+		command_runSteps("deploy", $args, $context);
 	}
 ];
