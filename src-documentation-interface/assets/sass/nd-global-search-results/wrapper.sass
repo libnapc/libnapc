@@ -30,27 +30,27 @@
 		border-left: 2px solid transparent
 
 		&:hover
-			border-left-color: #191925
-			background: linear-gradient(90deg, #191925 30%, rgba(255,255,255,0) 100%)
+			border-left-color: red
+			background: red
 
 		&.selected
-			border-left-color: colors.$header_border_bottom
-			background: linear-gradient(90deg, #191925 30%, rgba(255,255,255,0) 100%)
+			border-left-color: red
+			background: red
 
 		&.selected, &:hover
 			&[data-definition-type="fn"] div.napcdoc-svg-image svg path
-				fill: colors.$fn_primary_color
+				fill: red
 
 			&[data-definition-type="type"] div.napcdoc-svg-image svg path
-				fill: colors.$type_primary_color
+				fill: red
 
 			&[data-definition-type="macro"] div.napcdoc-svg-image svg path
-				fill: colors.$macro_primary_color
+				fill: red
 
 		&.module-header
 			padding: 8px 15px
-			background: #191925
-			border-left-color: colors.$header_border_bottom
+			background: red
+			border-left-color: red
 			font-weight: 500
 
 			div.label-and-brief
@@ -58,7 +58,7 @@
 					font-size: 16px
 
 			div.napcdoc-svg-image svg path
-				fill: white
+				fill: red
 
 			&:first-child
 				margin: 0
@@ -66,7 +66,7 @@
 		div.napcdoc-svg-image
 			margin-right: 15px
 			svg path
-				fill: rgba(255, 255, 255, .2)
+				fill: red
 
 			&:last-child
 				margin-left: auto
@@ -81,5 +81,41 @@
 
 			span.brief
 				font-size: 12px
-				color: rgba(255, 255, 255, .3)
+				color: red
 				margin-top: 3px
+
+body.theme-dark
+	#nd-global-search-results div.wrapper
+		a
+			&:hover
+				border-left-color: #191925
+				background: linear-gradient(90deg, #191925 30%, rgba(255,255,255,0) 100%)
+
+			&.selected
+				border-left-color: colors.$header_border_bottom
+				background: linear-gradient(90deg, #191925 30%, rgba(255,255,255,0) 100%)
+
+			&.selected, &:hover
+				&[data-definition-type="fn"] div.napcdoc-svg-image svg path
+					fill: colors.$fn_primary_color
+
+				&[data-definition-type="type"] div.napcdoc-svg-image svg path
+					fill: colors.$type_primary_color
+
+				&[data-definition-type="macro"] div.napcdoc-svg-image svg path
+					fill: colors.$macro_primary_color
+
+			&.module-header
+				background: #191925
+				border-left-color: colors.$header_border_bottom
+
+				div.napcdoc-svg-image svg path
+					fill: white
+
+			div.napcdoc-svg-image
+				svg path
+					fill: rgba(255, 255, 255, .2)
+
+			div.label-and-brief
+				span.brief
+					color: rgba(255, 255, 255, .3)

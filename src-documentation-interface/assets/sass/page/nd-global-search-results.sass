@@ -3,7 +3,7 @@
 
 #nd-global-search-results
 	width: vars.$global_search_width
-	background: colors.setRGBA(colors.$secondary_background, 1)
+	background: red
 
 	position: fixed
 	top: vars.$header_height
@@ -17,3 +17,7 @@
 
 	&.visible
 		opacity: 1
+
+body.theme-dark
+	#nd-global-search-results
+		background: colors.setRGBA(colors.$secondary_background, 1)
