@@ -1,4 +1,5 @@
 @use "../vars.sass"
+@use "../colors.sass"
 
 #nd-header div.global-search-wrapper
 	width: vars.$global_search_width
@@ -12,11 +13,20 @@
 		height: 30px
 		flex-grow: 0
 		flex-shrink: 0
-		background: #191925
+		background: red
 		border: none
 		border-radius: 40px
-		color: white
+		color: red
 		padding: 0 15px
 
 		&::placeholder
-			color: rgba(255, 255, 255, .7)
+			color: red
+
+body.theme-dark
+	#nd-header div.global-search-wrapper
+		input
+			background: #191925
+			color: white
+
+			&::placeholder
+				color: rgba(255, 255, 255, .7)
