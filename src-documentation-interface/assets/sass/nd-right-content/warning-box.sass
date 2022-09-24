@@ -3,32 +3,56 @@
 #nd-right-content div.warning-box
 	margin: 16px 0px
 	padding: 15px
-	background: colors.setRGBA(#ffb14a, .13) // utils.setRGBA(#F5FF7A, .07) // utils.setRGBA(#f02929, .04)
-	border-left: 4px solid #ffb14a // #F5FF7A // #f02929
-	color: #ffb14a // #F5FF7A //#f02929
+	background: red
+	border-left: red
+	color: red
 	border-radius: 4px
 	display: flex
 	align-items: center
 
 	span.bt-pill, a.bt-pill
 		&::after
-			border: 1px solid #ffb14a !important
+			border: 1px solid red !important
 			background: transparent !important
 
-		color: white // #F5FF7A //#f02929
+		color: red
 
 	div.napcdoc-svg-image
 		margin-right: 10px
 
 	svg path
-		fill: #ffb14a // #F5FF7A // #f02929
+		fill: red
 
 	&.hal
-		border-left-color: #5ed84b
-		color: #5ed84b
+		border-left-color: red
+		color: red
 
-		background: linear-gradient(90deg, colors.setRGBA(#5ed84b, .13), transparent)
+		background: red
 
 		svg path
-			fill: #5ed84b
+			fill: red
+
+body.theme-dark
+	#nd-right-content div.warning-box
+		background: colors.setRGBA(#ffb14a, .13)
+		border-left: 4px solid #ffb14a
+		color: #ffb14a
+
+		span.bt-pill, a.bt-pill
+			&::after
+				border: 1px solid #ffb14a !important
+
+			color: white
+
+		svg path
+			fill: #ffb14a
+
+		&.hal
+			border-left-color: #5ed84b
+			color: #5ed84b
+
+			background: linear-gradient(90deg, colors.setRGBA(#5ed84b, .13), transparent)
+
+			svg path
+				fill: #5ed84b
 

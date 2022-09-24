@@ -1,6 +1,5 @@
 @use "../colors.sass"
 
-
 #nd-right-content.no-left-side-navigation
 	div.wrapper
 		padding: 15px 30px
@@ -29,40 +28,33 @@
 		font-family: "PT Mono", ui-monospace
 		font-size: 15px
 		margin: 8px 0px
-		background: rgba(255, 255, 255, .04)
+		background: red
 		padding: 15px
 		padding-top: 20px // offset scrollbar height
-		border: 1px solid rgba(255, 255, 255, .18)
-		border-left-width: 4px
-		border-left-color: rgba(255, 255, 255, .23)
+		border-left: 4px solid red
 		border-radius: 4px
 		tab-size: 25px
 		//white-space: pre-wrap
 		overflow-x: scroll
 		line-height: 24px
-		background: rgba(0, 0, 0, .31)
-		background: linear-gradient(45deg, rgba(0, 0, 0, 0.31), rgb(0 0 0 / 50%))
-		background: #191925
-		//background: linear-gradient(90deg, #191925 60%, transparent)
-		border: none
-		border-left: 4px solid #575782
+		background: red
 
 	span.c-type
-		color: colors.$type_primary_color
+		color: red
 		font-weight: bold
 
 		a
 			color: inherit !important
 
 	span.c-function
-		color: colors.$fn_primary_color
+		color: red
 		font-weight: bold
 
 		a
 			color: inherit !important
 
 	span.c-macro
-		color: colors.$macro_primary_color
+		color: red
 		font-weight: bold
 
 		a
@@ -70,3 +62,19 @@
 
 	div.markdown h2
 		margin: 20px 0px
+
+body.theme-dark
+	#nd-right-content div.wrapper
+		pre.code
+			background: #191925
+			border-left-color: #575782
+
+		span.c-type
+			color: colors.$type_primary_color
+
+		span.c-function
+			color: colors.$fn_primary_color
+
+		span.c-macro
+			color: colors.$macro_primary_color
+			font-weight: bold
