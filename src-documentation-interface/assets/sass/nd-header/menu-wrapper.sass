@@ -36,10 +36,10 @@ body.theme-dark
 	#nd-header div.menu-wrapper
 		a
 			&:hover
-				color: white
+				color: colors.$dark__base_text_color
 
-			color: rgba(255, 255, 255, .4)
+			color: colors.setRGBA(colors.$dark__base_text_color, .4)
 
 			&.active
-				color: white
+				color: colors.$dark__base_text_color
 				border-bottom-color: colors.$header_border_bottom

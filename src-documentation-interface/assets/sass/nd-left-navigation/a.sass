@@ -70,7 +70,7 @@
 
 body.theme-dark
 	#nd-left-navigation a
-		color: rgba(255, 255, 255, .7)
+		color: colors.setRGBA(colors.$dark__base_text_color, .7)
 
 		&.active, &:hover
 			background: linear-gradient(90deg, #191925 30%, rgba(255,255,255,0) 100%)
@@ -79,15 +79,15 @@ body.theme-dark
 			border-left-color: #575782
 
 		&.active, &:hover
-			color: white
+			color: colors.$dark__base_text_color
 
 			div.napcdoc-svg-image
 				svg path
-					fill: white
+					fill: colors.$dark__base_text_color
 
 			div.label-and-brief
 				span.label
-					color: white
+					color: colors.$dark__base_text_color
 
 			&[data-definition-type="fn"] div.napcdoc-svg-image svg path
 				fill: colors.$fn_primary_color
@@ -100,14 +100,14 @@ body.theme-dark
 
 		div.label-and-brief
 			span.label
-				color: rgba(255, 255, 255, .7)
+				color: colors.setRGBA(colors.$dark__base_text_color, .7)
 
 			span.brief
-				color: rgba(255, 255, 255, .3)
+				color: colors.setRGBA(colors.$dark__base_text_color, .3)
 
 		div.napcdoc-svg-image
 			svg path
-				fill: rgba(255, 255, 255, .4)
+				fill: colors.setRGBA(colors.$dark__base_text_color, .4)
 
 		&:hover
-			color: rgba(255, 255, 255, 1)
+			color: colors.setRGBA(colors.$dark__base_text_color, 1)

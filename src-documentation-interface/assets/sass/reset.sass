@@ -28,7 +28,7 @@ html, body
 
 	/* Handle */
 	::-webkit-scrollbar-thumb
-		background: rgba(255, 255, 255, .1)
+		background: red
 		border-radius: 40px
 
 	/* Handle on hover */
@@ -37,19 +37,16 @@ html, body
 
 body.theme-dark
 	&
-		color: white
+		color: colors.$dark__base_text_color
 		background: colors.$background
 
 		a
-			color: white
+			color: colors.$dark__base_text_color
 
 		/* Handle */
 		::-webkit-scrollbar-thumb
-			background: rgba(255, 255, 255, .1)
+			background: colors.setRGBA(colors.$dark__base_text_color, .1)
 
 		/* Handle on hover */
 		::-webkit-scrollbar-thumb:hover
 			background: #555
-
-	input::placeholder
-		color: rgba(255, 255, 255, .4)

@@ -110,12 +110,12 @@ body.theme-dark
 				border-left-color: colors.$header_border_bottom
 
 				div.napcdoc-svg-image svg path
-					fill: white
+					fill: colors.$dark__base_text_color
 
 			div.napcdoc-svg-image
 				svg path
-					fill: rgba(255, 255, 255, .2)
+					fill: colors.setRGBA(colors.$dark__base_text_color, .2)
 
 			div.label-and-brief
 				span.brief
-					color: rgba(255, 255, 255, .3)
+					color: colors.setRGBA(colors.$dark__base_text_color, .3)
