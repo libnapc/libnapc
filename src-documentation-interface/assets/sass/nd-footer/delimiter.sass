@@ -1,7 +1,13 @@
+@use "../colors.sass"
+
 #nd-footer div.delimiter
 	flex-grow: 0
 	flex-shrink: 0
 	width: 2px
 	height: 40%
-	background: rgba(255, 255, 255, .2)
+	background: red
 	margin: 0 10px
+
+body.theme-dark
+	#nd-footer div.delimiter
+		background: colors.setRGBA(colors.$dark__base_text_color, 0.2)
