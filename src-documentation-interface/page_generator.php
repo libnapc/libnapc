@@ -61,37 +61,69 @@ return function($request_path, $http_headers) {
 		}
 
 		if ($html_template_keys) {
-			return napcdoc::site_renderTemplateFile(
-				"html", $html_template_keys
-			);
+			return [
+				"headers" => [
+					"Content-Type" => "text/html;charset=UTF-8"
+				],
+				"body" => napcdoc::site_renderTemplateFile("html", $html_template_keys)
+			];
 		}
 	}
 	// site styling
 	else if ($request_path === "/site.css") {
 		$handler = require __DIR__."/handler/site.css.php";
 
-		return $handler($http_headers);
+		return [
+			"headers" => [
+				"Content-Type" => "text/css;charset=UTF-8"
+			],
+			"body" => $handler($http_headers)
+		];
+	}
+	// site styling
+	else if ($request_path === "/verified.css") {
+		return [
+			"headers" => [
+				"Content-Type" => "text/css;charset=UTF-8"
+			],
+			"body" => ""
+		];
 	}
 	// site scripting
 	else if ($request_path === "/site.js") {
 		$handler = require __DIR__."/handler/site.js.php";
 
-		return $handler($http_headers);
+		return [
+			"headers" => [
+				"Content-Type" => "text/javascript;charset=UTF-8"
+			],
+			"body" => $handler($http_headers)
+		];
 	}
 	// metadata
 	else if ($request_path === "/metadata.xml") {
 		$handler = require __DIR__."/handler/metadata.xml.php";
 
-		return $handler($http_headers);
+		return [
+			"headers" => [
+				"Content-Type" => "text/xml;charset=UTF-8"
+			],
+			"body" => $handler($http_headers)
+		];
 	}
 
 	// if not handled by now, display 404
 	$handler = require __DIR__."/handler/404.php";
 
-	return $handler(
-		// check if 404 was requested specificially
-		// this is to prevent confusion between the real 404 page
-		// and a page (erroneously) missing
-		$request_path
-	);
+	return [
+		"headers" => [
+			"Content-Type" => "text/html;charset=UTF-8"
+		],
+		"body" => $handler(
+			// check if 404 was requested specificially
+			// this is to prevent confusion between the real 404 page
+			// and a page (erroneously) missing
+			$request_path
+		)
+	];
 };

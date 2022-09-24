@@ -19,11 +19,13 @@ return [
 		$napc = napphp::fs_readFileJSON(LIBNAPC_BUILD_FILES_DIR."/napc.json");
 
 		$generator_fn = function($request_path) use (&$page_generator, $sass_cache_dir) {
-			return $page_generator(
+			$response = $page_generator(
 				$request_path, [
 					"x-sass-cache-dir" => $sass_cache_dir
 				]
 			);
+
+			return $response["body"];
 		};
 
 		$context = [

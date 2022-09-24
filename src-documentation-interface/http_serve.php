@@ -10,17 +10,23 @@ foreach (getallheaders() as $header_name => $header_value) {
 	$request_headers[strtolower($header_name)] = $header_value;
 }
 
-if (napphp::str_endsWith($_SERVER["REQUEST_URI"], ".css")) {
-	header("Content-Type: text/css;charset=UTF-8");
-} else if (napphp::str_endsWith($_SERVER["REQUEST_URI"], ".js")) {
-	header("Content-Type: text/javascript;charset=UTF-8");
-} else if (napphp::str_endsWith($_SERVER["REQUEST_URI"], ".xml")) {
-	header("Content-Type: text/xml;charset=UTF-8");
-} else {
-	header("Content-Type: text/html;charset=UTF-8");
+$request_path = $_SERVER["REQUEST_URI"];
+
+if (strpos($request_path, "?") !== false) {
+	$position = strpos($request_path, "?");
+
+	$request_path = substr($request_path, 0, $position);
 }
 
-echo $page_generator(
-	$_SERVER["REQUEST_URI"],
+$response = $page_generator(
+	$request_path,
 	$request_headers
 );
+
+if (napphp::arr_keyExists($response, "headers")) {
+	foreach ($response["headers"] as $header_name => $header_value) {
+		header("$header_name: $header_value");
+	}
+}
+
+echo $response["body"];
