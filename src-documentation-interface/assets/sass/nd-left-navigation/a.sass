@@ -5,7 +5,7 @@
 	align-items: center
 	text-decoration: none
 	padding: 8px 30px
-	color: rgba(255, 255, 255, .7)
+	color: red
 
 	font-size: 14px
 
@@ -15,33 +15,33 @@
 		text-decoration: line-through
 
 	&.active, &:hover
-		background: linear-gradient(90deg, #191925 30%, rgba(255,255,255,0) 100%)
+		background: red
 
 	&.active
-		border-left-color: #575782
+		border-left-color: red
 
 	&.search-hidden
 		display: none !important
 
 	&.active, &:hover
-		color: white
+		color: red
 
 		div.napcdoc-svg-image
 			svg path
-				fill: white
+				fill: red
 
 		div.label-and-brief
 			span.label
-				color: white
+				color: red
 
 		&[data-definition-type="fn"] div.napcdoc-svg-image svg path
-			fill: colors.$fn_primary_color
+			fill: red
 
 		&[data-definition-type="type"] div.napcdoc-svg-image svg path
-			fill: colors.$type_primary_color
+			fill: red
 
 		&[data-definition-type="macro"] div.napcdoc-svg-image svg path
-			fill: colors.$macro_primary_color
+			fill: red
 
 
 	div.label-and-brief
@@ -50,20 +50,64 @@
 
 		span.label
 			font-size: 14px
-			color: rgba(255, 255, 255, .7)
+			color: red
 
 		span.brief
 			margin-top: 5px
 			font-size: 12px
-			color: rgba(255, 255, 255, .3)
+			color: red
 
 	div.napcdoc-svg-image
 		svg path
-			fill: rgba(255, 255, 255, .4)
+			fill: red
 		margin-right: 15px
 
 	&:hover
-		color: rgba(255, 255, 255, 1)
+		color: red
 
 		div.napcdoc-svg-image
 			opacity: 1
+
+body.theme-dark
+	#nd-left-navigation a
+		color: rgba(255, 255, 255, .7)
+
+		&.active, &:hover
+			background: linear-gradient(90deg, #191925 30%, rgba(255,255,255,0) 100%)
+
+		&.active
+			border-left-color: #575782
+
+		&.active, &:hover
+			color: white
+
+			div.napcdoc-svg-image
+				svg path
+					fill: white
+
+			div.label-and-brief
+				span.label
+					color: white
+
+			&[data-definition-type="fn"] div.napcdoc-svg-image svg path
+				fill: colors.$fn_primary_color
+
+			&[data-definition-type="type"] div.napcdoc-svg-image svg path
+				fill: colors.$type_primary_color
+
+			&[data-definition-type="macro"] div.napcdoc-svg-image svg path
+				fill: colors.$macro_primary_color
+
+		div.label-and-brief
+			span.label
+				color: rgba(255, 255, 255, .7)
+
+			span.brief
+				color: rgba(255, 255, 255, .3)
+
+		div.napcdoc-svg-image
+			svg path
+				fill: rgba(255, 255, 255, .4)
+
+		&:hover
+			color: rgba(255, 255, 255, 1)
