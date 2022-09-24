@@ -88,12 +88,12 @@ body.theme-dark
 	#nd-global-search-results div.wrapper
 		a
 			&:hover
-				border-left-color: #191925
-				background: linear-gradient(90deg, #191925 30%, rgba(255,255,255,0) 100%)
+				border-left-color: colors.$dark__tertiary_background
+				background: linear-gradient(90deg, colors.$dark__tertiary_background 30%, rgba(255,255,255,0) 100%)
 
 			&.selected
 				border-left-color: colors.$dark__header_border_bottom
-				background: linear-gradient(90deg, #191925 30%, rgba(255,255,255,0) 100%)
+				background: linear-gradient(90deg, colors.$dark__tertiary_background 30%, rgba(255,255,255,0) 100%)
 
 			&.selected, &:hover
 				&[data-definition-type="fn"] div.napcdoc-svg-image svg path
@@ -106,7 +106,7 @@ body.theme-dark
 					fill: colors.$dark__macro_primary_color
 
 			&.module-header
-				background: #191925
+				background: colors.$dark__tertiary_background
 				border-left-color: colors.$dark__header_border_bottom
 
 				div.napcdoc-svg-image svg path
