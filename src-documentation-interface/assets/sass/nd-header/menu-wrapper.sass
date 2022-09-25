@@ -7,7 +7,7 @@
 
 	a
 		&:hover
-			color: red
+			color: white
 
 		&:first-child
 			margin-left: 15px
@@ -26,20 +26,8 @@
 		border-bottom: 2px solid transparent
 		text-decoration: none
 		margin: 0px 10px
-		color: red
+		color: rgba(255, 255, 255, .4)
 
 		&.active
-			color: red
-			border-bottom-color: red
-
-body.theme-dark
-	#nd-header div.menu-wrapper
-		a
-			&:hover
-				color: colors.$dark__base_text_color
-
-			color: colors.setRGBA(colors.$dark__base_text_color, .4)
-
-			&.active
-				color: colors.$dark__base_text_color
-				border-bottom-color: colors.$dark__header_border_bottom
+			color: white
+			border-bottom-color: colors.$header_border_bottom

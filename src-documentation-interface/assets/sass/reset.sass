@@ -11,11 +11,11 @@ html, body
 	height: 100%
 	font-family: "Open Sans", system-ui
 	font-size: 16px
-	color: red
-	background: red
+	color: white
+	background: colors.$background
 
 	a
-		color: red
+		color: white
 
 	/* width */
 	::-webkit-scrollbar
@@ -28,25 +28,12 @@ html, body
 
 	/* Handle */
 	::-webkit-scrollbar-thumb
-		background: red
+		background: rgba(255, 255, 255, .1)
 		border-radius: 40px
 
 	/* Handle on hover */
 	::-webkit-scrollbar-thumb:hover
 		background: #555
 
-body.theme-dark
-	&
-		color: colors.$dark__base_text_color
-		background: colors.$dark__background
-
-		a
-			color: colors.$dark__base_text_color
-
-		/* Handle */
-		::-webkit-scrollbar-thumb
-			background: colors.setRGBA(colors.$dark__base_text_color, .1)
-
-		/* Handle on hover */
-		::-webkit-scrollbar-thumb:hover
-			background: #555
+input::placeholder
+	color: rgba(255, 255, 255, .4)

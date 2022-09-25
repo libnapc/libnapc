@@ -3,7 +3,7 @@
 
 #nd-mobile-navigation
 	width: 100%
-	background: red
+	background: colors.$header_border_bottom
 	overflow: hidden
 	//transition: set with javascript
 	//max-height set with javascript
@@ -32,32 +32,15 @@
 
 				span.label
 					font-size: 18px
-					color: red
+					color: white
 
 				span.brief
 					margin-top: 4px
 					font-size: 14px
-					color: red
+					color: rgba(255, 255, 255, .3)
 
 			div.napcdoc-svg-image
 				margin-right: 15px
 
 				svg path
-					fill: red
-
-body.theme-dark
-	#nd-mobile-navigation
-		background: colors.$dark__header_border_bottom
-
-		div.nav-wrapper
-			a
-				div.label-and-brief
-					span.label
-						color: colors.$dark__base_text_color
-
-					span.brief
-						color: colors.setRGBA(colors.$dark__base_text_color, .3)
-
-				div.napcdoc-svg-image
-					svg path
-						fill: colors.$dark__base_text_color
+					fill: white
