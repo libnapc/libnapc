@@ -39,13 +39,13 @@
 
 		&.selected, &:hover
 			&[data-definition-type="fn"] div.napcdoc-svg-image svg path
-				fill: colors.$fn_primary_color
+				fill: var(--fn-primary-color)
 
 			&[data-definition-type="type"] div.napcdoc-svg-image svg path
-				fill: colors.$type_primary_color
+				fill: var(--type-primary-color)
 
 			&[data-definition-type="macro"] div.napcdoc-svg-image svg path
-				fill: colors.$macro_primary_color
+				fill: var(--macro-primary-color)
 
 		&.module-header
 			padding: 8px 15px
