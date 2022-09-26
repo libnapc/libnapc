@@ -15,7 +15,7 @@ div.api-reference-module-box {
 	width: 300px;
 	flex-grow: 0;
 	flex-shrink: 0;
-	background: #191925;
+	background: var(--alt-secondary-background);
 	border-radius: 4px;
 	padding: 20px 20px;
 	margin: 5px;

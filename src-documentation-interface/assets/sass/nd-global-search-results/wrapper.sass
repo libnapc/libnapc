@@ -30,12 +30,12 @@
 		border-left: 2px solid transparent
 
 		&:hover
-			border-left-color: #191925
-			background: linear-gradient(90deg, #191925 30%, transparent 100%)
+			border-left-color: var(--alt-secondary-background)
+			background: linear-gradient(90deg, var(--alt-secondary-background) 30%, transparent 100%)
 
 		&.selected
 			border-left-color: colors.$header_border_bottom
-			background: linear-gradient(90deg, #191925 30%, transparent 100%)
+			background: linear-gradient(90deg, var(--alt-secondary-background) 30%, transparent 100%)
 
 		&.selected, &:hover
 			&[data-definition-type="fn"] div.napcdoc-svg-image svg path
@@ -49,7 +49,7 @@
 
 		&.module-header
 			padding: 8px 15px
-			background: #191925
+			background: var(--alt-secondary-background)
 			border-left-color: colors.$header_border_bottom
 			font-weight: 500
 
