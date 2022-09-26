@@ -37,3 +37,17 @@ html, body
 
 input::placeholder
 	color: rgba(255, 255, 255, .4)
+
+body.theme-dark
+	*.display-block-on-dark-theme
+		display: block
+
+	*.display-block-on-light-theme
+		display: none
+
+body.theme-light
+	*.display-block-on-dark-theme
+		display: none
+
+	*.display-block-on-light-theme
+		display: block
