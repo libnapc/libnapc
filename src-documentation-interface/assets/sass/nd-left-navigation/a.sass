@@ -5,7 +5,6 @@
 	align-items: center
 	text-decoration: none
 	padding: 8px 30px
-	color: rgba(255, 255, 255, .7)
 
 	font-size: 14px
 
@@ -24,15 +23,15 @@
 		display: none !important
 
 	&.active, &:hover
-		color: white
+		color: var(--base-text-color)
 
 		div.napcdoc-svg-image
 			svg path
-				fill: white
+				fill: var(--base-text-color)
 
 		div.label-and-brief
 			span.label
-				color: white
+				color: var(--base-text-color)
 
 		&[data-definition-type="fn"] div.napcdoc-svg-image svg path
 			fill: colors.$fn_primary_color
@@ -50,20 +49,20 @@
 
 		span.label
 			font-size: 14px
-			color: rgba(255, 255, 255, .7)
+			color: var(--base-text-color-dimmed-1)
 
 		span.brief
 			margin-top: 5px
 			font-size: 12px
-			color: rgba(255, 255, 255, .3)
+			color: var(--base-text-color-dimmed-2)
 
 	div.napcdoc-svg-image
 		svg path
-			fill: rgba(255, 255, 255, .4)
+			fill: var(--base-text-color-dimmed-2)
 		margin-right: 15px
 
 	&:hover
-		color: rgba(255, 255, 255, 1)
+		color: var(--base-text-color)
 
 		div.napcdoc-svg-image
 			opacity: 1

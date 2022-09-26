@@ -12,7 +12,7 @@ if (!isset($__keys["left-navigation"])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 
-	<link rel="stylesheet" href="<?php echo napcdoc::site_link("site.css"); ?>">
+	<link rel="stylesheet" href="<?php echo napcdoc::site_link("site.css"); ?>?no_cache=<?=time();?>">
 </head>
 <body class="theme-dark <?php echo implode(" ", $body_classes); ?>">
 	<?php

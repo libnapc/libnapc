@@ -1,3 +1,17 @@
+@use "sass:color"
+
+@function setRGBA($color, $alpha)
+	@return rgba(color.red($color), color.green($color), color.blue($color),$alpha)
+
+body.theme-dark
+	--base-text-color: rgba(255, 255, 0, 1)
+	--base-text-color-dimmed-1: rgba(255, 255, 0, .7)
+	--base-text-color-dimmed-2: rgba(255, 255, 0, .3)
+
+	--type-primary-color: red
+	--fn-primary-color: blue
+	--macro-primary-color: cyan
+
 $dark__base_text_color: #ffffff
 
 $background: #111119
@@ -8,8 +22,3 @@ $input_border: #29293d
 $type_primary_color: rgb(210,168,255)
 $fn_primary_color: #11c5e5
 $macro_primary_color: #ff7a00
-
-@use "sass:color"
-
-@function setRGBA($color, $alpha)
-	@return rgba(color.red($color), color.green($color), color.blue($color),$alpha)

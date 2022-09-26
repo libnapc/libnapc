@@ -1,7 +1,7 @@
 <style>
 div.releases div.flex-table-row.header {
 	text-transform: uppercase;
-	color: rgba(255, 255, 255, .3);
+	color: var(--base-text-color-dimmed-2);
 }
 
 div.releases div.flex-table-row-cell.filename {
