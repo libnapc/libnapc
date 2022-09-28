@@ -32,9 +32,9 @@ $has_left_navigation = sizeof($__keys["left-navigation"] ?? []) > 0;
 		<?php
 			$pages = [
 				[
-					"label" => "Reference Home",
-					"tablet_label" => "Home",
-					"mobile_label" => "Home",
+					"label" => "Overview",
+					"tablet_label" => "Overview",
+					"mobile_label" => "Overview",
 					"resource" => "home.html"
 				],
 				[
