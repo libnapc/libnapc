@@ -10,13 +10,13 @@ div.definition-section-title h3 {
 	padding-right: 10px;
 	font-size: 14px;
 	text-transform: uppercase;
-	color: #454559;
+	color: var(--section-title-color);
 }
 
 div.definition-section-title hr {
 	width: 100%;
 	background: rgba(255, 255, 255, .2);
-	background: linear-gradient(90deg, #454559 30%, rgba(255,255,255,0) 100%);
+	background: linear-gradient(90deg, var(--section-title-color) 30%, transparent 100%);
 	border: none;
 	height: 2px;
 	margin: 0 !important;
