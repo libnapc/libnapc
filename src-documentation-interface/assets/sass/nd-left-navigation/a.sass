@@ -19,6 +19,18 @@
 	&.active
 		border-left-color: #575782
 
+		div.label-and-brief span.brief
+			color: var(--base-text-color)
+
+		&[data-definition-type="fn"] div.label-and-brief span.label
+			color: var(--fn-primary-color)
+
+		&[data-definition-type="type"] div.label-and-brief span.label
+			color: var(--type-primary-color)
+
+		&[data-definition-type="macro"] div.label-and-brief span.label
+			color: var(--macro-primary-color)
+
 	&.search-hidden
 		display: none !important
 
