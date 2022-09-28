@@ -29,13 +29,22 @@ function replaceDefinitions(code) {
 window.addEventListener("keydown", (e) => {
 	// SHIFT + /
 	if (e.keyCode === 191 && e.getModifierState("Shift")) {
+		let theme = ""
+
 		if (document.body.classList.contains("theme-dark")) {
 			document.body.classList.add("theme-light")
 			document.body.classList.remove("theme-dark")
+
+			theme = "light"
 		} else {
 			document.body.classList.remove("theme-light")
 			document.body.classList.add("theme-dark")
+
+			theme = "dark"
 		}
+
+		console.log("Saved theme '" + theme + "'")
+		window.localStorage.setItem("theme", theme)
 	}
 })
 
