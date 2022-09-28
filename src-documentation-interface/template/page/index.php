@@ -12,7 +12,7 @@ div.landing h1 {
 }
 
 div.landing h1 i {
-	color: rgba(255, 255, 255, .3);
+	color: var(--base-text-color-dimmed-2);
 	font-style: normal;
 }
 
@@ -23,11 +23,12 @@ div.landing {
 }
 
 div.landing a {
+	color: white;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-image: linear-gradient(15deg, #00A366, #0093F9);
-	background-color: #00A366;
+	background-image: linear-gradient(15deg, var(--text-gradient-color-1), var(--text-gradient-color-2));
+	background-color: var(--text-gradient-color-1);
 	font-size: 17px;
 	padding: 7px 23px;
 	border-radius: 40px;
@@ -47,7 +48,7 @@ div.landing pre.code, div.landing pre.code2 {
 	font-size: 12px !important;
 	top: 0px;
 	line-height: 20px !important;
-	color: rgba(255, 255, 255, .04);
+	color: var(--base-text-color-dimmed-4);
 }
 
 div.landing pre.code2 {
