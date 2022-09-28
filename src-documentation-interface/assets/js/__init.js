@@ -26,6 +26,19 @@ function replaceDefinitions(code) {
 	return code
 }
 
+window.addEventListener("keydown", (e) => {
+	// SHIFT + /
+	if (e.keyCode === 191 && e.getModifierState("Shift")) {
+		if (document.body.classList.contains("theme-dark")) {
+			document.body.classList.add("theme-light")
+			document.body.classList.remove("theme-dark")
+		} else {
+			document.body.classList.remove("theme-light")
+			document.body.classList.add("theme-dark")
+		}
+	}
+})
+
 document.querySelectorAll("pre.code.hljs").forEach(el => {
 	el.innerHTML = window.hljs.highlight(el.innerText, {
 		language: "c"
