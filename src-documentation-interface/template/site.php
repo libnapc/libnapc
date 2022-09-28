@@ -44,9 +44,9 @@ $has_left_navigation = sizeof($__keys["left-navigation"] ?? []) > 0;
 					"resource" => "api.html"
 				],
 				[
-					"label" => "📚 Documentation",
-					"tablet_label" => "📚 Docs",
-					"mobile_label" => "📚 Docs",
+					"label" => "Documentation",
+					"tablet_label" => "Docs",
+					"mobile_label" => "Docs",
 					"resource" => "documentation/index.html"
 				],
 				[
