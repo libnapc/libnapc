@@ -56,6 +56,14 @@ window.addEventListener("keydown", (e) => {
 	}
 })
 
+try {
+	let saved_theme = window.localStorage.getItem("theme") || "dark"
+
+	setTheme(saved_theme)
+} catch (error) {
+	console.error("Could not apply theme because of", error)
+}
+
 document.querySelectorAll("pre.code.hljs").forEach(el => {
 	el.innerHTML = window.hljs.highlight(el.innerText, {
 		language: "c"
