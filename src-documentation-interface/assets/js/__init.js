@@ -26,25 +26,33 @@ function replaceDefinitions(code) {
 	return code
 }
 
+function setTheme(theme_name) {
+	document.body.classList.remove("theme-light")
+	document.body.classList.remove("theme-dark")
+
+	if (theme_name === "light") {
+		document.body.classList.add("theme-light")
+	} else {
+		document.body.classList.add("theme-dark")
+	}
+}
+
 window.addEventListener("keydown", (e) => {
 	// SHIFT + /
 	if (e.keyCode === 191 && e.getModifierState("Shift")) {
 		let theme = ""
 
 		if (document.body.classList.contains("theme-dark")) {
-			document.body.classList.add("theme-light")
-			document.body.classList.remove("theme-dark")
-
 			theme = "light"
 		} else {
-			document.body.classList.remove("theme-light")
-			document.body.classList.add("theme-dark")
-
 			theme = "dark"
 		}
 
 		console.log("Saved theme '" + theme + "'")
+
 		window.localStorage.setItem("theme", theme)
+
+		setTheme(theme)
 	}
 })
 
