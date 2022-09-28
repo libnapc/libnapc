@@ -15,7 +15,7 @@ div.api-reference-module-box {
 	width: 300px;
 	flex-grow: 0;
 	flex-shrink: 0;
-	background: var(--alt-secondary-background);
+	background: var(--code-background);
 	border-radius: 4px;
 	padding: 20px 20px;
 	margin: 5px;
@@ -24,10 +24,10 @@ div.api-reference-module-box {
 
 div.api-reference-module-box h2 {
 	font-size: 1.2rem;
-	color: #00A366;
+	color: var(--text-gradient-color-1);
 	margin: 6px 0px;
 	margin-top: 0 !important;
-	background: -webkit-linear-gradient(274deg, #00A366, #0093F9);
+	background: -webkit-linear-gradient(274deg, var(--text-gradient-color-1), var(--text-gradient-color-2));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
