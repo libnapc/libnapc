@@ -20,6 +20,10 @@ function renderSearchResults(search_term, search_space) {
 }
 
 window.napcdoc.lib.initLocalSearch = function() {
+	if (!document.querySelector("#nd-left-navigation")) {
+		return
+	}
+
 	const elements = document.querySelectorAll("#nd-left-navigation a")
 	let search_space = []
 
