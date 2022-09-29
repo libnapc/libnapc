@@ -3,9 +3,9 @@
 #nd-right-content div.warning-box
 	margin: 16px 0px
 	padding: 15px
-	background: colors.setRGBA(#ffb14a, .13) // utils.setRGBA(#F5FF7A, .07) // utils.setRGBA(#f02929, .04)
-	border-left: 4px solid #ffb14a // #F5FF7A // #f02929
-	color: #ffb14a // #F5FF7A //#f02929
+	background: var(--warning-box-background)
+	border-left: 4px solid var(--warning-box-border-color)
+	color: var(--warning-box-color)
 	border-radius: 4px
 	display: flex
 	align-items: center
@@ -15,20 +15,16 @@
 			border: 1px solid #ffb14a !important
 			background: transparent !important
 
-		color: white // #F5FF7A //#f02929
+		color: white
 
 	div.napcdoc-svg-image
 		margin-right: 10px
 
 	svg path
-		fill: #ffb14a // #F5FF7A // #f02929
+		fill: currentColor
 
 	&.hal
 		border-left-color: #5ed84b
 		color: #5ed84b
 
 		background: linear-gradient(90deg, colors.setRGBA(#5ed84b, .13), transparent)
-
-		svg path
-			fill: #5ed84b
-
