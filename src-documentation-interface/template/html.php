@@ -15,6 +15,20 @@ if (!isset($__keys["left-navigation"])) {
 	<link rel="stylesheet" href="<?php echo napcdoc::site_link("site.css"); ?>?no_cache=<?=time();?>">
 </head>
 <body class="theme-dark <?php echo implode(" ", $body_classes); ?>">
+
+	<script>
+		try {
+			let saved_theme = window.localStorage.getItem("theme") || "dark"
+
+			if (saved_theme === "light") {
+				document.body.classList.remove("theme-dark")
+				document.body.classList.add("theme-light")
+			}
+		} catch (error) {
+			console.error("Could not apply theme because of", error)
+		}
+	</script>
+
 	<?php
 		echo napcdoc::site_renderTemplateFile("site", $__keys);
 	?>
