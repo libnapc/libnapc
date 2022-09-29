@@ -5,7 +5,7 @@ return function($module_name, $request_definition_name = "") {
 
 	$nav[] = [
 		"icon" => "module_icon/$module_name",
-		"label" => "About this module",
+		"label" => "About the $module_name module",
 		"href" => napcdoc::site_link("module/$module_name.html#$module_name"),
 		"active" => $request_definition_name === "",
 		"name" => $module_name
