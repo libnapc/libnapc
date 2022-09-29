@@ -7,7 +7,7 @@ return function($module_name) {
 		$module_name, ""
 	);
 
-	$keys["content"] = "<h1>$module_name</h1>";
+	$keys["content"] = "<h1>About the $module_name module</h1>";
 
 	$modules_intro = napcdoc::site_getDocumentation()["modules_intro"];
 
