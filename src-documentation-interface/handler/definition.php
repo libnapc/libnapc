@@ -13,5 +13,8 @@ return function($module_name, $definition_name) {
 		]
 	);
 
+	// used for local search
+	$keys["content"] .= "<script>window.napcdoc_requested_module_name = \"$module_name\";</script>";
+
 	return $keys;
 };
