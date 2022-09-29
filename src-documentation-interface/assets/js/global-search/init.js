@@ -47,6 +47,10 @@ function createModuleHeader(module_name) {
 	</div>
 	`
 
+	module_header.href = window.napcdoc.lib.fixLink(
+		`module/${module_name}.html#${module_name}`
+	)
+
 	return module_header
 }
 
