@@ -34,13 +34,19 @@ window.napcdoc.lib.initLocalSearch = function() {
 		})
 	}
 
-	const module_name = window.napcdoc_requested_module_name
+	let placeholder_text = "ERROR"
 
-	if (module_name) {
-		document.querySelector("#nd-local-search-input").placeholder = `Search a definition of ${module_name}`
+	if ("napcdoc_requested_module_name" in window) {
+		const module_name = window.napcdoc_requested_module_name
+
+		placeholder_text = `Search a definition of ${module_name}`
+	} else if (window.napcdoc_request_uri.startsWith("document/") || window.napcdoc_request_uri.startsWith("documentation/")) {
+		placeholder_text = `Search a document`
 	} else {
-		document.querySelector("#nd-local-search-input").placeholder = "Search a module"
+		placeholder_text = "Search a module"
 	}
+
+	document.querySelector("#nd-local-search-input").placeholder = placeholder_text
 
 	document.querySelector("#nd-local-search-input").addEventListener("input", (e) => {
 		renderSearchResults(e.currentTarget.value, search_space)
