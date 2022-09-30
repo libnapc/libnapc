@@ -1,5 +1,52 @@
 <?php
 
+function libnapc_docFinalize_searchWithGrep(
+	$search_expression, $file_extension
+) {
+	$grep_output_file = napphp::tmp_createFile();
+
+	napphp::shell_execute(
+		"grep", [
+			"cwd" => LIBNAPC_SOURCE_FILES_DIR,
+			"args" => [
+				"-nr",
+				$search_expression,
+				"--include",
+				"*$file_extension", // '*.h' for example
+				"."
+			],
+			"stdout" => $grep_output_file,
+			"allow_non_zero_exit_code" => true
+		]
+	);
+
+	$grep_output = napphp::fs_file($grep_output_file);
+	napphp::fs_unlink($grep_output_file);
+
+	if (sizeof($grep_output) !== 1) {
+		return NULL;
+	}
+
+	$output = trim($grep_output[0]);
+
+	$tmp = napphp::str_split($output, ":", 3);
+
+	if (sizeof($tmp) !== 3) {
+		$output_colored = napphp::terminal_colorString(
+			$output, "red"
+		);
+
+		fwrite(STDERR, "Erroneous grep output '$output_colored'\n");
+
+		return NULL;
+	}
+
+	return [
+		"path" => $tmp[0],
+		"line" => (int)$tmp[1]
+	];
+}
+
 return [
 	"description" => "Finalize documentation.",
 
