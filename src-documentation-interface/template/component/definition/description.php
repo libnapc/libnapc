@@ -78,6 +78,8 @@ div.definition-header div.right div.napcdoc-svg-image svg path {
 
 if (strlen($__keys["general_info"]["description"] ?? "")) {
 	echo napcdoc::format_multiLine($__keys["general_info"]["description"]);
+} else if (strlen($__keys["general_info"]["brief"] ?? "")) {
+	echo napcdoc::format_multiLine($__keys["general_info"]["brief"]);
 } else {
 	echo '<p><i>This '.$__keys["type"].' does not have a description.</i></p>';
 }
