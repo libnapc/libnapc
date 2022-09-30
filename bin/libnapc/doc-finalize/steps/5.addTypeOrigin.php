@@ -4,7 +4,7 @@ return function($args, &$context) {
 	$output = &$context["output"];
 	$statistics = &$output["statistics"];
 
-	$statistics["type_missing_origins"] = 0;
+	$statistics["type_missing_origins"] = [];
 
 	foreach ($output["definitions"] as $definition_name => &$definition) {
 		if ($definition["type"] !== "type") continue;
@@ -30,7 +30,7 @@ return function($args, &$context) {
 		if ($origin === NULL) {
 			fwrite(STDERR, "Was not able to determine origin of type '$type_colored'.\n");
 
-			$statistics["type_missing_origins"]++;
+			array_push($statistics["type_missing_origins"], $definition_name);
 
 			continue;
 		}

@@ -4,7 +4,7 @@ return function($args, &$context) {
 	$output = &$context["output"];
 	$statistics = &$output["statistics"];
 
-	$statistics["macro_missing_origins"] = 0;
+	$statistics["macro_missing_origins"] = [];
 
 	foreach ($output["definitions"] as $definition_name => &$definition) {
 		if ($definition["type"] !== "macro") continue;
@@ -20,7 +20,7 @@ return function($args, &$context) {
 		if ($origin === NULL) {
 			fwrite(STDERR, "Was not able to determine origin of macro '$macro_colored'.\n");
 
-			$statistics["macro_missing_origins"]++;
+			array_push($statistics["macro_missing_origins"], $definition_name);
 
 			continue;
 		}

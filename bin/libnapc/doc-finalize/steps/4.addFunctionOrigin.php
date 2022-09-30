@@ -4,7 +4,7 @@ return function($args, &$context) {
 	$output = &$context["output"];
 	$statistics = &$output["statistics"];
 
-	$statistics["fn_missing_origins"] = 0;
+	$statistics["fn_missing_origins"] = [];
 
 	foreach ($output["definitions"] as $definition_name => &$definition) {
 		if ($definition["type"] !== "fn") continue;
@@ -31,7 +31,7 @@ return function($args, &$context) {
 		if ($origin === NULL) {
 			fwrite(STDERR, "Was not able to determine origin of function '$fn_colored'.\n");
 
-			$statistics["fn_missing_origins"]++;
+			array_push($statistics["fn_missing_origins"], $definition_name);
 
 			continue;
 		}
