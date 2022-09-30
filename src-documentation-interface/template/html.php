@@ -10,7 +10,7 @@ if (!isset($__keys["left-navigation"])) {
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+	<title><?php echo $__keys["site_title"]; ?></title>
 
 	<link rel="stylesheet" href="<?php echo napcdoc::site_link("site.css"); ?>?no_cache=<?=time();?>">
 </head>

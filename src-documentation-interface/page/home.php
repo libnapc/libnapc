@@ -1,5 +1,7 @@
 <?php
 
+$__keys["site_title"] = "Overview";
+
 $__keys["content"] = napcdoc::site_renderMarkdownFile("reference_home");
 
 $__keys["left-navigation"] = [];

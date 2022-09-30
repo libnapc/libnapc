@@ -3,6 +3,8 @@
 return function($module_name, $definition_name) {
 	$keys = [];
 
+	$keys["site_title"] = "$module_name › ".napcdoc::site_shortenDefinitionName($definition_name);
+
 	$keys["left-navigation"] = napcdoc::leftnav_getDefinitionsOfModule(
 		$module_name, $definition_name
 	);
