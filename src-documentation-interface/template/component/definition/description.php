@@ -51,9 +51,16 @@ div.definition-header div.right div.napcdoc-svg-image {
 			?>
 			<?php
 				$origin = $__keys["origin"];
+				$release_version = napcdoc::site_getDocumentation()["build_constants"]["RELEASE_VERSION"];
+				$branch_name = "v$release_version";
+
+				// use 'main' if $release_version is not a proper version number
+				if (napphp::str_contains($branch_name, "main")) {
+					$branch_name = "main";
+				}
 
 				echo napcdoc::html_createElement("a", [
-					"href" => "https://github.com/libnapc/libnapc/blob/main/src/".$origin["path"]."#L".$origin["line"],
+					"href" => "https://github.com/libnapc/libnapc/blob/$branch_name/src/".$origin["path"]."#L".$origin["line"],
 					"target" => "_blank"
 				], "View definition on github");
 			?>
