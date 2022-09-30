@@ -20,6 +20,10 @@ div.definition-header div.right div.napcdoc-svg-image {
 	margin-right: 5px;
 }
 
+div.definition-header div.right div.napcdoc-svg-image svg path {
+	fill: currentColor;
+}
+
 @media only screen and (max-width: 1000px) {
 	div.definition-header {
 		flex-direction: column;
