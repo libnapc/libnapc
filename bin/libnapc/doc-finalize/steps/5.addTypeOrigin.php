@@ -8,7 +8,7 @@ return function($args, &$context) {
 
 	foreach ($output["definitions"] as $definition_name => &$definition) {
 		if ($definition["type"] !== "type") continue;
-		if (!in_array($definition["kind"], ["alias", "struct"])) continue;
+		if (!in_array($definition["kind"], ["alias", "struct", "enum"])) continue;
 
 		$type_colored = napphp::terminal_colorString($definition_name, "yellow");
 
@@ -19,8 +19,12 @@ return function($args, &$context) {
 			$search_expression = "typedef [A-Za-z_0-9 ]\+ $definition_name;";
 		}
 		// search for 'typedef struct $definition_name' if kind is struct
-		else {
+		else if ($definition["kind"] === "struct") {
 			$search_expression = "typedef struct $definition_name {";
+		}
+		// search for 'typedef enum $definition_name' if kind is enum
+		else {
+			$search_expression = "typedef enum $definition_name {";
 		}
 
 		$origin = libnapc_docFinalize_searchWithGrep(
