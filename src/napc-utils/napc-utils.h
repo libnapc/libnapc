@@ -9,6 +9,7 @@
 	 * @version 1.0.0
 	 * @rationale
 	 * The `snprintf()` function defined by the C-Standard does not guarantee that the resulting string is NUL-terminated.
+	 * 
 	 * This function ensures the resulting string is always NUL-terminated.
 	 * @param buffer The buffer to write the formatted string to.
 	 * @param buffer_size The size of the buffer.
@@ -55,6 +56,7 @@
 	 * Copy a string to another location.
 	 * @rationale
 	 * The `strncpy()` function defined by the C-Standard does not guarantee that the resulting string is NUL-terminated.
+	 * 
 	 * This function ensures the resulting string is always NUL-terminated.
 	 * @param dest Destination memory location.
 	 * @param source String to be copied to dest.
@@ -129,7 +131,7 @@
 	 * Compare two memory regions.
 	 * @param data1 Pointer to first memory location.
 	 * @param data2 Pointer to second memory location.
-	 * @param data_size Size of `data1` and `data2` in bytes.
+	 * @param data_size Size of `data1` (resp. `data2`) in bytes.
 	 * @return Returns `true` if `data1` and `data2` have the same content.
 	 * @notes
 	 * The two memory regions need to be of the same size.

@@ -8,7 +8,7 @@
 	 * @brief Get time since boot.
 	 * @version 1.0.0
 	 * @description
-	 * Returns the number of milliseconds that have passed since boot.
+	 * Return number of milliseconds that have passed since boot.
 	 * @warning
 	 * The value returned by this function will overflow at some point in time.
 	 * @flags hw

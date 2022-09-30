@@ -26,9 +26,9 @@
 
 	/*!
 	 * @name napc_getFreeMemory
-	 * @brief Get free memory.
+	 * @brief Get available memory.
 	 * @version 1.0.0
-	 * @description
+	 * @return
 	 * Returns the number of free bytes (on the stack) available.
 	 * @flags hw
 	 * @changelog 1.0.0 17.02.2022 initial version

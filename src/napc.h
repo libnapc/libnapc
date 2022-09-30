@@ -19,7 +19,7 @@
 	 * @brief Get the version of libnapc.
 	 * @version 1.2.0
 	 * @description
-	 * Returns the version of the current libnapc implementation.
+	 * Return the version string of libnapc.
 	 * @changelog 1.2.0 20.03.2022 initial version
 	 * @example
 	 * napc_printf("Using libnapc version: %s\n", napc_version());
@@ -31,7 +31,7 @@
 	 * @brief Get the full version of libnapc.
 	 * @version 1.3.0
 	 * @description
-	 * Returns the full version of the current libnapc implementation.
+	 * Return the full version string of libnapc.
 	 * @changelog 1.3.0 21.03.2022 initial version
 	 * @example
 	 * napc_printf("Using libnapc version: %s\n", napc_getFullVersion());

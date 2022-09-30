@@ -8,6 +8,10 @@
 	 * @brief Delay program execution.
 	 * @version 1.0.0
 	 * @description Delay program execution.
+	 * @warning
+	 * This function will block execution for a set amount of time.
+	 * 
+	 * It's better to use non-blocking code, see `napc__Timer` and `napc__OSTimer`.
 	 * @param amount The amount in milliseconds.
 	 * @flags hw
 	 * @changelog 1.0.0 17.02.2022 initial version
@@ -25,6 +29,10 @@
 	 * @brief Delay program execution.
 	 * @version 1.0.0
 	 * @description Delay program execution.
+	 * @warning
+	 * This function will block execution for a set amount of time.
+	 * 
+	 * It's better to use non-blocking code, see `napc__Timer` and `napc__OSTimer`.
 	 * @param amount The amount in microseconds.
 	 * @flags hw
 	 * @changelog 1.0.0 17.02.2022 initial version

@@ -8,11 +8,15 @@
 	 * @description
 	 * Unsigned integer type for holding object sizes.
 	 * @rationale
-	 * Used because Arduino lacks `ssize_t` in `<stddef.h>`.
+	 * Used because Arduino lacks `size_t` in `<stddef.h>`.
+	 * 
 	 * For some reason it is defined in `<stdio.h>` but
 	 * I don't want to pollute my headers with unnecessary
-	 * includes. Also this way, I'm sure what printf specifiers
+	 * includes.
+	 * 
+	 * Also this way, I'm sure what printf specifiers
 	 * to use when printing `size_t` resp. `ssize_t`.
+	 * 
 	 * (`%zu` is not supported in arduino's libc)
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */

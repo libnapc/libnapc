@@ -39,7 +39,7 @@
 	 * @brief Print a printf()-like formatted string.
 	 * @version 1.0.0
 	 * @description
-	 * Provides a convient way to print out information without having the need to call `snprintf()` first.
+	 * Print out information without having to call `snprintf()` first.
 	 * @flags smem
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
@@ -57,10 +57,8 @@
 	 * @version 1.0.0
 	 * @description
 	 * Temporarily disable output of `napc_puts`, `napc_putc` and `napc_printf`.
-	 * @rationale
-	 * When running unit tests we are not particularly interested in the output
-	 * the code generated. We much rather have a single output that says
-	 * test passed or failed.
+	 * @notes
+	 * This functionality is used in the unit test suite of libnapc.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
 	 * napc_printf("Hello"); // prints Hello
@@ -81,6 +79,8 @@
 	 * @version 1.0.0
 	 * @description
 	 * Re-enable output of `napc_puts`, `napc_putc` and `napc_printf` after a call to `napc_mute`.
+	 * @notes
+	 * This functionality is used in the unit test suite of libnapc.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
 	 * napc_printf("Hello"); // prints Hello
