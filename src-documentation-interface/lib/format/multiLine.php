@@ -5,7 +5,7 @@ return function($text) {
 
 	$ret = "";
 
-	foreach (explode("\n", $text) as $line) {
+	foreach (explode("\n\n", $text) as $line) {
 		$ret .= "<p>".napcdoc::format_replaceBackticks($line)."</p>";
 	}
 
