@@ -3,7 +3,7 @@
 return function($module_name) {
 	$keys = [];
 
-	$keys["site_title"] = "About the $module_name module";
+	$keys["site_title"] = "$module_name";
 
 	$keys["left-navigation"] = napcdoc::leftnav_getDefinitionsOfModule(
 		$module_name, ""
