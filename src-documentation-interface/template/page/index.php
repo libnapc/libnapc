@@ -134,8 +134,14 @@ bool napc_DNS_parseRequest(
 
 echo napcdoc::html_createImageElement("big-c.png", [
 	"height" => 300,
-	"class" => "big-c"
+	"class" => "big-c display-block-on-dark-theme"
 ]);
+
+echo napcdoc::html_createImageElement("big-c-alt.png", [
+	"height" => 300,
+	"class" => "big-c display-block-on-light-theme"
+]);
+
 ?>
 
 <h1><i>Run, Test & Debug on Linux.</i> Deploy on Arduino.</h1>
