@@ -19,7 +19,7 @@
 	 * @field query DNS-Query, see `napc__DNSQuery`.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef struct napc__DNSRequest{
+	typedef struct napc__DNSRequest {
 		napc__DNSHeader header;
 		napc__DNSQuery query;
 	} napc__DNSRequest;
