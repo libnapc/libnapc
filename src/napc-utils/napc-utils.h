@@ -123,7 +123,7 @@
 
 	/*!
 	 * @name napc_memeql
-	 * @brief Compare two memory regions.
+	 * @brief Compare two memory regions of equal size.
 	 * @version 1.0.0
 	 * @description
 	 * Compare two memory regions.
