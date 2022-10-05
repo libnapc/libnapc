@@ -12,12 +12,9 @@ if (is_array($__keys["general_info"]["warning"]) || strlen($__keys["general_info
 	}
 
 	foreach ($warnings as $warning) {
-		echo '<div class="warning-box">';
-		echo napcdoc::html_createSVGElement("alert", 24, 24);
-		echo '	<div>';
-		echo '		'.napcdoc::format_singleLine($warning);
-		echo '	</div>';
-		echo '</div>';
+		echo napcdoc::site_renderTemplateFile("component/content-box", [
+			"type" => "warning",
+			"content" => $warning
+		]);
 	}
 }
-

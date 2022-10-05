@@ -9,16 +9,14 @@ if ($__keys["type"] === "type" && $__keys["kind"] === "opaque") {
 }
 
 if (strlen($__keys["general_info"]["notes"] ?? "") || $is_opaque_type) {
-	echo '<div class="module-section">';
-	echo napcdoc::site_renderTemplateFile("component/definition/section-title", [
-		"label" => "Notes"
-	]);
-
 	if ($is_opaque_type) {
-		echo $opaque_type_notes_text;
+		$note_text = $opaque_type_notes_text;
 	} else {
-		echo napcdoc::format_multiLine($__keys["general_info"]["notes"]);
+		$note_text = napcdoc::format_multiLine($__keys["general_info"]["notes"]);
 	}
 
-	echo '</div>';
+	echo napcdoc::site_renderTemplateFile("component/content-box", [
+		"type" => "infor",
+		"content" => $note_text
+	]);
 }
