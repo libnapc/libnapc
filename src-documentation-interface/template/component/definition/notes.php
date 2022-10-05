@@ -16,7 +16,7 @@ if (strlen($__keys["general_info"]["notes"] ?? "") || $is_opaque_type) {
 	}
 
 	echo napcdoc::site_renderTemplateFile("component/content-box", [
-		"type" => "infor",
+		"type" => "info",
 		"content" => $note_text
 	]);
 }
