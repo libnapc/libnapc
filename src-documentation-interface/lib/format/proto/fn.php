@@ -39,6 +39,8 @@ return function($fn_name) {
 	foreach ($fn_params as $i => $param) {
 		$is_last_param = !array_key_exists($i + 1, $fn_params);
 
+		$ret .= "    <span class=\"hljs-comment\">// ".$param["description"]."</span>\n";
+
 		// indent parameter 
 		$ret .= "    ";
 

@@ -48,6 +48,8 @@ return function($type_name) {
 		/** padding to align member types **/
 
 		foreach ($type["fields"] as $field) {
+			$ret .= "    <span class=\"hljs-comment\">// ".$field["description"]."</span>\n";
+
 			$ret .= "    ";
 
 			if (!is_array($field["type"])) {
@@ -101,6 +103,10 @@ return function($type_name) {
 		$n_values = sizeof($type["values"]);
 
 		foreach ($type["values"] as $i => $value) {
+
+			$ret .= "    <span class=\"hljs-comment\">// ".$value["description"]."</span>\n";
+
+
 			$ret .= "    ".napcdoc::html_createElement("span",
 				["class" => "c-identifier"],
 				$value["name"]
