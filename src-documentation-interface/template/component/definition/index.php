@@ -8,15 +8,21 @@ div.definition-section-title {
 div.definition-section-title h3 {
 	flex-shrink: 0;
 	padding-right: 10px;
-	font-size: 14px;
+	
+	/*font-size: 14px;
 	text-transform: uppercase;
 	color: var(--section-title-color);
+	*/
+
+	font-size: 16px;
+	color: var(--base-text-color);
 }
 
 div.definition-section-title hr {
 	width: 100%;
 	background: rgba(255, 255, 255, .2);
 	background: linear-gradient(90deg, var(--section-title-color) 30%, transparent 100%);
+	background: var(--code-border);
 	border: none;
 	height: 2px;
 	margin: 0 !important;
