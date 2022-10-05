@@ -26,6 +26,7 @@
 	 * @param context Context to be passed to function
 	 * @return
 	 * On success a number that can be passed to `napc_removeLogHandlerFunction`.
+	 * 
 	 * Otherwise a negative number is returned.
 	 * @changelog 2.0.0 12.04.2022 initial version
 	 */
