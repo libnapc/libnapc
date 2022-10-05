@@ -64,6 +64,14 @@ document.querySelectorAll("pre.code.hljs").forEach(el => {
 	el.innerHTML = replaceDefinitions(el.innerHTML)
 })
 
+document.querySelectorAll("pre.code-inside-content-box.hljs").forEach(el => {
+	el.innerHTML = window.hljs.highlight(el.innerText, {
+		language: "c"
+	}).value
+
+	el.innerHTML = replaceDefinitions(el.innerHTML)
+})
+
 //window.napcdoc.lib.initPopover()
 window.napcdoc.lib.initGlobalSearch()
 window.napcdoc.lib.initLocalSearch()

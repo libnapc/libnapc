@@ -3,9 +3,13 @@
 if (strlen($__keys["general_info"]["example"] ?? "")) {
 	echo '<div class="module-section">';
 	echo napcdoc::site_renderTemplateFile("component/definition/section-title", [
-		"label" => "Example Usage"
+		"label" => "Example" // Example(s)
 	]);
 
-	echo '<pre class="code hljs">'.$__keys["general_info"]["example"].'</pre>';
+	echo napcdoc::site_renderTemplateFile("component/content-box", [
+		"type" => "code-example",
+		"content" => '<pre class="code-inside-content-box hljs">'.$__keys["general_info"]["example"].'</pre>'
+	]);
+
 	echo '</div>';
 }
