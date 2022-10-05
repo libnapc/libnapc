@@ -5,7 +5,7 @@ return function($type_name) {
 
 	$type = $napc["definitions"][$type_name];
 
-	$ret = '<pre class="code">';
+	$ret = '<pre class="code-inside-content-box">';
 
 	if ($type["kind"] === "alias") {
 		$ret .= napcdoc::html_createElement("span",

@@ -5,7 +5,7 @@ return function($macro_name) {
 
 	$macro = $napc["definitions"][$macro_name];
 
-	$ret  = '<pre class="code">';
+	$ret  = '<pre class="code-inside-content-box">';
 	$ret .= "#define $macro_name(";
 
 	$params = $macro["params"];

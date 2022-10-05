@@ -8,7 +8,7 @@ return function($fn_name) {
 	$fn_params = $fn["params"];
 	$fn_param_count = sizeof($fn_params);
 
-	$ret  = '<pre class="code">';
+	$ret  = '<pre class="code-inside-content-box">';
 
 	$ret .= napcdoc::html_createElement("span",
 		["class" => "c-type"],
