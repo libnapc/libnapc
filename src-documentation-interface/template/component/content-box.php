@@ -12,7 +12,7 @@ if ($__keys["type"] === "warning") {
 	$icon = "info";
 	$color = "blue";
 	$title = "Note";
-} else if ($__keys["type"] === "code") {
+} else if ($__keys["type"] === "declaration") {
 	$icon = "code-braces";
 	$color = "gray";
 	$title = "Declaration";
