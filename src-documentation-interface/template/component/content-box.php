@@ -22,11 +22,17 @@ if ($__keys["type"] === "warning") {
 	$icon = "layers-triple";
 	$color = "green";
 	$title = "HAL";
-} else if ($__keys["type"] === "code") {
+} else if ($__keys["type"] === "code" || $__keys["type"] === "example-usage") {
 	$icon = "code-tags";
 	$color = "gray";
 	$language = $__keys["code_language"] ?? "none";
-	$title = "Code ($language)";
+
+	if ($__keys["type"] === "example-usage") {
+		$title = "Example Usage";
+		$color .= " no-border";
+	} else {
+		$title = "Code ($language)";
+	}
 
 	$content  = "";
 	$content .= "<pre class=\"code-inside-content-box hljs\" data-language=\"$language\">";
