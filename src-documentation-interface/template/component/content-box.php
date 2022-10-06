@@ -3,7 +3,7 @@
 $content = $__keys["content"];
 
 if ($__keys["type"] === "warning") {
-	$icon = "alert-circle";
+	$icon = "alert";
 	$color = "orange";
 	$title = "Caution";
 } else if ($__keys["type"] === "deprecation") {
