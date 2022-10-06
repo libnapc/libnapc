@@ -430,6 +430,8 @@ class Parsedown
 
             // added by nap.software
             $is_c = false;
+            // added by nap.software
+            $language = "unknown";
 
             if (isset($matches[1]))
             {
@@ -462,6 +464,8 @@ class Parsedown
                 'element' => array(
                     'name' => 'pre',
                     /** added by nap.software **/
+                    "nap_software_use_content_box" => true,
+                    "nap_software_language" => $language,
                     'attributes' => [
                         'class' => $is_c ? "hljs code" : "code"
                     ],
@@ -1490,6 +1494,23 @@ class Parsedown
         {
             $Element = $this->sanitiseElement($Element);
         }
+
+        /** added by nap.software **/
+        // render ```c code blocks with 'content-box' component
+        if (array_key_exists("nap_software_use_content_box", $Element)) {
+            $use_content_box = $Element["nap_software_use_content_box"];
+
+            $language = $Element["nap_software_language"] ?? "none";
+
+            if ($use_content_box) {
+                return napcdoc::site_renderTemplateFile("component/content-box", [
+                    "type" => "code",
+                    "code_language" => $language,
+                    "code" => $Element["text"]["text"]
+                ]);
+            }
+        }
+        /** added by nap.software **/
 
         $markup = '<'.$Element['name'];
 
