@@ -1,5 +1,7 @@
 <?php
 
+$content = $__keys["content"];
+
 if ($__keys["type"] === "warning") {
 	$icon = "alert-circle";
 	$color = "orange";
@@ -16,10 +18,16 @@ if ($__keys["type"] === "warning") {
 	$icon = "code-braces";
 	$color = "gray";
 	$title = "Declaration";
-} else if ($__keys["type"] === "code-example") {
+} else if ($__keys["type"] === "code") {
 	$icon = "code-tags";
 	$color = "gray";
-	$title = "Example Usage";
+	$language = $__keys["code_language"] ?? "none";
+	$title = "Code ($language)";
+
+	$content  = "";
+	$content .= "<pre class=\"code-inside-content-box hljs\" data-language=\"$language\">";
+	$content .= htmlspecialchars($__keys["code"]);
+	$content .= "</pre>";
 }
 
 ?>
@@ -32,5 +40,5 @@ if ($__keys["type"] === "warning") {
 		?>
 		<div><?php echo $title; ?></div>
 	</div>
-	<div class="content-box-content"><?php echo $__keys["content"]; ?></div>
+	<div class="content-box-content"><?php echo $content; ?></div>
 </div>

@@ -7,8 +7,9 @@ if (strlen($__keys["general_info"]["example"] ?? "")) {
 	]);
 
 	echo napcdoc::site_renderTemplateFile("component/content-box", [
-		"type" => "code-example",
-		"content" => '<pre class="code-inside-content-box hljs">'.$__keys["general_info"]["example"].'</pre>'
+		"type" => "code",
+		"code_language" => "c",
+		"code" => $__keys["general_info"]["example"]
 	]);
 
 	echo '</div>';
