@@ -6,7 +6,7 @@ if ($__keys["type"] === "warning") {
 	$title = "Caution";
 } else if ($__keys["type"] === "deprecation") {
 	$icon = "trash-can";
-	$color = "red";
+	$color = "orange";
 	$title = "Deprecation Notice";
 } else if ($__keys["type"] === "info") {
 	$icon = "info";
