@@ -56,21 +56,23 @@ window.addEventListener("keydown", (e) => {
 	}
 })
 
-document.querySelectorAll("pre.code.hljs").forEach(el => {
-	el.innerHTML = window.hljs.highlight(el.innerText, {
-		language: "c"
+function highlightElement(element) {
+	let language = element.getAttribute("data-language")
+	if (!language || language === "none" || language === "unknown") {
+		console.warn("data-language missing for element, falling back to 'c'", element)
+
+		language = "c"
+	}
+
+	element.innerHTML = window.hljs.highlight(element.innerText, {
+		language
 	}).value
 
-	el.innerHTML = replaceDefinitions(el.innerHTML)
-})
+	element.innerHTML = replaceDefinitions(element.innerHTML)
+}
 
-document.querySelectorAll("pre.code-inside-content-box.hljs").forEach(el => {
-	el.innerHTML = window.hljs.highlight(el.innerText, {
-		language: "c"
-	}).value
-
-	el.innerHTML = replaceDefinitions(el.innerHTML)
-})
+document.querySelectorAll("pre.code.hljs").forEach(highlightElement)
+document.querySelectorAll("pre.code-inside-content-box.hljs").forEach(highlightElement)
 
 //window.napcdoc.lib.initPopover()
 window.napcdoc.lib.initGlobalSearch()
