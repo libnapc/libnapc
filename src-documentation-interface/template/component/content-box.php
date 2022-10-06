@@ -18,6 +18,10 @@ if ($__keys["type"] === "warning") {
 	$icon = "code-braces";
 	$color = "gray";
 	$title = "Declaration";
+} else if ($__keys["type"] === "hal") {
+	$icon = "layers-triple";
+	$color = "green";
+	$title = "HAL";
 } else if ($__keys["type"] === "code") {
 	$icon = "code-tags";
 	$color = "gray";
