@@ -45,7 +45,7 @@ if ($__keys["type"] === "warning") {
 	<div class="content-box-head">
 		<?php
 			echo napcdoc::html_createSVGElement(
-				"$icon", 12, 12
+				"$icon", 16, 16
 			);
 		?>
 		<div><?php echo $title; ?></div>
