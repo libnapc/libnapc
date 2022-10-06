@@ -55,7 +55,8 @@ return [
 		"doc-blocks.json",
 		"processed_files",
 		"build_constants.json",
-		"bundles"
+		"bundles",
+		"libnapc.a"
 	],
 
 	"creates"    => "napc.json",
@@ -66,6 +67,7 @@ return [
 		);
 
 		$context = [
+			"libnapc.a" => LIBNAPC_BUILD_FILES_DIR."/libnapc.a",
 			"downloadable_files" => [
 				"libnapc-linux.tar.gz" => LIBNAPC_BUILD_FILES_DIR."/bundles/linux.tar.gz",
 				"libnapc-arduino.zip"  => LIBNAPC_BUILD_FILES_DIR."/bundles/arduino.zip",
