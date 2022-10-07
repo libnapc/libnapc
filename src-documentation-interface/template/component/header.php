@@ -3,6 +3,8 @@
 
 	<?php echo napcdoc::site_renderTemplateFile("component/header/menu"); ?>
 
+	<?php echo napcdoc::site_renderTemplateFile("component/header/theme-switcher"); ?>
+
 	<div class="global-search-wrapper">
 		<input id="nd-global-search-input" placeholder="Please activate JavaScript">
 	</div>

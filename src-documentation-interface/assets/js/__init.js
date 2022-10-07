@@ -53,6 +53,10 @@ function toggleTheme() {
 	setTheme(theme)
 }
 
+document.querySelector(".theme-switcher").addEventListener("click", function(e) {
+	toggleTheme()
+})
+
 window.addEventListener("keydown", (e) => {
 	// SHIFT + /
 	if (e.keyCode === 191 && e.getModifierState("Shift")) {
