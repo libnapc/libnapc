@@ -37,22 +37,26 @@ function setTheme(theme_name) {
 	}
 }
 
+function toggleTheme() {
+	let theme = ""
+
+	if (document.body.classList.contains("theme-dark")) {
+		theme = "light"
+	} else {
+		theme = "dark"
+	}
+
+	console.log("Saved theme '" + theme + "'")
+
+	window.localStorage.setItem("theme", theme)
+
+	setTheme(theme)
+}
+
 window.addEventListener("keydown", (e) => {
 	// SHIFT + /
 	if (e.keyCode === 191 && e.getModifierState("Shift")) {
-		let theme = ""
-
-		if (document.body.classList.contains("theme-dark")) {
-			theme = "light"
-		} else {
-			theme = "dark"
-		}
-
-		console.log("Saved theme '" + theme + "'")
-
-		window.localStorage.setItem("theme", theme)
-
-		setTheme(theme)
+		toggleTheme()
 	}
 })
 
