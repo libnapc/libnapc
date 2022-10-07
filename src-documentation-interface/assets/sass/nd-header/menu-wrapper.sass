@@ -4,8 +4,12 @@
 	display: flex
 	align-items: center
 	height: 100%
+	font-size: 14px
 
 	a
+		display: flex
+		align-items: center
+
 		&:hover
 			color: var(--base-text-color)
 
@@ -31,6 +35,11 @@
 		&.active
 			color: var(--base-text-color)
 			border-bottom-color: var(--header-border-bottom)
+
+		div.napcdoc-svg-image
+			margin-right: 5px
+			svg path
+				fill: currentColor
 
 body.theme-light #nd-header
 	box-shadow: inset 0px -5px 20px rgba(0, 0, 0, .18)

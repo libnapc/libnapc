@@ -3,24 +3,28 @@
 		$pages = [
 			[
 				"label" => "Overview",
+				"icon" => "home",
 				"tablet_label" => "Overview",
 				"mobile_label" => "Overview",
 				"resource" => "home.html"
 			],
 			[
 				"label" => "API Reference",
+				"icon" => "bolt",
 				"tablet_label" => "API",
 				"mobile_label" => "API",
 				"resource" => "api.html"
 			],
 			[
 				"label" => "Documentation",
+				"icon" => "bookshelf",
 				"tablet_label" => "Docs",
 				"mobile_label" => "Docs",
 				"resource" => "documentation/index.html"
 			],
 			[
 				"label" => "Releases",
+				"icon" => "package",
 				"tablet_label" => "Releases",
 				"resource" => "releases.html"
 			]
@@ -54,8 +58,12 @@
 				$classes[] = "no-mobile";
 			}
 
+			$inner_html  = "";
+
+			$inner_html .= napcdoc::html_createSVGElement($page["icon"], 18, 18);
+
 			// desktop
-			$inner_html  = "<u>".$page["label"]."</u>";
+			$inner_html .= "<u>".$page["label"]."</u>";
 			// tablet
 			$inner_html .= "<b>".($page["tablet_label"] ?? $page["label"])."</b>";
 			// mobile
