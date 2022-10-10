@@ -11,3 +11,16 @@
 	a
 		display: flex
 		align-items: center
+
+	.dark-logo-mobile, .light-logo-mobile
+		display: none
+
+body.theme-dark
+	#nd-header div.logo-wrapper
+		.light-logo
+			display: none
+
+body.theme-light
+	#nd-header div.logo-wrapper
+		.dark-logo
+			display: none

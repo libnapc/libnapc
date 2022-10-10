@@ -1,7 +1,9 @@
 @media only screen and (max-width: 1000px)
 	#nd-header
 		div.logo-wrapper
-			display: none !important
+			width: auto
+			.dark-logo, .light-logo
+				display: none !important
 
 		div.menu-wrapper
 			a
@@ -24,6 +26,16 @@
 
 		div.mobile-menu-wrapper
 			display: block
+
+	body.theme-dark
+		#nd-header div.logo-wrapper
+			.dark-logo-mobile
+				display: block
+
+	body.theme-light
+		#nd-header div.logo-wrapper
+			.light-logo-mobile
+				display: block
 
 	#nd-global-search-results
 		display: none !important
