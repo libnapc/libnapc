@@ -9,6 +9,7 @@
 	a
 		display: flex
 		align-items: center
+		padding: 0px 12px
 
 		&:hover
 			color: var(--base-text-color)
@@ -29,7 +30,6 @@
 		align-items: center
 		border-bottom: 4px solid transparent
 		text-decoration: none
-		margin: 0px 10px
 		color: var(--base-text-color-dimmed-2)
 
 		&.active
@@ -40,3 +40,16 @@
 			margin-right: 5px
 			svg path
 				fill: currentColor
+
+body.theme-dark
+	#nd-header div.menu-wrapper
+		a
+			&.active
+				background: linear-gradient(0deg, rgba(41, 41, 62, .37), transparent)
+
+body.theme-light
+	#nd-header div.menu-wrapper
+		a
+			&.active
+				background: linear-gradient(0deg, rgba(54, 123, 173, .16), transparent)
+				box-shadow: inset 0px 10px 8px rgb(54 123 173 / 12%)
