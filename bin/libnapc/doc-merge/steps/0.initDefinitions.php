@@ -43,10 +43,13 @@ function libnapc_docMerge_createGeneralInfoByDocBlock($doc_block) {
 		$general_info["changelog"] = $changelog;
 	}
 
+	if (napphp::arr_keyExists($doc_block, "@notes")) {
+		$general_info["notes"] = napphp::util_arrayify($doc_block["@notes"]);
+	}
+
 	$additional_doc_block_mappings = [
 		"@brief" => "brief",
 		"@description" => "description",
-		"@notes" => "notes",
 		"@rationale" => "rationale",
 		"@warning" => "warning",
 		"@example" => "example"
