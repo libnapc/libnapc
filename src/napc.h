@@ -48,7 +48,7 @@
 	#include <napc-rand-source/napc-rand-source.h>
 
 	#include <module/pool/pool.h>
-	#include <module/os-timer/os-timer.h>
+	#include <module/hr-timer/hr-timer.h>
 	#include <module/timer/timer.h>
 	#include <module/random/random.h>
 	#include <module/parser/parser.h>

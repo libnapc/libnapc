@@ -33,7 +33,7 @@
 	 * Is used for structs that are allocated on the stack and have an
 	 * _init() function.
 	 */
-	#define NAPC_MAGIC_napc__OSTimer                         NAPC_U32_LITERAL(0x831f4521)
+	#define NAPC_MAGIC_napc__HRTimer                         NAPC_U32_LITERAL(0x56d3a4f1)
 	#define NAPC_MAGIC_napc__Timer                           NAPC_U32_LITERAL(0x2f1fa628)
 	#define NAPC_MAGIC_napc__Pool                            NAPC_U32_LITERAL(0xd3d0df2a)
 
