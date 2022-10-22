@@ -4,7 +4,6 @@
 
 	#include <stdio.h> // sscanf()
 	#include <string.h> // strlen()
-	#include <stdlib.h>
 
 	static napc_time current_delay = 0;
 
@@ -33,7 +32,7 @@
 			}
 			// warn on suffix that is not 0-9
 			else if (suffix > '9' || '0' > suffix) {
-				napc_printf("[warn] HAL_napc_loopYieldCPU: invalid suffix '%c'\n", suffix);
+				napc_printf("HAL_napc_loopYieldCPU (linux) invalid suffix '%c'\n", suffix);
 			}
 
 			unsigned val = 0;
@@ -45,12 +44,12 @@
 					delay_multiplier = (napc_time)mult;
 				} else {
 					napc_printf(
-						"[warn] HAL_napc_loopYieldCPU: delay cannot be zero.\n"
+						"HAL_napc_loopYieldCPU (linux) delay cannot be zero.\n"
 					);
 				}
 			} else {
 				napc_printf(
-					"[warn] HAL_napc_loopYieldCPU: failed to parse 'NAPC_LOOP_DELAY'='%s'\n",
+					"HAL_napc_loopYieldCPU (linux) failed to parse 'NAPC_LOOP_DELAY'='%s'\n",
 					delay_value
 				);
 			}
@@ -58,14 +57,17 @@
 
 		current_delay = delay_value_in_us * delay_multiplier;
 
-		napc_printf("[info] HAL_napc_loopYieldCPU: using delay of %u microseconds\n", current_delay);
+		napc_printf("HAL_napc_loopYieldCPU (linux) using delay = %u microseconds\n", current_delay);
 
 		return current_delay;
 	}
 
-	void HAL_napc_loopYieldCPU(void) {
+	void HAL_napc_loopYieldCPU(bool dry_run) {
 		napc_time delay_value_in_us = getLoopDelay();
 
-		napc_delayUs(delay_value_in_us);
+		// it's likely that the function wasn't called as a dry run
+		if (NAPC_LIKELY(!dry_run)) {
+			napc_delayUs(delay_value_in_us);
+		}
 	}
 #endif

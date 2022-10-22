@@ -26,6 +26,6 @@ void napc_main(const char *platform) {
 		}
 
 		// prevent high cpu usage on linux systems
-		HAL_napc_loopYieldCPU();
+		HAL_napc_loopYieldCPU(false);
 	}
 }

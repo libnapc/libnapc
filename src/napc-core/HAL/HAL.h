@@ -3,7 +3,7 @@
 
 	#include <napc-core/napc-core.h>
 
-	void HAL_napc_loopYieldCPU(void);
+	void HAL_napc_loopYieldCPU(bool dry_run);
 
 	napc_size HAL_napc_getFreeMemory(void) NAPC_FN_WARNUNUSED_RET();
 #endif
