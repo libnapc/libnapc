@@ -12,8 +12,6 @@ void napc_main(const char *platform) {
 
 	napc_setup(platform);
 
-	bool is_linux = napc_streqli(platform, "linux");
-
 	while (true) {
 		napc_time delta = napc_getTimeSinceBoot() - reference;
 
@@ -28,8 +26,6 @@ void napc_main(const char *platform) {
 		}
 
 		// prevent high cpu usage on linux systems
-		if (is_linux) {
-			napc_delay(5);
-		}
+		HAL_napc_loopYieldCPU();
 	}
 }
