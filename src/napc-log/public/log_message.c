@@ -56,6 +56,16 @@ void napc_logMessage(
 ) {
 	napc_time time = napc_getTimeSinceBoot();
 
+	if (PV_napc_log_colorful_output) {
+		if (level == NAPC_LEVEL_INFO) {
+			napc_puts("\033[0;34m");
+		} else if (level == NAPC_LEVEL_WARNING) {
+			napc_puts("\033[0;33m");
+		} else if (level == NAPC_LEVEL_ERROR) {
+			napc_puts("\033[0;31m");
+		}
+	}
+
 	{
 		const char *label = napc_logLevelToString(level);
 
@@ -93,6 +103,10 @@ void napc_logMessage(
 				napc_putc(' ');
 			}
 		}
+	}
+
+	if (PV_napc_log_colorful_output) {
+		napc_puts("\033[0;0m");
 	}
 
 	napc_puts("\n");
