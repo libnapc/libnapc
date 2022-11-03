@@ -242,7 +242,7 @@
 	 * @brief Get remaining bytes to be read.
 	 * @version 2.0.0
 	 * @description
-	 * Returns the remaining bytes to be read.
+	 * Returns the remaining bytes to be read `(size - offset)`.
 	 * @changelog 2.0.0 10.04.2022 initial version
 	 */
 	napc_size napc_Reader_getRemainingBytes(
