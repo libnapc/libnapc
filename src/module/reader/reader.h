@@ -238,6 +238,18 @@
 	);
 
 	/*!
+	 * @name napc_Reader_getRemainingBytes
+	 * @brief Get remaining bytes to be read.
+	 * @version 2.0.0
+	 * @description
+	 * Returns the remaining bytes to be read.
+	 * @changelog 2.0.0 10.04.2022 initial version
+	 */
+	napc_size napc_Reader_getRemainingBytes(
+		const napc__Reader *ctx
+	);
+
+	/*!
 	 * @name napc_Reader_getCurrentAddress
 	 * @brief Get current address.
 	 * @version 2.0.0
