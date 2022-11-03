@@ -5,7 +5,7 @@ TEST_CASE("should write chars correctly") {
 	char data[4] = {0, 0, 0, 0xa};
 	napc__Writer ctx;
 
-	napc_Writer_init(&ctx, data, sizeof(data));
+	napc_Writer_init(&ctx, data, sizeof(data), NAPC_WRITER_MODE_REGULAR);
 
 	TEST_ASSERT(napc_Writer_writeChar(&ctx, 'd'));
 	TEST_ASSERT(napc_Writer_writeChar(&ctx, 'e'));

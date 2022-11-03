@@ -124,7 +124,7 @@ function compile($input_file) {
 	$has_crashed = false;
 
 	foreach ($lines as $line) {
-		if (strpos($line, "Write operation failed and no_fail_mode is set to true") !== false) {
+		if (strpos($line, "Write operation failed and mode is set to NOFAIL.") !== false) {
 			$has_crashed = true;
 		}
 	}

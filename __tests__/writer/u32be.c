@@ -5,7 +5,7 @@ TEST_CASE("should write u32be correctly") {
 	napc_u8 data[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	napc__Writer ctx;
 
-	napc_Writer_init(&ctx, data, sizeof(data));
+	napc_Writer_init(&ctx, data, sizeof(data), NAPC_WRITER_MODE_REGULAR);
 
 	TEST_ASSERT(napc_Writer_writeU32BE(&ctx, NAPC_U32_LITERAL(0xdeadbeef)));
 	TEST_ASSERT(napc_Writer_writeU32BE(&ctx, NAPC_U32_LITERAL(0xabcdef12)));
