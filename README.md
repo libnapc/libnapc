@@ -28,7 +28,7 @@ It provides HAL (Hardware Abstraction Layer) so that applications written in it 
 
 > **Warning**
 > For all versions starting with 1.x.x (e.g. 1.5.30) API is not stable, anticipate breaking changes with any new release.
-> First version starting with 2.x will be stable and follow semantic versioning.
+> First version starting with 2.x.x will be stable and follow semantic versioning.
 
 Every napc application using libnapc defines at least these two functions:
 
