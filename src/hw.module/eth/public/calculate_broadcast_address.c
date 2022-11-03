@@ -35,7 +35,7 @@ bool napc_eth_calculateBroadcastAddress(
 		return false;
 	}
 
-	napc__Writer wctx = napc_Writer_create(out, out_size);
+	napc__Writer wctx = napc_Writer_create(out, out_size, NAPC_WRITER_MODE_REGULAR);
 
 	if (!_validateSubnetMask(submask_bytes)) {
 		PV_NAPC_ETH_ERROR(

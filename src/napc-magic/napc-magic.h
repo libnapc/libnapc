@@ -41,7 +41,6 @@
 	#define NAPC_MAGIC_napc__Reader                          NAPC_U32_LITERAL(0xf0de7965)
 
 	#define NAPC_MAGIC_napc__Writer                          NAPC_U32_LITERAL(0x1b81b5d1)
-	#define NAPC_MAGIC_napc__NFWriter                        NAPC_U32_LITERAL(0x377e1020)
 
 	#define NAPC_MAGIC_napc__IPv4Participant                 NAPC_U32_LITERAL(0x97d59a3d)
 #endif

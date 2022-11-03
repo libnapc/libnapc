@@ -17,9 +17,9 @@ bool PV_napc_Writer_checkAccess(
 			ctx->size
 		);
 
-		if (ctx->no_fail_mode) {
+		if (ctx->mode == NAPC_WRITER_MODE_NOFAIL) {
 			NAPC_PANIC(
-				"Write operation failed and no_fail_mode is set to true."
+				"Write operation failed and mode is set to NOFAIL."
 			);
 		}
 
