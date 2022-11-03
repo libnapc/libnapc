@@ -26,6 +26,10 @@ It provides HAL (Hardware Abstraction Layer) so that applications written in it 
 > **Warning**
 > This library is developed on a per-need basis. It is not a complete library (yet?).
 
+> **Warning**
+> For all versions starting with 1.x.x (e.g. 1.5.30) API is not stable, anticipate breaking changes with any new release.
+> First version starting with 2.x will be stable and follow semantic versioning.
+
 Every napc application using libnapc defines at least these two functions:
 
 `napc_app_setup()`
