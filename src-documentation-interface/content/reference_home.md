@@ -1,4 +1,4 @@
-# Overview
+# Home
 
 Thank you very much for checking out the documentation of [libnapc](https://libnapc.nap-software.com/)! 🎉
 
@@ -18,3 +18,13 @@ Its split up into three parts:
   - FileSystem
 
 It provides HAL (Hardware Abstraction Layer) so that applications written in it can be run both on Arduino and Linux.
+
+<div class="content-box color-orange">
+	<div class="content-box-head">
+		<div>Caution</div>
+	</div>
+	<div class="content-box-content">
+		<p>For all versions starting with 1.x.x (e.g. 1.5.30) API is not stable, anticipate breaking changes with any new release.</p>
+		<p>First version starting with 2.x.x will be stable and follow semantic versioning.</p>
+	</div>
+</div>
