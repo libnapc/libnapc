@@ -8,18 +8,18 @@ bool PV_napc_Writer_checkAccess(
 	napc_size new_offset = ctx->_offset + type_size;
 
 	if (new_offset > ctx->size) {
-		PV_NAPC_WRITER_ERROR(
-			"Refusing to write type '%s' (size=%" NAPC_SIZE_PRINTF ") to buffer"
-			" (offset=%" NAPC_SIZE_PRINTF ",size=%" NAPC_SIZE_PRINTF ")",
-			type,
-			type_size,
-			ctx->_offset,
-			ctx->size
-		);
-
-		if (ctx->mode == NAPC_WRITER_MODE_NOFAIL) {
+		if (ctx->_fail_mode == NAPC_WRITER_FAILMODE_LOG) {
+			PV_NAPC_WRITER_ERROR(
+				"Refusing to write type '%s' (size=%" NAPC_SIZE_PRINTF ") to buffer"
+				" (offset=%" NAPC_SIZE_PRINTF ",size=%" NAPC_SIZE_PRINTF ")",
+				type,
+				type_size,
+				ctx->_offset,
+				ctx->size
+			);
+		} else if (NAPC_UNLIKELY(ctx->_fail_mode == NAPC_WRITER_FAILMODE_PANIC)) {
 			NAPC_PANIC(
-				"Write operation failed and mode is set to NOFAIL."
+				"Write operation failed and fail mode is set to NAPC_WRITER_FAILMODE_PANIC."
 			);
 		}
 

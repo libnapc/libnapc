@@ -1,10 +1,12 @@
 #include <module/writer/_private/_writer.h>
 
 void napc_Writer_init(
-	napc__Writer *ctx, void *data, napc_size data_size, napc__WriterMode mode
+	napc__Writer *ctx, void *data, napc_size data_size
 ) {
 	NAPC_MAGIC_INIT(napc__Writer, ctx);
-	ctx->mode = mode;
+
+	ctx->_fail_mode = NAPC_WRITER_FAILMODE_LOG;
+
 	ctx->data = data;
 	ctx->size = data_size;
 	ctx->_offset = 0;

@@ -5,7 +5,7 @@ TEST_CASE("should work correctly") {
 	napc_u8 buffer[6] = {'a', 'b', 'c', 'd', 'e', 'f'};
 
 	napc__Writer ctx;
-	napc_Writer_init(&ctx, buffer, sizeof(buffer), NAPC_WRITER_MODE_REGULAR);
+	napc_Writer_init(&ctx, buffer, sizeof(buffer));
 
 	// shoud fail
 	TEST_ASSERT(!napc_Writer_moveCurrentOffsetByAmount(&ctx, 6));

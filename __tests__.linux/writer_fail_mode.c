@@ -5,7 +5,9 @@ char buffer[5];
 void napc_app_setup(const char *platform) {
 	NAPC_IGNORE_VALUE(platform);
 
-	napc__Writer writer = napc_Writer_create(buffer, sizeof(buffer), NAPC_WRITER_MODE_NOFAIL);
+	napc__Writer writer = napc_Writer_create(buffer, sizeof(buffer));
+
+	napc_Writer_setAccessFailureMode(&writer, NAPC_WRITER_FAILMODE_PANIC);
 
 	napc_Writer_writeU8(&writer, 10);
 	napc_Writer_writeU8(&writer, 10);

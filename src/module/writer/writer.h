@@ -9,18 +9,20 @@
 	#include <napc-magic/napc-magic.h>
 
 	/*!
-	 * @name napc__WriterMode
+	 * @name napc__WriterFailMode
 	 * @module Writer
-	 * @brief Representation of writer operation mode.
+	 * @brief Action to be taken on failure.
 	 * @version 2.0.0
-	 * @enum NAPC_WRITER_MODE_REGULAR Regular mode.
-	 * @enum NAPC_WRITER_MODE_NOFAIL Abort on failure.
+	 * @enum NAPC_WRITER_FAILMODE_NONE Do nothing.
+	 * @enum NAPC_WRITER_FAILMODE_LOG Emit a log message of type error. This is the default.
+	 * @enum NAPC_WRITER_FAILMODE_PANIC Call NAPC_PANIC.
 	 * @changelog 2.0.0 21.10.2022 initial version
 	 */
-	typedef enum napc__WriterMode {
-		NAPC_WRITER_MODE_REGULAR = 0x10, // 0001 0000
-		NAPC_WRITER_MODE_NOFAIL  = 0x20  // 0010 0000
-	} napc__WriterMode;
+	typedef enum napc__WriterFailMode {
+		NAPC_WRITER_FAILMODE_NONE  = 0x01, // 0000 0001
+		NAPC_WRITER_FAILMODE_LOG   = 0x02, // 0000 0010
+		NAPC_WRITER_FAILMODE_PANIC = 0x04  // 0000 0100
+	} napc__WriterFailMode;
 
 	/*!
 	 * @name napc__Writer
@@ -34,7 +36,7 @@
 	typedef struct napc__Writer {
 		NAPC_MAGIC_MEMBER;
 
-		napc__WriterMode mode;
+		napc__WriterFailMode _fail_mode;
 
 		napc_size _offset;
 		napc_size size;
@@ -50,17 +52,16 @@
 	 * @param ctx Pointer to the napc__Writer instance to be initialized.
 	 * @param data Pointer to the buffer that we want to write to.
 	 * @param data_size Size of `data`.
-	 * @param mode The mode to be used.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @changelog 2.0.0 21.10.2022 add mode
 	 * @example
 	 * napc__Writer writer;
 	 * char buffer[512];
 	 * 
-	 * napc_Writer_init(&writer, buffer, sizeof(buffer), NAPC_WRITER_MODE_REGULAR);
+	 * napc_Writer_init(&writer, buffer, sizeof(buffer));
 	 */
 	void napc_Writer_init(
-		napc__Writer *ctx, void *data, napc_size data_size, napc__WriterMode mode
+		napc__Writer *ctx, void *data, napc_size data_size
 	);
 
 	/*!
@@ -71,15 +72,37 @@
 	 * Create a writer.
 	 * @param data Pointer to the buffer that we want to write to.
 	 * @param data_size Size of `data`.
-	 * @param mode The mode to be used.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @changelog 2.0.0 21.10.2022 add mode
 	 * @example
 	 * char buffer[512];
 	 * 
-	 * napc__Writer writer = napc_Writer_create(buffer, sizeof(buffer), NAPC_WRITER_MODE_REGULAR);
+	 * napc__Writer writer = napc_Writer_create(buffer, sizeof(buffer));
 	 */
-	napc__Writer napc_Writer_create(void *data, napc_size data_size, napc__WriterMode mode);
+	napc__Writer napc_Writer_create(void *data, napc_size data_size);
+
+	/*!
+	 * @name napc_Writer_setAccessFailureMode
+	 * @brief Set action to be taken on access failure.
+	 * @version 2.0.0.
+	 * @description
+	 * Sets the action to be taken when one of the `write` functions
+	 * fails (i.e. returns `false`).
+	 * 
+	 * The default is to log an error message.
+	 * @param ctx Pointer to the napc__Writer instance.
+	 * @param mode The fail mode to set.
+	 * @notes
+	 * Failure mode `PANIC` should be used when you're sure writes to a buffer will not fail.
+	 * 
+	 * Failure mode `NONE` can be used to disable logging.
+	 * 
+	 * Failure mode `LOG` is the default behaviour.
+	 * @changelog 2.0.0 21.10.2022 initial version
+	 */
+	void napc_Writer_setAccessFailureMode(
+		napc__Writer *ctx, napc__WriterFailMode mode
+	);
 
 	/*!
 	 * @name napc_Writer_moveCurrentOffsetByAmount
