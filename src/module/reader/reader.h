@@ -9,6 +9,22 @@
 	#include <napc-magic/napc-magic.h>
 
 	/*!
+	 * @name napc__ReaderFailMode
+	 * @module Reader
+	 * @brief Action to be taken on access failure.
+	 * @version 2.0.0
+	 * @enum NAPC_READER_FAILMODE_NONE Do nothing.
+	 * @enum NAPC_READER_FAILMODE_LOG Emit a log message of type error. This is the default.
+	 * @enum NAPC_READER_FAILMODE_PANIC Call NAPC_PANIC.
+	 * @changelog 2.0.0 21.10.2022 initial version
+	 */
+	typedef enum napc__ReaderFailMode {
+		NAPC_READER_FAILMODE_NONE  = 0x10, // 0001 0000
+		NAPC_READER_FAILMODE_LOG   = 0x20, // 0010 0000
+		NAPC_READER_FAILMODE_PANIC = 0x40  // 0100 0000
+	} napc__ReaderFailMode;
+
+	/*!
 	 * @name napc__Reader
 	 * @module Reader
 	 * @brief Representation of a reader.
@@ -18,6 +34,9 @@
 	 */
 	typedef struct napc__Reader {
 		NAPC_MAGIC_MEMBER;
+
+		napc__ReaderFailMode _fail_mode;
+
 		napc_size _offset;
 		napc_size size;
 		const void *data;
@@ -59,6 +78,29 @@
 	 * napc__Reader reader = napc_Reader_create(buffer, sizeof(buffer));
 	 */
 	napc__Reader napc_Reader_create(const void *data, napc_size data_size);
+
+	/*!
+	 * @name napc_Reader_setAccessFailureMode
+	 * @brief Set action to be taken on access failure.
+	 * @version 2.0.0.
+	 * @description
+	 * Sets the action to be taken when one of the `reader` functions
+	 * fails (i.e. returns `false`).
+	 * 
+	 * The default is to log an error message.
+	 * @param ctx Pointer to the napc__Reader instance.
+	 * @param mode The fail mode to set.
+	 * @notes
+	 * Failure mode `PANIC` should be used when you're sure reads to a buffer will not fail.
+	 * 
+	 * Failure mode `NONE` can be used to disable logging.
+	 * 
+	 * Failure mode `LOG` is the default behaviour.
+	 * @changelog 2.0.0 21.10.2022 initial version
+	 */
+	void napc_Reader_setAccessFailureMode(
+		napc__Reader *ctx, napc__ReaderFailMode mode
+	);
 
 	/*!
 	 * @name napc_Reader_readU8
