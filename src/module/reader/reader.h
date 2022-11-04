@@ -91,7 +91,7 @@
 	 * @param ctx Pointer to the napc__Reader instance.
 	 * @param mode The fail mode to set.
 	 * @notes
-	 * Failure mode `PANIC` should be used when you're sure reads to a buffer will not fail.
+	 * Failure mode `PANIC` should be used when you're sure reads from a buffer will not fail.
 	 * 
 	 * Failure mode `NONE` can be used to disable logging.
 	 * 
