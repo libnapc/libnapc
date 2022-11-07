@@ -25,6 +25,6 @@ It provides HAL (Hardware Abstraction Layer) so that applications written in it 
 	</div>
 	<div class="content-box-content">
 		<p>For all versions starting with 1.x.x (e.g. 1.5.30) API is not stable, anticipate breaking changes with any new release.</p>
-		<p>First version starting with 2.x.x will be stable and follow semantic versioning.</p>
+		<p>First version starting with 2.x.x will be stable and follow <a href="https://semver.org/" target="_blank">semantic versioning</a>.</p>
 	</div>
 </div>
