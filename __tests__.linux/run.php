@@ -160,7 +160,7 @@ function compile($input_file) {
 	$has_crashed = false;
 
 	foreach ($lines as $line) {
-		if (strpos($line, "Read operation failed and fail mode is set to NAPC_READER_FAILMODE_PANIC.") !== false) {
+		if (strpos($line, "Read operation failed and fail mode is set to NAPC_ACCESS_FAILURE_MODE_PANIC.") !== false) {
 			$has_crashed = true;
 		}
 	}

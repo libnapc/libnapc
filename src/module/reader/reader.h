@@ -7,22 +7,7 @@
 
 	#include <libnapc.h>
 	#include <napc-magic/napc-magic.h>
-
-	/*!
-	 * @name napc__ReaderFailMode
-	 * @module Reader
-	 * @brief Action to be taken on access failure.
-	 * @version 2.0.0
-	 * @enum NAPC_READER_FAILMODE_NONE Do nothing.
-	 * @enum NAPC_READER_FAILMODE_LOG Emit a log message of type error. This is the default.
-	 * @enum NAPC_READER_FAILMODE_PANIC Call NAPC_PANIC.
-	 * @changelog 2.0.0 21.10.2022 initial version
-	 */
-	typedef enum napc__ReaderFailMode {
-		NAPC_READER_FAILMODE_NONE  = 0x10, // 0001 0000
-		NAPC_READER_FAILMODE_LOG   = 0x20, // 0010 0000
-		NAPC_READER_FAILMODE_PANIC = 0x40  // 0100 0000
-	} napc__ReaderFailMode;
+	#include <napc-core/napc-core.h> // napc__AccessFailureMode
 
 	/*!
 	 * @name napc__Reader
@@ -31,11 +16,12 @@
 	 * @version 1.0.0
 	 * @opaque
 	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 21.10.2022 add mode
 	 */
 	typedef struct napc__Reader {
 		NAPC_MAGIC_MEMBER;
 
-		napc__ReaderFailMode _fail_mode;
+		napc__AccessFailureMode _fail_mode;
 
 		napc_size _offset;
 		napc_size size;
@@ -84,22 +70,18 @@
 	 * @brief Set action to be taken on access failure.
 	 * @version 2.0.0.
 	 * @description
-	 * Sets the action to be taken when one of the `reader` functions
+	 * Sets the action to be taken when one of the `read` functions
 	 * fails (i.e. returns `false`).
 	 * 
-	 * The default is to log an error message.
+	 * The default is to log an error message but can be overwritten by `napc_setDefaultAccessFailureMode`.
 	 * @param ctx Pointer to the napc__Reader instance.
 	 * @param mode The fail mode to set.
-	 * @notes
-	 * Failure mode `PANIC` should be used when you're sure reads from a buffer will not fail.
-	 * 
-	 * Failure mode `NONE` can be used to disable logging.
-	 * 
-	 * Failure mode `LOG` is the default behaviour.
 	 * @changelog 2.0.0 21.10.2022 initial version
+	 * @notes
+	 * For more information refer to the `napc__AccessFailureMode` type.
 	 */
 	void napc_Reader_setAccessFailureMode(
-		napc__Reader *ctx, napc__ReaderFailMode mode
+		napc__Reader *ctx, napc__AccessFailureMode mode
 	);
 
 	/*!

@@ -7,7 +7,7 @@ void napc_Reader_init(
 		NAPC_PANIC("Size cannot be zero inside napc_Reader_init().");
 	}
 
-	ctx->_fail_mode = NAPC_READER_FAILMODE_LOG;
+	ctx->_fail_mode = PV_napc_getDefaultAccessFailureMode();
 
 	ctx->data = data;
 	ctx->size = data_size;
