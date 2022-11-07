@@ -7,22 +7,7 @@
 
 	#include <libnapc.h>
 	#include <napc-magic/napc-magic.h>
-
-	/*!
-	 * @name napc__WriterFailMode
-	 * @module Writer
-	 * @brief Action to be taken on failure.
-	 * @version 2.0.0
-	 * @enum NAPC_WRITER_FAILMODE_NONE Do nothing.
-	 * @enum NAPC_WRITER_FAILMODE_LOG Emit a log message of type error. This is the default.
-	 * @enum NAPC_WRITER_FAILMODE_PANIC Call NAPC_PANIC.
-	 * @changelog 2.0.0 21.10.2022 initial version
-	 */
-	typedef enum napc__WriterFailMode {
-		NAPC_WRITER_FAILMODE_NONE  = 0x01, // 0000 0001
-		NAPC_WRITER_FAILMODE_LOG   = 0x02, // 0000 0010
-		NAPC_WRITER_FAILMODE_PANIC = 0x04  // 0000 0100
-	} napc__WriterFailMode;
+	#include <napc-core/napc-core.h> // napc__AccessFailureMode
 
 	/*!
 	 * @name napc__Writer
@@ -36,7 +21,7 @@
 	typedef struct napc__Writer {
 		NAPC_MAGIC_MEMBER;
 
-		napc__WriterFailMode _fail_mode;
+		napc__AccessFailureMode _fail_mode;
 
 		napc_size _offset;
 		napc_size size;
@@ -89,19 +74,15 @@
 	 * Sets the action to be taken when one of the `write` functions
 	 * fails (i.e. returns `false`).
 	 * 
-	 * The default is to log an error message.
+	 * The default is to log an error message but can be overwritten by `napc_setDefaultAccessFailureMode`.
 	 * @param ctx Pointer to the napc__Writer instance.
 	 * @param mode The fail mode to set.
-	 * @notes
-	 * Failure mode `PANIC` should be used when you're sure writes to a buffer will not fail.
-	 * 
-	 * Failure mode `NONE` can be used to disable logging.
-	 * 
-	 * Failure mode `LOG` is the default behaviour.
 	 * @changelog 2.0.0 21.10.2022 initial version
+	 * @notes
+	 * For more information refer to the `napc__AccessFailureMode` type.
 	 */
 	void napc_Writer_setAccessFailureMode(
-		napc__Writer *ctx, napc__WriterFailMode mode
+		napc__Writer *ctx, napc__AccessFailureMode mode
 	);
 
 	/*!

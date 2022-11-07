@@ -5,7 +5,7 @@ void napc_Writer_init(
 ) {
 	NAPC_MAGIC_INIT(napc__Writer, ctx);
 
-	ctx->_fail_mode = NAPC_WRITER_FAILMODE_LOG;
+	ctx->_fail_mode = PV_napc_getDefaultAccessFailureMode();
 
 	ctx->data = data;
 	ctx->size = data_size;
