@@ -2,8 +2,6 @@
 
 const char *napc_getFullVersion(void);
 
-napc_time PV_napc_uptime = 0; // @global
-
 void napc_main(const char *platform) {
 	napc_time reference = napc_getTimeSinceBoot();
 
