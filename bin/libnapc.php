@@ -164,6 +164,11 @@ try {
 	}
 
 	$command_fn = $command["run"];
+
+	$colored_current_cmd = napphp::terminal_colorString("libnapc $command_name", "yellow");
+
+	fwrite(STDERR, "Running '$colored_current_cmd'\n");
+
 	$command_fn(parseArguments($argv));
 } catch (CommandError $e) {
 	fwrite(STDERR, "Command failed: ".$e->getMessage()."\n");
