@@ -60,6 +60,7 @@
 	#include <module/ipv4participant/ipv4participant.h>
 	#include <module/dns/dns.h>
 	#include <module/sha/sha.h>
+	#include <module/ring-buffer/ring-buffer.h>
 
 	#include <hw.module/eth/eth.h>
 	#include <hw.module/udp/udp.h>

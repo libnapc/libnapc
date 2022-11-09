@@ -43,4 +43,6 @@
 	#define NAPC_MAGIC_napc__Writer                          NAPC_U32_LITERAL(0x1b81b5d1)
 
 	#define NAPC_MAGIC_napc__IPv4Participant                 NAPC_U32_LITERAL(0x97d59a3d)
+
+	#define NAPC_MAGIC_napc__RingBuffer                      NAPC_U32_LITERAL(0x67fa9d2d)
 #endif
