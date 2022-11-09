@@ -3,5 +3,5 @@
 napc_size napc_RingBuffer_getAvailableBytes(const napc__RingBuffer *ctx) {
 	NAPC_MAGIC_ASSERT(napc__RingBuffer, ctx);
 
-	return 0;
+	return ctx->buffer_size - PV_napc_RingBuffer_numFreeSpots(ctx);
 }

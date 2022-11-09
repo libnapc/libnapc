@@ -22,7 +22,7 @@
 
 		napc__AccessFailureMode _fail_mode;
 
-		void *buffer;
+		napc_u8 *buffer;
 		napc_size buffer_size;
 
 		napc_size read_position;

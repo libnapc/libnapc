@@ -3,7 +3,22 @@
 bool napc_RingBuffer_removeByte(napc__RingBuffer *ctx, napc_u8 *out) {
 	NAPC_MAGIC_ASSERT(napc__RingBuffer, ctx);
 
-	NAPC_IGNORE_VALUE(out);
+	napc_size n_free_spots = PV_napc_RingBuffer_numFreeSpots(ctx);
 
-	return false;
+	if (n_free_spots == ctx->buffer_size) {
+		return false;
+	}
+
+	if (out) {
+		*out = ctx->buffer[ctx->read_position];
+	}
+
+	napc_size new_read_position = (ctx->read_position + 1) % ctx->buffer_size;
+
+	ctx->read_position = new_read_position;
+
+	// buffer will not be full again after a read operation
+	ctx->buffer_full = false;
+
+	return true;
 }

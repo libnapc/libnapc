@@ -3,7 +3,5 @@
 bool napc_RingBuffer_insertByte(napc__RingBuffer *ctx, napc_u8 byte) {
 	NAPC_MAGIC_ASSERT(napc__RingBuffer, ctx);
 
-	NAPC_IGNORE_VALUE(byte);
-
-	return false;
+	return PV_napc_RingBuffer_insertByte(ctx, byte, false);
 }
