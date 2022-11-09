@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 env:
-  NAPPHP_VERSION: v0.0.16
+  NAPPHP_VERSION: v0.0.17
   NAPPHP_LOAD_PATH: /home/runner/napphp/src/__loadAsClass.php
 
 jobs:
