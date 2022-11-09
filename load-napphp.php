@@ -20,6 +20,7 @@
 
 		if (defined("STDERR")) {
 			fwrite(STDERR, "Loaded nap-software/napphp version v".napphp::info_getVersion()."\n");
+			fwrite(STDERR, "Using PHP v".phpversion()."\n");
 		}
 
 		// setup tmp_dir
