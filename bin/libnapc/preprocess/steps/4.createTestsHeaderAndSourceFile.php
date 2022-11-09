@@ -32,8 +32,10 @@ ORIGIN_COMMENT;
 	}
 
 	foreach ($modules as $module) {
-		$file .= "void napc_${module}__runTests(void) {\n";
-		$header_file .= "    void napc_${module}__runTests(void);\n";
+		$c_friendly_module = libnapc_preprocess_CFriendlyModuleName($module);
+
+		$file .= "void napc_${c_friendly_module}__runTests(void) {\n";
+		$header_file .= "    void napc_${c_friendly_module}__runTests(void);\n";
 
 		foreach ($context["tests"][$module] as $test) {
 			$file .= "    $test();";
@@ -53,7 +55,9 @@ ORIGIN_COMMENT;
 	$header_file .= "\n    void napc_runAllTests(void);\n";
 
 	foreach ($modules as $module) {
-		$file .= "    napc_${module}__runTests();\n";
+		$c_friendly_module = libnapc_preprocess_CFriendlyModuleName($module);
+
+		$file .= "    napc_${c_friendly_module}__runTests();\n";
 	}
 
 	$file .= "    napc_unmute();\n";

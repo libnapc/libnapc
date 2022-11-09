@@ -15,6 +15,13 @@ function libnapc_preprocess_getReleaseVersion() {
 	return $git_branch."-".substr($git_HEAD, 0, 7);
 }
 
+/**
+ * Convert module name $module_name into a C-friendly identifier
+ */
+function libnapc_preprocess_CFriendlyModuleName($module_name) {
+	return napphp::str_replace($module_name, "-", "");
+}
+
 return [
 	"description" => [
 		"Preprocess source files. This does: ",

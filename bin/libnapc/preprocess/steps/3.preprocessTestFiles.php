@@ -23,6 +23,7 @@ ORIGIN_COMMENT;
 
 	foreach ($test_files as $test_file) {
 		$module = napphp::str_split($test_file["relative_path"], "/", 2)[0];
+		$c_friendly_module = libnapc_preprocess_CFriendlyModuleName($module);
 
 		if (!napphp::arr_keyExists($context["tests"], $module)) {
 			$context["tests"][$module] = [];
@@ -40,7 +41,7 @@ ORIGIN_COMMENT;
 
 				$test_case_id = $last_test_case_id + 1;
 
-				$fn_name = "PV_napc_${module}__testCase$test_case_id";
+				$fn_name = "PV_napc_${c_friendly_module}__testCase$test_case_id";
 
 				$new_file_contents .= "void $fn_name(void) {\n";
 				$new_file_contents .= "    napc_unmute();\n";
