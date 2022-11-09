@@ -3,7 +3,15 @@
 bool napc_RingBuffer_peekByte(const napc__RingBuffer *ctx, napc_u8 *out) {
 	NAPC_MAGIC_ASSERT(napc__RingBuffer, ctx);
 
-	NAPC_IGNORE_VALUE(out);
+	napc_size n_free_spots = PV_napc_RingBuffer_numFreeSpots(ctx);
 
-	return false;
+	if (n_free_spots == ctx->buffer_size) {
+		return false;
+	}
+
+	if (out) {
+		*out = ctx->buffer[ctx->read_position];
+	}
+
+	return true;
 }
