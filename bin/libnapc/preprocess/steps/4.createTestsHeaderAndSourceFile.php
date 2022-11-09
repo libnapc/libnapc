@@ -5,8 +5,18 @@ return function($args, &$context) {
 		return;
 	}
 
-	$file = "#include <napc.h>\n";
-	$header_file  = "#if !defined(NAPC_ALL_TESTS_FILE_h)\n";
+	$origin_comment = <<<ORIGIN_COMMENT
+/**
+ * This file was automatically created by bin/libnapc/preprocess/steps/4.createTestsHeaderAndSourceFile.php
+ */
+
+ORIGIN_COMMENT;
+
+	$file  = "$origin_comment";
+	$file .= "#include <napc.h>\n";
+
+	$header_file  = $origin_comment;
+	$header_file .= "#if !defined(NAPC_ALL_TESTS_FILE_h)\n";
 	$header_file .= "    #define NAPC_ALL_TESTS_FILE_h\n\n";
 	$header_file .= "    #if defined(__cplusplus)\n";
 	$header_file .= "        extern \"C\" {\n";

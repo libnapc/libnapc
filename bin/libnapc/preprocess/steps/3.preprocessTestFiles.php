@@ -5,6 +5,13 @@ return function($args, &$context) {
 		return;
 	}
 
+	$origin_comment = <<<ORIGIN_COMMENT
+/**
+ * This file was automatically created by bin/libnapc/preprocess/steps/3.preprocessTestFiles.php
+ */
+
+ORIGIN_COMMENT;
+
 	$output_dir = $context["output_dir"];
 
 	$test_files = napphp::arr_filter($context["test_source_entries"], function($entry) {
@@ -23,7 +30,8 @@ return function($args, &$context) {
 
 		$lines = napphp::fs_file($test_file["path"]);
 
-		$new_file_contents = "#include <napc.h>\n";
+		$new_file_contents  = $origin_comment;
+		$new_file_contents .= "#include <napc.h>\n";
 
 		foreach ($lines as $line) {
 			if (napphp::str_startsWith($line, "TEST_CASE(\"")) {
