@@ -7,6 +7,8 @@ return [
 	"creates"    => "objects",
 
 	"run" => function($args) {
+		$ok_colored = napphp::terminal_colorString("ok", "green");
+
 		$preprocessed_entries = napphp::fs_scandirRecursive(
 			LIBNAPC_BUILD_FILES_DIR."/processed_files/"
 		);
@@ -40,13 +42,11 @@ return [
 			$object_file_name = substr($object_file_name, 0, strlen($object_file_name) - 2);
 			$output_file = "$object_files_dir/$object_file_name.o";
 
-			$file = str_pad(
-				$c_source_file["relative_path"], 80, " ", STR_PAD_RIGHT
+			$padded_line = str_pad(
+				"Compiling '".$c_source_file["relative_path"]."'", 80, " ", STR_PAD_RIGHT
 			);
 
-			fwrite(
-				STDOUT, "Compiling $file ... "
-			);
+			fwrite(STDOUT, $padded_line." ... ");
 
 			fflush(STDOUT);
 
@@ -65,7 +65,7 @@ return [
 				]
 			);
 
-			fwrite(STDOUT, "ok\n");
+			fwrite(STDOUT, "$ok_colored\n");
 		}
 
 		napphp::fs_rename(

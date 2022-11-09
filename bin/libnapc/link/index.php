@@ -7,6 +7,8 @@ return [
 	"creates"    => "libnapc.a",
 
 	"run" => function($args) {
+		$ok_colored = napphp::terminal_colorString("ok", "green");
+
 		$object_files = napphp::fs_scandirRecursive(
 			LIBNAPC_BUILD_FILES_DIR."/objects/"
 		);
@@ -24,11 +26,11 @@ return [
 				);
 			}
 
-			$file = str_pad(
-				$object_file["relative_path"], 80, " ", STR_PAD_RIGHT
+			$padded_line = str_pad(
+				"Linking '".$object_file["relative_path"]."'", 80, " ", STR_PAD_RIGHT
 			);
 
-			fwrite(STDOUT, "Linking $file ... ");
+			fwrite(STDOUT, $padded_line." ... ");
 			fflush(STDOUT);
 
 			napphp::shell_execute(
@@ -41,7 +43,7 @@ return [
 				]
 			);
 
-			fwrite(STDOUT, "ok\n");
+			fwrite(STDOUT, "$ok_colored\n");
 		}
 
 		napphp::fs_rename(
