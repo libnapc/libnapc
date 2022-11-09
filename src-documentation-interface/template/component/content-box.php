@@ -1,6 +1,6 @@
 <?php
 
-$content = $__keys["content"];
+$content = $__keys["content"] ?? "";
 
 if ($__keys["type"] === "warning") {
 	$icon = "alert";
