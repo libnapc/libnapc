@@ -154,6 +154,21 @@
 	bool napc_RingBuffer_insertByte(napc__RingBuffer *ctx, napc_u8 byte);
 
 	/*!
+	 * @name napc_RingBuffer_insertBytes
+	 * @brief Attempt to insert an array of bytes.
+	 * @version 2.0.0
+	 * @param ctx Pointer to `napc__RingBuffer` instance.
+	 * @param bytes Bytes to store in circular buffer.
+	 * @param bytes_size Size of `bytes` array.
+	 * @changelog 2.0.0 21.10.2022 initial version
+	 * @return
+	 * Returns `true` if the bytes were successfully written to the buffer.
+	 * @notes
+	 * If the array `bytes` does not fit in the buffer, no action is performed.
+	 */
+	bool napc_RingBuffer_insertBytes(napc__RingBuffer *ctx, const napc_u8 *bytes, napc_size bytes_size);
+
+	/*!
 	 * @name napc_RingBuffer_forceInsertByte
 	 * @brief Insert a byte.
 	 * @version 2.0.0
