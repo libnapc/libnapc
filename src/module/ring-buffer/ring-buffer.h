@@ -66,6 +66,24 @@
 	napc__RingBuffer napc_RingBuffer_create(napc_u8 *buffer, napc_size buffer_size);
 
 	/*!
+	 * @name napc_RingBuffer_setAccessFailureMode
+	 * @brief Set action to be taken on access failure.
+	 * @version 2.0.0.
+	 * @description
+	 * Sets the action to be taken when `insertByte`, `peekByte` or `removeByte` fail (i.e. return `false`).
+	 * 
+	 * The default is to log an error message but can be overwritten by `napc_setDefaultAccessFailureMode`.
+	 * @param ctx Pointer to `napc__RingBuffer` instance.
+	 * @param mode The fail mode to set.
+	 * @changelog 2.0.0 21.10.2022 initial version
+	 * @notes
+	 * For more information refer to the `napc__AccessFailureMode` type.
+	 */
+	void napc_RingBuffer_setAccessFailureMode(
+		napc__RingBuffer *ctx, napc__AccessFailureMode mode
+	);
+
+	/*!
 	 * @name napc_RingBuffer_getBufferSize
 	 * @brief Get buffer size.
 	 * @description
