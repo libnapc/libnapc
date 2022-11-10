@@ -4,6 +4,9 @@
 	#include <module/ring-buffer/ring-buffer.h>
 	#include <module/ring-buffer/_private/_log.h>
 
+	#define PV_NAPC_MODULE_RINGBUFFER_ACTION_READ 0
+	#define PV_NAPC_MODULE_RINGBUFFER_ACTION_WRITE 1
+
 	napc_size PV_napc_RingBuffer_numFreeSpots(
 		const napc__RingBuffer *ctx
 	);

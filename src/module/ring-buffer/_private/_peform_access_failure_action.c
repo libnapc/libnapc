@@ -3,7 +3,7 @@
 void PV_napc_RingBuffer_performAccessFailureAction(
 	const napc__RingBuffer *ctx, int cause
 ) {
-	if (cause == 0) {
+	if (cause == PV_NAPC_MODULE_RINGBUFFER_ACTION_READ) {
 
 		if (ctx->_fail_mode == NAPC_ACCESS_FAILURE_MODE_LOG) {
 			PV_NAPC_RINGBUFFER_ERROR(
@@ -19,7 +19,7 @@ void PV_napc_RingBuffer_performAccessFailureAction(
 			);
 		}
 
-	} else if (cause == 1) {
+	} else if (cause == PV_NAPC_MODULE_RINGBUFFER_ACTION_WRITE) {
 
 		if (ctx->_fail_mode == NAPC_ACCESS_FAILURE_MODE_LOG) {
 			PV_NAPC_RINGBUFFER_ERROR(

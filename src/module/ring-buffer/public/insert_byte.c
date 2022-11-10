@@ -6,7 +6,10 @@ bool napc_RingBuffer_insertByte(napc__RingBuffer *ctx, napc_u8 byte) {
 	bool result = PV_napc_RingBuffer_insertByte(ctx, byte, false);
 
 	if (!result) {
-		PV_napc_RingBuffer_performAccessFailureAction(ctx, 1);
+		PV_napc_RingBuffer_performAccessFailureAction(
+			ctx,
+			PV_NAPC_MODULE_RINGBUFFER_ACTION_WRITE
+		);
 	}
 
 	return result;
