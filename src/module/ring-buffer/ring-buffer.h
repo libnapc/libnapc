@@ -146,5 +146,19 @@
 	 * If the buffer is full the byte `byte` will be forcefully inserted.
 	 */
 	void napc_RingBuffer_forceInsertByte(napc__RingBuffer *ctx, napc_u8 byte);
-#endif
 
+	/*!
+	 * @name napc_RingBuffer_reset
+	 * @brief Reset buffer.
+	 * @version 2.0.0
+	 * @description
+	 * Resets the write and read position of a buffer.
+	 * @param ctx Pointer to `napc__RingBuffer` instance.
+	 * @changelog 2.0.0 21.10.2022 initial version
+	 * @notes
+	 * This does not clear the data in the underlying buffer.
+	 * 
+	 * Only the write and read positions are reset.
+	 */
+	void napc_RingBuffer_reset(napc__RingBuffer *ctx);
+#endif
