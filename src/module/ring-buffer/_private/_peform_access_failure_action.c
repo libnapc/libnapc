@@ -53,7 +53,7 @@ void PV_napc_RingBuffer_performAccessFailureAction(
 		case PV_NAPC_MODULE_RINGBUFFER_ACTION_WRITE_BYTES: {
 			if (do_panic) {
 				NAPC_PANIC(
-					"Insert operation (WRITE_BYTE) failed and fail mode is set to NAPC_ACCESS_FAILURE_MODE_PANIC."
+					"Insert operation (WRITE_BYTES) failed and fail mode is set to NAPC_ACCESS_FAILURE_MODE_PANIC."
 				);
 			} else {
 				PV_NAPC_RINGBUFFER_ERROR(
