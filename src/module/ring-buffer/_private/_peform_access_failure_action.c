@@ -1,39 +1,66 @@
 #include <module/ring-buffer/_private/_ring-buffer.h>
 
 void PV_napc_RingBuffer_performAccessFailureAction(
-	const napc__RingBuffer *ctx, int cause
+	const napc__RingBuffer *ctx, int performed_action
 ) {
-	if (cause == PV_NAPC_MODULE_RINGBUFFER_ACTION_READ_BYTE) {
+	// do nothing
+	if (ctx->_fail_mode == NAPC_ACCESS_FAILURE_MODE_NONE) {
+		return;
+	}
 
-		if (ctx->_fail_mode == NAPC_ACCESS_FAILURE_MODE_LOG) {
-			PV_NAPC_RINGBUFFER_ERROR(
-				"Refusing to read byte from empty buffer"
-				" (write_position=%" NAPC_SIZE_PRINTF ",read_position=%" NAPC_SIZE_PRINTF ",size=%" NAPC_SIZE_PRINTF ")",
-				ctx->write_position,
-				ctx->read_position,
-				ctx->buffer_size
-			);
-		} else if (NAPC_UNLIKELY(ctx->_fail_mode == NAPC_ACCESS_FAILURE_MODE_PANIC)) {
-			NAPC_PANIC(
-				"Read operation failed and fail mode is set to NAPC_ACCESS_FAILURE_MODE_PANIC."
-			);
-		}
+	bool do_panic = ctx->_fail_mode == NAPC_ACCESS_FAILURE_MODE_PANIC;
 
-	} else if (cause == PV_NAPC_MODULE_RINGBUFFER_ACTION_WRITE_BYTE) {
+	switch (performed_action) {
+		case PV_NAPC_MODULE_RINGBUFFER_ACTION_READ_BYTE: {
+			if (do_panic) {
+				NAPC_PANIC(
+					"Read operation failed (READ_BYTE) and fail mode is set to NAPC_ACCESS_FAILURE_MODE_PANIC."
+				);
+			} else {
+				PV_NAPC_RINGBUFFER_ERROR(
+					"Refusing to read byte from empty buffer. " PV_NAPC_MODULE_RINGBUFFER_DEBUG_PRINT_STATEMENT,
+					PV_NAPC_MODULE_RINGBUFFER_DEBUG_PRINT_VARIABLES
+				);
+			}
+		} break;
 
-		if (ctx->_fail_mode == NAPC_ACCESS_FAILURE_MODE_LOG) {
-			PV_NAPC_RINGBUFFER_ERROR(
-				"Refusing to insert byte into full buffer"
-				" (write_position=%" NAPC_SIZE_PRINTF ",read_position=%" NAPC_SIZE_PRINTF ",size=%" NAPC_SIZE_PRINTF ")",
-				ctx->write_position,
-				ctx->read_position,
-				ctx->buffer_size
-			);
-		} else if (NAPC_UNLIKELY(ctx->_fail_mode == NAPC_ACCESS_FAILURE_MODE_PANIC)) {
-			NAPC_PANIC(
-				"Insert operation failed and fail mode is set to NAPC_ACCESS_FAILURE_MODE_PANIC."
-			);
-		}
+		case PV_NAPC_MODULE_RINGBUFFER_ACTION_READ_BYTES: {
+			if (do_panic) {
+				NAPC_PANIC(
+					"Read operation failed (READ_BYTES) and fail mode is set to NAPC_ACCESS_FAILURE_MODE_PANIC."
+				);
+			} else {
+				PV_NAPC_RINGBUFFER_ERROR(
+					"Refusing to read bytes from buffer, not enough bytes readable in buffer." PV_NAPC_MODULE_RINGBUFFER_DEBUG_PRINT_STATEMENT,
+					PV_NAPC_MODULE_RINGBUFFER_DEBUG_PRINT_VARIABLES
+				);
+			}
+		} break;
 
+		case PV_NAPC_MODULE_RINGBUFFER_ACTION_WRITE_BYTE: {
+			if (do_panic) {
+				NAPC_PANIC(
+					"Insert operation (WRITE_BYTE) failed and fail mode is set to NAPC_ACCESS_FAILURE_MODE_PANIC."
+				);
+			} else {
+				PV_NAPC_RINGBUFFER_ERROR(
+					"Refusing to insert byte into full buffer. " PV_NAPC_MODULE_RINGBUFFER_DEBUG_PRINT_STATEMENT,
+					PV_NAPC_MODULE_RINGBUFFER_DEBUG_PRINT_VARIABLES
+				);
+			}
+		} break;
+
+		case PV_NAPC_MODULE_RINGBUFFER_ACTION_WRITE_BYTES: {
+			if (do_panic) {
+				NAPC_PANIC(
+					"Insert operation (WRITE_BYTE) failed and fail mode is set to NAPC_ACCESS_FAILURE_MODE_PANIC."
+				);
+			} else {
+				PV_NAPC_RINGBUFFER_ERROR(
+					"Refusing to place bytes into buffer, not enough free space. " PV_NAPC_MODULE_RINGBUFFER_DEBUG_PRINT_STATEMENT,
+					PV_NAPC_MODULE_RINGBUFFER_DEBUG_PRINT_VARIABLES
+				);
+			}
+		} break;
 	}
 }

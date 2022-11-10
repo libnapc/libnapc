@@ -70,7 +70,7 @@
 	 * @brief Set action to be taken on access failure.
 	 * @version 2.0.0.
 	 * @description
-	 * Sets the action to be taken when `insertByte`, `peekByte` or `removeByte` fail (i.e. return `false`).
+	 * Sets the action to be taken when `insertByte`, `insertBytes`, `peekByte`, `removeByte` or `removeBytes` fail (i.e. return `false`).
 	 * 
 	 * The default is to log an error message but can be overwritten by `napc_setDefaultAccessFailureMode`.
 	 * @param ctx Pointer to `napc__RingBuffer` instance.
@@ -138,6 +138,24 @@
 	 * `out` remains UNMODIFIED if function returned false.
 	 */
 	bool napc_RingBuffer_removeByte(napc__RingBuffer *ctx, napc_u8 *out);
+
+	/*!
+	 * @name napc_RingBuffer_removeBytes
+	 * @brief Attempt to read an array of bytes.
+	 * @description
+	 * Attempts to read `out_size` number of bytes from buffer.
+	 * @version 2.0.0
+	 * @param ctx Pointer to `napc__RingBuffer` instance.
+	 * @param out Array to store read bytes from buffer.
+	 * @param out_size Size of `out` array.
+	 * @changelog 2.0.0 21.10.2022 initial version
+	 * @return
+	 * Returns `true` if number of bytes `out_size` were successfully read from the buffer.
+	 * @notes
+	 * If the buffer has less than `out_size` bytes available to read
+	 * then no action is performed and the function returns `false`.
+	 */
+	bool napc_RingBuffer_removeBytes(napc__RingBuffer *ctx, napc_u8 *out, napc_size out_size);
 
 	/*!
 	 * @name napc_RingBuffer_insertByte
