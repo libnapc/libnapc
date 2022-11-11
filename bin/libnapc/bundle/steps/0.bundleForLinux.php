@@ -40,10 +40,10 @@ return function($args, &$context) {
 			$object_file_name = md5($linux_source_file["relative_path"]);
 			$gcc_output_file = escapeshellarg("objects/$object_file_name.o");
 
-			$compile_script .= "printf \"Compiling $gcc_input_file\\n\"\n";
+			$compile_script .= "printf \"[v$libnapc_release_version] Compiling $gcc_input_file\\n\"\n";
 			$compile_script .= "gcc $gcc_flags $gcc_input_file -c -o $gcc_output_file\n";
 
-			array_push($object_files, $object_file_name);
+			$object_files[$object_file_name] = "src/".$linux_source_file["relative_path"];
 		}
 
 		napphp::fs_copyFile(
@@ -51,8 +51,8 @@ return function($args, &$context) {
 		);
 	}
 
-	foreach ($object_files as $object_file_name) {
-		$compile_script .= "printf \"Linking objects/$object_file_name.o\\n\"\n";
+	foreach ($object_files as $object_file_name => $origin) {
+		$compile_script .= "printf \"[v$libnapc_release_version] Linking objects/$object_file_name.o (origin=$origin)\\n\"\n";
 		$compile_script .= "ar rcs libnapc.a objects/$object_file_name.o\n";
 	}
 
