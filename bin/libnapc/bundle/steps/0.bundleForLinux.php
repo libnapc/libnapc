@@ -60,6 +60,8 @@ return function($args, &$context) {
 	napphp::fs_setFileMode("$output_dir/linux/compile.sh", 0755);
 
 	napphp::fs_copyFile(__DIR__."/linux-files/install.sh", "$output_dir/linux/install.sh");
+	napphp::fs_setFileMode("$output_dir/linux/install.sh", 0755);
+
 	napphp::fs_createSymbolicLink("$output_dir/linux/napc.h", "src/napc.h");
 
 	napphp::shell_execute(
