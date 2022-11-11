@@ -1,20 +1,5 @@
 <?php
 
-function libnapc_preprocess_getReleaseVersion() {
-	$libnapc_release_version = getenv("LIBNAPC_RELEASE_VERSION");
-
-	if (napphp::str_startsWith($libnapc_release_version, "v")) {
-		return substr(
-			$libnapc_release_version, 1
-		);
-	}
-
-	$git_branch = napphp::git_getCurrentBranch();
-	$git_HEAD = napphp::git_getHEADSha1Hash();
-
-	return $git_branch."-".substr($git_HEAD, 0, 7);
-}
-
 /**
  * Convert module name $module_name into a C-friendly identifier
  */
@@ -38,7 +23,7 @@ return [
 	"run" => function($args) {
 		$temp_dir = napphp::tmp_createDirectory();
 
-		$release_version = libnapc_preprocess_getReleaseVersion();
+		$release_version = libnapc_getReleaseVersion();
 
 		$build_constants = [
 			"GIT_HEAD_HASH" => napphp::git_getHEADSha1Hash(),

@@ -37,6 +37,21 @@ function getAvailableCommands() {
 	return $ret;
 }
 
+function libnapc_getReleaseVersion() {
+	$libnapc_release_version = getenv("LIBNAPC_RELEASE_VERSION");
+
+	if (napphp::str_startsWith($libnapc_release_version, "v")) {
+		return substr(
+			$libnapc_release_version, 1
+		);
+	}
+
+	$git_branch = napphp::git_getCurrentBranch();
+	$git_HEAD = napphp::git_getHEADSha1Hash();
+
+	return $git_branch."-".substr($git_HEAD, 0, 7);
+}
+
 if (!sizeof($argv)) {
 	fwrite(STDERR, "Usage: libnapc [command]\n");
 
