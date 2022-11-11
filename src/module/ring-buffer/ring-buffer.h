@@ -212,4 +212,30 @@
 	 * Only the write and read positions are reset.
 	 */
 	void napc_RingBuffer_reset(napc__RingBuffer *ctx);
+
+	/*!
+	 * @name napc_RingBuffer_discardByte
+	 * @brief Discard a single byte.
+	 * @version 2.0.0
+	 * @description
+	 * Discards a single byte from the buffer.
+	 * @param ctx Pointer to `napc__RingBuffer` instance.
+	 * @changelog 2.0.0 21.10.2022 initial version
+	 */
+	void napc_RingBuffer_discardByte(napc__RingBuffer *ctx);
+
+	/*!
+	 * @name napc_RingBuffer_discardBytes
+	 * @brief Discard a number of bytes.
+	 * @version 2.0.0
+	 * @description
+	 * Discards `amount` of bytes from the buffer.
+	 * @param ctx Pointer to `napc__RingBuffer` instance.
+	 * @param amount Amount of bytes to discard.
+	 * @changelog 2.0.0 21.10.2022 initial version
+	 * @notes
+	 * No error checking is done, if buffer is smaller than `amount` the maximum amount
+	 * of bytes (i.e. all bytes in the buffer) are discarded.
+	 */
+	void napc_RingBuffer_discardBytes(napc__RingBuffer *ctx, napc_size amount);
 #endif
