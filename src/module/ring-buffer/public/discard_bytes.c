@@ -9,7 +9,5 @@ void napc_RingBuffer_discardBytes(napc__RingBuffer *ctx, napc_size amount) {
 		amount = elements_available;
 	}
 
-	for (napc_size i = 0; i < amount; ++i) {
-		napc_RingBuffer_removeByte(ctx, NULL);
-	}
+	napc_RingBuffer_removeBytes(ctx, NULL, amount);
 }

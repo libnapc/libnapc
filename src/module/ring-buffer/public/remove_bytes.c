@@ -15,8 +15,11 @@ bool napc_RingBuffer_removeBytes(napc__RingBuffer *ctx, napc_u8 *out, napc_size 
 	}
 
 	for (napc_size i = 0; i < out_size; ++i) {
+		// allow 'out' to be NULL, this discards the bytes
+		napc_u8 *ptr = out ? &out[i] : NULL;
+
 		// this will never be true, hopefully
-		if (NAPC_UNLIKELY(!napc_RingBuffer_removeByte(ctx, &out[i]))) {
+		if (NAPC_UNLIKELY(!napc_RingBuffer_removeByte(ctx, ptr))) {
 			return false;
 		}
 	}
