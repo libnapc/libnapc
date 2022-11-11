@@ -2,6 +2,7 @@
 
 return function($args, &$context) {
 	$output_dir = $context["output_dir"];
+	$libnapc_release_version = $context["release_version"];
 
 	napphp::fs_mkdir("$output_dir/linux/src");
 	napphp::fs_mkdir("$output_dir/linux/objects");
@@ -19,7 +20,8 @@ return function($args, &$context) {
 		}
 	);
 
-	$compile_script = "#!/bin/bash -euf\n";
+	$compile_script  = "#!/bin/bash -euf\n";
+	$compile_script .= "printf \"Compiling libnapc v$libnapc_release_version\\n\"\n";
 
 	$compiler_flags = napphp::fs_file(LIBNAPC_PROJECT_ROOT_DIR."/compile_flags.txt");
 	$gcc_flags = napphp::arr_map($compiler_flags, function($line) {

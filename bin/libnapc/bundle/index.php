@@ -24,7 +24,8 @@ return [
 		$context = [
 			"output_dir" => $temp_dir,
 			"preprocessed_files" => $preprocessed_files,
-			"preprocessed_files_tree" => $preprocessed_files_tree
+			"preprocessed_files_tree" => $preprocessed_files_tree,
+			"release_version" => libnapc_getReleaseVersion()
 		];
 
 		command_runSteps("bundle", $args, $context);
