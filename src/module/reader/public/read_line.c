@@ -16,7 +16,12 @@ const char *napc_Reader_readLine(
 
 	napc_mzero(line_buffer, line_buffer_size);
 
-	while (napc_Reader_readChar(ctx, &ch)) {
+	while (true) {
+		// only read char if there is data left to read
+		if (!napc_Reader_getRemainingBytes(ctx)) break;
+		// attempt to read char
+		if (!napc_Reader_readChar(ctx, &ch)) break;
+
 		bool shouldWrite = (line_buffer_size > pos);
 
 		if (ch == '\n') {
