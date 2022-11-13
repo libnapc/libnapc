@@ -7,7 +7,7 @@ div.landing {
 }
 
 div.landing h1 {
-	font-size: 20px;
+	font-size: 20px !important;
 	font-weight: 400;
 }
 
@@ -39,112 +39,75 @@ div.landing a {
 	text-shadow: 0px 2px 2px rgba(9, 8, 14, .35);
 }
 
-div.landing pre.code, div.landing pre.code2 {
-	background: none !important;
-	border: none !important;
-	padding: none !important;
-	position: absolute;
-	transform: rotate(0deg); /* -25deg */
-	font-size: 12px !important;
-	top: 0px;
-	line-height: 20px !important;
-	color: var(--base-text-color-dimmed-4);
+@keyframes landing-logo-animation {
+	0%, 100% {
+		transform: translateY(0px);
+	}
+
+	50% {
+		transform: translateY(7px);
+	}
 }
 
-div.landing pre.code2 {
-	display: none;
-	transform: rotate(25deg);
+@keyframes landing-logo-shadow-animation {
+	0%, 100% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: .3;
+	}
+}
+
+div.landing img {
+	animation-name: landing-logo-animation;
+	animation-duration: 2.5s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-delay: 1s;
+
+	position: relative;
+	z-index: 2;
+}
+
+div.landing div.img-shadow {
+	width: 200px;
+	height: 50px;
+	border-radius: 100%;
+
+	box-shadow: 0px -100px 40px var(--base-text-color-dimmed-2);
+	position: relative;
+	top: 40px;
+
+
+	animation-name: landing-logo-shadow-animation;
+	animation-duration: 2.5s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-delay: 1s;
+
+	opacity: 0;
 }
 </style>
+
 <div class="landing">
+	<?php
 
-<pre class="code">
-#if !defined(NAPC_MAGIC_h)
-	#define NAPC_MAGIC_h
+	echo napcdoc::html_createImageElement("libnapc-c.png", [
+		"height" => 300,
+		"class" => "big-c display-block-on-dark-theme"
+	]);
 
-	#include &lt;libnapc.h&gt;
+	echo napcdoc::html_createImageElement("libnapc-c-alt.png", [
+		"height" => 300,
+		"class" => "big-c display-block-on-light-theme"
+	]);
 
-	#include &lt;napc-panic/napc-panic.h&gt;
+	?>
 
-	typedef uint32_t napc_init_magic;
+	<div class="img-shadow"></div>
 
-	#define NAPC_MAGIC_MEMBER napc_init_magic _init_magic
+	<h1><i>Run, Test & Debug on Linux.</i> Deploy on Arduino.</h1>
 
-	#define NAPC_MAGIC_DESTROYED NAPC_U32_LITERAL(0xFFFFFFFF)
-
-	#define NAPC_MAGIC_INIT(type, obj) (obj)-&gt;_init_magic = (NAPC_MAGIC_ ## type)
-	#define NAPC_MAGIC_DESTROY(obj) (obj)-&gt;_init_magic = NAPC_MAGIC_DESTROYED
-
-	// Used to silence -Waddress warnings
-	#define PV_NAPC_MAGIC_GET_VALUE(obj) \
-		((void *)(obj) != NULL ? (obj)-&gt;_init_magic : 0)
-
-	#define NAPC_MAGIC_ASSERT(type, obj)                                   \
-		do {                                                               \
-			const napc_init_magic actual   = PV_NAPC_MAGIC_GET_VALUE(obj); \
-			const napc_init_magic expected = (NAPC_MAGIC_ ## type);        \
-			if (actual == NAPC_MAGIC_DESTROYED) {                          \
-				NAPC_PANIC(&quot;Attempt to use destroyed &quot; # type);            \
-			} else if (actual != expected) {                               \
-				NAPC_PANIC(&quot;Detected uninitialized &quot; # type);              \</pre>
-
-<pre class="code2">
-#include &lt;module/dns/_private/_dns.h&gt;
-
-bool napc_DNS_parseRequest(
-	napc__DNSRequest *out,
-	const void *buffer, napc_size buffer_size
-) {
-	napc__DNSHeader header;
-
-	if (!napc_DNS_parseHeader(&amp;header, buffer, buffer_size)) {
-		return false;
-	}
-
-	napc__Reader reader;
-	napc_Reader_init(&amp;reader, buffer, buffer_size);
-
-	// skip DNS header we just read
-	if (!napc_Reader_readU8Array(&amp;reader, 12, NULL)) return false;
-
-	if (header.question_count != 1) {
-		PV_NAPC_DNS_WARNING(
-			&quot;Request contains other than 1 question (%d questions).&quot;, header.question_count
-		);
-
-		return false;
-	}
-
-	// question count capped at max 1
-	napc__DNSQuery *q = out ? &amp;out-&gt;query : NULL;
-
-	if (!PV_napc_DNS_parseQuerySection(q, &amp;reader)) {
-		return false;
-	}
-
-	if (out) {
-		memcpy(&amp;out-&gt;header, &amp;header, sizeof(header));
-	}
-
-	return true;
-}
-</pre>
-
-<?php
-
-echo napcdoc::html_createImageElement("big-c.png", [
-	"height" => 300,
-	"class" => "big-c display-block-on-dark-theme"
-]);
-
-echo napcdoc::html_createImageElement("big-c-alt.png", [
-	"height" => 300,
-	"class" => "big-c display-block-on-light-theme"
-]);
-
-?>
-
-<h1><i>Run, Test & Debug on Linux.</i> Deploy on Arduino.</h1>
-
-<a href="document/1.gettingStarted.md.html">Jump right in!</a>
+	<a href="document/1.gettingStarted.md.html">Jump right in!</a>
 </div>
