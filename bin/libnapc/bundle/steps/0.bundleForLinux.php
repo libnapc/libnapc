@@ -21,7 +21,6 @@ return function($args, &$context) {
 	);
 
 	$compile_script  = "#!/bin/bash -euf\n";
-	$compile_script .= "printf \"Compiling libnapc v$libnapc_release_version\\n\"\n";
 
 	$compiler_flags = napphp::fs_file(LIBNAPC_PROJECT_ROOT_DIR."/compile_flags.txt");
 	$gcc_flags = napphp::arr_map($compiler_flags, function($line) {
@@ -29,6 +28,12 @@ return function($args, &$context) {
 	});
 
 	$gcc_flags = napphp::arr_join($gcc_flags, " ");
+
+	$compile_script .= "\n";
+	$compile_script .= "CC=\"gcc\"\n";
+	$compile_script .= "CC_FLAGS=\"$gcc_flags\"\n\n";
+
+	$compile_script .= "printf \"Compiling libnapc v$libnapc_release_version\\n\"\n\n";
 
 	$object_files = [];
 
@@ -41,7 +46,7 @@ return function($args, &$context) {
 			$gcc_output_file = escapeshellarg("objects/$object_file_name.o");
 
 			$compile_script .= "printf \"[libnapc v$libnapc_release_version] Compiling $gcc_input_file\\n\"\n";
-			$compile_script .= "gcc $gcc_flags $gcc_input_file -c -o $gcc_output_file\n";
+			$compile_script .= "\$CC \$CC_FLAGS $gcc_input_file -c -o $gcc_output_file\n";
 
 			$object_files[$object_file_name] = "src/".$linux_source_file["relative_path"];
 		}
