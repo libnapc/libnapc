@@ -1,4 +1,6 @@
 #if !defined(ARDUINO)
+	#include <stddef.h> // NULL
+
 	int PV_napc_linux_argc = 0;// @global
 	const char **PV_napc_linux_argv = NULL; // @global
 
