@@ -76,4 +76,8 @@
 		napc__DNSResponse *out,
 		const void *buffer, napc_size buffer_size
 	) NAPC_FN_WARNUNUSED_RET();
+	// idea: to support more than 4 dns answers:
+	// add *answers_out pointer for dynamic sizing of expected
+	// answers:
+		// napc__DNSAnswer answers[8];
 #endif
