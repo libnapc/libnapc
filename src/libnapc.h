@@ -7,8 +7,8 @@
 * Version    : %BC_RELEASE_VERSION%
 * Git commit : %BC_GIT_HEAD_HASH%
 */
-#if !defined(NAPC_h)
-	#define NAPC_h
+#if !defined(LIBNAPC_h)
+	#define LIBNAPC_h
 
 	#if defined(__cplusplus)
 		extern "C" {

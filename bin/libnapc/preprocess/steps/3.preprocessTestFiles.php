@@ -32,7 +32,7 @@ ORIGIN_COMMENT;
 		$lines = napphp::fs_file($test_file["path"]);
 
 		$new_file_contents  = $origin_comment;
-		$new_file_contents .= "#include <napc.h>\n";
+		$new_file_contents .= "#include <libnapc.h>\n";
 
 		foreach ($lines as $line) {
 			if (napphp::str_startsWith($line, "TEST_CASE(\"")) {

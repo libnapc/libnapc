@@ -1,4 +1,4 @@
-#include <napc.h>
+#include <libnapc.h>
 #include <libnapc-testing.h>
 
 /**

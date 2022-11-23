@@ -1,4 +1,4 @@
-#include <napc.h>
+#include <libnapc.h>
 void libnapc_callBootFunctions(void);
 
 napc_u8 buffer[5];

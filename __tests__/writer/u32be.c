@@ -1,4 +1,4 @@
-#include <napc.h>
+#include <libnapc.h>
 #include <libnapc-testing.h>
 
 TEST_CASE("should write u32be correctly") {

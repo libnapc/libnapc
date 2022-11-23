@@ -26,7 +26,7 @@ return [
 
 	"run" => function($args) {
 		$napc_h_stripped = libnapc_docGenAst_removeCommentsFromHeaderFile(
-			LIBNAPC_BUILD_FILES_DIR."/processed_files/napc.h"
+			LIBNAPC_BUILD_FILES_DIR."/processed_files/libnapc.h"
 		);
 
 		$ast_tmp_file = napphp::tmp_createFile(".json");

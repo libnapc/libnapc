@@ -9,7 +9,7 @@ return [
 	"run" => function($args) {
 		$context = [
 			"header" => napphp::fs_readFileString(
-				LIBNAPC_BUILD_FILES_DIR."/processed_files/napc.h"
+				LIBNAPC_BUILD_FILES_DIR."/processed_files/libnapc.h"
 			),
 			"doc_block_comments" => []
 		];

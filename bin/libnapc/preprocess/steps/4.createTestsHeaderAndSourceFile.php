@@ -13,7 +13,7 @@ return function($args, &$context) {
 ORIGIN_COMMENT;
 
 	$file  = "$origin_comment";
-	$file .= "#include <napc.h>\n";
+	$file .= "#include <libnapc.h>\n";
 
 	$header_file  = $origin_comment;
 	$header_file .= "#if !defined(NAPC_ALL_TESTS_FILE_h)\n";

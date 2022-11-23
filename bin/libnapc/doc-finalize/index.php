@@ -71,7 +71,7 @@ return [
 			"downloadable_files" => [
 				"libnapc-linux.tar.gz" => LIBNAPC_BUILD_FILES_DIR."/bundles/linux.tar.gz",
 				"libnapc-arduino.zip"  => LIBNAPC_BUILD_FILES_DIR."/bundles/arduino.zip",
-				"napc.h"               => LIBNAPC_BUILD_FILES_DIR."/processed_files/napc.h"
+				"napc.h"               => LIBNAPC_BUILD_FILES_DIR."/processed_files/libnapc.h"
 			],
 			"output" => $napc,
 			"build_constants" => napphp::fs_readFileJSON(LIBNAPC_BUILD_FILES_DIR."/build_constants.json"),

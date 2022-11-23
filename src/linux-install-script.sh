@@ -1,7 +1,7 @@
 #!/bin/bash -euf
 
-if [ ! -f "napc.h" ]; then
-	printf "napc.h missing from current working directory\n"
+if [ ! -f "libnapc.h" ]; then
+	printf "libnapc.h missing from current working directory\n"
 	printf "Please place it here prior to installation\n"
 	exit 2
 elif [ ! -f "libnapc.a" ]; then
@@ -14,7 +14,7 @@ elif [ "$EUID" -ne 0 ]; then
 	exit 2
 fi
 
-HEADER_FILE_PATH="/usr/local/include/napc.h"
+HEADER_FILE_PATH="/usr/local/include/libnapc.h"
 LIB_FILE_PATH="/usr/local/lib/libnapc.a"
 
 printf "Attempting to install libnapc v%BC_RELEASE_VERSION%\n"
@@ -39,7 +39,7 @@ fi
 rm -f "$HEADER_FILE_PATH"
 rm -f "$LIB_FILE_PATH"
 
-cp "napc.h" "$HEADER_FILE_PATH"
+cp "libnapc.h" "$HEADER_FILE_PATH"
 cp "libnapc.a" "$LIB_FILE_PATH"
 
 printf "Done!\n"

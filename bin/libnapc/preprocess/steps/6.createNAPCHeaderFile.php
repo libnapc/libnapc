@@ -50,7 +50,7 @@ return function($args, &$context) {
 	$output_dir = $context["output_dir"];
 
 	$file_contents = libnapc_preprocess_inlineHeaderIncludes(
-		"$output_dir/napc.h", LIBNAPC_SOURCE_FILES_DIR
+		"$output_dir/libnapc.h", LIBNAPC_SOURCE_FILES_DIR
 	);
 
 	if (napphp::fs_isFile("$output_dir/__tests__/__tests__.h")) {
@@ -61,7 +61,7 @@ return function($args, &$context) {
 	}
 
 	napphp::fs_writeFileStringAtomic(
-		"$output_dir/napc.h",
+		"$output_dir/libnapc.h",
 		$file_contents
 	);
 };

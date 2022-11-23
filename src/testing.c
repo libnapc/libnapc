@@ -1,4 +1,4 @@
-#include <napc.h>
+#include <libnapc.h>
 #include <stdio.h>
 
 void PV_napc_testAssert(
