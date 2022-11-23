@@ -10,7 +10,7 @@ void *napc_Pool_getAddress(
 		LIBNAPC_PANIC("Element index is out of range. (pool=%s)", pool->label);
 	} else if (!pool->elements_used[element_index]) {
 		LIBNAPC_PANIC(
-			"Cannot get address of element (index=%" NAPC_SIZE_PRINTF ")"
+			"Cannot get address of element (index=%" LIBNAPC_SIZE_PRINT_DEC ")"
 			" that is not allocated (pool=%s).",
 			element_index, pool->label
 		);

@@ -35,7 +35,7 @@
 	 * @example
 	 * libnapc_size var = 1;
 	 * 
-	 * napc_printf("var is = %" NAPC_SIZE_PRINTF, var);
+	 * napc_printf("var is = %" LIBNAPC_SIZE_PRINT_DEC, var);
 	 */
-	#define NAPC_SIZE_PRINTF "lu"
+	#define LIBNAPC_SIZE_PRINT_DEC "lu"
 #endif

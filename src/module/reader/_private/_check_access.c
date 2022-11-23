@@ -10,8 +10,8 @@ bool PV_napc_Reader_checkAccess(
 	if (new_offset > ctx->size) {
 		if (ctx->_fail_mode == LIBNAPC_ACCESS_FAILURE_MODE_LOG) {
 			PV_NAPC_READER_ERROR(
-				"Refusing to read type '%s' (size=%" NAPC_SIZE_PRINTF ") from buffer"
-				" (offset=%" NAPC_SIZE_PRINTF ",size=%" NAPC_SIZE_PRINTF ")",
+				"Refusing to read type '%s' (size=%" LIBNAPC_SIZE_PRINT_DEC ") from buffer"
+				" (offset=%" LIBNAPC_SIZE_PRINT_DEC ",size=%" LIBNAPC_SIZE_PRINT_DEC ")",
 				type,
 				type_size,
 				ctx->_offset,

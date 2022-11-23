@@ -38,7 +38,7 @@ bool napc_DNS_parseResponse(
 	if (n_answers > NAPC_MODULE_DNS_MAX_ANSWERS) {
 		PV_NAPC_DNS_INFO(
 			"Response contains more than "
-			"%d answers (%" NAPC_SIZE_PRINTF " answers).",
+			"%d answers (%" LIBNAPC_SIZE_PRINT_DEC " answers).",
 			NAPC_MODULE_DNS_MAX_ANSWERS,
 			n_answers
 		);

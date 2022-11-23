@@ -80,7 +80,7 @@
 	 * @example
 	 * libnapc_size str_length = napc_strlen("Hello World!");
 	 * 
-	 * napc_printf("String's length is %" NAPC_SIZE_PRINTF "\n", str_length);
+	 * napc_printf("String's length is %" LIBNAPC_SIZE_PRINT_DEC "\n", str_length);
 	 */
 	libnapc_size libnapc_strlen(const char *str) NAPC_FN_WARNUNUSED_RET();
 

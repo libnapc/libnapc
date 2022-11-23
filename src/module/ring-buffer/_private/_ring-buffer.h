@@ -10,7 +10,7 @@
 	#define PV_NAPC_MODULE_RINGBUFFER_ACTION_WRITE_BYTES 3
 
 	#define PV_NAPC_MODULE_RINGBUFFER_DEBUG_PRINT_STATEMENT \
-		"(write_position=%" NAPC_SIZE_PRINTF ",read_position=%" NAPC_SIZE_PRINTF ",size=%" NAPC_SIZE_PRINTF ")"
+		"(write_position=%" LIBNAPC_SIZE_PRINT_DEC ",read_position=%" LIBNAPC_SIZE_PRINT_DEC ",size=%" LIBNAPC_SIZE_PRINT_DEC ")"
 
 	#define PV_NAPC_MODULE_RINGBUFFER_DEBUG_PRINT_VARIABLES \
 		ctx->write_position, ctx->read_position, ctx->buffer_size

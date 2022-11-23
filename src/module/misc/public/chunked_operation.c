@@ -11,7 +11,7 @@ bool napc_misc_chunkedOperation(
 	while (bytes_left_to_process > 0) {
 		if (current_chunk_size > bytes_left_to_process) {
 			PV_NAPC_MISC_VERBOSE(
-				"Halving chunk_size=%" NAPC_SIZE_PRINTF,
+				"Halving chunk_size=%" LIBNAPC_SIZE_PRINT_DEC,
 				current_chunk_size
 			);
 
@@ -28,7 +28,7 @@ bool napc_misc_chunkedOperation(
 		// Impartial operation
 		if (result != (napc_ssize)current_chunk_size) {
 			PV_NAPC_MISC_ERROR(
-				"Impartial chunk operation (current_chunk_size=%" NAPC_SIZE_PRINTF ",result=%" NAPC_SSIZE_PRINTF ")",
+				"Impartial chunk operation (current_chunk_size=%" LIBNAPC_SIZE_PRINT_DEC ",result=%" NAPC_SSIZE_PRINTF ")",
 				current_chunk_size, result
 			);
 
