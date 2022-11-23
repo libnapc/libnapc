@@ -6,7 +6,7 @@
 	extern "C" {
 		#include <napc-delay/_private/_napc-delay.h>
 
-		void HAL_napc_delayUs(napc_time amount) {
+		void HAL_libnapc_delayUs(napc_time amount) {
 			delayMicroseconds(amount);
 		}
 	}

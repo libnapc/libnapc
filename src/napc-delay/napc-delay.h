@@ -43,5 +43,5 @@
 	 * 
 	 * napc_printf("World!");
 	 */
-	void napc_delayUs(napc_time amount);
+	void libnapc_delayUs(napc_time amount);
 #endif
