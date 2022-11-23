@@ -1,6 +1,6 @@
 #include <napc-utils/_private/_napc-utils.h>
 
-void napc_snprintf(
+void libnapc_snprintf(
 	char *buffer,
 	napc_size buffer_size,
 	const char *fmt,

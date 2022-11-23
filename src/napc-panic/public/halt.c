@@ -15,7 +15,7 @@ void napc_halt(
 	napc_time time = libnapc_getTimeSinceBoot();
 
 	{
-		napc_snprintf(
+		libnapc_snprintf(
 			_message_buffer, sizeof(_message_buffer),
 			"\n\n(panic +%010" NAPC_TIME_PRINTF ") Originated by function %s in file %s (line %u)", time, fn, file, file_line
 		);
@@ -24,7 +24,7 @@ void napc_halt(
 	}
 
 	{
-		napc_snprintf(
+		libnapc_snprintf(
 			_message_buffer, sizeof(_message_buffer),
 			"\n\n(panic +%010" NAPC_TIME_PRINTF ") ", time
 		);

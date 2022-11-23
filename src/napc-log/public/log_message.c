@@ -72,7 +72,7 @@ void napc_logMessage(
 		napc_mzero(_fn, sizeof(_fn));
 		_shortenFunctionName(function, _fn);
 
-		napc_snprintf(
+		libnapc_snprintf(
 			_message_buffer, sizeof(_message_buffer),
 			"(%-5s +%010" NAPC_TIME_PRINTF " / %8" NAPC_SIZE_PRINTF ") subsys=%-23s [%40s] ",
 			label, time, napc_getFreeMemory(), subsys, _fn
