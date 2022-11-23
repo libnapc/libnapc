@@ -21,9 +21,3 @@ int main(int argc, const char **argv) {
 	libnapc_printf("crash:\n");
 	napc_RingBuffer_insertByte(&rbuffer, 10);
 }
-
-bool napc_app_loop(libnapc_time uptime) {
-	NAPC_IGNORE_VALUE(uptime);
-
-	return false;
-}
