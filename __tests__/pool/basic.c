@@ -1,5 +1,5 @@
 #include <napc.h>
-#include <napc-testing.h>
+#include <libnapc-testing.h>
 
 struct napc_pool_test_struct {
 	char a;

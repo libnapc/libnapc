@@ -1,5 +1,5 @@
-#if !defined(NAPC_TESTING_h)
-	#define NAPC_TESTING_h
+#if !defined(LIBNAPC_TESTING_h)
+	#define LIBNAPC_TESTING_h
 
 	#define PV_NAPC_TESTING_CONCAT(a, b) a ## b
 	#define NAPC_TESTING_CONCAT(a, b) PV_NAPC_TESTING_CONCAT(a, b)

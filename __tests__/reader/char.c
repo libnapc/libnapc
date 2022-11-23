@@ -1,5 +1,5 @@
 #include <napc.h>
-#include <napc-testing.h>
+#include <libnapc-testing.h>
 
 TEST_CASE("should read chars correctly") {
 	char data[3] = {'a', 'b', 'c'};

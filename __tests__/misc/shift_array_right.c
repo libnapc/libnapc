@@ -1,5 +1,5 @@
 #include <napc.h>
-#include <napc-testing.h>
+#include <libnapc-testing.h>
 
 struct test_element {
 	char str[45];

@@ -1,5 +1,5 @@
 #include <napc.h>
-#include <napc-testing.h>
+#include <libnapc-testing.h>
 
 TEST_CASE("should work correctly") {
 	napc_u8 buffer[6] = {'a', 'b', 'c', 'd', 'e', 'f'};

@@ -1,5 +1,5 @@
 #include <napc.h>
-#include <napc-testing.h>
+#include <libnapc-testing.h>
 
 static napc_ssize _readFunction(const void *data, napc_size data_size, void *context) {
 	(void)data;

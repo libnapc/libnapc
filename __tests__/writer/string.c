@@ -1,5 +1,5 @@
 #include <napc.h>
-#include <napc-testing.h>
+#include <libnapc-testing.h>
 
 TEST_CASE("should write strings correctly") {
 	char data[6] = {1, 2, 3, 4, 5, 6};

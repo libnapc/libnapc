@@ -1,5 +1,5 @@
 #include <napc.h>
-#include <napc-testing.h>
+#include <libnapc-testing.h>
 
 TEST_CASE("should write u16be correctly") {
 	napc_u8 data[5] = {0, 0, 0, 0, 0};

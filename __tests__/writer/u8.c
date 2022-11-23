@@ -1,5 +1,5 @@
 #include <napc.h>
-#include <napc-testing.h>
+#include <libnapc-testing.h>
 
 TEST_CASE("should write u8 correctly") {
 	napc_u8 data[4] = {0, 0, 0, 0xa};

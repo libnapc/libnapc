@@ -1,5 +1,5 @@
 #include <napc.h>
-#include <napc-testing.h>
+#include <libnapc-testing.h>
 
 TEST_CASE("should read u8 array correctly") {
 	char data[5] = {'h', 'e', 'l', 'l', 'o'};
