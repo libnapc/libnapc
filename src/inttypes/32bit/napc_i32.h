@@ -12,5 +12,5 @@
 	 * Type for signed integers with 32 bits width.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef int32_t napc_i32;
+	typedef int32_t libnapc_i32;
 #endif
