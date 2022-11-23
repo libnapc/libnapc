@@ -5,9 +5,6 @@
 
 	#include <napc-panic/napc-panic.h>
 
-	extern void napc_setup(const char *platform);
-	extern bool napc_loop(napc_time uptime);
-
 	/*!
 	 * @name napc__AccessFailureMode
 	 * @brief Action to be taken on an access failure.
