@@ -98,7 +98,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	bool napc_Writer_moveCurrentOffsetByAmount(
-		napc__Writer *ctx, napc_ssize amount
+		napc__Writer *ctx, libnapc_ssize amount
 	);
 
 	/*!

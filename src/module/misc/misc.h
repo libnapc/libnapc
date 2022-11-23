@@ -67,7 +67,7 @@
 	/**************************
 	 * Chunks
 	 */
-	typedef napc_ssize (*napc_misc_ChunkedOperationCallback)(
+	typedef libnapc_ssize (*napc_misc_ChunkedOperationCallback)(
 		const void *data, libnapc_size data_size, void *context
 	);
 
@@ -86,7 +86,7 @@
 	 * @notes
 	 * `fn` is a function with the following prototype:
 	 * 
-	 * `napc_ssize (const void *data, libnapc_size data_size, void *context)`
+	 * `libnapc_ssize (const void *data, libnapc_size data_size, void *context)`
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	bool napc_misc_chunkedOperation(

@@ -30,7 +30,7 @@
 	 * Otherwise a negative number is returned.
 	 * @changelog 2.0.0 12.04.2022 initial version
 	 */
-	napc_ssize napc_addLogHandlerFunction(
+	libnapc_ssize napc_addLogHandlerFunction(
 		napc_logHandlerFunction handler, void *context
 	);
 

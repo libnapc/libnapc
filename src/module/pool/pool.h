@@ -48,7 +48,7 @@
 	 * 
 	 * napc_Pool_init(&pool, "int pool", buffer, 5, sizeof(int));
 	 * 
-	 * napc_ssize id = napc_Pool_allocate(&pool);
+	 * libnapc_ssize id = napc_Pool_allocate(&pool);
 	 * 
 	 * int *first_element = napc_Pool_getAddress(&pool, id);
 	 */
@@ -71,7 +71,7 @@
 	 * If the pool is exhausted program execution is halted.
 	 * @changelog 1.0.1 17.03.2022 initial version
 	 */
-	napc_ssize napc_Pool_claimElement(
+	libnapc_ssize napc_Pool_claimElement(
 		napc__Pool *pool
 	);
 
@@ -88,7 +88,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @changelog 1.0.1 17.03.2022 added deprecation warning
 	 */
-	napc_ssize napc_Pool_allocate(
+	libnapc_ssize napc_Pool_allocate(
 		napc__Pool *pool
 	) NAPC_DEPRECATED();
 
@@ -156,7 +156,7 @@
 	 * 
 	 * napc_Pool_init(&pool, "int pool", buffer, 5, sizeof(int));
 	 * 
-	 * napc_ssize id = napc_Pool_allocate(&pool);
+	 * libnapc_ssize id = napc_Pool_allocate(&pool);
 	 * 
 	 * int *first_element = napc_Pool_getAddress(&pool, id);
 	 */

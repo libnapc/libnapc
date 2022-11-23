@@ -20,9 +20,9 @@
 	 * (`%zd` is not supported in arduino's libc)
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef signed long napc_ssize;
+	typedef signed long libnapc_ssize;
 
-	// For napc_ssize literals
+	// For libnapc_ssize literals
 	#define NAPC_SSIZE_LITERAL(_v) _v ## l
 
 	/*!
@@ -30,12 +30,12 @@
 	 * @module Core
 	 * @version 1.0.0
 	 * @description
-	 * Format specifier for printing `napc_ssize` variables.
+	 * Format specifier for printing `libnapc_ssize` variables.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
-	 * napc_ssize var = -1;
+	 * libnapc_ssize var = -1;
 	 * 
-	 * napc_printf("var is = %" NAPC_SSIZE_PRINTF, var);
+	 * napc_printf("var is = %" LIBNAPC_SSIZE_PRINT_DEC, var);
 	 */
-	#define NAPC_SSIZE_PRINTF "ld"
+	#define LIBNAPC_SSIZE_PRINT_DEC "ld"
 #endif

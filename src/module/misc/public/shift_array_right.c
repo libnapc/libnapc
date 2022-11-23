@@ -1,7 +1,8 @@
 #include <module/misc/_private/_misc.h>
 
 void napc_misc_shiftArrayRight(void *array, libnapc_size n_elements, libnapc_size element_size) {
-	for (napc_ssize i = n_elements - 1; i >= 0 ; --i) {
+	// TODO: check usage of libnapc_ssize here.
+	for (libnapc_ssize i = n_elements - 1; i >= 0 ; --i) {
 		// cannot move last element, it gets discarded
 		if ((libnapc_size)i == (n_elements - 1)) continue;
 

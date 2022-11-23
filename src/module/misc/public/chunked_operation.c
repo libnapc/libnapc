@@ -23,12 +23,12 @@ bool napc_misc_chunkedOperation(
 			continue;
 		}
 
-		napc_ssize result = fn(ptr, current_chunk_size, fn_context);
+		libnapc_ssize result = fn(ptr, current_chunk_size, fn_context);
 
 		// Impartial operation
-		if (result != (napc_ssize)current_chunk_size) {
+		if (result != (libnapc_ssize)current_chunk_size) {
 			PV_NAPC_MISC_ERROR(
-				"Impartial chunk operation (current_chunk_size=%" LIBNAPC_SIZE_PRINT_DEC ",result=%" NAPC_SSIZE_PRINTF ")",
+				"Impartial chunk operation (current_chunk_size=%" LIBNAPC_SIZE_PRINT_DEC ",result=%" LIBNAPC_SSIZE_PRINT_DEC ")",
 				current_chunk_size, result
 			);
 

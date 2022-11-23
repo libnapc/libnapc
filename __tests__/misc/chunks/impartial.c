@@ -1,7 +1,7 @@
 #include <libnapc.h>
 #include <libnapc-testing.h>
 
-static napc_ssize _readFunction(const void *data, libnapc_size data_size, void *context) {
+static libnapc_ssize _readFunction(const void *data, libnapc_size data_size, void *context) {
 	(void)data;
 	(void)data_size;
 	(void)context;
