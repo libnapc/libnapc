@@ -5,7 +5,7 @@ TEST_CASE("It should work properly") {
 	libnapc_u32 out = 0;
 
 	TEST_ASSERT(napc_parser_parseHexadecimalNumberU32("1234", &out));
-	TEST_ASSERT(out == NAPC_U32_LITERAL(0x1234));
+	TEST_ASSERT(out == LIBNAPC_U32_LITERAL(0x1234));
 }
 
 TEST_CASE("It should work without output") {

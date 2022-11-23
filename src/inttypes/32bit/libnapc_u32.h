@@ -23,9 +23,9 @@
 	 * @param n/a value Value
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
-	 * napc_u32 var = NAPC_U32_LITERAL(12345);
+	 * napc_u32 var = LIBNAPC_U32_LITERAL(12345);
 	 */
-	#define NAPC_U32_LITERAL(value) UINT32_C(value)
+	#define LIBNAPC_U32_LITERAL(value) UINT32_C(value)
 
 	/*!
 	 * @name NAPC_U32_PRINTF

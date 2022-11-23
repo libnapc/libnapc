@@ -9,7 +9,7 @@
 
 	#define NAPC_MAGIC_MEMBER napc_init_magic _init_magic
 
-	#define NAPC_MAGIC_DESTROYED NAPC_U32_LITERAL(0xFFFFFFFF)
+	#define NAPC_MAGIC_DESTROYED LIBNAPC_U32_LITERAL(0xFFFFFFFF)
 
 	#define NAPC_MAGIC_INIT(type, obj) (obj)->_init_magic = (NAPC_MAGIC_ ## type)
 	#define NAPC_MAGIC_DESTROY(obj) (obj)->_init_magic = NAPC_MAGIC_DESTROYED
@@ -33,16 +33,16 @@
 	 * Is used for structs that are allocated on the stack and have an
 	 * _init() function.
 	 */
-	#define NAPC_MAGIC_napc__HRTimer                         NAPC_U32_LITERAL(0x56d3a4f1)
-	#define NAPC_MAGIC_napc__Timer                           NAPC_U32_LITERAL(0x2f1fa628)
-	#define NAPC_MAGIC_napc__Pool                            NAPC_U32_LITERAL(0xd3d0df2a)
+	#define NAPC_MAGIC_napc__HRTimer                      LIBNAPC_U32_LITERAL(0x56d3a4f1)
+	#define NAPC_MAGIC_napc__Timer                        LIBNAPC_U32_LITERAL(0x2f1fa628)
+	#define NAPC_MAGIC_napc__Pool                         LIBNAPC_U32_LITERAL(0xd3d0df2a)
 
-	#define NAPC_MAGIC_napc__Buffer                          NAPC_U32_LITERAL(0x7beccbe2)
-	#define NAPC_MAGIC_napc__Reader                          NAPC_U32_LITERAL(0xf0de7965)
+	#define NAPC_MAGIC_napc__Buffer                       LIBNAPC_U32_LITERAL(0x7beccbe2)
+	#define NAPC_MAGIC_napc__Reader                       LIBNAPC_U32_LITERAL(0xf0de7965)
 
-	#define NAPC_MAGIC_napc__Writer                          NAPC_U32_LITERAL(0x1b81b5d1)
+	#define NAPC_MAGIC_napc__Writer                       LIBNAPC_U32_LITERAL(0x1b81b5d1)
 
-	#define NAPC_MAGIC_napc__IPv4Participant                 NAPC_U32_LITERAL(0x97d59a3d)
+	#define NAPC_MAGIC_napc__IPv4Participant              LIBNAPC_U32_LITERAL(0x97d59a3d)
 
-	#define NAPC_MAGIC_napc__RingBuffer                      NAPC_U32_LITERAL(0x67fa9d2d)
+	#define NAPC_MAGIC_napc__RingBuffer                   LIBNAPC_U32_LITERAL(0x67fa9d2d)
 #endif

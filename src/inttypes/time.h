@@ -14,7 +14,7 @@
 	typedef libnapc_u32 libnapc_time;
 
 	// For libnapc_time literals
-	#define LIBNAPC_TIME_LITERAL(_v) NAPC_U32_LITERAL(_v)
+	#define LIBNAPC_TIME_LITERAL(_v) LIBNAPC_U32_LITERAL(_v)
 
 	/*!
 	 * @name NAPC_TIME_PRINTF
