@@ -39,9 +39,9 @@
 	 * This macro is only included for consistency's sake.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
-	 * napc_u16 var = 1;
+	 * libnapc_u16 var = 1;
 	 * 
-	 * napc_printf("var is = %" NAPC_U16_PRINTF, var);
+	 * libnapc_printf("var is = %" LIBNAPC_U16_PRINT_DEC, var);
 	 */
-	#define NAPC_U16_PRINTF      PRIu16
+	#define LIBNAPC_U16_PRINT_DEC      PRIu16
 #endif
