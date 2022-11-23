@@ -17,7 +17,7 @@
 	void libnapc_init(void);
 
 	/*!
-	 * @name napc_version
+	 * @name libnapc_version
 	 * @brief Get the version of libnapc.
 	 * @version 1.2.0
 	 * @description
@@ -26,7 +26,7 @@
 	 * @example
 	 * napc_printf("Using libnapc version: %s\n", napc_version());
 	 */
-	const char *napc_version(void);
+	const char *libnapc_version(void);
 
 	/*!
 	 * @name napc_getFullVersion

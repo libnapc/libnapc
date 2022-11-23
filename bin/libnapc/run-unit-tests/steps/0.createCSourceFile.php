@@ -10,7 +10,7 @@ int main(int argc, const char **argv) {
 
 	libnapc_init();
 
-	napc_printf("libnapc version is %s\\n", napc_version());
+	napc_printf("libnapc version is %s\\n", libnapc_version());
 
 	napc_runAllTests();
 }

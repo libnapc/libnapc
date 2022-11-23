@@ -1,4 +1,4 @@
-const char *napc_version(void) {
+const char *libnapc_version(void) {
 	return "%BC_RELEASE_VERSION%";
 }
 
