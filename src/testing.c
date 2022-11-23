@@ -1,7 +1,7 @@
 #include <libnapc.h>
 #include <stdio.h>
 
-void PV_napc_testAssert(
+void PV_libnapc_testAssert(
 	const char *assertion,
 	const char *file,
 	int expr

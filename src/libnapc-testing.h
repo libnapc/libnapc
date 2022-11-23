@@ -13,12 +13,12 @@
 	#define TEST_CASE(description) \
 		NAPC_TESTING_CONCAT(void PV_napc_unitTest, __COUNTER__) (void)
 
-	void PV_napc_testAssert(
+	void PV_libnapc_testAssert(
 		const char *assertion,
 		const char *file,
 		int expr
 	);
 
 	#define TEST_ASSERT(expr) \
-		PV_napc_testAssert(#expr, __FILE__, !!(expr))
+		PV_libnapc_testAssert(#expr, __FILE__, !!(expr))
 #endif
