@@ -54,7 +54,7 @@ void napc_logMessage(
 	const char *function,
 	const char *fmt, ...
 ) {
-	napc_time time = napc_getTimeSinceBoot();
+	napc_time time = libnapc_getTimeSinceBoot();
 
 	if (PV_napc_log_colorful_output) {
 		if (level == NAPC_LEVEL_INFO) {

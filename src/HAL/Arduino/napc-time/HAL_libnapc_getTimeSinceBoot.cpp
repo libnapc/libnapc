@@ -6,7 +6,7 @@
 	extern "C" {
 		#include <napc-time/_private/_napc_time.h>
 
-		napc_time HAL_napc_getTimeSinceBoot(bool high_res) {
+		napc_time HAL_libnapc_getTimeSinceBoot(bool high_res) {
 			if (high_res) {
 				return micros();
 			}

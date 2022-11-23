@@ -1,5 +1,5 @@
 #include <napc-time/_private/_napc_time.h>
 
-napc_time napc_getTimeSinceBootHR(void) {
-	return HAL_napc_getTimeSinceBoot(true);
+napc_time libnapc_getTimeSinceBootHR(void) {
+	return HAL_libnapc_getTimeSinceBoot(true);
 }

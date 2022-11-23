@@ -2,6 +2,6 @@
 
 void napc_HRTimer_start(napc__HRTimer *timer) {
 	NAPC_MAGIC_ASSERT(napc__HRTimer, timer);
-	timer->started_at = napc_getTimeSinceBootHR();
+	timer->started_at = libnapc_getTimeSinceBootHR();
 	timer->expired = false;
 }

@@ -9,7 +9,7 @@ bool napc_HRTimer_expired(napc__HRTimer *timer) {
 		if (timer->expired) return false;
 	}
 
-	timer->expired = (napc_getTimeSinceBootHR() - timer->started_at) >= timer->duration;
+	timer->expired = (libnapc_getTimeSinceBootHR() - timer->started_at) >= timer->duration;
 
 	return timer->expired;
 }

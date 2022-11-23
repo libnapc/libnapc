@@ -6,7 +6,7 @@
 
 	extern struct timespec PV_napc_program_start_linux; // @global
 
-	napc_time HAL_napc_getTimeSinceBoot(bool high_res) {
+	napc_time HAL_libnapc_getTimeSinceBoot(bool high_res) {
 		struct timespec now;
 
 		clock_gettime(CLOCK_MONOTONIC_RAW, &now);

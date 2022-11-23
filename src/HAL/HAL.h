@@ -10,7 +10,7 @@
 
 	// napc-time
 		void HAL_napc_initTime(void);
-		napc_time HAL_napc_getTimeSinceBoot(bool high_res);
+		napc_time HAL_libnapc_getTimeSinceBoot(bool high_res);
 	// napc-time
 
 	// napc-serial

@@ -5,7 +5,7 @@
 
 	#include <napc-panic/napc-panic.h>
 
-	#include <napc-time/napc-time.h> // napc_getTimeSinceBoot()
+	#include <napc-time/napc-time.h> // libnapc_getTimeSinceBoot()
 	#include <napc-serial/napc-serial.h> // napc_printf()
 	#include <napc-utils/napc-utils.h> // napc_snprintf(), napc_vsnprintf()
 #endif
