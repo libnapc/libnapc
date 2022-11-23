@@ -11,7 +11,7 @@
 		PV_napc_log_colorful_output = strcasecmp(colorful_output, "yes") == 0;
 
 		if (PV_napc_log_colorful_output) {
-			napc_printf("HAL_napc_determineColorOutput (linux) using colorful output.");
+			libnapc_printf("HAL_napc_determineColorOutput (linux) using colorful output.");
 		}
 	}
 #endif

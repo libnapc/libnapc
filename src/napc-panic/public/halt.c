@@ -44,17 +44,17 @@ void napc_halt(
 
 	libnapc_puts("\n\n");
 
-	napc_printf(
+	libnapc_printf(
 		"(panic +%010" NAPC_TIME_PRINTF ") The application has experienced a fatal error.\n",
 		time
 	);
 
-	napc_printf(
+	libnapc_printf(
 		"(panic +%010" NAPC_TIME_PRINTF ") There's likely log output above.\n",
 		time
 	);
 
-	napc_printf(
+	libnapc_printf(
 		"(panic +%010" NAPC_TIME_PRINTF ") Application will be terminated.\n",
 		time
 	);

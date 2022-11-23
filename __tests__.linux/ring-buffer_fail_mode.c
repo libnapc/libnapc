@@ -18,7 +18,7 @@ int main(int argc, const char **argv) {
 	napc_RingBuffer_insertByte(&rbuffer, 10);
 	napc_RingBuffer_insertByte(&rbuffer, 10);
 
-	napc_printf("crash:\n");
+	libnapc_printf("crash:\n");
 	napc_RingBuffer_insertByte(&rbuffer, 10);
 }
 

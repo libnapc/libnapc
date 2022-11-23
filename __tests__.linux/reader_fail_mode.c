@@ -18,6 +18,6 @@ int main(int argc, const char **argv) {
 	NAPC_IGNORE_VALUE(napc_Reader_readU8(&reader, NULL));
 	NAPC_IGNORE_VALUE(napc_Reader_readU8(&reader, NULL));
 
-	napc_printf("crash:\n");
+	libnapc_printf("crash:\n");
 	NAPC_IGNORE_VALUE(napc_Reader_readU8(&reader, NULL));
 }

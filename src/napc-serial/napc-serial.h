@@ -49,7 +49,7 @@
 	 * @param fmt printf()-like format string.
 	 * @param ... Values to incorporate into string.
 	 */
-	void napc_printf(const char *fmt, ...) NAPC_FN_PRINTFLIKE(1, 2);
+	void libnapc_printf(const char *fmt, ...) NAPC_FN_PRINTFLIKE(1, 2);
 
 	/*!
 	 * @name napc_mute

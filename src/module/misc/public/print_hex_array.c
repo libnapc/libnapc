@@ -4,6 +4,6 @@ void napc_misc_printHexArray(const void *bytes, napc_size n_bytes) {
 	const unsigned char *data = bytes;
 
 	for (napc_size i = 0; i < n_bytes; ++i) {
-		napc_printf("%2.2x", data[i]);
+		libnapc_printf("%2.2x", data[i]);
 	}
 }

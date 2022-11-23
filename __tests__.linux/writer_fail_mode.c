@@ -18,7 +18,7 @@ int main(int argc, const char **argv) {
 	napc_Writer_writeU8(&writer, 10);
 	napc_Writer_writeU8(&writer, 10);
 
-	napc_printf("crash:\n");
+	libnapc_printf("crash:\n");
 	napc_Writer_writeU8(&writer, 10);
 }
 
