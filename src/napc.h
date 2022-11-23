@@ -45,7 +45,6 @@
 	#include <napc-panic/napc-panic.h>
 	#include <napc-core/napc-core.h>
 	#include <napc-log/napc-log.h>
-	#include <napc-rand-source/napc-rand-source.h>
 
 	#include <module/pool/pool.h>
 	#include <module/hr-timer/hr-timer.h>
