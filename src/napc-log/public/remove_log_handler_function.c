@@ -3,7 +3,7 @@
 void napc_removeLogHandlerFunction(
 	napc_size log_handler_index
 ) {
-	NAPC_ASSERT(5 > log_handler_index);
+	LIBNAPC_ASSERT(5 > log_handler_index);
 
 	if (PV_napc_log_handler_array[log_handler_index] == NULL) {
 		LIBNAPC_PANIC(
