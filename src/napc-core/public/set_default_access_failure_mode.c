@@ -1,6 +1,6 @@
 #include <napc-core/_private/_napc-core.h>
 
-libnapc__AccessFailureMode napc_setDefaultAccessFailureMode(
+libnapc__AccessFailureMode libnapc_setDefaultAccessFailureMode(
 	libnapc__AccessFailureMode new_default_mode
 ) {
 	if (NAPC_UNLIKELY(!PV_napc_validateAccessFailureMode(new_default_mode))) {

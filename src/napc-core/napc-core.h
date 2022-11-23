@@ -54,7 +54,7 @@
 	 *     // ...
 	 * }
 	 */
-	libnapc__AccessFailureMode napc_setDefaultAccessFailureMode(
+	libnapc__AccessFailureMode libnapc_setDefaultAccessFailureMode(
 		libnapc__AccessFailureMode new_default_mode
 	);
 
