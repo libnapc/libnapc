@@ -6,7 +6,7 @@
 	extern "C" {
 		#include <napc-serial/_private/_napc-serial.h>
 
-		void HAL_napc_puts(const char *str) {
+		void HAL_libnapc_puts(const char *str) {
 			Serial.print(str);
 		}
 	}

@@ -14,7 +14,7 @@
 	 * @example
 	 * napc_puts("Hello World!");
 	 */
-	void napc_puts(const char *str);
+	void libnapc_puts(const char *str);
 
 	/*!
 	 * @name napc_putc

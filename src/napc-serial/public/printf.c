@@ -17,5 +17,5 @@ void napc_printf(const char *fmt, ...) {
 
 	_printf_buffer[sizeof(_printf_buffer) - 1] = 0;
 
-	napc_puts(_printf_buffer);
+	libnapc_puts(_printf_buffer);
 }

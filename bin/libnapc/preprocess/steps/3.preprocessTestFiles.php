@@ -45,7 +45,7 @@ ORIGIN_COMMENT;
 
 				$new_file_contents .= "void $fn_name(void) {\n";
 				$new_file_contents .= "    napc_unmute();\n";
-				$new_file_contents .= "    napc_puts(\"[".$test_file["relative_path"]."] $description ... \");\n";
+				$new_file_contents .= "    libnapc_puts(\"[".$test_file["relative_path"]."] $description ... \");\n";
 				$new_file_contents .= "    napc_mute();\n";
 
 				$context["tests"][$module][] = $fn_name;

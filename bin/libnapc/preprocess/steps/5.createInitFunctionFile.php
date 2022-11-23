@@ -32,7 +32,7 @@ return function($args, &$context) {
 	$init_function_str .= "/**\n";
 	$init_function_str .= " * Warning: this file was auto generated.\n";
 	$init_function_str .= " */\n";
-	$init_function_str .= "void napc_puts(const char *str);\n";
+	$init_function_str .= "void libnapc_puts(const char *str);\n";
 
 	foreach ($init_functions as $boot_function) {
 		$fn_name = $boot_function["fn_name"];
@@ -52,11 +52,11 @@ return function($args, &$context) {
 		fwrite(STDOUT, "Added $fn_name() [libnapc/init,pri=$pri]\n");
 
 		$init_function_str .= "    $fn_name();\n";
-		$init_function_str .= "    napc_puts(\"[libnapc/init] called $fn_name (pri=$pri)\\n\");\n";
+		$init_function_str .= "    libnapc_puts(\"[libnapc/init] called $fn_name (pri=$pri)\\n\");\n";
 		$init_function_str .= "\n";
 	}
 
-	$init_function_str .= "    napc_puts(\"[libnapc/init] done\\n\");\n\n";
+	$init_function_str .= "    libnapc_puts(\"[libnapc/init] done\\n\");\n\n";
 	$init_function_str .= "    _initialised = 1;\n";
 
 	$init_function_str .= "}\n";

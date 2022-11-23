@@ -58,11 +58,11 @@ void napc_logMessage(
 
 	if (PV_napc_log_colorful_output) {
 		if (level == NAPC_LEVEL_INFO) {
-			napc_puts("\033[0;34m");
+			libnapc_puts("\033[0;34m");
 		} else if (level == NAPC_LEVEL_WARNING) {
-			napc_puts("\033[0;33m");
+			libnapc_puts("\033[0;33m");
 		} else if (level == NAPC_LEVEL_ERROR) {
-			napc_puts("\033[0;31m");
+			libnapc_puts("\033[0;31m");
 		}
 	}
 
@@ -78,7 +78,7 @@ void napc_logMessage(
 			label, time, napc_getFreeMemory(), subsys, _fn
 		);
 
-		napc_puts(_message_buffer);
+		libnapc_puts(_message_buffer);
 	}
 
 	{
@@ -106,8 +106,8 @@ void napc_logMessage(
 	}
 
 	if (PV_napc_log_colorful_output) {
-		napc_puts("\033[0;0m");
+		libnapc_puts("\033[0;0m");
 	}
 
-	napc_puts("\n");
+	libnapc_puts("\n");
 }
