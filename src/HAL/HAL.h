@@ -10,7 +10,7 @@
 
 	// napc-time
 		void HAL_libnapc_initTime(void);
-		napc_time HAL_libnapc_getTimeSinceBoot(bool high_res);
+		libnapc_time HAL_libnapc_getTimeSinceBoot(bool high_res);
 	// napc-time
 
 	// napc-serial
@@ -24,8 +24,8 @@
 	// napc-panic
 
 	// napc-delay
-		void HAL_libnapc_delay(napc_time amount);
-		void HAL_libnapc_delayUs(napc_time amount);
+		void HAL_libnapc_delay(libnapc_time amount);
+		void HAL_libnapc_delayUs(libnapc_time amount);
 	// napc-delay
 
 	// napc-core

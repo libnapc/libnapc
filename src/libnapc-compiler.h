@@ -32,7 +32,7 @@
 	 *     my_function(); // will generate a compiler warning
 	 * }
 	 * 
-	 * bool napc_loop(napc_time uptime) {
+	 * bool napc_loop(libnapc_time uptime) {
 	 *     return false;
 	 * }
 	 */

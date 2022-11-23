@@ -6,7 +6,7 @@
 
 	extern struct timespec PV_napc_program_start_linux; // @global
 
-	napc_time HAL_libnapc_getTimeSinceBoot(bool high_res) {
+	libnapc_time HAL_libnapc_getTimeSinceBoot(bool high_res) {
 		struct timespec now;
 
 		clock_gettime(CLOCK_MONOTONIC_RAW, &now);
@@ -20,12 +20,12 @@
 			delta += (delta_seconds * 1000000); // 1sec = 1000000us
 			delta += (delta_nseconds / 1000); // 1000ns = 1us
 
-			return (napc_time)delta;
+			return (libnapc_time)delta;
 		}
 
 		delta += (delta_seconds * 1000); // 1sec = 1000ms
 		delta += (delta_nseconds / 1000000); // 1000000ns = 1ms
 
-		return (napc_time)delta;
+		return (libnapc_time)delta;
 	}
 #endif

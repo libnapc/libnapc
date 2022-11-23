@@ -22,7 +22,7 @@ int main(int argc, const char **argv) {
 	napc_RingBuffer_insertByte(&rbuffer, 10);
 }
 
-bool napc_app_loop(napc_time uptime) {
+bool napc_app_loop(libnapc_time uptime) {
 	NAPC_IGNORE_VALUE(uptime);
 
 	return false;

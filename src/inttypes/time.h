@@ -11,7 +11,7 @@
 	 * Unsigned integer type for holding timestamps.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef napc_u32 napc_time;
+	typedef napc_u32 libnapc_time;
 
 	// For napc_time literals
 	#define NAPC_TIME_LITERAL(_v) NAPC_U32_LITERAL(_v)
@@ -26,7 +26,7 @@
 	 * @example
 	 * napc_time var = 1;
 	 * 
-	 * napc_printf("var is = %" NAPC_TIME_PRINTF, var);
+	 * napc_printf("var is = %" LIBNAPC_TIME_PRINT_DEC, var);
 	 */
-	#define NAPC_TIME_PRINTF PRIu32
+	#define LIBNAPC_TIME_PRINT_DEC PRIu32
 #endif

@@ -15,7 +15,7 @@
 	 * @flags hw
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	napc_time libnapc_getTimeSinceBoot(void) NAPC_FN_WARNUNUSED_RET();
+	libnapc_time libnapc_getTimeSinceBoot(void) NAPC_FN_WARNUNUSED_RET();
 
 	/*!
 	 * @name napc_getTimeSinceBootHR
@@ -28,5 +28,5 @@
 	 * @flags hw
 	 * @changelog 2.0.0 21.10.2022 initial version
 	 */
-	napc_time libnapc_getTimeSinceBootHR(void) NAPC_FN_WARNUNUSED_RET();
+	libnapc_time libnapc_getTimeSinceBootHR(void) NAPC_FN_WARNUNUSED_RET();
 #endif

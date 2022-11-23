@@ -35,8 +35,8 @@
 
 		napc__HRTimerMode mode;
 
-		napc_time duration;
-		napc_time started_at;
+		libnapc_time duration;
+		libnapc_time started_at;
 		bool expired;
 	} napc__HRTimer;
 
@@ -57,7 +57,7 @@
 	 * // 'true' only ONCE.
 	 * napc_HRTimer_init(&timer, 1000, NAPC_HRTIMER_MODE_ONESHOT); // 1000us = 1ms
 	 */
-	void napc_HRTimer_init(napc__HRTimer *timer, napc_time duration, napc__HRTimerMode mode);
+	void napc_HRTimer_init(napc__HRTimer *timer, libnapc_time duration, napc__HRTimerMode mode);
 
 	/*!
 	 * @name napc_HRTimer_create
@@ -73,7 +73,7 @@
 	 * // 'true' only ONCE.
 	 * napc__HRTimer timer = napc_HRTimer_create(1000, NAPC_HRTIMER_MODE_ONESHOT); // 1000us = 1ms
 	 */
-	napc__HRTimer napc_HRTimer_create(napc_time duration, napc__HRTimerMode mode);
+	napc__HRTimer napc_HRTimer_create(libnapc_time duration, napc__HRTimerMode mode);
 
 	/*!
 	 * @name napc_HRTimer_start

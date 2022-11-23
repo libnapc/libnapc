@@ -4,7 +4,7 @@
 	#include <napc-delay/_private/_napc-delay.h>
 	#include <unistd.h> // usleep()
 
-	void HAL_libnapc_delayUs(napc_time amount) {
+	void HAL_libnapc_delayUs(libnapc_time amount) {
 		usleep(amount);
 	}
 #endif

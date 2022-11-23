@@ -54,7 +54,7 @@ void napc_logMessage(
 	const char *function,
 	const char *fmt, ...
 ) {
-	napc_time time = libnapc_getTimeSinceBoot();
+	libnapc_time time = libnapc_getTimeSinceBoot();
 
 	if (PV_napc_log_colorful_output) {
 		if (level == NAPC_LEVEL_INFO) {
@@ -74,7 +74,7 @@ void napc_logMessage(
 
 		libnapc_snprintf(
 			_message_buffer, sizeof(_message_buffer),
-			"(%-5s +%010" NAPC_TIME_PRINTF " / %8" LIBNAPC_SIZE_PRINT_DEC ") subsys=%-23s [%40s] ",
+			"(%-5s +%010" LIBNAPC_TIME_PRINT_DEC " / %8" LIBNAPC_SIZE_PRINT_DEC ") subsys=%-23s [%40s] ",
 			label, time, libnapc_getFreeMemory(), subsys, _fn
 		);
 

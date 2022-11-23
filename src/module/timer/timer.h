@@ -31,8 +31,8 @@
 
 		napc__TimerMode mode;
 
-		napc_time duration;
-		napc_time started_at;
+		libnapc_time duration;
+		libnapc_time started_at;
 		bool expired;
 	} napc__Timer;
 
@@ -53,7 +53,7 @@
 	 * // 'true' only ONCE.
 	 * napc_Timer_init(&timer, 1000, NAPC_TIMER_MODE_ONESHOT); // 1000ms = 1s
 	 */
-	void napc_Timer_init(napc__Timer *timer, napc_time duration, napc__TimerMode mode);
+	void napc_Timer_init(napc__Timer *timer, libnapc_time duration, napc__TimerMode mode);
 
 	/*!
 	 * @name napc_Timer_create
@@ -69,7 +69,7 @@
 	 * // 'true' only ONCE.
 	 * napc__Timer timer = napc_Timer_create(1000, NAPC_TIMER_MODE_ONESHOT); // 1000ms = 1s
 	 */
-	napc__Timer napc_Timer_create(napc_time duration, napc__TimerMode mode);
+	napc__Timer napc_Timer_create(libnapc_time duration, napc__TimerMode mode);
 
 	/*!
 	 * @name napc_Timer_start
