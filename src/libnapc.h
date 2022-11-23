@@ -29,16 +29,16 @@
 	const char *libnapc_version(void);
 
 	/*!
-	 * @name napc_getFullVersion
+	 * @name libnapc_getFullVersion
 	 * @brief Get the full version of libnapc.
 	 * @version 1.3.0
 	 * @description
 	 * Return the full version string of libnapc.
 	 * @changelog 1.3.0 21.03.2022 initial version
 	 * @example
-	 * napc_printf("Using libnapc version: %s\n", napc_getFullVersion());
+	 * napc_printf("Using libnapc version: %s\n", libnapc_getFullVersion());
 	 */
-	const char *napc_getFullVersion(void);
+	const char *libnapc_getFullVersion(void);
 
 	#include <napc-serial/napc-serial.h>
 	#include <napc-time/napc-time.h>
