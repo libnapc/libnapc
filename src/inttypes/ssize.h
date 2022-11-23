@@ -23,7 +23,7 @@
 	typedef signed long libnapc_ssize;
 
 	// For libnapc_ssize literals
-	#define NAPC_SSIZE_LITERAL(_v) _v ## l
+	#define LIBNAPC_SSIZE_LITERAL(_v) _v ## l
 
 	/*!
 	 * @name NAPC_SSIZE_PRINTF
