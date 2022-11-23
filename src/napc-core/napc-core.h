@@ -67,22 +67,6 @@
 	bool PV_napc_validateAccessFailureMode(napc__AccessFailureMode mode);
 
 	/*!
-	 * @name napc_getUptime
-	 * @brief Get uptime in seconds.
-	 * @version 1.0.0
-	 * @description
-	 * Get the uptime in seconds.
-	 * @return Returns the number of seconds that have passed since boot.
-	 * @flags hw
-	 * @changelog 1.0.0 17.02.2022 initial version
-	 * @example
-	 * napc_time uptime = napc_getUptime();
-	 * 
-	 * napc_printf("I'm up since %" NAPC_TIME_PRINTF " seconds", uptime);
-	 */
-	napc_time napc_getUptime(void) NAPC_FN_WARNUNUSED_RET();
-
-	/*!
 	 * @name napc_getFreeMemory
 	 * @brief Get available memory.
 	 * @version 1.0.0
