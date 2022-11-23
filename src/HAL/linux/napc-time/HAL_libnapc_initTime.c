@@ -6,7 +6,7 @@
 
 	struct timespec PV_napc_program_start_linux; // @global
 
-	void HAL_napc_initTime(void) {
+	void HAL_libnapc_initTime(void) {
 		clock_gettime(CLOCK_MONOTONIC_RAW, &PV_napc_program_start_linux);
 	}
 #endif

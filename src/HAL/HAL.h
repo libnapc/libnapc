@@ -9,7 +9,7 @@
 	#endif
 
 	// napc-time
-		void HAL_napc_initTime(void);
+		void HAL_libnapc_initTime(void);
 		napc_time HAL_libnapc_getTimeSinceBoot(bool high_res);
 	// napc-time
 
