@@ -15,7 +15,7 @@
 	 * @param n_bytes Size of bytes array.
 	 * @changelog 1.5.0 25.03.2022 initial version
 	 * @example
-	 * napc_u8 array[4] = {0xde, 0xad, 0xbe, 0xef};
+	 * libnapc_u8 array[4] = {0xde, 0xad, 0xbe, 0xef};
 	 * 
 	 * // prints deadbeef
 	 * napc_misc_printHexArray(array, sizeof(array));
@@ -56,12 +56,12 @@
 	 */
 	void napc_misc_setMemoryFenceBytes(
 		unsigned char *buffer, libnapc_size buffer_size,
-		libnapc_size memory_fence_size, napc_u8 fence_value
+		libnapc_size memory_fence_size, libnapc_u8 fence_value
 	);
 
 	bool napc_misc_verifyMemoryFenceBytes(
 		unsigned char *buffer, libnapc_size buffer_size,
-		libnapc_size memory_fence_size, napc_u8 fence_value
+		libnapc_size memory_fence_size, libnapc_u8 fence_value
 	);
 
 	/**************************

@@ -84,7 +84,7 @@
 	 * @param bool expr Expression to assert.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
-	 * napc_u8 var = 13;
+	 * libnapc_u8 var = 13;
 	 * 
 	 * NAPC_ASSERT(var == 13);
 	 */

@@ -70,7 +70,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
 	 * const char *hex_str = "deadbeefabcdefaa123b";
-	 * napc_u8 bytes[10];
+	 * libnapc_u8 bytes[10];
 	 * 
 	 * if (napc_parser_parseHexString(hex_str, 10, bytes)) {
 	 *     napc_printf("The hex value is: ");
@@ -85,7 +85,7 @@
 	bool napc_parser_parseHexString(
 		const char *string,
 		libnapc_size n_bytes,
-		napc_u8 *out
+		libnapc_u8 *out
 	) NAPC_FN_WARNUNUSED_RET();
 
 	/*!
@@ -101,7 +101,7 @@
 	 * The output array must have at least 6 elements (6 bytes).
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
-	 * napc_u8 addr[6];
+	 * libnapc_u8 addr[6];
 	 * 
 	 * if (napc_parser_parseMACAddress("ab:de:ef:11:22:33", addr)) {
 	 *     // addr[0] now contains 171 (0xab)
@@ -116,7 +116,7 @@
 	 */
 	bool napc_parser_parseMACAddress(
 		const char *string,
-		napc_u8 *out
+		libnapc_u8 *out
 	) NAPC_FN_WARNUNUSED_RET();
 
 	/*!
@@ -132,7 +132,7 @@
 	 * The output array must have at least 4 elements (4 bytes).
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
-	 * napc_u8 addr[4];
+	 * libnapc_u8 addr[4];
 	 * 
 	 * if (napc_parser_parseIPv4Address("1.2.3.4", addr)) {
 	 *     // addr[0] now contains 1
@@ -145,7 +145,7 @@
 	 */
 	bool napc_parser_parseIPv4Address(
 		const char *string,
-		napc_u8 *out)
+		libnapc_u8 *out)
 	NAPC_FN_WARNUNUSED_RET();
 
 	/*!

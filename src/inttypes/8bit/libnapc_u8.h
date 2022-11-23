@@ -1,5 +1,5 @@
-#if !defined(NAPC_INTTYPES_U8_h)
-	#define NAPC_INTTYPES_U8_h
+#if !defined(LIBNAPC_INTTYPES_U8_h)
+	#define LIBNAPC_INTTYPES_U8_h
 
 	#include <stdint.h> // uint8_t
 	#include <inttypes.h> // PRIu8
@@ -12,7 +12,7 @@
 	 * Type for unsigned integers with 8 bits width.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef uint8_t napc_u8;
+	typedef uint8_t libnapc_u8;
 
 	/*!
 	 * @name NAPC_U8_LITERAL

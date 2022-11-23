@@ -10,7 +10,7 @@ static libnapc_ssize _readFunction(const void *data, libnapc_size data_size, voi
 }
 
 TEST_CASE("should return false on impartial operation") {
-	napc_u8 data[64];
+	libnapc_u8 data[64];
 
 	TEST_ASSERT(
 		!napc_misc_chunkedOperation(

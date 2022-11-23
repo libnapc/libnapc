@@ -7,10 +7,10 @@ bool napc_Writer_writeU32BE(
 		return false;
 	}
 
-	napc_u8 byte_3 = (value >> 24u) & 0xFFu;
-	napc_u8 byte_2 = (value >> 16u) & 0xFFu;
-	napc_u8 byte_1 = (value >>  8u) & 0xFFu;
-	napc_u8 byte_0 = (value >>  0u) & 0xFFu;
+	libnapc_u8 byte_3 = (value >> 24u) & 0xFFu;
+	libnapc_u8 byte_2 = (value >> 16u) & 0xFFu;
+	libnapc_u8 byte_1 = (value >>  8u) & 0xFFu;
+	libnapc_u8 byte_0 = (value >>  0u) & 0xFFu;
 
 	unsigned char *data = ctx->data;
 	data[ctx->_offset + 0] = byte_3;

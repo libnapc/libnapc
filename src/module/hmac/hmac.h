@@ -20,7 +20,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	void napc_hmac_calculate(
-		napc_u8 *out,
+		libnapc_u8 *out,
 		const char *key,
 		const void *buffer, libnapc_size buffer_size
 	);
@@ -39,7 +39,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	bool napc_hmac_verify(
-		const char *key, const napc_u8 *hmac,
+		const char *key, const libnapc_u8 *hmac,
 		const void *buffer, libnapc_size buffer_size
 	) NAPC_FN_WARNUNUSED_RET();
 #endif

@@ -51,7 +51,7 @@ bool PV_napc_DNS_parseAnswerSection(
 		return false;
 	}
 
-	napc_u8 rd_data[sizeof(out->rd_data)];
+	libnapc_u8 rd_data[sizeof(out->rd_data)];
 
 	if (!napc_Reader_readU8Array(reader, rd_length, rd_data)) return false;
 

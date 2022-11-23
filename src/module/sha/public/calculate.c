@@ -20,7 +20,7 @@ bool napc_sha_calculate(
 	napc__Writer writer = napc_Writer_create(out, out_size);
 
 	for (libnapc_size i = 0; i < 32; ++i) {
-		napc_u8 byte = digest.bytes[i];
+		libnapc_u8 byte = digest.bytes[i];
 
 		bool result = napc_Writer_writeStringFormat(
 			&writer, "%2.2x", byte

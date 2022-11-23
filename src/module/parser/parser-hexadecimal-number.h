@@ -14,7 +14,7 @@
 	 * @return Returns `true` on success, `false` otherwise.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
-	 * napc_u8 out;
+	 * libnapc_u8 out;
 	 * 
 	 * if (napc_parser_parseHexadecimalNumberU8("ef", &out)) {
 	 *     napc_printf("Value is %ld", out); // "Value is 239"
@@ -22,7 +22,7 @@
 	 */
 	bool napc_parser_parseHexadecimalNumberU8(
 		const char *string,
-		napc_u8 *out
+		libnapc_u8 *out
 	) NAPC_FN_WARNUNUSED_RET();
 
 	/*!

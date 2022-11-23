@@ -7,7 +7,7 @@ TEST_CASE("should read u8 array correctly") {
 
 	napc_Reader_init(&ctx, data, sizeof(data));
 
-	napc_u8 out[6] = {1,1,1,1,1,1};
+	libnapc_u8 out[6] = {1,1,1,1,1,1};
 
 	TEST_ASSERT(napc_Reader_readU8Array(&ctx, 2, out));
 	TEST_ASSERT(memcmp(out, "he\x1\x1\x1\x1", 6) == 0);
@@ -24,6 +24,6 @@ TEST_CASE("should handle overflow (buffer) correctly") {
 
 	napc_Reader_init(&ctx, data, sizeof(data));
 
-	napc_u8 out[7] = {1,1,1,1,1,1,1};
+	libnapc_u8 out[7] = {1,1,1,1,1,1,1};
 	TEST_ASSERT(!napc_Reader_readU8Array(&ctx, 6, out));
 }

@@ -2,7 +2,7 @@
 #include <libnapc-testing.h>
 
 TEST_CASE("should write u8 correctly") {
-	napc_u8 data[4] = {0, 0, 0, 0xa};
+	libnapc_u8 data[4] = {0, 0, 0, 0xa};
 	napc__Writer ctx;
 
 	napc_Writer_init(&ctx, data, sizeof(data));

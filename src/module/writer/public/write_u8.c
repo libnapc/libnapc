@@ -1,7 +1,7 @@
 #include <module/writer/_private/_writer.h>
 
 bool napc_Writer_writeU8(
-	napc__Writer *ctx, napc_u8 value
+	napc__Writer *ctx, libnapc_u8 value
 ) {
 	if (!PV_napc_Writer_checkAccess(ctx, 1, "u8")) {
 		return false;

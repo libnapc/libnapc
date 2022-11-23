@@ -5,7 +5,7 @@ TEST_CASE("It should work properly") {
 	const char *message = "hello world!";
 	const char *key = "test";
 
-	const napc_u8 message_hmac[32] = {
+	const libnapc_u8 message_hmac[32] = {
 		0x14,
 		0x82,
 		0x0d,

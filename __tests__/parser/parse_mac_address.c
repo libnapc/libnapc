@@ -2,7 +2,7 @@
 #include <libnapc-testing.h>
 
 TEST_CASE("It should work properly") {
-	napc_u8 out[6];
+	libnapc_u8 out[6];
 
 	TEST_ASSERT(napc_parser_parseMACAddress("11:22:33:44:55:66", out));
 	TEST_ASSERT(out[0] == 0x11);

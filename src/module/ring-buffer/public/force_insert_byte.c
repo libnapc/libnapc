@@ -1,6 +1,6 @@
 #include <module/ring-buffer/_private/_ring-buffer.h>
 
-void napc_RingBuffer_forceInsertByte(napc__RingBuffer *ctx, napc_u8 byte) {
+void napc_RingBuffer_forceInsertByte(napc__RingBuffer *ctx, libnapc_u8 byte) {
 	NAPC_MAGIC_ASSERT(napc__RingBuffer, ctx);
 
 	LIBNAPC_IGNORE_VALUE(

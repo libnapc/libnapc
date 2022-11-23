@@ -1,7 +1,7 @@
 #if !defined(LIBNAPC_INTTYPES_h)
 	#define LIBNAPC_INTTYPES_h
 
-	#include <inttypes/8bit/napc_u8.h> // napc_u8
+	#include <inttypes/8bit/libnapc_u8.h> // libnapc_u8
 	#include <inttypes/8bit/libnapc_i8.h> // libnapc_i8
 
 	#include <inttypes/16bit/libnapc_u16.h> // libnapc_u16

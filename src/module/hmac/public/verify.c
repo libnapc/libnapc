@@ -1,9 +1,9 @@
 #include <module/hmac/_private/_hmac.h>
 
-static napc_u8 _hmac[32]; // @static
+static libnapc_u8 _hmac[32]; // @static
 
 bool napc_hmac_verify(
-	const char *key, const napc_u8 *hmac,
+	const char *key, const libnapc_u8 *hmac,
 	const void *buffer, libnapc_size buffer_size
 ) {
 	libnapc_mzero(_hmac, sizeof(_hmac));

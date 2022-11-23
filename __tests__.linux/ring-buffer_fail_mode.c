@@ -1,6 +1,6 @@
 #include <libnapc.h>
 
-napc_u8 buffer[5];
+libnapc_u8 buffer[5];
 
 int main(int argc, const char **argv) {
 	LIBNAPC_IGNORE_VALUE(argc);

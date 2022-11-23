@@ -2,7 +2,7 @@
 
 bool napc_parser_parseHexadecimalNumberU8(
 	const char *string,
-	napc_u8 *out
+	libnapc_u8 *out
 ) {
 	libnapc_u32 tmp;
 
@@ -11,7 +11,7 @@ bool napc_parser_parseHexadecimalNumberU8(
 	}
 
 	if (out) {
-		*out = (napc_u8)(tmp & 0xFFu);
+		*out = (libnapc_u8)(tmp & 0xFFu);
 	}
 
 	return true;

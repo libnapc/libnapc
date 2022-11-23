@@ -3,7 +3,7 @@
 
 TEST_CASE("should work as expected") {
 	napc__RingBuffer rbuffer;
-	napc_u8 buffer[512];
+	libnapc_u8 buffer[512];
 
 	napc_RingBuffer_init(&rbuffer, buffer, sizeof(buffer));
 

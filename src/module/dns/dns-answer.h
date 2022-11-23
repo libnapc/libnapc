@@ -19,6 +19,6 @@
 		libnapc_u32 ttl;
 
 		libnapc_u16 rd_length;
-		napc_u8 rd_data[NAPC_MODULE_DNS_MAX_RD_DATA_LENGTH];
+		libnapc_u8 rd_data[NAPC_MODULE_DNS_MAX_RD_DATA_LENGTH];
 	} napc__DNSAnswer;
 #endif

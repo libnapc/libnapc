@@ -2,7 +2,7 @@
 #include <libnapc-testing.h>
 
 TEST_CASE("It should work properly") {
-	napc_u8 out[4];
+	libnapc_u8 out[4];
 
 	TEST_ASSERT(napc_parser_parseIPv4Address("123.25.54.3", out));
 	TEST_ASSERT(out[0] == 123);

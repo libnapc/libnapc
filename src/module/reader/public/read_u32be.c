@@ -8,10 +8,10 @@ bool napc_Reader_readU32BE(
 	}
 
 	const unsigned char *data = ctx->data;
-	napc_u8 byte_3 = data[ctx->_offset + 0];
-	napc_u8 byte_2 = data[ctx->_offset + 1];
-	napc_u8 byte_1 = data[ctx->_offset + 2];
-	napc_u8 byte_0 = data[ctx->_offset + 3];
+	libnapc_u8 byte_3 = data[ctx->_offset + 0];
+	libnapc_u8 byte_2 = data[ctx->_offset + 1];
+	libnapc_u8 byte_1 = data[ctx->_offset + 2];
+	libnapc_u8 byte_0 = data[ctx->_offset + 3];
 
 	libnapc_u32 result = 0;
 	result |= (byte_0 <<  0u);

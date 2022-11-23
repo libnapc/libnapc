@@ -1,12 +1,12 @@
 #include <module/aes/_private/_aes.h>
 
 bool napc_aes_encrypt(
-	const napc_u8 *iv,
+	const libnapc_u8 *iv,
 	const char *key,
 	void *buffer, libnapc_size buffer_size
 ) {
 	struct TinyAES_ctx ctx;
-	napc_u8 key_bytes[32];
+	libnapc_u8 key_bytes[32];
 
 	if ((buffer_size % 16) != 0) {
 		LIBNAPC_PANIC("buffer size must be a multiple of 16 bytes.");

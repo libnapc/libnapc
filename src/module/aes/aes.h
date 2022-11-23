@@ -21,7 +21,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
 	 * char message[32];
-	 * napc_u8 iv[16];
+	 * libnapc_u8 iv[16];
 	 * const char *key = "secret";
 	 * char key_hashed[65];
 	 * 
@@ -60,7 +60,7 @@
 	 * }
 	 */
 	bool napc_aes_encrypt(
-		const napc_u8 *iv,
+		const libnapc_u8 *iv,
 		const char *key,
 		void *buffer, libnapc_size buffer_size
 	) NAPC_FN_WARNUNUSED_RET();
@@ -80,7 +80,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	bool napc_aes_decrypt(
-		const napc_u8 *iv,
+		const libnapc_u8 *iv,
 		const char *key,
 		void *buffer, libnapc_size buffer_size
 	) NAPC_FN_WARNUNUSED_RET();

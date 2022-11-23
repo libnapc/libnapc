@@ -2,22 +2,22 @@
 #include <libnapc-testing.h>
 
 TEST_CASE("It should work properly") {
-	napc_u8 iv[16] = {
+	libnapc_u8 iv[16] = {
 		1, 2, 3, 4, 5, 6, 7, 8,
 		1, 2, 3, 4, 5, 6, 7, 8
 	};
-	napc_u8 data[16] = {
+	libnapc_u8 data[16] = {
 		'h', 'e', 'l', 'l', 'o', ' ',
 		'w', 'o', 'r', 'l', 'd', '!', 0,
 		// filler
 		0xee, 0xee, 0xee
 	};
 
-	const napc_u8 expected_cipher[16] = {
+	const libnapc_u8 expected_cipher[16] = {
 		0xbc,0xe9,0xce,0xc3,0xb3,0xcb,0x53,0x7d,0xd7,0xcd,0xfd,0xd6,0xd8,0xbd,0xa6,0x57
 	};
 
-	const napc_u8 expected_plain[16] = {
+	const libnapc_u8 expected_plain[16] = {
 		'h', 'e', 'l', 'l', 'o', ' ',
 		'w', 'o', 'r', 'l', 'd', '!', 0,
 		// filler

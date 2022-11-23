@@ -22,7 +22,7 @@
 
 		libnapc__AccessFailureMode _fail_mode;
 
-		napc_u8 *buffer;
+		libnapc_u8 *buffer;
 		libnapc_size buffer_size;
 
 		libnapc_size read_position;
@@ -43,12 +43,12 @@
 	 * @changelog 2.0.0 21.10.2022 initial version
 	 * @example
 	 * napc__RingBuffer rbuffer;
-	 * napc_u8 buffer[512];
+	 * libnapc_u8 buffer[512];
 	 * 
 	 * napc_RingBuffer_init(&rbuffer, buffer, sizeof(buffer));
 	 */
 	void napc_RingBuffer_init(
-		napc__RingBuffer *ctx, napc_u8 *buffer, libnapc_size buffer_size
+		napc__RingBuffer *ctx, libnapc_u8 *buffer, libnapc_size buffer_size
 	);
 
 	/*!
@@ -59,11 +59,11 @@
 	 * @param buffer_size Size of the buffer `buffer`.
 	 * @changelog 2.0.0 21.10.2022 initial version
 	 * @example
-	 * napc_u8 buffer[512];
+	 * libnapc_u8 buffer[512];
 	 * 
 	 * napc__RingBuffer rbuffer = napc_RingBuffer_create(buffer, sizeof(buffer));
 	 */
-	napc__RingBuffer napc_RingBuffer_create(napc_u8 *buffer, libnapc_size buffer_size);
+	napc__RingBuffer napc_RingBuffer_create(libnapc_u8 *buffer, libnapc_size buffer_size);
 
 	/*!
 	 * @name napc_RingBuffer_setAccessFailureMode
@@ -92,7 +92,7 @@
 	 * @param ctx Pointer to `napc__RingBuffer` instance.
 	 * @changelog 2.0.0 21.10.2022 initial version
 	 * @example
-	 * napc_u8 buffer[512];
+	 * libnapc_u8 buffer[512];
 	 * 
 	 * napc__RingBuffer rbuffer = napc_RingBuffer_create(buffer, sizeof(buffer));
 	 * 
@@ -123,7 +123,7 @@
 	 * @warning
 	 * `out` remains UNMODIFIED if function returned false.
 	 */
-	bool napc_RingBuffer_peekByte(const napc__RingBuffer *ctx, napc_u8 *out);
+	bool napc_RingBuffer_peekByte(const napc__RingBuffer *ctx, libnapc_u8 *out);
 
 	/*!
 	 * @name napc_RingBuffer_removeByte
@@ -137,7 +137,7 @@
 	 * @warning
 	 * `out` remains UNMODIFIED if function returned false.
 	 */
-	bool napc_RingBuffer_removeByte(napc__RingBuffer *ctx, napc_u8 *out);
+	bool napc_RingBuffer_removeByte(napc__RingBuffer *ctx, libnapc_u8 *out);
 
 	/*!
 	 * @name napc_RingBuffer_removeBytes
@@ -155,7 +155,7 @@
 	 * If the buffer has less than `out_size` bytes available to read
 	 * then no action is performed and the function returns `false`.
 	 */
-	bool napc_RingBuffer_removeBytes(napc__RingBuffer *ctx, napc_u8 *out, libnapc_size out_size);
+	bool napc_RingBuffer_removeBytes(napc__RingBuffer *ctx, libnapc_u8 *out, libnapc_size out_size);
 
 	/*!
 	 * @name napc_RingBuffer_insertByte
@@ -169,7 +169,7 @@
 	 * @warning
 	 * If the buffer is full the byte `byte` will not be inserted and `false` is returned.
 	 */
-	bool napc_RingBuffer_insertByte(napc__RingBuffer *ctx, napc_u8 byte);
+	bool napc_RingBuffer_insertByte(napc__RingBuffer *ctx, libnapc_u8 byte);
 
 	/*!
 	 * @name napc_RingBuffer_insertBytes
@@ -184,7 +184,7 @@
 	 * @notes
 	 * If the array `bytes` does not fit in the buffer, no action is performed.
 	 */
-	bool napc_RingBuffer_insertBytes(napc__RingBuffer *ctx, const napc_u8 *bytes, libnapc_size bytes_size);
+	bool napc_RingBuffer_insertBytes(napc__RingBuffer *ctx, const libnapc_u8 *bytes, libnapc_size bytes_size);
 
 	/*!
 	 * @name napc_RingBuffer_forceInsertByte
@@ -196,7 +196,7 @@
 	 * @warning
 	 * If the buffer is full the byte `byte` will be forcefully inserted.
 	 */
-	void napc_RingBuffer_forceInsertByte(napc__RingBuffer *ctx, napc_u8 byte);
+	void napc_RingBuffer_forceInsertByte(napc__RingBuffer *ctx, libnapc_u8 byte);
 
 	/*!
 	 * @name napc_RingBuffer_reset

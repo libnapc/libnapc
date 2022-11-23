@@ -137,7 +137,7 @@
 	 * // buffer[1] is now 0xBB
 	 */
 	bool napc_Writer_writeU8(
-		napc__Writer *ctx, napc_u8 value
+		napc__Writer *ctx, libnapc_u8 value
 	);
 
 	/*!
@@ -155,7 +155,7 @@
 	bool napc_Writer_writeU8Array(
 		napc__Writer *ctx,
 		libnapc_size n_elements,
-		const napc_u8 *array
+		const libnapc_u8 *array
 	); // needs test
 
 	/*!

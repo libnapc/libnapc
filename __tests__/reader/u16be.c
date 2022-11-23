@@ -2,7 +2,7 @@
 #include <libnapc-testing.h>
 
 TEST_CASE("should read u16be correctly") {
-	napc_u8 data[5] = {0xa, 0xb, 0xc, 0xd, 0xe};
+	libnapc_u8 data[5] = {0xa, 0xb, 0xc, 0xd, 0xe};
 	napc__Reader ctx;
 
 	napc_Reader_init(&ctx, data, sizeof(data));
@@ -16,7 +16,7 @@ TEST_CASE("should read u16be correctly") {
 }
 
 TEST_CASE("should read u16be correctly with out=NULL") {
-	napc_u8 data[5] = {0xa, 0xb, 0xc, 0xd, 0xe};
+	libnapc_u8 data[5] = {0xa, 0xb, 0xc, 0xd, 0xe};
 	napc__Reader ctx;
 
 	napc_Reader_init(&ctx, data, sizeof(data));
@@ -30,7 +30,7 @@ TEST_CASE("should read u16be correctly with out=NULL") {
 
 /*
 SKIP_TEST_CASE("should work correctly with a size of 0") {
-	napc_u8 data[5] = {0xa, 0xb, 0xc, 0xd, 0xe};
+	libnapc_u8 data[5] = {0xa, 0xb, 0xc, 0xd, 0xe};
 	napc__Reader ctx;
 
 	napc_Reader_init(&ctx, data, 0);

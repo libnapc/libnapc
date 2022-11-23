@@ -3,7 +3,7 @@
 bool napc_parser_parseHexString(
 	const char *string,
 	libnapc_size n_bytes,
-	napc_u8 *out
+	libnapc_u8 *out
 ) {
 	if (libnapc_strlen(string) != (n_bytes * 2)) {
 		return false;
@@ -20,7 +20,7 @@ bool napc_parser_parseHexString(
 		tmp_str[0] = string[first_index];
 		tmp_str[1] = string[second_index];
 
-		napc_u8 value = 0;
+		libnapc_u8 value = 0;
 
 		bool result = napc_parser_parseHexadecimalNumberU8(tmp_str, &value);
 

@@ -2,7 +2,7 @@
 #include <libnapc-testing.h>
 
 TEST_CASE("should write u32be correctly") {
-	napc_u8 data[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+	libnapc_u8 data[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	napc__Writer ctx;
 
 	napc_Writer_init(&ctx, data, sizeof(data));

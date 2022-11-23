@@ -20,7 +20,7 @@
 	);
 
 	bool PV_napc_RingBuffer_insertByte(
-		napc__RingBuffer *ctx, napc_u8 byte, bool force
+		napc__RingBuffer *ctx, libnapc_u8 byte, bool force
 	);
 
 	void PV_napc_RingBuffer_performAccessFailureAction(

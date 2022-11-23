@@ -5,7 +5,7 @@ TEST_CASE("It should work properly") {
 	const char *message = "hello world! this is a test";
 	const char *key = "test";
 
-	const napc_u8 expected_hmac[32] = {
+	const libnapc_u8 expected_hmac[32] = {
 		0x85,
 		0x98,
 		0x64,
@@ -40,7 +40,7 @@ TEST_CASE("It should work properly") {
 		0x8e
 	};
 
-	napc_u8 hmac[32];
+	libnapc_u8 hmac[32];
 
 	napc_hmac_calculate(hmac, key, message, libnapc_strlen(message));
 

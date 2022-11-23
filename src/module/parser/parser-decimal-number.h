@@ -14,14 +14,14 @@
 	 * @return Returns `true` on success, `false` otherwise.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
-	 * napc_u8 out;
+	 * libnapc_u8 out;
 	 * 
 	 * if (napc_parser_parseDecimalNumberU8("123", &out)) {
 	 *     napc_printf("Value is %d", out); // "Value is 123"
 	 * }
 	 */
 	bool napc_parser_parseDecimalNumberU8(
-		const char *string, napc_u8 *out
+		const char *string, libnapc_u8 *out
 	) NAPC_FN_WARNUNUSED_RET();
 
 	/*!

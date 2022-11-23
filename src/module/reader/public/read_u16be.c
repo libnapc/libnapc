@@ -8,8 +8,8 @@ bool napc_Reader_readU16BE(
 	}
 
 	const unsigned char *data = ctx->data;
-	napc_u8 high_byte = data[ctx->_offset];
-	napc_u8 low_byte = data[ctx->_offset + 1];
+	libnapc_u8 high_byte = data[ctx->_offset];
+	libnapc_u8 low_byte = data[ctx->_offset + 1];
 	libnapc_u16 result = (high_byte << 8u) | low_byte;
 	ctx->_offset += 2;
 

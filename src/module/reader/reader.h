@@ -95,19 +95,19 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @return Returns `true` on success, `false` otherwise.
 	 * @example
-	 * napc_u8 buffer[] = {4, 3, 2, 1};
+	 * libnapc_u8 buffer[] = {4, 3, 2, 1};
 	 * napc__Reader reader;
 	 * 
 	 * napc_Reader_init(&reader, buffer, sizeof(buffer));
 	 * 
-	 * napc_u8 out;
+	 * libnapc_u8 out;
 	 * 
 	 * if (napc_Reader_readU8(&reader, &out)) {
 	 *     // out has the value '4'
 	 * }
 	 */
 	bool napc_Reader_readU8(
-		napc__Reader *ctx, napc_u8 *out
+		napc__Reader *ctx, libnapc_u8 *out
 	) NAPC_FN_WARNUNUSED_RET();
 
 	/*!
@@ -125,7 +125,7 @@
 	bool napc_Reader_readU8Array(
 		napc__Reader *ctx,
 		libnapc_size n_elements,
-		napc_u8 *out
+		libnapc_u8 *out
 	) NAPC_FN_WARNUNUSED_RET();
 
 	/*!
@@ -139,7 +139,7 @@
 	 * @return Returns `true` on success, `false` otherwise.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
-	 * napc_u8 buffer[] = {4, 3, 2, 1};
+	 * libnapc_u8 buffer[] = {4, 3, 2, 1};
 	 * napc__Reader reader;
 	 * 
 	 * napc_Reader_init(&reader, buffer, sizeof(buffer));
@@ -165,7 +165,7 @@
 	 * @return Returns `true` on success, `false` otherwise.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
-	 * napc_u8 buffer[] = {4, 3, 2, 1};
+	 * libnapc_u8 buffer[] = {4, 3, 2, 1};
 	 * napc__Reader reader;
 	 * 
 	 * napc_Reader_init(&reader, buffer, sizeof(buffer));

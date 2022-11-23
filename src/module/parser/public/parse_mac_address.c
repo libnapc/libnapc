@@ -2,7 +2,7 @@
 
 bool napc_parser_parseMACAddress(
 	const char *string,
-	napc_u8 *out
+	libnapc_u8 *out
 ) {
 	// Check occurrences of :
 	if (PV_napc_parser_countOccurrences(string, ':') != 5) {

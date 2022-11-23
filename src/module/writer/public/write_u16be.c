@@ -7,8 +7,8 @@ bool napc_Writer_writeU16BE(
 		return false;
 	}
 
-	napc_u8 high_byte = (value >> 8u) & 0xFFu;
-	napc_u8 low_byte  = (value >> 0u) & 0xFFU;
+	libnapc_u8 high_byte = (value >> 8u) & 0xFFu;
+	libnapc_u8 low_byte  = (value >> 0u) & 0xFFU;
 
 	unsigned char *data = ctx->data;
 	data[ctx->_offset] = high_byte;
