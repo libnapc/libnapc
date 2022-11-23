@@ -6,7 +6,7 @@ void napc_RingBuffer_setAccessFailureMode(
 	NAPC_MAGIC_ASSERT(napc__RingBuffer, ctx);
 
 	if (NAPC_UNLIKELY(!PV_napc_validateAccessFailureMode(mode))) {
-		NAPC_PANIC("Unrecognized AccessFailureMode '%d'", mode);
+		LIBNAPC_PANIC("Unrecognized AccessFailureMode '%d'", mode);
 	}
 
 	ctx->_fail_mode = mode;

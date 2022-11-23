@@ -13,7 +13,7 @@ void PV_napc_RingBuffer_performAccessFailureAction(
 	switch (performed_action) {
 		case PV_NAPC_MODULE_RINGBUFFER_ACTION_READ_BYTE: {
 			if (do_panic) {
-				NAPC_PANIC(
+				LIBNAPC_PANIC(
 					"Read operation failed (READ_BYTE) and fail mode is set to NAPC_ACCESS_FAILURE_MODE_PANIC."
 				);
 			} else {
@@ -26,7 +26,7 @@ void PV_napc_RingBuffer_performAccessFailureAction(
 
 		case PV_NAPC_MODULE_RINGBUFFER_ACTION_READ_BYTES: {
 			if (do_panic) {
-				NAPC_PANIC(
+				LIBNAPC_PANIC(
 					"Read operation failed (READ_BYTES) and fail mode is set to NAPC_ACCESS_FAILURE_MODE_PANIC."
 				);
 			} else {
@@ -39,7 +39,7 @@ void PV_napc_RingBuffer_performAccessFailureAction(
 
 		case PV_NAPC_MODULE_RINGBUFFER_ACTION_WRITE_BYTE: {
 			if (do_panic) {
-				NAPC_PANIC(
+				LIBNAPC_PANIC(
 					"Insert operation (WRITE_BYTE) failed and fail mode is set to NAPC_ACCESS_FAILURE_MODE_PANIC."
 				);
 			} else {
@@ -52,7 +52,7 @@ void PV_napc_RingBuffer_performAccessFailureAction(
 
 		case PV_NAPC_MODULE_RINGBUFFER_ACTION_WRITE_BYTES: {
 			if (do_panic) {
-				NAPC_PANIC(
+				LIBNAPC_PANIC(
 					"Insert operation (WRITE_BYTES) failed and fail mode is set to NAPC_ACCESS_FAILURE_MODE_PANIC."
 				);
 			} else {

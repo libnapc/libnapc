@@ -6,7 +6,7 @@ const char *napc_Reader_readLine(
 	NAPC_MAGIC_ASSERT(napc__Reader, ctx);
 
 	if (!line_buffer_size) {
-		NAPC_PANIC(
+		LIBNAPC_PANIC(
 			"line_buffer_size cannot be zero inside napc_reader__readLine()."
 		);
 	}

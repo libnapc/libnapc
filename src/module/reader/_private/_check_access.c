@@ -18,7 +18,7 @@ bool PV_napc_Reader_checkAccess(
 				ctx->size
 			);
 		} else if (NAPC_UNLIKELY(ctx->_fail_mode == NAPC_ACCESS_FAILURE_MODE_PANIC)) {
-			NAPC_PANIC(
+			LIBNAPC_PANIC(
 				"Read operation failed and fail mode is set to NAPC_ACCESS_FAILURE_MODE_PANIC."
 			);
 		}

@@ -7,7 +7,7 @@ bool napc_Reader_readString(
 	napc_size out_size
 ) {
 	if (out && !out_size) {
-		NAPC_PANIC(
+		LIBNAPC_PANIC(
 			"out_size cannot be zero inside napc_Reader_readString()."
 		);
 	}

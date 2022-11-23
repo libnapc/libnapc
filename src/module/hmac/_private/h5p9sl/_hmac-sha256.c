@@ -71,7 +71,7 @@ size_t H5P9SL_hmac_sha256(const void* key,
 
 // used as an alternative to malloc()
 static uint8_t _tmp_buffer[1256];
-void napc_halt(
+void libnapc_halt(
 	const char *file,
 	int file_line,
 	const char *fn,
@@ -93,7 +93,7 @@ static void* H(const void* x,
   memset(_tmp_buffer, 0, sizeof(_tmp_buffer));
 
   if (buflen > sizeof(_tmp_buffer)) {
-    napc_halt(
+    libnapc_halt(
       __FILE__,
       __LINE__,
       __func__,

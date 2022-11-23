@@ -18,15 +18,15 @@
 	#define PV_NAPC_MAGIC_GET_VALUE(obj) \
 		((void *)(obj) != NULL ? (obj)->_init_magic : 0)
 
-	#define NAPC_MAGIC_ASSERT(type, obj)                                   \
-		do {                                                               \
-			const napc_init_magic actual   = PV_NAPC_MAGIC_GET_VALUE(obj); \
-			const napc_init_magic expected = (NAPC_MAGIC_ ## type);        \
-			if (actual == NAPC_MAGIC_DESTROYED) {                          \
-				NAPC_PANIC("Attempt to use destroyed " # type);            \
-			} else if (actual != expected) {                               \
-				NAPC_PANIC("Detected uninitialized " # type);              \
-			}                                                              \
+	#define NAPC_MAGIC_ASSERT(type, obj)                                      \
+		do {                                                                  \
+			const napc_init_magic actual   = PV_NAPC_MAGIC_GET_VALUE(obj);    \
+			const napc_init_magic expected = (NAPC_MAGIC_ ## type);           \
+			if (actual == NAPC_MAGIC_DESTROYED) {                             \
+				LIBNAPC_PANIC("Attempt to use destroyed " # type);            \
+			} else if (actual != expected) {                                  \
+				LIBNAPC_PANIC("Detected uninitialized " # type);              \
+			}                                                                 \
 		} while (false)
 
 	/*

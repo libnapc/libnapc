@@ -8,7 +8,7 @@ void napc_Pool_init(
 	napc_size element_size
 ) {
 	if (num_elements > NAPC_POOL_MAX) {
-		NAPC_PANIC("Too many entries for pool.");
+		LIBNAPC_PANIC("Too many entries for pool.");
 	}
 
 	pool->label        = !pool_label ? "(null)" : pool_label;

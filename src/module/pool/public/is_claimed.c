@@ -7,7 +7,7 @@ bool napc_Pool_isClaimed(
 	NAPC_MAGIC_ASSERT(napc__Pool, pool);
 
 	if (element_index > pool->num_elements) {
-		NAPC_PANIC("Element index is out of range. (pool=%s)", pool->label);
+		LIBNAPC_PANIC("Element index is out of range. (pool=%s)", pool->label);
 	}
 
 	return pool->elements_used[element_index];

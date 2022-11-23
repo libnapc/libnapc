@@ -88,10 +88,10 @@
 	 * 
 	 * NAPC_ASSERT(var == 13);
 	 */
-	#define NAPC_ASSERT(expr)                    \
-		do {                                     \
-			if (!(expr)) {                       \
-				NAPC_PANIC("Assertion failed."); \
-			}                                    \
+	#define NAPC_ASSERT(expr)                       \
+		do {                                        \
+			if (!(expr)) {                          \
+				LIBNAPC_PANIC("Assertion failed."); \
+			}                                       \
 		} while(false)
 #endif

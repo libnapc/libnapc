@@ -9,7 +9,7 @@ bool napc_aes_encrypt(
 	napc_u8 key_bytes[32];
 
 	if ((buffer_size % 16) != 0) {
-		NAPC_PANIC("buffer size must be a multiple of 16 bytes.");
+		LIBNAPC_PANIC("buffer size must be a multiple of 16 bytes.");
 	}
 
 	if (

@@ -3,7 +3,7 @@
 
 	#include <libnapc-internal.h>
 
-	void napc_halt(
+	void libnapc_halt(
 		const char *file,
 		int file_line,
 		const char *fn,
@@ -24,6 +24,6 @@
 	 * @example
 	 * NAPC_PANIC("Some error occurred: %s", "Could not open file");
 	 */
-	#define NAPC_PANIC(fmt, ...) \
-		napc_halt(__FILE__, __LINE__, __func__, fmt, ## __VA_ARGS__)
+	#define LIBNAPC_PANIC(fmt, ...) \
+		libnapc_halt(__FILE__, __LINE__, __func__, fmt, ## __VA_ARGS__)
 #endif

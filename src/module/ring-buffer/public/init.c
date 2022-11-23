@@ -4,7 +4,7 @@ void napc_RingBuffer_init(
 	napc__RingBuffer *ctx, napc_u8 *buffer, napc_size buffer_size
 ) {
 	if (!buffer_size) {
-		NAPC_PANIC("Size cannot be zero inside napc_RingBuffer_init().");
+		LIBNAPC_PANIC("Size cannot be zero inside napc_RingBuffer_init().");
 	}
 
 	ctx->_fail_mode = PV_napc_getDefaultAccessFailureMode();

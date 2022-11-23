@@ -3,7 +3,7 @@
 void napc_Timer_init(napc__Timer *timer, napc_time duration, napc__TimerMode mode) {
 	// validate mode parameter
 	if (mode != NAPC_TIMER_MODE_REGULAR && mode != NAPC_TIMER_MODE_ONESHOT) {
-		NAPC_PANIC("Invalid value for Timer mode '%u'.", mode);
+		LIBNAPC_PANIC("Invalid value for Timer mode '%u'.", mode);
 	}
 
 	timer->mode = mode;

@@ -7,7 +7,7 @@ void napc_Pool_releaseElement(
 	NAPC_MAGIC_ASSERT(napc__Pool, pool);
 
 	if (!pool->elements_used[element_index]) {
-		NAPC_PANIC(
+		LIBNAPC_PANIC(
 			"Trying to release an element (index=%" NAPC_SIZE_PRINTF ") that has already been freed!",
 			element_index
 		);

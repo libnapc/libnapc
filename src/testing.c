@@ -9,6 +9,6 @@ void PV_napc_testAssert(
 	NAPC_IGNORE_VALUE(file);
 
 	if (!expr) {
-		NAPC_PANIC("Assertion '%s' failed.", assertion);
+		LIBNAPC_PANIC("Assertion '%s' failed.", assertion);
 	}
 }

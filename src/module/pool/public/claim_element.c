@@ -13,7 +13,7 @@ napc_ssize napc_Pool_claimElement(
 		}
 	}
 
-	NAPC_PANIC(
+	LIBNAPC_PANIC(
 		"Cannot allocate element: pool is out of memory. (pool=%s)",
 		pool->label
 	);

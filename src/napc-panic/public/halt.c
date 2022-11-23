@@ -2,7 +2,7 @@
 
 static char _message_buffer[256]; // @static
 
-void napc_halt(
+void libnapc_halt(
 	const char *file,
 	int file_line,
 	const char *fn,
