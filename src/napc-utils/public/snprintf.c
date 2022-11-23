@@ -9,6 +9,6 @@ void libnapc_snprintf(
 	va_list args;
 
 	va_start(args, fmt);
-	napc_vsnprintf(buffer, buffer_size, fmt, args);
+	libnapc_vsnprintf(buffer, buffer_size, fmt, args);
 	va_end(args);
 }

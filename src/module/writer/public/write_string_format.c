@@ -7,7 +7,7 @@ bool napc_Writer_writeStringFormat(
 ) {
 	va_list args;
 	va_start(args, fmt);
-	napc_vsnprintf(_tmp_buffer, sizeof(_tmp_buffer), fmt, args);
+	libnapc_vsnprintf(_tmp_buffer, sizeof(_tmp_buffer), fmt, args);
 	va_end(args);
 
 	return napc_Writer_writeString(ctx, _tmp_buffer);

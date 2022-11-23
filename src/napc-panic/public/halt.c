@@ -36,7 +36,7 @@ void napc_halt(
 		va_list args;
 
 		va_start(args, fmt);
-		napc_vsnprintf(_message_buffer, sizeof(_message_buffer), fmt, args);
+		libnapc_vsnprintf(_message_buffer, sizeof(_message_buffer), fmt, args);
 		va_end(args);
 
 		libnapc_puts(_message_buffer);

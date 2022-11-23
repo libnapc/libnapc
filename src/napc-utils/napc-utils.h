@@ -41,7 +41,7 @@
 	 * @param fmt printf()-like format string.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	void napc_vsnprintf(
+	void libnapc_vsnprintf(
 		char *buffer,
 		napc_size buffer_size,
 		const char *fmt,
