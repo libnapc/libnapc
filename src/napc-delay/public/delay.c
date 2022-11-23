@@ -1,5 +1,5 @@
 #include <napc-delay/_private/_napc-delay.h>
 
-void napc_delay(napc_time amount) {
-	HAL_napc_delay(amount);
+void libnapc_delay(napc_time amount) {
+	HAL_libnapc_delay(amount);
 }

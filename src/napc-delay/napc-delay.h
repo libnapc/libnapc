@@ -22,7 +22,7 @@
 	 * 
 	 * napc_printf("World!");
 	 */
-	void napc_delay(napc_time amount);
+	void libnapc_delay(napc_time amount);
 
 	/*!
 	 * @name napc_delayUs

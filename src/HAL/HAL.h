@@ -24,7 +24,7 @@
 	// napc-panic
 
 	// napc-delay
-		void HAL_napc_delay(napc_time amount);
+		void HAL_libnapc_delay(napc_time amount);
 		void HAL_napc_delayUs(napc_time amount);
 	// napc-delay
 
