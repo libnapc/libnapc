@@ -10,15 +10,15 @@ bool napc_parser_parseBoolean(
 
 	bool value = false;
 
-	if (napc_streqli("yes", string)) {
+	if (libnapc_streqli("yes", string)) {
 		value = true;
-	} else if (napc_streqli("true", string)) {
+	} else if (libnapc_streqli("true", string)) {
 		value = true;
-	} else if (napc_streqli("1", string)) {
+	} else if (libnapc_streqli("1", string)) {
 		value = true;
-	} else if (napc_streqli("no", string)) {
-	} else if (napc_streqli("false", string)) {
-	} else if (napc_streqli("0", string)) {
+	} else if (libnapc_streqli("no", string)) {
+	} else if (libnapc_streqli("false", string)) {
+	} else if (libnapc_streqli("0", string)) {
 	} else {
 		return false;
 	}

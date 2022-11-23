@@ -121,7 +121,7 @@
 	 * 
 	 * napc_streqli("my_string", "my_second_string"); // returns false
 	 */
-	bool napc_streqli(const char *str1, const char *str2) NAPC_FN_WARNUNUSED_RET();
+	bool libnapc_streqli(const char *str1, const char *str2) NAPC_FN_WARNUNUSED_RET();
 
 	/*!
 	 * @name napc_memeql

@@ -10,7 +10,7 @@
 	#include <napc-serial/napc-serial.h> // napc_printf()
 	#include <napc-time/napc-time.h> // libnapc_getTimeSinceBoot()
 	#include <napc-delay/napc-delay.h> // napc_delay()
-	#include <napc-utils/napc-utils.h> // napc_streqli()
+	#include <napc-utils/napc-utils.h> // libnapc_streqli()
 
 	extern napc__AccessFailureMode PV_napc_default_access_failure_mode; // @global
 #endif
