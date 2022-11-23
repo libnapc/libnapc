@@ -21,6 +21,6 @@ TEST_CASE("should work properly (A record)") {
 	TEST_ASSERT(response.answers[0].ttl == 2298);
 	TEST_ASSERT(response.answers[0].rd_length == 4);
 	TEST_ASSERT(
-		napc_memeql("\x0d\x4d\xa1\xb3", response.answers[0].rd_data, 4)
+		libnapc_memeql("\x0d\x4d\xa1\xb3", response.answers[0].rd_data, 4)
 	);
 }

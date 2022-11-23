@@ -21,6 +21,6 @@ TEST_CASE("should work properly (AAAA record)") {
 	TEST_ASSERT(response.answers[0].ttl == 0);
 	TEST_ASSERT(response.answers[0].rd_length == 16);
 	TEST_ASSERT(
-		napc_memeql("\x26\x06\x47\x00\x00\x00\x00\x00\x00\x00\x00\x00\x68\x10\x84\xe5", response.answers[0].rd_data, 16)
+		libnapc_memeql("\x26\x06\x47\x00\x00\x00\x00\x00\x00\x00\x00\x00\x68\x10\x84\xe5", response.answers[0].rd_data, 16)
 	);
 }

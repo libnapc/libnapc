@@ -9,5 +9,5 @@ bool napc_hmac_verify(
 	napc_mzero(_hmac, sizeof(_hmac));
 	napc_hmac_calculate(_hmac, key, buffer, buffer_size);
 
-	return napc_memeql(hmac, _hmac, sizeof(_hmac));
+	return libnapc_memeql(hmac, _hmac, sizeof(_hmac));
 }

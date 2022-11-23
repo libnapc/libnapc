@@ -146,7 +146,7 @@
 	 *     napc_printf("data1 and data2 have the same content");
 	 * }
 	 */
-	bool napc_memeql(const void *data1, const void *data2, napc_size data_size) NAPC_FN_WARNUNUSED_RET();
+	bool libnapc_memeql(const void *data1, const void *data2, napc_size data_size) NAPC_FN_WARNUNUSED_RET();
 
 	/*!
 	 * @name napc_mzero
