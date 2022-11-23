@@ -1,8 +1,8 @@
 #if !defined(LIBNAPC_TESTING_h)
 	#define LIBNAPC_TESTING_h
 
-	#define PV_NAPC_TESTING_CONCAT(a, b) a ## b
-	#define NAPC_TESTING_CONCAT(a, b) PV_NAPC_TESTING_CONCAT(a, b)
+	#define PV_LIBNAPC_TESTING_CONCAT(a, b) a ## b
+	#define LIBNAPC_TESTING_CONCAT(a, b) PV_LIBNAPC_TESTING_CONCAT(a, b)
 
 	#include <string.h>
 
@@ -11,7 +11,7 @@
 	 * It's just here to make clangd happy.
 	 */
 	#define TEST_CASE(description) \
-		NAPC_TESTING_CONCAT(void PV_napc_unitTest, __COUNTER__) (void)
+		LIBNAPC_TESTING_CONCAT(void PV_napc_unitTest, __COUNTER__) (void)
 
 	void PV_libnapc_testAssert(
 		const char *assertion,
