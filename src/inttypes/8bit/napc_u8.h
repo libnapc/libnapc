@@ -43,5 +43,5 @@
 	 * 
 	 * napc_printf("var is = %" NAPC_U8_PRINTF, var);
 	 */
-	#define NAPC_U8_PRINTF       PRIu8
+	#define LIBNAPC_U8_PRINT_DEC       PRIu8
 #endif
