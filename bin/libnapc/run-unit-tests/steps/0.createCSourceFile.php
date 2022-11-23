@@ -3,13 +3,12 @@
 return function($args, &$context) {
 	$c_source_code = <<<CODE
 #include <libnapc.h>
-void libnapc_callBootFunctions(void);
 
 int main(int argc, const char **argv) {
 	NAPC_IGNORE_VALUE(argc);
 	NAPC_IGNORE_VALUE(argv);
 
-	libnapc_callBootFunctions();
+	libnapc_init();
 
 	napc_printf("libnapc version is %s\\n", napc_version());
 

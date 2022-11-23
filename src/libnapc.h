@@ -14,6 +14,8 @@
 		extern "C" {
 	#endif
 
+	void libnapc_init(void);
+
 	/*!
 	 * @name napc_version
 	 * @brief Get the version of libnapc.

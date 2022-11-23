@@ -1,5 +1,4 @@
 #include <libnapc.h>
-void libnapc_callBootFunctions(void);
 
 napc_u8 buffer[5];
 
@@ -7,7 +6,7 @@ int main(int argc, const char **argv) {
 	NAPC_IGNORE_VALUE(argc);
 	NAPC_IGNORE_VALUE(argv);
 
-	libnapc_callBootFunctions();
+	libnapc_init();
 
 	napc__RingBuffer rbuffer = napc_RingBuffer_create(buffer, sizeof(buffer));
 
