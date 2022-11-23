@@ -1,9 +1,13 @@
 #include <napc.h>
+void libnapc_callBootFunctions(void);
 
 char buffer[5];
 
-void napc_app_setup(const char *platform) {
-	NAPC_IGNORE_VALUE(platform);
+int main(int argc, const char **argv) {
+	NAPC_IGNORE_VALUE(argc);
+	NAPC_IGNORE_VALUE(argv);
+
+	libnapc_callBootFunctions();
 
 	napc__Writer writer = napc_Writer_create(buffer, sizeof(buffer));
 

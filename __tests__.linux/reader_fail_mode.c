@@ -1,9 +1,13 @@
 #include <napc.h>
+void libnapc_callBootFunctions(void);
 
 char buffer[5] = {1,2,3,4,5};
 
-void napc_app_setup(const char *platform) {
-	NAPC_IGNORE_VALUE(platform);
+int main(int argc, const char **argv) {
+	NAPC_IGNORE_VALUE(argc);
+	NAPC_IGNORE_VALUE(argv);
+
+	libnapc_callBootFunctions();
 
 	napc__Reader reader = napc_Reader_create(buffer, sizeof(buffer));
 
@@ -17,10 +21,4 @@ void napc_app_setup(const char *platform) {
 
 	napc_printf("crash:\n");
 	NAPC_IGNORE_VALUE(napc_Reader_readU8(&reader, NULL));
-}
-
-bool napc_app_loop(napc_time uptime) {
-	NAPC_IGNORE_VALUE(uptime);
-
-	return false;
 }
