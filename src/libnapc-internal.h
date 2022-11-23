@@ -2,7 +2,8 @@
 	#define LIBNAPC_INTERNAL_h
 
 	#include <stdbool.h> // bool
-	#include <stdlib.h> // NULL, free()
+	#include <stdlib.h> // free()
+	#include <stddef.h> // NULL
 	#include <stdarg.h> // va_list
 
 	#include <libnapc-compiler.h>
