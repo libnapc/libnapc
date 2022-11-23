@@ -7,10 +7,10 @@ bool napc_DNS_parseHeader(
 	napc__Reader reader;
 	napc_Reader_init(&reader, buffer, buffer_size);
 
-	napc_u16 request_identifier = 0;
-	napc_u16 flags = 0;
-	napc_u16 question_count = 0;
-	napc_u16 answer_count = 0;
+	libnapc_u16 request_identifier = 0;
+	libnapc_u16 flags = 0;
+	libnapc_u16 question_count = 0;
+	libnapc_u16 answer_count = 0;
 
 	// Read request identifier
 	if (!napc_Reader_readU16BE(&reader, &request_identifier)) return false;

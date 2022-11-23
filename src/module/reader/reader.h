@@ -144,14 +144,14 @@
 	 * 
 	 * napc_Reader_init(&reader, buffer, sizeof(buffer));
 	 * 
-	 * napc_u16 out;
+	 * libnapc_u16 out;
 	 * 
 	 * if (napc_Reader_readU16BE(&reader, &out)) {
 	 *     // out has the value 772 (0x0403)
 	 * }
 	 */
 	bool napc_Reader_readU16BE(
-		napc__Reader *ctx, napc_u16 *out
+		napc__Reader *ctx, libnapc_u16 *out
 	) NAPC_FN_WARNUNUSED_RET();
 
 	/*!

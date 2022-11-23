@@ -29,8 +29,8 @@ bool PV_napc_DNS_parseQuerySection(
 		return false;
 	}
 
-	napc_u16 qtype = 0;
-	napc_u16 qclass = 0;
+	libnapc_u16 qtype = 0;
+	libnapc_u16 qclass = 0;
 
 	// Read QType
 	if (!napc_Reader_readU16BE(reader, &qtype)) {

@@ -2,7 +2,7 @@
 
 void napc_IPv4Participant_init(
 	napc__IPv4Participant *participant,
-	const char *addr, napc_u16 port
+	const char *addr, libnapc_u16 port
 ) {
 	NAPC_MAGIC_INIT(napc__IPv4Participant, participant);
 

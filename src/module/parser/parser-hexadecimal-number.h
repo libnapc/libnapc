@@ -36,7 +36,7 @@
 	 * @return Returns `true` on success, `false` otherwise.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
-	 * napc_u16 out;
+	 * libnapc_u16 out;
 	 * 
 	 * if (napc_parser_parseHexadecimalNumberU16("beef", &out)) {
 	 *     napc_printf("Value is %ld", out); // "Value is 48879"
@@ -44,7 +44,7 @@
 	 */
 	bool napc_parser_parseHexadecimalNumberU16(
 		const char *string,
-		napc_u16 *out
+		libnapc_u16 *out
 	) NAPC_FN_WARNUNUSED_RET();
 
 	/*!

@@ -18,7 +18,7 @@
 	typedef struct napc__DNSAnswer {
 		libnapc_u32 ttl;
 
-		napc_u16 rd_length;
+		libnapc_u16 rd_length;
 		napc_u8 rd_data[NAPC_MODULE_DNS_MAX_RD_DATA_LENGTH];
 	} napc__DNSAnswer;
 #endif

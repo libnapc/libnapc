@@ -34,7 +34,7 @@
 		NAPC_MAGIC_MEMBER;
 
 		char addr[NAPC_MODULE_NET_IP_STR_MAX];
-		napc_u16 port;
+		libnapc_u16 port;
 	} napc__IPv4Participant;
 
 	/*!
@@ -52,7 +52,7 @@
 	 */
 	void napc_IPv4Participant_init(
 		napc__IPv4Participant *participant,
-		const char *addr, napc_u16 port
+		const char *addr, libnapc_u16 port
 	);
 
 	/*!
@@ -70,7 +70,7 @@
 	 * @example
 	 * napc__IPv4Participant google_dns = napc_IPv4Participant_create("8.8.8.8", 53);
 	 */
-	napc__IPv4Participant napc_IPv4Participant_create(const char *addr, napc_u16 port);
+	napc__IPv4Participant napc_IPv4Participant_create(const char *addr, libnapc_u16 port);
 
 	/*!
 	 * @name napc_IPv4Participant_copy

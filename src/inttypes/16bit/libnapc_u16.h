@@ -1,5 +1,5 @@
-#if !defined(NAPC_INTTYPES_U16_h)
-	#define NAPC_INTTYPES_U16_h
+#if !defined(LIBNAPC_INTTYPES_U16_h)
+	#define LIBNAPC_INTTYPES_U16_h
 
 	#include <stdint.h> // uint16_t
 	#include <inttypes.h> // PRIu16
@@ -12,7 +12,7 @@
 	 * Type for unsigned integers with 16 bits width.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef uint16_t napc_u16;
+	typedef uint16_t libnapc_u16;
 
 	/*!
 	 * @name NAPC_U16_LITERAL

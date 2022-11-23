@@ -39,7 +39,7 @@
 	 * @changelog 2.0.0 12.04.2022 added `raw_flags` member
 	 */
 	typedef struct napc__DNSHeader {
-		napc_u16 raw_flags;
+		libnapc_u16 raw_flags;
 
 		napc__DNSOPCode opcode;
 
@@ -48,10 +48,10 @@
 //		bool recursion_desired;
 //		bool recursion_available;
 
-		napc_u16 request_identifier;
-		napc_u16 response_code;
-		napc_u16 question_count;
-		napc_u16 answer_count;
+		libnapc_u16 request_identifier;
+		libnapc_u16 response_code;
+		libnapc_u16 question_count;
+		libnapc_u16 answer_count;
 	} napc__DNSHeader;
 
 	/*!

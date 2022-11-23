@@ -35,14 +35,14 @@
 	 * @return Returns `true` on success, `false` otherwise.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
-	 * napc_u16 out;
+	 * libnapc_u16 out;
 	 * 
 	 * if (napc_parser_parseDecimalNumberU16("1024", &out)) {
 	 *     napc_printf("Value is %d", out); // "Value is 1024"
 	 * }
 	 */
 	bool napc_parser_parseDecimalNumberU16(
-		const char *string, napc_u16 *out
+		const char *string, libnapc_u16 *out
 	) NAPC_FN_WARNUNUSED_RET();
 
 	/*!

@@ -4,7 +4,7 @@
 	#include <inttypes/8bit/napc_u8.h> // napc_u8
 	#include <inttypes/8bit/napc_i8.h> // napc_i8
 
-	#include <inttypes/16bit/napc_u16.h> // napc_u16
+	#include <inttypes/16bit/libnapc_u16.h> // libnapc_u16
 	#include <inttypes/16bit/napc_i16.h> // napc_i16
 
 	#include <inttypes/32bit/libnapc_u32.h> // libnapc_u32

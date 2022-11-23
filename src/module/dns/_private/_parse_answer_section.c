@@ -25,7 +25,7 @@ bool PV_napc_DNS_parseAnswerSection(
 		return false;
 	}
 
-	napc_u16 qtype = 0;
+	libnapc_u16 qtype = 0;
 
 	// QTYPE
 	if (!napc_Reader_readU16BE(reader, &qtype)) return false;
@@ -33,7 +33,7 @@ bool PV_napc_DNS_parseAnswerSection(
 	if (!napc_Reader_readU16BE(reader, NULL)) return false;
 
 	libnapc_u32 ttl = 0;
-	napc_u16 rd_length = 0;
+	libnapc_u16 rd_length = 0;
 
 	// TTL
 	if (!napc_Reader_readU32BE(reader, &ttl)) return false;
