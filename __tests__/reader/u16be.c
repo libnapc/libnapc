@@ -9,9 +9,9 @@ TEST_CASE("should read u16be correctly") {
 
 	libnapc_u16 tmp = 0;
 	TEST_ASSERT(napc_Reader_readU16BE(&ctx, &tmp));
-	TEST_ASSERT(tmp == NAPC_U16_LITERAL(0x0a0b));
+	TEST_ASSERT(tmp == LIBNAPC_U16_LITERAL(0x0a0b));
 	TEST_ASSERT(napc_Reader_readU16BE(&ctx, &tmp));
-	TEST_ASSERT(tmp == NAPC_U16_LITERAL(0x0c0d));
+	TEST_ASSERT(tmp == LIBNAPC_U16_LITERAL(0x0c0d));
 	TEST_ASSERT(!napc_Reader_readU16BE(&ctx, &tmp));
 }
 
@@ -24,7 +24,7 @@ TEST_CASE("should read u16be correctly with out=NULL") {
 	TEST_ASSERT(napc_Reader_readU16BE(&ctx, NULL));
 	libnapc_u16 tmp = 0;
 	TEST_ASSERT(napc_Reader_readU16BE(&ctx, &tmp));
-	TEST_ASSERT(tmp == NAPC_U16_LITERAL(0x0c0d));
+	TEST_ASSERT(tmp == LIBNAPC_U16_LITERAL(0x0c0d));
 	TEST_ASSERT(!napc_Reader_readU16BE(&ctx, NULL));
 }
 

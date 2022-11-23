@@ -11,7 +11,7 @@ TEST_CASE("should work properly") {
 		napc_DNS_parseHeader(&header, payload, sizeof(payload))
 	);
 
-	TEST_ASSERT(header.request_identifier == NAPC_U16_LITERAL(0x1a67));
+	TEST_ASSERT(header.request_identifier == LIBNAPC_U16_LITERAL(0x1a67));
 	TEST_ASSERT(header.question_count == 1);
 	TEST_ASSERT(header.answer_count == 0);
 	TEST_ASSERT(header.response_code == 0);

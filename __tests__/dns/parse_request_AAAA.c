@@ -14,7 +14,7 @@ TEST_CASE("should work properly (AAAA record)") {
 	TEST_ASSERT(request.header.question_count == 1);
 	TEST_ASSERT(request.header.answer_count == 0);
 	TEST_ASSERT(
-		request.header.request_identifier == NAPC_U16_LITERAL(0x1460)
+		request.header.request_identifier == LIBNAPC_U16_LITERAL(0x1460)
 	);
 	TEST_ASSERT(request.header.response_code == 0);
 

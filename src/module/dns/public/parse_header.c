@@ -29,13 +29,13 @@ bool napc_DNS_parseHeader(
 
 	if (out) {
 		out->raw_flags            = flags;
-		out->opcode               = (flags & NAPC_U16_LITERAL(0x7800)) >> 11u;
+		out->opcode               = (flags & LIBNAPC_U16_LITERAL(0x7800)) >> 11u;
 
-		out->authoritative_answer = !!(flags & NAPC_U16_LITERAL(0x0400));
-		out->truncated            = !!(flags & NAPC_U16_LITERAL(0x0200));
+		out->authoritative_answer = !!(flags & LIBNAPC_U16_LITERAL(0x0400));
+		out->truncated            = !!(flags & LIBNAPC_U16_LITERAL(0x0200));
 //		out->recursion_desired    = 0;
 //		out->recursion_available  = 0;
-		out->response_code        = flags & NAPC_U16_LITERAL(0x000F);
+		out->response_code        = flags & LIBNAPC_U16_LITERAL(0x000F);
 
 		out->answer_count         = answer_count;
 		out->question_count       = question_count;

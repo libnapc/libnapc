@@ -27,7 +27,7 @@
 	 * @example
 	 * napc_u16 var = NAPC_U16_LITERAL(1234);
 	 */
-	#define NAPC_U16_LITERAL(value) UINT16_C(value)
+	#define LIBNAPC_U16_LITERAL(value) UINT16_C(value)
 
 	/*!
 	 * @name NAPC_U16_PRINTF
