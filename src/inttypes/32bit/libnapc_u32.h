@@ -37,7 +37,7 @@
 	 * @example
 	 * napc_u32 var = 1;
 	 * 
-	 * napc_printf("var is = %" NAPC_U32_PRINTF, var);
+	 * napc_printf("var is = %" LIBNAPC_U32_PRINT_DEC, var);
 	 */
-	#define NAPC_U32_PRINTF      PRIu32
+	#define LIBNAPC_U32_PRINT_DEC      PRIu32
 #endif
