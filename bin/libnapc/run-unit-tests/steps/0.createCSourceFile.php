@@ -3,18 +3,17 @@
 return function($args, &$context) {
 	$c_source_code = <<<CODE
 #include <napc.h>
+void libnapc_callBootFunctions(void);
 
-void napc_app_setup(const char *platform) {
-	napc_printf("Platform is %s\\n", platform);
+int main(int argc, const char **argv) {
+	NAPC_IGNORE_VALUE(argc);
+	NAPC_IGNORE_VALUE(argv);
+
+	libnapc_callBootFunctions();
+
 	napc_printf("libnapc version is %s\\n", napc_version());
 
 	napc_runAllTests();
-}
-
-bool napc_app_loop(napc_time uptime) {
-	NAPC_IGNORE_VALUE(uptime);
-
-	return false;
 }
 CODE;
 
