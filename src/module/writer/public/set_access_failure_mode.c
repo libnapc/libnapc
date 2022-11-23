@@ -1,7 +1,7 @@
 #include <module/writer/_private/_writer.h>
 
 void napc_Writer_setAccessFailureMode(
-	napc__Writer *ctx, napc__AccessFailureMode mode
+	napc__Writer *ctx, libnapc__AccessFailureMode mode
 ) {
 	NAPC_MAGIC_ASSERT(napc__Writer, ctx);
 

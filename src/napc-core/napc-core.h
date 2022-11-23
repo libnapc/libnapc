@@ -23,11 +23,11 @@
 	 * 
 	 * Failure mode `LOG` is the default behaviour.
 	 */
-	typedef enum napc__AccessFailureMode {
-		NAPC_ACCESS_FAILURE_MODE_NONE  = 1,
-		NAPC_ACCESS_FAILURE_MODE_LOG   = 2,
-		NAPC_ACCESS_FAILURE_MODE_PANIC = 3
-	} napc__AccessFailureMode;
+	typedef enum libnapc__AccessFailureMode {
+		LIBNAPC_ACCESS_FAILURE_MODE_NONE  = 1,
+		LIBNAPC_ACCESS_FAILURE_MODE_LOG   = 2,
+		LIBNAPC_ACCESS_FAILURE_MODE_PANIC = 3
+	} libnapc__AccessFailureMode;
 
 	/*!
 	 * @name napc_setDefaultAccessFailureMode
@@ -54,14 +54,14 @@
 	 *     // ...
 	 * }
 	 */
-	napc__AccessFailureMode napc_setDefaultAccessFailureMode(
-		napc__AccessFailureMode new_default_mode
+	libnapc__AccessFailureMode napc_setDefaultAccessFailureMode(
+		libnapc__AccessFailureMode new_default_mode
 	);
 
 	// used by internal API -> Writer, Reader etc.
-	napc__AccessFailureMode PV_napc_getDefaultAccessFailureMode(void);
+	libnapc__AccessFailureMode PV_napc_getDefaultAccessFailureMode(void);
 	// used by internal API -> Writer, Reader etc.
-	bool PV_napc_validateAccessFailureMode(napc__AccessFailureMode mode);
+	bool PV_napc_validateAccessFailureMode(libnapc__AccessFailureMode mode);
 
 	/*!
 	 * @name napc_getFreeMemory

@@ -4,17 +4,17 @@ void PV_napc_RingBuffer_performAccessFailureAction(
 	const napc__RingBuffer *ctx, int performed_action
 ) {
 	// do nothing
-	if (ctx->_fail_mode == NAPC_ACCESS_FAILURE_MODE_NONE) {
+	if (ctx->_fail_mode == LIBNAPC_ACCESS_FAILURE_MODE_NONE) {
 		return;
 	}
 
-	bool do_panic = ctx->_fail_mode == NAPC_ACCESS_FAILURE_MODE_PANIC;
+	bool do_panic = ctx->_fail_mode == LIBNAPC_ACCESS_FAILURE_MODE_PANIC;
 
 	switch (performed_action) {
 		case PV_NAPC_MODULE_RINGBUFFER_ACTION_READ_BYTE: {
 			if (do_panic) {
 				LIBNAPC_PANIC(
-					"Read operation failed (READ_BYTE) and fail mode is set to NAPC_ACCESS_FAILURE_MODE_PANIC."
+					"Read operation failed (READ_BYTE) and fail mode is set to LIBNAPC_ACCESS_FAILURE_MODE_PANIC."
 				);
 			} else {
 				PV_NAPC_RINGBUFFER_ERROR(
@@ -27,7 +27,7 @@ void PV_napc_RingBuffer_performAccessFailureAction(
 		case PV_NAPC_MODULE_RINGBUFFER_ACTION_READ_BYTES: {
 			if (do_panic) {
 				LIBNAPC_PANIC(
-					"Read operation failed (READ_BYTES) and fail mode is set to NAPC_ACCESS_FAILURE_MODE_PANIC."
+					"Read operation failed (READ_BYTES) and fail mode is set to LIBNAPC_ACCESS_FAILURE_MODE_PANIC."
 				);
 			} else {
 				PV_NAPC_RINGBUFFER_ERROR(
@@ -40,7 +40,7 @@ void PV_napc_RingBuffer_performAccessFailureAction(
 		case PV_NAPC_MODULE_RINGBUFFER_ACTION_WRITE_BYTE: {
 			if (do_panic) {
 				LIBNAPC_PANIC(
-					"Insert operation (WRITE_BYTE) failed and fail mode is set to NAPC_ACCESS_FAILURE_MODE_PANIC."
+					"Insert operation (WRITE_BYTE) failed and fail mode is set to LIBNAPC_ACCESS_FAILURE_MODE_PANIC."
 				);
 			} else {
 				PV_NAPC_RINGBUFFER_ERROR(
@@ -53,7 +53,7 @@ void PV_napc_RingBuffer_performAccessFailureAction(
 		case PV_NAPC_MODULE_RINGBUFFER_ACTION_WRITE_BYTES: {
 			if (do_panic) {
 				LIBNAPC_PANIC(
-					"Insert operation (WRITE_BYTES) failed and fail mode is set to NAPC_ACCESS_FAILURE_MODE_PANIC."
+					"Insert operation (WRITE_BYTES) failed and fail mode is set to LIBNAPC_ACCESS_FAILURE_MODE_PANIC."
 				);
 			} else {
 				PV_NAPC_RINGBUFFER_ERROR(

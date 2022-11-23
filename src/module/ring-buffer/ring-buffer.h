@@ -7,7 +7,7 @@
 
 	#include <libnapc-internal.h>
 	#include <napc-magic/napc-magic.h>
-	#include <napc-core/napc-core.h> // napc__AccessFailureMode
+	#include <napc-core/napc-core.h> // libnapc__AccessFailureMode
 
 	/*!
 	 * @name napc__RingBuffer
@@ -20,7 +20,7 @@
 	typedef struct napc__RingBuffer {
 		NAPC_MAGIC_MEMBER;
 
-		napc__AccessFailureMode _fail_mode;
+		libnapc__AccessFailureMode _fail_mode;
 
 		napc_u8 *buffer;
 		napc_size buffer_size;
@@ -80,7 +80,7 @@
 	 * For more information refer to the `napc__AccessFailureMode` type.
 	 */
 	void napc_RingBuffer_setAccessFailureMode(
-		napc__RingBuffer *ctx, napc__AccessFailureMode mode
+		napc__RingBuffer *ctx, libnapc__AccessFailureMode mode
 	);
 
 	/*!

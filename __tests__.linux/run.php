@@ -42,7 +42,7 @@ function compile($input_file) {
 	$has_crashed = false;
 
 	foreach ($lines as $line) {
-		if (strpos($line, "Write operation failed and fail mode is set to NAPC_ACCESS_FAILURE_MODE_PANIC.") !== false) {
+		if (strpos($line, "Write operation failed and fail mode is set to LIBNAPC_ACCESS_FAILURE_MODE_PANIC.") !== false) {
 			$has_crashed = true;
 		}
 	}
@@ -78,7 +78,7 @@ function compile($input_file) {
 	$has_crashed = false;
 
 	foreach ($lines as $line) {
-		if (strpos($line, "Read operation failed and fail mode is set to NAPC_ACCESS_FAILURE_MODE_PANIC.") !== false) {
+		if (strpos($line, "Read operation failed and fail mode is set to LIBNAPC_ACCESS_FAILURE_MODE_PANIC.") !== false) {
 			$has_crashed = true;
 		}
 	}
@@ -113,7 +113,7 @@ function compile($input_file) {
 	$has_crashed = false;
 
 	foreach ($lines as $line) {
-		if (strpos($line, "Insert operation (WRITE_BYTE) failed and fail mode is set to NAPC_ACCESS_FAILURE_MODE_PANIC.") !== false) {
+		if (strpos($line, "Insert operation (WRITE_BYTE) failed and fail mode is set to LIBNAPC_ACCESS_FAILURE_MODE_PANIC.") !== false) {
 			$has_crashed = true;
 		}
 	}

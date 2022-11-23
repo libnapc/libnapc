@@ -7,7 +7,7 @@
 
 	#include <libnapc-internal.h>
 	#include <napc-magic/napc-magic.h>
-	#include <napc-core/napc-core.h> // napc__AccessFailureMode
+	#include <napc-core/napc-core.h> // libnapc__AccessFailureMode
 
 	/*!
 	 * @name napc__Reader
@@ -21,7 +21,7 @@
 	typedef struct napc__Reader {
 		NAPC_MAGIC_MEMBER;
 
-		napc__AccessFailureMode _fail_mode;
+		libnapc__AccessFailureMode _fail_mode;
 
 		napc_size _offset;
 		napc_size size;
@@ -81,7 +81,7 @@
 	 * For more information refer to the `napc__AccessFailureMode` type.
 	 */
 	void napc_Reader_setAccessFailureMode(
-		napc__Reader *ctx, napc__AccessFailureMode mode
+		napc__Reader *ctx, libnapc__AccessFailureMode mode
 	);
 
 	/*!

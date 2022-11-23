@@ -7,7 +7,7 @@
 
 	#include <libnapc-internal.h>
 	#include <napc-magic/napc-magic.h>
-	#include <napc-core/napc-core.h> // napc__AccessFailureMode
+	#include <napc-core/napc-core.h> // libnapc__AccessFailureMode
 
 	/*!
 	 * @name napc__Writer
@@ -21,7 +21,7 @@
 	typedef struct napc__Writer {
 		NAPC_MAGIC_MEMBER;
 
-		napc__AccessFailureMode _fail_mode;
+		libnapc__AccessFailureMode _fail_mode;
 
 		napc_size _offset;
 		napc_size size;
@@ -82,7 +82,7 @@
 	 * For more information refer to the `napc__AccessFailureMode` type.
 	 */
 	void napc_Writer_setAccessFailureMode(
-		napc__Writer *ctx, napc__AccessFailureMode mode
+		napc__Writer *ctx, libnapc__AccessFailureMode mode
 	);
 
 	/*!

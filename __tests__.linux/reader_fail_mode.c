@@ -10,7 +10,7 @@ int main(int argc, const char **argv) {
 
 	napc__Reader reader = napc_Reader_create(buffer, sizeof(buffer));
 
-	napc_Reader_setAccessFailureMode(&reader, NAPC_ACCESS_FAILURE_MODE_PANIC);
+	napc_Reader_setAccessFailureMode(&reader, LIBNAPC_ACCESS_FAILURE_MODE_PANIC);
 
 	NAPC_IGNORE_VALUE(napc_Reader_readU8(&reader, NULL));
 	NAPC_IGNORE_VALUE(napc_Reader_readU8(&reader, NULL));

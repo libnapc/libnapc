@@ -10,7 +10,7 @@ int main(int argc, const char **argv) {
 
 	napc__Writer writer = napc_Writer_create(buffer, sizeof(buffer));
 
-	napc_Writer_setAccessFailureMode(&writer, NAPC_ACCESS_FAILURE_MODE_PANIC);
+	napc_Writer_setAccessFailureMode(&writer, LIBNAPC_ACCESS_FAILURE_MODE_PANIC);
 
 	napc_Writer_writeU8(&writer, 10);
 	napc_Writer_writeU8(&writer, 10);
