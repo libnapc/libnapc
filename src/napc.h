@@ -62,12 +62,6 @@
 	#include <module/sha/sha.h>
 	#include <module/ring-buffer/ring-buffer.h>
 
-	#include <hw.module/eth/eth.h>
-	#include <hw.module/udp/udp.h>
-	#include <hw.module/file/file.h>
-	#include <hw.module/fs/fs.h>
-	#include <hw.module/env/env.h>
-
 	#include <module/app/app.h>
 
 	extern void napc_main(const char *platform);
