@@ -50,7 +50,6 @@
 	#include <module/pool/pool.h>
 	#include <module/hr-timer/hr-timer.h>
 	#include <module/timer/timer.h>
-	#include <module/random/random.h>
 	#include <module/parser/parser.h>
 	#include <module/aes/aes.h>
 	#include <module/hmac/hmac.h>
