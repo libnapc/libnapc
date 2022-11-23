@@ -1,3 +1,4 @@
+// needs doc-block fixing
 #if !defined(NAPC_TIME_h)
 	#define NAPC_TIME_h
 
