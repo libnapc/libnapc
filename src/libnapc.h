@@ -17,24 +17,28 @@
 	void libnapc_init(void);
 
 	/*!
-	 * @name libnapc_version
-	 * @brief Get the version of libnapc.
-	 * @version 1.2.0
-	 * @description
 	 * Return the version string of libnapc.
-	 * @changelog 1.2.0 20.03.2022 initial version
+	 * 
+	 * @module Core
+	 * @fullname libnapc_version
+	 * @type fn
+	 * @brief Get the version of libnapc.
+	 * @version 2.0.0
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * napc_printf("Using libnapc version: %s\n", libnapc_version());
 	 */
 	const char *libnapc_version(void);
 
 	/*!
-	 * @name libnapc_getFullVersion
-	 * @brief Get the full version of libnapc.
-	 * @version 1.3.0
-	 * @description
 	 * Return the full version string of libnapc.
-	 * @changelog 1.3.0 21.03.2022 initial version
+	 * 
+	 * @module Core
+	 * @fullname libnapc_getFullVersion
+	 * @type fn
+	 * @brief Get the full version of libnapc.
+	 * @version 2.0.0
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * napc_printf("Using libnapc version: %s\n", libnapc_getFullVersion());
 	 */
