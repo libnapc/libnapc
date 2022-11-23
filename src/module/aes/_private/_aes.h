@@ -5,7 +5,7 @@
 	#include <napc-magic/napc-magic.h>
 
 	#include <module/aes/_private/_tinyaes.h>
-	#include <napc-utils/napc-utils.h> // napc_mzero()
+	#include <napc-utils/napc-utils.h> // libnapc_mzero()
 	#include <module/parser/parser.h> // napc_parser__parseHexString()
 
 #endif

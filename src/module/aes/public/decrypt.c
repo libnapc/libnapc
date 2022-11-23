@@ -15,7 +15,7 @@ bool napc_aes_decrypt(
 	if (
 		!napc_parser_parseHexString(key, sizeof(key_bytes), key_bytes)
 	) {
-		napc_mzero(key_bytes, sizeof(key_bytes));
+		libnapc_mzero(key_bytes, sizeof(key_bytes));
 
 		return false;
 	}
@@ -23,8 +23,8 @@ bool napc_aes_decrypt(
 	TinyAES_init_ctx_iv(&ctx, key_bytes, iv);
 
 	TinyAES_CBC_decrypt_buffer(&ctx, buffer, buffer_size);
-	napc_mzero(key_bytes, sizeof(key_bytes));
-	napc_mzero(&ctx, sizeof(ctx));
+	libnapc_mzero(key_bytes, sizeof(key_bytes));
+	libnapc_mzero(&ctx, sizeof(ctx));
 
 	return true;
 }

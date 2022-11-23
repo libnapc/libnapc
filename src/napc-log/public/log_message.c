@@ -69,7 +69,7 @@ void napc_logMessage(
 	{
 		const char *label = napc_logLevelToString(level);
 
-		napc_mzero(_fn, sizeof(_fn));
+		libnapc_mzero(_fn, sizeof(_fn));
 		_shortenFunctionName(function, _fn);
 
 		libnapc_snprintf(

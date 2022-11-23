@@ -4,5 +4,5 @@
 	#include <module/hmac/hmac.h>
 
 	#include <module/hmac/_private/h5p9sl/_hmac-sha256.h>
-	#include <napc-utils/napc-utils.h> // libnapc_strlen(), napc_mzero(), libnapc_memeql()
+	#include <napc-utils/napc-utils.h> // libnapc_strlen(), libnapc_mzero(), libnapc_memeql()
 #endif

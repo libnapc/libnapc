@@ -6,7 +6,7 @@ bool napc_hmac_verify(
 	const char *key, const napc_u8 *hmac,
 	const void *buffer, napc_size buffer_size
 ) {
-	napc_mzero(_hmac, sizeof(_hmac));
+	libnapc_mzero(_hmac, sizeof(_hmac));
 	napc_hmac_calculate(_hmac, key, buffer, buffer_size);
 
 	return libnapc_memeql(hmac, _hmac, sizeof(_hmac));

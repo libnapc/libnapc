@@ -165,5 +165,5 @@
 	 * // clear data buffer
 	 * napc_mzero(buffer, sizeof(buffer));
 	 */
-	void napc_mzero(void *data, napc_size data_size);
+	void libnapc_mzero(void *data, napc_size data_size);
 #endif

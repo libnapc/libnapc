@@ -14,7 +14,7 @@ const char *napc_Reader_readLine(
 	char ch = 0;
 	napc_size pos = 0;
 
-	napc_mzero(line_buffer, line_buffer_size);
+	libnapc_mzero(line_buffer, line_buffer_size);
 
 	while (true) {
 		// only read char if there is data left to read

@@ -15,8 +15,8 @@ bool napc_parser_parseKeyValue(
 	napc_size pos = 0;
 
 	// Initialie key/value with zeros (safety precaution)
-	if (key) napc_mzero(key, key_len);
-	if (value) napc_mzero(value, value_len);
+	if (key) libnapc_mzero(key, key_len);
+	if (value) libnapc_mzero(value, value_len);
 
 	for (napc_size i = 0; i < length; ++i) {
 		char ch = string[i];
