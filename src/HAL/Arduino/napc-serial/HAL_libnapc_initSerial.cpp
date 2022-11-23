@@ -6,7 +6,7 @@
 	extern "C" {
 		#include <napc-serial/_private/_napc-serial.h>
 
-		void HAL_napc_initSerial(void) {
+		void HAL_libnapc_initSerial(void) {
 			Serial.begin(9600);
 
 			delay(3000);
