@@ -39,12 +39,12 @@ ORIGIN_COMMENT;
 
 		foreach ($context["tests"][$module] as $test) {
 			$file .= "    $test();";
-			$file .= " napc_unmute();";
+			$file .= " libnapc_unmute();";
 			$file .= " libnapc_puts(\"passed!\\n\");";
 			$file .= " libnapc_mute();\n";
 		}
 
-		$file .= "    napc_unmute();\n";
+		$file .= "    libnapc_unmute();\n";
 		$file .= "    libnapc_puts(\"All ${module} tests have passed!\\n\");\n";
 		$file .= "    libnapc_mute();\n";
 
@@ -60,7 +60,7 @@ ORIGIN_COMMENT;
 		$file .= "    napc_${c_friendly_module}__runTests();\n";
 	}
 
-	$file .= "    napc_unmute();\n";
+	$file .= "    libnapc_unmute();\n";
 	$file .= "    libnapc_puts(\"\\n\\nAll tests successfully passed! :-)\\n\\n\");\n";
 
 	$file .= "}\n";

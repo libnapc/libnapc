@@ -93,5 +93,5 @@
 	 * 
 	 * napc_printf(" Earth!"); // prints Earth!
 	 */
-	void napc_unmute(void);
+	void libnapc_unmute(void);
 #endif

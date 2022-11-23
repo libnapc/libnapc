@@ -10,7 +10,7 @@ void napc_halt(
 	...
 ) {
 	// make sure serial is not muted
-	napc_unmute();
+	libnapc_unmute();
 
 	napc_time time = napc_getTimeSinceBoot();
 

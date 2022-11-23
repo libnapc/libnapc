@@ -44,7 +44,7 @@ ORIGIN_COMMENT;
 				$fn_name = "PV_napc_${c_friendly_module}__testCase$test_case_id";
 
 				$new_file_contents .= "void $fn_name(void) {\n";
-				$new_file_contents .= "    napc_unmute();\n";
+				$new_file_contents .= "    libnapc_unmute();\n";
 				$new_file_contents .= "    libnapc_puts(\"[".$test_file["relative_path"]."] $description ... \");\n";
 				$new_file_contents .= "    libnapc_mute();\n";
 
