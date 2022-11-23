@@ -1,5 +1,5 @@
-#if !defined(NAPC_INTTYPES_I16_h)
-	#define NAPC_INTTYPES_I16_h
+#if !defined(LIBNAPC_INTTYPES_I16_h)
+	#define LIBNAPC_INTTYPES_I16_h
 
 	#include <stdint.h>
 	#include <inttypes.h>
@@ -12,5 +12,5 @@
 	 * Type for signed integers with 16 bits width.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef int16_t napc_i16;
+	typedef int16_t libnapc_i16;
 #endif
