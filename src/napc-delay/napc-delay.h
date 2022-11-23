@@ -1,7 +1,7 @@
 #if !defined(NAPC_DELAY_h)
 	#define NAPC_DELAY_h
 
-	#include <libnapc.h>
+	#include <libnapc-internal.h>
 
 	/*!
 	 * @name napc_delay

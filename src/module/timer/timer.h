@@ -1,7 +1,7 @@
 #if !defined(NAPC_MODULE_TIMER_h)
 	#define NAPC_MODULE_TIMER_h
 
-	#include <libnapc.h>
+	#include <libnapc-internal.h>
 	#include <napc-magic/napc-magic.h>
 
 	/*!

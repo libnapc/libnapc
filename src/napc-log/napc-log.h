@@ -1,7 +1,7 @@
 #if !defined(NAPC_LOG_h)
 	#define NAPC_LOG_h
 
-	#include <libnapc.h>
+	#include <libnapc-internal.h>
 
 	void napc_logMessage(
 		const char *subsys,

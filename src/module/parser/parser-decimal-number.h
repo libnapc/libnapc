@@ -1,7 +1,7 @@
 #if !defined(NAPC_MODULE_PARSER_DECIMAL_NUMBER_h)
 	#define NAPC_MODULE_PARSER_DECIMAL_NUMBER_h
 
-	#include <libnapc.h>
+	#include <libnapc-internal.h>
 
 	/*!
 	 * @name napc_parser_parseDecimalNumberU8

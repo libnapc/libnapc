@@ -1,7 +1,7 @@
 #if !defined(NAPC_PANIC_h)
 	#define NAPC_PANIC_h
 
-	#include <libnapc.h>
+	#include <libnapc-internal.h>
 
 	void napc_halt(
 		const char *file,

@@ -5,7 +5,7 @@
 #if !defined(NAPC_MODULE_AES_h)
 	#define NAPC_MODULE_AES_h
 
-	#include <libnapc.h>
+	#include <libnapc-internal.h>
 
 	/*!
 	 * @name napc_aes_encrypt

@@ -1,7 +1,7 @@
 #if !defined(NAPC_SERIAL_h)
 	#define NAPC_SERIAL_h
 
-	#include <libnapc.h>
+	#include <libnapc-internal.h>
 
 	/*!
 	 * @name napc_puts

@@ -1,7 +1,7 @@
 #if !defined(NAPC_MODULE_DNS_QUERY_h)
 	#define NAPC_MODULE_DNS_QUERY_h
 
-	#include <libnapc.h>
+	#include <libnapc-internal.h>
 	#include <module/dns/dns-qtype.h>
 
 	#define NAPC_MODULE_DNS_MAX_NAME 64 // was 254 before

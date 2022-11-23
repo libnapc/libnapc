@@ -1,7 +1,7 @@
 #if !defined(NAPC_MODULE_DNS_ANSWER_h)
 	#define NAPC_MODULE_DNS_ANSWER_h
 
-	#include <libnapc.h>
+	#include <libnapc-internal.h>
 
 	#define NAPC_MODULE_DNS_MAX_RD_DATA_LENGTH 16u
 

@@ -5,7 +5,7 @@
 #if !defined(NAPC_MODULE_HRTIMER_h)
 	#define NAPC_MODULE_HRTIMER_h
 
-	#include <libnapc.h>
+	#include <libnapc-internal.h>
 	#include <napc-magic/napc-magic.h>
 
 	/*!

@@ -1,7 +1,7 @@
 #if !defined(NAPC_UTILS_h)
 	#define NAPC_UTILS_h
 
-	#include <libnapc.h>
+	#include <libnapc-internal.h>
 
 	/*!
 	 * @name napc_snprintf

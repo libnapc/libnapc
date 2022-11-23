@@ -1,7 +1,7 @@
 #if !defined(NAPC_MODULE_MISC_h)
 	#define NAPC_MODULE_MISC_h
 
-	#include <libnapc.h>
+	#include <libnapc-internal.h>
 
 	#include <string.h> // memcmp(), memcpy() etc.
 

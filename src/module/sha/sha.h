@@ -1,7 +1,7 @@
 #if !defined(NAPC_MODULE_SHA_h)
 	#define NAPC_MODULE_SHA_h
 
-	#include <libnapc.h>
+	#include <libnapc-internal.h>
 
 	/*!
 	 * @name napc_sha_calculate

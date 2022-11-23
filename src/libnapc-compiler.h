@@ -1,9 +1,5 @@
-#if !defined(LIBNAPC_h)
-	#define LIBNAPC_h
-
-	#include <stdbool.h> // bool
-	#include <stdlib.h> // NULL, free()
-	#include <stdarg.h> // va_list
+#if !defined(LIBNAPC_COMPILER_h)
+	#define LIBNAPC_COMPILER_h
 
 	// Source: https://stackoverflow.com/a/39618857/2005038
 	/* Normally casting an expression to void discards its value, but GCC
@@ -17,9 +13,6 @@
 	#else
 		#define NAPC_IGNORE_VALUE(x) ((void) (x))
 	#endif
-
-	#define NAPC_CONCAT_(a, b) a ## b
-	#define NAPC_CONCAT(a, b) NAPC_CONCAT_(a, b)
 
 	#define NAPC_FN_PRINTFLIKE(_1, _2) __attribute__((format(printf, _1, _2)))
 
@@ -64,6 +57,4 @@
 	// give compiler a hint that `expr` is likely to evaluate to 'true'
 	#define NAPC_LIKELY(expr) \
 		__builtin_expect(!!(expr), 1)
-
-	#include <inttypes/inttypes.h>
 #endif

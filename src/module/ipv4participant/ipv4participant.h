@@ -14,7 +14,7 @@
 #if !defined(NAPC_MODULE_IPV4PARTICIPANT_h)
 	#define NAPC_MODULE_IPV4PARTICIPANT_h
 
-	#include <libnapc.h>
+	#include <libnapc-internal.h>
 	#include <module/net/net.h>
 
 	#include <napc-magic/napc-magic.h>

@@ -13,7 +13,7 @@
 #if !defined(NAPC_MODULE_BUFFER_h)
 	#define NAPC_MODULE_BUFFER_h
 
-	#include <libnapc.h>
+	#include <libnapc-internal.h>
 
 	#include <napc-magic/napc-magic.h>
 

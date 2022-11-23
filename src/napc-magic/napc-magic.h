@@ -1,7 +1,7 @@
 #if !defined(NAPC_MAGIC_h)
 	#define NAPC_MAGIC_h
 
-	#include <libnapc.h>
+	#include <libnapc-internal.h>
 
 	#include <napc-panic/napc-panic.h>
 

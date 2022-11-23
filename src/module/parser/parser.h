@@ -21,7 +21,7 @@
 #if !defined(NAPC_MODULE_PARSER_h)
 	#define NAPC_MODULE_PARSER_h
 
-	#include <libnapc.h>
+	#include <libnapc-internal.h>
 
 	#include <module/parser/parser-decimal-number.h>
 	#include <module/parser/parser-hexadecimal-number.h>

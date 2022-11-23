@@ -1,7 +1,7 @@
 #if !defined(NAPC_TIME_h)
 	#define NAPC_TIME_h
 
-	#include <libnapc.h>
+	#include <libnapc-internal.h>
 
 	/*!
 	 * @name napc_getTimeSinceBoot

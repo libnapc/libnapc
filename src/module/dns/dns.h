@@ -1,7 +1,7 @@
 #if !defined(NAPC_MODULE_DNS_h)
 	#define NAPC_MODULE_DNS_h
 
-	#include <libnapc.h>
+	#include <libnapc-internal.h>
 	#include <module/dns/dns-header.h>
 	#include <module/dns/dns-query.h>
 	#include <module/dns/dns-answer.h>

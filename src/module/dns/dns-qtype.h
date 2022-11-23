@@ -1,7 +1,7 @@
 #if !defined(NAPC_MODULE_DNS_QTYPE_h)
 	#define NAPC_MODULE_DNS_QTYPE_h
 
-	#include <libnapc.h>
+	#include <libnapc-internal.h>
 
 	/*!
 	 * @name napc__DNSQType
