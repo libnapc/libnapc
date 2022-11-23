@@ -1,5 +1,5 @@
-#if !defined(NAPC_INTTYPES_I32_h)
-	#define NAPC_INTTYPES_I32_h
+#if !defined(LIBNAPC_INTTYPES_I32_h)
+	#define LIBNAPC_INTTYPES_I32_h
 
 	#include <stdint.h>
 	#include <inttypes.h>

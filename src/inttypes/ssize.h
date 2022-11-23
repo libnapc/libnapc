@@ -1,5 +1,5 @@
-#if !defined(NAPC_INTTYPES_SSIZE_h)
-	#define NAPC_INTTYPES_SSIZE_h
+#if !defined(LIBNAPC_INTTYPES_SSIZE_h)
+	#define LIBNAPC_INTTYPES_SSIZE_h
 
 	/*!
 	 * @name napc_ssize

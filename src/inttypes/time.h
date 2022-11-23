@@ -1,5 +1,5 @@
-#if !defined(NAPC_INTTYPES_TIME_h)
-	#define NAPC_INTTYPES_TIME_h
+#if !defined(LIBNAPC_INTTYPES_TIME_h)
+	#define LIBNAPC_INTTYPES_TIME_h
 
 	#include <inttypes/32bit/libnapc_u32.h>
 
