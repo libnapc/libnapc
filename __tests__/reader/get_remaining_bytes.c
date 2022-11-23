@@ -13,7 +13,7 @@ TEST_CASE("should work as expected") {
 	);
 
 	// Advance by 3 bytes
-	NAPC_IGNORE_VALUE(
+	LIBNAPC_IGNORE_VALUE(
 		napc_Reader_readU8Array(&reader, 3, NULL)
 	);
 
@@ -22,7 +22,7 @@ TEST_CASE("should work as expected") {
 	);
 
 	// Advance by 2 bytes
-	NAPC_IGNORE_VALUE(
+	LIBNAPC_IGNORE_VALUE(
 		napc_Reader_readU8Array(&reader, 2, NULL)
 	);
 

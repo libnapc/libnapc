@@ -6,7 +6,7 @@ void PV_napc_testAssert(
 	const char *file,
 	int expr
 ) {
-	NAPC_IGNORE_VALUE(file);
+	LIBNAPC_IGNORE_VALUE(file);
 
 	if (!expr) {
 		LIBNAPC_PANIC("Test assertion '%s' failed.", assertion);

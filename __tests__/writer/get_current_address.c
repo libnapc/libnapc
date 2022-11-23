@@ -13,7 +13,7 @@ TEST_CASE("should work as expected") {
 	);
 
 	// Write 3 bytes
-	NAPC_IGNORE_VALUE(
+	LIBNAPC_IGNORE_VALUE(
 		napc_Writer_writeU8Array(&writer, 3, dummy_data)
 	);
 

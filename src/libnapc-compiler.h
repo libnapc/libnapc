@@ -8,10 +8,10 @@
 	   and __extension__ to work around the problem, if the workaround is
 	   known to be needed.  */
 	#if 3 < __GNUC__ + (4 <= __GNUC_MINOR__)
-		#define NAPC_IGNORE_VALUE(x) \
+		#define LIBNAPC_IGNORE_VALUE(x) \
 			(__extension__ ({ __typeof__ (x) __x = (x); (void) __x; }))
 	#else
-		#define NAPC_IGNORE_VALUE(x) ((void) (x))
+		#define LIBNAPC_IGNORE_VALUE(x) ((void) (x))
 	#endif
 
 	#define LIBNAPC_FN_PRINTFLIKE(_1, _2) __attribute__((format(printf, _1, _2)))

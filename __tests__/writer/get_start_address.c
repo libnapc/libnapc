@@ -9,7 +9,7 @@ TEST_CASE("should work as expected") {
 	napc__Writer writer = napc_Writer_create(buffer, sizeof(buffer));
 
 	// Write 3 bytes
-	NAPC_IGNORE_VALUE(napc_Writer_writeU8Array(&writer, 3, dummy_data));
+	LIBNAPC_IGNORE_VALUE(napc_Writer_writeU8Array(&writer, 3, dummy_data));
 
 	TEST_ASSERT(
 		napc_Writer_getStartAddress(&writer) == start

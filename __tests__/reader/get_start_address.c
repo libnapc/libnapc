@@ -8,7 +8,7 @@ TEST_CASE("should work as expected") {
 	napc__Reader reader = napc_Reader_create(buffer, sizeof(buffer));
 
 	// Read 3 bytes
-	NAPC_IGNORE_VALUE(napc_Reader_readU8Array(&reader, 3, NULL));
+	LIBNAPC_IGNORE_VALUE(napc_Reader_readU8Array(&reader, 3, NULL));
 
 	TEST_ASSERT(
 		napc_Reader_getStartAddress(&reader) == start

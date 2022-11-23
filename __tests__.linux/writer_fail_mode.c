@@ -3,8 +3,8 @@
 char buffer[5];
 
 int main(int argc, const char **argv) {
-	NAPC_IGNORE_VALUE(argc);
-	NAPC_IGNORE_VALUE(argv);
+	LIBNAPC_IGNORE_VALUE(argc);
+	LIBNAPC_IGNORE_VALUE(argv);
 
 	libnapc_init();
 

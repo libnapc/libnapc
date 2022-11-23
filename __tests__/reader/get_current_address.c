@@ -14,7 +14,7 @@ TEST_CASE("should work as expected") {
 	);
 
 	// Read 3 bytes
-	NAPC_IGNORE_VALUE(
+	LIBNAPC_IGNORE_VALUE(
 		napc_Reader_readU8Array(&reader, 3, NULL)
 	);
 
