@@ -27,7 +27,7 @@ bool napc_parser_parseMACAddress(
 		}
 
 		// Parse octet
-		napc_u32 value;
+		libnapc_u32 value;
 
 		if (!PV_napc_parser_parseIntegerString(octet, &value, true)) {
 			return false;

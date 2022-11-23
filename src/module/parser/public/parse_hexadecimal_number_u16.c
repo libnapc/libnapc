@@ -4,7 +4,7 @@ bool napc_parser_parseHexadecimalNumberU16(
 	const char *string,
 	napc_u16 *out
 ) {
-	napc_u32 tmp;
+	libnapc_u32 tmp;
 
 	if (!PV_napc_parser_parseIntegerString(string, &tmp, true)) {
 		return false;

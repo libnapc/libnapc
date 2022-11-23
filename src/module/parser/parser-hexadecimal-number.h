@@ -58,7 +58,7 @@
 	 * @return Returns `true` on success, `false` otherwise.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
-	 * napc_u32 out;
+	 * libnapc_u32 out;
 	 * 
 	 * if (napc_parser_parseHexadecimalNumberU32("deadbeef", &out)) {
 	 *     napc_printf("Value is %ld", out); // "Value is 3735928559"
@@ -66,6 +66,6 @@
 	 */
 	bool napc_parser_parseHexadecimalNumberU32(
 		const char *string,
-		napc_u32 *out
+		libnapc_u32 *out
 	) NAPC_FN_WARNUNUSED_RET();
 #endif

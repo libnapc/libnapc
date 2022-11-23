@@ -185,7 +185,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	bool napc_Writer_writeU32BE(
-		napc__Writer *ctx, napc_u32 value
+		napc__Writer *ctx, libnapc_u32 value
 	);
 
 	/*!

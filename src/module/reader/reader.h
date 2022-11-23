@@ -170,14 +170,14 @@
 	 * 
 	 * napc_Reader_init(&reader, buffer, sizeof(buffer));
 	 * 
-	 * napc_u32 out;
+	 * libnapc_u32 out;
 	 * 
 	 * if (napc_Reader_readU32BE(&reader, &out)) {
 	 *     // out has the value 67305985 (0x04030201)
 	 * }
 	 */
 	bool napc_Reader_readU32BE(
-		napc__Reader *ctx, napc_u32 *out
+		napc__Reader *ctx, libnapc_u32 *out
 	) NAPC_FN_WARNUNUSED_RET();
 
 	/*!

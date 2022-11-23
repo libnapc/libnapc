@@ -27,7 +27,7 @@ bool napc_parser_parseIPv4Address(
 		}
 
 		// Parse octet
-		napc_u32 value;
+		libnapc_u32 value;
 
 		if (!PV_napc_parser_parseIntegerString(octet, &value, false)) {
 			return false;

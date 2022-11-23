@@ -21,15 +21,15 @@ static int _parseDigit(char ch, bool allowHexDigits) {
 
 bool PV_napc_parser_parseIntegerString(
 	const char *string,
-	napc_u32 *out,
+	libnapc_u32 *out,
 	bool isHex
 ) {
 	libnapc_size length = libnapc_strlen(string);
 
 	if (!length) return false;
 
-	napc_u32 value = 0;
-	napc_u32 multiplier = 1;
+	libnapc_u32 value = 0;
+	libnapc_u32 multiplier = 1;
 
 	for (int i = length - 1; i >= 0; --i) {
 		int digit = _parseDigit(string[i], isHex);

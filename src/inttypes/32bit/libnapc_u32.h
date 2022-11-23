@@ -1,5 +1,5 @@
-#if !defined(NAPC_INTTYPES_U32_h)
-	#define NAPC_INTTYPES_U32_h
+#if !defined(LIBNAPC_INTTYPES_U32_h)
+	#define LIBNAPC_INTTYPES_U32_h
 
 	#include <stdint.h> // uint32_t
 	#include <inttypes.h> // PRIu32
@@ -12,7 +12,7 @@
 	 * Type for unsigned integers with 32 bits width.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef uint32_t napc_u32;
+	typedef uint32_t libnapc_u32;
 
 	/*!
 	 * @name NAPC_U32_LITERAL

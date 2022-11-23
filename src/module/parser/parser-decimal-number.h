@@ -56,13 +56,13 @@
 	 * @return Returns `true` on success, `false` otherwise.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
-	 * napc_u32 out;
+	 * libnapc_u32 out;
 	 * 
 	 * if (napc_parser_parseDecimalNumberU32("123456", &out)) {
 	 *     napc_printf("Value is %ld", out); // "Value is 123456"
 	 * }
 	 */
 	bool napc_parser_parseDecimalNumberU32(
-		const char *string, napc_u32 *out
+		const char *string, libnapc_u32 *out
 	) NAPC_FN_WARNUNUSED_RET();
 #endif

@@ -13,7 +13,7 @@
 
 	bool PV_napc_parser_parseIntegerString(
 		const char *string,
-		napc_u32 *out,
+		libnapc_u32 *out,
 		bool isHex
 	);
 #endif

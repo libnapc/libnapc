@@ -2,7 +2,7 @@
 
 bool napc_parser_parseDecimalNumberU32(
 	const char *string,
-	napc_u32 *out
+	libnapc_u32 *out
 ) {
 	return PV_napc_parser_parseIntegerString(string, out, false);
 }

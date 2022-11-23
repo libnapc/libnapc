@@ -16,7 +16,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	typedef struct napc__DNSAnswer {
-		napc_u32 ttl;
+		libnapc_u32 ttl;
 
 		napc_u16 rd_length;
 		napc_u8 rd_data[NAPC_MODULE_DNS_MAX_RD_DATA_LENGTH];

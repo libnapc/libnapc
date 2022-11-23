@@ -32,7 +32,7 @@ bool PV_napc_DNS_parseAnswerSection(
 	// QCLASS
 	if (!napc_Reader_readU16BE(reader, NULL)) return false;
 
-	napc_u32 ttl = 0;
+	libnapc_u32 ttl = 0;
 	napc_u16 rd_length = 0;
 
 	// TTL

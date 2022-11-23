@@ -11,7 +11,7 @@ TEST_CASE("should read u32be correctly") {
 
 	napc_Reader_init(&ctx, data, sizeof(data));
 
-	napc_u32 tmp = 0;
+	libnapc_u32 tmp = 0;
 	TEST_ASSERT(napc_Reader_readU32BE(&ctx, &tmp));
 	TEST_ASSERT(tmp == NAPC_U32_LITERAL(0x0a0b0c0d));
 	TEST_ASSERT(napc_Reader_readU32BE(&ctx, &tmp));
@@ -30,7 +30,7 @@ TEST_CASE("should read u32be correctly with out=NULL") {
 	napc_Reader_init(&ctx, data, sizeof(data));
 
 	TEST_ASSERT(napc_Reader_readU32BE(&ctx, NULL));
-	napc_u32 tmp = 0;
+	libnapc_u32 tmp = 0;
 	TEST_ASSERT(napc_Reader_readU32BE(&ctx, &tmp));
 	TEST_ASSERT(tmp == NAPC_U32_LITERAL(0x0e0f0102));
 	TEST_ASSERT(!napc_Reader_readU32BE(&ctx, NULL));

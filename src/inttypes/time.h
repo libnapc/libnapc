@@ -1,7 +1,7 @@
 #if !defined(NAPC_INTTYPES_TIME_h)
 	#define NAPC_INTTYPES_TIME_h
 
-	#include <inttypes/32bit/napc_u32.h>
+	#include <inttypes/32bit/libnapc_u32.h>
 
 	/*!
 	 * @name napc_time
@@ -11,7 +11,7 @@
 	 * Unsigned integer type for holding timestamps.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef napc_u32 libnapc_time;
+	typedef libnapc_u32 libnapc_time;
 
 	// For napc_time literals
 	#define NAPC_TIME_LITERAL(_v) NAPC_U32_LITERAL(_v)
