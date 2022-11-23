@@ -20,6 +20,6 @@ TEST_CASE("should work properly (AAAA record)") {
 
 	TEST_ASSERT(request.query.qtype == NAPC_DNS_QTYPE_AAAA);
 	TEST_ASSERT(
-		napc_streql("cloudflare.com", request.query.name)
+		libnapc_streql("cloudflare.com", request.query.name)
 	);
 }
