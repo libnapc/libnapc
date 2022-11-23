@@ -22,8 +22,8 @@
 	 */
 	typedef unsigned long libnapc_size;
 
-	// For napc_size literals
-	#define NAPC_SIZE_LITERAL(_v) _v ## ul
+	// For libnapc_size literals
+	#define LIBNAPC_SIZE_LITERAL(_v) _v ## ul
 
 	/*!
 	 * @name NAPC_SIZE_PRINTF
