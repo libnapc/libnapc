@@ -27,7 +27,7 @@
 	 * @example
 	 * napc_u8 var = NAPC_U8_LITERAL(20);
 	 */
-	#define NAPC_U8_LITERAL(value)  UINT8_C(value)
+	#define LIBNAPC_U8_LITERAL(value)  UINT8_C(value)
 
 	/*!
 	 * @name NAPC_U8_PRINTF
