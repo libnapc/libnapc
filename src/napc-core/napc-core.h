@@ -1,5 +1,5 @@
-#if !defined(NAPC_CORE_h)
-	#define NAPC_CORE_h
+#if !defined(LIBNAPC_CORE_h)
+	#define LIBNAPC_CORE_h
 
 	#include <libnapc-internal.h>
 

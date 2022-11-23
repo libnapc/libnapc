@@ -1,6 +1,6 @@
 // needs doc-block fixing
-#if !defined(NAPC_DELAY_h)
-	#define NAPC_DELAY_h
+#if !defined(LIBNAPC_DELAY_h)
+	#define LIBNAPC_DELAY_h
 
 	#include <libnapc-internal.h>
 

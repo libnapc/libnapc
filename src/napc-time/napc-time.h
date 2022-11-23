@@ -1,6 +1,6 @@
 // needs doc-block fixing
-#if !defined(NAPC_TIME_h)
-	#define NAPC_TIME_h
+#if !defined(LIBNAPC_TIME_h)
+	#define LIBNAPC_TIME_h
 
 	#include <libnapc-internal.h>
 

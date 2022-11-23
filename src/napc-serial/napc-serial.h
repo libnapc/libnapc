@@ -1,6 +1,6 @@
 // needs doc-block fixing
-#if !defined(NAPC_SERIAL_h)
-	#define NAPC_SERIAL_h
+#if !defined(LIBNAPC_SERIAL_h)
+	#define LIBNAPC_SERIAL_h
 
 	#include <libnapc-internal.h>
 

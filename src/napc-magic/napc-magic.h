@@ -1,5 +1,5 @@
-#if !defined(NAPC_MAGIC_h)
-	#define NAPC_MAGIC_h
+#if !defined(LIBNAPC_MAGIC_h)
+	#define LIBNAPC_MAGIC_h
 
 	#include <libnapc-internal.h>
 

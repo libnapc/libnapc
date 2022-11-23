@@ -1,5 +1,5 @@
-#if !defined(NAPC_PANIC_h)
-	#define NAPC_PANIC_h
+#if !defined(LIBNAPC_PANIC_h)
+	#define LIBNAPC_PANIC_h
 
 	#include <libnapc-internal.h>
 

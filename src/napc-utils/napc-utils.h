@@ -1,6 +1,6 @@
 // needs doc-block fixing
-#if !defined(NAPC_UTILS_h)
-	#define NAPC_UTILS_h
+#if !defined(LIBNAPC_UTILS_h)
+	#define LIBNAPC_UTILS_h
 
 	#include <libnapc-internal.h>
 

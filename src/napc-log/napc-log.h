@@ -1,5 +1,5 @@
-#if !defined(NAPC_LOG_h)
-	#define NAPC_LOG_h
+#if !defined(LIBNAPC_LOG_h)
+	#define LIBNAPC_LOG_h
 
 	#include <libnapc-internal.h>
 
