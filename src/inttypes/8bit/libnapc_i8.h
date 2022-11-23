@@ -1,5 +1,5 @@
-#if !defined(NAPC_INTTYPES_I8_h)
-	#define NAPC_INTTYPES_I8_h
+#if !defined(LIBNAPC_INTTYPES_I8_h)
+	#define LIBNAPC_INTTYPES_I8_h
 
 	#include <stdint.h> // int8_t
 	#include <inttypes.h> // 
@@ -12,5 +12,5 @@
 	 * Type for signed integers with 8 bits width.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef int8_t napc_i8;
+	typedef int8_t libnapc_i8;
 #endif
