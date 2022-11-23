@@ -16,7 +16,7 @@
 	// napc-serial
 		void HAL_napc_initSerial(void);
 		void HAL_libnapc_puts(const char *str);
-		void HAL_napc_putc(char ch);
+		void HAL_libnapc_putc(char ch);
 	// napc-serial
 
 	// napc-panic

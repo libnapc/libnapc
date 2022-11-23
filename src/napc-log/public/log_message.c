@@ -96,11 +96,11 @@ void napc_logMessage(
 	for (napc_size i = 0; i < napc_strlen(_message_buffer); ++i) {
 		const char ch = _message_buffer[i];
 
-		napc_putc(ch);
+		libnapc_putc(ch);
 
 		if (ch == '\n') {
 			for (napc_size i = 0; i < 105; ++i) {
-				napc_putc(' ');
+				libnapc_putc(' ');
 			}
 		}
 	}

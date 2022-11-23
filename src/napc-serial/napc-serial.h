@@ -32,7 +32,7 @@
 	 * napc_putc('o');
 	 * napc_putc('!');
 	 */
-	void napc_putc(char ch);
+	void libnapc_putc(char ch);
 
 	/*!
 	 * @name napc_printf
