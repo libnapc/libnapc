@@ -1,5 +1,5 @@
-#if !defined(PV_NAPC_LOG_h)
-	#define PV_NAPC_LOG_h
+#if !defined(PV_LIBNAPC_LOG_h)
+	#define PV_LIBNAPC_LOG_h
 
 	#include <napc-log/napc-log.h>
 	#include <napc-log/HAL/HAL.h>

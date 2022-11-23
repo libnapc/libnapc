@@ -1,5 +1,5 @@
-#if !defined(PV_NAPC_CORE_h)
-	#define PV_NAPC_CORE_h
+#if !defined(PV_LIBNAPC_CORE_h)
+	#define PV_LIBNAPC_CORE_h
 
 	#include <HAL/HAL.h>
 

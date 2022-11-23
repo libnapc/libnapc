@@ -1,5 +1,5 @@
-#if !defined(PV_NAPC_UTILS_h)
-	#define PV_NAPC_UTILS_h
+#if !defined(PV_LIBNAPC_UTILS_h)
+	#define PV_LIBNAPC_UTILS_h
 
 	#include <napc-utils/napc-utils.h>
 

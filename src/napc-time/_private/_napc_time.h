@@ -1,5 +1,5 @@
-#if !defined(PV_NAPC_TIME_h)
-	#define PV_NAPC_TIME_h
+#if !defined(PV_LIBNAPC_TIME_h)
+	#define PV_LIBNAPC_TIME_h
 
 	#include <HAL/HAL.h>
 

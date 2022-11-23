@@ -1,5 +1,5 @@
-#if !defined(PV_NAPC_PANIC_h)
-	#define PV_NAPC_PANIC_h
+#if !defined(PV_LIBNAPC_PANIC_h)
+	#define PV_LIBNAPC_PANIC_h
 
 	#include <HAL/HAL.h>
 

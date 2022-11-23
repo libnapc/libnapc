@@ -1,5 +1,5 @@
-#if !defined(PV_NAPC_SERIAL_h)
-	#define PV_NAPC_SERIAL_h
+#if !defined(PV_LIBNAPC_SERIAL_h)
+	#define PV_LIBNAPC_SERIAL_h
 
 	#include <HAL/HAL.h>
 

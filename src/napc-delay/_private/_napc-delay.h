@@ -1,5 +1,5 @@
-#if !defined(PV_NAPC_DELAY_h)
-	#define PV_NAPC_DELAY_h
+#if !defined(PV_LIBNAPC_DELAY_h)
+	#define PV_LIBNAPC_DELAY_h
 
 	#include <HAL/HAL.h>
 
