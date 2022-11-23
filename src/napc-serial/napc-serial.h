@@ -71,7 +71,7 @@
 	 * 
 	 * napc_printf(" Earth!"); // prints Earth!
 	 */
-	void napc_mute(void);
+	void libnapc_mute(void);
 
 	/*!
 	 * @name napc_unmute

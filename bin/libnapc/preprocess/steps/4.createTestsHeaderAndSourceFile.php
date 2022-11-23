@@ -41,12 +41,12 @@ ORIGIN_COMMENT;
 			$file .= "    $test();";
 			$file .= " napc_unmute();";
 			$file .= " libnapc_puts(\"passed!\\n\");";
-			$file .= " napc_mute();\n";
+			$file .= " libnapc_mute();\n";
 		}
 
 		$file .= "    napc_unmute();\n";
 		$file .= "    libnapc_puts(\"All ${module} tests have passed!\\n\");\n";
-		$file .= "    napc_mute();\n";
+		$file .= "    libnapc_mute();\n";
 
 		$file .= "}\n";
 	}
