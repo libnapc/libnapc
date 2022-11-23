@@ -11,7 +11,7 @@
 			extern char *__brkval;
 		#endif  // __arm__
 
-		napc_size HAL_napc_getFreeMemory(void) {
+		napc_size HAL_libnapc_getFreeMemory(void) {
 			char top;
 			#ifdef __arm__
 				return &top - reinterpret_cast<char*>(sbrk(0));
