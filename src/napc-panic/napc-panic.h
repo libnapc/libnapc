@@ -9,7 +9,7 @@
 		const char *fn,
 		const char *fmt,
 		...
-	) NAPC_FN_PRINTFLIKE(4, 5);
+	) LIBNAPC_FN_PRINTFLIKE(4, 5);
 
 	/*!
 	 * @name NAPC_PANIC

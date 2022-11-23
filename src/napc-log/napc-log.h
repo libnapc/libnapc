@@ -8,7 +8,7 @@
 		int level,
 		const char *function,
 		const char *fmt, ...
-	) NAPC_FN_PRINTFLIKE(4, 5);
+	) LIBNAPC_FN_PRINTFLIKE(4, 5);
 
 	typedef void (*napc_logHandlerFunction)(
 		void *context,

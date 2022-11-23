@@ -247,7 +247,7 @@
 	 */
 	bool napc_Writer_writeStringFormat(
 		napc__Writer *ctx, const char *fmt, ...
-	) NAPC_FN_PRINTFLIKE(2, 3);
+	) LIBNAPC_FN_PRINTFLIKE(2, 3);
 
 	/*!
 	 * @name napc_Writer_getCurrentOffset

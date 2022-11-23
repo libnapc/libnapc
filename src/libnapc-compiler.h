@@ -14,7 +14,7 @@
 		#define NAPC_IGNORE_VALUE(x) ((void) (x))
 	#endif
 
-	#define NAPC_FN_PRINTFLIKE(_1, _2) __attribute__((format(printf, _1, _2)))
+	#define LIBNAPC_FN_PRINTFLIKE(_1, _2) __attribute__((format(printf, _1, _2)))
 
 	/*!
 	 * @name NAPC_FN_WARNUNUSED_RET

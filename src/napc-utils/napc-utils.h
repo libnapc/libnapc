@@ -29,7 +29,7 @@
 		libnapc_size buffer_size,
 		const char *fmt,
 		...
-	) NAPC_FN_PRINTFLIKE(3, 4);
+	) LIBNAPC_FN_PRINTFLIKE(3, 4);
 
 	/*!
 	 * @name napc_vsnprintf
