@@ -1,3 +1,4 @@
+// needs doc-block fixing
 #if !defined(NAPC_SERIAL_h)
 	#define NAPC_SERIAL_h
 
