@@ -63,7 +63,7 @@
 	 * @param dest_size Size of destination.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	void napc_strncpy(char *dest, const char *source, napc_size dest_size);
+	void libnapc_strncpy(char *dest, const char *source, napc_size dest_size);
 
 	/*!
 	 * @name napc_strlen

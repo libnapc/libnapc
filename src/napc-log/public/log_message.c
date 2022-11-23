@@ -8,7 +8,7 @@ static void _shortenFunctionName(const char *fn, char *buf) {
 	const napc_size max = 40;
 
 	if (max >= fn_len) {
-		napc_strncpy(buf, fn, 64);
+		libnapc_strncpy(buf, fn, 64);
 		return;
 	}
 

@@ -14,7 +14,7 @@ bool napc_parser_parseMACAddress(
 	if (napc_strlen(string) > 32) return false;
 
 	char copy[32];
-	napc_strncpy(copy, string, sizeof(copy));
+	libnapc_strncpy(copy, string, sizeof(copy));
 
 	char *saveptr;
 	char *octet = strtok_r(copy, ":", &saveptr);

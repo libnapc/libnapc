@@ -49,7 +49,7 @@ bool PV_napc_DNS_parseQuerySection(
 
 	if (out) {
 		out->qtype = qtype;
-		napc_strncpy(out->name, PV_napc_DNS_tmp_name, sizeof(out->name));
+		libnapc_strncpy(out->name, PV_napc_DNS_tmp_name, sizeof(out->name));
 	}
 
 	return true;

@@ -6,7 +6,7 @@
 
 	#include <module/reader/reader.h>
 	#include <module/writer/writer.h>
-	#include <napc-utils/napc-utils.h> // napc_strncpy()
+	#include <napc-utils/napc-utils.h> // libnapc_strncpy()
 	#include <string.h> // memcpy()
 
 	/**
