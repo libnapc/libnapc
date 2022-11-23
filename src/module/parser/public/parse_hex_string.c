@@ -5,7 +5,7 @@ bool napc_parser_parseHexString(
 	napc_size n_bytes,
 	napc_u8 *out
 ) {
-	if (napc_strlen(string) != (n_bytes * 2)) {
+	if (libnapc_strlen(string) != (n_bytes * 2)) {
 		return false;
 	}
 

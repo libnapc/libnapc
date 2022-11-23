@@ -3,7 +3,7 @@
 bool napc_Writer_writeString(
 	napc__Writer *ctx, const char *value
 ) {
-	napc_size str_len = napc_strlen(value);
+	napc_size str_len = libnapc_strlen(value);
 
 	if (!PV_napc_Writer_checkAccess(ctx, str_len, "string")) {
 		return false;

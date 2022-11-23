@@ -4,7 +4,7 @@ static char _message_buffer[256]; // @static
 static char _fn[64]; // @static
 
 static void _shortenFunctionName(const char *fn, char *buf) {
-	napc_size fn_len = napc_strlen(fn);
+	napc_size fn_len = libnapc_strlen(fn);
 	const napc_size max = 40;
 
 	if (max >= fn_len) {
@@ -93,7 +93,7 @@ void napc_logMessage(
 		subsys, level, function, _message_buffer
 	);
 
-	for (napc_size i = 0; i < napc_strlen(_message_buffer); ++i) {
+	for (napc_size i = 0; i < libnapc_strlen(_message_buffer); ++i) {
 		const char ch = _message_buffer[i];
 
 		libnapc_putc(ch);

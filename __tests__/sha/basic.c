@@ -6,7 +6,7 @@ TEST_CASE("It should work properly") {
 	const char *str = "secret_string";
 
 	NAPC_ASSERT(
-		napc_sha_calculate(str, napc_strlen(str), out, sizeof(out))
+		napc_sha_calculate(str, libnapc_strlen(str), out, sizeof(out))
 	);
 
 	NAPC_ASSERT(
@@ -23,7 +23,7 @@ TEST_CASE("It should work with empty string") {
 	const char *str = "";
 
 	NAPC_ASSERT(
-		napc_sha_calculate(str, napc_strlen(str), out, sizeof(out))
+		napc_sha_calculate(str, libnapc_strlen(str), out, sizeof(out))
 	);
 
 	NAPC_ASSERT(
@@ -40,6 +40,6 @@ TEST_CASE("It should fail with a too small output buffer") {
 	const char *str = "";
 
 	NAPC_ASSERT(
-		!napc_sha_calculate(str, napc_strlen(str), out, sizeof(out))
+		!napc_sha_calculate(str, libnapc_strlen(str), out, sizeof(out))
 	);
 }

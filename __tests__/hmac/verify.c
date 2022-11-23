@@ -41,10 +41,10 @@ TEST_CASE("It should work properly") {
 	};
 
 	TEST_ASSERT(
-		napc_hmac_verify(key, message_hmac, message, napc_strlen(message))
+		napc_hmac_verify(key, message_hmac, message, libnapc_strlen(message))
 	);
 
 	TEST_ASSERT(
-		!napc_hmac_verify(key, message_hmac, "test", napc_strlen("test"))
+		!napc_hmac_verify(key, message_hmac, "test", libnapc_strlen("test"))
 	);
 }

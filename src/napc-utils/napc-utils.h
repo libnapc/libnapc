@@ -81,7 +81,7 @@
 	 * 
 	 * napc_printf("String's length is %" NAPC_SIZE_PRINTF "\n", str_length);
 	 */
-	napc_size napc_strlen(const char *str) NAPC_FN_WARNUNUSED_RET();
+	napc_size libnapc_strlen(const char *str) NAPC_FN_WARNUNUSED_RET();
 
 	/*!
 	 * @name napc_streql

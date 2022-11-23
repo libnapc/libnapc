@@ -10,8 +10,8 @@ bool napc_parser_parseMACAddress(
 	}
 
 	// Max-length of a valid MAC-Address is 17:
-	// napc_strlen("ff:ff:ff:ff:ff:ff") == 17
-	if (napc_strlen(string) > 32) return false;
+	// libnapc_strlen("ff:ff:ff:ff:ff:ff") == 17
+	if (libnapc_strlen(string) > 32) return false;
 
 	char copy[32];
 	libnapc_strncpy(copy, string, sizeof(copy));
@@ -22,7 +22,7 @@ bool napc_parser_parseMACAddress(
 
 	while (octet) {
 		// Octet is too long (max. 2 characters)
-		if (napc_strlen(octet) > 2) {
+		if (libnapc_strlen(octet) > 2) {
 			return false;
 		}
 

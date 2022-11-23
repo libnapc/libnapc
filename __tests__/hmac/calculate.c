@@ -42,7 +42,7 @@ TEST_CASE("It should work properly") {
 
 	napc_u8 hmac[32];
 
-	napc_hmac_calculate(hmac, key, message, napc_strlen(message));
+	napc_hmac_calculate(hmac, key, message, libnapc_strlen(message));
 
 	TEST_ASSERT(
 		memcmp(hmac, expected_hmac, sizeof(hmac)) == 0

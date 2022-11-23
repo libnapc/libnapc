@@ -6,7 +6,7 @@ napc_size PV_napc_parser_countOccurrences(
 ) {
 	napc_size num = 0;
 
-	for (napc_size i = 0, len = napc_strlen(string); i < len; ++i) {
+	for (napc_size i = 0, len = libnapc_strlen(string); i < len; ++i) {
 		if (string[i] == ch) ++num;
 	}
 

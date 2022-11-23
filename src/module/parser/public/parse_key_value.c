@@ -5,7 +5,7 @@ bool napc_parser_parseKeyValue(
 	char *key, napc_size key_len,
 	char *value, napc_size value_len
 ) {
-	napc_size length = napc_strlen(string);
+	napc_size length = libnapc_strlen(string);
 
 	if (!length) return false;
 

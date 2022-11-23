@@ -10,8 +10,8 @@ bool napc_parser_parseIPv4Address(
 	}
 
 	// Max-length of a valid IPv4-Address is 15:
-	// napc_strlen("255.255.255.255") == 15
-	if (napc_strlen(string) > 32) return false;
+	// libnapc_strlen("255.255.255.255") == 15
+	if (libnapc_strlen(string) > 32) return false;
 
 	char copy[32];
 	libnapc_strncpy(copy, string, sizeof(copy));
@@ -22,7 +22,7 @@ bool napc_parser_parseIPv4Address(
 
 	while (octet) {
 		// Octet is too long (max. 3 characters)
-		if (napc_strlen(octet) > 3) {
+		if (libnapc_strlen(octet) > 3) {
 			return false;
 		}
 

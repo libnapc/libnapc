@@ -7,7 +7,7 @@ void napc_hmac_calculate(
 ) {
 	H5P9SL_hmac_sha256(
 		// key, keylen
-		key, napc_strlen(key),
+		key, libnapc_strlen(key),
 		// data, datalen
 		buffer, buffer_size,
 		// out, outlen
