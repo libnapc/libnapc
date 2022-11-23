@@ -1,12 +1,12 @@
 #include <module/misc/_private/_misc.h>
 
 bool napc_misc_chunkedOperation(
-	const void *data, napc_size data_size, napc_size chunk_size,
+	const void *data, libnapc_size data_size, libnapc_size chunk_size,
 	napc_misc_ChunkedOperationCallback fn, void *fn_context
 ) {
 	const unsigned char *ptr = data;
-	napc_size bytes_left_to_process = data_size;
-	napc_size current_chunk_size = chunk_size;
+	libnapc_size bytes_left_to_process = data_size;
+	libnapc_size current_chunk_size = chunk_size;
 
 	while (bytes_left_to_process > 0) {
 		if (current_chunk_size > bytes_left_to_process) {

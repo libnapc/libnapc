@@ -4,7 +4,7 @@ bool napc_parser_parseBoolean(
 	const char *string,
 	bool *out
 ) {
-	napc_size length = libnapc_strlen(string);
+	libnapc_size length = libnapc_strlen(string);
 
 	if (!length) return false;
 

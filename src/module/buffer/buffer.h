@@ -29,7 +29,7 @@
 	typedef struct napc__Buffer {
 		NAPC_MAGIC_MEMBER; // used to detect uninitialized buffers
 
-		napc_size size;
+		libnapc_size size;
 		void *data;
 	} napc__Buffer;
 
@@ -50,7 +50,7 @@
 	 * napc_Buffer_init(&buffer, message, sizeof(message));
 	 */
 	void napc_Buffer_init(
-		napc__Buffer *buffer, void *data, napc_size data_size
+		napc__Buffer *buffer, void *data, libnapc_size data_size
 	);
 
 	/*!
@@ -68,5 +68,5 @@
 	 * 
 	 * napc__Buffer buffer = napc_Buffer_create(message, sizeof(message));
 	 */
-	napc__Buffer napc_Buffer_create(void *data, napc_size data_size);
+	napc__Buffer napc_Buffer_create(void *data, libnapc_size data_size);
 #endif

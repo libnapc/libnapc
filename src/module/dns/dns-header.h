@@ -66,6 +66,6 @@
 	 */
 	bool napc_DNS_parseHeader(
 		napc__DNSHeader *out,
-		const void *buffer, napc_size buffer_size
+		const void *buffer, libnapc_size buffer_size
 	) NAPC_FN_WARNUNUSED_RET();
 #endif

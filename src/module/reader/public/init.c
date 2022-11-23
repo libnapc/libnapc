@@ -1,7 +1,7 @@
 #include <module/reader/_private/_reader.h>
 
 void napc_Reader_init(
-	napc__Reader *ctx, const void *data, napc_size data_size
+	napc__Reader *ctx, const void *data, libnapc_size data_size
 ) {
 	if (!data_size) {
 		LIBNAPC_PANIC("Size cannot be zero inside napc_Reader_init().");

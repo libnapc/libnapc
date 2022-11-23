@@ -7,6 +7,6 @@
 	#include <napc-utils/napc-utils.h> // napc_mzero()
 
 	bool PV_napc_Reader_checkAccess(
-		napc__Reader *ctx, napc_size type_size, const char *type
+		napc__Reader *ctx, libnapc_size type_size, const char *type
 	);
 #endif

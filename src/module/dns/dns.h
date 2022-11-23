@@ -41,7 +41,7 @@
 		// answers present in the response.
 		// num_answers says how many elements are in the answers[] array
 		// (might be capped)
-		napc_size num_answers;
+		libnapc_size num_answers;
 		napc__DNSAnswer answers[NAPC_MODULE_DNS_MAX_ANSWERS];
 	} napc__DNSResponse;
 
@@ -57,7 +57,7 @@
 	 */
 	bool napc_DNS_parseRequest(
 		napc__DNSRequest *out,
-		const void *buffer, napc_size buffer_size
+		const void *buffer, libnapc_size buffer_size
 	) NAPC_FN_WARNUNUSED_RET();
 
 	/*!
@@ -74,7 +74,7 @@
 	 */
 	bool napc_DNS_parseResponse(
 		napc__DNSResponse *out,
-		const void *buffer, napc_size buffer_size
+		const void *buffer, libnapc_size buffer_size
 	) NAPC_FN_WARNUNUSED_RET();
 	// idea: to support more than 4 dns answers:
 	// add *answers_out pointer for dynamic sizing of expected

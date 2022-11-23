@@ -7,7 +7,6 @@
 	#include <napc-utils/napc-utils.h>
 
 	bool PV_napc_Writer_checkAccess(
-		napc__Writer *ctx, napc_size type_size, const char *type
+		napc__Writer *ctx, libnapc_size type_size, const char *type
 	);
-
 #endif

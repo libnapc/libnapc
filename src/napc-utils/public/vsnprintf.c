@@ -2,7 +2,7 @@
 
 void libnapc_vsnprintf(
 	char *buffer,
-	napc_size buffer_size,
+	libnapc_size buffer_size,
 	const char *fmt,
 	va_list args
 ) {

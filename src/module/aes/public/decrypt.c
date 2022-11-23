@@ -3,7 +3,7 @@
 bool napc_aes_decrypt(
 	const napc_u8 *iv,
 	const char *key,
-	void *buffer, napc_size buffer_size
+	void *buffer, libnapc_size buffer_size
 ) {
 	struct TinyAES_ctx ctx;
 	napc_u8 key_bytes[32];

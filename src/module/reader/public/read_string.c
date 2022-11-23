@@ -2,9 +2,9 @@
 
 bool napc_Reader_readString(
 	napc__Reader *ctx,
-	napc_size str_len,
+	libnapc_size str_len,
 	char *out,
-	napc_size out_size
+	libnapc_size out_size
 ) {
 	if (out && !out_size) {
 		LIBNAPC_PANIC(
@@ -23,7 +23,7 @@ bool napc_Reader_readString(
 	if (out) {
 		const char *data = ctx->data;
 
-		for (napc_size i = 0; i < str_len; ++i) {
+		for (libnapc_size i = 0; i < str_len; ++i) {
 			out[i] = data[ctx->_offset + i];
 		}
 		// Terminate string

@@ -15,7 +15,7 @@
 	#define PV_NAPC_MODULE_RINGBUFFER_DEBUG_PRINT_VARIABLES \
 		ctx->write_position, ctx->read_position, ctx->buffer_size
 
-	napc_size PV_napc_RingBuffer_numFreeSpots(
+	libnapc_size PV_napc_RingBuffer_numFreeSpots(
 		const napc__RingBuffer *ctx
 	);
 

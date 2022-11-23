@@ -2,20 +2,20 @@
 
 bool napc_parser_parseHexString(
 	const char *string,
-	napc_size n_bytes,
+	libnapc_size n_bytes,
 	napc_u8 *out
 ) {
 	if (libnapc_strlen(string) != (n_bytes * 2)) {
 		return false;
 	}
 
-	napc_size out_index = 0;
+	libnapc_size out_index = 0;
 
-	for (napc_size i = 0; i < n_bytes; ++i) {
+	for (libnapc_size i = 0; i < n_bytes; ++i) {
 		char tmp_str[3] = {0,0,0};
 
-		napc_size first_index = i * 2;
-		napc_size second_index = first_index + 1;
+		libnapc_size first_index = i * 2;
+		libnapc_size second_index = first_index + 1;
 
 		tmp_str[0] = string[first_index];
 		tmp_str[1] = string[second_index];

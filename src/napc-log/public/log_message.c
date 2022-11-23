@@ -4,17 +4,17 @@ static char _message_buffer[256]; // @static
 static char _fn[64]; // @static
 
 static void _shortenFunctionName(const char *fn, char *buf) {
-	napc_size fn_len = libnapc_strlen(fn);
-	const napc_size max = 40;
+	libnapc_size fn_len = libnapc_strlen(fn);
+	const libnapc_size max = 40;
 
 	if (max >= fn_len) {
 		libnapc_strncpy(buf, fn, 64);
 		return;
 	}
 
-	napc_size start = fn_len - (max - 1);
+	libnapc_size start = fn_len - (max - 1);
 
-	for (napc_size i = 0; i < max; ++i) {
+	for (libnapc_size i = 0; i < max; ++i) {
 		buf[i] = fn[start + i];
 	}
 
@@ -32,7 +32,7 @@ static void _callLogHandlers(
 	const char *message
 ) {
 	// call log handler
-	for (napc_size i = 0; i < NAPC_ARRAY_ELEMENTS(PV_napc_log_handler_array); ++i) {
+	for (libnapc_size i = 0; i < NAPC_ARRAY_ELEMENTS(PV_napc_log_handler_array); ++i) {
 		napc_logHandlerFunction handler = PV_napc_log_handler_array[i];
 		void *handler_context = PV_napc_log_handler_context_array[i];
 
@@ -93,13 +93,13 @@ void napc_logMessage(
 		subsys, level, function, _message_buffer
 	);
 
-	for (napc_size i = 0; i < libnapc_strlen(_message_buffer); ++i) {
+	for (libnapc_size i = 0; i < libnapc_strlen(_message_buffer); ++i) {
 		const char ch = _message_buffer[i];
 
 		libnapc_putc(ch);
 
 		if (ch == '\n') {
-			for (napc_size i = 0; i < 105; ++i) {
+			for (libnapc_size i = 0; i < 105; ++i) {
 				libnapc_putc(' ');
 			}
 		}

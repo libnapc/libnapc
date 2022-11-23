@@ -2,7 +2,7 @@
 
 bool napc_DNS_parseRequest(
 	napc__DNSRequest *out,
-	const void *buffer, napc_size buffer_size
+	const void *buffer, libnapc_size buffer_size
 ) {
 	napc__DNSHeader header;
 

@@ -23,8 +23,8 @@
 
 		libnapc__AccessFailureMode _fail_mode;
 
-		napc_size _offset;
-		napc_size size;
+		libnapc_size _offset;
+		libnapc_size size;
 		void *data;
 	} napc__Writer;
 
@@ -46,7 +46,7 @@
 	 * napc_Writer_init(&writer, buffer, sizeof(buffer));
 	 */
 	void napc_Writer_init(
-		napc__Writer *ctx, void *data, napc_size data_size
+		napc__Writer *ctx, void *data, libnapc_size data_size
 	);
 
 	/*!
@@ -64,7 +64,7 @@
 	 * 
 	 * napc__Writer writer = napc_Writer_create(buffer, sizeof(buffer));
 	 */
-	napc__Writer napc_Writer_create(void *data, napc_size data_size);
+	napc__Writer napc_Writer_create(void *data, libnapc_size data_size);
 
 	/*!
 	 * @name napc_Writer_setAccessFailureMode
@@ -154,7 +154,7 @@
 	 */
 	bool napc_Writer_writeU8Array(
 		napc__Writer *ctx,
-		napc_size n_elements,
+		libnapc_size n_elements,
 		const napc_u8 *array
 	); // needs test
 
@@ -259,7 +259,7 @@
 	 * @param ctx Pointer to the napc__Writer instance.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	napc_size napc_Writer_getCurrentOffset(
+	libnapc_size napc_Writer_getCurrentOffset(
 		const napc__Writer *ctx
 	);
 

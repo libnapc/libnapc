@@ -2,7 +2,7 @@
 
 bool napc_Pool_isClaimed(
 	const napc__Pool *pool,
-	napc_size element_index
+	libnapc_size element_index
 ) {
 	NAPC_MAGIC_ASSERT(napc__Pool, pool);
 

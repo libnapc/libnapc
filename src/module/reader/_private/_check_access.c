@@ -1,11 +1,11 @@
 #include <module/reader/_private/_reader.h>
 
 bool PV_napc_Reader_checkAccess(
-	napc__Reader *ctx, napc_size type_size, const char *type
+	napc__Reader *ctx, libnapc_size type_size, const char *type
 ) {
 	NAPC_MAGIC_ASSERT(napc__Reader, ctx);
 
-	napc_size new_offset = ctx->_offset + type_size;
+	libnapc_size new_offset = ctx->_offset + type_size;
 
 	if (new_offset > ctx->size) {
 		if (ctx->_fail_mode == LIBNAPC_ACCESS_FAILURE_MODE_LOG) {

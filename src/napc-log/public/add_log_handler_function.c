@@ -5,7 +5,7 @@ napc_ssize napc_addLogHandlerFunction(
 ) {
 	napc_ssize next_handler = -1;
 
-	for (napc_size i = 0; i < NAPC_ARRAY_ELEMENTS(PV_napc_log_handler_array); ++i) {
+	for (libnapc_size i = 0; i < NAPC_ARRAY_ELEMENTS(PV_napc_log_handler_array); ++i) {
 		if (PV_napc_log_handler_array[i] == NULL) {
 			next_handler = i;
 		}

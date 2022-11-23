@@ -20,7 +20,7 @@
 	 * (`%zu` is not supported in arduino's libc)
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef unsigned long napc_size;
+	typedef unsigned long libnapc_size;
 
 	// For napc_size literals
 	#define NAPC_SIZE_LITERAL(_v) _v ## ul
@@ -33,7 +33,7 @@
 	 * Format specifier for printing `napc_size` variables.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
-	 * napc_size var = 1;
+	 * libnapc_size var = 1;
 	 * 
 	 * napc_printf("var is = %" NAPC_SIZE_PRINTF, var);
 	 */

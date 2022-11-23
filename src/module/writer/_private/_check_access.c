@@ -1,11 +1,11 @@
 #include <module/writer/_private/_writer.h>
 
 bool PV_napc_Writer_checkAccess(
-	napc__Writer *ctx, napc_size type_size, const char *type
+	napc__Writer *ctx, libnapc_size type_size, const char *type
 ) {
 	NAPC_MAGIC_ASSERT(napc__Writer, ctx);
 
-	napc_size new_offset = ctx->_offset + type_size;
+	libnapc_size new_offset = ctx->_offset + type_size;
 
 	if (new_offset > ctx->size) {
 		if (ctx->_fail_mode == LIBNAPC_ACCESS_FAILURE_MODE_LOG) {

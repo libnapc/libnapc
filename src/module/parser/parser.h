@@ -84,7 +84,7 @@
 	 */
 	bool napc_parser_parseHexString(
 		const char *string,
-		napc_size n_bytes,
+		libnapc_size n_bytes,
 		napc_u8 *out
 	) NAPC_FN_WARNUNUSED_RET();
 
@@ -178,7 +178,7 @@
 	 */
 	bool napc_parser_parseKeyValue(
 		const char *string,
-		char *key, napc_size key_len,
-		char *value, napc_size value_len
+		char *key, libnapc_size key_len,
+		char *value, libnapc_size value_len
 	) NAPC_FN_WARNUNUSED_RET();
 #endif

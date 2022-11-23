@@ -3,7 +3,7 @@
 void napc_hmac_calculate(
 	napc_u8 *out,
 	const char *key,
-	const void *buffer, napc_size buffer_size
+	const void *buffer, libnapc_size buffer_size
 ) {
 	H5P9SL_hmac_sha256(
 		// key, keylen

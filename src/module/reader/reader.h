@@ -23,8 +23,8 @@
 
 		libnapc__AccessFailureMode _fail_mode;
 
-		napc_size _offset;
-		napc_size size;
+		libnapc_size _offset;
+		libnapc_size size;
 		const void *data;
 	} napc__Reader;
 
@@ -45,7 +45,7 @@
 	 * napc_Reader_init(&reader, buffer, sizeof(buffer));
 	 */
 	void napc_Reader_init(
-		napc__Reader *ctx, const void *data, napc_size data_size
+		napc__Reader *ctx, const void *data, libnapc_size data_size
 	);
 
 	/*!
@@ -63,7 +63,7 @@
 	 * 
 	 * napc__Reader reader = napc_Reader_create(buffer, sizeof(buffer));
 	 */
-	napc__Reader napc_Reader_create(const void *data, napc_size data_size);
+	napc__Reader napc_Reader_create(const void *data, libnapc_size data_size);
 
 	/*!
 	 * @name napc_Reader_setAccessFailureMode
@@ -124,7 +124,7 @@
 	 */
 	bool napc_Reader_readU8Array(
 		napc__Reader *ctx,
-		napc_size n_elements,
+		libnapc_size n_elements,
 		napc_u8 *out
 	) NAPC_FN_WARNUNUSED_RET();
 
@@ -212,9 +212,9 @@
 	 */
 	bool napc_Reader_readString(
 		napc__Reader *ctx,
-		napc_size str_len,
+		libnapc_size str_len,
 		char *out,
-		napc_size out_size
+		libnapc_size out_size
 	) NAPC_FN_WARNUNUSED_RET();
 
 	/*!
@@ -246,7 +246,7 @@
 	 * }
 	 */
 	const char *napc_Reader_readLine(
-		napc__Reader *ctx, char *line_buffer, napc_size line_buffer_size
+		napc__Reader *ctx, char *line_buffer, libnapc_size line_buffer_size
 	);
 
 	/*!
@@ -257,7 +257,7 @@
 	 * Returns the current offset the reader is at.
 	 * @changelog 2.0.0 10.04.2022 initial version
 	 */
-	napc_size napc_Reader_getCurrentOffset(
+	libnapc_size napc_Reader_getCurrentOffset(
 		const napc__Reader *ctx
 	);
 
@@ -269,7 +269,7 @@
 	 * Returns the remaining bytes to be read `(size - offset)`.
 	 * @changelog 2.0.0 10.04.2022 initial version
 	 */
-	napc_size napc_Reader_getRemainingBytes(
+	libnapc_size napc_Reader_getRemainingBytes(
 		const napc__Reader *ctx
 	);
 

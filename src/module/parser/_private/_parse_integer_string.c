@@ -24,7 +24,7 @@ bool PV_napc_parser_parseIntegerString(
 	napc_u32 *out,
 	bool isHex
 ) {
-	napc_size length = libnapc_strlen(string);
+	libnapc_size length = libnapc_strlen(string);
 
 	if (!length) return false;
 

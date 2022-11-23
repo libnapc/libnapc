@@ -3,7 +3,7 @@
 bool PV_napc_RingBuffer_insertByte(
 	napc__RingBuffer *ctx, napc_u8 byte, bool force
 ) {
-	napc_size n_free_spots = PV_napc_RingBuffer_numFreeSpots(ctx);
+	libnapc_size n_free_spots = PV_napc_RingBuffer_numFreeSpots(ctx);
 
 	if (!force) {
 		// no space available
@@ -18,7 +18,7 @@ bool PV_napc_RingBuffer_insertByte(
 		ctx->buffer_full = (n_free_spots == 1 || n_free_spots == 0);
 	}
 
-	napc_size new_write_position = (ctx->write_position + 1) % ctx->buffer_size;
+	libnapc_size new_write_position = (ctx->write_position + 1) % ctx->buffer_size;
 
 	ctx->buffer[ctx->write_position] = byte;
 

@@ -5,7 +5,7 @@ napc_ssize napc_Pool_claimElement(
 ) {
 	NAPC_MAGIC_ASSERT(napc__Pool, pool);
 
-	for (napc_size i = 0; i < pool->num_elements; ++i) {
+	for (libnapc_size i = 0; i < pool->num_elements; ++i) {
 		if (!pool->elements_used[i]) {
 			pool->elements_used[i] = true;
 

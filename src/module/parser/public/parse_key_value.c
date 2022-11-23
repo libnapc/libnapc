@@ -2,23 +2,23 @@
 
 bool napc_parser_parseKeyValue(
 	const char *string,
-	char *key, napc_size key_len,
-	char *value, napc_size value_len
+	char *key, libnapc_size key_len,
+	char *value, libnapc_size value_len
 ) {
-	napc_size length = libnapc_strlen(string);
+	libnapc_size length = libnapc_strlen(string);
 
 	if (!length) return false;
 
 	// Flag (whether we are reading the key string or value string)
 	bool readingKey = true;
 	// Write position for key,value
-	napc_size pos = 0;
+	libnapc_size pos = 0;
 
 	// Initialie key/value with zeros (safety precaution)
 	if (key) libnapc_mzero(key, key_len);
 	if (value) libnapc_mzero(value, value_len);
 
-	for (napc_size i = 0; i < length; ++i) {
+	for (libnapc_size i = 0; i < length; ++i) {
 		char ch = string[i];
 
 		// Check position index

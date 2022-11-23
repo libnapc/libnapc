@@ -3,7 +3,7 @@
 bool napc_Writer_writeString(
 	napc__Writer *ctx, const char *value
 ) {
-	napc_size str_len = libnapc_strlen(value);
+	libnapc_size str_len = libnapc_strlen(value);
 
 	if (!PV_napc_Writer_checkAccess(ctx, str_len, "string")) {
 		return false;
@@ -11,7 +11,7 @@ bool napc_Writer_writeString(
 
 	char *data = ctx->data;
 
-	for (napc_size i = 0; i < str_len; ++i) {
+	for (libnapc_size i = 0; i < str_len; ++i) {
 		data[ctx->_offset + i] = value[i];
 	}
 

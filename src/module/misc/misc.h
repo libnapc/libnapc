@@ -20,7 +20,7 @@
 	 * // prints deadbeef
 	 * napc_misc_printHexArray(array, sizeof(array));
 	 */
-	void napc_misc_printHexArray(const void *bytes, napc_size n_bytes);
+	void napc_misc_printHexArray(const void *bytes, libnapc_size n_bytes);
 
 	/*!
 	 * @name napc_misc_shiftArrayRight
@@ -47,7 +47,7 @@
 	 * // data[4] is now 4
 	 */
 	void napc_misc_shiftArrayRight(
-		void *array, napc_size n_elements, napc_size element_size
+		void *array, libnapc_size n_elements, libnapc_size element_size
 	);
 
 	/**************************
@@ -55,20 +55,20 @@
 	 * To detect buffer over and underflows.
 	 */
 	void napc_misc_setMemoryFenceBytes(
-		unsigned char *buffer, napc_size buffer_size,
-		napc_size memory_fence_size, napc_u8 fence_value
+		unsigned char *buffer, libnapc_size buffer_size,
+		libnapc_size memory_fence_size, napc_u8 fence_value
 	);
 
 	bool napc_misc_verifyMemoryFenceBytes(
-		unsigned char *buffer, napc_size buffer_size,
-		napc_size memory_fence_size, napc_u8 fence_value
+		unsigned char *buffer, libnapc_size buffer_size,
+		libnapc_size memory_fence_size, napc_u8 fence_value
 	);
 
 	/**************************
 	 * Chunks
 	 */
 	typedef napc_ssize (*napc_misc_ChunkedOperationCallback)(
-		const void *data, napc_size data_size, void *context
+		const void *data, libnapc_size data_size, void *context
 	);
 
 	/*!
@@ -86,11 +86,11 @@
 	 * @notes
 	 * `fn` is a function with the following prototype:
 	 * 
-	 * `napc_ssize (const void *data, napc_size data_size, void *context)`
+	 * `napc_ssize (const void *data, libnapc_size data_size, void *context)`
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	bool napc_misc_chunkedOperation(
-		const void *data, napc_size data_size, napc_size chunk_size,
+		const void *data, libnapc_size data_size, libnapc_size chunk_size,
 		napc_misc_ChunkedOperationCallback fn, void *fn_context
 	) NAPC_FN_WARNUNUSED_RET();
 #endif

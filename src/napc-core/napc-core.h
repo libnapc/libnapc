@@ -72,7 +72,7 @@
 	 * @flags hw
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	napc_size libnapc_getFreeMemory(void) NAPC_FN_WARNUNUSED_RET();
+	libnapc_size libnapc_getFreeMemory(void) NAPC_FN_WARNUNUSED_RET();
 
 	/*!
 	 * @name NAPC_ASSERT

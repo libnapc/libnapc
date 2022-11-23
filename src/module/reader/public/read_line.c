@@ -1,7 +1,7 @@
 #include <module/reader/_private/_reader.h>
 
 const char *napc_Reader_readLine(
-	napc__Reader *ctx, char *line_buffer, napc_size line_buffer_size
+	napc__Reader *ctx, char *line_buffer, libnapc_size line_buffer_size
 ) {
 	NAPC_MAGIC_ASSERT(napc__Reader, ctx);
 
@@ -12,7 +12,7 @@ const char *napc_Reader_readLine(
 	}
 
 	char ch = 0;
-	napc_size pos = 0;
+	libnapc_size pos = 0;
 
 	libnapc_mzero(line_buffer, line_buffer_size);
 

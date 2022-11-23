@@ -5,7 +5,7 @@ bool napc_Writer_moveCurrentOffsetByAmount(
 ) {
 	NAPC_MAGIC_ASSERT(napc__Writer, ctx);
 
-	napc_size new_offset = ctx->_offset + amount;
+	libnapc_size new_offset = ctx->_offset + amount;
 
 	// if new_offset goes negative, it will turn
 	// into a huge number (positive integer underflow is well-defined)

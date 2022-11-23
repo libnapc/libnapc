@@ -26,7 +26,7 @@
 	 */
 	void libnapc_snprintf(
 		char *buffer,
-		napc_size buffer_size,
+		libnapc_size buffer_size,
 		const char *fmt,
 		...
 	) NAPC_FN_PRINTFLIKE(3, 4);
@@ -44,7 +44,7 @@
 	 */
 	void libnapc_vsnprintf(
 		char *buffer,
-		napc_size buffer_size,
+		libnapc_size buffer_size,
 		const char *fmt,
 		va_list args
 	);
@@ -64,7 +64,7 @@
 	 * @param dest_size Size of destination.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	void libnapc_strncpy(char *dest, const char *source, napc_size dest_size);
+	void libnapc_strncpy(char *dest, const char *source, libnapc_size dest_size);
 
 	/*!
 	 * @name napc_strlen
@@ -78,11 +78,11 @@
 	 * @return Returns the length of the string.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @example
-	 * napc_size str_length = napc_strlen("Hello World!");
+	 * libnapc_size str_length = napc_strlen("Hello World!");
 	 * 
 	 * napc_printf("String's length is %" NAPC_SIZE_PRINTF "\n", str_length);
 	 */
-	napc_size libnapc_strlen(const char *str) NAPC_FN_WARNUNUSED_RET();
+	libnapc_size libnapc_strlen(const char *str) NAPC_FN_WARNUNUSED_RET();
 
 	/*!
 	 * @name napc_streql
@@ -147,7 +147,7 @@
 	 *     napc_printf("data1 and data2 have the same content");
 	 * }
 	 */
-	bool libnapc_memeql(const void *data1, const void *data2, napc_size data_size) NAPC_FN_WARNUNUSED_RET();
+	bool libnapc_memeql(const void *data1, const void *data2, libnapc_size data_size) NAPC_FN_WARNUNUSED_RET();
 
 	/*!
 	 * @name napc_mzero
@@ -166,5 +166,5 @@
 	 * // clear data buffer
 	 * napc_mzero(buffer, sizeof(buffer));
 	 */
-	void libnapc_mzero(void *data, napc_size data_size);
+	void libnapc_mzero(void *data, libnapc_size data_size);
 #endif

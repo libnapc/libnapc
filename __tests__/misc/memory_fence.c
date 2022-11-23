@@ -3,7 +3,7 @@
 
 TEST_CASE("should work properly") {
 	// memory fence of 16 bytes each
-	napc_size buffer_size = 2048 + 16 + 16;
+	libnapc_size buffer_size = 2048 + 16 + 16;
 	unsigned char *buffer = malloc(buffer_size);
 	memset(buffer, 0xBB, buffer_size);
 

@@ -2,7 +2,7 @@
 
 bool napc_DNS_parseResponse(
 	napc__DNSResponse *out,
-	const void *buffer, napc_size buffer_size
+	const void *buffer, libnapc_size buffer_size
 ) {
 	napc__DNSHeader header;
 
@@ -32,7 +32,7 @@ bool napc_DNS_parseResponse(
 	// Skip question/query section
 	if (!PV_napc_DNS_parseQuerySection(NULL, &reader)) return false;
 
-	napc_size n_answers = header.answer_count;
+	libnapc_size n_answers = header.answer_count;
 
 	// cap max. answers
 	if (n_answers > NAPC_MODULE_DNS_MAX_ANSWERS) {
@@ -46,7 +46,7 @@ bool napc_DNS_parseResponse(
 		n_answers = NAPC_MODULE_DNS_MAX_ANSWERS;
 	}
 
-	for (napc_size i = 0; i < n_answers; ++i) {
+	for (libnapc_size i = 0; i < n_answers; ++i) {
 		napc__DNSAnswer *a = out ? &out->answers[i] : NULL;
 
 		if (!PV_napc_DNS_parseAnswerSection(a, &reader)) {

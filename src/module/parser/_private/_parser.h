@@ -6,7 +6,7 @@
 	#include <napc-utils/napc-utils.h> // napc_strlen(), libnapc_strncpy(), libnapc_mzero()
 	#include <string.h> // strtok_r()
 
-	napc_size PV_napc_parser_countOccurrences(
+	libnapc_size PV_napc_parser_countOccurrences(
 		const char *string,
 		char ch
 	);

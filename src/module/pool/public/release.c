@@ -2,7 +2,7 @@
 
 void napc_Pool_release(
 	napc__Pool *pool,
-	napc_size element_index
+	libnapc_size element_index
 ) {
 	napc_Pool_releaseElement(pool, element_index);
 }

@@ -1,8 +1,8 @@
 #include <module/sha/_private/_sha.h>
 
 bool napc_sha_calculate(
-	const void *buffer, napc_size buffer_size,
-	char *out, napc_size out_size
+	const void *buffer, libnapc_size buffer_size,
+	char *out, libnapc_size out_size
 ) {
 	if (!out || 64 >= out_size) {
 		return false;
@@ -19,7 +19,7 @@ bool napc_sha_calculate(
 
 	napc__Writer writer = napc_Writer_create(out, out_size);
 
-	for (napc_size i = 0; i < 32; ++i) {
+	for (libnapc_size i = 0; i < 32; ++i) {
 		napc_u8 byte = digest.bytes[i];
 
 		bool result = napc_Writer_writeStringFormat(

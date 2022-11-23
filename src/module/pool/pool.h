@@ -26,8 +26,8 @@
 		unsigned char *array_start;
 		bool elements_used[NAPC_POOL_MAX];
 
-		napc_size num_elements;
-		napc_size element_size;
+		libnapc_size num_elements;
+		libnapc_size element_size;
 	} napc__Pool;
 
 	/*!
@@ -56,8 +56,8 @@
 		napc__Pool *pool,
 		const char *pool_label,
 		void *array_start,
-		napc_size num_elements,
-		napc_size element_size
+		libnapc_size num_elements,
+		libnapc_size element_size
 	);
 
 	/*!
@@ -104,7 +104,7 @@
 	 */
 	bool napc_Pool_isClaimed(
 		const napc__Pool *pool,
-		napc_size element_index
+		libnapc_size element_index
 	) NAPC_FN_WARNUNUSED_RET();
 
 	/*!
@@ -121,7 +121,7 @@
 	 */
 	bool napc_Pool_isAllocated(
 		const napc__Pool *pool,
-		napc_size element_index
+		libnapc_size element_index
 	) NAPC_FN_WARNUNUSED_RET() NAPC_DEPRECATED();
 
 	/*!
@@ -134,7 +134,7 @@
 	 * @return Returns the number of available elements in the pool.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	napc_size napc_Pool_getAvailable(
+	libnapc_size napc_Pool_getAvailable(
 		const napc__Pool *pool
 	);
 
@@ -162,7 +162,7 @@
 	 */
 	void *napc_Pool_getAddress(
 		const napc__Pool *pool,
-		napc_size element_index
+		libnapc_size element_index
 	);
 
 	/*!
@@ -177,7 +177,7 @@
 	 */
 	void napc_Pool_releaseElement(
 		napc__Pool *pool,
-		napc_size element_index
+		libnapc_size element_index
 	);
 
 	/*!
@@ -194,7 +194,7 @@
 	 */
 	void napc_Pool_release(
 		napc__Pool *pool,
-		napc_size element_index
+		libnapc_size element_index
 	) NAPC_DEPRECATED();
 #endif
 

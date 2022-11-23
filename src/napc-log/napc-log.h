@@ -42,7 +42,7 @@
 	 * @changelog 2.0.0 12.04.2022 initial version
 	 */
 	void napc_removeLogHandlerFunction(
-		napc_size log_handler_index
+		libnapc_size log_handler_index
 	);
 
 	/*!

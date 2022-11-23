@@ -22,7 +22,7 @@
 	void napc_hmac_calculate(
 		napc_u8 *out,
 		const char *key,
-		const void *buffer, napc_size buffer_size
+		const void *buffer, libnapc_size buffer_size
 	);
 
 	/*!
@@ -40,6 +40,6 @@
 	 */
 	bool napc_hmac_verify(
 		const char *key, const napc_u8 *hmac,
-		const void *buffer, napc_size buffer_size
+		const void *buffer, libnapc_size buffer_size
 	) NAPC_FN_WARNUNUSED_RET();
 #endif
