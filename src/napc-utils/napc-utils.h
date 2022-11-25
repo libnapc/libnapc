@@ -5,18 +5,20 @@
 	#include <libnapc-internal.h>
 
 	/*!
-	 * @name napc_snprintf
-	 * @brief Format printf()-like string.
-	 * @version 1.0.0
-	 * @rationale
 	 * The `snprintf()` function defined by the C-Standard does not guarantee that the resulting string is NUL-terminated.
 	 * 
 	 * This function ensures the resulting string is always NUL-terminated.
+	 * 
+	 * @module Core
+	 * @type fn
+	 * @fullname napc_snprintf
+	 * @brief Format printf()-like string.
+	 * @version 2.0.0
 	 * @param buffer The buffer to write the formatted string to.
 	 * @param buffer_size The size of the buffer.
 	 * @param fmt printf()-like format string.
-	 * @param ... Values to incorporate into string.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @variadic Values to incorporate into string.
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * char buffer[512];
 	 * 
@@ -32,15 +34,17 @@
 	) LIBNAPC_FN_PRINTFLIKE(3, 4);
 
 	/*!
-	 * @name napc_vsnprintf
-	 * @brief Format printf()-like string.
-	 * @version 1.0.0
-	 * @description
 	 * Same as `napc_snprintf()` except it takes a `va_args` list instead of variadic arguments.
+	 * 
+	 * @module Core
+	 * @type fn
+	 * @fullname napc_vsnprintf
+	 * @brief Format printf()-like string.
+	 * @version 2.0.0
 	 * @param buffer The buffer to write the formatted string to.
 	 * @param buffer_size The size of the buffer.
 	 * @param fmt printf()-like format string.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 */
 	void libnapc_vsnprintf(
 		char *buffer,
@@ -50,33 +54,35 @@
 	);
 
 	/*!
-	 * @name napc_strncpy
-	 * @brief Copy a string.
-	 * @version 1.0.0
-	 * @description
-	 * Copy a string to another location.
-	 * @rationale
 	 * The `strncpy()` function defined by the C-Standard does not guarantee that the resulting string is NUL-terminated.
 	 * 
 	 * This function ensures the resulting string is always NUL-terminated.
+	 * 
+	 * @module Core
+	 * @type fn
+	 * @fullname napc_strncpy
+	 * @brief Copy a string to another location.
+	 * @version 2.0.0
 	 * @param dest Destination memory location.
 	 * @param source String to be copied to dest.
 	 * @param dest_size Size of destination.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 */
 	void libnapc_strncpy(char *dest, const char *source, libnapc_size dest_size);
 
 	/*!
-	 * @name napc_strlen
-	 * @brief Get length of string.
-	 * @version 1.0.0
-	 * @description
 	 * Count the number of characters in a string.
-	 * @notes
+	 * 
+	 * @module Core
+	 * @type fn
+	 * @fullname napc_strlen
+	 * @brief Get length of string.
+	 * @version 2.0.0
+	 * @note
 	 * This is just an alias for `strlen()`.
 	 * @param str The string to be measured.
 	 * @return Returns the length of the string.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * libnapc_size str_length = napc_strlen("Hello World!");
 	 * 
@@ -85,17 +91,17 @@
 	libnapc_size libnapc_strlen(const char *str) NAPC_FN_WARNUNUSED_RET();
 
 	/*!
-	 * @name napc_streql
-	 * @brief Compare two strings.
-	 * @version 1.0.0
-	 * @description
 	 * Perform case sensitive string comparsion.
-	 * @rationale
-	 * It's cumbersome to write `strcmp(str1, str2) == 0` to compare strings.
+	 *
+	 * @module Core
+	 * @type fn
+	 * @fullname napc_streql
+	 * @brief Compare two strings.
+	 * @version 2.0.0
 	 * @param str1 First string.
 	 * @param str2 Second string.
 	 * @return Returns `true` if `str1` and `str2` are equal in contents.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * napc_streql("my_string", "my_string"); // returns true
 	 * 
@@ -106,17 +112,17 @@
 	bool libnapc_streql(const char *str1, const char *str2) NAPC_FN_WARNUNUSED_RET();
 
 	/*!
-	 * @name napc_streqli
-	 * @brief Compare two strings.
-	 * @version 1.0.0
-	 * @description
 	 * Perform case insensitive string comparsion.
-	 * @rationale
-	 * It's cumbersome to write `strcasecmp(str1, str2) == 0` to compare strings.
+	 * 
+	 * @module Core
+	 * @type fn
+	 * @fullname napc_streqli
+	 * @brief Compare two strings.
+	 * @version 2.0.0
 	 * @param str1 First string.
 	 * @param str2 Second string.
 	 * @return Returns `true` if `str1` and `str2` are equal in contents.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * napc_streqli("my_string", "mY_sTring"); // returns true
 	 * 
@@ -125,20 +131,20 @@
 	bool libnapc_streqli(const char *str1, const char *str2) NAPC_FN_WARNUNUSED_RET();
 
 	/*!
-	 * @name napc_memeql
-	 * @brief Compare two memory regions of equal size.
-	 * @version 1.0.0
-	 * @description
 	 * Compare two memory regions.
+	 * 
+	 * @module Core
+	 * @type fn
+	 * @fullname napc_memeql
+	 * @brief Compare two memory regions of equal size.
+	 * @version 2.0.0
 	 * @param data1 Pointer to first memory location.
 	 * @param data2 Pointer to second memory location.
 	 * @param data_size Size of `data1` (resp. `data2`) in bytes.
 	 * @return Returns `true` if `data1` and `data2` have the same content.
-	 * @notes
+	 * @note
 	 * The two memory regions need to be of the same size.
-	 * @rationale
-	 * It's cumbersome to write `memcmp(data1, data2, data_size) == 0` to compare memory blocks.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * char data1[3] = {0, 0, 7};
 	 * char data2[3] = {0, 0, 7};
@@ -150,16 +156,16 @@
 	bool libnapc_memeql(const void *data1, const void *data2, libnapc_size data_size) NAPC_FN_WARNUNUSED_RET();
 
 	/*!
-	 * @name napc_mzero
-	 * @brief Zero out memory region.
-	 * @version 1.0.0
-	 * @description
 	 * Clear memory section.
+	 * 
+	 * @module Core
+	 * @type fn
+	 * @fullname napc_mzero
+	 * @brief Zero out memory region.
+	 * @version 2.0.0
 	 * @param data Buffer to be zero'd out.
 	 * @param data_size Size of `data` buffer.
-	 * @rationale
-	 * It's cumbersome to write `memset(data, 0, data_size)`.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * char buffer[512];
 	 * 
