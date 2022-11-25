@@ -6,17 +6,18 @@
 	#include <napc-panic/napc-panic.h>
 
 	/*!
-	 * @name napc__AccessFailureMode
-	 * @brief Action to be taken on an access failure.
-	 * @module Core
-	 * @version 2.0.0
-	 * @description
 	 * Represents an action to be taken after an access to a resource (buffer) failed.
+	 * 
+	 * @module Core
+	 * @type type:enum
+	 * @fullname libnapc__AccessFailureMode
+	 * @brief Action to be taken on an access failure.
+	 * @version 2.0.0
 	 * @enum NAPC_ACCESS_FAILURE_MODE_NONE Do nothing.
 	 * @enum NAPC_ACCESS_FAILURE_MODE_LOG Emit a log message of type 'error'. This is the default.
 	 * @enum NAPC_ACCESS_FAILURE_MODE_PANIC Call NAPC_PANIC.
-	 * @changelog 2.0.0 10.02.2022 initial version
-	 * @notes
+	 * @changelog 2.0.0 initial version
+	 * @note
 	 * Failure mode `PANIC` should be used when you're absolutely sure access to a resource will not fail.
 	 * 
 	 * Failure mode `NONE` can be used to disable logging.
@@ -30,10 +31,6 @@
 	} libnapc__AccessFailureMode;
 
 	/*!
-	 * @name napc_setDefaultAccessFailureMode
-	 * @brief Set default failure access mode.
-	 * @version 2.0.0
-	 * @description
 	 * Sets the default access failure modes for modules like
 	 * `Writer`, `Reader` etc.
 	 * 
@@ -41,9 +38,14 @@
 	 * 
 	 * Setting a new default mode can be useful for debugging, as shown in the example.
 	 * 
+	 * @module Core
+	 * @type fn
+	 * @fullname libnapc_setDefaultAccessFailureMode
+	 * @brief Set default failure access mode.
+	 * @version 2.0.0
 	 * @param new_default_mode The new default mode to be used.
 	 * @return Returns the previous set default access failure mode.
-	 * @changelog 2.0.0 10.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * void napc_app_setup(const char *platform) {
 	 *     // crash program on an access failure
@@ -64,29 +66,31 @@
 	bool PV_napc_validateAccessFailureMode(libnapc__AccessFailureMode mode);
 
 	/*!
-	 * @name napc_getFreeMemory
+	 * @module Core
+	 * @type fn
+	 * @fullname libnapc_getFreeMemory
 	 * @brief Get available memory.
-	 * @version 1.0.0
+	 * @version 2.0.0
 	 * @return
 	 * Returns the number of free bytes (on the stack) available.
-	 * @flags hw
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 */
 	libnapc_size libnapc_getFreeMemory(void) NAPC_FN_WARNUNUSED_RET();
 
 	/*!
-	 * @name NAPC_ASSERT
+	 * Make an assertion.
+	 * 
 	 * @module Core
+	 * @type macro:fn
+	 * @fullname LIBNAPC_ASSERT
 	 * @brief Make an assertion.
-	 * @version 1.0.0
-	 * @description
-	 * Assert an expression.
-	 * @param bool expr Expression to assert.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @version 2.0.0
+	 * @param expr Expression to assert.
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * libnapc_u8 var = 13;
 	 * 
-	 * NAPC_ASSERT(var == 13);
+	 * LIBNAPC_ASSERT(var == 13);
 	 */
 	#define LIBNAPC_ASSERT(expr)                    \
 		do {                                        \
