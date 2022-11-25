@@ -1,21 +1,22 @@
-// needs doc-block fixing
 #if !defined(LIBNAPC_DELAY_h)
 	#define LIBNAPC_DELAY_h
 
 	#include <libnapc-internal.h>
 
 	/*!
-	 * @name napc_delay
+	 * Delay program execution.
+	 * 
+	 * @module Core
+	 * @type fn
+	 * @fullname napc_delay
 	 * @brief Delay program execution.
-	 * @version 1.0.0
-	 * @description Delay program execution.
+	 * @version 2.0.0
 	 * @warning
 	 * This function will block execution for a set amount of time.
 	 * 
 	 * It's better to use non-blocking code, see `napc__Timer` and `napc__HRTimer`.
 	 * @param amount The amount in milliseconds.
-	 * @flags hw
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * napc_printf("Hello ");
 	 * 
@@ -26,17 +27,21 @@
 	void libnapc_delay(libnapc_time amount);
 
 	/*!
-	 * @name napc_delayUs
+	 * Delay program execution.
+	 * 
+	 * @module Core
+	 * @type fn
+	 * @fullname napc_delayUs
 	 * @brief Delay program execution.
-	 * @version 1.0.0
-	 * @description Delay program execution.
+	 * @version 2.0.0
+	 * @description
 	 * @warning
 	 * This function will block execution for a set amount of time.
 	 * 
 	 * It's better to use non-blocking code, see `napc__Timer` and `napc__HRTimer`.
 	 * @param amount The amount in microseconds.
 	 * @flags hw
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * napc_printf("Hello ");
 	 * 
