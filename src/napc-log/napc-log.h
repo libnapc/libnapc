@@ -19,131 +19,143 @@
 	);
 
 	/*!
-	 * @name napc_addLogHandlerFunction
+	 * @module Core
+	 * @type fn
+	 * @fullname libnapc_addLogHandlerFunction
 	 * @brief Add log handler function
 	 * @version 2.0.0
 	 * @param handler The log handler function
 	 * @param context Context to be passed to function
 	 * @return
-	 * On success a number that can be passed to `napc_removeLogHandlerFunction`.
+	 * On success a number that can be passed to `libnapc_removeLogHandlerFunction`.
 	 * 
 	 * Otherwise a negative number is returned.
-	 * @changelog 2.0.0 12.04.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 */
 	libnapc_ssize libnapc_addLogHandlerFunction(
 		libnapc_logHandlerFunction handler, void *context
 	);
 
 	/*!
-	 * @name napc_removeLogHandlerFunction
+	 * @module Core
+	 * @type fn
+	 * @fullname libnapc_removeLogHandlerFunction
 	 * @brief Remove a log handler function
 	 * @version 2.0.0
-	 * @param log_handler_index Handler index returned by `napc_addLogHandlerFunction`
-	 * @changelog 2.0.0 12.04.2022 initial version
+	 * @param log_handler_index Handler index returned by `libnapc_addLogHandlerFunction`
+	 * @changelog 2.0.0 initial version
 	 */
 	void libnapc_removeLogHandlerFunction(
 		libnapc_size log_handler_index
 	);
 
 	/*!
-	 * @name NAPC_LEVEL_VERBOSE
-	 * @module Core
-	 * @version 1.0.0
-	 * @description
 	 * Representation of log priority `verbose`.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * 
+	 * @module Core
+	 * @type macro:var
+	 * @fullname LIBNAPC_LEVEL_VERBOSE
+	 * @version 2.0.0
+	 * @changelog 2.0.0 initial version
 	 * @example
-	 * NAPC_LOG("subsystem", NAPC_LEVEL_VERBOSE, "This is a verbose log message.");
+	 * LIBNAPC_LOG("subsystem", LIBNAPC_LEVEL_VERBOSE, "This is a verbose log message.");
 	 */
 	#define LIBNAPC_LEVEL_VERBOSE     0
 
 	/*!
-	 * @name NAPC_LEVEL_TRACE
-	 * @module Core
-	 * @version 1.0.0
-	 * @description
 	 * Representation of log priority `trace`.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * 
+	 * @module Core
+	 * @type macro:var
+	 * @fullname LIBNAPC_LEVEL_TRACE
+	 * @version 2.0.0
+	 * @changelog 2.0.0 initial version
 	 * @example
-	 * NAPC_LOG("subsystem", NAPC_LEVEL_TRACE, "This is a trace log message.");
+	 * LIBNAPC_LOG("subsystem", LIBNAPC_LEVEL_TRACE, "This is a trace log message.");
 	 */
 	#define LIBNAPC_LEVEL_TRACE       1
 
 	/*!
-	 * @name NAPC_LEVEL_DEBUG
-	 * @module Core
-	 * @version 1.0.0
-	 * @description
 	 * Representation of log priority `debug`.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * 
+	 * @module Core
+	 * @type macro:var
+	 * @fullname NAPC_LEVEL_DEBUG
+	 * @version 2.0.0
+	 * @changelog 2.0.0 initial version
 	 * @example
-	 * NAPC_LOG("subsystem", NAPC_LEVEL_DEBUG, "This is a debug log message.");
+	 * LIBNAPC_LOG("subsystem", LIBNAPC_LEVEL_DEBUG, "This is a debug log message.");
 	 */
 	#define LIBNAPC_LEVEL_DEBUG       2
 
 	/*!
-	 * @name NAPC_LEVEL_INFO
-	 * @module Core
-	 * @version 1.0.0
-	 * @description
 	 * Representation of log priority `info`.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * 
+	 * @module Core
+	 * @type macro:var
+	 * @fullname LIBNAPC_LEVEL_INFO
+	 * @version 2.0.0
+	 * @changelog 2.0.0 initial version
 	 * @example
-	 * NAPC_LOG("subsystem", NAPC_LEVEL_INFO, "This is an info log message.");
+	 * LIBNAPC_LOG("subsystem", LIBNAPC_LEVEL_INFO, "This is an info log message.");
 	 */
 	#define LIBNAPC_LEVEL_INFO        3
 
 	/*!
-	 * @name NAPC_LEVEL_WARNING
-	 * @module Core
-	 * @version 1.0.0
-	 * @description
 	 * Representation of log priority `warning`.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * 
+	 * @module Core
+	 * @type macro:var
+	 * @fullname LIBNAPC_LEVEL_WARNING
+	 * @version 2.0.0
+	 * @changelog 2.0.0 initial version
 	 * @example
-	 * NAPC_LOG("subsystem", NAPC_LEVEL_WARNING, "This is a warning log message.");
+	 * LIBNAPC_LOG("subsystem", LIBNAPC_LEVEL_WARNING, "This is a warning log message.");
 	 */
 	#define LIBNAPC_LEVEL_WARNING     4
 
 	/*!
-	 * @name NAPC_LEVEL_ERROR
-	 * @module Core
-	 * @version 1.0.0
-	 * @description
 	 * Representation of log priority `error`.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * 
+	 * @module Core
+	 * @type macro:var
+	 * @fullname LIBNAPC_LEVEL_ERROR
+	 * @version 2.0.0
+	 * @changelog 2.0.0 initial version
 	 * @example
-	 * NAPC_LOG("subsystem", NAPC_LEVEL_ERROR, "This is an error log message.");
+	 * LIBNAPC_LOG("subsystem", LIBNAPC_LEVEL_ERROR, "This is an error log message.");
 	 */
 	#define LIBNAPC_LEVEL_ERROR       5
 
 	/*!
-	 * @name NAPC_LEVEL_SECURITY
-	 * @module Core
-	 * @version 1.0.0
-	 * @description
 	 * Representation of log priority `security`.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * 
+	 * @module Core
+	 * @type macro:var
+	 * @name LIBNAPC_LEVEL_SECURITY
+	 * @version 2.0.0
+	 * @changelog 2.0.0 initial version
 	 * @example
-	 * NAPC_LOG("subsystem", NAPC_LEVEL_SECURITY, "This is a security log message.");
+	 * LIBNAPC_LOG("subsystem", LIBNAPC_LEVEL_SECURITY, "This is a security log message.");
 	 */
 	#define LIBNAPC_LEVEL_SECURITY    9
 
 	const char *libnapc_logLevelToString(int log_level) NAPC_FN_WARNUNUSED_RET();
 
 	/*!
-	 * @name NAPC_LOG
-	 * @module Core
-	 * @version 1.0.0
-	 * @description
 	 * Log a message with a specific priority.
-	 * @param _cstring_ subsys Subsystem.
-	 * @param int level Log level.
-	 * @param _cstring_ fmt printf()-like format string.
-	 * @param n/a ... Values to incorporate into string.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * 
+	 * @module Core
+	 * @type macro:fn
+	 * @fullname LIBNAPC_LOG
+	 * @version 2.0.0
+	 * @param subsys Subsystem.
+	 * @param level Log level.
+	 * @param fmt printf()-like format string.
+	 * @variadic Values to incorporate into string.
+	 * @changelog 2.0.0 initial version
 	 * @example
-	 * NAPC_LOG("subsystem", NAPC_LEVEL_INFO, "This is a %s!", "message");
+	 * LIBNAPC_LOG("subsystem", LIBNAPC_LEVEL_INFO, "This is a %s!", "message");
 	 */
 	#define LIBNAPC_LOG(subsys, level, fmt, ...) \
 		libnapc_logMessage(                   \
