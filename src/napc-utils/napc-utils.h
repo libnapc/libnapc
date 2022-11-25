@@ -1,4 +1,3 @@
-// needs doc-block fixing
 #if !defined(LIBNAPC_UTILS_h)
 	#define LIBNAPC_UTILS_h
 
