@@ -62,5 +62,5 @@ void libnapc_halt(
 	// flush serial buffer
 	libnapc_puts("\n\n");
 
-	HAL_napc_abort();
+	HAL_libnapc_abort();
 }

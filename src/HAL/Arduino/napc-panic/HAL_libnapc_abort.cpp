@@ -4,7 +4,7 @@
 	extern "C" {
 		#include <napc-panic/_private/_napc-panic.h>
 
-		void HAL_napc_abort(void) {
+		void HAL_libnapc_abort(void) {
 			while (true);
 		}
 	}

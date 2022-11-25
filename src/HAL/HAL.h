@@ -20,7 +20,7 @@
 	// napc-serial
 
 	// napc-panic
-		void HAL_napc_abort(void) NAPC_FN_NORETURN();
+		void HAL_libnapc_abort(void) NAPC_FN_NORETURN();
 	// napc-panic
 
 	// napc-delay

@@ -4,7 +4,7 @@
 	#include <napc-panic/_private/_napc-panic.h>
 	#include <stdlib.h> // exit(), EXIT_FAILURE
 
-	void HAL_napc_abort(void) {
+	void HAL_libnapc_abort(void) {
 		exit(EXIT_FAILURE);
 	}
 #endif
