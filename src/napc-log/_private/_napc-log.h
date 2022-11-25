@@ -9,7 +9,7 @@
 	#include <napc-utils/napc-utils.h> // libnapc_snprintf()
 	#include <napc-serial/napc-serial.h> // napc_printf()
 
-	extern napc_logHandlerFunction PV_napc_log_handler_array[5]; // @global
+	extern libnapc_logHandlerFunction PV_napc_log_handler_array[5]; // @global
 	extern void *PV_napc_log_handler_context_array[5]; // @global
 	extern bool PV_napc_log_colorful_output; // @global
 #endif

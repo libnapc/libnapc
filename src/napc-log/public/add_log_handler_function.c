@@ -1,7 +1,7 @@
 #include <napc-log/_private/_napc-log.h>
 
 libnapc_ssize napc_addLogHandlerFunction(
-	napc_logHandlerFunction handler, void *context
+	libnapc_logHandlerFunction handler, void *context
 ) {
 	libnapc_ssize next_handler = -1;
 

@@ -33,7 +33,7 @@ static void _callLogHandlers(
 ) {
 	// call log handler
 	for (libnapc_size i = 0; i < NAPC_ARRAY_ELEMENTS(PV_napc_log_handler_array); ++i) {
-		napc_logHandlerFunction handler = PV_napc_log_handler_array[i];
+		libnapc_logHandlerFunction handler = PV_napc_log_handler_array[i];
 		void *handler_context = PV_napc_log_handler_context_array[i];
 
 		if (handler) {
@@ -48,7 +48,7 @@ static void _callLogHandlers(
 	}
 }
 
-void napc_logMessage(
+void libnapc_logMessage(
 	const char *subsys,
 	int level,
 	const char *function,
@@ -57,17 +57,17 @@ void napc_logMessage(
 	libnapc_time time = libnapc_getTimeSinceBoot();
 
 	if (PV_napc_log_colorful_output) {
-		if (level == NAPC_LEVEL_INFO) {
+		if (level == LIBNAPC_LEVEL_INFO) {
 			libnapc_puts("\033[0;34m");
-		} else if (level == NAPC_LEVEL_WARNING) {
+		} else if (level == LIBNAPC_LEVEL_WARNING) {
 			libnapc_puts("\033[0;33m");
-		} else if (level == NAPC_LEVEL_ERROR) {
+		} else if (level == LIBNAPC_LEVEL_ERROR) {
 			libnapc_puts("\033[0;31m");
 		}
 	}
 
 	{
-		const char *label = napc_logLevelToString(level);
+		const char *label = libnapc_logLevelToString(level);
 
 		libnapc_mzero(_fn, sizeof(_fn));
 		_shortenFunctionName(function, _fn);

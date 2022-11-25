@@ -3,14 +3,14 @@
 
 	#include <libnapc-internal.h>
 
-	void napc_logMessage(
+	void libnapc_logMessage(
 		const char *subsys,
 		int level,
 		const char *function,
 		const char *fmt, ...
 	) LIBNAPC_FN_PRINTFLIKE(4, 5);
 
-	typedef void (*napc_logHandlerFunction)(
+	typedef void (*libnapc_logHandlerFunction)(
 		void *context,
 		const char *subsys,
 		int level,
@@ -31,7 +31,7 @@
 	 * @changelog 2.0.0 12.04.2022 initial version
 	 */
 	libnapc_ssize napc_addLogHandlerFunction(
-		napc_logHandlerFunction handler, void *context
+		libnapc_logHandlerFunction handler, void *context
 	);
 
 	/*!
@@ -55,7 +55,7 @@
 	 * @example
 	 * NAPC_LOG("subsystem", NAPC_LEVEL_VERBOSE, "This is a verbose log message.");
 	 */
-	#define NAPC_LEVEL_VERBOSE     0
+	#define LIBNAPC_LEVEL_VERBOSE     0
 
 	/*!
 	 * @name NAPC_LEVEL_TRACE
@@ -67,7 +67,7 @@
 	 * @example
 	 * NAPC_LOG("subsystem", NAPC_LEVEL_TRACE, "This is a trace log message.");
 	 */
-	#define NAPC_LEVEL_TRACE       1
+	#define LIBNAPC_LEVEL_TRACE       1
 
 	/*!
 	 * @name NAPC_LEVEL_DEBUG
@@ -79,7 +79,7 @@
 	 * @example
 	 * NAPC_LOG("subsystem", NAPC_LEVEL_DEBUG, "This is a debug log message.");
 	 */
-	#define NAPC_LEVEL_DEBUG       2
+	#define LIBNAPC_LEVEL_DEBUG       2
 
 	/*!
 	 * @name NAPC_LEVEL_INFO
@@ -91,7 +91,7 @@
 	 * @example
 	 * NAPC_LOG("subsystem", NAPC_LEVEL_INFO, "This is an info log message.");
 	 */
-	#define NAPC_LEVEL_INFO        3
+	#define LIBNAPC_LEVEL_INFO        3
 
 	/*!
 	 * @name NAPC_LEVEL_WARNING
@@ -103,7 +103,7 @@
 	 * @example
 	 * NAPC_LOG("subsystem", NAPC_LEVEL_WARNING, "This is a warning log message.");
 	 */
-	#define NAPC_LEVEL_WARNING     4
+	#define LIBNAPC_LEVEL_WARNING     4
 
 	/*!
 	 * @name NAPC_LEVEL_ERROR
@@ -115,7 +115,7 @@
 	 * @example
 	 * NAPC_LOG("subsystem", NAPC_LEVEL_ERROR, "This is an error log message.");
 	 */
-	#define NAPC_LEVEL_ERROR       5
+	#define LIBNAPC_LEVEL_ERROR       5
 
 	/*!
 	 * @name NAPC_LEVEL_SECURITY
@@ -127,9 +127,9 @@
 	 * @example
 	 * NAPC_LOG("subsystem", NAPC_LEVEL_SECURITY, "This is a security log message.");
 	 */
-	#define NAPC_LEVEL_SECURITY    9
+	#define LIBNAPC_LEVEL_SECURITY    9
 
-	const char *napc_logLevelToString(int log_level) NAPC_FN_WARNUNUSED_RET();
+	const char *libnapc_logLevelToString(int log_level) NAPC_FN_WARNUNUSED_RET();
 
 	/*!
 	 * @name NAPC_LOG
@@ -145,8 +145,8 @@
 	 * @example
 	 * NAPC_LOG("subsystem", NAPC_LEVEL_INFO, "This is a %s!", "message");
 	 */
-	#define NAPC_LOG(subsys, level, fmt, ...) \
-		napc_logMessage(                      \
+	#define LIBNAPC_LOG(subsys, level, fmt, ...) \
+		libnapc_logMessage(                   \
 			subsys,                           \
 			level,                            \
 			__func__,                         \
@@ -168,7 +168,7 @@
 	 * NAPC_LOG_VERBOSE("subsystem", "This is a %s!", "message");
 	 */
 	#define NAPC_LOG_VERBOSE(subsys, fmt, ...) \
-		NAPC_LOG(subsys, NAPC_LEVEL_VERBOSE, fmt, ## __VA_ARGS__)
+		LIBNAPC_LOG(subsys, LIBNAPC_LEVEL_VERBOSE, fmt, ## __VA_ARGS__)
 
 	/*!
 	 * @name NAPC_LOG_TRACE
@@ -184,7 +184,7 @@
 	 * NAPC_LOG_TRACE("subsystem", "This is a %s!", "message");
 	 */
 	#define NAPC_LOG_TRACE(subsys, fmt, ...) \
-		NAPC_LOG(subsys, NAPC_LEVEL_TRACE, fmt, ## __VA_ARGS__)
+		LIBNAPC_LOG(subsys, LIBNAPC_LEVEL_TRACE, fmt, ## __VA_ARGS__)
 
 	/*!
 	 * @name NAPC_LOG_DEBUG
@@ -200,7 +200,7 @@
 	 * NAPC_LOG_DEBUG("subsystem", "This is a %s!", "message");
 	 */
 	#define NAPC_LOG_DEBUG(subsys, fmt, ...) \
-		NAPC_LOG(subsys, NAPC_LEVEL_DEBUG, fmt, ## __VA_ARGS__)
+		LIBNAPC_LOG(subsys, LIBNAPC_LEVEL_DEBUG, fmt, ## __VA_ARGS__)
 
 	/*!
 	 * @name NAPC_LOG_INFO
@@ -216,7 +216,7 @@
 	 * NAPC_LOG_INFO("subsystem", "This is a %s!", "message");
 	 */
 	#define NAPC_LOG_INFO(subsys, fmt, ...) \
-		NAPC_LOG(subsys, NAPC_LEVEL_INFO, fmt, ## __VA_ARGS__)
+		LIBNAPC_LOG(subsys, LIBNAPC_LEVEL_INFO, fmt, ## __VA_ARGS__)
 
 	/*!
 	 * @name NAPC_LOG_WARNING
@@ -232,7 +232,7 @@
 	 * NAPC_LOG_WARNING("subsystem", "This is a %s!", "message");
 	 */
 	#define NAPC_LOG_WARNING(subsys, fmt, ...) \
-		NAPC_LOG(subsys, NAPC_LEVEL_WARNING, fmt, ## __VA_ARGS__)
+		LIBNAPC_LOG(subsys, LIBNAPC_LEVEL_WARNING, fmt, ## __VA_ARGS__)
 
 	/*!
 	 * @name NAPC_LOG_ERROR
@@ -248,7 +248,7 @@
 	 * NAPC_LOG_ERROR("subsystem", "This is a %s!", "message");
 	 */
 	#define NAPC_LOG_ERROR(subsys, fmt, ...) \
-		NAPC_LOG(subsys, NAPC_LEVEL_ERROR, fmt, ## __VA_ARGS__)
+		LIBNAPC_LOG(subsys, LIBNAPC_LEVEL_ERROR, fmt, ## __VA_ARGS__)
 
 	/*!
 	 * @name NAPC_LOG_SECURITY
@@ -264,5 +264,5 @@
 	 * NAPC_LOG_SECURITY("subsystem", "This is a %s!", "message");
 	 */
 	#define NAPC_LOG_SECURITY(subsys, fmt, ...) \
-		NAPC_LOG(subsys, NAPC_LEVEL_SECURITY, fmt, ## __VA_ARGS__)
+		LIBNAPC_LOG(subsys, LIBNAPC_LEVEL_SECURITY, fmt, ## __VA_ARGS__)
 #endif
