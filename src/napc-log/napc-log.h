@@ -30,7 +30,7 @@
 	 * Otherwise a negative number is returned.
 	 * @changelog 2.0.0 12.04.2022 initial version
 	 */
-	libnapc_ssize napc_addLogHandlerFunction(
+	libnapc_ssize libnapc_addLogHandlerFunction(
 		libnapc_logHandlerFunction handler, void *context
 	);
 
@@ -41,7 +41,7 @@
 	 * @param log_handler_index Handler index returned by `napc_addLogHandlerFunction`
 	 * @changelog 2.0.0 12.04.2022 initial version
 	 */
-	void napc_removeLogHandlerFunction(
+	void libnapc_removeLogHandlerFunction(
 		libnapc_size log_handler_index
 	);
 

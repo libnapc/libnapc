@@ -1,6 +1,6 @@
 #include <napc-log/_private/_napc-log.h>
 
-void napc_removeLogHandlerFunction(
+void libnapc_removeLogHandlerFunction(
 	libnapc_size log_handler_index
 ) {
 	LIBNAPC_ASSERT(5 > log_handler_index);
