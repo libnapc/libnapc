@@ -13,9 +13,9 @@
 	 * @fullname libnapc__AccessFailureMode
 	 * @brief Action to be taken on an access failure.
 	 * @version 2.0.0
-	 * @enum NAPC_ACCESS_FAILURE_MODE_NONE Do nothing.
-	 * @enum NAPC_ACCESS_FAILURE_MODE_LOG Emit a log message of type 'error'. This is the default.
-	 * @enum NAPC_ACCESS_FAILURE_MODE_PANIC Call NAPC_PANIC.
+	 * @enum LIBNAPC_ACCESS_FAILURE_MODE_NONE Do nothing.
+	 * @enum LIBNAPC_ACCESS_FAILURE_MODE_LOG Emit a log message of type 'error'. This is the default.
+	 * @enum LIBNAPC_ACCESS_FAILURE_MODE_PANIC Call LIBNAPC_PANIC.
 	 * @changelog 2.0.0 initial version
 	 * @note
 	 * Failure mode `PANIC` should be used when you're absolutely sure access to a resource will not fail.
@@ -34,7 +34,7 @@
 	 * Sets the default access failure modes for modules like
 	 * `Writer`, `Reader` etc.
 	 * 
-	 * The default is `NAPC_ACCESS_FAILURE_MODE_LOG`: emit a log message of type 'error'.
+	 * The default is `LIBNAPC_ACCESS_FAILURE_MODE_LOG`: emit a log message of type 'error'.
 	 * 
 	 * Setting a new default mode can be useful for debugging, as shown in the example.
 	 * 
@@ -50,7 +50,7 @@
 	 * void napc_app_setup(const char *platform) {
 	 *     // crash program on an access failure
 	 *     #if defined(DEBUG)
-	 *         napc_setDefaultAccessFailureMode(NAPC_ACCESS_FAILURE_MODE_PANIC);
+	 *         libnapc_setDefaultAccessFailureMode(LIBNAPC_ACCESS_FAILURE_MODE_PANIC);
 	 *     #endif
 	 *     // init
 	 *     // ...
