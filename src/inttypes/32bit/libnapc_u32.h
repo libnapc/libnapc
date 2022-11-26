@@ -5,39 +5,43 @@
 	#include <inttypes.h> // PRIu32
 
 	/*!
-	 * @name napc_u32
-	 * @brief 32 bit wide unsigned integer 
-	 * @version 1.0.0
-	 * @description
 	 * Type for unsigned integers with 32 bits width.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * 
+	 * @module Core
+	 * @type type:alias
+	 * @fullname libnapc_u32
+	 * @brief 32 bit wide unsigned integer 
+	 * @version 2.0.0
+	 * @changelog 2.0.0 initial version
 	 */
 	typedef uint32_t libnapc_u32;
 
 	/*!
-	 * @name NAPC_U32_LITERAL
-	 * @module Core
-	 * @version 1.0.0
-	 * @description
 	 * Used for literal unsigned integers with 32 bits width.
-	 * @param n/a value Value
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * 
+	 * @module Core
+	 * @type macro:fn
+	 * @fullname LIBNAPC_U32_LITERAL
+	 * @version 2.0.0
+	 * @param value Value
+	 * @changelog 2.0.0 initial version
 	 * @example
-	 * napc_u32 var = LIBNAPC_U32_LITERAL(12345);
+	 * libnapc_u32 var = LIBNAPC_U32_LITERAL(12345);
 	 */
 	#define LIBNAPC_U32_LITERAL(value) UINT32_C(value)
 
 	/*!
-	 * @name NAPC_U32_PRINTF
-	 * @module Core
-	 * @version 1.0.0
-	 * @description
-	 * Format specifier for printing `napc_u32` variables.
-	 * @changelog 1.0.0 17.02.2022 initial version
-	 * @example
-	 * napc_u32 var = 1;
+	 * Format specifier for printing `libnapc_u32` variables.
 	 * 
-	 * napc_printf("var is = %" LIBNAPC_U32_PRINT_DEC, var);
+	 * @module Core
+	 * @type macro:var
+	 * @fullname LIBNAPC_U32_PRINT_DEC
+	 * @version 2.0.0
+	 * @changelog 2.0.0 initial version
+	 * @example
+	 * libnapc_u32 var = 1;
+	 * 
+	 * libnapc_printf("var is = %" LIBNAPC_U32_PRINT_DEC, var);
 	 */
 	#define LIBNAPC_U32_PRINT_DEC      PRIu32
 #endif
