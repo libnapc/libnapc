@@ -3,7 +3,7 @@
 
 	#include <HAL/HAL.h>
 
-	// PV_napc_getDefaultAccessFailureMode defined in napc-core.h
+	// PV_libnapc_getDefaultAccessFailureMode defined in napc-core.h
 	// PV_napc_validateAccessFailureMode defined in napc-core.h
 	#include <napc-core/napc-core.h>
 

@@ -61,7 +61,7 @@
 	);
 
 	// used by internal API -> Writer, Reader etc.
-	libnapc__AccessFailureMode PV_napc_getDefaultAccessFailureMode(void);
+	libnapc__AccessFailureMode PV_libnapc_getDefaultAccessFailureMode(void);
 	// used by internal API -> Writer, Reader etc.
 	bool PV_napc_validateAccessFailureMode(libnapc__AccessFailureMode mode);
 
