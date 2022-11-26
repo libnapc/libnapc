@@ -14,6 +14,20 @@
 		extern "C" {
 	#endif
 
+	/*!
+	 * Initialises libnapc.
+	 * 
+	 * Call this function before calling any other function of libnapc.
+	 * 
+	 * @module Core
+	 * @type fn
+	 * @fullname libnapc_init
+	 * @brief Initialise libnapc.
+	 * @version 2.0.0
+	 * @changelog 2.0.0 initial version
+	 * @warning
+	 * This function must be called before using any of the library functions.
+	 */
 	void libnapc_init(void);
 
 	/*!
