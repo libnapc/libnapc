@@ -4,6 +4,8 @@
 	#define LIBNAPC_CONCAT_(a, b) a ## b
 	#define LIBNAPC_CONCAT(a, b) LIBNAPC_CONCAT_(a, b)
 
+	#define LIBNAPC_ARRAY_ELEMENTS(array) (sizeof(array) / sizeof(* array))
+
 	#include <stdbool.h> // bool
 	#include <stdlib.h> // free()
 	#include <stddef.h> // NULL

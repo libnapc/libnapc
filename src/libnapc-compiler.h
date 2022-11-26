@@ -40,8 +40,6 @@
 
 	#define LIBNAPC_DEPRECATED()          __attribute__((deprecated))
 
-	#define LIBNAPC_ARRAY_ELEMENTS(array) (sizeof(array) / sizeof(* array))
-
 	// give compiler a hint that `expr` is likely to evaluate to 'false'
 	#define LIBNAPC_UNLIKELY(expr) \
 		__builtin_expect(!!(expr), 0)
