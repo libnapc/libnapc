@@ -32,7 +32,7 @@ static void _callLogHandlers(
 	const char *message
 ) {
 	// call log handler
-	for (libnapc_size i = 0; i < NAPC_ARRAY_ELEMENTS(PV_napc_log_handler_array); ++i) {
+	for (libnapc_size i = 0; i < LIBNAPC_ARRAY_ELEMENTS(PV_napc_log_handler_array); ++i) {
 		libnapc_logHandlerFunction handler = PV_napc_log_handler_array[i];
 		void *handler_context = PV_napc_log_handler_context_array[i];
 

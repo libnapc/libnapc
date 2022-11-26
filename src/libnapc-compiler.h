@@ -46,7 +46,7 @@
 	#define NAPC_DEPRECATED() \
 			__attribute__((deprecated))
 
-	#define NAPC_ARRAY_ELEMENTS(array) (sizeof(array) / sizeof(* array))
+	#define LIBNAPC_ARRAY_ELEMENTS(array) (sizeof(array) / sizeof(* array))
 
 	// give compiler a hint that `expr` is likely to evaluate to 'false'
 	#define LIBNAPC_UNLIKELY(expr) \
