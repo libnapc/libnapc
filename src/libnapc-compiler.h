@@ -24,7 +24,7 @@
 	#define LIBNAPC_FN_PRINTFLIKE(_1, _2) __attribute__((format(printf, _1, _2)))
 
 	/*!
-	 * Tell the compiler to emit a warning if the return value of a function is not used.
+	 * Tells the compiler to emit a warning if the return value of a function is not used.
 	 * 
 	 * @module Core
 	 * @type macro:fn
@@ -43,8 +43,50 @@
 	 * }
 	 */
 	#define LIBNAPC_FN_WARN_UNUSED_RET()  __attribute__((warn_unused_result))
+
+	/*!
+	 * Tells the compiler that a particular function will not return to its caller.
+	 * 
+	 * @module Core
+	 * @type macro:fn
+	 * @fullname LIBNAPC_FN_NORETURN
+	 * @version 2.0.0
+	 * @changelog 2.0.0 initial version
+	 * @example
+	 * void call_panic(void) LIBNAPC_FN_NORETURN();
+	 * 
+	 * void call_panic(void) {
+	 *     LIBNAPC_PANIC("Oops.");
+	 * }
+	 * 
+	 * int main(void) {
+	 *     libnapc_init();
+	 *     call_panic();
+	 *     // compiler knows this code will not be reached
+	 *     libnapc_printf("dead code");
+	 * 
+	 *     return 0;
+	 * }
+	 */
 	#define LIBNAPC_FN_NORETURN()         __attribute__((noreturn))
 
+	/*!
+	 * Tells the compiler to emit a warning when a function marked as deprecated is used.
+	 * 
+	 * @module Core
+	 * @type macro:fn
+	 * @fullname LIBNAPC_DEPRECATED
+	 * @version 2.0.0
+	 * @changelog 2.0.0 initial version
+	 * @example
+	 * void deprecated_function(void) LIBNAPC_DEPRECATED();
+	 * 
+	 * int main(void) {
+	 *     deprecated_function(); // will raise a compiler warning
+	 * 
+	 *     return 0;
+	 * }
+	 */
 	#define LIBNAPC_DEPRECATED()          __attribute__((deprecated))
 
 	// give compiler a hint that `expr` is likely to evaluate to 'false'
