@@ -132,7 +132,7 @@
 	 * 
 	 * @module Core
 	 * @type macro:var
-	 * @name LIBNAPC_LEVEL_SECURITY
+	 * @fullname LIBNAPC_LEVEL_SECURITY
 	 * @version 2.0.0
 	 * @changelog 2.0.0 initial version
 	 * @example
@@ -167,113 +167,120 @@
 		)
 
 	/*!
-	 * @name NAPC_LOG_VERBOSE
-	 * @module Core
-	 * @version 1.0.0
-	 * @description
 	 * Log a message with priority `VERBOSE`.
-	 * @param _cstring_ subsys Subsystem.
-	 * @param _cstring_ fmt printf()-like format string.
-	 * @param n/a ... Values to incorporate into string.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * 
+	 * @module Core
+	 * @type macro:fn
+	 * @fullname LIBNAPC_LOG_VERBOSE
+	 * @version 2.0.0
+	 * @param subsys Subsystem.
+	 * @param fmt printf()-like format string.
+	 * @variadic Values to incorporate into string.
+	 * @changelog 2.0.0 initial version
 	 * @example
-	 * NAPC_LOG_VERBOSE("subsystem", "This is a %s!", "message");
+	 * LIBNAPC_LOG_VERBOSE("subsystem", "This is a %s!", "message");
 	 */
 	#define LIBNAPC_LOG_VERBOSE(subsys, fmt, ...) \
 		LIBNAPC_LOG(subsys, LIBNAPC_LEVEL_VERBOSE, fmt, ## __VA_ARGS__)
 
 	/*!
-	 * @name NAPC_LOG_TRACE
-	 * @module Core
-	 * @version 1.0.0
-	 * @description
 	 * Log a message with priority `TRACE`.
-	 * @param _cstring_ subsys Subsystem.
-	 * @param _cstring_ fmt printf()-like format string.
-	 * @param n/a ... Values to incorporate into string.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * 
+	 * @module Core
+	 * @type macro:fn
+	 * @fullname LIBNAPC_LOG_TRACE
+	 * @version 2.0.0
+	 * @param subsys Subsystem.
+	 * @param fmt printf()-like format string.
+	 * @variadic Values to incorporate into string.
+	 * @changelog 2.0.0 initial version
 	 * @example
-	 * NAPC_LOG_TRACE("subsystem", "This is a %s!", "message");
+	 * LIBNAPC_LOG_TRACE("subsystem", "This is a %s!", "message");
 	 */
 	#define LIBNAPC_LOG_TRACE(subsys, fmt, ...) \
 		LIBNAPC_LOG(subsys, LIBNAPC_LEVEL_TRACE, fmt, ## __VA_ARGS__)
 
 	/*!
-	 * @name NAPC_LOG_DEBUG
-	 * @module Core
-	 * @version 1.0.0
-	 * @description
 	 * Log a message with priority `DEBUG`.
-	 * @param _cstring_ subsys Subsystem.
-	 * @param _cstring_ fmt printf()-like format string.
-	 * @param n/a ... Values to incorporate into string.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * 
+	 * @module Core
+	 * @type macro:fn
+	 * @fullname LIBNAPC_LOG_DEBUG
+	 * @version 2.0.0
+	 * @param subsys Subsystem.
+	 * @param fmt printf()-like format string.
+	 * @variadic Values to incorporate into string.
+	 * @changelog 2.0.0 initial version
 	 * @example
-	 * NAPC_LOG_DEBUG("subsystem", "This is a %s!", "message");
+	 * LIBNAPC_LOG_DEBUG("subsystem", "This is a %s!", "message");
 	 */
 	#define LIBNAPC_LOG_DEBUG(subsys, fmt, ...) \
 		LIBNAPC_LOG(subsys, LIBNAPC_LEVEL_DEBUG, fmt, ## __VA_ARGS__)
 
 	/*!
-	 * @name NAPC_LOG_INFO
-	 * @module Core
-	 * @version 1.0.0
-	 * @description
 	 * Log a message with priority `INFO`.
-	 * @param _cstring_ subsys Subsystem.
-	 * @param _cstring_ fmt printf()-like format string.
-	 * @param n/a ... Values to incorporate into string.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * 
+	 * @module Core
+	 * @type macro:fn
+	 * @fullname LIBNAPC_LOG_INFO
+	 * @version 2.0.0
+	 * @param subsys Subsystem.
+	 * @param fmt printf()-like format string.
+	 * @variadic Values to incorporate into string.
+	 * @changelog 2.0.0 initial version
 	 * @example
-	 * NAPC_LOG_INFO("subsystem", "This is a %s!", "message");
+	 * LIBNAPC_LOG_INFO("subsystem", "This is a %s!", "message");
 	 */
 	#define LIBNAPC_LOG_INFO(subsys, fmt, ...) \
 		LIBNAPC_LOG(subsys, LIBNAPC_LEVEL_INFO, fmt, ## __VA_ARGS__)
 
 	/*!
-	 * @name NAPC_LOG_WARNING
-	 * @module Core
-	 * @version 1.0.0
-	 * @description
 	 * Log a message with priority `WARNING`.
-	 * @param _cstring_ subsys Subsystem.
-	 * @param _cstring_ fmt printf()-like format string.
-	 * @param n/a ... Values to incorporate into string.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * 
+	 * @module Core
+	 * @type macro:fn
+	 * @fullname LIBNAPC_LOG_WARNING
+	 * @version 2.0.0
+	 * @param subsys Subsystem.
+	 * @param fmt printf()-like format string.
+	 * @variadic Values to incorporate into string.
+	 * @changelog 2.0.0 initial version
 	 * @example
-	 * NAPC_LOG_WARNING("subsystem", "This is a %s!", "message");
+	 * LIBNAPC_LOG_WARNING("subsystem", "This is a %s!", "message");
 	 */
 	#define LIBNAPC_LOG_WARNING(subsys, fmt, ...) \
 		LIBNAPC_LOG(subsys, LIBNAPC_LEVEL_WARNING, fmt, ## __VA_ARGS__)
 
 	/*!
-	 * @name NAPC_LOG_ERROR
-	 * @module Core
-	 * @version 1.0.0
-	 * @description
 	 * Log a message with priority `ERROR`.
-	 * @param _cstring_ subsys Subsystem.
-	 * @param _cstring_ fmt printf()-like format string.
-	 * @param n/a ... Values to incorporate into string.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * 
+	 * @module Core
+	 * @type macro:fn
+	 * @fullname LIBNAPC_LOG_ERROR
+	 * @version 2.0.0
+	 * @param subsys Subsystem.
+	 * @param fmt printf()-like format string.
+	 * @variadic Values to incorporate into string.
+	 * @changelog 2.0.0 initial version
 	 * @example
-	 * NAPC_LOG_ERROR("subsystem", "This is a %s!", "message");
+	 * LIBNAPC_LOG_ERROR("subsystem", "This is a %s!", "message");
 	 */
 	#define LIBNAPC_LOG_ERROR(subsys, fmt, ...) \
 		LIBNAPC_LOG(subsys, LIBNAPC_LEVEL_ERROR, fmt, ## __VA_ARGS__)
 
 	/*!
-	 * @name NAPC_LOG_SECURITY
-	 * @module Core
-	 * @version 1.0.0
-	 * @description
 	 * Log a message with priority `SECURITY`.
-	 * @param _cstring_ subsys Subsystem.
-	 * @param _cstring_ fmt printf()-like format string.
-	 * @param n/a ... Values to incorporate into string.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * 
+	 * @module Core
+	 * @type macro:fn
+	 * @fullname NAPC_LOG_SECURITY
+	 * @version 2.0.0
+	 * @param subsys Subsystem.
+	 * @param fmt printf()-like format string.
+	 * @variadic Values to incorporate into string.
+	 * @changelog 2.0.0 initial version
 	 * @example
-	 * NAPC_LOG_SECURITY("subsystem", "This is a %s!", "message");
+	 * LIBNAPC_LOG_SECURITY("subsystem", "This is a %s!", "message");
 	 */
 	#define LIBNAPC_LOG_SECURITY(subsys, fmt, ...) \
 		LIBNAPC_LOG(subsys, LIBNAPC_LEVEL_SECURITY, fmt, ## __VA_ARGS__)
