@@ -12,5 +12,5 @@
 	#include <napc-delay/napc-delay.h> // libnapc_delay()
 	#include <napc-utils/napc-utils.h> // libnapc_streqli()
 
-	extern libnapc__AccessFailureMode PV_napc_default_access_failure_mode; // @global
+	extern libnapc__AccessFailureMode PV_libnapc_default_access_failure_mode; // @global
 #endif
