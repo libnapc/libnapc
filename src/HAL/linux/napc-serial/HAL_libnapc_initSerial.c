@@ -4,6 +4,6 @@
 	#include <napc-serial/_private/_napc-serial.h>
 
 	void HAL_libnapc_initSerial(void) {
-		PV_napc_serial_available = true;
+		PV_libnapc_serial_available = true;
 	}
 #endif

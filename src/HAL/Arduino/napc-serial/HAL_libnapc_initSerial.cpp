@@ -11,7 +11,7 @@
 
 			delay(3000);
 
-			PV_napc_serial_available = !!Serial;
+			PV_libnapc_serial_available = !!Serial;
 		}
 	}
 #endif
