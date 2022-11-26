@@ -5,7 +5,7 @@
 static char _printf_buffer[256]; // @static
 
 void libnapc_printf(const char *fmt, ...) {
-	if (PV_napc_serial_muted) return;
+	if (PV_libnapc_serial_muted) return;
 
 	va_list args;
 
