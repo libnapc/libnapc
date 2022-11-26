@@ -32,9 +32,9 @@ static void _callLogHandlers(
 	const char *message
 ) {
 	// call log handler
-	for (libnapc_size i = 0; i < LIBNAPC_ARRAY_ELEMENTS(PV_napc_log_handler_array); ++i) {
-		libnapc_logHandlerFunction handler = PV_napc_log_handler_array[i];
-		void *handler_context = PV_napc_log_handler_context_array[i];
+	for (libnapc_size i = 0; i < LIBNAPC_ARRAY_ELEMENTS(PV_libnapc_log_handler_array); ++i) {
+		libnapc_logHandlerFunction handler = PV_libnapc_log_handler_array[i];
+		void *handler_context = PV_libnapc_log_handler_context_array[i];
 
 		if (handler) {
 			handler(
@@ -56,7 +56,7 @@ void libnapc_logMessage(
 ) {
 	libnapc_time time = libnapc_getTimeSinceBoot();
 
-	if (PV_napc_log_colorful_output) {
+	if (PV_libnapc_log_colorful_output) {
 		if (level == LIBNAPC_LEVEL_INFO) {
 			libnapc_puts("\033[0;34m");
 		} else if (level == LIBNAPC_LEVEL_WARNING) {
@@ -105,7 +105,7 @@ void libnapc_logMessage(
 		}
 	}
 
-	if (PV_napc_log_colorful_output) {
+	if (PV_libnapc_log_colorful_output) {
 		libnapc_puts("\033[0;0m");
 	}
 
