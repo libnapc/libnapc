@@ -10,7 +10,7 @@
 	 * 
 	 * @module Core
 	 * @type fn
-	 * @fullname napc_snprintf
+	 * @fullname libnapc_snprintf
 	 * @brief Format printf()-like string.
 	 * @version 2.0.0
 	 * @param buffer The buffer to write the formatted string to.
@@ -33,11 +33,11 @@
 	) LIBNAPC_FN_PRINTFLIKE(3, 4);
 
 	/*!
-	 * Same as `napc_snprintf()` except it takes a `va_args` list instead of variadic arguments.
+	 * Same as `libnapc_snprintf()` except it takes a `va_args` list instead of variadic arguments.
 	 * 
 	 * @module Core
 	 * @type fn
-	 * @fullname napc_vsnprintf
+	 * @fullname libnapc_vsnprintf
 	 * @brief Format printf()-like string.
 	 * @version 2.0.0
 	 * @param buffer The buffer to write the formatted string to.
@@ -59,7 +59,7 @@
 	 * 
 	 * @module Core
 	 * @type fn
-	 * @fullname napc_strncpy
+	 * @fullname libnapc_strncpy
 	 * @brief Copy a string to another location.
 	 * @version 2.0.0
 	 * @param dest Destination memory location.
@@ -74,7 +74,7 @@
 	 * 
 	 * @module Core
 	 * @type fn
-	 * @fullname napc_strlen
+	 * @fullname libnapc_strlen
 	 * @brief Get length of string.
 	 * @version 2.0.0
 	 * @note
@@ -94,7 +94,7 @@
 	 *
 	 * @module Core
 	 * @type fn
-	 * @fullname napc_streql
+	 * @fullname libnapc_streql
 	 * @brief Compare two strings.
 	 * @version 2.0.0
 	 * @param str1 First string.
@@ -115,7 +115,7 @@
 	 * 
 	 * @module Core
 	 * @type fn
-	 * @fullname napc_streqli
+	 * @fullname libnapc_streqli
 	 * @brief Compare two strings.
 	 * @version 2.0.0
 	 * @param str1 First string.
@@ -134,7 +134,7 @@
 	 * 
 	 * @module Core
 	 * @type fn
-	 * @fullname napc_memeql
+	 * @fullname libnapc_memeql
 	 * @brief Compare two memory regions of equal size.
 	 * @version 2.0.0
 	 * @param data1 Pointer to first memory location.
@@ -159,7 +159,7 @@
 	 * 
 	 * @module Core
 	 * @type fn
-	 * @fullname napc_mzero
+	 * @fullname libnapc_mzero
 	 * @brief Zero out memory region.
 	 * @version 2.0.0
 	 * @param data Buffer to be zero'd out.
