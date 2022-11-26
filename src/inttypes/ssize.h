@@ -2,23 +2,25 @@
 	#define LIBNAPC_INTTYPES_SSIZE_h
 
 	/*!
-	 * @name napc_ssize
-	 * @brief Signed memory size type.
-	 * @version 1.0.0
-	 * @description
 	 * Signed integer type for holding object sizes.
-	 * @rationale
+	 * 
+	 * @module Core
+	 * @type type:alias
+	 * @fullname libnapc_ssize
+	 * @brief Signed memory size type.
+	 * @version 2.0.0
+	 * @note
 	 * Used because Arduino lacks `ssize_t` in `<stddef.h>`.
 	 * 
 	 * For some reason it is defined in `<stdio.h>` but
-	 * I don't want to pollute my headers with unnecessary
+	 * we don't want to pollute the library headers with unnecessary
 	 * includes.
 	 * 
-	 * Also this way, I'm sure what printf specifiers
+	 * Also this way it is clear what printf specifiers
 	 * to use when printing `size_t` resp. `ssize_t`.
 	 * 
 	 * (`%zd` is not supported in arduino's libc)
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 */
 	typedef signed long libnapc_ssize;
 
@@ -26,16 +28,17 @@
 	#define LIBNAPC_SSIZE_LITERAL(_v) _v ## l
 
 	/*!
-	 * @name NAPC_SSIZE_PRINTF
-	 * @module Core
-	 * @version 1.0.0
-	 * @description
 	 * Format specifier for printing `libnapc_ssize` variables.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * 
+	 * @module Core
+	 * @type macro:var
+	 * @fullname LIBNAPC_SSIZE_PRINT_DEC
+	 * @version 2.0.0
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * libnapc_ssize var = -1;
 	 * 
-	 * napc_printf("var is = %" LIBNAPC_SSIZE_PRINT_DEC, var);
+	 * libnapc_printf("var is = %" LIBNAPC_SSIZE_PRINT_DEC, var);
 	 */
 	#define LIBNAPC_SSIZE_PRINT_DEC "ld"
 #endif
