@@ -37,7 +37,6 @@
 	 * }
 	 */
 	#define NAPC_FN_WARNUNUSED_RET()   __attribute__((warn_unused_result))
-	#define NAPC_FN_NOINLINE()         __attribute__((noinline))
 	#define LIBNAPC_FN_NORETURN()         __attribute__((noreturn))
 	#define NAPC_UNUSED_FN_PARAM()     __attribute__((unused))
 
