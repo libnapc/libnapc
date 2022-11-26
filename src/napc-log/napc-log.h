@@ -179,7 +179,7 @@
 	 * @example
 	 * NAPC_LOG_VERBOSE("subsystem", "This is a %s!", "message");
 	 */
-	#define NAPC_LOG_VERBOSE(subsys, fmt, ...) \
+	#define LIBNAPC_LOG_VERBOSE(subsys, fmt, ...) \
 		LIBNAPC_LOG(subsys, LIBNAPC_LEVEL_VERBOSE, fmt, ## __VA_ARGS__)
 
 	/*!
@@ -195,7 +195,7 @@
 	 * @example
 	 * NAPC_LOG_TRACE("subsystem", "This is a %s!", "message");
 	 */
-	#define NAPC_LOG_TRACE(subsys, fmt, ...) \
+	#define LIBNAPC_LOG_TRACE(subsys, fmt, ...) \
 		LIBNAPC_LOG(subsys, LIBNAPC_LEVEL_TRACE, fmt, ## __VA_ARGS__)
 
 	/*!
@@ -211,7 +211,7 @@
 	 * @example
 	 * NAPC_LOG_DEBUG("subsystem", "This is a %s!", "message");
 	 */
-	#define NAPC_LOG_DEBUG(subsys, fmt, ...) \
+	#define LIBNAPC_LOG_DEBUG(subsys, fmt, ...) \
 		LIBNAPC_LOG(subsys, LIBNAPC_LEVEL_DEBUG, fmt, ## __VA_ARGS__)
 
 	/*!
@@ -227,7 +227,7 @@
 	 * @example
 	 * NAPC_LOG_INFO("subsystem", "This is a %s!", "message");
 	 */
-	#define NAPC_LOG_INFO(subsys, fmt, ...) \
+	#define LIBNAPC_LOG_INFO(subsys, fmt, ...) \
 		LIBNAPC_LOG(subsys, LIBNAPC_LEVEL_INFO, fmt, ## __VA_ARGS__)
 
 	/*!
@@ -243,7 +243,7 @@
 	 * @example
 	 * NAPC_LOG_WARNING("subsystem", "This is a %s!", "message");
 	 */
-	#define NAPC_LOG_WARNING(subsys, fmt, ...) \
+	#define LIBNAPC_LOG_WARNING(subsys, fmt, ...) \
 		LIBNAPC_LOG(subsys, LIBNAPC_LEVEL_WARNING, fmt, ## __VA_ARGS__)
 
 	/*!
@@ -259,7 +259,7 @@
 	 * @example
 	 * NAPC_LOG_ERROR("subsystem", "This is a %s!", "message");
 	 */
-	#define NAPC_LOG_ERROR(subsys, fmt, ...) \
+	#define LIBNAPC_LOG_ERROR(subsys, fmt, ...) \
 		LIBNAPC_LOG(subsys, LIBNAPC_LEVEL_ERROR, fmt, ## __VA_ARGS__)
 
 	/*!
@@ -275,6 +275,6 @@
 	 * @example
 	 * NAPC_LOG_SECURITY("subsystem", "This is a %s!", "message");
 	 */
-	#define NAPC_LOG_SECURITY(subsys, fmt, ...) \
+	#define LIBNAPC_LOG_SECURITY(subsys, fmt, ...) \
 		LIBNAPC_LOG(subsys, LIBNAPC_LEVEL_SECURITY, fmt, ## __VA_ARGS__)
 #endif
