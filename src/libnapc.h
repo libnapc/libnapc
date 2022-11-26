@@ -40,7 +40,7 @@
 	 * @version 2.0.0
 	 * @changelog 2.0.0 initial version
 	 * @example
-	 * napc_printf("Using libnapc version: %s\n", libnapc_version());
+	 * libnapc_printf("Using libnapc version: %s\n", libnapc_version());
 	 */
 	const char *libnapc_version(void);
 
@@ -54,7 +54,7 @@
 	 * @version 2.0.0
 	 * @changelog 2.0.0 initial version
 	 * @example
-	 * napc_printf("Using libnapc version: %s\n", libnapc_getFullVersion());
+	 * libnapc_printf("Using libnapc version: %s\n", libnapc_getFullVersion());
 	 */
 	const char *libnapc_getFullVersion(void);
 
