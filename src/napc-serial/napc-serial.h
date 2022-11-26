@@ -14,7 +14,7 @@
 	 * @param str The string to be printed.
 	 * @changelog 2.0.0 initial version
 	 * @example
-	 * napc_puts("Hello World!");
+	 * libnapc_puts("Hello World!");
 	 */
 	void libnapc_puts(const char *str);
 
@@ -29,12 +29,12 @@
 	 * @param ch The character to be printed.
 	 * @changelog 2.0.0 initial version
 	 * @example
-	 * napc_putc('H');
-	 * napc_putc('e');
-	 * napc_putc('l');
-	 * napc_putc('l');
-	 * napc_putc('o');
-	 * napc_putc('!');
+	 * libnapc_putc('H');
+	 * libnapc_putc('e');
+	 * libnapc_putc('l');
+	 * libnapc_putc('l');
+	 * libnapc_putc('o');
+	 * libnapc_putc('!');
 	 */
 	void libnapc_putc(char ch);
 
@@ -50,7 +50,7 @@
 	 * @example
 	 * int my_var = 13;
 	 * 
-	 * napc_printf("Value of my_var is %d", my_var);
+	 * libnapc_printf("Value of my_var is %d", my_var);
 	 * @param fmt printf()-like format string.
 	 * @variadic Values to incorporate into string.
 	 */
@@ -68,15 +68,15 @@
 	 * This functionality is used in the unit test suite of libnapc.
 	 * @changelog 2.0.0 initial version
 	 * @example
-	 * napc_printf("Hello"); // prints Hello
+	 * libnapc_printf("Hello"); // prints Hello
 	 * 
-	 * napc_mute();
+	 * libnapc_mute();
 	 * 
-	 * napc_printf(" World!"); // this will not be printed
+	 * libnapc_printf(" World!"); // this will not be printed
 	 * 
-	 * napc_unmute();
+	 * libnapc_unmute();
 	 * 
-	 * napc_printf(" Earth!"); // prints Earth!
+	 * libnapc_printf(" Earth!"); // prints Earth!
 	 */
 	void libnapc_mute(void);
 
@@ -92,15 +92,15 @@
 	 * This functionality is used in the unit test suite of libnapc.
 	 * @changelog 2.0.0 initial version
 	 * @example
-	 * napc_printf("Hello"); // prints Hello
+	 * libnapc_printf("Hello"); // prints Hello
 	 * 
-	 * napc_mute();
+	 * libnapc_mute();
 	 * 
-	 * napc_printf(" World!"); // this will not be printed
+	 * libnapc_printf(" World!"); // this will not be printed
 	 * 
-	 * napc_unmute();
+	 * libnapc_unmute();
 	 * 
-	 * napc_printf(" Earth!"); // prints Earth!
+	 * libnapc_printf(" Earth!"); // prints Earth!
 	 */
 	void libnapc_unmute(void);
 #endif
