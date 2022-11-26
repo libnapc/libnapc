@@ -1,5 +1,5 @@
-#if !defined(PV_NAPC_MODULE_WRITER_h)
-	#define PV_NAPC_MODULE_WRITER_h
+#if !defined(PV_LIBNAPC_MODULE_WRITER_h)
+	#define PV_LIBNAPC_MODULE_WRITER_h
 
 	#include <module/writer/writer.h>
 	#include <module/writer/_private/_log.h>

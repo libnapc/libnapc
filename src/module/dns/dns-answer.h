@@ -1,5 +1,5 @@
-#if !defined(NAPC_MODULE_DNS_ANSWER_h)
-	#define NAPC_MODULE_DNS_ANSWER_h
+#if !defined(LIBNAPC_MODULE_DNS_ANSWER_h)
+	#define LIBNAPC_MODULE_DNS_ANSWER_h
 
 	#include <libnapc-internal.h>
 

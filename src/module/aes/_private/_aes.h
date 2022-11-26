@@ -1,5 +1,5 @@
-#if !defined(PV_NAPC_MODULE_AES_h)
-	#define PV_NAPC_MODULE_AES_h
+#if !defined(PV_LIBNAPC_MODULE_AES_h)
+	#define PV_LIBNAPC_MODULE_AES_h
 
 	#include <module/aes/aes.h>
 	#include <libnapc-magic/libnapc-magic.h>

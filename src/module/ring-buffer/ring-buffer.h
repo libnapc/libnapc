@@ -2,8 +2,8 @@
  * @name RingBuffer:intro
  * @brief Circular byte buffer
  */
-#if !defined(NAPC_MODULE_RINGBUFFER_h)
-	#define NAPC_MODULE_RINGBUFFER_h
+#if !defined(LIBNAPC_MODULE_RINGBUFFER_h)
+	#define LIBNAPC_MODULE_RINGBUFFER_h
 
 	#include <libnapc-internal.h>
 	#include <libnapc-magic/libnapc-magic.h>

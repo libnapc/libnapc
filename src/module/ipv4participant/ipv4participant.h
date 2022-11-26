@@ -11,8 +11,8 @@
  * napc_IPv4Participant_init(&google_dns, "8.8.8.8", 53);
  * ```
  */
-#if !defined(NAPC_MODULE_IPV4PARTICIPANT_h)
-	#define NAPC_MODULE_IPV4PARTICIPANT_h
+#if !defined(LIBNAPC_MODULE_IPV4PARTICIPANT_h)
+	#define LIBNAPC_MODULE_IPV4PARTICIPANT_h
 
 	#include <libnapc-internal.h>
 	#include <module/net/net.h>

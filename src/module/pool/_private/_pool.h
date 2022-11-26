@@ -1,5 +1,5 @@
-#if !defined(PV_NAPC_MODULE_POOL_h)
-	#define PV_NAPC_MODULE_POOL_h
+#if !defined(PV_LIBNAPC_MODULE_POOL_h)
+	#define PV_LIBNAPC_MODULE_POOL_h
 
 	#include <module/pool/pool.h>
 

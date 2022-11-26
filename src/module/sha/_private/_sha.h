@@ -1,5 +1,5 @@
-#if !defined(PV_NAPC_MODULE_SHA_h)
-	#define PV_NAPC_MODULE_SHA_h
+#if !defined(PV_LIBNAPC_MODULE_SHA_h)
+	#define PV_LIBNAPC_MODULE_SHA_h
 
 	#include <module/sha/sha.h>
 

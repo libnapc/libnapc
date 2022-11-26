@@ -1,5 +1,5 @@
-#if !defined(NAPC_MODULE_DNS_QUERY_h)
-	#define NAPC_MODULE_DNS_QUERY_h
+#if !defined(LIBNAPC_MODULE_DNS_QUERY_h)
+	#define LIBNAPC_MODULE_DNS_QUERY_h
 
 	#include <libnapc-internal.h>
 	#include <module/dns/dns-qtype.h>

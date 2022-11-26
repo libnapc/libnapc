@@ -2,8 +2,8 @@
  * @name Pool:intro
  * @brief Static memory allocation
  */
-#if !defined(NAPC_MODULE_POOL_h)
-	#define NAPC_MODULE_POOL_h
+#if !defined(LIBNAPC_MODULE_POOL_h)
+	#define LIBNAPC_MODULE_POOL_h
 
 	#include <libnapc-internal.h>
 	#include <libnapc-magic/libnapc-magic.h>

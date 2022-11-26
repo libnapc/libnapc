@@ -1,5 +1,5 @@
-#if !defined(PV_NAPC_MODULE_DNS_h)
-	#define PV_NAPC_MODULE_DNS_h
+#if !defined(PV_LIBNAPC_MODULE_DNS_h)
+	#define PV_LIBNAPC_MODULE_DNS_h
 
 	#include <module/dns/dns.h>
 	#include <module/dns/_private/_log.h>

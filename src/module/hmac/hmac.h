@@ -2,8 +2,8 @@
  * @name hmac:intro
  * @brief Sign & verify messages
  */
-#if !defined(NAPC_MODULE_HMAC_h)
-	#define NAPC_MODULE_HMAC_h
+#if !defined(LIBNAPC_MODULE_HMAC_h)
+	#define LIBNAPC_MODULE_HMAC_h
 
 	#include <libnapc-internal.h>
 

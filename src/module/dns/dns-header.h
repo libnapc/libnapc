@@ -1,5 +1,5 @@
-#if !defined(NAPC_MODULE_DNS_HEADER_h)
-	#define NAPC_MODULE_DNS_HEADER_h
+#if !defined(LIBNAPC_MODULE_DNS_HEADER_h)
+	#define LIBNAPC_MODULE_DNS_HEADER_h
 
 	#include <libnapc-internal.h>
 

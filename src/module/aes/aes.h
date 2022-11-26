@@ -2,8 +2,8 @@
  * @name aes:intro
  * @brief Encrypt & decrypt messages
  */
-#if !defined(NAPC_MODULE_AES_h)
-	#define NAPC_MODULE_AES_h
+#if !defined(LIBNAPC_MODULE_AES_h)
+	#define LIBNAPC_MODULE_AES_h
 
 	#include <libnapc-internal.h>
 

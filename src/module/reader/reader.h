@@ -2,8 +2,8 @@
  * @name Reader:intro
  * @brief Binary buffer reader
  */
-#if !defined(NAPC_MODULE_READER_h)
-	#define NAPC_MODULE_READER_h
+#if !defined(LIBNAPC_MODULE_READER_h)
+	#define LIBNAPC_MODULE_READER_h
 
 	#include <libnapc-internal.h>
 	#include <libnapc-magic/libnapc-magic.h>

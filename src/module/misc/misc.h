@@ -1,5 +1,5 @@
-#if !defined(NAPC_MODULE_MISC_h)
-	#define NAPC_MODULE_MISC_h
+#if !defined(LIBNAPC_MODULE_MISC_h)
+	#define LIBNAPC_MODULE_MISC_h
 
 	#include <libnapc-internal.h>
 

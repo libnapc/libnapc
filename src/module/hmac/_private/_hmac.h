@@ -1,5 +1,5 @@
-#if !defined(PV_NAPC_MODULE_HMAC_h)
-	#define PV_NAPC_MODULE_HMAC_h
+#if !defined(PV_LIBNAPC_MODULE_HMAC_h)
+	#define PV_LIBNAPC_MODULE_HMAC_h
 
 	#include <module/hmac/hmac.h>
 

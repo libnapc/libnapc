@@ -2,8 +2,8 @@
  * @name Writer:intro
  * @brief Binary buffer writer
  */
-#if !defined(NAPC_MODULE_WRITER_h)
-	#define NAPC_MODULE_WRITER_h
+#if !defined(LIBNAPC_MODULE_WRITER_h)
+	#define LIBNAPC_MODULE_WRITER_h
 
 	#include <libnapc-internal.h>
 	#include <libnapc-magic/libnapc-magic.h>

@@ -1,5 +1,5 @@
-#if !defined(PV_NAPC_MODULE_PARSER_h)
-	#define PV_NAPC_MODULE_PARSER_h
+#if !defined(PV_LIBNAPC_MODULE_PARSER_h)
+	#define PV_LIBNAPC_MODULE_PARSER_h
 
 	#include <module/parser/parser.h>
 

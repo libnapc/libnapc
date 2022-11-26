@@ -1,5 +1,5 @@
-#if !defined(PV_NAPC_MODULE_MISC_LOG_h)
-	#define PV_NAPC_MODULE_MISC_LOG_h
+#if !defined(PV_LIBNAPC_MODULE_MISC_LOG_h)
+	#define PV_LIBNAPC_MODULE_MISC_LOG_h
 
 	#include <libnapc-log/libnapc-log.h>
 

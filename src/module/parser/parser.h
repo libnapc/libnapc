@@ -18,8 +18,8 @@
  * 
  * > If a function returned `false` the contents of the parsed output is _undefined_.
  */
-#if !defined(NAPC_MODULE_PARSER_h)
-	#define NAPC_MODULE_PARSER_h
+#if !defined(LIBNAPC_MODULE_PARSER_h)
+	#define LIBNAPC_MODULE_PARSER_h
 
 	#include <libnapc-internal.h>
 

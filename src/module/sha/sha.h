@@ -1,5 +1,5 @@
-#if !defined(NAPC_MODULE_SHA_h)
-	#define NAPC_MODULE_SHA_h
+#if !defined(LIBNAPC_MODULE_SHA_h)
+	#define LIBNAPC_MODULE_SHA_h
 
 	#include <libnapc-internal.h>
 

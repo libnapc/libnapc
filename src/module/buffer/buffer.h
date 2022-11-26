@@ -10,8 +10,8 @@
  * napc_Buffer_init(&buffer, data, sizeof(data));
  * ```
  */
-#if !defined(NAPC_MODULE_BUFFER_h)
-	#define NAPC_MODULE_BUFFER_h
+#if !defined(LIBNAPC_MODULE_BUFFER_h)
+	#define LIBNAPC_MODULE_BUFFER_h
 
 	#include <libnapc-internal.h>
 

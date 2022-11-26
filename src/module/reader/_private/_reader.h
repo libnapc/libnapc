@@ -1,5 +1,5 @@
-#if !defined(PV_NAPC_MODULE_READER_h)
-	#define PV_NAPC_MODULE_READER_h
+#if !defined(PV_LIBNAPC_MODULE_READER_h)
+	#define PV_LIBNAPC_MODULE_READER_h
 
 	#include <module/reader/reader.h>
 	#include <module/reader/_private/_log.h>

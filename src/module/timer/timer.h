@@ -1,5 +1,5 @@
-#if !defined(NAPC_MODULE_TIMER_h)
-	#define NAPC_MODULE_TIMER_h
+#if !defined(LIBNAPC_MODULE_TIMER_h)
+	#define LIBNAPC_MODULE_TIMER_h
 
 	#include <libnapc-internal.h>
 	#include <libnapc-magic/libnapc-magic.h>
