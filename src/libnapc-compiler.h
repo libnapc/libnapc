@@ -41,10 +41,8 @@
 	#define LIBNAPC_DEPRECATED()          __attribute__((deprecated))
 
 	// give compiler a hint that `expr` is likely to evaluate to 'false'
-	#define LIBNAPC_UNLIKELY(expr) \
-		__builtin_expect(!!(expr), 0)
+	#define LIBNAPC_UNLIKELY(expr) __builtin_expect(!!(expr), 0)
 
 	// give compiler a hint that `expr` is likely to evaluate to 'true'
-	#define LIBNAPC_LIKELY(expr) \
-		__builtin_expect(!!(expr), 1)
+	#define LIBNAPC_LIKELY(expr) __builtin_expect(!!(expr), 1)
 #endif
