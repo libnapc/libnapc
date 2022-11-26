@@ -3,7 +3,7 @@
 libnapc__AccessFailureMode libnapc_setDefaultAccessFailureMode(
 	libnapc__AccessFailureMode new_default_mode
 ) {
-	if (LIBNAPC_UNLIKELY(!PV_napc_validateAccessFailureMode(new_default_mode))) {
+	if (LIBNAPC_UNLIKELY(!PV_libnapc_validateAccessFailureMode(new_default_mode))) {
 		LIBNAPC_PANIC("Unrecognized AccessFailureMode '%d'", new_default_mode);
 	}
 
