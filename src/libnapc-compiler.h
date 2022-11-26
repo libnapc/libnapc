@@ -40,7 +40,6 @@
 	#define NAPC_FN_NOINLINE()         __attribute__((noinline))
 	#define NAPC_FN_NORETURN()         __attribute__((noreturn))
 	#define NAPC_UNUSED_FN_PARAM()     __attribute__((unused))
-	#define NAPC_FN_WEAK()             __attribute__((weak))
 
 	#define NAPC_DEPRECATED_WITH_MESSAGE(_message, _replacement) \
 			__attribute__((deprecated(_message, _replacement)))
