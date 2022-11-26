@@ -6,7 +6,7 @@
 	#define NAPC_MODULE_POOL_h
 
 	#include <libnapc-internal.h>
-	#include <napc-magic/napc-magic.h>
+	#include <libnapc-magic/libnapc-magic.h>
 
 	#define NAPC_POOL_MAX   32
 

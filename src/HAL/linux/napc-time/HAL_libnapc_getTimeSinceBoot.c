@@ -1,7 +1,7 @@
 #include <HAL/HAL.h>
 
 #if defined(LIBNAPC_TARGET) && LIBNAPC_TARGET == LIBNAPC_TARGET_LINUX_GENERIC
-	#include <napc-time/_private/_napc_time.h>
+	#include <libnapc-time/_private/_libnapc_time.h>
 	#include <time.h> // struct timespec, clock_gettime()
 
 	extern struct timespec PV_napc_program_start_linux; // @global

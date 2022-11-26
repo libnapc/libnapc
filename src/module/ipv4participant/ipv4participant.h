@@ -17,7 +17,7 @@
 	#include <libnapc-internal.h>
 	#include <module/net/net.h>
 
-	#include <napc-magic/napc-magic.h>
+	#include <libnapc-magic/libnapc-magic.h>
 
 	/*!
 	 * @name napc__IPv4Participant

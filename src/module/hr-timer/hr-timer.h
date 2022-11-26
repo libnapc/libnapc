@@ -6,7 +6,7 @@
 	#define NAPC_MODULE_HRTIMER_h
 
 	#include <libnapc-internal.h>
-	#include <napc-magic/napc-magic.h>
+	#include <libnapc-magic/libnapc-magic.h>
 
 	/*!
 	 * @name napc__HRTimerMode

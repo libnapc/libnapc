@@ -2,7 +2,7 @@
 	#define NAPC_MODULE_TIMER_h
 
 	#include <libnapc-internal.h>
-	#include <napc-magic/napc-magic.h>
+	#include <libnapc-magic/libnapc-magic.h>
 
 	/*!
 	 * @name napc__TimerMode

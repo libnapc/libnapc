@@ -1,7 +1,7 @@
 #if !defined(PV_NAPC_MODULE_DNS_LOG_h)
 	#define PV_NAPC_MODULE_DNS_LOG_h
 
-	#include <napc-log/napc-log.h>
+	#include <libnapc-log/libnapc-log.h>
 
 	#define PV_NAPC_DNS_VERBOSE(...)  LIBNAPC_LOG_VERBOSE("libnapc_dns", ##__VA_ARGS__)
 	#define PV_NAPC_DNS_TRACE(...)    LIBNAPC_LOG_TRACE("libnapc_dns", ##__VA_ARGS__)

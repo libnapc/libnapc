@@ -3,5 +3,5 @@
 
 	#include <module/ipv4participant/ipv4participant.h>
 
-	#include <napc-utils/napc-utils.h> // libnapc_strncpy()
+	#include <libnapc-utils/libnapc-utils.h> // libnapc_strncpy()
 #endif

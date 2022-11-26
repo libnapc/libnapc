@@ -58,13 +58,13 @@
 	 */
 	const char *libnapc_getFullVersion(void);
 
-	#include <napc-serial/napc-serial.h>
-	#include <napc-time/napc-time.h>
-	#include <napc-delay/napc-delay.h>
-	#include <napc-utils/napc-utils.h>
-	#include <napc-panic/napc-panic.h>
-	#include <napc-core/napc-core.h>
-	#include <napc-log/napc-log.h>
+	#include <libnapc-serial/libnapc-serial.h>
+	#include <libnapc-time/libnapc-time.h>
+	#include <libnapc-delay/libnapc-delay.h>
+	#include <libnapc-utils/libnapc-utils.h>
+	#include <libnapc-panic/libnapc-panic.h>
+	#include <libnapc-core/libnapc-core.h>
+	#include <libnapc-log/libnapc-log.h>
 
 	#include <module/pool/pool.h>
 	#include <module/hr-timer/hr-timer.h>

@@ -4,7 +4,7 @@
 	#include <Arduino.h> // micros(), millis()
 
 	extern "C" {
-		#include <napc-time/_private/_napc_time.h>
+		#include <libnapc-time/_private/_libnapc_time.h>
 
 		libnapc_time HAL_libnapc_getTimeSinceBoot(bool high_res) {
 			if (high_res) {

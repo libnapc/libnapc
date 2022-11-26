@@ -3,7 +3,7 @@
 
 	#include <module/parser/parser.h>
 
-	#include <napc-utils/napc-utils.h> // napc_strlen(), libnapc_strncpy(), libnapc_mzero()
+	#include <libnapc-utils/libnapc-utils.h> // libnapc_strlen(), libnapc_strncpy(), libnapc_mzero()
 	#include <string.h> // strtok_r()
 
 	libnapc_size PV_napc_parser_countOccurrences(

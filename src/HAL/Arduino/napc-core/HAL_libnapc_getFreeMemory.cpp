@@ -2,7 +2,7 @@
 
 #if defined(LIBNAPC_TARGET) && LIBNAPC_TARGET == LIBNAPC_TARGET_ARDUINO_GENERIC
 	extern "C" {
-		#include <napc-core/_private/_napc-core.h>
+		#include <libnapc-core/_private/_libnapc-core.h>
 
 		#ifdef __arm__
 			// should use uinstd.h to define sbrk but Due causes a conflict

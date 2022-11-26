@@ -6,8 +6,8 @@
 	#define NAPC_MODULE_WRITER_h
 
 	#include <libnapc-internal.h>
-	#include <napc-magic/napc-magic.h>
-	#include <napc-core/napc-core.h> // libnapc__AccessFailureMode
+	#include <libnapc-magic/libnapc-magic.h>
+	#include <libnapc-core/libnapc-core.h> // libnapc__AccessFailureMode
 
 	/*!
 	 * @name napc__Writer

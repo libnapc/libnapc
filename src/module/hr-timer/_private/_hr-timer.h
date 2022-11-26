@@ -3,5 +3,5 @@
 
 	#include <module/hr-timer/hr-timer.h>
 
-	#include <napc-time/napc-time.h> // libnapc_getTimeSinceBoot()
+	#include <libnapc-time/libnapc-time.h> // libnapc_getTimeSinceBoot()
 #endif

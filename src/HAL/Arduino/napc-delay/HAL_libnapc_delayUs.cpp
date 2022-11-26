@@ -4,7 +4,7 @@
 	#include <Arduino.h> // delayMicroseconds()
 
 	extern "C" {
-		#include <napc-delay/_private/_napc-delay.h>
+		#include <libnapc-delay/_private/_libnapc-delay.h>
 
 		void HAL_libnapc_delayUs(libnapc_time amount) {
 			delayMicroseconds(amount);

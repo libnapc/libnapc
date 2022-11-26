@@ -4,5 +4,5 @@
 	#include <module/misc/misc.h>
 	#include <module/misc/_private/_log.h>
 
-	#include <napc-serial/napc-serial.h> // napc_printf()
+	#include <libnapc-serial/libnapc-serial.h> // libnapc_printf()
 #endif

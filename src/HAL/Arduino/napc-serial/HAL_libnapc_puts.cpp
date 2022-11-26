@@ -4,7 +4,7 @@
 	#include <Arduino.h> // Serial
 
 	extern "C" {
-		#include <napc-serial/_private/_napc-serial.h>
+		#include <libnapc-serial/_private/_libnapc-serial.h>
 
 		void HAL_libnapc_puts(const char *str) {
 			Serial.print(str);

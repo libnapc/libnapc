@@ -4,7 +4,7 @@
 	#include <Arduino.h> // delay()
 
 	extern "C" {
-		#include <napc-delay/_private/_napc-delay.h>
+		#include <libnapc-delay/_private/_libnapc-delay.h>
 
 		void HAL_libnapc_delay(libnapc_time amount) {
 			delay(amount);

@@ -3,5 +3,5 @@
 
 	#include <module/pool/pool.h>
 
-	#include <napc-panic/napc-panic.h>
+	#include <libnapc-panic/libnapc-panic.h>
 #endif
