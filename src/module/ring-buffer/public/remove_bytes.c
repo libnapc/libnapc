@@ -19,7 +19,7 @@ bool napc_RingBuffer_removeBytes(napc__RingBuffer *ctx, libnapc_u8 *out, libnapc
 		libnapc_u8 *ptr = out ? &out[i] : NULL;
 
 		// this will never be true, hopefully
-		if (NAPC_UNLIKELY(!napc_RingBuffer_removeByte(ctx, ptr))) {
+		if (LIBNAPC_UNLIKELY(!napc_RingBuffer_removeByte(ctx, ptr))) {
 			return false;
 		}
 	}

@@ -5,7 +5,7 @@ void napc_Writer_setAccessFailureMode(
 ) {
 	NAPC_MAGIC_ASSERT(napc__Writer, ctx);
 
-	if (NAPC_UNLIKELY(!PV_napc_validateAccessFailureMode(mode))) {
+	if (LIBNAPC_UNLIKELY(!PV_napc_validateAccessFailureMode(mode))) {
 		LIBNAPC_PANIC("Unrecognized AccessFailureMode '%d'", mode);
 	}
 

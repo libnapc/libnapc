@@ -51,10 +51,10 @@
 	#define NAPC_ARRAY_ELEMENTS(array) (sizeof(array) / sizeof(* array))
 
 	// give compiler a hint that `expr` is likely to evaluate to 'false'
-	#define NAPC_UNLIKELY(expr) \
+	#define LIBNAPC_UNLIKELY(expr) \
 		__builtin_expect(!!(expr), 0)
 
 	// give compiler a hint that `expr` is likely to evaluate to 'true'
-	#define NAPC_LIKELY(expr) \
+	#define LIBNAPC_LIKELY(expr) \
 		__builtin_expect(!!(expr), 1)
 #endif

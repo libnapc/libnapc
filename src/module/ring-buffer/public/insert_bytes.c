@@ -16,7 +16,7 @@ bool napc_RingBuffer_insertBytes(napc__RingBuffer *ctx, const libnapc_u8 *bytes,
 
 	for (libnapc_size i = 0; i < bytes_size; ++i) {
 		// this will never be true, hopefully
-		if (NAPC_UNLIKELY(!napc_RingBuffer_insertByte(ctx, bytes[i]))) {
+		if (LIBNAPC_UNLIKELY(!napc_RingBuffer_insertByte(ctx, bytes[i]))) {
 			return false;
 		}
 	}
