@@ -8,7 +8,7 @@
 	 * 
 	 * @module Core
 	 * @type fn
-	 * @fullname napc_getTimeSinceBoot
+	 * @fullname libnapc_getTimeSinceBoot
 	 * @brief Get time since boot.
 	 * @version 2.0.0
 	 * @warning
@@ -22,7 +22,7 @@
 	 * 
 	 * @module Core
 	 * @type fn
-	 * @fullname napc_getTimeSinceBootHR
+	 * @fullname libnapc_getTimeSinceBootHR
 	 * @brief Get time since boot in microseconds.
 	 * @version 2.0.0
 	 * @warning
