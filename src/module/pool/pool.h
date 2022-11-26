@@ -90,7 +90,7 @@
 	 */
 	libnapc_ssize napc_Pool_allocate(
 		napc__Pool *pool
-	) NAPC_DEPRECATED();
+	) LIBNAPC_DEPRECATED();
 
 	/*!
 	 * @name napc_Pool_isClaimed
@@ -122,7 +122,7 @@
 	bool napc_Pool_isAllocated(
 		const napc__Pool *pool,
 		libnapc_size element_index
-	) LIBNAPC_FN_WARN_UNUSED_RET() NAPC_DEPRECATED();
+	) LIBNAPC_FN_WARN_UNUSED_RET() LIBNAPC_DEPRECATED();
 
 	/*!
 	 * @name napc_Pool_getAvailable
@@ -195,7 +195,7 @@
 	void napc_Pool_release(
 		napc__Pool *pool,
 		libnapc_size element_index
-	) NAPC_DEPRECATED();
+	) LIBNAPC_DEPRECATED();
 #endif
 
 // maybe release -> releaseElement (release is ambig)

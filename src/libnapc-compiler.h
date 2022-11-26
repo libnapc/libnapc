@@ -38,8 +38,7 @@
 	#define LIBNAPC_FN_WARN_UNUSED_RET()  __attribute__((warn_unused_result))
 	#define LIBNAPC_FN_NORETURN()         __attribute__((noreturn))
 
-	#define NAPC_DEPRECATED() \
-			__attribute__((deprecated))
+	#define LIBNAPC_DEPRECATED()          __attribute__((deprecated))
 
 	#define LIBNAPC_ARRAY_ELEMENTS(array) (sizeof(array) / sizeof(* array))
 
