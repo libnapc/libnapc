@@ -8,7 +8,7 @@
 	 * 
 	 * @module Core
 	 * @type fn
-	 * @fullname napc_puts
+	 * @fullname libnapc_puts
 	 * @brief Print a string to console/serial.
 	 * @version 2.0.0
 	 * @param str The string to be printed.
@@ -23,7 +23,7 @@
 	 * 
 	 * @module Core
 	 * @type fn
-	 * @fullname napc_putc
+	 * @fullname libnapc_putc
 	 * @brief Print a character to console/serial.
 	 * @version 2.0.0
 	 * @param ch The character to be printed.
@@ -43,7 +43,7 @@
 	 * 
 	 * @module Core
 	 * @type fn
-	 * @fullname napc_printf
+	 * @fullname libnapc_printf
 	 * @brief Print a printf()-like formatted string.
 	 * @version 2.0.0
 	 * @changelog 2.0.0 initial version
@@ -61,7 +61,7 @@
 	 * 
 	 * @module Core
 	 * @type fn
-	 * @fullname napc_mute
+	 * @fullname libnapc_mute
 	 * @brief Disable console/serial output.
 	 * @version 2.0.0
 	 * @note
@@ -85,7 +85,7 @@
 	 * 
 	 * @module Core
 	 * @type fn
-	 * @fullname napc_unmute
+	 * @fullname libnapc_unmute
 	 * @brief Enable console/serial output.
 	 * @version 2.0.0
 	 * @note
