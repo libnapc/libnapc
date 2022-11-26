@@ -17,23 +17,22 @@
 	#define LIBNAPC_FN_PRINTFLIKE(_1, _2) __attribute__((format(printf, _1, _2)))
 
 	/*!
-	 * @name NAPC_FN_WARNUNUSED_RET
-	 * @module Core
-	 * @version 1.0.0
-	 * @description
 	 * Tell the compiler to emit a warning if the return value of a function is not used.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * 
+	 * @module Core
+	 * @type macro:fn
+	 * @fullname LIBNAPC_FN_WARN_UNUSED_RET
+	 * @version 2.0.0
+	 * @changelog 2.0.0 initial version
 	 * @example
-	 * int my_function() NAPC_FN_WARNUNUSED_RET() {
+	 * int my_function() LIBNAPC_FN_WARN_UNUSED_RET() {
 	 *     return 4;
 	 * }
 	 * 
-	 * void napc_setup(const char *platform) {
+	 * int main(void) {
 	 *     my_function(); // will generate a compiler warning
-	 * }
 	 * 
-	 * bool napc_loop(libnapc_time uptime) {
-	 *     return false;
+	 *     return 0;
 	 * }
 	 */
 	#define LIBNAPC_FN_WARN_UNUSED_RET()  __attribute__((warn_unused_result))
