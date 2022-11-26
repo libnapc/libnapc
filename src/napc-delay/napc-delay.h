@@ -34,13 +34,11 @@
 	 * @fullname libnapc_delayUs
 	 * @brief Delay program execution.
 	 * @version 2.0.0
-	 * @description
 	 * @warning
 	 * This function will block execution for a set amount of time.
 	 * 
 	 * It's better to use non-blocking code, see `napc__Timer` and `napc__HRTimer`.
 	 * @param amount The amount in microseconds.
-	 * @flags hw
 	 * @changelog 2.0.0 initial version
 	 * @example
 	 * napc_printf("Hello ");
