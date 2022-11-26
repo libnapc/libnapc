@@ -10,9 +10,13 @@
 	   which may cause unwanted diagnostics in that case.  Use __typeof__
 	   and __extension__ to work around the problem, if the workaround is
 	   known to be needed.  */
-	#if 3 < __GNUC__ + (4 <= __GNUC_MINOR__)
-		#define LIBNAPC_IGNORE_VALUE(x) \
-			(__extension__ ({ __typeof__ (x) __x = (x); (void) __x; }))
+	#if defined(__GNUC__)
+		#if 3 < __GNUC__ + (4 <= __GNUC_MINOR__)
+			#define LIBNAPC_IGNORE_VALUE(x) \
+				(__extension__ ({ __typeof__ (x) __x = (x); (void) __x; }))
+		#else
+			#define LIBNAPC_IGNORE_VALUE(x) ((void) (x))
+		#endif
 	#else
 		#define LIBNAPC_IGNORE_VALUE(x) ((void) (x))
 	#endif
