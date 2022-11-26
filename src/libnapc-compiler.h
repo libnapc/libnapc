@@ -1,3 +1,6 @@
+/**
+ * This file contains macros hiding away compiler specific instructions.
+ */
 #if !defined(LIBNAPC_COMPILER_h)
 	#define LIBNAPC_COMPILER_h
 
