@@ -28,6 +28,10 @@
 		void HAL_libnapc_delayUs(libnapc_time amount);
 	// napc-delay
 
+	// napc-log
+		void HAL_libnapc_determineColorOutput(void);
+	// napc-log
+
 	// napc-core
 		libnapc_size HAL_libnapc_getFreeMemory(void) LIBNAPC_FN_WARN_UNUSED_RET();
 	// napc-core

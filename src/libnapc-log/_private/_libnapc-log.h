@@ -2,7 +2,6 @@
 	#define PV_LIBNAPC_LOG_h
 
 	#include <libnapc-log/libnapc-log.h>
-	#include <libnapc-log/HAL/HAL.h>
 
 	#include <libnapc-core/libnapc-core.h> // libnapc_getFreeMemory()
 	#include <libnapc-time/libnapc-time.h> // libnapc_getTimeSinceBoot()
