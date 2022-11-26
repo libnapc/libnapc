@@ -15,7 +15,7 @@
 	 * The value returned by this function will overflow at some point in time.
 	 * @changelog 2.0.0 initial version
 	 */
-	libnapc_time libnapc_getTimeSinceBoot(void) NAPC_FN_WARNUNUSED_RET();
+	libnapc_time libnapc_getTimeSinceBoot(void) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * Return number of microseconds that have passed since boot.
@@ -29,5 +29,5 @@
 	 * The value returned by this function will overflow at some point in time.
 	 * @changelog 2.0.0 initial version
 	 */
-	libnapc_time libnapc_getTimeSinceBootHR(void) NAPC_FN_WARNUNUSED_RET();
+	libnapc_time libnapc_getTimeSinceBootHR(void) LIBNAPC_FN_WARN_UNUSED_RET();
 #endif

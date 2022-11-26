@@ -63,7 +63,7 @@
 		const libnapc_u8 *iv,
 		const char *key,
 		void *buffer, libnapc_size buffer_size
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_aes_decrypt
@@ -83,5 +83,5 @@
 		const libnapc_u8 *iv,
 		const char *key,
 		void *buffer, libnapc_size buffer_size
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 #endif

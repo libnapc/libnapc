@@ -36,7 +36,7 @@
 	 *     return false;
 	 * }
 	 */
-	#define NAPC_FN_WARNUNUSED_RET()   __attribute__((warn_unused_result))
+	#define LIBNAPC_FN_WARN_UNUSED_RET()  __attribute__((warn_unused_result))
 	#define LIBNAPC_FN_NORETURN()         __attribute__((noreturn))
 
 	#define NAPC_DEPRECATED_WITH_MESSAGE(_message, _replacement) \

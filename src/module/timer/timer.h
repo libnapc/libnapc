@@ -104,7 +104,7 @@
 	 * Subsequent calls on the same timer will return `false`.
 	 * @changelog 2.0.0 25.03.2022 initial version
 	 */
-	bool napc_Timer_expired(napc__Timer *timer) NAPC_FN_WARNUNUSED_RET();
+	bool napc_Timer_expired(napc__Timer *timer) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_Timer_getMode
@@ -114,7 +114,7 @@
 	 * @return Returns the set timer mode.
 	 * @changelog 2.0.0 25.03.2022 initial version
 	 */
-	napc__TimerMode napc_Timer_getMode(const napc__Timer *timer) NAPC_FN_WARNUNUSED_RET();
+	napc__TimerMode napc_Timer_getMode(const napc__Timer *timer) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_Timer_restart

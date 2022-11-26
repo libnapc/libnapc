@@ -92,5 +92,5 @@
 	bool napc_misc_chunkedOperation(
 		const void *data, libnapc_size data_size, libnapc_size chunk_size,
 		napc_misc_ChunkedOperationCallback fn, void *fn_context
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 #endif

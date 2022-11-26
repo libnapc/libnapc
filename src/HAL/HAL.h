@@ -29,7 +29,7 @@
 	// napc-delay
 
 	// napc-core
-		libnapc_size HAL_libnapc_getFreeMemory(void) NAPC_FN_WARNUNUSED_RET();
+		libnapc_size HAL_libnapc_getFreeMemory(void) LIBNAPC_FN_WARN_UNUSED_RET();
 	// napc-core
 
 	#if defined(__cplusplus)

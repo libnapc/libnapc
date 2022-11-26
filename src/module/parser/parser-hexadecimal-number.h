@@ -23,7 +23,7 @@
 	bool napc_parser_parseHexadecimalNumberU8(
 		const char *string,
 		libnapc_u8 *out
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_parser_parseHexadecimalNumberU16
@@ -45,7 +45,7 @@
 	bool napc_parser_parseHexadecimalNumberU16(
 		const char *string,
 		libnapc_u16 *out
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_parser_parseHexadecimalNumberU32
@@ -67,5 +67,5 @@
 	bool napc_parser_parseHexadecimalNumberU32(
 		const char *string,
 		libnapc_u32 *out
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 #endif

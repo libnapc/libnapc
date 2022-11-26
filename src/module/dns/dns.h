@@ -58,7 +58,7 @@
 	bool napc_DNS_parseRequest(
 		napc__DNSRequest *out,
 		const void *buffer, libnapc_size buffer_size
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_DNS_parseResponse
@@ -75,7 +75,7 @@
 	bool napc_DNS_parseResponse(
 		napc__DNSResponse *out,
 		const void *buffer, libnapc_size buffer_size
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 	// idea: to support more than 4 dns answers:
 	// add *answers_out pointer for dynamic sizing of expected
 	// answers:

@@ -53,7 +53,7 @@
 	bool napc_parser_parseBoolean(
 		const char *string,
 		bool *out
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_parser_parseHexString
@@ -86,7 +86,7 @@
 		const char *string,
 		libnapc_size n_bytes,
 		libnapc_u8 *out
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_parser_parseMACAddress
@@ -117,7 +117,7 @@
 	bool napc_parser_parseMACAddress(
 		const char *string,
 		libnapc_u8 *out
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_parser_parseIPv4Address
@@ -145,8 +145,8 @@
 	 */
 	bool napc_parser_parseIPv4Address(
 		const char *string,
-		libnapc_u8 *out)
-	NAPC_FN_WARNUNUSED_RET();
+		libnapc_u8 *out
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_parser_parseKeyValue
@@ -180,5 +180,5 @@
 		const char *string,
 		char *key, libnapc_size key_len,
 		char *value, libnapc_size value_len
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 #endif

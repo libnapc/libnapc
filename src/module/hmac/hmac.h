@@ -41,5 +41,5 @@
 	bool napc_hmac_verify(
 		const char *key, const libnapc_u8 *hmac,
 		const void *buffer, libnapc_size buffer_size
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 #endif

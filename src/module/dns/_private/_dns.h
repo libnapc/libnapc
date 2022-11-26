@@ -23,17 +23,17 @@
 		// buffer for name
 		char *dest,
 		int space
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	bool PV_napc_DNS_parseQuerySection(
 		napc__DNSQuery *out,
 		napc__Reader *reader
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	bool PV_napc_DNS_parseAnswerSection(
 		napc__DNSAnswer *out,
 		napc__Reader *reader
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/**
 	 * Used as a temporary buffer when expanding

@@ -26,5 +26,5 @@
 	bool napc_sha_calculate(
 		const void *buffer, libnapc_size buffer_size,
 		char *out, libnapc_size out_size
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 #endif

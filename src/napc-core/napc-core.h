@@ -75,7 +75,7 @@
 	 * Returns the number of free bytes (on the stack) available.
 	 * @changelog 2.0.0 initial version
 	 */
-	libnapc_size libnapc_getFreeMemory(void) NAPC_FN_WARNUNUSED_RET();
+	libnapc_size libnapc_getFreeMemory(void) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * Make an assertion.

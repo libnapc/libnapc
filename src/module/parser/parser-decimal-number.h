@@ -22,7 +22,7 @@
 	 */
 	bool napc_parser_parseDecimalNumberU8(
 		const char *string, libnapc_u8 *out
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_parser_parseDecimalNumberU16
@@ -43,7 +43,7 @@
 	 */
 	bool napc_parser_parseDecimalNumberU16(
 		const char *string, libnapc_u16 *out
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_parser_parseDecimalNumberU32
@@ -64,5 +64,5 @@
 	 */
 	bool napc_parser_parseDecimalNumberU32(
 		const char *string, libnapc_u32 *out
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 #endif

@@ -140,7 +140,7 @@
 	 */
 	#define LIBNAPC_LEVEL_SECURITY    9
 
-	const char *libnapc_logLevelToString(int log_level) NAPC_FN_WARNUNUSED_RET();
+	const char *libnapc_logLevelToString(int log_level) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * Log a message with a specific priority.

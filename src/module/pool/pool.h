@@ -105,7 +105,7 @@
 	bool napc_Pool_isClaimed(
 		const napc__Pool *pool,
 		libnapc_size element_index
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_Pool_isAllocated
@@ -122,7 +122,7 @@
 	bool napc_Pool_isAllocated(
 		const napc__Pool *pool,
 		libnapc_size element_index
-	) NAPC_FN_WARNUNUSED_RET() NAPC_DEPRECATED();
+	) LIBNAPC_FN_WARN_UNUSED_RET() NAPC_DEPRECATED();
 
 	/*!
 	 * @name napc_Pool_getAvailable

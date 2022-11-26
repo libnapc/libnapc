@@ -108,7 +108,7 @@
 	 */
 	bool napc_Reader_readU8(
 		napc__Reader *ctx, libnapc_u8 *out
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_Reader_readU8Array
@@ -126,7 +126,7 @@
 		napc__Reader *ctx,
 		libnapc_size n_elements,
 		libnapc_u8 *out
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_Reader_readU16BE
@@ -152,7 +152,7 @@
 	 */
 	bool napc_Reader_readU16BE(
 		napc__Reader *ctx, libnapc_u16 *out
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_Reader_readU32BE
@@ -178,7 +178,7 @@
 	 */
 	bool napc_Reader_readU32BE(
 		napc__Reader *ctx, libnapc_u32 *out
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_Reader_readChar
@@ -193,7 +193,7 @@
 	 */
 	bool napc_Reader_readChar(
 		napc__Reader *ctx, char *out
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_Reader_readString
@@ -215,7 +215,7 @@
 		libnapc_size str_len,
 		char *out,
 		libnapc_size out_size
-	) NAPC_FN_WARNUNUSED_RET();
+	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_Reader_readLine

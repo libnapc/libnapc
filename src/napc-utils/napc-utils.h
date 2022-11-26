@@ -87,7 +87,7 @@
 	 * 
 	 * napc_printf("String's length is %" LIBNAPC_SIZE_PRINT_DEC "\n", str_length);
 	 */
-	libnapc_size libnapc_strlen(const char *str) NAPC_FN_WARNUNUSED_RET();
+	libnapc_size libnapc_strlen(const char *str) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * Perform case sensitive string comparsion.
@@ -108,7 +108,7 @@
 	 * 
 	 * napc_streql("my_string", "my_second_string"); // returns false
 	 */
-	bool libnapc_streql(const char *str1, const char *str2) NAPC_FN_WARNUNUSED_RET();
+	bool libnapc_streql(const char *str1, const char *str2) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * Perform case insensitive string comparsion.
@@ -127,7 +127,7 @@
 	 * 
 	 * napc_streqli("my_string", "my_second_string"); // returns false
 	 */
-	bool libnapc_streqli(const char *str1, const char *str2) NAPC_FN_WARNUNUSED_RET();
+	bool libnapc_streqli(const char *str1, const char *str2) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * Compare two memory regions.
@@ -152,7 +152,7 @@
 	 *     napc_printf("data1 and data2 have the same content");
 	 * }
 	 */
-	bool libnapc_memeql(const void *data1, const void *data2, libnapc_size data_size) NAPC_FN_WARNUNUSED_RET();
+	bool libnapc_memeql(const void *data1, const void *data2, libnapc_size data_size) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * Clear memory section.
