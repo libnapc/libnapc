@@ -158,12 +158,12 @@
 	 * LIBNAPC_LOG("subsystem", LIBNAPC_LEVEL_INFO, "This is a %s!", "message");
 	 */
 	#define LIBNAPC_LOG(subsys, level, fmt, ...) \
-		libnapc_logMessage(                   \
-			subsys,                           \
-			level,                            \
-			__func__,                         \
-			fmt,                              \
-			## __VA_ARGS__                    \
+		libnapc_logMessage(                      \
+			subsys,                              \
+			level,                               \
+			__func__,                            \
+			fmt,                                 \
+			## __VA_ARGS__                       \
 		)
 
 	/*!
