@@ -47,12 +47,12 @@
 	 * @return Returns the previous set default access failure mode.
 	 * @changelog 2.0.0 initial version
 	 * @example
-	 * void napc_app_setup(const char *platform) {
+	 * int main(void) {
+	 *     libnapc_init();
 	 *     // crash program on an access failure
 	 *     #if defined(DEBUG)
 	 *         libnapc_setDefaultAccessFailureMode(LIBNAPC_ACCESS_FAILURE_MODE_PANIC);
 	 *     #endif
-	 *     // init
 	 *     // ...
 	 * }
 	 */
