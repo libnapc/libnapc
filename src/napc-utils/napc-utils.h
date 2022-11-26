@@ -21,7 +21,7 @@
 	 * @example
 	 * char buffer[512];
 	 * 
-	 * napc_snprintf(buffer, sizeof(buffer), "Hello %s!", "World!");
+	 * libnapc_snprintf(buffer, sizeof(buffer), "Hello %s!", "World!");
 	 * 
 	 * // buffer now contains 'Hello World!'
 	 */
@@ -83,9 +83,9 @@
 	 * @return Returns the length of the string.
 	 * @changelog 2.0.0 initial version
 	 * @example
-	 * libnapc_size str_length = napc_strlen("Hello World!");
+	 * libnapc_size str_length = libnapc_strlen("Hello World!");
 	 * 
-	 * napc_printf("String's length is %" LIBNAPC_SIZE_PRINT_DEC "\n", str_length);
+	 * libnapc_printf("String's length is %" LIBNAPC_SIZE_PRINT_DEC "\n", str_length);
 	 */
 	libnapc_size libnapc_strlen(const char *str) LIBNAPC_FN_WARN_UNUSED_RET();
 
@@ -102,11 +102,11 @@
 	 * @return Returns `true` if `str1` and `str2` are equal in contents.
 	 * @changelog 2.0.0 initial version
 	 * @example
-	 * napc_streql("my_string", "my_string"); // returns true
+	 * libnapc_streql("my_string", "my_string"); // returns true
 	 * 
-	 * napc_streql("my_string", "mY_sTring"); // returns false
+	 * libnapc_streql("my_string", "mY_sTring"); // returns false
 	 * 
-	 * napc_streql("my_string", "my_second_string"); // returns false
+	 * libnapc_streql("my_string", "my_second_string"); // returns false
 	 */
 	bool libnapc_streql(const char *str1, const char *str2) LIBNAPC_FN_WARN_UNUSED_RET();
 
@@ -123,9 +123,9 @@
 	 * @return Returns `true` if `str1` and `str2` are equal in contents.
 	 * @changelog 2.0.0 initial version
 	 * @example
-	 * napc_streqli("my_string", "mY_sTring"); // returns true
+	 * libnapc_streqli("my_string", "mY_sTring"); // returns true
 	 * 
-	 * napc_streqli("my_string", "my_second_string"); // returns false
+	 * libnapc_streqli("my_string", "my_second_string"); // returns false
 	 */
 	bool libnapc_streqli(const char *str1, const char *str2) LIBNAPC_FN_WARN_UNUSED_RET();
 
@@ -148,8 +148,8 @@
 	 * char data1[3] = {0, 0, 7};
 	 * char data2[3] = {0, 0, 7};
 	 * 
-	 * if (napc_memeql(data1, data2, 3)) {
-	 *     napc_printf("data1 and data2 have the same content");
+	 * if (libnapc_memeql(data1, data2, 3)) {
+	 *     libnapc_printf("data1 and data2 have the same content");
 	 * }
 	 */
 	bool libnapc_memeql(const void *data1, const void *data2, libnapc_size data_size) LIBNAPC_FN_WARN_UNUSED_RET();
@@ -169,7 +169,7 @@
 	 * char buffer[512];
 	 * 
 	 * // clear data buffer
-	 * napc_mzero(buffer, sizeof(buffer));
+	 * libnapc_mzero(buffer, sizeof(buffer));
 	 */
 	void libnapc_mzero(void *data, libnapc_size data_size);
 #endif
