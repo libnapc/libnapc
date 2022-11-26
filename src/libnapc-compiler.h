@@ -42,7 +42,7 @@
 	 *     return 0;
 	 * }
 	 */
-	#define LIBNAPC_FN_WARN_UNUSED_RET()  __attribute__((warn_unused_result))
+	#define LIBNAPC_FN_WARN_UNUSED_RET() __attribute__((warn_unused_result))
 
 	/*!
 	 * Tells the compiler that a particular function will not return to its caller.
@@ -68,7 +68,7 @@
 	 *     return 0;
 	 * }
 	 */
-	#define LIBNAPC_FN_NORETURN()         __attribute__((noreturn))
+	#define LIBNAPC_FN_NORETURN() __attribute__((noreturn))
 
 	/*!
 	 * Tells the compiler to emit a warning when a function marked as deprecated is used.
@@ -87,7 +87,7 @@
 	 *     return 0;
 	 * }
 	 */
-	#define LIBNAPC_DEPRECATED()          __attribute__((deprecated))
+	#define LIBNAPC_DEPRECATED() __attribute__((deprecated))
 
 	// give compiler a hint that `expr` is likely to evaluate to 'false'
 	#define LIBNAPC_UNLIKELY(expr) __builtin_expect(!!(expr), 0)
