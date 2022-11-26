@@ -8,7 +8,7 @@
 	 * 
 	 * @module Core
 	 * @type fn
-	 * @fullname napc_delay
+	 * @fullname libnapc_delay
 	 * @brief Delay program execution.
 	 * @version 2.0.0
 	 * @warning
@@ -31,7 +31,7 @@
 	 * 
 	 * @module Core
 	 * @type fn
-	 * @fullname napc_delayUs
+	 * @fullname libnapc_delayUs
 	 * @brief Delay program execution.
 	 * @version 2.0.0
 	 * @description
