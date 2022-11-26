@@ -5,43 +5,47 @@
 	#include <inttypes.h> // PRIu8
 
 	/*!
-	 * @name napc_u8
-	 * @brief 8 bit wide unsigned integer 
-	 * @version 1.0.0
-	 * @description
 	 * Type for unsigned integers with 8 bits width.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * 
+	 * @module Core
+	 * @type type:alias
+	 * @fullname libnapc_u8
+	 * @brief 8 bit wide unsigned integer 
+	 * @version 2.0.0
+	 * @changelog 2.0.0 initial version
 	 */
 	typedef uint8_t libnapc_u8;
 
 	/*!
-	 * @name NAPC_U8_LITERAL
-	 * @module Core
-	 * @version 1.0.0
-	 * @description
 	 * Used for literal unsigned integers with 8 bits width.
-	 * @param n/a value Value
-	 * @rationale
+	 * 
+	 * @module Core
+	 * @type macro:fn
+	 * @fullname LIBNAPC_U8_LITERAL
+	 * @version 2.0.0
+	 * @param value Value
+	 * @note
 	 * This macro is only included for consistency's sake.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 * @example
-	 * napc_u8 var = NAPC_U8_LITERAL(20);
+	 * libnapc_u8 var = LIBNAPC_U8_LITERAL(20);
 	 */
 	#define LIBNAPC_U8_LITERAL(value)  UINT8_C(value)
 
 	/*!
-	 * @name NAPC_U8_PRINTF
-	 * @module Core
-	 * @version 1.0.0
-	 * @description
-	 * Format specifier for printing `napc_u8` variables.
-	 * @rationale
-	 * This macro is only included for consistency's sake.
-	 * @changelog 1.0.0 17.02.2022 initial version
-	 * @example
-	 * napc_u8 var = 1;
+	 * Format specifier for printing `libnapc_u8` variables.
 	 * 
-	 * napc_printf("var is = %" NAPC_U8_PRINTF, var);
+	 * @module Core
+	 * @type macro:var
+	 * @fullname LIBNAPC_U8_PRINT_DEC
+	 * @version 2.0.0
+	 * @note
+	 * This macro is only included for consistency's sake.
+	 * @changelog 2.0.0 initial version
+	 * @example
+	 * libnapc_u8 var = 1;
+	 * 
+	 * libnapc_printf("var is = %" LIBNAPC_U8_PRINT_DEC, var);
 	 */
 	#define LIBNAPC_U8_PRINT_DEC       PRIu8
 #endif
