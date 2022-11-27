@@ -64,7 +64,7 @@
 	 * @return Returns `true` on success, `false` otherwise.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	bool napc_DNS_parseHeader(
+	bool libnapc_DNS_parseHeader(
 		napc__DNSHeader *out,
 		const void *buffer, libnapc_size buffer_size
 	) LIBNAPC_FN_WARN_UNUSED_RET();

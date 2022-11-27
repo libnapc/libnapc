@@ -1,12 +1,12 @@
 #include <module/dns/_private/_dns.h>
 
-bool napc_DNS_parseRequest(
+bool libnapc_DNS_parseRequest(
 	napc__DNSRequest *out,
 	const void *buffer, libnapc_size buffer_size
 ) {
 	napc__DNSHeader header;
 
-	if (!napc_DNS_parseHeader(&header, buffer, buffer_size)) {
+	if (!libnapc_DNS_parseHeader(&header, buffer, buffer_size)) {
 		return false;
 	}
 

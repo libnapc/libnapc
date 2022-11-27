@@ -8,7 +8,7 @@ TEST_CASE("should work properly") {
 	napc__DNSHeader header;
 
 	TEST_ASSERT(
-		napc_DNS_parseHeader(&header, payload, sizeof(payload))
+		libnapc_DNS_parseHeader(&header, payload, sizeof(payload))
 	);
 
 	TEST_ASSERT(header.request_identifier == LIBNAPC_U16_LITERAL(0x1a67));

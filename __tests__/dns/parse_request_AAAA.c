@@ -8,7 +8,7 @@ TEST_CASE("should work properly (AAAA record)") {
 	napc__DNSRequest request;
 
 	TEST_ASSERT(
-		napc_DNS_parseRequest(&request, payload, sizeof(payload))
+		libnapc_DNS_parseRequest(&request, payload, sizeof(payload))
 	);
 
 	TEST_ASSERT(request.header.question_count == 1);

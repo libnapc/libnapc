@@ -1,6 +1,6 @@
 #include <module/dns/_private/_dns.h>
 
-bool napc_DNS_parseHeader(
+bool libnapc_DNS_parseHeader(
 	napc__DNSHeader *out,
 	const void *buffer, libnapc_size buffer_size
 ) {
