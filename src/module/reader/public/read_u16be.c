@@ -1,7 +1,7 @@
 #include <module/reader/_private/_reader.h>
 
 bool libnapc_Reader_readU16BE(
-	napc__Reader *ctx, libnapc_u16 *out
+	libnapc__Reader *ctx, libnapc_u16 *out
 ) {
 	if (!PV_libnapc_Reader_checkAccess(ctx, 2, "u16")) {
 		return false;

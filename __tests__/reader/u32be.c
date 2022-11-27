@@ -7,7 +7,7 @@ TEST_CASE("should read u32be correctly") {
 		0xe, 0xf, 0x1, 0x2,
 		0xa, 0xb
 	};
-	napc__Reader ctx;
+	libnapc__Reader ctx;
 
 	libnapc_Reader_init(&ctx, data, sizeof(data));
 
@@ -25,7 +25,7 @@ TEST_CASE("should read u32be correctly with out=NULL") {
 		0xe, 0xf, 0x1, 0x2,
 		0xa, 0xb
 	};
-	napc__Reader ctx;
+	libnapc__Reader ctx;
 
 	libnapc_Reader_init(&ctx, data, sizeof(data));
 
@@ -39,7 +39,7 @@ TEST_CASE("should read u32be correctly with out=NULL") {
 /*
 SKIP_TEST_CASE("should work correctly with a size of 0") {
 	libnapc_u8 data[5] = {0xa, 0xb, 0xc, 0xd, 0xe};
-	napc__Reader ctx;
+	libnapc__Reader ctx;
 
 	libnapc_Reader_init(&ctx, data, 0);
 

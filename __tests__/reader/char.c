@@ -3,7 +3,7 @@
 
 TEST_CASE("should read chars correctly") {
 	char data[3] = {'a', 'b', 'c'};
-	napc__Reader ctx;
+	libnapc__Reader ctx;
 
 	libnapc_Reader_init(&ctx, data, sizeof(data));
 
@@ -19,7 +19,7 @@ TEST_CASE("should read chars correctly") {
 
 TEST_CASE("should read chars correctly with out=NULL") {
 	char data[3] = {'a', 'b', 'c'};
-	napc__Reader ctx;
+	libnapc__Reader ctx;
 
 	libnapc_Reader_init(&ctx, data, sizeof(data));
 
@@ -34,7 +34,7 @@ TEST_CASE("should read chars correctly with out=NULL") {
 /*
 SKIP_TEST_CASE("should work correctly with a size of 0") {
 	char data[3] = {'a', 'b', 'c'};
-	napc__Reader ctx;
+	libnapc__Reader ctx;
 
 	libnapc_Reader_init(&ctx, data, 0);
 

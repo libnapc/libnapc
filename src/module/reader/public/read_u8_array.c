@@ -1,7 +1,7 @@
 #include <module/reader/_private/_reader.h>
 
 bool libnapc_Reader_readU8Array(
-	napc__Reader *ctx,
+	libnapc__Reader *ctx,
 	libnapc_size n_elements,
 	libnapc_u8 *out
 ) {

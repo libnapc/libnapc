@@ -3,7 +3,7 @@
 
 TEST_CASE("should read u8 array correctly") {
 	char data[5] = {'h', 'e', 'l', 'l', 'o'};
-	napc__Reader ctx;
+	libnapc__Reader ctx;
 
 	libnapc_Reader_init(&ctx, data, sizeof(data));
 
@@ -20,7 +20,7 @@ TEST_CASE("should read u8 array correctly") {
 
 TEST_CASE("should handle overflow (buffer) correctly") {
 	char data[5] = {'h', 'e', 'l', 'l', 'o'};
-	napc__Reader ctx;
+	libnapc__Reader ctx;
 
 	libnapc_Reader_init(&ctx, data, sizeof(data));
 

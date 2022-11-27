@@ -3,7 +3,7 @@
 
 TEST_CASE("should read strings correctly") {
 	char data[5] = {'h', 'e', 'l', 'l', 'o'};
-	napc__Reader ctx;
+	libnapc__Reader ctx;
 
 	libnapc_Reader_init(&ctx, data, sizeof(data));
 
@@ -20,7 +20,7 @@ TEST_CASE("should read strings correctly") {
 
 TEST_CASE("should handle overflow (buffer) correctly") {
 	char data[5] = {'h', 'e', 'l', 'l', 'o'};
-	napc__Reader ctx;
+	libnapc__Reader ctx;
 
 	libnapc_Reader_init(&ctx, data, sizeof(data));
 
@@ -30,7 +30,7 @@ TEST_CASE("should handle overflow (buffer) correctly") {
 
 TEST_CASE("should handle overflow (out) correctly") {
 	char data[5] = {'h', 'e', 'l', 'l', 'o'};
-	napc__Reader ctx;
+	libnapc__Reader ctx;
 
 	libnapc_Reader_init(&ctx, data, sizeof(data));
 

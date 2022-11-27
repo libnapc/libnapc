@@ -1,7 +1,7 @@
 #include <module/reader/_private/_reader.h>
 
 bool libnapc_Reader_readU32BE(
-	napc__Reader *ctx, libnapc_u32 *out
+	libnapc__Reader *ctx, libnapc_u32 *out
 ) {
 	if (!PV_libnapc_Reader_checkAccess(ctx, 4, "u32")) {
 		return false;

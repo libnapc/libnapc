@@ -18,7 +18,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @changelog 2.0.0 21.10.2022 add mode
 	 */
-	typedef struct napc__Reader {
+	typedef struct libnapc__Reader {
 		LIBNAPC_MAGIC_MEMBER;
 
 		libnapc__AccessFailureMode _fail_mode;
@@ -26,7 +26,7 @@
 		libnapc_size _offset;
 		libnapc_size size;
 		const void *data;
-	} napc__Reader;
+	} libnapc__Reader;
 
 	/*!
 	 * @name napc_Reader_init
@@ -45,7 +45,7 @@
 	 * napc_Reader_init(&reader, buffer, sizeof(buffer));
 	 */
 	void libnapc_Reader_init(
-		napc__Reader *ctx, const void *data, libnapc_size data_size
+		libnapc__Reader *ctx, const void *data, libnapc_size data_size
 	);
 
 	/*!
@@ -63,7 +63,7 @@
 	 * 
 	 * napc__Reader reader = napc_Reader_create(buffer, sizeof(buffer));
 	 */
-	napc__Reader libnapc_Reader_create(const void *data, libnapc_size data_size);
+	libnapc__Reader libnapc_Reader_create(const void *data, libnapc_size data_size);
 
 	/*!
 	 * @name napc_Reader_setAccessFailureMode
@@ -81,7 +81,7 @@
 	 * For more information refer to the `napc__AccessFailureMode` type.
 	 */
 	void libnapc_Reader_setAccessFailureMode(
-		napc__Reader *ctx, libnapc__AccessFailureMode mode
+		libnapc__Reader *ctx, libnapc__AccessFailureMode mode
 	);
 
 	/*!
@@ -107,7 +107,7 @@
 	 * }
 	 */
 	bool libnapc_Reader_readU8(
-		napc__Reader *ctx, libnapc_u8 *out
+		libnapc__Reader *ctx, libnapc_u8 *out
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
@@ -123,7 +123,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	bool libnapc_Reader_readU8Array(
-		napc__Reader *ctx,
+		libnapc__Reader *ctx,
 		libnapc_size n_elements,
 		libnapc_u8 *out
 	) LIBNAPC_FN_WARN_UNUSED_RET();
@@ -151,7 +151,7 @@
 	 * }
 	 */
 	bool libnapc_Reader_readU16BE(
-		napc__Reader *ctx, libnapc_u16 *out
+		libnapc__Reader *ctx, libnapc_u16 *out
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
@@ -177,7 +177,7 @@
 	 * }
 	 */
 	bool libnapc_Reader_readU32BE(
-		napc__Reader *ctx, libnapc_u32 *out
+		libnapc__Reader *ctx, libnapc_u32 *out
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
@@ -192,7 +192,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	bool libnapc_Reader_readChar(
-		napc__Reader *ctx, char *out
+		libnapc__Reader *ctx, char *out
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
@@ -211,7 +211,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	bool libnapc_Reader_readString(
-		napc__Reader *ctx,
+		libnapc__Reader *ctx,
 		libnapc_size str_len,
 		char *out,
 		libnapc_size out_size
@@ -246,7 +246,7 @@
 	 * }
 	 */
 	const char *libnapc_Reader_readLine(
-		napc__Reader *ctx, char *line_buffer, libnapc_size line_buffer_size
+		libnapc__Reader *ctx, char *line_buffer, libnapc_size line_buffer_size
 	);
 
 	/*!
@@ -258,7 +258,7 @@
 	 * @changelog 2.0.0 10.04.2022 initial version
 	 */
 	libnapc_size libnapc_Reader_getCurrentOffset(
-		const napc__Reader *ctx
+		const libnapc__Reader *ctx
 	);
 
 	/*!
@@ -270,7 +270,7 @@
 	 * @changelog 2.0.0 10.04.2022 initial version
 	 */
 	libnapc_size libnapc_Reader_getRemainingBytes(
-		const napc__Reader *ctx
+		const libnapc__Reader *ctx
 	);
 
 	/*!
@@ -282,7 +282,7 @@
 	 * @changelog 2.0.0 10.04.2022 initial version
 	 */
 	const void *libnapc_Reader_getCurrentAddress(
-		const napc__Reader *ctx
+		const libnapc__Reader *ctx
 	);
 
 	/*!
@@ -294,7 +294,7 @@
 	 * @changelog 2.0.0 10.04.2022 initial version
 	 */
 	const void *libnapc_Reader_getStartAddress(
-		const napc__Reader *ctx
+		const libnapc__Reader *ctx
 	);
 
 	/*!
@@ -306,6 +306,6 @@
 	 * @changelog 2.0.0 10.04.2022 initial version
 	 */
 	const void *libnapc_Reader_getEndAddress(
-		const napc__Reader *ctx
+		const libnapc__Reader *ctx
 	);
 #endif

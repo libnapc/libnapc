@@ -3,7 +3,7 @@
 
 TEST_CASE("should read u8 correctly") {
 	libnapc_u8 data[3] = {0xa, 0xb, 0xc};
-	napc__Reader ctx;
+	libnapc__Reader ctx;
 
 	libnapc_Reader_init(&ctx, data, sizeof(data));
 
@@ -19,7 +19,7 @@ TEST_CASE("should read u8 correctly") {
 
 TEST_CASE("should read u8 correctly with out=NULL") {
 	libnapc_u8 data[3] = {0xa, 0xb, 0xc};
-	napc__Reader ctx;
+	libnapc__Reader ctx;
 
 	libnapc_Reader_init(&ctx, data, sizeof(data));
 
@@ -34,7 +34,7 @@ TEST_CASE("should read u8 correctly with out=NULL") {
 /*
 SKIP_TEST_CASE("should work correctly with a size of 0") {
 	libnapc_u8 data[3] = {0xa, 0xb, 0xc};
-	napc__Reader ctx;
+	libnapc__Reader ctx;
 
 	libnapc_Reader_init(&ctx, data, 0);
 

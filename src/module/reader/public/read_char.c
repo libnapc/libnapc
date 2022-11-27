@@ -1,7 +1,7 @@
 #include <module/reader/_private/_reader.h>
 
 bool libnapc_Reader_readChar(
-	napc__Reader *ctx, char *out
+	libnapc__Reader *ctx, char *out
 ) {
 	if (!PV_libnapc_Reader_checkAccess(ctx, 1, "char")) {
 		return false;

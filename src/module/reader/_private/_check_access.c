@@ -1,7 +1,7 @@
 #include <module/reader/_private/_reader.h>
 
 bool PV_libnapc_Reader_checkAccess(
-	napc__Reader *ctx, libnapc_size type_size, const char *type
+	libnapc__Reader *ctx, libnapc_size type_size, const char *type
 ) {
 	LIBNAPC_MAGIC_ASSERT(napc__Reader, ctx);
 

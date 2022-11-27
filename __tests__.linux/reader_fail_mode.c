@@ -8,7 +8,7 @@ int main(int argc, const char **argv) {
 
 	libnapc_init();
 
-	napc__Reader reader = libnapc_Reader_create(buffer, sizeof(buffer));
+	libnapc__Reader reader = libnapc_Reader_create(buffer, sizeof(buffer));
 
 	libnapc_Reader_setAccessFailureMode(&reader, LIBNAPC_ACCESS_FAILURE_MODE_PANIC);
 

@@ -4,7 +4,7 @@
 TEST_CASE("should work as expected") {
 	unsigned char buffer[5];
 
-	napc__Reader reader;
+	libnapc__Reader reader;
 
 	libnapc_Reader_init(&reader, buffer, sizeof(buffer));
 

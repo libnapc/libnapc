@@ -4,7 +4,7 @@
 TEST_CASE("It should work properly") {
 	const char *input = "hello\nworld\n";
 	char line[128];
-	napc__Reader ctx;
+	libnapc__Reader ctx;
 	libnapc_Reader_init(&ctx, input, strlen(input));
 
 	TEST_ASSERT(
@@ -25,7 +25,7 @@ TEST_CASE("It should work properly") {
 TEST_CASE("It should work with a string that does not end with a new line") {
 	const char *input = "hello\nabc";
 	char line[128];
-	napc__Reader ctx;
+	libnapc__Reader ctx;
 	libnapc_Reader_init(&ctx, input, strlen(input));
 
 	TEST_ASSERT(
@@ -46,7 +46,7 @@ TEST_CASE("It should work with a string that does not end with a new line") {
 TEST_CASE("It should truncate properly") {
 	const char *input = "hello\nworld";
 	char line[3];
-	napc__Reader ctx;
+	libnapc__Reader ctx;
 	libnapc_Reader_init(&ctx, input, strlen(input));
 
 	TEST_ASSERT(
@@ -67,7 +67,7 @@ TEST_CASE("It should truncate properly") {
 TEST_CASE("It should work with empty lines in between (bug #1)") {
 	const char *input = "hello\n\n\nworld";
 	char line[128];
-	napc__Reader ctx;
+	libnapc__Reader ctx;
 	libnapc_Reader_init(&ctx, input, strlen(input));
 
 	TEST_ASSERT(

@@ -10,7 +10,7 @@ bool napc_DNS_parseRequest(
 		return false;
 	}
 
-	napc__Reader reader;
+	libnapc__Reader reader;
 	libnapc_Reader_init(&reader, buffer, buffer_size);
 
 	// skip DNS header we just read

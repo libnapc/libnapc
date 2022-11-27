@@ -2,7 +2,7 @@
 
 bool PV_napc_DNS_parseAnswerSection(
 	napc__DNSAnswer *out,
-	napc__Reader *reader
+	libnapc__Reader *reader
 ) {
 	// Read name
 	int name_length = PV_napc_DNS_dn_expand(

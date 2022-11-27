@@ -27,12 +27,12 @@
 
 	bool PV_napc_DNS_parseQuerySection(
 		napc__DNSQuery *out,
-		napc__Reader *reader
+		libnapc__Reader *reader
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	bool PV_napc_DNS_parseAnswerSection(
 		napc__DNSAnswer *out,
-		napc__Reader *reader
+		libnapc__Reader *reader
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/**
@@ -40,6 +40,4 @@
 	 * compressed dns names.
 	 */
 	extern char PV_napc_DNS_tmp_name[NAPC_MODULE_DNS_MAX_NAME]; // @global
-
-
 #endif

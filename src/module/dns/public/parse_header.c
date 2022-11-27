@@ -4,7 +4,7 @@ bool napc_DNS_parseHeader(
 	napc__DNSHeader *out,
 	const void *buffer, libnapc_size buffer_size
 ) {
-	napc__Reader reader;
+	libnapc__Reader reader;
 	libnapc_Reader_init(&reader, buffer, buffer_size);
 
 	libnapc_u16 request_identifier = 0;

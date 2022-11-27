@@ -2,7 +2,7 @@
 
 bool PV_napc_DNS_parseQuerySection(
 	napc__DNSQuery *out,
-	napc__Reader *reader
+	libnapc__Reader *reader
 ) {
 	LIBNAPC_MAGIC_ASSERT(napc__Reader, reader);
 

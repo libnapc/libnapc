@@ -1,7 +1,7 @@
 #include <module/reader/_private/_reader.h>
 
 bool libnapc_Reader_readString(
-	napc__Reader *ctx,
+	libnapc__Reader *ctx,
 	libnapc_size str_len,
 	char *out,
 	libnapc_size out_size
