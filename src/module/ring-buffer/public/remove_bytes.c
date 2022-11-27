@@ -8,7 +8,7 @@ bool libnapc_RingBuffer_removeBytes(napc__RingBuffer *ctx, libnapc_u8 *out, libn
 	if (out_size > elements_available) {
 		PV_libnapc_RingBuffer_performAccessFailureAction(
 			ctx,
-			PV_NAPC_MODULE_RINGBUFFER_ACTION_READ_BYTES
+			PV_LIBNAPC_MODULE_RINGBUFFER_ACTION_READ_BYTES
 		);
 
 		return false;

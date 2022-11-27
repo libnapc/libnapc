@@ -8,7 +8,7 @@ bool libnapc_RingBuffer_insertByte(napc__RingBuffer *ctx, libnapc_u8 byte) {
 	if (!result) {
 		PV_libnapc_RingBuffer_performAccessFailureAction(
 			ctx,
-			PV_NAPC_MODULE_RINGBUFFER_ACTION_WRITE_BYTE
+			PV_LIBNAPC_MODULE_RINGBUFFER_ACTION_WRITE_BYTE
 		);
 	}
 

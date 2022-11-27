@@ -8,7 +8,7 @@ bool libnapc_RingBuffer_insertBytes(napc__RingBuffer *ctx, const libnapc_u8 *byt
 	if (bytes_size > free_spots) {
 		PV_libnapc_RingBuffer_performAccessFailureAction(
 			ctx,
-			PV_NAPC_MODULE_RINGBUFFER_ACTION_WRITE_BYTES
+			PV_LIBNAPC_MODULE_RINGBUFFER_ACTION_WRITE_BYTES
 		);
 
 		return false;
