@@ -15,18 +15,18 @@
 	#define LIBNAPC_MAGIC_DESTROY(obj) (obj)->_init_magic = LIBNAPC_MAGIC_DESTROYED
 
 	// Used to silence -Waddress warnings
-	#define PV_NAPC_MAGIC_GET_VALUE(obj) \
+	#define PV_LIBNAPC_MAGIC_GET_VALUE(obj) \
 		((void *)(obj) != NULL ? (obj)->_init_magic : 0)
 
-	#define NAPC_MAGIC_ASSERT(type, obj)                                      \
-		do {                                                                  \
-			const libnapc_init_magic actual   = PV_NAPC_MAGIC_GET_VALUE(obj); \
-			const libnapc_init_magic expected = (NAPC_MAGIC_ ## type);        \
-			if (actual == LIBNAPC_MAGIC_DESTROYED) {                          \
-				LIBNAPC_PANIC("Attempt to use destroyed " # type);            \
-			} else if (actual != expected) {                                  \
-				LIBNAPC_PANIC("Detected uninitialized " # type);              \
-			}                                                                 \
+	#define NAPC_MAGIC_ASSERT(type, obj)                                         \
+		do {                                                                     \
+			const libnapc_init_magic actual   = PV_LIBNAPC_MAGIC_GET_VALUE(obj); \
+			const libnapc_init_magic expected = (NAPC_MAGIC_ ## type);           \
+			if (actual == LIBNAPC_MAGIC_DESTROYED) {                             \
+				LIBNAPC_PANIC("Attempt to use destroyed " # type);               \
+			} else if (actual != expected) {                                     \
+				LIBNAPC_PANIC("Detected uninitialized " # type);                 \
+			}                                                                    \
 		} while (false)
 
 	/*
