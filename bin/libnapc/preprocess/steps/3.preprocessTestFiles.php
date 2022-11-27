@@ -41,7 +41,7 @@ ORIGIN_COMMENT;
 
 				$test_case_id = $last_test_case_id + 1;
 
-				$fn_name = "PV_napc_${c_friendly_module}__testCase$test_case_id";
+				$fn_name = "PV_libnapc_${c_friendly_module}__testCase$test_case_id";
 
 				$new_file_contents .= "void $fn_name(void) {\n";
 				$new_file_contents .= "    libnapc_unmute();\n";

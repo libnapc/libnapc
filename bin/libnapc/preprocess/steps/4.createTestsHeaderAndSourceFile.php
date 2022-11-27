@@ -16,8 +16,8 @@ ORIGIN_COMMENT;
 	$file .= "#include <libnapc.h>\n";
 
 	$header_file  = $origin_comment;
-	$header_file .= "#if !defined(NAPC_ALL_TESTS_FILE_h)\n";
-	$header_file .= "    #define NAPC_ALL_TESTS_FILE_h\n\n";
+	$header_file .= "#if !defined(LIBNAPC_ALL_TESTS_FILE_h)\n";
+	$header_file .= "    #define LIBNAPC_ALL_TESTS_FILE_h\n\n";
 	$header_file .= "    #if defined(__cplusplus)\n";
 	$header_file .= "        extern \"C\" {\n";
 	$header_file .= "    #endif\n";
@@ -34,8 +34,8 @@ ORIGIN_COMMENT;
 	foreach ($modules as $module) {
 		$c_friendly_module = libnapc_preprocess_CFriendlyModuleName($module);
 
-		$file .= "void napc_${c_friendly_module}__runTests(void) {\n";
-		$header_file .= "    void napc_${c_friendly_module}__runTests(void);\n";
+		$file .= "void libnapc_${c_friendly_module}__runTests(void) {\n";
+		$header_file .= "    void libnapc_${c_friendly_module}__runTests(void);\n";
 
 		foreach ($context["tests"][$module] as $test) {
 			$file .= "    $test();";
@@ -51,13 +51,13 @@ ORIGIN_COMMENT;
 		$file .= "}\n";
 	}
 
-	$file .= "void napc_runAllTests(void) {\n";
-	$header_file .= "\n    void napc_runAllTests(void);\n";
+	$file .= "void libnapc_runAllTests(void) {\n";
+	$header_file .= "\n    void libnapc_runAllTests(void);\n";
 
 	foreach ($modules as $module) {
 		$c_friendly_module = libnapc_preprocess_CFriendlyModuleName($module);
 
-		$file .= "    napc_${c_friendly_module}__runTests();\n";
+		$file .= "    libnapc_${c_friendly_module}__runTests();\n";
 	}
 
 	$file .= "    libnapc_unmute();\n";
