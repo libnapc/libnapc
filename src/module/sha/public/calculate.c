@@ -1,6 +1,6 @@
 #include <module/sha/_private/_sha.h>
 
-bool napc_sha_calculate(
+bool libnapc_sha_calculate(
 	const void *buffer, libnapc_size buffer_size,
 	char *out, libnapc_size out_size
 ) {
