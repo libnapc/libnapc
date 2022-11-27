@@ -1,7 +1,7 @@
 #include <module/pool/_private/_pool.h>
 
-libnapc_ssize napc_Pool_claimElement(
-	napc__Pool *pool
+libnapc_ssize libnapc_Pool_claimElement(
+	libnapc__Pool *pool
 ) {
 	LIBNAPC_MAGIC_ASSERT(napc__Pool, pool);
 

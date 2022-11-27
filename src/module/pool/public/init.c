@@ -1,13 +1,13 @@
 #include <module/pool/_private/_pool.h>
 
-void napc_Pool_init(
-	napc__Pool *pool,
+void libnapc_Pool_init(
+	libnapc__Pool *pool,
 	const char *pool_label,
 	void *array_start,
 	libnapc_size num_elements,
 	libnapc_size element_size
 ) {
-	if (num_elements > NAPC_POOL_MAX) {
+	if (num_elements > LIBNAPC_POOL_MAX) {
 		LIBNAPC_PANIC("Too many entries for pool.");
 	}
 
@@ -16,7 +16,7 @@ void napc_Pool_init(
 	pool->element_size = element_size;
 	pool->array_start  = array_start;
 
-	for (libnapc_size i = 0; i < NAPC_POOL_MAX; ++i) {
+	for (libnapc_size i = 0; i < LIBNAPC_POOL_MAX; ++i) {
 		pool->elements_used[i] = false;
 	}
 

@@ -1,7 +1,7 @@
 #include <module/pool/_private/_pool.h>
 
-libnapc_size napc_Pool_getAvailable(
-	const napc__Pool *pool
+libnapc_size libnapc_Pool_getAvailable(
+	const libnapc__Pool *pool
 ) {
 	LIBNAPC_MAGIC_ASSERT(napc__Pool, pool);
 

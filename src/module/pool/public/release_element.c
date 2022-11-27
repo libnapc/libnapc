@@ -1,7 +1,7 @@
 #include <module/pool/_private/_pool.h>
 
-void napc_Pool_releaseElement(
-	napc__Pool *pool,
+void libnapc_Pool_releaseElement(
+	libnapc__Pool *pool,
 	libnapc_size element_index
 ) {
 	LIBNAPC_MAGIC_ASSERT(napc__Pool, pool);

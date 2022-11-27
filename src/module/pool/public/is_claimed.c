@@ -1,7 +1,7 @@
 #include <module/pool/_private/_pool.h>
 
-bool napc_Pool_isClaimed(
-	const napc__Pool *pool,
+bool libnapc_Pool_isClaimed(
+	const libnapc__Pool *pool,
 	libnapc_size element_index
 ) {
 	LIBNAPC_MAGIC_ASSERT(napc__Pool, pool);
