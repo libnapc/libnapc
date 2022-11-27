@@ -1,4 +1,4 @@
-/*!
+/* <-- add '!' back once ported -->
  * @name Writer:intro
  * @brief Binary buffer writer
  */
@@ -10,13 +10,12 @@
 	#include <libnapc-core/libnapc-core.h> // libnapc__AccessFailureMode
 
 	/*!
-	 * @name napc__Writer
 	 * @module Writer
+	 * @type type:opaque
+	 * @fullname libnapc__Writer
 	 * @brief Representation of a writer.
-	 * @version 1.0.0
-	 * @opaque
-	 * @changelog 1.0.0 17.02.2022 initial version
-	 * @changelog 2.0.0 21.10.2022 add mode
+	 * @version 2.0.0
+	 * @changelog 2.0.0 initial version
 	 */
 	typedef struct libnapc__Writer {
 		LIBNAPC_MAGIC_MEMBER;
@@ -29,109 +28,125 @@
 	} libnapc__Writer;
 
 	/*!
-	 * @name napc_Writer_init
+	 * Initializes a writer.
+	 * 
+	 * @module Writer
+	 * @type fn
+	 * @fullname libnapc_Writer_init
+	 * @name init
 	 * @brief Initialize a writer.
-	 * @version 1.0.0.
-	 * @description
-	 * Initialize a writer.
+	 * @version 2.0.0
 	 * @param ctx Pointer to the napc__Writer instance to be initialized.
 	 * @param data Pointer to the buffer that we want to write to.
 	 * @param data_size Size of `data`.
-	 * @changelog 1.0.0 17.02.2022 initial version
-	 * @changelog 2.0.0 21.10.2022 add mode
+	 * @changelog 2.0.0 initial version
 	 * @example
-	 * napc__Writer writer;
+	 * libnapc__Writer writer;
 	 * char buffer[512];
 	 * 
-	 * napc_Writer_init(&writer, buffer, sizeof(buffer));
+	 * libnapc_Writer_init(&writer, buffer, sizeof(buffer));
 	 */
 	void libnapc_Writer_init(
 		libnapc__Writer *ctx, void *data, libnapc_size data_size
 	);
 
 	/*!
-	 * @name napc_Writer_create
+	 * Creates a writer.
+	 * 
+	 * @module Writer
+	 * @type fn
+	 * @fullname libnapc_Writer_create
+	 * @name create
 	 * @brief Create a writer object.
-	 * @version 1.0.0.
-	 * @description
-	 * Create a writer.
+	 * @version 2.0.0
 	 * @param data Pointer to the buffer that we want to write to.
 	 * @param data_size Size of `data`.
-	 * @changelog 1.0.0 17.02.2022 initial version
-	 * @changelog 2.0.0 21.10.2022 add mode
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * char buffer[512];
 	 * 
-	 * napc__Writer writer = napc_Writer_create(buffer, sizeof(buffer));
+	 * libnapc__Writer writer = libnapc_Writer_create(buffer, sizeof(buffer));
 	 */
 	libnapc__Writer libnapc_Writer_create(void *data, libnapc_size data_size);
 
 	/*!
-	 * @name napc_Writer_setAccessFailureMode
-	 * @brief Set action to be taken on access failure.
-	 * @version 2.0.0.
-	 * @description
 	 * Sets the action to be taken when one of the `write` functions
 	 * fails (i.e. returns `false`).
 	 * 
-	 * The default is to log an error message but can be overwritten by `napc_setDefaultAccessFailureMode`.
+	 * The default is to log an error message but can be overwritten by `libnapc_setDefaultAccessFailureMode`.
+	 * 
+	 * @module Writer
+	 * @type fn
+	 * @fullname libnapc_Writer_setAccessFailureMode
+	 * @name setAccessFailureMode
+	 * @brief Set action to be taken on access failure.
+	 * @version 2.0.0
 	 * @param ctx Pointer to the napc__Writer instance.
 	 * @param mode The fail mode to set.
-	 * @changelog 2.0.0 21.10.2022 initial version
-	 * @notes
-	 * For more information refer to the `napc__AccessFailureMode` type.
+	 * @changelog 2.0.0 initial version
+	 * @note
+	 * For more information refer to the `libnapc__AccessFailureMode` type.
 	 */
 	void libnapc_Writer_setAccessFailureMode(
 		libnapc__Writer *ctx, libnapc__AccessFailureMode mode
 	);
 
 	/*!
-	 * @name napc_Writer_moveCurrentOffsetByAmount
-	 * @brief Move internal offset.
-	 * @version 1.0.0
-	 * @description
-	 * Move offset by `amount` of bytes.
+	 * Moves offset by `amount` of bytes.
 	 * A negative `offset` is permitted.
+	 * 
+	 * @module Writer
+	 * @type fn
+	 * @fullname libnapc_Writer_moveCurrentOffsetByAmount
+	 * @name moveCurrentOffsetByAmount
+	 * @brief Move internal offset.
+	 * @version 2.0.0
 	 * @param ctx Pointer to the napc__Writer instance.
 	 * @param amount The amount.
 	 * @return Returns `true` on success, otherwise `false`.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 */
 	bool libnapc_Writer_moveCurrentOffsetByAmount(
 		libnapc__Writer *ctx, libnapc_ssize amount
 	);
 
 	/*!
-	 * @name napc_Writer_resetCurrentOffset
+	 * Resets offset back to zero.
+	 * 
+	 * @module Writer
+	 * @type fn
+	 * @fullname libnapc_Writer_resetCurrentOffset
+	 * @name resetCurrentOffset
 	 * @brief Reset internal offset.
-	 * @version 1.0.0
-	 * @description
-	 * Reset offset back to zero.
+	 * @version 2.0.0
 	 * @param ctx Pointer to the napc__Writer instance.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 */
 	void libnapc_Writer_resetCurrentOffset(
 		libnapc__Writer *ctx
 	);
 
 	/*!
-	 * @name napc_Writer_writeU8
+	 * Writes the unsigned integer value `value`.
+	 * 
+	 * @module Writer
+	 * @type fn
+	 * @fullname libnapc_Writer_writeU8
+	 * @name writeU8
 	 * @brief Write an unsigned integer (8 bits).
-	 * @version 1.0.0
-	 * @description
-	 * Write the unsigned integer value `value`.
+	 * @version 2.0.0
 	 * @param ctx Pointer to the napc__Writer instance.
 	 * @param value Value to be written.
 	 * @return Returns `true` on success, otherwise `false`.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 * @example
-	 * napc__Writer writer;
+	 * libnapc__Writer writer;
 	 * char buffer[512];
 	 * 
-	 * napc_Writer_init(&writer, buffer, sizeof(buffer));
+	 * libnapc_Writer_init(&writer, buffer, sizeof(buffer));
 	 * 
-	 * napc_Writer_writeU8(&writer, 0xAA);
-	 * napc_Writer_writeU8(&writer, 0xBB);
+	 * libnapc_Writer_writeU8(&writer, 0xAA);
+	 * libnapc_Writer_writeU8(&writer, 0xBB);
 	 * 
 	 * // buffer[0] is now 0xAA
 	 * // buffer[1] is now 0xBB
@@ -141,16 +156,19 @@
 	);
 
 	/*!
-	 * @name napc_Writer_writeU8Array
+	 * Writes an array of unsigned integer values.
+	 * 
+	 * @module Writer
+	 * @type fn
+	 * @fullname libnapc_Writer_writeU8Array
+	 * @name writeU8Array
 	 * @brief Write an array unsigned integers (8 bits).
-	 * @version 1.0.0
-	 * @description
-	 * Write an array of unsigned integer values.
+	 * @version 2.0.0
 	 * @param ctx Pointer to the napc__Writer instance.
 	 * @param n_elements The number of elements in `array`.
 	 * @param array The array to be written.
 	 * @return Returns `true` on success, otherwise `false`.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 */
 	bool libnapc_Writer_writeU8Array(
 		libnapc__Writer *ctx,
@@ -159,88 +177,102 @@
 	); // needs test
 
 	/*!
-	 * @name napc_Writer_writeU16BE
+	 * Writes the 16 bit unsigned integer value `value` in big endian order.
+	 * 
+	 * @module Writer
+	 * @type fn
+	 * @fullname libnapc_Writer_writeU16BE
+	 * @name writeU16BE
 	 * @brief Write an unsigned integer (16 bits).
-	 * @version 1.0.0
-	 * @description
-	 * Write the 16 bit unsigned integer value `value` in big endian order.
+	 * @version 2.0.0
 	 * @param ctx Pointer to the napc__Writer instance.
 	 * @param value Value to be written.
 	 * @return Returns `true` on success, otherwise `false`.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 */
 	bool libnapc_Writer_writeU16BE(
 		libnapc__Writer *ctx, libnapc_u16 value
 	);
 
 	/*!
-	 * @name napc_Writer_writeU32BE
+	 * Writes the 32 bit unsigned integer value `value` in big endian order.
+	 * 
+	 * @module Writer
+	 * @type fn
+	 * @fullname libnapc_Writer_writeU32BE
+	 * @name writeU32BE
 	 * @brief Write an unsigned integer (32 bits).
-	 * @version 1.0.0
-	 * @description
-	 * Write the 32 bit unsigned integer value `value` in big endian order.
+	 * @version 2.0.0
 	 * @param ctx Pointer to the napc__Writer instance.
 	 * @param value Value to be written.
 	 * @return Returns `true` on success, otherwise `false`.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 */
 	bool libnapc_Writer_writeU32BE(
 		libnapc__Writer *ctx, libnapc_u32 value
 	);
 
 	/*!
-	 * @name napc_Writer_writeChar
-	 * @brief Write a single character.
-	 * @version 1.0.0
-	 * @description
 	 * Attempts to write the character `value`.
+	 * 
+	 * @module Writer
+	 * @type fn
+	 * @fullname libnapc_Writer_writeChar
+	 * @name writeChar
+	 * @brief Write a single character.
+	 * @version 2.0.0
 	 * @param ctx Pointer to the napc__Writer instance.
 	 * @param value Character to be written.
 	 * @return Returns `true` on success, otherwise `false`.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 */
 	bool libnapc_Writer_writeChar(
 		libnapc__Writer *ctx, char value
 	);
 
 	/*!
-	 * @name napc_Writer_writeString
+	 * Writes a string.
+	 * 
+	 * @module Writer
+	 * @type fn
+	 * @fullname libnapc_Writer_writeString
+	 * @name writeString
 	 * @brief Write a string.
-	 * @version 1.0.0
-	 * @description
-	 * Write a string.
+	 * @version 2.0.0
 	 * @param ctx Pointer to the napc__Writer instance.
 	 * @param value String to be written.
 	 * @return Returns `true` on success, otherwise `false`.
-	 * @notes
+	 * @note
 	 * No NUL-termination will be placed in the underlying buffer.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 */
 	bool libnapc_Writer_writeString(
 		libnapc__Writer *ctx, const char *value
 	);
 
 	/*!
-	 * @name napc_Writer_writeStringFormat
+	 * Writes a printf-like formatted string.
+	 * 
+	 * @module Writer
+	 * @type fn
+	 * @fullname libnapc_Writer_writeStringFormat
+	 * @name writeStringFormat
 	 * @brief Write a string format.
-	 * @version 1.0.0
-	 * @description
-	 * Write a printf-like formatted string.
+	 * @version 2.0.0
 	 * @param ctx Pointer to the napc__Writer instance.
 	 * @param fmt printf()-like format string.
-	 * @param ... Values to incorporate into string.
+	 * @variadic Values to incorporate into string.
 	 * @return Returns `true` on success, otherwise `false`.
-	 * @flags smem
-	 * @notes
+	 * @note
 	 * No NUL-termination will be placed in the underlying buffer.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 * @example
-	 * napc__Writer writer;
+	 * libnapc__Writer writer;
 	 * char buffer[512];
 	 * 
-	 * napc_Writer_init(&writer, buffer, sizeof(buffer));
+	 * libnapc_Writer_init(&writer, buffer, sizeof(buffer));
 	 * 
-	 * napc_Writer_writeStringFormat(&writer, "Hello %s!", "World!");
+	 * libnapc_Writer_writeStringFormat(&writer, "Hello %s!", "World!");
 	 * 
 	 * // the first 12 bytes of `buffer`
 	 * // now contain "Hello World!"
@@ -250,50 +282,60 @@
 	) LIBNAPC_FN_PRINTFLIKE(2, 3);
 
 	/*!
-	 * @name napc_Writer_getCurrentOffset
+	 * @module Writer
+	 * @type fn
+	 * @fullname libnapc_Writer_getCurrentOffset
+	 * @name getCurrentOffset
 	 * @brief Get internal offset.
-	 * @version 1.0.0
-	 * @description
-	 * Get buffer offset from the writer instance.
+	 * @version 2.0.0
 	 * @return Returns the current buffer offset from the writer instance.
 	 * @param ctx Pointer to the napc__Writer instance.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 */
 	libnapc_size libnapc_Writer_getCurrentOffset(
 		const libnapc__Writer *ctx
 	);
 
 	/*!
-	 * @name napc_Writer_getCurrentAddress
+	 * Returns the current address the writer is at `(data + offset)`.
+	 * 
+	 * @module Writer
+	 * @type fn
+	 * @fullname libnapc_Writer_getCurrentAddress
+	 * @name getCurrentAddress
 	 * @brief Get current address.
 	 * @version 2.0.0
-	 * @description
-	 * Returns the current address the writer is at `(data + offset)`.
-	 * @changelog 2.0.0 12.04.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 */
 	void *libnapc_Writer_getCurrentAddress(
 		const libnapc__Writer *ctx
 	);
 
 	/*!
-	 * @name napc_Writer_getStartAddress
+	 * Returns the start address.
+	 * 
+	 * @module Writer
+	 * @type fn
+	 * @fullname libnapc_Writer_getStartAddress
+	 * @name getStartAddress
 	 * @brief Get the start address.
 	 * @version 2.0.0
-	 * @description
-	 * Returns the start address.
-	 * @changelog 2.0.0 12.04.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 */
 	void *libnapc_Writer_getStartAddress(
 		const libnapc__Writer *ctx
 	);
 
 	/*!
-	 * @name napc_Writer_getEndAddress
+	 * Returns the end address `(data + (size - 1))`.
+	 * 
+	 * @module Writer
+	 * @type fn
+	 * @fullname libnapc_Writer_getEndAddress
+	 * @name getEndAddress
 	 * @brief Get the last address.
 	 * @version 2.0.0
-	 * @description
-	 * Returns the end address `(data + (size - 1))`.
-	 * @changelog 2.0.0 12.04.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 */
 	void *libnapc_Writer_getEndAddress(
 		const libnapc__Writer *ctx
