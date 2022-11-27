@@ -1,4 +1,4 @@
-/*!
+/* <-- add '!' back once ported -->
  * @name aes:intro
  * @brief Encrypt & decrypt messages
  */
@@ -8,17 +8,20 @@
 	#include <libnapc-internal.h>
 
 	/*!
-	 * @name napc_aes_encrypt
+	 * Encrypts a message with AES-256 in CBC mode.
+	 * 
+	 * @module aes
+	 * @type fn
+	 * @fullname libnapc_aes_encrypt
+	 * @name encrypt
 	 * @brief Encrypt a message with AES-256.
-	 * @version 1.0.0
-	 * @description
-	 * Encrypt a message with AES-256 in CBC mode.
+	 * @version 2.0.0
 	 * @param iv Initialization vector (16 bytes)
 	 * @param key Key in HEX format (32 bytes)
 	 * @param buffer Buffer to encrypt.
 	 * @param buffer_size Size of buffer.
 	 * @warning The input buffer must always be aligned to 16 bytes.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * char message[32];
 	 * libnapc_u8 iv[16];
@@ -66,18 +69,21 @@
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
-	 * @name napc_aes_decrypt
+	 * Decrypts a message with AES-256 in CBC mode.
+	 * 
+	 * @module aes
+	 * @type fn
+	 * @fullname libnapc_aes_decrypt
+	 * @name decrypt
 	 * @brief Decrypt a message with AES-256.
-	 * @version 1.0.0
-	 * @description
-	 * Decrypt a message with AES-256 in CBC mode.
+	 * @version 2.0.0
 	 * @param iv Initialization vector (16 bytes)
 	 * @param key Key in HEX format (32 bytes)
 	 * @param buffer Buffer to encrypt.
 	 * @param buffer_size Size of buffer.
 	 * @return Returns `true` on success, `false` otherwise.
 	 * @warning The input buffer must always be aligned to 16 bytes.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 */
 	bool napc_aes_decrypt(
 		const libnapc_u8 *iv,
