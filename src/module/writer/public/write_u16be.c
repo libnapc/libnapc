@@ -1,9 +1,9 @@
 #include <module/writer/_private/_writer.h>
 
-bool napc_Writer_writeU16BE(
+bool libnapc_Writer_writeU16BE(
 	napc__Writer *ctx, libnapc_u16 value
 ) {
-	if (!PV_napc_Writer_checkAccess(ctx, 2, "u16")) {
+	if (!PV_libnapc_Writer_checkAccess(ctx, 2, "u16")) {
 		return false;
 	}
 

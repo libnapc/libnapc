@@ -1,6 +1,6 @@
 #include <module/writer/_private/_writer.h>
 
-bool PV_napc_Writer_checkAccess(
+bool PV_libnapc_Writer_checkAccess(
 	napc__Writer *ctx, libnapc_size type_size, const char *type
 ) {
 	LIBNAPC_MAGIC_ASSERT(napc__Writer, ctx);

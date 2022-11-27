@@ -1,11 +1,11 @@
 #include <module/writer/_private/_writer.h>
 
-bool napc_Writer_writeU8Array(
+bool libnapc_Writer_writeU8Array(
 	napc__Writer *ctx,
 	libnapc_size n_elements,
 	const libnapc_u8 *array
 ) {
-	if (!PV_napc_Writer_checkAccess(ctx, n_elements, "u8_array")) {
+	if (!PV_libnapc_Writer_checkAccess(ctx, n_elements, "u8_array")) {
 		return false;
 	}
 

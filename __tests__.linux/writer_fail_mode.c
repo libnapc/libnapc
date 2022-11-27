@@ -8,16 +8,16 @@ int main(int argc, const char **argv) {
 
 	libnapc_init();
 
-	napc__Writer writer = napc_Writer_create(buffer, sizeof(buffer));
+	napc__Writer writer = libnapc_Writer_create(buffer, sizeof(buffer));
 
-	napc_Writer_setAccessFailureMode(&writer, LIBNAPC_ACCESS_FAILURE_MODE_PANIC);
+	libnapc_Writer_setAccessFailureMode(&writer, LIBNAPC_ACCESS_FAILURE_MODE_PANIC);
 
-	napc_Writer_writeU8(&writer, 10);
-	napc_Writer_writeU8(&writer, 10);
-	napc_Writer_writeU8(&writer, 10);
-	napc_Writer_writeU8(&writer, 10);
-	napc_Writer_writeU8(&writer, 10);
+	libnapc_Writer_writeU8(&writer, 10);
+	libnapc_Writer_writeU8(&writer, 10);
+	libnapc_Writer_writeU8(&writer, 10);
+	libnapc_Writer_writeU8(&writer, 10);
+	libnapc_Writer_writeU8(&writer, 10);
 
 	libnapc_printf("crash:\n");
-	napc_Writer_writeU8(&writer, 10);
+	libnapc_Writer_writeU8(&writer, 10);
 }

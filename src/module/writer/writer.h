@@ -45,7 +45,7 @@
 	 * 
 	 * napc_Writer_init(&writer, buffer, sizeof(buffer));
 	 */
-	void napc_Writer_init(
+	void libnapc_Writer_init(
 		napc__Writer *ctx, void *data, libnapc_size data_size
 	);
 
@@ -64,7 +64,7 @@
 	 * 
 	 * napc__Writer writer = napc_Writer_create(buffer, sizeof(buffer));
 	 */
-	napc__Writer napc_Writer_create(void *data, libnapc_size data_size);
+	napc__Writer libnapc_Writer_create(void *data, libnapc_size data_size);
 
 	/*!
 	 * @name napc_Writer_setAccessFailureMode
@@ -81,7 +81,7 @@
 	 * @notes
 	 * For more information refer to the `napc__AccessFailureMode` type.
 	 */
-	void napc_Writer_setAccessFailureMode(
+	void libnapc_Writer_setAccessFailureMode(
 		napc__Writer *ctx, libnapc__AccessFailureMode mode
 	);
 
@@ -97,7 +97,7 @@
 	 * @return Returns `true` on success, otherwise `false`.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	bool napc_Writer_moveCurrentOffsetByAmount(
+	bool libnapc_Writer_moveCurrentOffsetByAmount(
 		napc__Writer *ctx, libnapc_ssize amount
 	);
 
@@ -110,7 +110,7 @@
 	 * @param ctx Pointer to the napc__Writer instance.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	void napc_Writer_resetCurrentOffset(
+	void libnapc_Writer_resetCurrentOffset(
 		napc__Writer *ctx
 	);
 
@@ -136,7 +136,7 @@
 	 * // buffer[0] is now 0xAA
 	 * // buffer[1] is now 0xBB
 	 */
-	bool napc_Writer_writeU8(
+	bool libnapc_Writer_writeU8(
 		napc__Writer *ctx, libnapc_u8 value
 	);
 
@@ -152,7 +152,7 @@
 	 * @return Returns `true` on success, otherwise `false`.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	bool napc_Writer_writeU8Array(
+	bool libnapc_Writer_writeU8Array(
 		napc__Writer *ctx,
 		libnapc_size n_elements,
 		const libnapc_u8 *array
@@ -169,7 +169,7 @@
 	 * @return Returns `true` on success, otherwise `false`.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	bool napc_Writer_writeU16BE(
+	bool libnapc_Writer_writeU16BE(
 		napc__Writer *ctx, libnapc_u16 value
 	);
 
@@ -184,7 +184,7 @@
 	 * @return Returns `true` on success, otherwise `false`.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	bool napc_Writer_writeU32BE(
+	bool libnapc_Writer_writeU32BE(
 		napc__Writer *ctx, libnapc_u32 value
 	);
 
@@ -199,7 +199,7 @@
 	 * @return Returns `true` on success, otherwise `false`.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	bool napc_Writer_writeChar(
+	bool libnapc_Writer_writeChar(
 		napc__Writer *ctx, char value
 	);
 
@@ -216,7 +216,7 @@
 	 * No NUL-termination will be placed in the underlying buffer.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	bool napc_Writer_writeString(
+	bool libnapc_Writer_writeString(
 		napc__Writer *ctx, const char *value
 	);
 
@@ -245,7 +245,7 @@
 	 * // the first 12 bytes of `buffer`
 	 * // now contain "Hello World!"
 	 */
-	bool napc_Writer_writeStringFormat(
+	bool libnapc_Writer_writeStringFormat(
 		napc__Writer *ctx, const char *fmt, ...
 	) LIBNAPC_FN_PRINTFLIKE(2, 3);
 
@@ -259,7 +259,7 @@
 	 * @param ctx Pointer to the napc__Writer instance.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	libnapc_size napc_Writer_getCurrentOffset(
+	libnapc_size libnapc_Writer_getCurrentOffset(
 		const napc__Writer *ctx
 	);
 
@@ -271,7 +271,7 @@
 	 * Returns the current address the writer is at `(data + offset)`.
 	 * @changelog 2.0.0 12.04.2022 initial version
 	 */
-	void *napc_Writer_getCurrentAddress(
+	void *libnapc_Writer_getCurrentAddress(
 		const napc__Writer *ctx
 	);
 
@@ -283,7 +283,7 @@
 	 * Returns the start address.
 	 * @changelog 2.0.0 12.04.2022 initial version
 	 */
-	void *napc_Writer_getStartAddress(
+	void *libnapc_Writer_getStartAddress(
 		const napc__Writer *ctx
 	);
 
@@ -295,7 +295,7 @@
 	 * Returns the end address `(data + (size - 1))`.
 	 * @changelog 2.0.0 12.04.2022 initial version
 	 */
-	void *napc_Writer_getEndAddress(
+	void *libnapc_Writer_getEndAddress(
 		const napc__Writer *ctx
 	);
 #endif

@@ -1,9 +1,9 @@
 #include <module/writer/_private/_writer.h>
 
-bool napc_Writer_writeChar(
+bool libnapc_Writer_writeChar(
 	napc__Writer *ctx, char value
 ) {
-	if (!PV_napc_Writer_checkAccess(ctx, 1, "char")) {
+	if (!PV_libnapc_Writer_checkAccess(ctx, 1, "char")) {
 		return false;
 	}
 

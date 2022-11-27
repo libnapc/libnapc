@@ -1,11 +1,11 @@
 #include <module/writer/_private/_writer.h>
 
-bool napc_Writer_writeString(
+bool libnapc_Writer_writeString(
 	napc__Writer *ctx, const char *value
 ) {
 	libnapc_size str_len = libnapc_strlen(value);
 
-	if (!PV_napc_Writer_checkAccess(ctx, str_len, "string")) {
+	if (!PV_libnapc_Writer_checkAccess(ctx, str_len, "string")) {
 		return false;
 	}
 
