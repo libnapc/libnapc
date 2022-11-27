@@ -13,7 +13,8 @@ At the moment, the following functions are provided:
 - Core library (basic functionality, basic HAL)
 - DNS
 - Cryptographic functions (SHA256-HMAC and AES-256)
-- Buffer management (Writer, Reader)
+- Buffer management (Writer, Reader, RingBuffer)
+- Timers
 - String parsing
 
 > **Warning**
