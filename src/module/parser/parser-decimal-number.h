@@ -4,20 +4,23 @@
 	#include <libnapc-internal.h>
 
 	/*!
-	 * @name napc_parser_parseDecimalNumberU8
+	 * Parses a string containing a decimal number.
+	 * 
+	 * @module parser
+	 * @type fn
+	 * @fullname libnapc_parser_parseDecimalNumberU8
+	 * @name parseDecimalNumberU8
 	 * @brief Parse a hexadecimal number from string.
-	 * @version 1.0.0
-	 * @description
-	 * Parse a string containing a decimal number.
+	 * @version 2.0.0
 	 * @param string String to be parsed.
 	 * @param out Pointer to store the parsed number. (optional)
 	 * @return Returns `true` on success, `false` otherwise.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * libnapc_u8 out;
 	 * 
-	 * if (napc_parser_parseDecimalNumberU8("123", &out)) {
-	 *     napc_printf("Value is %d", out); // "Value is 123"
+	 * if (libnapc_parser_parseDecimalNumberU8("123", &out)) {
+	 *     libnapc_printf("Value is %d", out); // "Value is 123"
 	 * }
 	 */
 	bool libnapc_parser_parseDecimalNumberU8(
@@ -25,20 +28,23 @@
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
-	 * @name napc_parser_parseDecimalNumberU16
+	 * Parses a string containing a decimal number.
+	 * 
+	 * @module parser
+	 * @type fn
+	 * @fullname libnapc_parser_parseDecimalNumberU16
+	 * @name parseDecimalNumberU16
 	 * @brief Parse a hexadecimal number from string.
-	 * @version 1.0.0
-	 * @description
-	 * Parse a string containing a decimal number.
+	 * @version 2.0.0
 	 * @param string String to be parsed.
 	 * @param out Pointer to store the parsed number. (optional)
 	 * @return Returns `true` on success, `false` otherwise.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * libnapc_u16 out;
 	 * 
-	 * if (napc_parser_parseDecimalNumberU16("1024", &out)) {
-	 *     napc_printf("Value is %d", out); // "Value is 1024"
+	 * if (libnapc_parser_parseDecimalNumberU16("1024", &out)) {
+	 *     libnapc_printf("Value is %d", out); // "Value is 1024"
 	 * }
 	 */
 	bool libnapc_parser_parseDecimalNumberU16(
@@ -46,20 +52,23 @@
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
-	 * @name napc_parser_parseDecimalNumberU32
+	 * Parses a string containing a decimal number.
+	 * 
+	 * @module parser
+	 * @type fn
+	 * @fullname libnapc_parser_parseDecimalNumberU32
+	 * @name parseDecimalNumberU32
 	 * @brief Parse a hexadecimal number from string.
-	 * @version 1.0.0
-	 * @description
-	 * Parse a string containing a decimal number.
+	 * @version 2.0.0
 	 * @param string String to be parsed.
 	 * @param out Pointer to store the parsed number. (optional)
 	 * @return Returns `true` on success, `false` otherwise.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * libnapc_u32 out;
 	 * 
-	 * if (napc_parser_parseDecimalNumberU32("123456", &out)) {
-	 *     napc_printf("Value is %ld", out); // "Value is 123456"
+	 * if (libnapc_parser_parseDecimalNumberU32("123456", &out)) {
+	 *     libnapc_printf("Value is %ld", out); // "Value is 123456"
 	 * }
 	 */
 	bool libnapc_parser_parseDecimalNumberU32(

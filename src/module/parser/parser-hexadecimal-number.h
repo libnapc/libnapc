@@ -4,20 +4,23 @@
 	#include <libnapc-internal.h>
 
 	/*!
-	 * @name napc_parser_parseHexadecimalNumberU8
+	 * Parses a string containing a hexadecimal number.
+	 * 
+	 * @module parser
+	 * @type fn
+	 * @fullname libnapc_parser_parseHexadecimalNumberU8
+	 * @name parseHexadecimalNumberU8
 	 * @brief Parse a decimal number from string.
-	 * @version 1.0.0
-	 * @description
-	 * Parse a string containing a hexadecimal number.
+	 * @version 2.0.0
 	 * @param string String to be parsed.
 	 * @param out Pointer to store the parsed number. (optional)
 	 * @return Returns `true` on success, `false` otherwise.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * libnapc_u8 out;
 	 * 
-	 * if (napc_parser_parseHexadecimalNumberU8("ef", &out)) {
-	 *     napc_printf("Value is %ld", out); // "Value is 239"
+	 * if (libnapc_parser_parseHexadecimalNumberU8("ef", &out)) {
+	 *     libnapc_printf("Value is %ld", out); // "Value is 239"
 	 * }
 	 */
 	bool libnapc_parser_parseHexadecimalNumberU8(
@@ -26,20 +29,23 @@
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
-	 * @name napc_parser_parseHexadecimalNumberU16
+	 * Parses a string containing a hexadecimal number.
+	 * 
+	 * @module parser
+	 * @type fn
+	 * @fullname libnapc_parser_parseHexadecimalNumberU16
+	 * @name parseHexadecimalNumberU16
 	 * @brief Parse a decimal number from string.
-	 * @version 1.0.0
-	 * @description
-	 * Parse a string containing a hexadecimal number.
+	 * @version 2.0.0
 	 * @param string String to be parsed.
 	 * @param out Pointer to store the parsed number. (optional)
 	 * @return Returns `true` on success, `false` otherwise.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * libnapc_u16 out;
 	 * 
-	 * if (napc_parser_parseHexadecimalNumberU16("beef", &out)) {
-	 *     napc_printf("Value is %ld", out); // "Value is 48879"
+	 * if (libnapc_parser_parseHexadecimalNumberU16("beef", &out)) {
+	 *     libnapc_printf("Value is %ld", out); // "Value is 48879"
 	 * }
 	 */
 	bool libnapc_parser_parseHexadecimalNumberU16(
@@ -48,20 +54,23 @@
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
-	 * @name napc_parser_parseHexadecimalNumberU32
+	 * Parses a string containing a hexadecimal number.
+	 * 
+	 * @module parser
+	 * @type fn
+	 * @fullname libnapc_parser_parseHexadecimalNumberU32
+	 * @name parseHexadecimalNumberU32
 	 * @brief Parse a decimal number from string.
-	 * @version 1.0.0
-	 * @description
-	 * Parse a string containing a hexadecimal number.
+	 * @version 2.0.0
 	 * @param string String to be parsed.
 	 * @param out Pointer to store the parsed number. (optional)
 	 * @return Returns `true` on success, `false` otherwise.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * libnapc_u32 out;
 	 * 
-	 * if (napc_parser_parseHexadecimalNumberU32("deadbeef", &out)) {
-	 *     napc_printf("Value is %ld", out); // "Value is 3735928559"
+	 * if (libnapc_parser_parseHexadecimalNumberU32("deadbeef", &out)) {
+	 *     libnapc_printf("Value is %ld", out); // "Value is 3735928559"
 	 * }
 	 */
 	bool libnapc_parser_parseHexadecimalNumberU32(
