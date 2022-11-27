@@ -5,12 +5,14 @@
 	#include <inttypes.h>
 
 	/*!
-	 * @name napc_i32
-	 * @brief 32 bit wide signed integer 
-	 * @version 1.0.0
-	 * @description
 	 * Type for signed integers with 32 bits width.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * 
+	 * @module Core
+	 * @type type:alias
+	 * @fullname libnapc_i32
+	 * @brief 32 bit wide signed integer 
+	 * @version 2.0.0
+	 * @changelog 2.0.0 initial version
 	 */
 	typedef int32_t libnapc_i32;
 #endif
