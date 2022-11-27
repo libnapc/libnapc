@@ -13,6 +13,7 @@
 	 * @module hmac
 	 * @type fn
 	 * @fullname libnapc_hmac_calculate
+	 * @name calculate
 	 * @brief Calculate HMAC of a message.
 	 * @version 2.0.0
 	 * @param out Pointer to store resulting HMAC (32 bytes)
@@ -33,6 +34,7 @@
 	 * @module hmac
 	 * @type fn
 	 * @fullname libnapc_hmac_verify
+	 * @name verify
 	 * @brief Verify a message with HMAC.
 	 * @version 2.0.0
 	 * @param key Key to be used.
