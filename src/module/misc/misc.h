@@ -6,39 +6,41 @@
 	#include <string.h> // memcmp(), memcpy() etc.
 
 	/*!
-	 * @name napc_misc_printHexArray
+	 * @module Core
+	 * @type fn
+	 * @fullname libnapc_misc_printHexArray
 	 * @brief Print an array of integers
-	 * @version 1.5.0
-	 * @rationale
-	 * It's cumbersome to write a loop for printing out hex arrays.
+	 * @version 2.0.0
 	 * @param bytes Bytes array.
 	 * @param n_bytes Size of bytes array.
-	 * @changelog 1.5.0 25.03.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * libnapc_u8 array[4] = {0xde, 0xad, 0xbe, 0xef};
 	 * 
 	 * // prints deadbeef
-	 * napc_misc_printHexArray(array, sizeof(array));
+	 * libnapc_misc_printHexArray(array, sizeof(array));
 	 */
 	void napc_misc_printHexArray(const void *bytes, libnapc_size n_bytes);
 
 	/*!
-	 * @name napc_misc_shiftArrayRight
-	 * @brief Shift elements in an array.
-	 * @version 1.0.0
-	 * @description
-	 * Shift elements in `array` one element to the right discarding the last
+	 * Shifts elements in `array` one element to the right discarding the last
 	 * element in the array.
+	 * 
+	 * @module Core
+	 * @type fn
+	 * @fullname libnapc_misc_shiftArrayRight
+	 * @brief Shift elements in an array.
+	 * @version 2.0.0
 	 * @param array The array to be shifted.
 	 * @param n_elements The number of elements in `array`.
 	 * @param element_size The size (in bytes) of one element in `array`.
-	 * @notes
+	 * @note
 	 * The contents of the first element in `array` will be undefined after this operation.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * int data[5] = {1, 2, 3, 4, 5};
 	 * 
-	 * napc_misc_shiftArrayRight(data, 5, sizeof(int));
+	 * libnapc_misc_shiftArrayRight(data, 5, sizeof(int));
 	 * 
 	 * // data[0] is now undefined
 	 * // data[1] is now 1
@@ -72,22 +74,24 @@
 	);
 
 	/*!
-	 * @name napc_misc_chunkedOperation
-	 * @brief Perform an operation in chunks.
-	 * @version 1.0.0
-	 * @description
 	 * Performs an operation in chunks.
+	 * 
+	 * @module Core
+	 * @type fn
+	 * @fullname libnapc_misc_chunkedOperation
+	 * @brief Perform an operation in chunks.
+	 * @version 2.0.0
 	 * @param data Data to process.
 	 * @param data_size Size of data to process.
 	 * @param chunk_size Size of one chunk.
 	 * @param fn Callback for processing one chunk.
 	 * @param fn_context Optional context for `fn` callback.
 	 * @return Returns `true` on success, `false` otherwise.
-	 * @notes
+	 * @note
 	 * `fn` is a function with the following prototype:
 	 * 
 	 * `libnapc_ssize (const void *data, libnapc_size data_size, void *context)`
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 */
 	bool napc_misc_chunkedOperation(
 		const void *data, libnapc_size data_size, libnapc_size chunk_size,
