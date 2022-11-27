@@ -8,7 +8,7 @@
 
 	#include <module/reader/reader.h>
 
-	#define NAPC_MODULE_DNS_MAX_ANSWERS 4u
+	#define LIBNAPC_MODULE_DNS_MAX_ANSWERS 4u
 
 	/*!
 	 * @module DNS
@@ -44,7 +44,7 @@
 		// num_answers says how many elements are in the answers[] array
 		// (might be capped)
 		libnapc_size num_answers;
-		libnapc__DNSAnswer answers[NAPC_MODULE_DNS_MAX_ANSWERS];
+		libnapc__DNSAnswer answers[LIBNAPC_MODULE_DNS_MAX_ANSWERS];
 	} libnapc__DNSResponse;
 
 	/*!

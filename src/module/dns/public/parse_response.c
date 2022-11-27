@@ -35,15 +35,15 @@ bool libnapc_DNS_parseResponse(
 	libnapc_size n_answers = header.answer_count;
 
 	// cap max. answers
-	if (n_answers > NAPC_MODULE_DNS_MAX_ANSWERS) {
+	if (n_answers > LIBNAPC_MODULE_DNS_MAX_ANSWERS) {
 		PV_LIBNAPC_DNS_INFO(
 			"Response contains more than "
 			"%d answers (%" LIBNAPC_SIZE_PRINT_DEC " answers).",
-			NAPC_MODULE_DNS_MAX_ANSWERS,
+			LIBNAPC_MODULE_DNS_MAX_ANSWERS,
 			n_answers
 		);
 
-		n_answers = NAPC_MODULE_DNS_MAX_ANSWERS;
+		n_answers = LIBNAPC_MODULE_DNS_MAX_ANSWERS;
 	}
 
 	for (libnapc_size i = 0; i < n_answers; ++i) {

@@ -3,7 +3,7 @@
 
 	#include <libnapc-internal.h>
 
-	#define NAPC_MODULE_DNS_MAX_RD_DATA_LENGTH 16u
+	#define LIBNAPC_MODULE_DNS_MAX_RD_DATA_LENGTH 16u
 
 	/*!
 	 * @module DNS
@@ -20,6 +20,6 @@
 		libnapc_u32 ttl;
 
 		libnapc_u16 rd_length;
-		libnapc_u8 rd_data[NAPC_MODULE_DNS_MAX_RD_DATA_LENGTH];
+		libnapc_u8 rd_data[LIBNAPC_MODULE_DNS_MAX_RD_DATA_LENGTH];
 	} libnapc__DNSAnswer;
 #endif
