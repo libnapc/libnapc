@@ -5,7 +5,7 @@ bool napc_parser_parseMACAddress(
 	libnapc_u8 *out
 ) {
 	// Check occurrences of :
-	if (PV_napc_parser_countOccurrences(string, ':') != 5) {
+	if (PV_libnapc_parser_countOccurrences(string, ':') != 5) {
 		return false;
 	}
 
@@ -29,7 +29,7 @@ bool napc_parser_parseMACAddress(
 		// Parse octet
 		libnapc_u32 value;
 
-		if (!PV_napc_parser_parseIntegerString(octet, &value, true)) {
+		if (!PV_libnapc_parser_parseIntegerString(octet, &value, true)) {
 			return false;
 		}
 

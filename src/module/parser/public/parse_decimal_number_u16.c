@@ -6,7 +6,7 @@ bool libnapc_parser_parseDecimalNumberU16(
 ) {
 	libnapc_u32 tmp;
 
-	if (!PV_napc_parser_parseIntegerString(string, &tmp, false)) return false;
+	if (!PV_libnapc_parser_parseIntegerString(string, &tmp, false)) return false;
 
 	if (out) {
 		*out = (libnapc_u16)(tmp & 0xFFFFu);

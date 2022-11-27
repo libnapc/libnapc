@@ -1,6 +1,6 @@
 #include <module/parser/_private/_parser.h>
 
-libnapc_size PV_napc_parser_countOccurrences(
+libnapc_size PV_libnapc_parser_countOccurrences(
 	const char *string,
 	char ch
 ) {

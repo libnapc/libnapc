@@ -6,7 +6,7 @@ bool libnapc_parser_parseHexadecimalNumberU8(
 ) {
 	libnapc_u32 tmp;
 
-	if (!PV_napc_parser_parseIntegerString(string, &tmp, true)) {
+	if (!PV_libnapc_parser_parseIntegerString(string, &tmp, true)) {
 		return false;
 	}
 

@@ -19,7 +19,7 @@ static int _parseDigit(char ch, bool allowHexDigits) {
 	return -1;
 }
 
-bool PV_napc_parser_parseIntegerString(
+bool PV_libnapc_parser_parseIntegerString(
 	const char *string,
 	libnapc_u32 *out,
 	bool isHex

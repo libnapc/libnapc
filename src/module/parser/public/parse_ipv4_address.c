@@ -5,7 +5,7 @@ bool napc_parser_parseIPv4Address(
 	libnapc_u8 *out
 ) {
 	// Check occurrences of .
-	if (PV_napc_parser_countOccurrences(string, '.') != 3) {
+	if (PV_libnapc_parser_countOccurrences(string, '.') != 3) {
 		return false;
 	}
 
@@ -29,7 +29,7 @@ bool napc_parser_parseIPv4Address(
 		// Parse octet
 		libnapc_u32 value;
 
-		if (!PV_napc_parser_parseIntegerString(octet, &value, false)) {
+		if (!PV_libnapc_parser_parseIntegerString(octet, &value, false)) {
 			return false;
 		}
 
