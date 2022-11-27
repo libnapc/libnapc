@@ -11,10 +11,10 @@ bool napc_DNS_parseRequest(
 	}
 
 	napc__Reader reader;
-	napc_Reader_init(&reader, buffer, buffer_size);
+	libnapc_Reader_init(&reader, buffer, buffer_size);
 
 	// skip DNS header we just read
-	if (!napc_Reader_readU8Array(&reader, 12, NULL)) return false;
+	if (!libnapc_Reader_readU8Array(&reader, 12, NULL)) return false;
 
 	if (header.question_count != 1) {
 		PV_NAPC_DNS_WARNING(

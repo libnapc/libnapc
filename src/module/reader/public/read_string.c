@@ -1,6 +1,6 @@
 #include <module/reader/_private/_reader.h>
 
-bool napc_Reader_readString(
+bool libnapc_Reader_readString(
 	napc__Reader *ctx,
 	libnapc_size str_len,
 	char *out,
@@ -12,7 +12,7 @@ bool napc_Reader_readString(
 		);
 	}
 
-	if (!PV_napc_Reader_checkAccess(ctx, str_len, "string")) {
+	if (!PV_libnapc_Reader_checkAccess(ctx, str_len, "string")) {
 		return false;
 	} else if (((str_len + 1) > out_size) && out) {
 		PV_NAPC_READER_ERROR("Reading string would overflow buffer.");

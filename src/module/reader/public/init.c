@@ -1,6 +1,6 @@
 #include <module/reader/_private/_reader.h>
 
-void napc_Reader_init(
+void libnapc_Reader_init(
 	napc__Reader *ctx, const void *data, libnapc_size data_size
 ) {
 	if (!data_size) {

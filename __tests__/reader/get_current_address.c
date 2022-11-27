@@ -7,18 +7,18 @@ TEST_CASE("should work as expected") {
 
 	napc__Reader reader;
 
-	napc_Reader_init(&reader, buffer, sizeof(buffer));
+	libnapc_Reader_init(&reader, buffer, sizeof(buffer));
 
 	TEST_ASSERT(
-		napc_Reader_getCurrentAddress(&reader) == start
+		libnapc_Reader_getCurrentAddress(&reader) == start
 	);
 
 	// Read 3 bytes
 	LIBNAPC_IGNORE_VALUE(
-		napc_Reader_readU8Array(&reader, 3, NULL)
+		libnapc_Reader_readU8Array(&reader, 3, NULL)
 	);
 
 	TEST_ASSERT(
-		napc_Reader_getCurrentAddress(&reader) == (start + 3)
+		libnapc_Reader_getCurrentAddress(&reader) == (start + 3)
 	);
 }

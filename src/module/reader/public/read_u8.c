@@ -1,9 +1,9 @@
 #include <module/reader/_private/_reader.h>
 
-bool napc_Reader_readU8(
+bool libnapc_Reader_readU8(
 	napc__Reader *ctx, libnapc_u8 *out
 ) {
-	if (!PV_napc_Reader_checkAccess(ctx, 1, "u8")) {
+	if (!PV_libnapc_Reader_checkAccess(ctx, 1, "u8")) {
 		return false;
 	}
 

@@ -44,7 +44,7 @@
 	 * 
 	 * napc_Reader_init(&reader, buffer, sizeof(buffer));
 	 */
-	void napc_Reader_init(
+	void libnapc_Reader_init(
 		napc__Reader *ctx, const void *data, libnapc_size data_size
 	);
 
@@ -63,7 +63,7 @@
 	 * 
 	 * napc__Reader reader = napc_Reader_create(buffer, sizeof(buffer));
 	 */
-	napc__Reader napc_Reader_create(const void *data, libnapc_size data_size);
+	napc__Reader libnapc_Reader_create(const void *data, libnapc_size data_size);
 
 	/*!
 	 * @name napc_Reader_setAccessFailureMode
@@ -80,7 +80,7 @@
 	 * @notes
 	 * For more information refer to the `napc__AccessFailureMode` type.
 	 */
-	void napc_Reader_setAccessFailureMode(
+	void libnapc_Reader_setAccessFailureMode(
 		napc__Reader *ctx, libnapc__AccessFailureMode mode
 	);
 
@@ -106,7 +106,7 @@
 	 *     // out has the value '4'
 	 * }
 	 */
-	bool napc_Reader_readU8(
+	bool libnapc_Reader_readU8(
 		napc__Reader *ctx, libnapc_u8 *out
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
@@ -122,7 +122,7 @@
 	 * @return Returns `true` on success, `false` otherwise.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	bool napc_Reader_readU8Array(
+	bool libnapc_Reader_readU8Array(
 		napc__Reader *ctx,
 		libnapc_size n_elements,
 		libnapc_u8 *out
@@ -150,7 +150,7 @@
 	 *     // out has the value 772 (0x0403)
 	 * }
 	 */
-	bool napc_Reader_readU16BE(
+	bool libnapc_Reader_readU16BE(
 		napc__Reader *ctx, libnapc_u16 *out
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
@@ -176,7 +176,7 @@
 	 *     // out has the value 67305985 (0x04030201)
 	 * }
 	 */
-	bool napc_Reader_readU32BE(
+	bool libnapc_Reader_readU32BE(
 		napc__Reader *ctx, libnapc_u32 *out
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
@@ -191,7 +191,7 @@
 	 * @return Returns `true` on success, `false` otherwise.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	bool napc_Reader_readChar(
+	bool libnapc_Reader_readChar(
 		napc__Reader *ctx, char *out
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
@@ -210,7 +210,7 @@
 	 * Resulting string (that is placed in `out`) is always NUL-terminated.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	bool napc_Reader_readString(
+	bool libnapc_Reader_readString(
 		napc__Reader *ctx,
 		libnapc_size str_len,
 		char *out,
@@ -245,7 +245,7 @@
 	 *     napc_printf("Read line: %s", current_line);
 	 * }
 	 */
-	const char *napc_Reader_readLine(
+	const char *libnapc_Reader_readLine(
 		napc__Reader *ctx, char *line_buffer, libnapc_size line_buffer_size
 	);
 
@@ -257,7 +257,7 @@
 	 * Returns the current offset the reader is at.
 	 * @changelog 2.0.0 10.04.2022 initial version
 	 */
-	libnapc_size napc_Reader_getCurrentOffset(
+	libnapc_size libnapc_Reader_getCurrentOffset(
 		const napc__Reader *ctx
 	);
 
@@ -269,7 +269,7 @@
 	 * Returns the remaining bytes to be read `(size - offset)`.
 	 * @changelog 2.0.0 10.04.2022 initial version
 	 */
-	libnapc_size napc_Reader_getRemainingBytes(
+	libnapc_size libnapc_Reader_getRemainingBytes(
 		const napc__Reader *ctx
 	);
 
@@ -281,7 +281,7 @@
 	 * Returns the current address the reader is at `(data + offset)`.
 	 * @changelog 2.0.0 10.04.2022 initial version
 	 */
-	const void *napc_Reader_getCurrentAddress(
+	const void *libnapc_Reader_getCurrentAddress(
 		const napc__Reader *ctx
 	);
 
@@ -293,7 +293,7 @@
 	 * Returns the start address.
 	 * @changelog 2.0.0 10.04.2022 initial version
 	 */
-	const void *napc_Reader_getStartAddress(
+	const void *libnapc_Reader_getStartAddress(
 		const napc__Reader *ctx
 	);
 
@@ -305,7 +305,7 @@
 	 * Returns the end address `(data + (size - 1))`.
 	 * @changelog 2.0.0 10.04.2022 initial version
 	 */
-	const void *napc_Reader_getEndAddress(
+	const void *libnapc_Reader_getEndAddress(
 		const napc__Reader *ctx
 	);
 #endif

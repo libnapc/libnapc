@@ -11,10 +11,10 @@ bool napc_DNS_parseResponse(
 	}
 
 	napc__Reader reader;
-	napc_Reader_init(&reader, buffer, buffer_size);
+	libnapc_Reader_init(&reader, buffer, buffer_size);
 
 	// skip DNS header we just read
-	if (!napc_Reader_readU8Array(&reader, 12, NULL)) return false;
+	if (!libnapc_Reader_readU8Array(&reader, 12, NULL)) return false;
 
 	if (!header.answer_count) {
 		PV_NAPC_DNS_ERROR("Response contains no answer.");

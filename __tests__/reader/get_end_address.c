@@ -7,9 +7,9 @@ TEST_CASE("should work as expected") {
 
 	napc__Reader reader;
 
-	napc_Reader_init(&reader, buffer, sizeof(buffer));
+	libnapc_Reader_init(&reader, buffer, sizeof(buffer));
 
 	TEST_ASSERT(
-		napc_Reader_getEndAddress(&reader) == end
+		libnapc_Reader_getEndAddress(&reader) == end
 	);
 }

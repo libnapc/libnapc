@@ -6,27 +6,27 @@ TEST_CASE("should work as expected") {
 
 	napc__Reader reader;
 
-	napc_Reader_init(&reader, buffer, sizeof(buffer));
+	libnapc_Reader_init(&reader, buffer, sizeof(buffer));
 
 	TEST_ASSERT(
-		napc_Reader_getRemainingBytes(&reader) == 5
+		libnapc_Reader_getRemainingBytes(&reader) == 5
 	);
 
 	// Advance by 3 bytes
 	LIBNAPC_IGNORE_VALUE(
-		napc_Reader_readU8Array(&reader, 3, NULL)
+		libnapc_Reader_readU8Array(&reader, 3, NULL)
 	);
 
 	TEST_ASSERT(
-		napc_Reader_getRemainingBytes(&reader) == 2
+		libnapc_Reader_getRemainingBytes(&reader) == 2
 	);
 
 	// Advance by 2 bytes
 	LIBNAPC_IGNORE_VALUE(
-		napc_Reader_readU8Array(&reader, 2, NULL)
+		libnapc_Reader_readU8Array(&reader, 2, NULL)
 	);
 
 	TEST_ASSERT(
-		napc_Reader_getRemainingBytes(&reader) == 0
+		libnapc_Reader_getRemainingBytes(&reader) == 0
 	);
 }

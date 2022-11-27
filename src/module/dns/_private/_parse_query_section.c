@@ -11,9 +11,9 @@ bool PV_napc_DNS_parseQuerySection(
 		// start of buffer
 		reader->data,
 		// end of buffer
-		napc_Reader_getEndAddress(reader),
+		libnapc_Reader_getEndAddress(reader),
 		// pointer to ''compressed'' domain name
-		napc_Reader_getCurrentAddress(reader),
+		libnapc_Reader_getCurrentAddress(reader),
 		PV_napc_DNS_tmp_name,
 		sizeof(PV_napc_DNS_tmp_name)
 	);
@@ -25,7 +25,7 @@ bool PV_napc_DNS_parseQuerySection(
 	}
 
 	// Advance reader by name_length bytes
-	if (!napc_Reader_readU8Array(reader, name_length, NULL)) {
+	if (!libnapc_Reader_readU8Array(reader, name_length, NULL)) {
 		return false;
 	}
 
@@ -33,11 +33,11 @@ bool PV_napc_DNS_parseQuerySection(
 	libnapc_u16 qclass = 0;
 
 	// Read QType
-	if (!napc_Reader_readU16BE(reader, &qtype)) {
+	if (!libnapc_Reader_readU16BE(reader, &qtype)) {
 		return false;
 	}
 	// Read QClass
-	if (!napc_Reader_readU16BE(reader, &qclass)) {
+	if (!libnapc_Reader_readU16BE(reader, &qclass)) {
 		return false;
 	}
 

@@ -1,6 +1,6 @@
 #include <module/reader/_private/_reader.h>
 
-void napc_Reader_setAccessFailureMode(
+void libnapc_Reader_setAccessFailureMode(
 	napc__Reader *ctx, libnapc__AccessFailureMode mode
 ) {
 	LIBNAPC_MAGIC_ASSERT(napc__Reader, ctx);
