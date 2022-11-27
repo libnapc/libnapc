@@ -17,7 +17,7 @@ bool libnapc_DNS_parseRequest(
 	if (!libnapc_Reader_readU8Array(&reader, 12, NULL)) return false;
 
 	if (header.question_count != 1) {
-		PV_NAPC_DNS_WARNING(
+		PV_LIBNAPC_DNS_WARNING(
 			"Request contains other than 1 question (%d questions).", header.question_count
 		);
 

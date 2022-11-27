@@ -42,7 +42,7 @@ bool PV_libnapc_DNS_parseAnswerSection(
 
 	// Reject rd_length > 16
 	if (rd_length > sizeof(out->rd_data)) {
-		PV_NAPC_DNS_ERROR(
+		PV_LIBNAPC_DNS_ERROR(
 			"RD-Data (length=%d) is larger than %d bytes.",
 			rd_length,
 			(int)sizeof(out->rd_data)

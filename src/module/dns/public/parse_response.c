@@ -17,11 +17,11 @@ bool libnapc_DNS_parseResponse(
 	if (!libnapc_Reader_readU8Array(&reader, 12, NULL)) return false;
 
 	if (!header.answer_count) {
-		PV_NAPC_DNS_ERROR("Response contains no answer.");
+		PV_LIBNAPC_DNS_ERROR("Response contains no answer.");
 
 		return false;
 	} else if (header.question_count != 1) {
-		PV_NAPC_DNS_WARNING(
+		PV_LIBNAPC_DNS_WARNING(
 			"Response contains other than 1 question (%d questions).",
 			header.question_count
 		);
@@ -36,7 +36,7 @@ bool libnapc_DNS_parseResponse(
 
 	// cap max. answers
 	if (n_answers > NAPC_MODULE_DNS_MAX_ANSWERS) {
-		PV_NAPC_DNS_INFO(
+		PV_LIBNAPC_DNS_INFO(
 			"Response contains more than "
 			"%d answers (%" LIBNAPC_SIZE_PRINT_DEC " answers).",
 			NAPC_MODULE_DNS_MAX_ANSWERS,

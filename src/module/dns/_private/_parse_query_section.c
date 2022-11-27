@@ -19,7 +19,7 @@ bool PV_libnapc_DNS_parseQuerySection(
 	);
 
 	if (0 >= name_length) {
-		PV_NAPC_DNS_ERROR("Invalid name_length %d.", name_length);
+		PV_LIBNAPC_DNS_ERROR("Invalid name_length %d.", name_length);
 
 		return false;
 	}
@@ -42,7 +42,7 @@ bool PV_libnapc_DNS_parseQuerySection(
 	}
 
 	if (qclass != 1) {
-		PV_NAPC_DNS_WARNING("Invalid QClass %d. (expected 1)", qclass);
+		PV_LIBNAPC_DNS_WARNING("Invalid QClass %d. (expected 1)", qclass);
 
 		return false;
 	}
