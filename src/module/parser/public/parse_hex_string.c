@@ -1,6 +1,6 @@
 #include <module/parser/_private/_parser.h>
 
-bool napc_parser_parseHexString(
+bool libnapc_parser_parseHexString(
 	const char *string,
 	libnapc_size n_bytes,
 	libnapc_u8 *out

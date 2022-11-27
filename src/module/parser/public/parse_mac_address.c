@@ -1,6 +1,6 @@
 #include <module/parser/_private/_parser.h>
 
-bool napc_parser_parseMACAddress(
+bool libnapc_parser_parseMACAddress(
 	const char *string,
 	libnapc_u8 *out
 ) {

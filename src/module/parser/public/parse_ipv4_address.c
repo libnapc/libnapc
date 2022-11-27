@@ -1,6 +1,6 @@
 #include <module/parser/_private/_parser.h>
 
-bool napc_parser_parseIPv4Address(
+bool libnapc_parser_parseIPv4Address(
 	const char *string,
 	libnapc_u8 *out
 ) {

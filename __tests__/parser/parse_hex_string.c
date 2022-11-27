@@ -5,7 +5,7 @@ TEST_CASE("It should work properly") {
 	libnapc_u8 out[16];
 
 	TEST_ASSERT(
-		napc_parser_parseHexString("1e49863fc6ac554156095950f49098b4", 16, out)
+		libnapc_parser_parseHexString("1e49863fc6ac554156095950f49098b4", 16, out)
 	);
 
 	const libnapc_u8 expected[16] = {

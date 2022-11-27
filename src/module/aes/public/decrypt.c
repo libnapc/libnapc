@@ -13,7 +13,7 @@ bool napc_aes_decrypt(
 	}
 
 	if (
-		!napc_parser_parseHexString(key, sizeof(key_bytes), key_bytes)
+		!libnapc_parser_parseHexString(key, sizeof(key_bytes), key_bytes)
 	) {
 		libnapc_mzero(key_bytes, sizeof(key_bytes));
 

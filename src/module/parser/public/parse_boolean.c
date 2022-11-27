@@ -1,6 +1,6 @@
 #include <module/parser/_private/_parser.h>
 
-bool napc_parser_parseBoolean(
+bool libnapc_parser_parseBoolean(
 	const char *string,
 	bool *out
 ) {

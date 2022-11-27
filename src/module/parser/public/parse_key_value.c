@@ -1,6 +1,6 @@
 #include <module/parser/_private/_parser.h>
 
-bool napc_parser_parseKeyValue(
+bool libnapc_parser_parseKeyValue(
 	const char *string,
 	char *key, libnapc_size key_len,
 	char *value, libnapc_size value_len
