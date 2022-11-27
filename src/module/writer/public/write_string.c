@@ -1,7 +1,7 @@
 #include <module/writer/_private/_writer.h>
 
 bool libnapc_Writer_writeString(
-	napc__Writer *ctx, const char *value
+	libnapc__Writer *ctx, const char *value
 ) {
 	libnapc_size str_len = libnapc_strlen(value);
 

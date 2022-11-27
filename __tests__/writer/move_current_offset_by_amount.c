@@ -4,7 +4,7 @@
 TEST_CASE("should work correctly") {
 	libnapc_u8 buffer[6] = {'a', 'b', 'c', 'd', 'e', 'f'};
 
-	napc__Writer ctx;
+	libnapc__Writer ctx;
 	libnapc_Writer_init(&ctx, buffer, sizeof(buffer));
 
 	// shoud fail

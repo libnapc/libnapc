@@ -3,7 +3,7 @@
 
 TEST_CASE("should write u8 correctly") {
 	libnapc_u8 data[4] = {0, 0, 0, 0xa};
-	napc__Writer ctx;
+	libnapc__Writer ctx;
 
 	libnapc_Writer_init(&ctx, data, sizeof(data));
 

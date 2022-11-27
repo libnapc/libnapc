@@ -6,7 +6,7 @@ TEST_CASE("should work as expected") {
 	unsigned char *start = buffer;
 	libnapc_u8 dummy_data[3] = {1,2,3};
 
-	napc__Writer writer = libnapc_Writer_create(buffer, sizeof(buffer));
+	libnapc__Writer writer = libnapc_Writer_create(buffer, sizeof(buffer));
 
 	TEST_ASSERT(
 		libnapc_Writer_getCurrentAddress(&writer) == start

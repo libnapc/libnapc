@@ -1,7 +1,7 @@
 #include <module/writer/_private/_writer.h>
 
 libnapc_size libnapc_Writer_getCurrentOffset(
-	const napc__Writer *ctx
+	const libnapc__Writer *ctx
 ) {
 	LIBNAPC_MAGIC_ASSERT(napc__Writer, ctx);
 

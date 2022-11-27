@@ -18,7 +18,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @changelog 2.0.0 21.10.2022 add mode
 	 */
-	typedef struct napc__Writer {
+	typedef struct libnapc__Writer {
 		LIBNAPC_MAGIC_MEMBER;
 
 		libnapc__AccessFailureMode _fail_mode;
@@ -26,7 +26,7 @@
 		libnapc_size _offset;
 		libnapc_size size;
 		void *data;
-	} napc__Writer;
+	} libnapc__Writer;
 
 	/*!
 	 * @name napc_Writer_init
@@ -46,7 +46,7 @@
 	 * napc_Writer_init(&writer, buffer, sizeof(buffer));
 	 */
 	void libnapc_Writer_init(
-		napc__Writer *ctx, void *data, libnapc_size data_size
+		libnapc__Writer *ctx, void *data, libnapc_size data_size
 	);
 
 	/*!
@@ -64,7 +64,7 @@
 	 * 
 	 * napc__Writer writer = napc_Writer_create(buffer, sizeof(buffer));
 	 */
-	napc__Writer libnapc_Writer_create(void *data, libnapc_size data_size);
+	libnapc__Writer libnapc_Writer_create(void *data, libnapc_size data_size);
 
 	/*!
 	 * @name napc_Writer_setAccessFailureMode
@@ -82,7 +82,7 @@
 	 * For more information refer to the `napc__AccessFailureMode` type.
 	 */
 	void libnapc_Writer_setAccessFailureMode(
-		napc__Writer *ctx, libnapc__AccessFailureMode mode
+		libnapc__Writer *ctx, libnapc__AccessFailureMode mode
 	);
 
 	/*!
@@ -98,7 +98,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	bool libnapc_Writer_moveCurrentOffsetByAmount(
-		napc__Writer *ctx, libnapc_ssize amount
+		libnapc__Writer *ctx, libnapc_ssize amount
 	);
 
 	/*!
@@ -111,7 +111,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	void libnapc_Writer_resetCurrentOffset(
-		napc__Writer *ctx
+		libnapc__Writer *ctx
 	);
 
 	/*!
@@ -137,7 +137,7 @@
 	 * // buffer[1] is now 0xBB
 	 */
 	bool libnapc_Writer_writeU8(
-		napc__Writer *ctx, libnapc_u8 value
+		libnapc__Writer *ctx, libnapc_u8 value
 	);
 
 	/*!
@@ -153,7 +153,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	bool libnapc_Writer_writeU8Array(
-		napc__Writer *ctx,
+		libnapc__Writer *ctx,
 		libnapc_size n_elements,
 		const libnapc_u8 *array
 	); // needs test
@@ -170,7 +170,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	bool libnapc_Writer_writeU16BE(
-		napc__Writer *ctx, libnapc_u16 value
+		libnapc__Writer *ctx, libnapc_u16 value
 	);
 
 	/*!
@@ -185,7 +185,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	bool libnapc_Writer_writeU32BE(
-		napc__Writer *ctx, libnapc_u32 value
+		libnapc__Writer *ctx, libnapc_u32 value
 	);
 
 	/*!
@@ -200,7 +200,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	bool libnapc_Writer_writeChar(
-		napc__Writer *ctx, char value
+		libnapc__Writer *ctx, char value
 	);
 
 	/*!
@@ -217,7 +217,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	bool libnapc_Writer_writeString(
-		napc__Writer *ctx, const char *value
+		libnapc__Writer *ctx, const char *value
 	);
 
 	/*!
@@ -246,7 +246,7 @@
 	 * // now contain "Hello World!"
 	 */
 	bool libnapc_Writer_writeStringFormat(
-		napc__Writer *ctx, const char *fmt, ...
+		libnapc__Writer *ctx, const char *fmt, ...
 	) LIBNAPC_FN_PRINTFLIKE(2, 3);
 
 	/*!
@@ -260,7 +260,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	libnapc_size libnapc_Writer_getCurrentOffset(
-		const napc__Writer *ctx
+		const libnapc__Writer *ctx
 	);
 
 	/*!
@@ -272,7 +272,7 @@
 	 * @changelog 2.0.0 12.04.2022 initial version
 	 */
 	void *libnapc_Writer_getCurrentAddress(
-		const napc__Writer *ctx
+		const libnapc__Writer *ctx
 	);
 
 	/*!
@@ -284,7 +284,7 @@
 	 * @changelog 2.0.0 12.04.2022 initial version
 	 */
 	void *libnapc_Writer_getStartAddress(
-		const napc__Writer *ctx
+		const libnapc__Writer *ctx
 	);
 
 	/*!
@@ -296,6 +296,6 @@
 	 * @changelog 2.0.0 12.04.2022 initial version
 	 */
 	void *libnapc_Writer_getEndAddress(
-		const napc__Writer *ctx
+		const libnapc__Writer *ctx
 	);
 #endif

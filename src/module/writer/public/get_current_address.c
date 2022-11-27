@@ -1,7 +1,7 @@
 #include <module/writer/_private/_writer.h>
 
 void *libnapc_Writer_getCurrentAddress(
-	const napc__Writer *ctx
+	const libnapc__Writer *ctx
 ) {
 	LIBNAPC_MAGIC_ASSERT(napc__Writer, ctx);
 

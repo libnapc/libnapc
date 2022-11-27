@@ -1,7 +1,7 @@
 #include <module/writer/_private/_writer.h>
 
 bool libnapc_Writer_moveCurrentOffsetByAmount(
-	napc__Writer *ctx, libnapc_ssize amount
+	libnapc__Writer *ctx, libnapc_ssize amount
 ) {
 	LIBNAPC_MAGIC_ASSERT(napc__Writer, ctx);
 

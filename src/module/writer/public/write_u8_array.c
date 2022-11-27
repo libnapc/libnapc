@@ -1,7 +1,7 @@
 #include <module/writer/_private/_writer.h>
 
 bool libnapc_Writer_writeU8Array(
-	napc__Writer *ctx,
+	libnapc__Writer *ctx,
 	libnapc_size n_elements,
 	const libnapc_u8 *array
 ) {

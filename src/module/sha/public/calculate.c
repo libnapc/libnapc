@@ -17,7 +17,7 @@ bool napc_sha_calculate(
 		&digest
 	);
 
-	napc__Writer writer = libnapc_Writer_create(out, out_size);
+	libnapc__Writer writer = libnapc_Writer_create(out, out_size);
 
 	for (libnapc_size i = 0; i < 32; ++i) {
 		libnapc_u8 byte = digest.bytes[i];

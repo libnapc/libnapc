@@ -8,7 +8,7 @@ int main(int argc, const char **argv) {
 
 	libnapc_init();
 
-	napc__Writer writer = libnapc_Writer_create(buffer, sizeof(buffer));
+	libnapc__Writer writer = libnapc_Writer_create(buffer, sizeof(buffer));
 
 	libnapc_Writer_setAccessFailureMode(&writer, LIBNAPC_ACCESS_FAILURE_MODE_PANIC);
 

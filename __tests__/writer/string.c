@@ -3,7 +3,7 @@
 
 TEST_CASE("should write strings correctly") {
 	char data[6] = {1, 2, 3, 4, 5, 6};
-	napc__Writer ctx;
+	libnapc__Writer ctx;
 
 	libnapc_Writer_init(&ctx, data, sizeof(data));
 
