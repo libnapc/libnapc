@@ -89,9 +89,9 @@
 	 * @version 2.0.0
 	 * @param dest Pointer to destination.
 	 * @param source Source.
-	 * @todo make source a pointer too and add const?
 	 * @changelog 2.0.0 initial version
 	 */
+	// todo: make source a pointer too and add const?
 	void libnapc_IPv4Participant_copy(
 		libnapc__IPv4Participant *dest,
 		libnapc__IPv4Participant source
