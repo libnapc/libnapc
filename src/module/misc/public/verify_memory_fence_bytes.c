@@ -1,6 +1,6 @@
 #include <module/misc/_private/_misc.h>
 
-bool napc_misc_verifyMemoryFenceBytes(
+bool libnapc_misc_verifyMemoryFenceBytes(
 	unsigned char *buffer, libnapc_size buffer_size,
 	libnapc_size memory_fence_size, libnapc_u8 fence_value
 ) {

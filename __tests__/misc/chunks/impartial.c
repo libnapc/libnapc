@@ -13,7 +13,7 @@ TEST_CASE("should return false on impartial operation") {
 	libnapc_u8 data[64];
 
 	TEST_ASSERT(
-		!napc_misc_chunkedOperation(
+		!libnapc_misc_chunkedOperation(
 			data, sizeof(data), 32, _readFunction, NULL
 		)
 	);

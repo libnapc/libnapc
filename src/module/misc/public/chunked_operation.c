@@ -1,6 +1,6 @@
 #include <module/misc/_private/_misc.h>
 
-bool napc_misc_chunkedOperation(
+bool libnapc_misc_chunkedOperation(
 	const void *data, libnapc_size data_size, libnapc_size chunk_size,
 	napc_misc_ChunkedOperationCallback fn, void *fn_context
 ) {

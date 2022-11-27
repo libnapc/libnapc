@@ -18,7 +18,7 @@ TEST_CASE("should work properly") {
 	array[2].value1 = 0x03ceul;
 	array[3].value1 = 0x04eeul;
 
-	napc_misc_shiftArrayRight(array, 4, sizeof(struct test_element));
+	libnapc_misc_shiftArrayRight(array, 4, sizeof(struct test_element));
 
 	TEST_ASSERT(
 		strcmp(array[1].str, "str at index 0") == 0

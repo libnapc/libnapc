@@ -20,7 +20,7 @@
 	 * // prints deadbeef
 	 * libnapc_misc_printHexArray(array, sizeof(array));
 	 */
-	void napc_misc_printHexArray(const void *bytes, libnapc_size n_bytes);
+	void libnapc_misc_printHexArray(const void *bytes, libnapc_size n_bytes);
 
 	/*!
 	 * Shifts elements in `array` one element to the right discarding the last
@@ -48,7 +48,7 @@
 	 * // data[3] is now 3
 	 * // data[4] is now 4
 	 */
-	void napc_misc_shiftArrayRight(
+	void libnapc_misc_shiftArrayRight(
 		void *array, libnapc_size n_elements, libnapc_size element_size
 	);
 
@@ -56,12 +56,12 @@
 	 * Memory fences
 	 * To detect buffer over and underflows.
 	 */
-	void napc_misc_setMemoryFenceBytes(
+	void libnapc_misc_setMemoryFenceBytes(
 		unsigned char *buffer, libnapc_size buffer_size,
 		libnapc_size memory_fence_size, libnapc_u8 fence_value
 	);
 
-	bool napc_misc_verifyMemoryFenceBytes(
+	bool libnapc_misc_verifyMemoryFenceBytes(
 		unsigned char *buffer, libnapc_size buffer_size,
 		libnapc_size memory_fence_size, libnapc_u8 fence_value
 	);
@@ -93,7 +93,7 @@
 	 * `libnapc_ssize (const void *data, libnapc_size data_size, void *context)`
 	 * @changelog 2.0.0 initial version
 	 */
-	bool napc_misc_chunkedOperation(
+	bool libnapc_misc_chunkedOperation(
 		const void *data, libnapc_size data_size, libnapc_size chunk_size,
 		napc_misc_ChunkedOperationCallback fn, void *fn_context
 	) LIBNAPC_FN_WARN_UNUSED_RET();
