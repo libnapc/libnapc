@@ -17,7 +17,7 @@ void PV_libnapc_RingBuffer_performAccessFailureAction(
 					"Read operation failed (READ_BYTE) and fail mode is set to LIBNAPC_ACCESS_FAILURE_MODE_PANIC."
 				);
 			} else {
-				PV_NAPC_RINGBUFFER_ERROR(
+				PV_LIBNAPC_RINGBUFFER_ERROR(
 					"Refusing to read byte from empty buffer. " PV_NAPC_MODULE_RINGBUFFER_DEBUG_PRINT_STATEMENT,
 					PV_NAPC_MODULE_RINGBUFFER_DEBUG_PRINT_VARIABLES
 				);
@@ -30,7 +30,7 @@ void PV_libnapc_RingBuffer_performAccessFailureAction(
 					"Read operation failed (READ_BYTES) and fail mode is set to LIBNAPC_ACCESS_FAILURE_MODE_PANIC."
 				);
 			} else {
-				PV_NAPC_RINGBUFFER_ERROR(
+				PV_LIBNAPC_RINGBUFFER_ERROR(
 					"Refusing to read bytes from buffer, not enough bytes readable in buffer." PV_NAPC_MODULE_RINGBUFFER_DEBUG_PRINT_STATEMENT,
 					PV_NAPC_MODULE_RINGBUFFER_DEBUG_PRINT_VARIABLES
 				);
@@ -43,7 +43,7 @@ void PV_libnapc_RingBuffer_performAccessFailureAction(
 					"Insert operation (WRITE_BYTE) failed and fail mode is set to LIBNAPC_ACCESS_FAILURE_MODE_PANIC."
 				);
 			} else {
-				PV_NAPC_RINGBUFFER_ERROR(
+				PV_LIBNAPC_RINGBUFFER_ERROR(
 					"Refusing to insert byte into full buffer. " PV_NAPC_MODULE_RINGBUFFER_DEBUG_PRINT_STATEMENT,
 					PV_NAPC_MODULE_RINGBUFFER_DEBUG_PRINT_VARIABLES
 				);
@@ -56,7 +56,7 @@ void PV_libnapc_RingBuffer_performAccessFailureAction(
 					"Insert operation (WRITE_BYTES) failed and fail mode is set to LIBNAPC_ACCESS_FAILURE_MODE_PANIC."
 				);
 			} else {
-				PV_NAPC_RINGBUFFER_ERROR(
+				PV_LIBNAPC_RINGBUFFER_ERROR(
 					"Refusing to place bytes into buffer, not enough free space. " PV_NAPC_MODULE_RINGBUFFER_DEBUG_PRINT_STATEMENT,
 					PV_NAPC_MODULE_RINGBUFFER_DEBUG_PRINT_VARIABLES
 				);
