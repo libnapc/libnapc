@@ -29,12 +29,12 @@
 	 * @field port Port number.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef struct napc__IPv4Participant {
+	typedef struct libnapc__IPv4Participant {
 		LIBNAPC_MAGIC_MEMBER;
 
 		char addr[32];
 		libnapc_u16 port;
-	} napc__IPv4Participant;
+	} libnapc__IPv4Participant;
 
 	/*!
 	 * @name napc_IPv4Participant_init
@@ -49,8 +49,8 @@
 	 * Input address (`addr`) will be copied into `participant`.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	void napc_IPv4Participant_init(
-		napc__IPv4Participant *participant,
+	void libnapc_IPv4Participant_init(
+		libnapc__IPv4Participant *participant,
 		const char *addr, libnapc_u16 port
 	);
 
@@ -69,7 +69,7 @@
 	 * @example
 	 * napc__IPv4Participant google_dns = napc_IPv4Participant_create("8.8.8.8", 53);
 	 */
-	napc__IPv4Participant napc_IPv4Participant_create(const char *addr, libnapc_u16 port);
+	libnapc__IPv4Participant libnapc_IPv4Participant_create(const char *addr, libnapc_u16 port);
 
 	/*!
 	 * @name napc_IPv4Participant_copy
@@ -82,8 +82,8 @@
 	 * @todo make source a pointer too and add const?
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	void napc_IPv4Participant_copy(
-		napc__IPv4Participant *dest,
-		napc__IPv4Participant source
+	void libnapc_IPv4Participant_copy(
+		libnapc__IPv4Participant *dest,
+		libnapc__IPv4Participant source
 	);
 #endif
