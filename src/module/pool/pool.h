@@ -76,23 +76,6 @@
 	);
 
 	/*!
-	 * @name napc_Pool_allocate
-	 * @deprecated napc_Pool_claimElement
-	 * @brief Allocate an element of a pool.
-	 * @version 1.0.1
-	 * @description
-	 * Allocates an element from the pool `pool`.
-	 * @param pool Pointer to napc__Pool instance.
-	 * @warning
-	 * If the pool is exhausted program execution is halted.
-	 * @changelog 1.0.0 17.02.2022 initial version
-	 * @changelog 1.0.1 17.03.2022 added deprecation warning
-	 */
-	libnapc_ssize napc_Pool_allocate(
-		napc__Pool *pool
-	) LIBNAPC_DEPRECATED();
-
-	/*!
 	 * @name napc_Pool_isClaimed
 	 * @brief Check if element is claimed.
 	 * @version 1.0.1
@@ -106,23 +89,6 @@
 		const napc__Pool *pool,
 		libnapc_size element_index
 	) LIBNAPC_FN_WARN_UNUSED_RET();
-
-	/*!
-	 * @name napc_Pool_isAllocated
-	 * @deprecated napc_Pool_isClaimed
-	 * @brief Check if element is allocated.
-	 * @version 1.0.1
-	 * @description
-	 * Checks if a particular element is allocated (in use) or not.
-	 * @param pool Pointer to napc__Pool instance.
-	 * @param element_index Index of element to check.
-	 * @changelog 1.0.0 17.02.2022 initial version
-	 * @changelog 1.0.1 17.03.2022 added deprecation warning
-	 */
-	bool napc_Pool_isAllocated(
-		const napc__Pool *pool,
-		libnapc_size element_index
-	) LIBNAPC_FN_WARN_UNUSED_RET() LIBNAPC_DEPRECATED();
 
 	/*!
 	 * @name napc_Pool_getAvailable
@@ -179,24 +145,4 @@
 		napc__Pool *pool,
 		libnapc_size element_index
 	);
-
-	/*!
-	 * @name napc_Pool_release
-	 * @deprecated napc_Pool_releaseElement
-	 * @brief Release an element.
-	 * @version 1.0.1
-	 * @description
-	 * Releases an element from the pool.
-	 * @param pool Pointer to napc__Pool instance.
-	 * @param element_index Index of element.
-	 * @changelog 1.0.0 17.02.2022 initial version
-	 * @changelog 1.0.1 17.03.2022 added deprecation warning
-	 */
-	void napc_Pool_release(
-		napc__Pool *pool,
-		libnapc_size element_index
-	) LIBNAPC_DEPRECATED();
 #endif
-
-// maybe release -> releaseElement (release is ambig)
-// 
