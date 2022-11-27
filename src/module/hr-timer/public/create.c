@@ -1,9 +1,9 @@
 #include <module/hr-timer/_private/_hr-timer.h>
 
-napc__HRTimer napc_HRTimer_create(libnapc_time duration, napc__HRTimerMode mode) {
-	napc__HRTimer timer;
+libnapc__HRTimer libnapc_HRTimer_create(libnapc_time duration, libnapc__HRTimerMode mode) {
+	libnapc__HRTimer timer;
 
-	napc_HRTimer_init(&timer, duration, mode);
+	libnapc_HRTimer_init(&timer, duration, mode);
 
 	return timer;
 }

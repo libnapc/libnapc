@@ -17,10 +17,10 @@
 	 * @enum NAPC_HRTIMER_MODE_ONESHOT One-shot timer mode.
 	 * @changelog 2.0.0 21.10.2022 initial version
 	 */
-	typedef enum napc__HRTimerMode {
-		NAPC_HRTIMER_MODE_REGULAR = 0x10, // 0001 0000
-		NAPC_HRTIMER_MODE_ONESHOT = 0x20  // 0010 0000
-	} napc__HRTimerMode;
+	typedef enum libnapc__HRTimerMode {
+		LIBNAPC_HRTIMER_MODE_REGULAR = 0x10, // 0001 0000
+		LIBNAPC_HRTIMER_MODE_ONESHOT = 0x20  // 0010 0000
+	} libnapc__HRTimerMode;
 
 	/*!
 	 * @name napc__HRTimer
@@ -30,15 +30,15 @@
 	 * @opaque
 	 * @changelog 2.0.0 25.03.2022 initial version
 	 */
-	typedef struct napc__HRTimer {
+	typedef struct libnapc__HRTimer {
 		LIBNAPC_MAGIC_MEMBER; // used to detect uninitialized timers
 
-		napc__HRTimerMode mode;
+		libnapc__HRTimerMode mode;
 
 		libnapc_time duration;
 		libnapc_time started_at;
 		bool expired;
-	} napc__HRTimer;
+	} libnapc__HRTimer;
 
 	/*!
 	 * @name napc_HRTimer_init
@@ -57,7 +57,7 @@
 	 * // 'true' only ONCE.
 	 * napc_HRTimer_init(&timer, 1000, NAPC_HRTIMER_MODE_ONESHOT); // 1000us = 1ms
 	 */
-	void napc_HRTimer_init(napc__HRTimer *timer, libnapc_time duration, napc__HRTimerMode mode);
+	void libnapc_HRTimer_init(libnapc__HRTimer *timer, libnapc_time duration, libnapc__HRTimerMode mode);
 
 	/*!
 	 * @name napc_HRTimer_create
@@ -73,7 +73,7 @@
 	 * // 'true' only ONCE.
 	 * napc__HRTimer timer = napc_HRTimer_create(1000, NAPC_HRTIMER_MODE_ONESHOT); // 1000us = 1ms
 	 */
-	napc__HRTimer napc_HRTimer_create(libnapc_time duration, napc__HRTimerMode mode);
+	libnapc__HRTimer libnapc_HRTimer_create(libnapc_time duration, libnapc__HRTimerMode mode);
 
 	/*!
 	 * @name napc_HRTimer_start
@@ -88,7 +88,7 @@
 	 * 
 	 * napc_HRTimer_start(&timer);
 	 */
-	void napc_HRTimer_start(napc__HRTimer *timer);
+	void libnapc_HRTimer_start(libnapc__HRTimer *timer);
 
 	/*!
 	 * @name napc_HRTimer_expired
@@ -108,7 +108,7 @@
 	 * Subsequent calls on the same timer will return `false`.
 	 * @changelog 2.0.0 25.03.2022 initial version
 	 */
-	bool napc_HRTimer_expired(napc__HRTimer *timer) LIBNAPC_FN_WARN_UNUSED_RET();
+	bool libnapc_HRTimer_expired(libnapc__HRTimer *timer) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_HRTimer_getMode
@@ -118,7 +118,7 @@
 	 * @return Returns the set timer mode.
 	 * @changelog 2.0.0 25.03.2022 initial version
 	 */
-	napc__HRTimerMode napc_HRTimer_getMode(const napc__HRTimer *timer) LIBNAPC_FN_WARN_UNUSED_RET();
+	libnapc__HRTimerMode libnapc_HRTimer_getMode(const libnapc__HRTimer *timer) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_HRTimer_restart
@@ -131,5 +131,5 @@
 	 *     napc_HRTimer_restart(&timer);
 	 * }
 	 */
-	void napc_HRTimer_restart(napc__HRTimer *timer);
+	void libnapc_HRTimer_restart(libnapc__HRTimer *timer);
 #endif
