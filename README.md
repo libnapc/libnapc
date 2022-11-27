@@ -14,7 +14,6 @@ At the moment, the following functions are provided:
 - DNS
 - Cryptographic functions (SHA256-HMAC and AES-256)
 - Buffer management (Writer, Reader)
-- Random byte generation
 - String parsing
 
 > **Warning**
