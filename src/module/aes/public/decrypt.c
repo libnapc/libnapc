@@ -1,6 +1,6 @@
 #include <module/aes/_private/_aes.h>
 
-bool napc_aes_decrypt(
+bool libnapc_aes_decrypt(
 	const libnapc_u8 *iv,
 	const char *key,
 	void *buffer, libnapc_size buffer_size

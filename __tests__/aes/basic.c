@@ -28,7 +28,7 @@ TEST_CASE("It should work properly") {
 	const char *key = "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08";
 
 	TEST_ASSERT(
-		napc_aes_encrypt(iv, key, data, sizeof(data))
+		libnapc_aes_encrypt(iv, key, data, sizeof(data))
 	);
 
 	TEST_ASSERT(
@@ -36,7 +36,7 @@ TEST_CASE("It should work properly") {
 	);
 
 	TEST_ASSERT(
-		napc_aes_decrypt(iv, key, data, sizeof(data))
+		libnapc_aes_decrypt(iv, key, data, sizeof(data))
 	);
 
 	TEST_ASSERT(

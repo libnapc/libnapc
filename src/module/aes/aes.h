@@ -62,7 +62,7 @@
 	 *     }
 	 * }
 	 */
-	bool napc_aes_encrypt(
+	bool libnapc_aes_encrypt(
 		const libnapc_u8 *iv,
 		const char *key,
 		void *buffer, libnapc_size buffer_size
@@ -85,7 +85,7 @@
 	 * @warning The input buffer must always be aligned to 16 bytes.
 	 * @changelog 2.0.0 initial version
 	 */
-	bool napc_aes_decrypt(
+	bool libnapc_aes_decrypt(
 		const libnapc_u8 *iv,
 		const char *key,
 		void *buffer, libnapc_size buffer_size
