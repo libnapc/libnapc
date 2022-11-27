@@ -28,7 +28,7 @@
 	/*!
 	 * @module DNS
 	 * @type type:struct
-	 * @fullname napc__DNSResponse
+	 * @fullname libnapc__DNSResponse
 	 * @brief Representation of a DNS response.
 	 * @version 2.0.0
 	 * @field header DNS-Header, see `libnapc__DNSHeader`.

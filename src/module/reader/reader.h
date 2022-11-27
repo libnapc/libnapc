@@ -34,7 +34,7 @@
 	 * @name init
 	 * @brief Initialize a reader.
 	 * @version 2.0.0
-	 * @param ctx Pointer to the napc__Reader instance.
+	 * @param ctx Pointer to the `libnapc__Reader` instance.
 	 * @param data Pointer to the buffer to be read.
 	 * @param data_size Size of buffer.
 	 * @changelog 2.0.0 initial version
@@ -55,7 +55,7 @@
 	 * @name create
 	 * @brief Create a reader object.
 	 * @version 2.0.0
-	 * @param ctx Pointer to the napc__Reader instance.
+	 * @param ctx Pointer to the `libnapc__Reader` instance.
 	 * @param data Pointer to the buffer to be read.
 	 * @param data_size Size of `data`.
 	 * @changelog 2.0.0 initial version
@@ -78,7 +78,7 @@
 	 * @name setAccessFailureMode
 	 * @brief Set action to be taken on access failure.
 	 * @version 2.0.0.
-	 * @param ctx Pointer to the napc__Reader instance.
+	 * @param ctx Pointer to the `libnapc__Reader` instance.
 	 * @param mode The fail mode to set.
 	 * @changelog 2.0.0 initial version
 	 * @note
@@ -97,7 +97,7 @@
 	 * @name readU8
 	 * @brief Read an unsigned integer (8 bits).
 	 * @version 2.0.0
-	 * @param ctx Pointer to napc__Reader instance.
+	 * @param ctx Pointer to `libnapc__Reader` instance.
 	 * @param out Pointer to store result.
 	 * @changelog 2.0.0 initial version
 	 * @return Returns `true` on success, `false` otherwise.
@@ -126,7 +126,7 @@
 	 * @name readU8Array
 	 * @brief Read an array of unsigned integers (8 bits).
 	 * @version 2.0.0
-	 * @param ctx Pointer to napc__Reader instance.
+	 * @param ctx Pointer to `libnapc__Reader` instance.
 	 * @param n_elements Number of elements to read.
 	 * @param out Array to store bytes.
 	 * @return Returns `true` on success, `false` otherwise.
@@ -147,7 +147,7 @@
 	 * @name readU16BE
 	 * @brief Read an unsigned integer (16 bits).
 	 * @version 2.0.0
-	 * @param ctx Pointer to napc__Reader instance.
+	 * @param ctx Pointer to `libnapc__Reader` instance.
 	 * @param out Pointer to store result.
 	 * @return Returns `true` on success, `false` otherwise.
 	 * @changelog 2.0.0 initial version
@@ -176,7 +176,7 @@
 	 * @name readU32BE
 	 * @brief Read an unsigned integer (32 bits).
 	 * @version 2.0.0
-	 * @param ctx Pointer to napc__Reader instance.
+	 * @param ctx Pointer to `libnapc__Reader` instance.
 	 * @param out Pointer to store result.
 	 * @return Returns `true` on success, `false` otherwise.
 	 * @changelog 2.0.0 initial version
@@ -205,7 +205,7 @@
 	 * @name readChar
 	 * @brief Read a single character.
 	 * @version 2.0.0
-	 * @param ctx Pointer to napc__Reader instance.
+	 * @param ctx Pointer to `libnapc__Reader` instance.
 	 * @param out Pointer to store result.
 	 * @return Returns `true` on success, `false` otherwise.
 	 * @changelog 2.0.0 initial version
@@ -223,7 +223,7 @@
 	 * @name readString
 	 * @brief Read a string.
 	 * @version 2.0.0
-	 * @param ctx Pointer to napc__Reader instance.
+	 * @param ctx Pointer to `libnapc__Reader` instance.
 	 * @param str_len Length of string to be read.
 	 * @param out Pointer to store result.
 	 * @param out_size Size of `out`.
@@ -248,7 +248,7 @@
 	 * @name readLine
 	 * @brief Read a line.
 	 * @version 2.0.0
-	 * @param ctx Pointer to napc__Reader instance.
+	 * @param ctx Pointer to `libnapc__Reader` instance.
 	 * @param line_buffer Buffer to place line into.
 	 * @param line_buffer_size Size of the line buffer.
 	 * @return Returns `line_buffer` if a line was parsed, `NULL` otherwise.
@@ -260,7 +260,7 @@
 	 * libnapc__Reader reader;
 	 * const char *str = "First line\nSecond line\nThird line";
 	 * 
-	 * libnapc_Reader_init(&reader, str, napc_strlen(str));
+	 * libnapc_Reader_init(&reader, str, libnapc_strlen(str));
 	 * 
 	 * while (true) {
 	 *     const char *current_line = libnapc_Reader_readLine(&reader, line_buffer, sizeof(line_buffer));

@@ -6,7 +6,7 @@
 	/*!
 	 * @module DNS
 	 * @type type:enum
-	 * @fullname napc__DNSQType
+	 * @fullname libnapc__DNSQType
 	 * @brief Representation of DNS query type.
 	 * @version 2.0.0
 	 * @enum LIBNAPC_DNS_QTYPE_A A-Record query

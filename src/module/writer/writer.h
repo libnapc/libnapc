@@ -36,7 +36,7 @@
 	 * @name init
 	 * @brief Initialize a writer.
 	 * @version 2.0.0
-	 * @param ctx Pointer to the napc__Writer instance to be initialized.
+	 * @param ctx Pointer to the `libnapc__Writer` instance to be initialized.
 	 * @param data Pointer to the buffer that we want to write to.
 	 * @param data_size Size of `data`.
 	 * @changelog 2.0.0 initial version
@@ -81,7 +81,7 @@
 	 * @name setAccessFailureMode
 	 * @brief Set action to be taken on access failure.
 	 * @version 2.0.0
-	 * @param ctx Pointer to the napc__Writer instance.
+	 * @param ctx Pointer to the `libnapc__Writer` instance.
 	 * @param mode The fail mode to set.
 	 * @changelog 2.0.0 initial version
 	 * @note
@@ -101,7 +101,7 @@
 	 * @name moveCurrentOffsetByAmount
 	 * @brief Move internal offset.
 	 * @version 2.0.0
-	 * @param ctx Pointer to the napc__Writer instance.
+	 * @param ctx Pointer to the `libnapc__Writer` instance.
 	 * @param amount The amount.
 	 * @return Returns `true` on success, otherwise `false`.
 	 * @changelog 2.0.0 initial version
@@ -119,7 +119,7 @@
 	 * @name resetCurrentOffset
 	 * @brief Reset internal offset.
 	 * @version 2.0.0
-	 * @param ctx Pointer to the napc__Writer instance.
+	 * @param ctx Pointer to the `libnapc__Writer` instance.
 	 * @changelog 2.0.0 initial version
 	 */
 	void libnapc_Writer_resetCurrentOffset(
@@ -135,7 +135,7 @@
 	 * @name writeU8
 	 * @brief Write an unsigned integer (8 bits).
 	 * @version 2.0.0
-	 * @param ctx Pointer to the napc__Writer instance.
+	 * @param ctx Pointer to the `libnapc__Writer` instance.
 	 * @param value Value to be written.
 	 * @return Returns `true` on success, otherwise `false`.
 	 * @changelog 2.0.0 initial version
@@ -164,7 +164,7 @@
 	 * @name writeU8Array
 	 * @brief Write an array unsigned integers (8 bits).
 	 * @version 2.0.0
-	 * @param ctx Pointer to the napc__Writer instance.
+	 * @param ctx Pointer to the `libnapc__Writer` instance.
 	 * @param n_elements The number of elements in `array`.
 	 * @param array The array to be written.
 	 * @return Returns `true` on success, otherwise `false`.
@@ -185,7 +185,7 @@
 	 * @name writeU16BE
 	 * @brief Write an unsigned integer (16 bits).
 	 * @version 2.0.0
-	 * @param ctx Pointer to the napc__Writer instance.
+	 * @param ctx Pointer to the `libnapc__Writer` instance.
 	 * @param value Value to be written.
 	 * @return Returns `true` on success, otherwise `false`.
 	 * @changelog 2.0.0 initial version
@@ -203,7 +203,7 @@
 	 * @name writeU32BE
 	 * @brief Write an unsigned integer (32 bits).
 	 * @version 2.0.0
-	 * @param ctx Pointer to the napc__Writer instance.
+	 * @param ctx Pointer to the `libnapc__Writer` instance.
 	 * @param value Value to be written.
 	 * @return Returns `true` on success, otherwise `false`.
 	 * @changelog 2.0.0 initial version
@@ -221,7 +221,7 @@
 	 * @name writeChar
 	 * @brief Write a single character.
 	 * @version 2.0.0
-	 * @param ctx Pointer to the napc__Writer instance.
+	 * @param ctx Pointer to the `libnapc__Writer` instance.
 	 * @param value Character to be written.
 	 * @return Returns `true` on success, otherwise `false`.
 	 * @changelog 2.0.0 initial version
@@ -239,7 +239,7 @@
 	 * @name writeString
 	 * @brief Write a string.
 	 * @version 2.0.0
-	 * @param ctx Pointer to the napc__Writer instance.
+	 * @param ctx Pointer to the `libnapc__Writer` instance.
 	 * @param value String to be written.
 	 * @return Returns `true` on success, otherwise `false`.
 	 * @note
@@ -259,7 +259,7 @@
 	 * @name writeStringFormat
 	 * @brief Write a string format.
 	 * @version 2.0.0
-	 * @param ctx Pointer to the napc__Writer instance.
+	 * @param ctx Pointer to the `libnapc__Writer` instance.
 	 * @param fmt printf()-like format string.
 	 * @variadic Values to incorporate into string.
 	 * @return Returns `true` on success, otherwise `false`.
@@ -289,7 +289,7 @@
 	 * @brief Get internal offset.
 	 * @version 2.0.0
 	 * @return Returns the current buffer offset from the writer instance.
-	 * @param ctx Pointer to the napc__Writer instance.
+	 * @param ctx Pointer to the `libnapc__Writer` instance.
 	 * @changelog 2.0.0 initial version
 	 */
 	libnapc_size libnapc_Writer_getCurrentOffset(

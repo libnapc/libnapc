@@ -4,7 +4,7 @@ void libnapc_Reader_init(
 	libnapc__Reader *ctx, const void *data, libnapc_size data_size
 ) {
 	if (!data_size) {
-		LIBNAPC_PANIC("Size cannot be zero inside napc_Reader_init().");
+		LIBNAPC_PANIC("Size cannot be zero inside libnapc_Reader_init().");
 	}
 
 	ctx->_fail_mode = PV_libnapc_getDefaultAccessFailureMode();

@@ -5,10 +5,10 @@
  * 
  * ```c
  * // Holds address for google's DNS server 8.8.8.8:53
- * napc__IPv4Participant google_dns;
+ * libnapc__IPv4Participant google_dns;
  * 
  * // Initialize google_dns variable
- * napc_IPv4Participant_init(&google_dns, "8.8.8.8", 53);
+ * libnapc_IPv4Participant_init(&google_dns, "8.8.8.8", 53);
  * ```
  */
 #if !defined(LIBNAPC_MODULE_IPV4PARTICIPANT_h)
@@ -74,7 +74,7 @@
 	 * Input address (`addr`) will be copied into `participant`.
 	 * @changelog 2.0.0 initial version
 	 * @example
-	 * napc__IPv4Participant google_dns = napc_IPv4Participant_create("8.8.8.8", 53);
+	 * libnapc__IPv4Participant google_dns = libnapc_IPv4Participant_create("8.8.8.8", 53);
 	 */
 	libnapc__IPv4Participant libnapc_IPv4Participant_create(const char *addr, libnapc_u16 port);
 

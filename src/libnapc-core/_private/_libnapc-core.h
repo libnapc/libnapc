@@ -3,8 +3,8 @@
 
 	#include <HAL/HAL.h>
 
-	// PV_libnapc_getDefaultAccessFailureMode defined in napc-core.h
-	// PV_libnapc_validateAccessFailureMode defined in napc-core.h
+	// PV_libnapc_getDefaultAccessFailureMode defined in libnapc-core.h
+	// PV_libnapc_validateAccessFailureMode defined in libnapc-core.h
 	#include <libnapc-core/libnapc-core.h>
 
 	#include <libnapc-serial/libnapc-serial.h> // libnapc_printf()

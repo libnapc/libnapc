@@ -8,33 +8,33 @@
 		extern "C" {
 	#endif
 
-	// napc-time
+	// libnapc-time
 		void HAL_libnapc_initTime(void);
 		libnapc_time HAL_libnapc_getTimeSinceBoot(bool high_res);
-	// napc-time
+	// libnapc-time
 
-	// napc-serial
+	// libnapc-serial
 		void HAL_libnapc_initSerial(void);
 		void HAL_libnapc_puts(const char *str);
 		void HAL_libnapc_putc(char ch);
-	// napc-serial
+	// libnapc-serial
 
-	// napc-panic
+	// libnapc-panic
 		void HAL_libnapc_abort(void) LIBNAPC_FN_NORETURN();
-	// napc-panic
+	// libnapc-panic
 
-	// napc-delay
+	// libnapc-delay
 		void HAL_libnapc_delay(libnapc_time amount);
 		void HAL_libnapc_delayUs(libnapc_time amount);
-	// napc-delay
+	// libnapc-delay
 
-	// napc-log
+	// libnapc-log
 		void HAL_libnapc_determineColorOutput(void);
-	// napc-log
+	// libnapc-log
 
-	// napc-core
+	// libnapc-core
 		libnapc_size HAL_libnapc_getFreeMemory(void) LIBNAPC_FN_WARN_UNUSED_RET();
-	// napc-core
+	// libnapc-core
 
 	#if defined(__cplusplus)
 		}

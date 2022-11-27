@@ -72,7 +72,7 @@
 	 * @name claimElement
 	 * @brief Claim an element of a pool.
 	 * @version 2.0.0
-	 * @param pool Pointer to napc__Pool instance.
+	 * @param pool Pointer to `libnapc__Pool` instance.
 	 * @warning
 	 * If the pool is exhausted program execution is halted.
 	 * @changelog 2.0.0 initial version
@@ -90,7 +90,7 @@
 	 * @name isClaimed
 	 * @brief Check if element is claimed.
 	 * @version 2.0.0
-	 * @param pool Pointer to napc__Pool instance.
+	 * @param pool Pointer to `libnapc__Pool` instance.
 	 * @param element_index Index of element to check.
 	 * @changelog 2.0.0 initial version
 	 */
@@ -108,7 +108,7 @@
 	 * @name getAvailable
 	 * @brief Get available elements.
 	 * @version 2.0.0
-	 * @param pool Pointer to napc__Pool instance.
+	 * @param pool Pointer to `libnapc__Pool` instance.
 	 * @return Returns the number of available elements in the pool.
 	 * @changelog 2.0.0 initial version
 	 */
@@ -125,7 +125,7 @@
 	 * @name getAddress
 	 * @brief Get address of an element.
 	 * @version 2.0.0
-	 * @param pool Pointer to napc__Pool instance.
+	 * @param pool Pointer to `libnapc__Pool` instance.
 	 * @param element_index Index of element.
 	 * @return The element's address.
 	 * @warning
@@ -155,7 +155,7 @@
 	 * @name releaseElement
 	 * @brief Release an element.
 	 * @version 2.0.0
-	 * @param pool Pointer to napc__Pool instance.
+	 * @param pool Pointer to `libnapc__Pool` instance.
 	 * @param element_index Index of element.
 	 * @changelog 2.0.0 initial version
 	 */

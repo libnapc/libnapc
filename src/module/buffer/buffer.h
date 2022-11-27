@@ -5,9 +5,9 @@
  * 
  * ```c
  * char data[512];
- * napc__Buffer buffer;
+ * libnapc__Buffer buffer;
  * 
- * napc_Buffer_init(&buffer, data, sizeof(data));
+ * libnapc_Buffer_init(&buffer, data, sizeof(data));
  * ```
  */
 #if !defined(LIBNAPC_MODULE_BUFFER_h)
@@ -41,7 +41,7 @@
 	 * @name init
 	 * @brief Initialize a buffer.
 	 * @version 2.0.0
-	 * @param buffer Pointer to napc__Buffer instance to be initialized.
+	 * @param buffer Pointer to `libnapc__Buffer` instance to be initialized.
 	 * @param data Pointer to data.
 	 * @param data_size Size of data.
 	 * @changelog 2.0.0 initial version
