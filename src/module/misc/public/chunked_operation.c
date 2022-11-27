@@ -2,7 +2,7 @@
 
 bool libnapc_misc_chunkedOperation(
 	const void *data, libnapc_size data_size, libnapc_size chunk_size,
-	napc_misc_ChunkedOperationCallback fn, void *fn_context
+	libnapc_misc_ChunkedOperationCallback fn, void *fn_context
 ) {
 	const unsigned char *ptr = data;
 	libnapc_size bytes_left_to_process = data_size;

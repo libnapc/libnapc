@@ -69,7 +69,7 @@
 	/**************************
 	 * Chunks
 	 */
-	typedef libnapc_ssize (*napc_misc_ChunkedOperationCallback)(
+	typedef libnapc_ssize (*libnapc_misc_ChunkedOperationCallback)(
 		const void *data, libnapc_size data_size, void *context
 	);
 
@@ -95,6 +95,6 @@
 	 */
 	bool libnapc_misc_chunkedOperation(
 		const void *data, libnapc_size data_size, libnapc_size chunk_size,
-		napc_misc_ChunkedOperationCallback fn, void *fn_context
+		libnapc_misc_ChunkedOperationCallback fn, void *fn_context
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 #endif
