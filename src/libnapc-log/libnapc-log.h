@@ -80,7 +80,7 @@
 	 * 
 	 * @module Core
 	 * @type macro:var
-	 * @fullname NAPC_LEVEL_DEBUG
+	 * @fullname LIBNAPC_LEVEL_DEBUG
 	 * @version 2.0.0
 	 * @changelog 2.0.0 initial version
 	 * @example
@@ -273,7 +273,7 @@
 	 * 
 	 * @module Core
 	 * @type macro:fn
-	 * @fullname NAPC_LOG_SECURITY
+	 * @fullname LIBNAPC_LOG_SECURITY
 	 * @version 2.0.0
 	 * @param subsys Subsystem.
 	 * @param fmt printf()-like format string.
