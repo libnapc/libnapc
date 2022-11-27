@@ -13,7 +13,7 @@
 	 * This code was taken from https://elixir.bootlin.com/musl/v1.2.2/source/src/network/dn_expand.c
 	 * It's responsible for expanding compressed dns names.
 	 */
-	int PV_napc_DNS_dn_expand(
+	int PV_libnapc_DNS_dn_expand(
 		// pointer to start of message
 		const unsigned char *base,
 		// pointer to end of message
@@ -25,12 +25,12 @@
 		int space
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
-	bool PV_napc_DNS_parseQuerySection(
+	bool PV_libnapc_DNS_parseQuerySection(
 		napc__DNSQuery *out,
 		libnapc__Reader *reader
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
-	bool PV_napc_DNS_parseAnswerSection(
+	bool PV_libnapc_DNS_parseAnswerSection(
 		napc__DNSAnswer *out,
 		libnapc__Reader *reader
 	) LIBNAPC_FN_WARN_UNUSED_RET();
@@ -39,5 +39,5 @@
 	 * Used as a temporary buffer when expanding
 	 * compressed dns names.
 	 */
-	extern char PV_napc_DNS_tmp_name[NAPC_MODULE_DNS_MAX_NAME]; // @global
+	extern char PV_libnapc_DNS_tmp_name[NAPC_MODULE_DNS_MAX_NAME]; // @global
 #endif

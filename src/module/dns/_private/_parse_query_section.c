@@ -1,21 +1,21 @@
 #include <module/dns/_private/_dns.h>
 
-bool PV_napc_DNS_parseQuerySection(
+bool PV_libnapc_DNS_parseQuerySection(
 	napc__DNSQuery *out,
 	libnapc__Reader *reader
 ) {
 	LIBNAPC_MAGIC_ASSERT(napc__Reader, reader);
 
 	// Read question name (QNAME)
-	int name_length = PV_napc_DNS_dn_expand(
+	int name_length = PV_libnapc_DNS_dn_expand(
 		// start of buffer
 		reader->data,
 		// end of buffer
 		libnapc_Reader_getEndAddress(reader),
 		// pointer to ''compressed'' domain name
 		libnapc_Reader_getCurrentAddress(reader),
-		PV_napc_DNS_tmp_name,
-		sizeof(PV_napc_DNS_tmp_name)
+		PV_libnapc_DNS_tmp_name,
+		sizeof(PV_libnapc_DNS_tmp_name)
 	);
 
 	if (0 >= name_length) {
@@ -49,7 +49,7 @@ bool PV_napc_DNS_parseQuerySection(
 
 	if (out) {
 		out->qtype = qtype;
-		libnapc_strncpy(out->name, PV_napc_DNS_tmp_name, sizeof(out->name));
+		libnapc_strncpy(out->name, PV_libnapc_DNS_tmp_name, sizeof(out->name));
 	}
 
 	return true;

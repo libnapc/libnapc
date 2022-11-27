@@ -27,7 +27,7 @@ bool libnapc_DNS_parseRequest(
 	// question count capped at max 1
 	napc__DNSQuery *q = out ? &out->query : NULL;
 
-	if (!PV_napc_DNS_parseQuerySection(q, &reader)) {
+	if (!PV_libnapc_DNS_parseQuerySection(q, &reader)) {
 		return false;
 	}
 

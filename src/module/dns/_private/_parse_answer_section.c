@@ -1,19 +1,19 @@
 #include <module/dns/_private/_dns.h>
 
-bool PV_napc_DNS_parseAnswerSection(
+bool PV_libnapc_DNS_parseAnswerSection(
 	napc__DNSAnswer *out,
 	libnapc__Reader *reader
 ) {
 	// Read name
-	int name_length = PV_napc_DNS_dn_expand(
+	int name_length = PV_libnapc_DNS_dn_expand(
 		// start of buffer
 		reader->data,
 		// end of buffer
 		libnapc_Reader_getEndAddress(reader),
 		// pointer to compressed domain name
 		libnapc_Reader_getCurrentAddress(reader),
-		PV_napc_DNS_tmp_name,
-		sizeof(PV_napc_DNS_tmp_name)
+		PV_libnapc_DNS_tmp_name,
+		sizeof(PV_libnapc_DNS_tmp_name)
 	);
 
 	if (0 >= name_length) {

@@ -200,7 +200,7 @@ obstacle to adoption, that text has been removed.
  * This code was taken from https://elixir.bootlin.com/musl/v1.2.2/source/src/network/dn_expand.c
  * It's responsible for expanding compressed dns names.
  */
-int PV_napc_DNS_dn_expand(
+int PV_libnapc_DNS_dn_expand(
 	const unsigned char *base,
 	const unsigned char *end,
 	const unsigned char *src,

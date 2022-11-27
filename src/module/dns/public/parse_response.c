@@ -30,7 +30,7 @@ bool libnapc_DNS_parseResponse(
 	}
 
 	// Skip question/query section
-	if (!PV_napc_DNS_parseQuerySection(NULL, &reader)) return false;
+	if (!PV_libnapc_DNS_parseQuerySection(NULL, &reader)) return false;
 
 	libnapc_size n_answers = header.answer_count;
 
@@ -49,7 +49,7 @@ bool libnapc_DNS_parseResponse(
 	for (libnapc_size i = 0; i < n_answers; ++i) {
 		napc__DNSAnswer *a = out ? &out->answers[i] : NULL;
 
-		if (!PV_napc_DNS_parseAnswerSection(a, &reader)) {
+		if (!PV_libnapc_DNS_parseAnswerSection(a, &reader)) {
 			return false;
 		}
 	}
