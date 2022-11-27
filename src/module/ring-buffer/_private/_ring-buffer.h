@@ -15,15 +15,15 @@
 	#define PV_NAPC_MODULE_RINGBUFFER_DEBUG_PRINT_VARIABLES \
 		ctx->write_position, ctx->read_position, ctx->buffer_size
 
-	libnapc_size PV_napc_RingBuffer_numFreeSpots(
+	libnapc_size PV_libnapc_RingBuffer_numFreeSpots(
 		const napc__RingBuffer *ctx
 	);
 
-	bool PV_napc_RingBuffer_insertByte(
+	bool PV_libnapc_RingBuffer_insertByte(
 		napc__RingBuffer *ctx, libnapc_u8 byte, bool force
 	);
 
-	void PV_napc_RingBuffer_performAccessFailureAction(
+	void PV_libnapc_RingBuffer_performAccessFailureAction(
 		const napc__RingBuffer *ctx, int performed_action
 	);
 #endif

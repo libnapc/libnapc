@@ -1,10 +1,10 @@
 #include <module/ring-buffer/_private/_ring-buffer.h>
 
-void napc_RingBuffer_init(
+void libnapc_RingBuffer_init(
 	napc__RingBuffer *ctx, libnapc_u8 *buffer, libnapc_size buffer_size
 ) {
 	if (!buffer_size) {
-		LIBNAPC_PANIC("Size cannot be zero inside napc_RingBuffer_init().");
+		LIBNAPC_PANIC("Size cannot be zero inside libnapc_RingBuffer_init().");
 	}
 
 	ctx->_fail_mode = PV_libnapc_getDefaultAccessFailureMode();

@@ -1,6 +1,6 @@
 #include <module/ring-buffer/_private/_ring-buffer.h>
 
-void napc_RingBuffer_reset(napc__RingBuffer *ctx) {
+void libnapc_RingBuffer_reset(napc__RingBuffer *ctx) {
 	LIBNAPC_MAGIC_ASSERT(napc__RingBuffer, ctx);
 
 	ctx->write_position = 0;

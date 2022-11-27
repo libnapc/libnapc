@@ -1,6 +1,6 @@
 #include <module/ring-buffer/_private/_ring-buffer.h>
 
-void PV_napc_RingBuffer_performAccessFailureAction(
+void PV_libnapc_RingBuffer_performAccessFailureAction(
 	const napc__RingBuffer *ctx, int performed_action
 ) {
 	// do nothing

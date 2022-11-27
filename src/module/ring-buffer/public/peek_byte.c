@@ -1,12 +1,12 @@
 #include <module/ring-buffer/_private/_ring-buffer.h>
 
-bool napc_RingBuffer_peekByte(const napc__RingBuffer *ctx, libnapc_u8 *out) {
+bool libnapc_RingBuffer_peekByte(const napc__RingBuffer *ctx, libnapc_u8 *out) {
 	LIBNAPC_MAGIC_ASSERT(napc__RingBuffer, ctx);
 
-	libnapc_size n_free_spots = PV_napc_RingBuffer_numFreeSpots(ctx);
+	libnapc_size n_free_spots = PV_libnapc_RingBuffer_numFreeSpots(ctx);
 
 	if (n_free_spots == ctx->buffer_size) {
-		PV_napc_RingBuffer_performAccessFailureAction(
+		PV_libnapc_RingBuffer_performAccessFailureAction(
 			ctx,
 			PV_NAPC_MODULE_RINGBUFFER_ACTION_READ_BYTE
 		);

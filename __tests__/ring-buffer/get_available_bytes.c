@@ -5,17 +5,17 @@ TEST_CASE("should work as expected") {
 	napc__RingBuffer rbuffer;
 	libnapc_u8 buffer[512];
 
-	napc_RingBuffer_init(&rbuffer, buffer, sizeof(buffer));
+	libnapc_RingBuffer_init(&rbuffer, buffer, sizeof(buffer));
 
-	TEST_ASSERT(napc_RingBuffer_getAvailableBytes(&rbuffer) == 0);
+	TEST_ASSERT(libnapc_RingBuffer_getAvailableBytes(&rbuffer) == 0);
 
 	for (int i = 0; i < 10; ++i) {
-		napc_RingBuffer_insertByte(&rbuffer, i);
+		libnapc_RingBuffer_insertByte(&rbuffer, i);
 	}
 
-	TEST_ASSERT(napc_RingBuffer_getAvailableBytes(&rbuffer) == 10);
+	TEST_ASSERT(libnapc_RingBuffer_getAvailableBytes(&rbuffer) == 10);
 
-	napc_RingBuffer_removeByte(&rbuffer, NULL);
+	libnapc_RingBuffer_removeByte(&rbuffer, NULL);
 
-	TEST_ASSERT(napc_RingBuffer_getAvailableBytes(&rbuffer) == 9);
+	TEST_ASSERT(libnapc_RingBuffer_getAvailableBytes(&rbuffer) == 9);
 }
