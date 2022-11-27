@@ -3,7 +3,7 @@
 void napc_Writer_setAccessFailureMode(
 	napc__Writer *ctx, libnapc__AccessFailureMode mode
 ) {
-	NAPC_MAGIC_ASSERT(napc__Writer, ctx);
+	LIBNAPC_MAGIC_ASSERT(napc__Writer, ctx);
 
 	if (LIBNAPC_UNLIKELY(!PV_libnapc_validateAccessFailureMode(mode))) {
 		LIBNAPC_PANIC("Unrecognized AccessFailureMode '%d'", mode);

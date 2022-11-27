@@ -1,7 +1,7 @@
 #include <module/ring-buffer/_private/_ring-buffer.h>
 
 void napc_RingBuffer_discardByte(napc__RingBuffer *ctx) {
-	NAPC_MAGIC_ASSERT(napc__RingBuffer, ctx);
+	LIBNAPC_MAGIC_ASSERT(napc__RingBuffer, ctx);
 
 	libnapc_size n_free_spots = PV_napc_RingBuffer_numFreeSpots(ctx);
 

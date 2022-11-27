@@ -3,7 +3,7 @@
 bool napc_Writer_moveCurrentOffsetByAmount(
 	napc__Writer *ctx, libnapc_ssize amount
 ) {
-	NAPC_MAGIC_ASSERT(napc__Writer, ctx);
+	LIBNAPC_MAGIC_ASSERT(napc__Writer, ctx);
 
 	libnapc_size new_offset = ctx->_offset + amount;
 

@@ -18,7 +18,7 @@
 	#define PV_LIBNAPC_MAGIC_GET_VALUE(obj) \
 		((void *)(obj) != NULL ? (obj)->_init_magic : 0)
 
-	#define NAPC_MAGIC_ASSERT(type, obj)                                         \
+	#define LIBNAPC_MAGIC_ASSERT(type, obj)                                      \
 		do {                                                                     \
 			const libnapc_init_magic actual   = PV_LIBNAPC_MAGIC_GET_VALUE(obj); \
 			const libnapc_init_magic expected = (LIBNAPC_MAGIC_ ## type);        \

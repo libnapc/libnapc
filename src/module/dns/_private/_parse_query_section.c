@@ -4,7 +4,7 @@ bool PV_napc_DNS_parseQuerySection(
 	napc__DNSQuery *out,
 	napc__Reader *reader
 ) {
-	NAPC_MAGIC_ASSERT(napc__Reader, reader);
+	LIBNAPC_MAGIC_ASSERT(napc__Reader, reader);
 
 	// Read question name (QNAME)
 	int name_length = PV_napc_DNS_dn_expand(

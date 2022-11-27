@@ -3,7 +3,7 @@
 const char *napc_Reader_readLine(
 	napc__Reader *ctx, char *line_buffer, libnapc_size line_buffer_size
 ) {
-	NAPC_MAGIC_ASSERT(napc__Reader, ctx);
+	LIBNAPC_MAGIC_ASSERT(napc__Reader, ctx);
 
 	if (!line_buffer_size) {
 		LIBNAPC_PANIC(

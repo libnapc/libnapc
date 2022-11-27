@@ -4,7 +4,7 @@ void napc_IPv4Participant_copy(
 	napc__IPv4Participant *dest,
 	napc__IPv4Participant source
 ) {
-	NAPC_MAGIC_ASSERT(napc__IPv4Participant, &source);
+	LIBNAPC_MAGIC_ASSERT(napc__IPv4Participant, &source);
 
 	LIBNAPC_MAGIC_INIT(napc__IPv4Participant, dest);
 	libnapc_strncpy(dest->addr, source.addr, NAPC_MODULE_NET_IP_STR_MAX);

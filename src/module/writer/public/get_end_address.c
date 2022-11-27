@@ -3,7 +3,7 @@
 void *napc_Writer_getEndAddress(
 	const napc__Writer *ctx
 ) {
-	NAPC_MAGIC_ASSERT(napc__Writer, ctx);
+	LIBNAPC_MAGIC_ASSERT(napc__Writer, ctx);
 
 	unsigned char *base = ctx->data;
 

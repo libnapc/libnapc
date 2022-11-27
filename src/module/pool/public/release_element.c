@@ -4,7 +4,7 @@ void napc_Pool_releaseElement(
 	napc__Pool *pool,
 	libnapc_size element_index
 ) {
-	NAPC_MAGIC_ASSERT(napc__Pool, pool);
+	LIBNAPC_MAGIC_ASSERT(napc__Pool, pool);
 
 	if (!pool->elements_used[element_index]) {
 		LIBNAPC_PANIC(

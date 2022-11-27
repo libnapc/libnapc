@@ -3,7 +3,7 @@
 libnapc_size napc_Pool_getAvailable(
 	const napc__Pool *pool
 ) {
-	NAPC_MAGIC_ASSERT(napc__Pool, pool);
+	LIBNAPC_MAGIC_ASSERT(napc__Pool, pool);
 
 	libnapc_size count = 0;
 

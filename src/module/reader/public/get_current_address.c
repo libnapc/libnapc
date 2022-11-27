@@ -3,7 +3,7 @@
 const void *napc_Reader_getCurrentAddress(
 	const napc__Reader *ctx
 ) {
-	NAPC_MAGIC_ASSERT(napc__Reader, ctx);
+	LIBNAPC_MAGIC_ASSERT(napc__Reader, ctx);
 
 	const unsigned char *base = ctx->data;
 
