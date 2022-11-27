@@ -17,5 +17,5 @@ void napc_RingBuffer_init(
 
 	ctx->buffer_full = false;
 
-	NAPC_MAGIC_INIT(napc__RingBuffer, ctx);
+	LIBNAPC_MAGIC_INIT(napc__RingBuffer, ctx);
 }

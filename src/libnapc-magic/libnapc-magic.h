@@ -11,8 +11,8 @@
 
 	#define LIBNAPC_MAGIC_DESTROYED LIBNAPC_U32_LITERAL(0xFFFFFFFF)
 
-	#define NAPC_MAGIC_INIT(type, obj) (obj)->_init_magic = (LIBNAPC_MAGIC_ ## type)
-	#define LIBNAPC_MAGIC_DESTROY(obj) (obj)->_init_magic = LIBNAPC_MAGIC_DESTROYED
+	#define LIBNAPC_MAGIC_INIT(type, obj) (obj)->_init_magic = (LIBNAPC_MAGIC_ ## type)
+	#define LIBNAPC_MAGIC_DESTROY(obj)    (obj)->_init_magic = LIBNAPC_MAGIC_DESTROYED
 
 	// Used to silence -Waddress warnings
 	#define PV_LIBNAPC_MAGIC_GET_VALUE(obj) \

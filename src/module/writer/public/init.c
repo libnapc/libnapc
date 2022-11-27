@@ -3,7 +3,7 @@
 void napc_Writer_init(
 	napc__Writer *ctx, void *data, libnapc_size data_size
 ) {
-	NAPC_MAGIC_INIT(napc__Writer, ctx);
+	LIBNAPC_MAGIC_INIT(napc__Writer, ctx);
 
 	ctx->_fail_mode = PV_libnapc_getDefaultAccessFailureMode();
 

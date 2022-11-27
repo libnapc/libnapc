@@ -10,5 +10,5 @@ void napc_HRTimer_init(napc__HRTimer *timer, libnapc_time duration, napc__HRTime
 	timer->duration = duration;
 	timer->started_at = 0;
 	timer->expired = false;
-	NAPC_MAGIC_INIT(napc__HRTimer, timer);
+	LIBNAPC_MAGIC_INIT(napc__HRTimer, timer);
 }

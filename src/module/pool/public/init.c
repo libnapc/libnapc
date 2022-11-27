@@ -20,5 +20,5 @@ void napc_Pool_init(
 		pool->elements_used[i] = false;
 	}
 
-	NAPC_MAGIC_INIT(napc__Pool, pool);
+	LIBNAPC_MAGIC_INIT(napc__Pool, pool);
 }

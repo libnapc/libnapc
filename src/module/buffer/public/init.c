@@ -6,5 +6,5 @@ void napc_Buffer_init(
 	buffer->data = data;
 	buffer->size = data_size;
 
-	NAPC_MAGIC_INIT(napc__Buffer, buffer);
+	LIBNAPC_MAGIC_INIT(napc__Buffer, buffer);
 }

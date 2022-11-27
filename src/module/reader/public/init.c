@@ -12,5 +12,5 @@ void napc_Reader_init(
 	ctx->data = data;
 	ctx->size = data_size;
 	ctx->_offset = 0;
-	NAPC_MAGIC_INIT(napc__Reader, ctx);
+	LIBNAPC_MAGIC_INIT(napc__Reader, ctx);
 }
