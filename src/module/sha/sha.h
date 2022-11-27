@@ -4,24 +4,27 @@
 	#include <libnapc-internal.h>
 
 	/*!
-	 * @name napc_sha_calculate
-	 * @brief Calculate SHA256 hash.
-	 * @version 1.5.0
-	 * @description
 	 * Calculates the SHA-256 hash of a message.
+	 * 
+	 * @module sha
+	 * @type fn
+	 * @fullname libnapc_sha_calculate
+	 * @name calculate
+	 * @brief Calculate SHA256 hash.
+	 * @version 2.0.0
 	 * @param buffer Buffer to calculate hash of.
 	 * @param buffer_size Size of buffer.
 	 * @param out Array to store output in HEX format (32 bytes).
 	 * @param out_size Size of output array.
 	 * @warning The output array must have at least 65 elements.
-	 * @changelog 1.5.0 25.03.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 * @example
 	 * char out[65];
 	 * const char *str = "secret";
 	 * 
-	 * napc_sha_calculate(str, napc_strlen(str), out, sizeof(out));
+	 * libnapc_sha_calculate(str, libnapc_strlen(str), out, sizeof(out));
 	 * 
-	 * napc_printf("SHA256-hash of '%s' is '%s'\n");
+	 * libnapc_printf("SHA256-hash of '%s' is '%s'\n");
 	 */
 	bool libnapc_sha_calculate(
 		const void *buffer, libnapc_size buffer_size,
