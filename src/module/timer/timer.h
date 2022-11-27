@@ -13,10 +13,10 @@
 	 * @enum NAPC_TIMER_MODE_ONESHOT One-shot timer mode.
 	 * @changelog 2.0.0 21.10.2022 initial version
 	 */
-	typedef enum napc__TimerMode {
-		NAPC_TIMER_MODE_REGULAR = 0x01, // 0000 0001
-		NAPC_TIMER_MODE_ONESHOT = 0x02  // 0000 0010
-	} napc__TimerMode;
+	typedef enum libnapc__TimerMode {
+		LIBNAPC_TIMER_MODE_REGULAR = 0x01, // 0000 0001
+		LIBNAPC_TIMER_MODE_ONESHOT = 0x02  // 0000 0010
+	} libnapc__TimerMode;
 
 	/*!
 	 * @name napc__Timer
@@ -26,15 +26,15 @@
 	 * @opaque
 	 * @changelog 2.0.0 25.03.2022 initial version
 	 */
-	typedef struct napc__Timer {
+	typedef struct libnapc__Timer {
 		LIBNAPC_MAGIC_MEMBER; // used to detect uninitialized timers
 
-		napc__TimerMode mode;
+		libnapc__TimerMode mode;
 
 		libnapc_time duration;
 		libnapc_time started_at;
 		bool expired;
-	} napc__Timer;
+	} libnapc__Timer;
 
 	/*!
 	 * @name napc_Timer_init
@@ -53,7 +53,7 @@
 	 * // 'true' only ONCE.
 	 * napc_Timer_init(&timer, 1000, NAPC_TIMER_MODE_ONESHOT); // 1000ms = 1s
 	 */
-	void napc_Timer_init(napc__Timer *timer, libnapc_time duration, napc__TimerMode mode);
+	void libnapc_Timer_init(libnapc__Timer *timer, libnapc_time duration, libnapc__TimerMode mode);
 
 	/*!
 	 * @name napc_Timer_create
@@ -69,7 +69,7 @@
 	 * // 'true' only ONCE.
 	 * napc__Timer timer = napc_Timer_create(1000, NAPC_TIMER_MODE_ONESHOT); // 1000ms = 1s
 	 */
-	napc__Timer napc_Timer_create(libnapc_time duration, napc__TimerMode mode);
+	libnapc__Timer libnapc_Timer_create(libnapc_time duration, libnapc__TimerMode mode);
 
 	/*!
 	 * @name napc_Timer_start
@@ -84,7 +84,7 @@
 	 * 
 	 * napc_Timer_start(&timer);
 	 */
-	void napc_Timer_start(napc__Timer *timer);
+	void libnapc_Timer_start(libnapc__Timer *timer);
 
 	/*!
 	 * @name napc_Timer_expired
@@ -104,7 +104,7 @@
 	 * Subsequent calls on the same timer will return `false`.
 	 * @changelog 2.0.0 25.03.2022 initial version
 	 */
-	bool napc_Timer_expired(napc__Timer *timer) LIBNAPC_FN_WARN_UNUSED_RET();
+	bool libnapc_Timer_expired(libnapc__Timer *timer) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_Timer_getMode
@@ -114,7 +114,7 @@
 	 * @return Returns the set timer mode.
 	 * @changelog 2.0.0 25.03.2022 initial version
 	 */
-	napc__TimerMode napc_Timer_getMode(const napc__Timer *timer) LIBNAPC_FN_WARN_UNUSED_RET();
+	libnapc__TimerMode libnapc_Timer_getMode(const libnapc__Timer *timer) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
 	 * @name napc_Timer_restart
@@ -127,5 +127,5 @@
 	 *     napc_Timer_restart(&timer);
 	 * }
 	 */
-	void napc_Timer_restart(napc__Timer *timer);
+	void libnapc_Timer_restart(libnapc__Timer *timer);
 #endif

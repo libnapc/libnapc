@@ -1,7 +1,7 @@
 #include <module/timer/_private/_timer.h>
 
-void napc_Timer_restart(napc__Timer *timer) {
+void libnapc_Timer_restart(libnapc__Timer *timer) {
 	LIBNAPC_MAGIC_ASSERT(napc__Timer, timer);
 
-	napc_Timer_start(timer);
+	libnapc_Timer_start(timer);
 }
