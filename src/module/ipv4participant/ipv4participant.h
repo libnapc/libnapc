@@ -15,7 +15,6 @@
 	#define LIBNAPC_MODULE_IPV4PARTICIPANT_h
 
 	#include <libnapc-internal.h>
-	#include <module/net/net.h>
 
 	#include <libnapc-magic/libnapc-magic.h>
 
@@ -33,7 +32,7 @@
 	typedef struct napc__IPv4Participant {
 		LIBNAPC_MAGIC_MEMBER;
 
-		char addr[NAPC_MODULE_NET_IP_STR_MAX];
+		char addr[32];
 		libnapc_u16 port;
 	} napc__IPv4Participant;
 

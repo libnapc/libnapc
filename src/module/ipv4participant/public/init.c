@@ -6,6 +6,6 @@ void napc_IPv4Participant_init(
 ) {
 	LIBNAPC_MAGIC_INIT(napc__IPv4Participant, participant);
 
-	libnapc_strncpy(participant->addr, addr, NAPC_MODULE_NET_IP_STR_MAX);
+	libnapc_strncpy(participant->addr, addr, sizeof(participant->addr));
 	participant->port = port;
 }
