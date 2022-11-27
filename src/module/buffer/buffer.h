@@ -27,7 +27,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	typedef struct napc__Buffer {
-		NAPC_MAGIC_MEMBER; // used to detect uninitialized buffers
+		LIBNAPC_MAGIC_MEMBER; // used to detect uninitialized buffers
 
 		libnapc_size size;
 		void *data;

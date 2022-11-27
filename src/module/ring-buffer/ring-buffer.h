@@ -18,7 +18,7 @@
 	 * @changelog 2.0.0 21.10.2022 initial version
 	 */
 	typedef struct napc__RingBuffer {
-		NAPC_MAGIC_MEMBER;
+		LIBNAPC_MAGIC_MEMBER;
 
 		libnapc__AccessFailureMode _fail_mode;
 

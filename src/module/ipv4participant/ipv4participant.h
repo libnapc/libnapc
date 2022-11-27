@@ -31,7 +31,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	typedef struct napc__IPv4Participant {
-		NAPC_MAGIC_MEMBER;
+		LIBNAPC_MAGIC_MEMBER;
 
 		char addr[NAPC_MODULE_NET_IP_STR_MAX];
 		libnapc_u16 port;

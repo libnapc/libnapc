@@ -7,7 +7,7 @@
 
 	typedef uint32_t libnapc_init_magic;
 
-	#define NAPC_MAGIC_MEMBER libnapc_init_magic _init_magic
+	#define LIBNAPC_MAGIC_MEMBER libnapc_init_magic _init_magic
 
 	#define LIBNAPC_MAGIC_DESTROYED LIBNAPC_U32_LITERAL(0xFFFFFFFF)
 

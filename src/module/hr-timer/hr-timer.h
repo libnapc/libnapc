@@ -31,7 +31,7 @@
 	 * @changelog 2.0.0 25.03.2022 initial version
 	 */
 	typedef struct napc__HRTimer {
-		NAPC_MAGIC_MEMBER; // used to detect uninitialized timers
+		LIBNAPC_MAGIC_MEMBER; // used to detect uninitialized timers
 
 		napc__HRTimerMode mode;
 
