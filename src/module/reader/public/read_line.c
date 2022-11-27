@@ -7,7 +7,7 @@ const char *libnapc_Reader_readLine(
 
 	if (!line_buffer_size) {
 		LIBNAPC_PANIC(
-			"line_buffer_size cannot be zero inside napc_reader__readLine()."
+			"line_buffer_size cannot be zero inside libnapc_reader__readLine()."
 		);
 	}
 

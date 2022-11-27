@@ -8,14 +8,14 @@ bool libnapc_Reader_readString(
 ) {
 	if (out && !out_size) {
 		LIBNAPC_PANIC(
-			"out_size cannot be zero inside napc_Reader_readString()."
+			"out_size cannot be zero inside libnapc_Reader_readString()."
 		);
 	}
 
 	if (!PV_libnapc_Reader_checkAccess(ctx, str_len, "string")) {
 		return false;
 	} else if (((str_len + 1) > out_size) && out) {
-		PV_NAPC_READER_ERROR("Reading string would overflow buffer.");
+		PV_LIBNAPC_READER_ERROR("Reading string would overflow buffer.");
 
 		return false;
 	}
