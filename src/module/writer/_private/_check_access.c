@@ -9,7 +9,7 @@ bool PV_libnapc_Writer_checkAccess(
 
 	if (new_offset > ctx->size) {
 		if (ctx->_fail_mode == LIBNAPC_ACCESS_FAILURE_MODE_LOG) {
-			PV_NAPC_WRITER_ERROR(
+			PV_LIBNAPC_WRITER_ERROR(
 				"Refusing to write type '%s' (size=%" LIBNAPC_SIZE_PRINT_DEC ") to buffer"
 				" (offset=%" LIBNAPC_SIZE_PRINT_DEC ",size=%" LIBNAPC_SIZE_PRINT_DEC ")",
 				type,
