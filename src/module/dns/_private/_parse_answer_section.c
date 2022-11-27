@@ -1,7 +1,7 @@
 #include <module/dns/_private/_dns.h>
 
 bool PV_libnapc_DNS_parseAnswerSection(
-	napc__DNSAnswer *out,
+	libnapc__DNSAnswer *out,
 	libnapc__Reader *reader
 ) {
 	// Read name

@@ -16,11 +16,11 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @changelog 2.0.0 14.04.2022 added CNAME,MX and TXT types
 	 */
-	typedef enum napc__DNSQType {
+	typedef enum libnapc__DNSQType {
 		NAPC_DNS_QTYPE_A     = 1,
 		NAPC_DNS_QTYPE_CNAME = 5,
 		NAPC_DNS_QTYPE_MX    = 15,
 		NAPC_DNS_QTYPE_TXT   = 16,
 		NAPC_DNS_QTYPE_AAAA  = 28
-	} napc__DNSQType;
+	} libnapc__DNSQType;
 #endif

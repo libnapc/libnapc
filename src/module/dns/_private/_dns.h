@@ -26,12 +26,12 @@
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	bool PV_libnapc_DNS_parseQuerySection(
-		napc__DNSQuery *out,
+		libnapc__DNSQuery *out,
 		libnapc__Reader *reader
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	bool PV_libnapc_DNS_parseAnswerSection(
-		napc__DNSAnswer *out,
+		libnapc__DNSAnswer *out,
 		libnapc__Reader *reader
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 

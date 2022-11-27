@@ -1,7 +1,7 @@
 #include <module/dns/_private/_dns.h>
 
 bool PV_libnapc_DNS_parseQuerySection(
-	napc__DNSQuery *out,
+	libnapc__DNSQuery *out,
 	libnapc__Reader *reader
 ) {
 	LIBNAPC_MAGIC_ASSERT(napc__Reader, reader);

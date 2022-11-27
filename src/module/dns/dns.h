@@ -19,10 +19,10 @@
 	 * @field query DNS-Query, see `napc__DNSQuery`.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef struct napc__DNSRequest {
-		napc__DNSHeader header;
-		napc__DNSQuery query;
-	} napc__DNSRequest;
+	typedef struct libnapc__DNSRequest {
+		libnapc__DNSHeader header;
+		libnapc__DNSQuery query;
+	} libnapc__DNSRequest;
 
 	/*!
 	 * @name napc__DNSResponse
@@ -34,16 +34,16 @@
 	 * @field answers DNS-Answers, see `napc__DNSAnswer`.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef struct napc__DNSResponse {
-		napc__DNSHeader header;
+	typedef struct libnapc__DNSResponse {
+		libnapc__DNSHeader header;
 		// this field is different from header.answer_count
 		// header.answer_count contains the raw count of the number of
 		// answers present in the response.
 		// num_answers says how many elements are in the answers[] array
 		// (might be capped)
 		libnapc_size num_answers;
-		napc__DNSAnswer answers[NAPC_MODULE_DNS_MAX_ANSWERS];
-	} napc__DNSResponse;
+		libnapc__DNSAnswer answers[NAPC_MODULE_DNS_MAX_ANSWERS];
+	} libnapc__DNSResponse;
 
 	/*!
 	 * @name napc_DNS_parseRequest
@@ -56,7 +56,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	bool libnapc_DNS_parseRequest(
-		napc__DNSRequest *out,
+		libnapc__DNSRequest *out,
 		const void *buffer, libnapc_size buffer_size
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
@@ -73,7 +73,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	bool libnapc_DNS_parseResponse(
-		napc__DNSResponse *out,
+		libnapc__DNSResponse *out,
 		const void *buffer, libnapc_size buffer_size
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 #endif

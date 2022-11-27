@@ -15,10 +15,10 @@
 	 * @field rd_data Response data.
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
-	typedef struct napc__DNSAnswer {
+	typedef struct libnapc__DNSAnswer {
 		libnapc_u32 ttl;
 
 		libnapc_u16 rd_length;
 		libnapc_u8 rd_data[NAPC_MODULE_DNS_MAX_RD_DATA_LENGTH];
-	} napc__DNSAnswer;
+	} libnapc__DNSAnswer;
 #endif

@@ -1,7 +1,7 @@
 #include <module/dns/_private/_dns.h>
 
 bool libnapc_DNS_parseHeader(
-	napc__DNSHeader *out,
+	libnapc__DNSHeader *out,
 	const void *buffer, libnapc_size buffer_size
 ) {
 	libnapc__Reader reader;

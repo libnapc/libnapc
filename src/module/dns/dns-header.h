@@ -14,13 +14,13 @@
 	 * @enum NAPC_DNS_OPCODE_NOTIFY
 	 * @enum NAPC_DNS_OPCODE_UPDATE
 	 */
-	typedef enum napc__DNSOPCode {
+	typedef enum libnapc__DNSOPCode {
 		NAPC_DNS_OPCODE_QUERY,
 		NAPC_DNS_OPCODE_IQUERY,
 		NAPC_DNS_OPCODE_STATUS,
 		NAPC_DNS_OPCODE_NOTIFY,
 		NAPC_DNS_OPCODE_UPDATE
-	} napc__DNSOPCode;
+	} libnapc__DNSOPCode;
 
 	/*!
 	 * @name napc__DNSHeader
@@ -38,10 +38,10 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 * @changelog 2.0.0 12.04.2022 added `raw_flags` member
 	 */
-	typedef struct napc__DNSHeader {
+	typedef struct libnapc__DNSHeader {
 		libnapc_u16 raw_flags;
 
-		napc__DNSOPCode opcode;
+		libnapc__DNSOPCode opcode;
 
 		bool authoritative_answer;
 		bool truncated;
@@ -52,7 +52,7 @@
 		libnapc_u16 response_code;
 		libnapc_u16 question_count;
 		libnapc_u16 answer_count;
-	} napc__DNSHeader;
+	} libnapc__DNSHeader;
 
 	/*!
 	 * @name napc_DNS_parseHeader
@@ -65,7 +65,7 @@
 	 * @changelog 1.0.0 17.02.2022 initial version
 	 */
 	bool libnapc_DNS_parseHeader(
-		napc__DNSHeader *out,
+		libnapc__DNSHeader *out,
 		const void *buffer, libnapc_size buffer_size
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 #endif

@@ -1,10 +1,10 @@
 #include <module/dns/_private/_dns.h>
 
 bool libnapc_DNS_parseResponse(
-	napc__DNSResponse *out,
+	libnapc__DNSResponse *out,
 	const void *buffer, libnapc_size buffer_size
 ) {
-	napc__DNSHeader header;
+	libnapc__DNSHeader header;
 
 	if (!libnapc_DNS_parseHeader(&header, buffer, buffer_size)) {
 		return false;
@@ -47,7 +47,7 @@ bool libnapc_DNS_parseResponse(
 	}
 
 	for (libnapc_size i = 0; i < n_answers; ++i) {
-		napc__DNSAnswer *a = out ? &out->answers[i] : NULL;
+		libnapc__DNSAnswer *a = out ? &out->answers[i] : NULL;
 
 		if (!PV_libnapc_DNS_parseAnswerSection(a, &reader)) {
 			return false;
