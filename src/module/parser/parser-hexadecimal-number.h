@@ -20,7 +20,7 @@
 	 *     napc_printf("Value is %ld", out); // "Value is 239"
 	 * }
 	 */
-	bool napc_parser_parseHexadecimalNumberU8(
+	bool libnapc_parser_parseHexadecimalNumberU8(
 		const char *string,
 		libnapc_u8 *out
 	) LIBNAPC_FN_WARN_UNUSED_RET();
@@ -42,7 +42,7 @@
 	 *     napc_printf("Value is %ld", out); // "Value is 48879"
 	 * }
 	 */
-	bool napc_parser_parseHexadecimalNumberU16(
+	bool libnapc_parser_parseHexadecimalNumberU16(
 		const char *string,
 		libnapc_u16 *out
 	) LIBNAPC_FN_WARN_UNUSED_RET();
@@ -64,7 +64,7 @@
 	 *     napc_printf("Value is %ld", out); // "Value is 3735928559"
 	 * }
 	 */
-	bool napc_parser_parseHexadecimalNumberU32(
+	bool libnapc_parser_parseHexadecimalNumberU32(
 		const char *string,
 		libnapc_u32 *out
 	) LIBNAPC_FN_WARN_UNUSED_RET();

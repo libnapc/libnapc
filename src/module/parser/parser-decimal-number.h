@@ -20,7 +20,7 @@
 	 *     napc_printf("Value is %d", out); // "Value is 123"
 	 * }
 	 */
-	bool napc_parser_parseDecimalNumberU8(
+	bool libnapc_parser_parseDecimalNumberU8(
 		const char *string, libnapc_u8 *out
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
@@ -41,7 +41,7 @@
 	 *     napc_printf("Value is %d", out); // "Value is 1024"
 	 * }
 	 */
-	bool napc_parser_parseDecimalNumberU16(
+	bool libnapc_parser_parseDecimalNumberU16(
 		const char *string, libnapc_u16 *out
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
@@ -62,7 +62,7 @@
 	 *     napc_printf("Value is %ld", out); // "Value is 123456"
 	 * }
 	 */
-	bool napc_parser_parseDecimalNumberU32(
+	bool libnapc_parser_parseDecimalNumberU32(
 		const char *string, libnapc_u32 *out
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 #endif

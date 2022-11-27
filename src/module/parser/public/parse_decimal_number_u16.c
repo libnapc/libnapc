@@ -1,6 +1,6 @@
 #include <module/parser/_private/_parser.h>
 
-bool napc_parser_parseDecimalNumberU16(
+bool libnapc_parser_parseDecimalNumberU16(
 	const char *string,
 	libnapc_u16 *out
 ) {

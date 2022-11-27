@@ -22,7 +22,7 @@ bool napc_parser_parseHexString(
 
 		libnapc_u8 value = 0;
 
-		bool result = napc_parser_parseHexadecimalNumberU8(tmp_str, &value);
+		bool result = libnapc_parser_parseHexadecimalNumberU8(tmp_str, &value);
 
 		// wipe memory
 		tmp_str[0] = 0;
