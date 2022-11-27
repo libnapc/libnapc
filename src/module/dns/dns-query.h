@@ -7,13 +7,14 @@
 	#define NAPC_MODULE_DNS_MAX_NAME 64 // was 254 before
 
 	/*!
-	 * @name napc__DNSQuery
 	 * @module DNS
+	 * @type type:struct
+	 * @fullname libnapc__DNSQuery
 	 * @brief Representation of a DNS query.
-	 * @version 1.0.0
+	 * @version 2.0.0
 	 * @field name Name to lookup.
-	 * @field qtype Query type, see `napc__DNSQType`.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @field qtype Query type, see `libnapc__DNSQType`.
+	 * @changelog 2.0.0 initial version
 	 */
 	typedef struct libnapc__DNSQuery {
 		char name[NAPC_MODULE_DNS_MAX_NAME];

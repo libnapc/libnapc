@@ -11,13 +11,14 @@
 	#define NAPC_MODULE_DNS_MAX_ANSWERS 4u
 
 	/*!
-	 * @name napc__DNSRequest
 	 * @module DNS
+	 * @type type:struct
+	 * @fullname libnapc__DNSRequest
 	 * @brief Representation of a DNS request.
-	 * @version 1.0.0
-	 * @field header DNS-Header, see `napc__DNSHeader`.
-	 * @field query DNS-Query, see `napc__DNSQuery`.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @version 2.0.0
+	 * @field header DNS-Header, see `libnapc__DNSHeader`.
+	 * @field query DNS-Query, see `libnapc__DNSQuery`.
+	 * @changelog 2.0.0 initial version
 	 */
 	typedef struct libnapc__DNSRequest {
 		libnapc__DNSHeader header;
@@ -25,14 +26,15 @@
 	} libnapc__DNSRequest;
 
 	/*!
-	 * @name napc__DNSResponse
 	 * @module DNS
+	 * @type type:struct
+	 * @fullname napc__DNSResponse
 	 * @brief Representation of a DNS response.
-	 * @version 1.0.0
-	 * @field header DNS-Header, see `napc__DNSHeader`.
+	 * @version 2.0.0
+	 * @field header DNS-Header, see `libnapc__DNSHeader`.
 	 * @field num_answers Represents number of elements in `answers` array.
-	 * @field answers DNS-Answers, see `napc__DNSAnswer`.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @field answers DNS-Answers, see `libnapc__DNSAnswer`.
+	 * @changelog 2.0.0 initial version
 	 */
 	typedef struct libnapc__DNSResponse {
 		libnapc__DNSHeader header;
@@ -46,14 +48,17 @@
 	} libnapc__DNSResponse;
 
 	/*!
-	 * @name napc_DNS_parseRequest
+	 * @module DNS
+	 * @type fn
+	 * @fullname libnapc_DNS_parseRequest
+	 * @name parseRequest
 	 * @brief Parse a DNS-Request from a buffer.
-	 * @version 1.0.0
+	 * @version 2.0.0
 	 * @param out Pointer to a `napc__DNSRequest` to store result.
 	 * @param buffer Buffer to be parsed.
 	 * @param buffer_size Size of buffer.
 	 * @return Returns `true` on success, `false` otherwise.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 */
 	bool libnapc_DNS_parseRequest(
 		libnapc__DNSRequest *out,
@@ -61,16 +66,19 @@
 	) LIBNAPC_FN_WARN_UNUSED_RET();
 
 	/*!
-	 * @name napc_DNS_parseResponse
+	 * Parses a DNS-Response from a buffer.
+	 * 
+	 * @module DNS
+	 * @type fn
+	 * @fullname libnapc_DNS_parseResponse
+	 * @name parseResponse
 	 * @brief Parse a DNS-Response from a buffer.
-	 * @version 1.0.0
-	 * @description
-	 * Parse a DNS-Response from a buffer.
+	 * @version 2.0.0
 	 * @param out Pointer to a `napc__DNSResponse` to store result.
 	 * @param buffer Buffer to be parsed.
 	 * @param buffer_size Size of buffer.
 	 * @return Returns `true` on success, `false` otherwise.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 */
 	bool libnapc_DNS_parseResponse(
 		libnapc__DNSResponse *out,

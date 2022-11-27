@@ -4,27 +4,30 @@
 	#include <libnapc-internal.h>
 
 	/*!
-	 * @name napc__DNSOPCode
 	 * @module DNS
+	 * @type type:enum
+	 * @fullname libnapc__DNSOPCode
 	 * @brief Representation of a DNS operation code.
-	 * @version 1.0.0
-	 * @enum NAPC_DNS_OPCODE_QUERY Standard DNS-Query.
-	 * @enum NAPC_DNS_OPCODE_IQUERY Inverse DNS-Query.
-	 * @enum NAPC_DNS_OPCODE_STATUS Status query.
-	 * @enum NAPC_DNS_OPCODE_NOTIFY
-	 * @enum NAPC_DNS_OPCODE_UPDATE
+	 * @version 2.0.0
+	 * @enum LIBNAPC_DNS_OPCODE_QUERY Standard DNS-Query.
+	 * @enum LIBNAPC_DNS_OPCODE_IQUERY Inverse DNS-Query.
+	 * @enum LIBNAPC_DNS_OPCODE_STATUS Status query.
+	 * @enum LIBNAPC_DNS_OPCODE_NOTIFY tbd
+	 * @enum LIBNAPC_DNS_OPCODE_UPDATE tbd
+	 * @changelog 2.0.0 initial version
 	 */
 	typedef enum libnapc__DNSOPCode {
-		NAPC_DNS_OPCODE_QUERY,
-		NAPC_DNS_OPCODE_IQUERY,
-		NAPC_DNS_OPCODE_STATUS,
-		NAPC_DNS_OPCODE_NOTIFY,
-		NAPC_DNS_OPCODE_UPDATE
+		LIBNAPC_DNS_OPCODE_QUERY,
+		LIBNAPC_DNS_OPCODE_IQUERY,
+		LIBNAPC_DNS_OPCODE_STATUS,
+		LIBNAPC_DNS_OPCODE_NOTIFY,
+		LIBNAPC_DNS_OPCODE_UPDATE
 	} libnapc__DNSOPCode;
 
 	/*!
-	 * @name napc__DNSHeader
 	 * @module DNS
+	 * @type type:struct
+	 * @fullname libnapc__DNSHeader
 	 * @brief Representation of a DNS header.
 	 * @version 2.0.0
 	 * @field raw_flags Contains the raw dns header flags (16 bit)
@@ -35,8 +38,7 @@
 	 * @field response_code DNS-Server response code.
 	 * @field question_count Number of DNS queries.
 	 * @field answer_count Number of DNS answers.
-	 * @changelog 1.0.0 17.02.2022 initial version
-	 * @changelog 2.0.0 12.04.2022 added `raw_flags` member
+	 * @changelog 2.0.0 initial version
 	 */
 	typedef struct libnapc__DNSHeader {
 		libnapc_u16 raw_flags;
@@ -55,14 +57,17 @@
 	} libnapc__DNSHeader;
 
 	/*!
-	 * @name napc_DNS_parseHeader
+	 * @module DNS
+	 * @type fn
+	 * @fullname libnapc_DNS_parseHeader
+	 * @name parseHeader
 	 * @brief Parse a DNS-Header from a buffer.
-	 * @version 1.0.0
+	 * @version 2.0.0
 	 * @param out Pointer to a `napc__DNSHeader` to store result.
 	 * @param buffer Buffer to be parsed.
 	 * @param buffer_size Size of buffer.
 	 * @return Returns `true` on success, `false` otherwise.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 */
 	bool libnapc_DNS_parseHeader(
 		libnapc__DNSHeader *out,

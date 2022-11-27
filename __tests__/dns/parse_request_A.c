@@ -18,7 +18,7 @@ TEST_CASE("should work properly (A record)") {
 	);
 	TEST_ASSERT(request.header.response_code == 0);
 
-	TEST_ASSERT(request.query.qtype == NAPC_DNS_QTYPE_A);
+	TEST_ASSERT(request.query.qtype == LIBNAPC_DNS_QTYPE_A);
 	TEST_ASSERT(
 		libnapc_streql("microsoft.com", request.query.name)
 	);

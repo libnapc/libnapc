@@ -6,14 +6,15 @@
 	#define NAPC_MODULE_DNS_MAX_RD_DATA_LENGTH 16u
 
 	/*!
-	 * @name napc__DNSAnswer
 	 * @module DNS
+	 * @type type:struct
+	 * @fullname libnapc__DNSAnswer
 	 * @brief Representation of a DNS answer.
-	 * @version 1.0.0
+	 * @version 2.0.0
 	 * @field ttl Time to live (in seconds).
 	 * @field rd_length Response data size in bytes.
 	 * @field rd_data Response data.
-	 * @changelog 1.0.0 17.02.2022 initial version
+	 * @changelog 2.0.0 initial version
 	 */
 	typedef struct libnapc__DNSAnswer {
 		libnapc_u32 ttl;

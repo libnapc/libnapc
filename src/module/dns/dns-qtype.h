@@ -4,23 +4,23 @@
 	#include <libnapc-internal.h>
 
 	/*!
-	 * @name napc__DNSQType
 	 * @module DNS
+	 * @type type:enum
+	 * @fullname napc__DNSQType
 	 * @brief Representation of DNS query type.
-	 * @version 1.0.0
-	 * @enum NAPC_DNS_QTYPE_A A-Record query
-	 * @enum NAPC_DNS_QTYPE_CNAME CNAME-Record query
-	 * @enum NAPC_DNS_QTYPE_MX MX-Record query
-	 * @enum NAPC_DNS_QTYPE_TXT TXT-Record query
-	 * @enum NAPC_DNS_QTYPE_AAAA AAAA-Record query
-	 * @changelog 1.0.0 17.02.2022 initial version
-	 * @changelog 2.0.0 14.04.2022 added CNAME,MX and TXT types
+	 * @version 2.0.0
+	 * @enum LIBNAPC_DNS_QTYPE_A A-Record query
+	 * @enum LIBNAPC_DNS_QTYPE_CNAME CNAME-Record query
+	 * @enum LIBNAPC_DNS_QTYPE_MX MX-Record query
+	 * @enum LIBNAPC_DNS_QTYPE_TXT TXT-Record query
+	 * @enum LIBNAPC_DNS_QTYPE_AAAA AAAA-Record query
+	 * @changelog 2.0.0 added initial version
 	 */
 	typedef enum libnapc__DNSQType {
-		NAPC_DNS_QTYPE_A     = 1,
-		NAPC_DNS_QTYPE_CNAME = 5,
-		NAPC_DNS_QTYPE_MX    = 15,
-		NAPC_DNS_QTYPE_TXT   = 16,
-		NAPC_DNS_QTYPE_AAAA  = 28
+		LIBNAPC_DNS_QTYPE_A     = 1,
+		LIBNAPC_DNS_QTYPE_CNAME = 5,
+		LIBNAPC_DNS_QTYPE_MX    = 15,
+		LIBNAPC_DNS_QTYPE_TXT   = 16,
+		LIBNAPC_DNS_QTYPE_AAAA  = 28
 	} libnapc__DNSQType;
 #endif
