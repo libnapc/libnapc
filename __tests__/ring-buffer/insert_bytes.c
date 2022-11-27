@@ -2,7 +2,7 @@
 #include <libnapc-testing.h>
 
 TEST_CASE("should work as expected") {
-	napc__RingBuffer rbuffer;
+	libnapc__RingBuffer rbuffer;
 	libnapc_u8 buffer[6] = {0,0,0,0,0,0xff};
 	libnapc_u8 insert_array_1[3] = {1,2,3};
 	libnapc_u8 insert_array_2[3] = {4,5,6};

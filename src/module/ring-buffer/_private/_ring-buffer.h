@@ -16,14 +16,14 @@
 		ctx->write_position, ctx->read_position, ctx->buffer_size
 
 	libnapc_size PV_libnapc_RingBuffer_numFreeSpots(
-		const napc__RingBuffer *ctx
+		const libnapc__RingBuffer *ctx
 	);
 
 	bool PV_libnapc_RingBuffer_insertByte(
-		napc__RingBuffer *ctx, libnapc_u8 byte, bool force
+		libnapc__RingBuffer *ctx, libnapc_u8 byte, bool force
 	);
 
 	void PV_libnapc_RingBuffer_performAccessFailureAction(
-		const napc__RingBuffer *ctx, int performed_action
+		const libnapc__RingBuffer *ctx, int performed_action
 	);
 #endif

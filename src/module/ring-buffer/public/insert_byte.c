@@ -1,6 +1,6 @@
 #include <module/ring-buffer/_private/_ring-buffer.h>
 
-bool libnapc_RingBuffer_insertByte(napc__RingBuffer *ctx, libnapc_u8 byte) {
+bool libnapc_RingBuffer_insertByte(libnapc__RingBuffer *ctx, libnapc_u8 byte) {
 	LIBNAPC_MAGIC_ASSERT(napc__RingBuffer, ctx);
 
 	bool result = PV_libnapc_RingBuffer_insertByte(ctx, byte, false);

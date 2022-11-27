@@ -1,7 +1,7 @@
 #include <module/ring-buffer/_private/_ring-buffer.h>
 
 void libnapc_RingBuffer_setAccessFailureMode(
-	napc__RingBuffer *ctx, libnapc__AccessFailureMode mode
+	libnapc__RingBuffer *ctx, libnapc__AccessFailureMode mode
 ) {
 	LIBNAPC_MAGIC_ASSERT(napc__RingBuffer, ctx);
 

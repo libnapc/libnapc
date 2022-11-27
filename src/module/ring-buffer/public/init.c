@@ -1,7 +1,7 @@
 #include <module/ring-buffer/_private/_ring-buffer.h>
 
 void libnapc_RingBuffer_init(
-	napc__RingBuffer *ctx, libnapc_u8 *buffer, libnapc_size buffer_size
+	libnapc__RingBuffer *ctx, libnapc_u8 *buffer, libnapc_size buffer_size
 ) {
 	if (!buffer_size) {
 		LIBNAPC_PANIC("Size cannot be zero inside libnapc_RingBuffer_init().");

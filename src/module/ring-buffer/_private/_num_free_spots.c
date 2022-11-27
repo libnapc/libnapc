@@ -1,7 +1,7 @@
 #include <module/ring-buffer/_private/_ring-buffer.h>
 
 libnapc_size PV_libnapc_RingBuffer_numFreeSpots(
-	const napc__RingBuffer *ctx
+	const libnapc__RingBuffer *ctx
 ) {
 	libnapc_size read_position = ctx->read_position;
 	libnapc_size write_position = ctx->write_position;

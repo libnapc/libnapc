@@ -1,7 +1,7 @@
 #include <module/ring-buffer/_private/_ring-buffer.h>
 
 void PV_libnapc_RingBuffer_performAccessFailureAction(
-	const napc__RingBuffer *ctx, int performed_action
+	const libnapc__RingBuffer *ctx, int performed_action
 ) {
 	// do nothing
 	if (ctx->_fail_mode == LIBNAPC_ACCESS_FAILURE_MODE_NONE) {

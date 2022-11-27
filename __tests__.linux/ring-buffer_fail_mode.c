@@ -8,7 +8,7 @@ int main(int argc, const char **argv) {
 
 	libnapc_init();
 
-	napc__RingBuffer rbuffer = libnapc_RingBuffer_create(buffer, sizeof(buffer));
+	libnapc__RingBuffer rbuffer = libnapc_RingBuffer_create(buffer, sizeof(buffer));
 
 	libnapc_RingBuffer_setAccessFailureMode(&rbuffer, LIBNAPC_ACCESS_FAILURE_MODE_PANIC);
 

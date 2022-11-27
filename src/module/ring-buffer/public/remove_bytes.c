@@ -1,6 +1,6 @@
 #include <module/ring-buffer/_private/_ring-buffer.h>
 
-bool libnapc_RingBuffer_removeBytes(napc__RingBuffer *ctx, libnapc_u8 *out, libnapc_size out_size) {
+bool libnapc_RingBuffer_removeBytes(libnapc__RingBuffer *ctx, libnapc_u8 *out, libnapc_size out_size) {
 	LIBNAPC_MAGIC_ASSERT(napc__RingBuffer, ctx);
 
 	libnapc_size elements_available = libnapc_RingBuffer_getAvailableBytes(ctx);

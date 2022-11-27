@@ -1,7 +1,7 @@
 #include <module/ring-buffer/_private/_ring-buffer.h>
 
 bool PV_libnapc_RingBuffer_insertByte(
-	napc__RingBuffer *ctx, libnapc_u8 byte, bool force
+	libnapc__RingBuffer *ctx, libnapc_u8 byte, bool force
 ) {
 	libnapc_size n_free_spots = PV_libnapc_RingBuffer_numFreeSpots(ctx);
 
