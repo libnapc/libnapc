@@ -20,6 +20,7 @@ ORIGIN_COMMENT;
 
 	$context["tests"] = [];
 	$last_test_case_id = 0;
+	$number_of_tests = 0;
 
 	foreach ($test_files as $test_file) {
 		$module = napphp::str_split($test_file["relative_path"], "/", 2)[0];
@@ -52,6 +53,7 @@ ORIGIN_COMMENT;
 				$context["tests"][$module][] = $fn_name;
 
 				++$last_test_case_id;
+				++$number_of_tests;
 			} else {
 				$new_file_contents .= $line;
 			}
@@ -65,4 +67,6 @@ ORIGIN_COMMENT;
 			"$output_dir/__tests__/$module/$dest_path", $new_file_contents
 		);
 	}
+
+	$context["number_of_tests"] = $number_of_tests;
 };

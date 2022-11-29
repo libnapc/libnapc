@@ -15,6 +15,7 @@ ORIGIN_COMMENT;
 	$file  = "$origin_comment";
 	$file .= "#include <libnapc.h>\n";
 	$file .= "#if defined(LIBNAPC_INCLUDE_TESTS)\n";
+	$file .= "static int number_of_tests_passed = 0;\n";
 
 	$header_file  = $origin_comment;
 	$header_file .= "#if !defined(LIBNAPC_ALL_TESTS_FILE_h)\n";
@@ -47,6 +48,7 @@ ORIGIN_COMMENT;
 			$file .= "    $test();";
 			$file .= " libnapc_unmute();";
 			$file .= " libnapc_puts(\"passed!\\n\");";
+			$file .= " ++number_of_tests_passed;";
 			$file .= " libnapc_mute();\n";
 		}
 
@@ -58,6 +60,7 @@ ORIGIN_COMMENT;
 	}
 
 	$file .= "void libnapc_runUnitTests(void) {\n";
+	$file .= "    number_of_tests_passed = 0;\n";
 
 	foreach ($modules as $module) {
 		$c_friendly_module = libnapc_preprocess_CFriendlyModuleName($module);
@@ -66,7 +69,14 @@ ORIGIN_COMMENT;
 	}
 
 	$file .= "    libnapc_unmute();\n";
-	$file .= "    libnapc_puts(\"\\n\\nAll tests successfully passed! :-)\\n\\n\");\n";
+
+	$number_of_tests = $context["number_of_tests"];
+
+	$file .= "    if (number_of_tests_passed != $number_of_tests) {\n";
+	$file .= "         LIBNAPC_PANIC(\"Something went wrong, number_of_tests_passed (%d) != $number_of_tests\", number_of_tests_passed);\n";
+	$file .= "    }\n";
+
+	$file .= "    libnapc_printf(\"\\n\\nAll tests (%d/$number_of_tests) successfully passed! :-)\\n\\n\", number_of_tests_passed);\n";
 
 	$file .= "}\n";
 	$file .= "#endif\n";
