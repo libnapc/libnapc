@@ -1,3 +1,5 @@
+#include <libnapc-internal.h>
+
 const char *libnapc_version(void) {
 	#if defined(LIBNAPC_DEBUG)
 		return "%BC_RELEASE_VERSION%-debug";
