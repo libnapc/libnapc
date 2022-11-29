@@ -32,6 +32,13 @@ return [
 			return !napphp::str_startsWith($flag, "-I");
 		});
 
+		// add -DLIBNAPC_DEBUG if invoked with '--with-debug':
+		$with_debug_enabled = $args["flags"]["with-debug"] ?? false;
+
+		if ($with_debug_enabled) {
+			array_push($gcc_flags, "-DLIBNAPC_DEBUG=1");
+		}
+
 		// add -I./build_files/processed_files/
 		array_push($gcc_flags, "-I$gcc_include_path");
 

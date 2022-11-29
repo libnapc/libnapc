@@ -61,6 +61,10 @@ return function($args, &$context) {
 	$init_function_str .= "    libnapc_puts(libnapc_version());\n";
 	$init_function_str .= "    libnapc_puts(\"'\\n\");\n\n";
 
+	$init_function_str .= "    #if defined(LIBNAPC_DEBUG)\n";
+	$init_function_str .= "        libnapc_puts(\"[libnapc/init] !! heads up: this build was compiled with DEBUG functionality ENABLED. !!\\n\");\n";
+	$init_function_str .= "    #endif\n\n";
+
 	$init_function_str .= "    _initialised = 1;\n";
 
 	$init_function_str .= "}\n";
