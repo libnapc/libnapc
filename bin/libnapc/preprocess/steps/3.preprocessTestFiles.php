@@ -54,12 +54,12 @@ ORIGIN_COMMENT;
 			} else {
 				$new_file_contents .= $line;
 			}
-
-			$dest_path = napphp::str_replace($test_file["relative_path"], "/", "_");
-
-			napphp::fs_writeFileStringAtomic(
-				"$output_dir/__tests__/$module/$dest_path", $new_file_contents
-			);
 		}
+		
+		$dest_path = napphp::str_replace($test_file["relative_path"], "/", "_");
+
+		napphp::fs_writeFileStringAtomic(
+			"$output_dir/__tests__/$module/$dest_path", $new_file_contents
+		);
 	}
 };
