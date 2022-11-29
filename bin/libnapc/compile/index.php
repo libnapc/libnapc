@@ -32,8 +32,20 @@ return [
 			return !napphp::str_startsWith($flag, "-I");
 		});
 
+		// add -DLIBNAPC_INCLUDE_TESTS if invoked with '--with-tests':
+		$with_tests_enabled = $args["flags"]["with-tests"] ?? false;
+
+		if ($with_tests_enabled) {
+			array_push($gcc_flags, "-DLIBNAPC_INCLUDE_TESTS=1");
+		}
+
 		// add -DLIBNAPC_DEBUG if invoked with '--with-debug':
 		$with_debug_enabled = $args["flags"]["with-debug"] ?? false;
+
+		// always set debug if '--with-tests' was specified
+		if ($with_tests_enabled) {
+			$with_debug_enabled = true;
+		}
 
 		if ($with_debug_enabled) {
 			array_push($gcc_flags, "-DLIBNAPC_DEBUG=1");
