@@ -1,7 +1,15 @@
 const char *libnapc_version(void) {
-	return "%BC_RELEASE_VERSION%";
+	#if defined(LIBNAPC_DEBUG)
+		return "%BC_RELEASE_VERSION%-debug";
+	#else
+		return "%BC_RELEASE_VERSION%";
+	#endif
 }
 
 const char *libnapc_getFullVersion(void) {
-	return "%BC_RELEASE_VERSION% (git commit '%BC_GIT_HEAD_HASH%')";
+	#if defined(LIBNAPC_DEBUG)
+		return "%BC_RELEASE_VERSION% (git commit '%BC_GIT_HEAD_HASH%', with debug enabled)";
+	#else
+		return "%BC_RELEASE_VERSION% (git commit '%BC_GIT_HEAD_HASH%')";
+	#endif
 }
