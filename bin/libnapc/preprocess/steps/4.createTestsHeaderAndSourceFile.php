@@ -14,6 +14,7 @@ ORIGIN_COMMENT;
 
 	$file  = "$origin_comment";
 	$file .= "#include <libnapc.h>\n";
+	$file .= "#if defined(LIBNAPC_INCLUDE_TESTS)\n";
 
 	$header_file  = $origin_comment;
 	$header_file .= "#if !defined(LIBNAPC_ALL_TESTS_FILE_h)\n";
@@ -64,6 +65,7 @@ ORIGIN_COMMENT;
 	$file .= "    libnapc_puts(\"\\n\\nAll tests successfully passed! :-)\\n\\n\");\n";
 
 	$file .= "}\n";
+	$file .= "#endif\n";
 
 	$header_file .= "    #if defined(__cplusplus)\n";
 	$header_file .= "        }\n";

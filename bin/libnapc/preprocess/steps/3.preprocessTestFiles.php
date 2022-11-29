@@ -33,6 +33,7 @@ ORIGIN_COMMENT;
 
 		$new_file_contents  = $origin_comment;
 		$new_file_contents .= "#include <libnapc.h>\n";
+		$new_file_contents .= "#if defined(LIBNAPC_INCLUDE_TESTS)\n";
 
 		foreach ($lines as $line) {
 			if (napphp::str_startsWith($line, "TEST_CASE(\"")) {
@@ -55,7 +56,9 @@ ORIGIN_COMMENT;
 				$new_file_contents .= $line;
 			}
 		}
-		
+
+		$new_file_contents .= "#endif\n";
+
 		$dest_path = napphp::str_replace($test_file["relative_path"], "/", "_");
 
 		napphp::fs_writeFileStringAtomic(
