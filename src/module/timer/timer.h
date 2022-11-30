@@ -28,7 +28,7 @@
 	 * @changelog 2.0.0 initial version
 	 */
 	typedef struct libnapc__Timer {
-		LIBNAPC_MAGIC_MEMBER; // used to detect uninitialized timers
+		LIBNAPC_MAGIC_MEMBER_DEFINITION
 
 		libnapc__TimerMode mode;
 

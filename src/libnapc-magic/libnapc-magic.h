@@ -3,12 +3,16 @@
 
 	#include <libnapc-internal.h>
 
-	typedef uint32_t libnapc_init_magic;
-
-	#define LIBNAPC_MAGIC_MEMBER libnapc_init_magic _init_magic
-
 	#if defined(LIBNAPC_DEBUG)
 		#include <libnapc-panic/libnapc-panic.h>
+
+		typedef uint32_t libnapc_init_magic;
+
+		/**
+		 * use ";" here so that in non-debug builds the
+		 * member "_init_magic" can be omitted
+		 */
+		#define LIBNAPC_MAGIC_MEMBER_DEFINITION libnapc_init_magic _init_magic;
 
 		#define LIBNAPC_MAGIC_DESTROYED LIBNAPC_U32_LITERAL(0xFFFFFFFF)
 
@@ -46,6 +50,8 @@
 
 		#define LIBNAPC_MAGIC_napc__RingBuffer         LIBNAPC_U32_LITERAL(0x67fa9d2d)
 	#else
+		#define LIBNAPC_MAGIC_MEMBER_DEFINITION
+
 		// are no-op in production builds (peformance)
 		#define LIBNAPC_MAGIC_INIT(type, obj)
 		#define LIBNAPC_MAGIC_DESTROY(obj)

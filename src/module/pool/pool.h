@@ -19,7 +19,7 @@
 	 * @changelog 2.0.0 initial version
 	 */
 	typedef struct libnapc__Pool {
-		LIBNAPC_MAGIC_MEMBER;
+		LIBNAPC_MAGIC_MEMBER_DEFINITION
 
 		const char *label;
 
