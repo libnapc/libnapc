@@ -1,6 +1,8 @@
 <?php
 
 return function($args, &$context) {
+	$getPath = require LIBNAPC_PROJECT_ROOT_DIR."/.dependencies/getPath.php";
+
 	$output_dir = $context["output_dir"];
 	$libnapc_release_version = $context["release_version"];
 
@@ -69,8 +71,10 @@ return function($args, &$context) {
 
 	napphp::fs_createSymbolicLink("$output_dir/linux/libnapc.h", "src/libnapc.h");
 
+	$fakeroot_bin = $getPath("fakeroot");
+
 	napphp::shell_execute(
-		"fakeroot", [
+		$fakeroot_bin, [
 			"cwd"  => "$output_dir/linux",
 			"args" => [
 				"tar", "-czvf", "../linux.tar.gz", "."
