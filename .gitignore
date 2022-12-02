@@ -1,5 +1,9 @@
 .DS_Store
 
+# Ignore custom dependency paths
+/.dependencies/custom/*
+!/.dependencies/custom/.gitkeep
+
 # Ignore generated build files
 /build_files/*
 !/build_files/.gitkeep
