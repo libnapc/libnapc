@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 env:
-  NAPPHP_VERSION: v0.0.17
+  NAPPHP_VERSION: v0.10.0
 
 jobs:
   build:
