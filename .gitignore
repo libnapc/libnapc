@@ -8,10 +8,6 @@
 /build_files/*
 !/build_files/.gitkeep
 
-# Ignore temporary files and directories
-/tmp.d/*
-!/tmp.d/.gitkeep
-
 # Symlink only valid if build succeeded
 # Do not include this in the repository
 # It will automatically be generated
